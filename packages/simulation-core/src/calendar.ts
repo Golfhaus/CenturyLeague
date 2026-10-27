@@ -97,3 +97,41 @@ export function seasonCalendarEntry(seasonNumber: number): SeasonCalendarEntry {
     eventName: seasonNumber === INAUGURAL_SEASON_NUMBER ? INAUGURAL_EVENT_NAME : null
   };
 }
+
+
+export const ENTRY_WINDOW_TRIGGER_MONTHS = [3, 6, 9, 12] as const;
+
+export function isEntryWindowTriggerMonth(month: number): boolean {
+  return ENTRY_WINDOW_TRIGGER_MONTHS.includes(month as 3 | 6 | 9 | 12);
+}
+
+export function entryWindowName(triggerYear: number, triggerMonth: number): string {
+  const names: Record<number, string> = {
+    3: 'Spring',
+    6: 'Summer',
+    9: 'Fall',
+    12: 'Winter'
+  };
+  const name = names[triggerMonth];
+  if (!name) throw new Error('Entry windows occur only after March, June, September, and December seasons.');
+  return `${name} ${triggerYear}`;
+}
+
+export function entryClassLabelForTriggerSeason(
+  triggerYear: number,
+  triggerMonth: number
+): string {
+  if (!isEntryWindowTriggerMonth(triggerMonth)) {
+    throw new Error('Entry class requested for a non-entry-window month.');
+  }
+
+  const nextMonthIndex = triggerYear * 12 + (triggerMonth - 1) + 1;
+  const availableYear = Math.floor(nextMonthIndex / 12);
+  const availableMonth = (nextMonthIndex % 12) + 1;
+  const date = new Date(Date.UTC(availableYear, availableMonth - 1, 1));
+  const monthName = new Intl.DateTimeFormat('en-US', {
+    month: 'long',
+    timeZone: 'UTC'
+  }).format(date);
+  return `${monthName} ${availableYear} Entry Class`;
+}

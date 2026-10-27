@@ -498,3 +498,29 @@ h1, h2, h3, h4 { margin-top: 0; }
 @media (max-width: 520px) {
   .filter-grid { grid-template-columns: 1fr; }
 }
+
+
+.count-grid.single-league {
+  grid-template-columns: minmax(180px, 220px) minmax(180px, 220px) minmax(140px, 180px);
+}
+.league-box {
+  background: #0d1721;
+  border: 1px solid #2b4053;
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+.league-box span,
+.league-box strong,
+.league-box small { display: block; }
+.league-box span {
+  color: #7f93a6;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+.league-box strong { font-size: 22px; margin-top: 3px; }
+.league-box small { color: #8398aa; margin-top: 2px; }
+
+@media (max-width: 800px) {
+  .count-grid.single-league { grid-template-columns: 1fr; }
+}

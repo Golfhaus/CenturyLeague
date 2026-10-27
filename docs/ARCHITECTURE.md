@@ -70,3 +70,18 @@ Each post-season development run stores the development-model version and random
 CenturyLeague uses a monthly competition calendar: twelve seasons per calendar year. Season 1 is the November 2026 Inaugural Tournament. A completed season triggers one month of player aging/development and one month of retirement hazard before the next season begins.
 
 Changing a model does not retroactively regenerate existing players.
+
+
+## Independent league timelines
+
+Men's and women's Century competitions run independently.
+
+Each competition category has its own league-state record, current season, season numbering, development cycle, entry windows, player population, free-agent pool, and roster history. Season numbers therefore have meaning only within a competition category.
+
+The men's league is initialized first:
+- Season 1: November 2026
+- Inaugural Tournament
+- planned founding population: 900 men
+- planned roster capacity: 18 teams × 35 = 630
+
+The women's league currently exists only as a planned league-state record. It has no current season and no player population until its launch date, team count, and founding-pool size are established.

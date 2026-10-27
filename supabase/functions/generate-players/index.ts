@@ -14,6 +14,7 @@ type GenerateRequest = {
   entryType?: 'founding_pool' | 'entry_window';
   entryClassLabel?: string;
   seasonId?: string;
+  activeNameSnapshotHash?: string;
 };
 
 function json(data: unknown, status = 200): Response {
@@ -32,6 +33,19 @@ function configuredKey(envName: 'SUPABASE_PUBLISHABLE_KEYS' | 'SUPABASE_SECRET_K
   const fallback = Deno.env.get(fallbackName);
   if (fallback) return fallback;
   throw new Error(`Missing ${envName} configuration.`);
+}
+
+function activeNameKey(firstName: string, lastName: string): string {
+  return `${firstName.trim().toLocaleLowerCase('en-US')}\u0000${lastName.trim().toLocaleLowerCase('en-US')}`;
+}
+
+async function hashStrings(values: readonly string[]): Promise<string> {
+  const canonical = [...values].sort().join('\n');
+  const bytes = new TextEncoder().encode(canonical);
+  const digest = await crypto.subtle.digest('SHA-256', bytes);
+  return Array.from(new Uint8Array(digest))
+    .map((byte) => byte.toString(16).padStart(2, '0'))
+    .join('');
 }
 
 function visiblePlayer(player: any) {
@@ -129,6 +143,32 @@ export default {
         return json({ error:'count must be an integer from 1–2,000.' }, 400);
       }
 
+      const { data:activeNameRows, error:activeNamesError } = await supabaseAdmin
+        .from('players')
+        .select('first_name, last_name')
+        .eq('status', 'active');
+
+      if (activeNamesError) {
+        console.error('generate-players active-name lookup failed', activeNamesError.message);
+        return json({ error:'Unable to reserve active player names.' }, 500);
+      }
+
+      const reservedFullNames = (activeNameRows ?? []).map((row) =>
+        activeNameKey(row.first_name, row.last_name)
+      );
+      const activeNameSnapshotHash = await hashStrings(reservedFullNames);
+
+      if (body.action === 'commit') {
+        if (!body.activeNameSnapshotHash) {
+          return json({ error:'Preview name snapshot is required before commit.' }, 409);
+        }
+        if (body.activeNameSnapshotHash !== activeNameSnapshotHash) {
+          return json({
+            error:'The active player population changed after this preview. Generate a fresh preview before committing.'
+          }, 409);
+        }
+      }
+
       const { data:leagueState, error:stateError } = await supabaseAdmin
         .from('league_state')
         .select('competition_category, league_status, current_season_id, active_generator_version_id, active_development_model_version')
@@ -194,7 +234,8 @@ export default {
         count,
         seasonStart:season.starts_on,
         entryType,
-        entryClassLabel
+        entryClassLabel,
+        reservedFullNames
       });
 
       const responseBase = {
@@ -204,6 +245,7 @@ export default {
         generatorVersion:version.version_name,
         generatorModelVersion:GENERATOR_MODEL_VERSION,
         developmentModelVersion:DEVELOPMENT_MODEL_VERSION,
+        activeNameSnapshotHash,
         season:{
           id:season.id,
           number:season.season_number,

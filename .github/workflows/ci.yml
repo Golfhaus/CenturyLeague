@@ -17,4 +17,5 @@ jobs:
       - run: npm run typecheck
       - run: npm run validate:generator
       - run: npm run validate:lifecycle
+      - run: npm run validate:pool
       - run: npm run build:registry

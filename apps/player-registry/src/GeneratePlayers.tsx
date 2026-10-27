@@ -43,8 +43,7 @@ type GenerationResponse = {
   };
   summary: {
     generatedCount: number;
-    menCount: number;
-    womenCount: number;
+    competitionCategory: 'men' | 'women';
     averageOverall: number;
     averageAgeYears: number;
     talentClasses: Record<string, number>;
@@ -94,27 +93,24 @@ function archetypeLabel(value: string) {
 }
 
 export default function GeneratePlayers() {
-  const [menCount, setMenCount] = useState('0');
-  const [womenCount, setWomenCount] = useState('0');
+  const [count, setCount] = useState('900');
   const [preview, setPreview] = useState<GenerationResponse | null>(null);
   const [busy, setBusy] = useState<'preview' | 'commit' | null>(null);
   const [error, setError] = useState('');
   const [committed, setCommitted] = useState<GenerationResponse | null>(null);
 
-  const men = Number(menCount) || 0;
-  const women = Number(womenCount) || 0;
-  const total = men + women;
+  const total = Number(count) || 0;
 
   const previewStillMatches = useMemo(
     () => preview
-      ? preview.summary.menCount === men && preview.summary.womenCount === women
+      ? preview.summary.generatedCount === total && preview.summary.competitionCategory === 'men'
       : false,
-    [preview, men, women]
+    [preview, total]
   );
 
-  function updateCount(setter: (value: string) => void, value: string) {
+  function updateCount(value: string) {
     if (!/^\d*$/.test(value)) return;
-    setter(value);
+    setCount(value);
     setPreview(null);
     setCommitted(null);
     setError('');
@@ -130,8 +126,8 @@ export default function GeneratePlayers() {
       {
         body:{
           action,
-          menCount:men,
-          womenCount:women,
+          competitionCategory:'men',
+          count:total,
           seed,
           entryType:'founding_pool',
           entryClassLabel:'Founding Player Pool'
@@ -174,42 +170,40 @@ export default function GeneratePlayers() {
             <span className="status-tag">Founding Player Pool</span>
             <h3>Generate permanent players</h3>
             <p>
-              Set the men’s and women’s population counts. Previewing creates nothing in the database;
-              committing uses the exact preview seed and makes that population permanent.
+              The men’s league launches first. Previewing creates nothing in the database; committing
+              uses the exact preview seed and makes that men’s population permanent. The women’s league
+              will receive its own independent founding pool when its league is initialized.
             </p>
           </div>
         </div>
 
         <div className="preset-row">
-          <button onClick={() => { setMenCount('1'); setWomenCount('0'); setPreview(null); }}>
+          <button onClick={() => { setCount('1'); setPreview(null); }}>
             One men’s player
           </button>
-          <button onClick={() => { setMenCount('0'); setWomenCount('1'); setPreview(null); }}>
-            One women’s player
+          <button onClick={() => { setCount('900'); setPreview(null); }}>
+            900-player founding pool
           </button>
-          <span>Founding target under discussion: 900 total</span>
+          <span>Women’s League: planned separately</span>
         </div>
 
-        <div className="count-grid">
+        <div className="count-grid single-league">
+          <div className="league-box">
+            <span>League</span>
+            <strong>Men’s</strong>
+            <small>Season 1 · November 2026</small>
+          </div>
           <label>
-            Men’s players
+            Players to generate
             <input
               inputMode="numeric"
-              value={menCount}
-              onChange={(event) => updateCount(setMenCount, event.target.value)}
-            />
-          </label>
-          <label>
-            Women’s players
-            <input
-              inputMode="numeric"
-              value={womenCount}
-              onChange={(event) => updateCount(setWomenCount, event.target.value)}
+              value={count}
+              onChange={(event) => updateCount(event.target.value)}
             />
           </label>
           <div className="total-box">
-            <span>Total</span>
-            <strong>{total.toLocaleString()}</strong>
+            <span>Founding target</span>
+            <strong>900</strong>
           </div>
         </div>
 
@@ -248,13 +242,13 @@ export default function GeneratePlayers() {
 
           <div className="metric-grid compact">
             <article>
-              <span>Men</span>
-              <strong>{preview.summary.menCount}</strong>
-              <small>Generated</small>
+              <span>League</span>
+              <strong>Men’s</strong>
+              <small>Independent competition</small>
             </article>
             <article>
-              <span>Women</span>
-              <strong>{preview.summary.womenCount}</strong>
+              <span>Players</span>
+              <strong>{preview.summary.generatedCount}</strong>
               <small>Generated</small>
             </article>
             <article>

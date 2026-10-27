@@ -10,7 +10,8 @@
     "typecheck": "tsc -p packages/simulation-core/tsconfig.json --noEmit && tsc -p apps/player-registry/tsconfig.json --noEmit",
     "build:core": "tsc -p packages/simulation-core/tsconfig.json",
     "build:registry": "npm run build:core && npm run build --workspace=@century-league/player-registry",
-    "validate:generator": "npm run build:core && node scripts/validate-generator.mjs"
+    "validate:generator": "npm run build:core && node scripts/validate-generator.mjs",
+    "validate:lifecycle": "npm run build:core && node scripts/validate-monthly-lifecycle.mjs"
   },
   "devDependencies": {
     "typescript": "7.0.2"

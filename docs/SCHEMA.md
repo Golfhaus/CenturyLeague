@@ -36,7 +36,7 @@ Permanent player identity and current career state:
 - preferred side
 - height and weight
 - archetypes
-- active/retired state
+- active/retired/exited-pool state
 - current team
 - generator provenance
 
@@ -55,6 +55,14 @@ Team assignment history.
 ### player_representative_eligibility
 
 Birthplace and future representative-team eligibility records.
+
+### entry_windows
+
+Quarterly player-entry windows associated with the March, June, September, and December trigger seasons. Stores the target population and generated class size for auditability.
+
+### player_pool_exits
+
+Permanent public record that an unsigned player left the eligible Century player pool. This is separate from retirement.
 
 ### development_runs
 
@@ -84,10 +92,15 @@ Hidden values used to maintain coherent career progression:
 - decline rate
 - longevity
 - retirement tendency
+- Career Persistence
 - geographic-generation metadata
 - outlier flags
 
 These values are not exposed through the normal Data API.
+
+### private.player_pool_exit_evaluations
+
+Audit record for every quarterly unsigned-player evaluation, including players who remain eligible. Stores probability inputs, formula components, population-pressure multiplier, random roll, and outcome.
 
 ## Ability editing rule
 

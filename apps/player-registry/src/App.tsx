@@ -2,6 +2,7 @@ import { FormEvent, useEffect, useMemo, useState } from 'react';
 import type { Session } from '@supabase/supabase-js';
 import { supabase, supabaseConfigured } from './lib/supabase';
 import GeneratePlayers from './GeneratePlayers';
+import PlayerDatabase from './PlayerDatabase';
 
 type View =
   | 'dashboard'
@@ -94,6 +95,12 @@ function App() {
     label: string;
     eventName: string | null;
   } | null>(null);
+  const [metrics, setMetrics] = useState({
+    activePlayers:0,
+    assignedPlayers:0,
+    freeAgents:0,
+    retiredPlayers:0
+  });
 
   useEffect(() => {
     if (!supabase) {
@@ -149,6 +156,20 @@ function App() {
           });
         }
       }
+
+      const [activeResult, assignedResult, freeAgentResult, retiredResult] = await Promise.all([
+        supabase.from('players').select('id', { count:'exact', head:true }).eq('status', 'active'),
+        supabase.from('players').select('id', { count:'exact', head:true }).eq('status', 'active').not('current_team_id', 'is', null),
+        supabase.from('players').select('id', { count:'exact', head:true }).eq('status', 'active').is('current_team_id', null),
+        supabase.from('players').select('id', { count:'exact', head:true }).eq('status', 'retired')
+      ]);
+
+      setMetrics({
+        activePlayers:activeResult.count ?? 0,
+        assignedPlayers:assignedResult.count ?? 0,
+        freeAgents:freeAgentResult.count ?? 0,
+        retiredPlayers:retiredResult.count ?? 0
+      });
 
       if (leagueState?.active_generator_version_id) {
         const { data: version } = await supabase
@@ -231,9 +252,21 @@ function App() {
         {view === 'dashboard' ? (
           <>
             <section className="metric-grid">
-              <article><span>Active Players</span><strong>0</strong><small>Registry ready</small></article>
-              <article><span>Assigned to Teams</span><strong>0</strong><small>No teams loaded</small></article>
-              <article><span>Retired Players</span><strong>0</strong><small>Historical archive</small></article>
+              <article>
+                <span>Active Players</span>
+                <strong>{metrics.activePlayers.toLocaleString()}</strong>
+                <small>{metrics.freeAgents.toLocaleString()} free agents</small>
+              </article>
+              <article>
+                <span>Assigned to Teams</span>
+                <strong>{metrics.assignedPlayers.toLocaleString()}</strong>
+                <small>18 × 35 target = 630</small>
+              </article>
+              <article>
+                <span>Retired Players</span>
+                <strong>{metrics.retiredPlayers.toLocaleString()}</strong>
+                <small>Historical archive</small>
+              </article>
               <article>
                 <span>Current Season</span>
                 <strong>{currentSeason ? `S${currentSeason.seasonNumber}` : '—'}</strong>
@@ -265,6 +298,8 @@ function App() {
           </>
         ) : view === 'generate' ? (
           <GeneratePlayers />
+        ) : view === 'database' ? (
+          <PlayerDatabase />
         ) : (
           <section className="placeholder-panel">
             <span className="status-tag">Planned surface</span>

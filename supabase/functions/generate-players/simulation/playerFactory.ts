@@ -21,6 +21,7 @@ export interface PermanentPlayerGenerationInput {
   entryType: PlayerEntryType;
   entryClassLabel: string;
   entryAge?: number;
+  nameAttempt?: number;
 }
 
 export interface GeneratedPermanentPlayer {
@@ -101,9 +102,13 @@ export function generatePermanentPlayer(
     }))
   );
 
+  const nameAttempt = input.nameAttempt ?? 0;
+  const nameSeed = nameAttempt === 0
+    ? deriveSeed(input.seed, 'name')
+    : deriveSeed(input.seed, `name:${nameAttempt}`);
   const name = generatePlayerName(
     input.competitionCategory,
-    deriveSeed(input.seed, 'name')
+    nameSeed
   );
   const body = generateBody(
     input.competitionCategory,

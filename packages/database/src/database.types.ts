@@ -1024,7 +1024,17 @@ export type Database = {
       }
     }
     Functions: {
-      [_ in never]: never
+      commit_generated_players: {
+        Args: {
+          p_created_by?: string
+          p_generator_version_id: string
+          p_players: Json
+          p_season_id: string
+          p_seed: string
+          p_summary?: Json
+        }
+        Returns: Json
+      }
     }
     Enums: {
       [_ in never]: never

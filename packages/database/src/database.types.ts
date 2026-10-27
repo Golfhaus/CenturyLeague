@@ -86,6 +86,66 @@ export type Database = {
           },
         ]
       }
+      entry_windows: {
+        Row: {
+          available_season_id: string | null
+          class_label: string
+          closed_at: string | null
+          created_at: string
+          generated_count: number
+          id: string
+          opened_at: string | null
+          status: string
+          target_active_population: number | null
+          target_free_agent_population: number | null
+          trigger_season_id: string
+          window_name: string
+        }
+        Insert: {
+          available_season_id?: string | null
+          class_label: string
+          closed_at?: string | null
+          created_at?: string
+          generated_count?: number
+          id?: string
+          opened_at?: string | null
+          status?: string
+          target_active_population?: number | null
+          target_free_agent_population?: number | null
+          trigger_season_id: string
+          window_name: string
+        }
+        Update: {
+          available_season_id?: string | null
+          class_label?: string
+          closed_at?: string | null
+          created_at?: string
+          generated_count?: number
+          id?: string
+          opened_at?: string | null
+          status?: string
+          target_active_population?: number | null
+          target_free_agent_population?: number | null
+          trigger_season_id?: string
+          window_name?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "entry_windows_available_season_id_fkey"
+            columns: ["available_season_id"]
+            isOneToOne: false
+            referencedRelation: "seasons"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "entry_windows_trigger_season_id_fkey"
+            columns: ["trigger_season_id"]
+            isOneToOne: true
+            referencedRelation: "seasons"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       generation_batches: {
         Row: {
           committed: boolean
@@ -199,6 +259,65 @@ export type Database = {
           {
             foreignKeyName: "league_state_current_season_id_fkey"
             columns: ["current_season_id"]
+            isOneToOne: false
+            referencedRelation: "seasons"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      player_pool_exits: {
+        Row: {
+          created_at: string
+          entry_window_id: string | null
+          exit_age_years: number
+          id: string
+          player_id: string
+          reason: string
+          season_id: string
+        }
+        Insert: {
+          created_at?: string
+          entry_window_id?: string | null
+          exit_age_years: number
+          id?: string
+          player_id: string
+          reason?: string
+          season_id: string
+        }
+        Update: {
+          created_at?: string
+          entry_window_id?: string | null
+          exit_age_years?: number
+          id?: string
+          player_id?: string
+          reason?: string
+          season_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "player_pool_exits_entry_window_id_fkey"
+            columns: ["entry_window_id"]
+            isOneToOne: false
+            referencedRelation: "entry_windows"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "player_pool_exits_player_id_fkey"
+            columns: ["player_id"]
+            isOneToOne: true
+            referencedRelation: "player_registry"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "player_pool_exits_player_id_fkey"
+            columns: ["player_id"]
+            isOneToOne: true
+            referencedRelation: "players"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "player_pool_exits_season_id_fkey"
+            columns: ["season_id"]
             isOneToOne: false
             referencedRelation: "seasons"
             referencedColumns: ["id"]
@@ -598,6 +717,9 @@ export type Database = {
           created_at: string
           current_team_id: string | null
           date_of_birth: string
+          entry_class_label: string | null
+          entry_type: string
+          first_eligible_season_id: string | null
           first_name: string
           generation_batch_id: string
           generator_version_id: string
@@ -606,6 +728,7 @@ export type Database = {
           last_name: string
           nationality_code: string | null
           nationality_name: string | null
+          pool_exited_at: string | null
           preferred_side: string
           primary_archetype: string
           retired_at: string | null
@@ -623,6 +746,9 @@ export type Database = {
           created_at?: string
           current_team_id?: string | null
           date_of_birth: string
+          entry_class_label?: string | null
+          entry_type?: string
+          first_eligible_season_id?: string | null
           first_name: string
           generation_batch_id: string
           generator_version_id: string
@@ -631,6 +757,7 @@ export type Database = {
           last_name: string
           nationality_code?: string | null
           nationality_name?: string | null
+          pool_exited_at?: string | null
           preferred_side?: string
           primary_archetype: string
           retired_at?: string | null
@@ -648,6 +775,9 @@ export type Database = {
           created_at?: string
           current_team_id?: string | null
           date_of_birth?: string
+          entry_class_label?: string | null
+          entry_type?: string
+          first_eligible_season_id?: string | null
           first_name?: string
           generation_batch_id?: string
           generator_version_id?: string
@@ -656,6 +786,7 @@ export type Database = {
           last_name?: string
           nationality_code?: string | null
           nationality_name?: string | null
+          pool_exited_at?: string | null
           preferred_side?: string
           primary_archetype?: string
           retired_at?: string | null
@@ -669,6 +800,13 @@ export type Database = {
             columns: ["current_team_id"]
             isOneToOne: false
             referencedRelation: "teams"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "players_first_eligible_season_id_fkey"
+            columns: ["first_eligible_season_id"]
+            isOneToOne: false
+            referencedRelation: "seasons"
             referencedColumns: ["id"]
           },
           {

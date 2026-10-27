@@ -1,5 +1,5 @@
-import { withSupabase } from 'npm:@supabase/server';
-import { corsHeaders } from 'npm:@supabase/supabase-js@2/cors';
+import { createClient } from 'npm:@supabase/supabase-js@2.118.0';
+import { corsHeaders } from 'npm:@supabase/supabase-js@2.118.0/cors';
 import { generatePlayerBatch } from './simulation/batch.ts';
 import {
   DEVELOPMENT_MODEL_VERSION,
@@ -21,6 +21,17 @@ function json(data: unknown, status = 200): Response {
     status,
     headers: { ...corsHeaders, 'Content-Type':'application/json' }
   });
+}
+
+function configuredKey(envName: 'SUPABASE_PUBLISHABLE_KEYS' | 'SUPABASE_SECRET_KEYS', fallbackName: string): string {
+  const encoded = Deno.env.get(envName);
+  if (encoded) {
+    const parsed = JSON.parse(encoded);
+    if (parsed.default) return parsed.default;
+  }
+  const fallback = Deno.env.get(fallbackName);
+  if (fallback) return fallback;
+  throw new Error(`Missing ${envName} configuration.`);
 }
 
 function visiblePlayer(player: any) {
@@ -53,29 +64,56 @@ function visiblePlayer(player: any) {
   };
 }
 
-const authenticatedHandler = withSupabase(
-  { auth:'user' },
-  async (req, ctx) => {
+export default {
+  async fetch(req: Request): Promise<Response> {
+    if (req.method === 'OPTIONS') {
+      return new Response('ok', { headers:corsHeaders });
+    }
+
     try {
       if (req.method !== 'POST') {
         return json({ error:'Method not allowed.' }, 405);
       }
 
-      const userId = ctx.userClaims?.sub;
-      if (!userId) return json({ error:'Authenticated user ID unavailable.' }, 401);
+      const authHeader = req.headers.get('Authorization') ?? '';
+      if (!authHeader.startsWith('Bearer ')) {
+        return json({ error:'Authenticated session required.' }, 401);
+      }
+      const token = authHeader.slice('Bearer '.length).trim();
+      if (!token) return json({ error:'Authenticated session required.' }, 401);
 
-      const { data:authorization, error:authorizationError } = await ctx.supabase
+      const supabaseUrl = Deno.env.get('SUPABASE_URL') ?? '';
+      const publishableKey = configuredKey('SUPABASE_PUBLISHABLE_KEYS', 'SUPABASE_ANON_KEY');
+      const secretKey = configuredKey('SUPABASE_SECRET_KEYS', 'SUPABASE_SERVICE_ROLE_KEY');
+
+      const userClient = createClient(supabaseUrl, publishableKey, {
+        global:{ headers:{ Authorization:authHeader } },
+        auth:{ persistSession:false, autoRefreshToken:false, detectSessionInUrl:false }
+      });
+
+      const { data:{ user }, error:userError } = await userClient.auth.getUser(token);
+      if (userError || !user) {
+        console.warn('generate-players auth rejected', userError?.message ?? 'missing user');
+        return json({ error:'Authenticated session is invalid or expired.' }, 401);
+      }
+
+      const { data:authorization, error:authorizationError } = await userClient
         .from('app_users')
         .select('role')
-        .eq('user_id', userId)
+        .eq('user_id', user.id)
         .maybeSingle();
 
       if (authorizationError) {
+        console.error('generate-players authorization lookup failed', authorizationError.message);
         return json({ error:'Unable to verify CenturyLeague authorization.' }, 500);
       }
       if (authorization?.role !== 'commissioner') {
         return json({ error:'Commissioner access is required.' }, 403);
       }
+
+      const supabaseAdmin = createClient(supabaseUrl, secretKey, {
+        auth:{ persistSession:false, autoRefreshToken:false, detectSessionInUrl:false }
+      });
 
       const body = await req.json() as GenerateRequest;
       if (!['preview','commit'].includes(body.action)) {
@@ -91,13 +129,14 @@ const authenticatedHandler = withSupabase(
         return json({ error:'count must be an integer from 1–2,000.' }, 400);
       }
 
-      const { data:leagueState, error:stateError } = await ctx.supabaseAdmin
+      const { data:leagueState, error:stateError } = await supabaseAdmin
         .from('league_state')
         .select('competition_category, league_status, current_season_id, active_generator_version_id, active_development_model_version')
         .eq('competition_category', competitionCategory)
         .single();
 
       if (stateError || !leagueState) {
+        console.error('generate-players league state failed', stateError?.message ?? 'missing state');
         return json({ error:'CenturyLeague league state is unavailable.' }, 500);
       }
       if (leagueState.league_status !== 'active') {
@@ -108,12 +147,12 @@ const authenticatedHandler = withSupabase(
       if (!seasonId) return json({ error:'No active Century season is configured.' }, 409);
 
       const [{ data:season, error:seasonError }, { data:version, error:versionError }] = await Promise.all([
-        ctx.supabaseAdmin
+        supabaseAdmin
           .from('seasons')
           .select('id, competition_category, season_number, season_year, season_month, starts_on, label, event_name')
           .eq('id', seasonId)
           .single(),
-        ctx.supabaseAdmin
+        supabaseAdmin
           .from('generator_versions')
           .select('id, version_name, model_version')
           .eq('id', leagueState.active_generator_version_id)
@@ -181,20 +220,20 @@ const authenticatedHandler = withSupabase(
         return json(responseBase);
       }
 
-      const { data:commitResult, error:commitError } = await ctx.supabaseAdmin.rpc(
+      const { data:commitResult, error:commitError } = await supabaseAdmin.rpc(
         'commit_generated_players',
         {
           p_generator_version_id:version.id,
           p_season_id:season.id,
           p_seed:seed,
           p_players:batch.players,
-          p_created_by:userId,
+          p_created_by:user.id,
           p_summary:batch.summary
         }
       );
 
       if (commitError) {
-        console.error('commit_generated_players failed', commitError);
+        console.error('commit_generated_players failed', commitError.message);
         return json({ error:'Generated players could not be committed.' }, 500);
       }
 
@@ -204,29 +243,10 @@ const authenticatedHandler = withSupabase(
         commitResult
       }, 201);
     } catch (error) {
-      console.error(error);
+      console.error('generate-players unexpected error', error);
       return json({
         error:error instanceof Error ? error.message : 'Unexpected generation error.'
       }, 400);
     }
-  }
-);
-
-export default {
-  async fetch(req: Request): Promise<Response> {
-    if (req.method === 'OPTIONS') {
-      return new Response('ok', { headers:corsHeaders });
-    }
-
-    const response = await authenticatedHandler(req);
-    const headers = new Headers(response.headers);
-    for (const [key, value] of Object.entries(corsHeaders)) {
-      headers.set(key, value);
-    }
-    return new Response(response.body, {
-      status:response.status,
-      statusText:response.statusText,
-      headers
-    });
   }
 };

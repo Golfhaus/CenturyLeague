@@ -1,6 +1,7 @@
 import { FormEvent, useEffect, useMemo, useState } from 'react';
 import type { Session } from '@supabase/supabase-js';
 import { supabase, supabaseConfigured } from './lib/supabase';
+import GeneratePlayers from './GeneratePlayers';
 
 type View =
   | 'dashboard'
@@ -262,6 +263,8 @@ function App() {
               </div>
             </section>
           </>
+        ) : view === 'generate' ? (
+          <GeneratePlayers />
         ) : (
           <section className="placeholder-panel">
             <span className="status-tag">Planned surface</span>

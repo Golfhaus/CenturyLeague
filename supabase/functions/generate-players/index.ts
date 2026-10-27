@@ -217,7 +217,10 @@ export default {
       };
 
       if (body.action === 'preview') {
-        return json(responseBase);
+        return json({
+          ...responseBase,
+          previewPlayers:batch.players.map(visiblePlayer)
+        });
       }
 
       const { data:commitResult, error:commitError } = await supabaseAdmin.rpc(

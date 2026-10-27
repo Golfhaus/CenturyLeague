@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const files = [
-  'random.ts','types.ts','config.ts','roleRatings.ts','generator.ts','body.ts','identity.ts',
+  'random.ts','types.ts','config.ts','roleRatings.ts','generator.ts','body.ts','nameData.ts','identity.ts',
   'geography.ts','calendar.ts','development.ts','poolLifecycle.ts','playerFactory.ts','batch.ts'
 ];
 

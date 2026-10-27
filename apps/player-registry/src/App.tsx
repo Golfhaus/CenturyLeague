@@ -14,7 +14,7 @@ const NAV_ITEMS: { id: View; label: string; description: string }[] = [
   { id: 'dashboard', label: 'Dashboard', description: 'Population and season overview' },
   { id: 'generate', label: 'Generate Players', description: 'Single player or population batch' },
   { id: 'database', label: 'Player Database', description: 'Search, filter, inspect and export' },
-  { id: 'development', label: 'Development', description: 'Season advancement and career changes' },
+  { id: 'development', label: 'Development', description: 'Monthly season advancement and career changes' },
   { id: 'retirements', label: 'Retired Players', description: 'Career archive' },
   { id: 'settings', label: 'Generator Settings', description: 'Universal trends for future players' }
 ];
@@ -22,7 +22,7 @@ const NAV_ITEMS: { id: View; label: string; description: string }[] = [
 const PLANNED_CARDS = [
   ['Generate One Player', 'Create one permanent player and inspect the complete generated profile.'],
   ['Generate Population', 'Create a large entry pool using the active universe model.'],
-  ['Advance Season', 'Apply development, aging and retirement as one recorded transaction.'],
+  ['Advance Season', 'Apply one month of development, aging and retirement as one recorded transaction.'],
   ['Export Population', 'Download current player data for spreadsheet analysis.']
 ];
 
@@ -88,6 +88,11 @@ function App() {
   const [authorization, setAuthorization] = useState<'checking' | 'authorized' | 'unauthorized'>('checking');
   const [role, setRole] = useState<string | null>(null);
   const [activeGenerator, setActiveGenerator] = useState<string>('Century Player Generator v1.0');
+  const [currentSeason, setCurrentSeason] = useState<{
+    seasonNumber: number;
+    label: string;
+    eventName: string | null;
+  } | null>(null);
 
   useEffect(() => {
     if (!supabase) {
@@ -124,9 +129,25 @@ function App() {
 
       const { data: leagueState } = await supabase
         .from('league_state')
-        .select('active_generator_version_id')
+        .select('active_generator_version_id, current_season_id')
         .eq('id', 1)
         .maybeSingle();
+
+      if (leagueState?.current_season_id) {
+        const { data: season } = await supabase
+          .from('seasons')
+          .select('season_number, label, event_name')
+          .eq('id', leagueState.current_season_id)
+          .maybeSingle();
+
+        if (season?.season_number && season.label) {
+          setCurrentSeason({
+            seasonNumber: season.season_number,
+            label: season.label,
+            eventName: season.event_name
+          });
+        }
+      }
 
       if (leagueState?.active_generator_version_id) {
         const { data: version } = await supabase
@@ -212,7 +233,15 @@ function App() {
               <article><span>Active Players</span><strong>0</strong><small>Registry ready</small></article>
               <article><span>Assigned to Teams</span><strong>0</strong><small>No teams loaded</small></article>
               <article><span>Retired Players</span><strong>0</strong><small>Historical archive</small></article>
-              <article><span>Current Season</span><strong>—</strong><small>Not initialized</small></article>
+              <article>
+                <span>Current Season</span>
+                <strong>{currentSeason ? `S${currentSeason.seasonNumber}` : '—'}</strong>
+                <small>
+                  {currentSeason
+                    ? `${currentSeason.eventName ?? 'Century season'} · ${currentSeason.label.replace(/^Season \\d+ — /, '')}`
+                    : 'Not initialized'}
+                </small>
+              </article>
             </section>
 
             <section>

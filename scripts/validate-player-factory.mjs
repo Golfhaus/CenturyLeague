@@ -7,18 +7,18 @@ import {
 
 const batch = generatePlayerBatch({
   seed:'founding-pool-calibration-v1',
-  menCount:450,
-  womenCount:450,
+  competitionCategory:'men',
+  count:900,
   seasonStart:INAUGURAL_SEASON_START,
   entryType:'founding_pool',
   entryClassLabel:'Founding Player Pool'
 });
 
 assert.equal(batch.players.length, 900);
-assert.equal(batch.summary.menCount, 450);
-assert.equal(batch.summary.womenCount, 450);
+assert.equal(batch.summary.competitionCategory, 'men');
 
 for (const player of batch.players) {
+  assert.equal(player.competitionCategory, 'men');
   assert.equal(
     integerAgeOnDate(player.dateOfBirth, INAUGURAL_SEASON_START),
     player.metadata.entryAge
@@ -37,18 +37,14 @@ const ageCounts = batch.summary.entryAges;
 const ages20to24 = [20,21,22,23,24].reduce((sum, age) => sum + (ageCounts[String(age)] ?? 0), 0);
 assert.ok(ages20to24 / 900 >= 0.90);
 
-const men = batch.players.filter((p) => p.competitionCategory === 'men');
-const women = batch.players.filter((p) => p.competitionCategory === 'women');
 const avg = (items, key) => items.reduce((sum, item) => sum + item[key], 0) / items.length;
 
 const summary = {
   ...batch.summary,
   internationalPct,
   ages20to24Pct: ages20to24 / 900,
-  menAverageHeightCm: avg(men, 'heightCm'),
-  womenAverageHeightCm: avg(women, 'heightCm'),
-  menAverageWeightKg: avg(men, 'weightKg'),
-  womenAverageWeightKg: avg(women, 'weightKg'),
+  menAverageHeightCm: avg(batch.players, 'heightCm'),
+  menAverageWeightKg: avg(batch.players, 'weightKg'),
   samplePlayers: batch.players.slice(0, 5).map((p) => ({
     name:`${p.firstName} ${p.lastName}`,
     category:p.competitionCategory,
@@ -60,4 +56,4 @@ const summary = {
 };
 
 console.log(JSON.stringify(summary, null, 2));
-console.log('\nPermanent player factory validation passed.');
+console.log('\nMen’s founding-pool player factory validation passed.');

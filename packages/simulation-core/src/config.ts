@@ -1,6 +1,8 @@
 import type { ArchetypeName, AttributeKey, Role, TalentClass } from './types.js';
 
 export const GENERATOR_MODEL_VERSION = '1.0.0';
+export const DEVELOPMENT_MODEL_VERSION = '1.1.0';
+export const SEASONS_PER_YEAR = 12;
 
 export const ENTRY_AGE_DISTRIBUTION = [
   { value: 16, weight: 0.1 },

@@ -19,3 +19,10 @@ The commissioner may configure universe-wide generation and development rules, b
 ## Status
 
 Initial architecture and Player Generator v1.0 specification are being implemented.
+
+
+## Season and player-pool cadence
+
+Century runs one season per calendar month, beginning with the November 2026 Inaugural Tournament.
+
+Player entry windows occur after the March, June, September, and December seasons. Unsigned-player attrition is evaluated at those same quarterly checkpoints using the versioned player-pool lifecycle model. The inaugural population is treated as the Founding Player Pool rather than a normal entry class.

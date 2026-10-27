@@ -7,7 +7,12 @@
     "packages/*"
   ],
   "scripts": {
-    "typecheck": "tsc -p packages/simulation-core/tsconfig.json --noEmit"
+    "typecheck": "tsc -p packages/simulation-core/tsconfig.json --noEmit",
+    "build:core": "tsc -p packages/simulation-core/tsconfig.json",
+    "validate:generator": "npm run build:core && node scripts/validate-generator.mjs"
+  },
+  "devDependencies": {
+    "typescript": "5.8.3"
   },
   "engines": {
     "node": ">=22"

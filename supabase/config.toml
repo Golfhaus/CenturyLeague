@@ -1,0 +1,2 @@
+[functions.generate-players]
+verify_jwt = false

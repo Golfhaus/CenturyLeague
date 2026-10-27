@@ -19,4 +19,5 @@ jobs:
       - run: npm run validate:lifecycle
       - run: npm run validate:pool
       - run: npm run validate:players
+      - run: npm run validate:edge-mirror
       - run: npm run build:registry

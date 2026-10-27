@@ -1,3 +1,4 @@
+import { normalizeFullName } from './identity.ts';
 import { generatePermanentPlayer, type GeneratedPermanentPlayer, type PlayerEntryType } from './playerFactory.ts';
 import type { CompetitionCategory } from './types.ts';
 
@@ -8,6 +9,7 @@ export interface PlayerBatchInput {
   seasonStart: string;
   entryType: PlayerEntryType;
   entryClassLabel: string;
+  reservedFullNames?: readonly string[];
 }
 
 export interface PlayerBatchSummary {
@@ -19,7 +21,11 @@ export interface PlayerBatchSummary {
   archetypes: Record<string, number>;
   entryAges: Record<string, number>;
   birthplaceTiers: Record<string, number>;
+  preferredSides: Record<string, number>;
   internationalCount: number;
+  uniqueFirstNames: number;
+  uniqueLastNames: number;
+  nameCollisionRerolls: number;
 }
 
 export interface GeneratedPlayerBatch {
@@ -42,12 +48,16 @@ function addCount(record: Record<string, number>, key: string): void {
 
 export function summarizePlayerBatch(
   players: readonly GeneratedPermanentPlayer[],
-  competitionCategory: CompetitionCategory
+  competitionCategory: CompetitionCategory,
+  nameCollisionRerolls = 0
 ): PlayerBatchSummary {
   const talentClasses: Record<string, number> = {};
   const archetypes: Record<string, number> = {};
   const entryAges: Record<string, number> = {};
   const birthplaceTiers: Record<string, number> = {};
+  const preferredSides: Record<string, number> = {};
+  const firstNames = new Set<string>();
+  const lastNames = new Set<string>();
   let totalOverall = 0;
   let totalAge = 0;
   let internationalCount = 0;
@@ -62,6 +72,9 @@ export function summarizePlayerBatch(
     addCount(archetypes, player.primaryArchetype);
     addCount(entryAges, String(player.metadata.entryAge));
     addCount(birthplaceTiers, player.metadata.geoGenerationTier);
+    addCount(preferredSides, player.preferredSide);
+    firstNames.add(player.firstName.toLocaleLowerCase('en-US'));
+    lastNames.add(player.lastName.toLocaleLowerCase('en-US'));
     if (player.birthplaceCountryCode !== 'US') internationalCount += 1;
   }
 
@@ -74,7 +87,11 @@ export function summarizePlayerBatch(
     archetypes,
     entryAges,
     birthplaceTiers,
-    internationalCount
+    preferredSides,
+    internationalCount,
+    uniqueFirstNames:firstNames.size,
+    uniqueLastNames:lastNames.size,
+    nameCollisionRerolls
   };
 }
 
@@ -83,21 +100,41 @@ export function generatePlayerBatch(input: PlayerBatchInput): GeneratedPlayerBat
   if (count > 2000) throw new Error('A single batch may not exceed 2,000 players.');
 
   const players: GeneratedPermanentPlayer[] = [];
+  const reservedNames = new Set(input.reservedFullNames ?? []);
+  let nameCollisionRerolls = 0;
 
   for (let i = 0; i < count; i += 1) {
-    players.push(generatePermanentPlayer({
-      seed:`${input.seed}:${input.competitionCategory}:${i}`,
-      competitionCategory:input.competitionCategory,
-      seasonStart:input.seasonStart,
-      entryType:input.entryType,
-      entryClassLabel:input.entryClassLabel
-    }));
+    const playerSeed = `${input.seed}:${input.competitionCategory}:${i}`;
+    let accepted: GeneratedPermanentPlayer | null = null;
+
+    for (let nameAttempt = 0; nameAttempt < 1000; nameAttempt += 1) {
+      const candidate = generatePermanentPlayer({
+        seed:playerSeed,
+        competitionCategory:input.competitionCategory,
+        seasonStart:input.seasonStart,
+        entryType:input.entryType,
+        entryClassLabel:input.entryClassLabel,
+        nameAttempt
+      });
+      const nameKey = normalizeFullName(candidate.firstName, candidate.lastName);
+      if (!reservedNames.has(nameKey)) {
+        reservedNames.add(nameKey);
+        accepted = candidate;
+        break;
+      }
+      nameCollisionRerolls += 1;
+    }
+
+    if (!accepted) {
+      throw new Error('Unable to generate a unique active player name after 1,000 attempts.');
+    }
+    players.push(accepted);
   }
 
   return {
     seed:input.seed,
     competitionCategory:input.competitionCategory,
     players,
-    summary:summarizePlayerBatch(players, input.competitionCategory)
+    summary:summarizePlayerBatch(players, input.competitionCategory, nameCollisionRerolls)
   };
 }

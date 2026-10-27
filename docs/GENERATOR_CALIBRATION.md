@@ -39,3 +39,17 @@ A representative age-22 player with roughly average development traits:
 - experienced sharply increasing retirement probability in the late 30s.
 
 This is the intended qualitative behavior for the initial lifecycle model.
+
+
+## Monthly lifecycle calibration
+
+Beginning with development model v1.1, Century seasons occur monthly.
+
+The original development curves remain expressed as annual expected movement. For a one-month season:
+
+- expected development/decline is scaled to 1/12 of the annual amount,
+- random development standard deviation is scaled by sqrt(1/12),
+- the 3% annual breakout chance is converted to its equivalent one-month hazard,
+- retirement probability is first calculated on the annual model and then converted to its equivalent one-month hazard.
+
+This avoids applying an annual aging event twelve times per calendar year while still allowing incremental change after every season.

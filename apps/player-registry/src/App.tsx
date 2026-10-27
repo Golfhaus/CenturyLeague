@@ -137,8 +137,8 @@ function App() {
 
       const { data: leagueState } = await supabase
         .from('league_state')
-        .select('active_generator_version_id, current_season_id')
-        .eq('id', 1)
+        .select('active_generator_version_id, current_season_id, league_status')
+        .eq('competition_category', 'men')
         .maybeSingle();
 
       if (leagueState?.current_season_id) {
@@ -158,10 +158,10 @@ function App() {
       }
 
       const [activeResult, assignedResult, freeAgentResult, retiredResult] = await Promise.all([
-        supabase.from('players').select('id', { count:'exact', head:true }).eq('status', 'active'),
-        supabase.from('players').select('id', { count:'exact', head:true }).eq('status', 'active').not('current_team_id', 'is', null),
-        supabase.from('players').select('id', { count:'exact', head:true }).eq('status', 'active').is('current_team_id', null),
-        supabase.from('players').select('id', { count:'exact', head:true }).eq('status', 'retired')
+        supabase.from('players').select('id', { count:'exact', head:true }).eq('competition_category', 'men').eq('status', 'active'),
+        supabase.from('players').select('id', { count:'exact', head:true }).eq('competition_category', 'men').eq('status', 'active').not('current_team_id', 'is', null),
+        supabase.from('players').select('id', { count:'exact', head:true }).eq('competition_category', 'men').eq('status', 'active').is('current_team_id', null),
+        supabase.from('players').select('id', { count:'exact', head:true }).eq('competition_category', 'men').eq('status', 'retired')
       ]);
 
       setMetrics({
@@ -239,7 +239,7 @@ function App() {
       <main className="main-content">
         <header className="page-header">
           <div>
-            <p className="eyebrow">Registry v0.1</p>
+            <p className="eyebrow">Men’s League · Registry v0.1</p>
             <h2>{selected.label}</h2>
             <p>{selected.description}</p>
           </div>

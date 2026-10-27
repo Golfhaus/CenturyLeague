@@ -168,3 +168,20 @@ Leaving the player pool is distinct from retirement.
 Player generation occurs one league at a time. A generation batch cannot mix men's and women's players, and a player may only be committed against a season belonging to the same competition category.
 
 For launch, the Founding Player Pool is men's-only. The working target is 900 men for 18 teams with 35-player rosters, leaving approximately 270 initial free agents. The women's founding pool will be generated later when that league is initialized and will use its own season calendar and population targets.
+
+
+## Name generation and active-name uniqueness
+
+Century player names are generated from broad, shared name pools rather than being inferred from birthplace, ethnicity, or other personal characteristics.
+
+The inaugural generator uses expanded first-name and surname universes designed to support a large active population without excessive repetition.
+
+Full-name uniqueness is enforced globally across all active Century players:
+
+- no two active players may share the same first-name/last-name combination, regardless of competition category,
+- matching is case-insensitive,
+- if a generated name is already active, only the name is deterministically rerolled; DOB, body, ratings, archetypes, development traits, and all other player properties remain unchanged,
+- retired and exited-pool players release the name, so a future entrant may legitimately share a historical player's name,
+- preview-to-commit checks lock the active-name population snapshot; if the active population changes after preview, the commissioner must generate a fresh preview rather than silently receiving renamed players.
+
+The database also has a partial unique index on active full names as a final enforcement layer.

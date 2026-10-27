@@ -377,7 +377,7 @@ export type Database = {
         Row: {
           acceleration: number
           aerial_marking: number
-          age: number
+          age_years: number
           agility: number
           anticipation: number
           attacking_rating: number
@@ -417,7 +417,7 @@ export type Database = {
         Insert: {
           acceleration: number
           aerial_marking: number
-          age: number
+          age_years: number
           agility: number
           anticipation: number
           attacking_rating: number
@@ -457,7 +457,7 @@ export type Database = {
         Update: {
           acceleration?: number
           aerial_marking?: number
-          age?: number
+          age_years?: number
           agility?: number
           anticipation?: number
           attacking_rating?: number
@@ -695,7 +695,7 @@ export type Database = {
           id: string
           player_id: string
           reason: string
-          retirement_age: number
+          retirement_age_years: number
           season_id: string
         }
         Insert: {
@@ -705,7 +705,7 @@ export type Database = {
           id?: string
           player_id: string
           reason?: string
-          retirement_age: number
+          retirement_age_years: number
           season_id: string
         }
         Update: {
@@ -715,7 +715,7 @@ export type Database = {
           id?: string
           player_id?: string
           reason?: string
-          retirement_age?: number
+          retirement_age_years?: number
           season_id?: string
         }
         Relationships: [
@@ -752,25 +752,40 @@ export type Database = {
       seasons: {
         Row: {
           created_at: string
+          ends_on: string | null
+          event_name: string | null
           id: string
           label: string
+          season_month: number | null
+          season_number: number | null
           season_year: number
+          starts_on: string | null
           status: string
           updated_at: string
         }
         Insert: {
           created_at?: string
+          ends_on?: string | null
+          event_name?: string | null
           id?: string
           label: string
+          season_month?: number | null
+          season_number?: number | null
           season_year: number
+          starts_on?: string | null
           status?: string
           updated_at?: string
         }
         Update: {
           created_at?: string
+          ends_on?: string | null
+          event_name?: string | null
           id?: string
           label?: string
+          season_month?: number | null
+          season_number?: number | null
           season_year?: number
+          starts_on?: string | null
           status?: string
           updated_at?: string
         }

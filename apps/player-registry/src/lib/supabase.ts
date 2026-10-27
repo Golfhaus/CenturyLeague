@@ -1,3 +1,4 @@
+import type { CenturySupabaseClient } from '@century-league/database';
 import { createCenturySupabaseClient } from '@century-league/database';
 
 const url = import.meta.env.VITE_SUPABASE_URL as string | undefined;
@@ -5,6 +6,6 @@ const publishableKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY as string |
 
 export const supabaseConfigured = Boolean(url && publishableKey);
 
-export const supabase = supabaseConfigured
+export const supabase: CenturySupabaseClient | null = supabaseConfigured
   ? createCenturySupabaseClient(url!, publishableKey!)
   : null;

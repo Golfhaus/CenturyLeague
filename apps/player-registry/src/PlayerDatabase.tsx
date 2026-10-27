@@ -35,7 +35,7 @@ export default function PlayerDatabase() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [search, setSearch] = useState('');
-  const [category, setCategory] = useState('all');
+  const [category, setCategory] = useState('men');
   const [status, setStatus] = useState('active');
   const [minOverall, setMinOverall] = useState('');
 

@@ -8,8 +8,8 @@ import {
 
 type GenerateRequest = {
   action: 'preview' | 'commit';
-  menCount: number;
-  womenCount: number;
+  competitionCategory: 'men' | 'women';
+  count: number;
   seed?: string;
   entryType?: 'founding_pool' | 'entry_window';
   entryClassLabel?: string;
@@ -82,24 +82,26 @@ const authenticatedHandler = withSupabase(
         return json({ error:'action must be preview or commit.' }, 400);
       }
 
-      const menCount = Number(body.menCount);
-      const womenCount = Number(body.womenCount);
-      if (!Number.isInteger(menCount) || !Number.isInteger(womenCount) || menCount < 0 || womenCount < 0) {
-        return json({ error:'menCount and womenCount must be nonnegative integers.' }, 400);
+      const competitionCategory = body.competitionCategory;
+      const count = Number(body.count);
+      if (!['men','women'].includes(competitionCategory)) {
+        return json({ error:'competitionCategory must be men or women.' }, 400);
       }
-      const total = menCount + womenCount;
-      if (total < 1 || total > 2000) {
-        return json({ error:'A generation request must contain 1–2,000 players.' }, 400);
+      if (!Number.isInteger(count) || count < 1 || count > 2000) {
+        return json({ error:'count must be an integer from 1–2,000.' }, 400);
       }
 
       const { data:leagueState, error:stateError } = await ctx.supabaseAdmin
         .from('league_state')
-        .select('current_season_id, active_generator_version_id, active_development_model_version')
-        .eq('id', 1)
+        .select('competition_category, league_status, current_season_id, active_generator_version_id, active_development_model_version')
+        .eq('competition_category', competitionCategory)
         .single();
 
       if (stateError || !leagueState) {
-        return json({ error:'CenturyLeague season state is unavailable.' }, 500);
+        return json({ error:'CenturyLeague league state is unavailable.' }, 500);
+      }
+      if (leagueState.league_status !== 'active') {
+        return json({ error:`${competitionCategory} league is not initialized for player generation.` }, 409);
       }
 
       const seasonId = body.seasonId ?? leagueState.current_season_id;
@@ -108,7 +110,7 @@ const authenticatedHandler = withSupabase(
       const [{ data:season, error:seasonError }, { data:version, error:versionError }] = await Promise.all([
         ctx.supabaseAdmin
           .from('seasons')
-          .select('id, season_number, season_year, season_month, starts_on, label, event_name')
+          .select('id, competition_category, season_number, season_year, season_month, starts_on, label, event_name')
           .eq('id', seasonId)
           .single(),
         ctx.supabaseAdmin
@@ -120,6 +122,9 @@ const authenticatedHandler = withSupabase(
 
       if (seasonError || !season?.starts_on) {
         return json({ error:'Requested eligibility season is unavailable.' }, 409);
+      }
+      if (season.competition_category !== competitionCategory) {
+        return json({ error:'Eligibility season belongs to a different league.' }, 409);
       }
       if (versionError || !version) {
         return json({ error:'Active generator version is unavailable.' }, 409);
@@ -146,8 +151,8 @@ const authenticatedHandler = withSupabase(
 
       const batch = generatePlayerBatch({
         seed,
-        menCount,
-        womenCount,
+        competitionCategory,
+        count,
         seasonStart:season.starts_on,
         entryType,
         entryClassLabel
@@ -156,6 +161,7 @@ const authenticatedHandler = withSupabase(
       const responseBase = {
         seed,
         action:body.action,
+        competitionCategory,
         generatorVersion:version.version_name,
         generatorModelVersion:GENERATOR_MODEL_VERSION,
         developmentModelVersion:DEVELOPMENT_MODEL_VERSION,

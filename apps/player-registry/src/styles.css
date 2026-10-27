@@ -524,3 +524,22 @@ h1, h2, h3, h4 { margin-top: 0; }
 @media (max-width: 800px) {
   .count-grid.single-league { grid-template-columns: 1fr; }
 }
+
+
+.preview-tools {
+  display: grid;
+  gap: 10px;
+  justify-items: end;
+}
+.preview-tools .primary-button {
+  width: fit-content;
+}
+
+@media (max-width: 800px) {
+  .preview-tools {
+    justify-items: stretch;
+  }
+  .preview-tools .primary-button {
+    width: 100%;
+  }
+}

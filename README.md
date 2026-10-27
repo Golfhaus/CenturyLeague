@@ -26,3 +26,10 @@ Initial architecture and Player Generator v1.0 specification are being implement
 Century runs one season per calendar month, beginning with the November 2026 Inaugural Tournament.
 
 Player entry windows occur after the March, June, September, and December seasons. Unsigned-player attrition is evaluated at those same quarterly checkpoints using the versioned player-pool lifecycle model. The inaugural population is treated as the Founding Player Pool rather than a normal entry class.
+
+
+## Independent men's and women's leagues
+
+The men's and women's Century leagues are separate competition universes. They maintain independent season numbers, current-season state, player populations, entry windows, development runs, roster pools, and founding classes.
+
+The men's league launches first with Season 1 in November 2026 and a planned 900-player Founding Player Pool. The women's league is currently marked planned and has no initialized season or player population; it will be started later with its own Season 1 and founding pool.

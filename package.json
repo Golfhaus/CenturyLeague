@@ -1,0 +1,15 @@
+{
+  "name": "century-league",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "typecheck": "tsc -p packages/simulation-core/tsconfig.json --noEmit"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

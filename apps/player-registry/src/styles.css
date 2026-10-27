@@ -196,3 +196,211 @@ h1, h2, h3, h4 { margin-top: 0; }
   .metric-grid, .action-grid { grid-template-columns: 1fr; }
   .model-chip { min-width: 0; }
 }
+
+
+.generate-stack { display: grid; gap: 20px; }
+.generator-panel,
+.preview-panel {
+  background: #111c27;
+  border: 1px solid #223649;
+  border-radius: 14px;
+  padding: 24px;
+}
+.preset-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin: 20px 0;
+}
+.preset-row button {
+  background: #1b2c3c;
+  color: #cde1f2;
+  border: 1px solid #30485d;
+  border-radius: 9px;
+  padding: 9px 12px;
+}
+.preset-row span {
+  color: #7f93a6;
+  font-size: 12px;
+}
+.count-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 220px)) minmax(120px, 160px);
+  gap: 14px;
+  align-items: end;
+}
+.count-grid label {
+  display: grid;
+  gap: 7px;
+  color: #b8c7d3;
+  font-weight: 700;
+}
+.count-grid input {
+  width: 100%;
+  background: #0b1118;
+  border: 1px solid #334a60;
+  color: #edf5fb;
+  border-radius: 9px;
+  padding: 11px 12px;
+}
+.total-box {
+  background: #0d1721;
+  border: 1px solid #2b4053;
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+.total-box span,
+.total-box strong { display: block; }
+.total-box span { color: #7f93a6; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
+.total-box strong { font-size: 25px; margin-top: 3px; }
+.generator-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.generator-actions p {
+  margin: 0;
+  color: #7f93a6;
+  font-size: 12px;
+}
+.primary-button,
+.dangerous-button {
+  border-radius: 10px;
+  padding: 11px 16px;
+  font-weight: 800;
+}
+.primary-button {
+  background: #d7ecff;
+  color: #0a1722;
+}
+.dangerous-button {
+  background: #b8d9f4;
+  color: #0c1a26;
+}
+.primary-button:disabled,
+.dangerous-button:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+.preview-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: start;
+  margin-bottom: 20px;
+}
+.preview-header h3 { margin-bottom: 5px; }
+.preview-header p:last-child { margin: 0; color: #8fa1b2; }
+.seed-chip {
+  background: #0c1620;
+  border: 1px solid #2a4052;
+  border-radius: 10px;
+  padding: 10px 12px;
+  max-width: 420px;
+}
+.seed-chip span,
+.seed-chip code { display: block; }
+.seed-chip span {
+  color: #71879a;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-bottom: 4px;
+}
+.seed-chip code {
+  color: #b7d8f2;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+}
+.metric-grid.compact { margin-bottom: 22px; }
+.sample-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.player-card {
+  border: 1px solid #263b4e;
+  border-radius: 12px;
+  background: #0e1822;
+  padding: 18px;
+}
+.player-card-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 12px;
+}
+.player-card-title h4 { margin-bottom: 4px; }
+.player-card-title p {
+  margin: 0;
+  color: #8398aa;
+  font-size: 12px;
+}
+.player-card-title > strong {
+  font-size: 26px;
+  color: #d7ecff;
+}
+.player-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 16px;
+  margin: 18px 0 0;
+}
+.player-meta div { min-width: 0; }
+.player-meta dt {
+  color: #6f8497;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+}
+.player-meta dd {
+  margin: 2px 0 0;
+  color: #d8e3ec;
+  font-size: 13px;
+  text-transform: capitalize;
+}
+.ratings-grid {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid #253747;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px 14px;
+}
+.ratings-grid div {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.ratings-grid span { color: #8ba0b2; font-size: 12px; }
+.ratings-grid strong { color: #eef6fc; }
+.commit-box {
+  margin-top: 22px;
+  border-top: 1px solid #26394a;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+}
+.commit-box h4 { margin-bottom: 5px; }
+.commit-box p { margin: 0; color: #8499ab; max-width: 720px; line-height: 1.5; }
+.notice.success {
+  margin-top: 18px;
+  border-color: #345f4a;
+  background: #10271d;
+  color: #b5e5c9;
+}
+
+@media (max-width: 800px) {
+  .count-grid { grid-template-columns: 1fr; }
+  .preview-header, .commit-box { display: grid; }
+  .sample-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 520px) {
+  .player-meta, .ratings-grid { grid-template-columns: 1fr; }
+}

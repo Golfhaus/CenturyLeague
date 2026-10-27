@@ -12,7 +12,8 @@
     "build:registry": "npm run build:core && npm run build --workspace=@century-league/player-registry",
     "validate:generator": "npm run build:core && node scripts/validate-generator.mjs",
     "validate:lifecycle": "npm run build:core && node scripts/validate-monthly-lifecycle.mjs",
-    "validate:pool": "npm run build:core && node scripts/validate-pool-lifecycle.mjs"
+    "validate:pool": "npm run build:core && node scripts/validate-pool-lifecycle.mjs",
+    "validate:players": "npm run build:core && node scripts/validate-player-factory.mjs"
   },
   "devDependencies": {
     "typescript": "7.0.2"

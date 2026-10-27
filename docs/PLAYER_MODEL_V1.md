@@ -161,3 +161,10 @@ New ordinary entry classes are generated after the March, June, September, and D
 Unsigned players are evaluated for leaving the active player pool at those same quarterly checkpoints. Exit probability depends on age, time unsigned, market percentile, recent development trend, prior roster history, release grace, Career Persistence, and a mild free-agent-pool pressure adjustment.
 
 Leaving the player pool is distinct from retirement.
+
+
+## Competition-category independence
+
+Player generation occurs one league at a time. A generation batch cannot mix men's and women's players, and a player may only be committed against a season belonging to the same competition category.
+
+For launch, the Founding Player Pool is men's-only. The working target is 900 men for 18 teams with 35-player rosters, leaving approximately 270 initial free agents. The women's founding pool will be generated later when that league is initialized and will use its own season calendar and population targets.

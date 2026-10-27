@@ -26,6 +26,20 @@ function addDays(date: Date, days: number): Date {
   return new Date(date.getTime() + days * DAY_MS);
 }
 
+export function integerAgeOnDate(dateOfBirth: string, referenceDate: string): number {
+  const birth = parseDateOnly(dateOfBirth);
+  const reference = parseDateOnly(referenceDate);
+  let age = reference.getUTCFullYear() - birth.getUTCFullYear();
+  const beforeBirthday =
+    reference.getUTCMonth() < birth.getUTCMonth()
+    || (
+      reference.getUTCMonth() === birth.getUTCMonth()
+      && reference.getUTCDate() < birth.getUTCDate()
+    );
+  if (beforeBirthday) age -= 1;
+  return age;
+}
+
 export function ageYearsOnDate(dateOfBirth: string, referenceDate: string): number {
   const birth = parseDateOnly(dateOfBirth);
   const reference = parseDateOnly(referenceDate);

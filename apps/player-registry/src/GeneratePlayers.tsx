@@ -33,6 +33,7 @@ type GenerationResponse = {
   generatorVersion: string;
   generatorModelVersion: string;
   developmentModelVersion: string;
+  activeNameSnapshotHash: string;
   season: {
     id: string;
     number: number;
@@ -122,7 +123,11 @@ export default function GeneratePlayers() {
     setError('');
   }
 
-  async function invoke(action: 'preview' | 'commit', seed?: string) {
+  async function invoke(
+    action: 'preview' | 'commit',
+    seed?: string,
+    activeNameSnapshotHash?: string
+  ) {
     if (!supabase) return;
     setBusy(action);
     setError('');
@@ -136,7 +141,8 @@ export default function GeneratePlayers() {
           count:total,
           seed,
           entryType:'founding_pool',
-          entryClassLabel:'Founding Player Pool'
+          entryClassLabel:'Founding Player Pool',
+          activeNameSnapshotHash
         }
       }
     );
@@ -174,7 +180,7 @@ export default function GeneratePlayers() {
 
   async function commitPlayers() {
     if (!preview || !previewStillMatches) return;
-    const result = await invoke('commit', preview.seed);
+    const result = await invoke('commit', preview.seed, preview.activeNameSnapshotHash);
     if (result) setCommitted(result);
   }
 

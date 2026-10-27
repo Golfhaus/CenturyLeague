@@ -113,7 +113,21 @@ Ratings are stored internally as continuous values, for example 13.4621, and dis
 
 This permits gradual development across multiple seasons without forcing every change to appear as an integer point immediately.
 
-## Development
+## Season cadence and development
+
+Century has twelve seasons per calendar year. Each season corresponds to one calendar month.
+
+- Season 1: November 2026
+- Event: Inaugural Tournament
+- Season 2: December 2026
+- Season 3: January 2027
+- and so on
+
+Player entry age is measured at the start of the season for which the player is generated. Date of birth is generated consistently with that age.
+
+Lifecycle processing runs after every monthly season. The underlying development model remains calibrated in annual terms, but expected rating movement is multiplied by 1/12 for a normal one-month advancement. Random development variance is scaled by the square root of 1/12 so twelve monthly checks have approximately the intended annual variance. Rare breakout and retirement probabilities are converted from annual probabilities to equivalent monthly hazards rather than simply being applied twelve times.
+
+Ratings stored for a season are the ratings used during that month. At the end of the month, development and retirement processing produces the state for the following season.
 
 Attributes have separate peak families.
 
@@ -125,6 +139,8 @@ Attributes have separate peak families.
 Each player receives individualized peak offsets, development potential, development speed, decline rate, and longevity.
 
 Potential is probabilistic rather than a fixed maximum rating.
+
+Development model v1.1 uses monthly advancement. Twelve one-month advancement periods are designed to approximate the long-run behavior originally specified for one annual advancement, while allowing smaller visible changes and fewer retirements in any single season.
 
 ## Role ratings
 

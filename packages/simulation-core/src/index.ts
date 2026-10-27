@@ -2,6 +2,7 @@ export * from './calendar.js';
 export * from './config.js';
 export * from './development.js';
 export * from './generator.js';
+export * from './poolLifecycle.js';
 export * from './random.js';
 export * from './roleRatings.js';
 export * from './types.js';

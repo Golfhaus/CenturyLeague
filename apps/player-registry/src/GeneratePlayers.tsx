@@ -53,6 +53,7 @@ type GenerationResponse = {
     internationalCount: number;
   };
   samplePlayers: SamplePlayer[];
+  previewPlayers?: SamplePlayer[];
   committed?: boolean;
   commitResult?: {
     batchId?: string;
@@ -90,6 +91,11 @@ const ATTRIBUTE_LABELS: Record<string,string> = {
 
 function archetypeLabel(value: string) {
   return value.split('_').map((part) => part[0].toUpperCase() + part.slice(1)).join(' ');
+}
+
+function csvCell(value: unknown): string {
+  const text = value == null ? '' : String(value);
+  return '"' + text.replaceAll('"', '""') + '"';
 }
 
 export default function GeneratePlayers() {
@@ -172,6 +178,54 @@ export default function GeneratePlayers() {
     if (result) setCommitted(result);
   }
 
+  function downloadPreviewCsv() {
+    if (!preview?.previewPlayers?.length) return;
+
+    const ratingKeys = Object.keys(ATTRIBUTE_LABELS);
+    const headers = [
+      'First Name','Last Name','League','Date of Birth','Age on Season Start',
+      'Birthplace City','Birthplace Region','Birthplace Country',
+      'Height (cm)','Weight (kg)','Preferred Side','Primary Archetype','Secondary Archetype',
+      'Overall','Defensive','Central','Attacking','Best Role',
+      ...ratingKeys.map((key) => ATTRIBUTE_LABELS[key])
+    ];
+
+    const rows = preview.previewPlayers.map((player) => [
+      player.firstName,
+      player.lastName,
+      player.competitionCategory,
+      player.dateOfBirth,
+      player.ageYears.toFixed(4),
+      player.birthplaceCity,
+      player.birthplaceRegionCode ?? '',
+      player.birthplaceCountryName,
+      player.heightCm.toFixed(1),
+      player.weightKg.toFixed(1),
+      player.preferredSide,
+      archetypeLabel(player.primaryArchetype),
+      player.secondaryArchetype ? archetypeLabel(player.secondaryArchetype) : '',
+      player.roleRatings.overall.toFixed(2),
+      player.roleRatings.defensive.toFixed(2),
+      player.roleRatings.central.toFixed(2),
+      player.roleRatings.attacking.toFixed(2),
+      player.roleRatings.bestRole,
+      ...ratingKeys.map((key) => player.ratings[key])
+    ]);
+
+    const csv = [
+      headers.map(csvCell).join(','),
+      ...rows.map((row) => row.map(csvCell).join(','))
+    ].join('\n');
+
+    const blob = new Blob([csv], { type:'text/csv;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement('a');
+    anchor.href = url;
+    anchor.download = `century-preview-${preview.summary.generatedCount}-men-${preview.seed.slice(0, 8)}.csv`;
+    anchor.click();
+    URL.revokeObjectURL(url);
+  }
+
   return (
     <div className="generate-stack">
       <section className="generator-panel">
@@ -244,9 +298,18 @@ export default function GeneratePlayers() {
                 {preview.season.eventName ? ` · ${preview.season.eventName}` : ''}
               </p>
             </div>
-            <div className="seed-chip">
-              <span>Reproducible seed</span>
-              <code>{preview.seed}</code>
+            <div className="preview-tools">
+              <button
+                className="primary-button"
+                onClick={downloadPreviewCsv}
+                disabled={!preview.previewPlayers?.length}
+              >
+                Download full preview CSV
+              </button>
+              <div className="seed-chip">
+                <span>Reproducible seed</span>
+                <code>{preview.seed}</code>
+              </div>
             </div>
           </div>
 

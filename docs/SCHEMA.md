@@ -8,7 +8,9 @@ Application authorization record tied to Supabase Auth.
 
 ### seasons
 
-Persistent Century season records.
+Persistent monthly Century season records.
+
+Each row contains a global season number, calendar year/month, start/end dates, display label, and optional event name. The inaugural record is Season 1 — November 2026, with event name Inaugural Tournament. There are twelve normal seasons per calendar year.
 
 ### generator_versions
 
@@ -44,7 +46,7 @@ Continuous current values for all 25 abilities plus defensive, central, attackin
 
 ### player_season_snapshots
 
-Immutable season-by-season historical copy of ratings and roster state.
+Immutable month-by-month historical copy of ratings and roster state. The stored `age_years` value is fractional so players age correctly across monthly seasons.
 
 ### player_team_history
 
@@ -56,7 +58,7 @@ Birthplace and future representative-team eligibility records.
 
 ### development_runs
 
-One record for each league-wide offseason advancement transaction.
+One record for each league-wide post-season advancement transaction. Under the normal cadence this occurs once per month, from one season record to the next.
 
 ### retirements
 
@@ -95,4 +97,4 @@ Ratings may be changed only by privileged generation and lifecycle operations.
 
 ## Historical rule
 
-Season advancement never destroys the prior state. A snapshot is created for each season so a player's ratings at any previous age remain recoverable.
+Season advancement never destroys the prior state. Ratings in a season snapshot are the ratings used during that calendar month. After the season ends, lifecycle processing creates the ratings for the next monthly season, so a player's career can be reconstructed month by month.

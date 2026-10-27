@@ -136,7 +136,7 @@ Attributes have separate peak families.
 - Technical peak: approximately age 30
 - Mental peak: approximately age 32
 
-Each player receives individualized peak offsets, development potential, development speed, decline rate, and longevity.
+Each player receives individualized peak offsets, development potential, development speed, decline rate, longevity, retirement tendency, and a hidden Career Persistence rating used only for unsigned-player lifecycle decisions.
 
 Potential is probabilistic rather than a fixed maximum rating.
 
@@ -152,3 +152,12 @@ Derived ratings:
 - Overall
 
 Overall is based primarily on the player's best role with smaller credit for secondary-role versatility; it is not the simple average of all 25 attributes.
+
+
+## Quarterly player entry and unsigned attrition
+
+New ordinary entry classes are generated after the March, June, September, and December seasons and become eligible for the following month. The inaugural population is classified separately as the Founding Player Pool.
+
+Unsigned players are evaluated for leaving the active player pool at those same quarterly checkpoints. Exit probability depends on age, time unsigned, market percentile, recent development trend, prior roster history, release grace, Career Persistence, and a mild free-agent-pool pressure adjustment.
+
+Leaving the player pool is distinct from retirement.

@@ -111,3 +111,10 @@ Ratings may be changed only by privileged generation and lifecycle operations.
 ## Historical rule
 
 Season advancement never destroys the prior state. Ratings in a season snapshot are the ratings used during that calendar month. After the season ends, lifecycle processing creates the ratings for the next monthly season, so a player's career can be reconstructed month by month.
+
+
+## Active full-name uniqueness
+
+The database enforces a case-insensitive unique full-name rule for rows in `players` whose status is `active`.
+
+This is a partial unique index, so historical name reuse is allowed after a player becomes `retired` or `exited_pool`. Application-level generation also reserves active names before preview, but the database index remains authoritative if application logic ever fails.

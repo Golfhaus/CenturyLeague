@@ -34,6 +34,7 @@ export type Database = {
       }
       development_runs: {
         Row: {
+          competition_category: string
           completed_at: string | null
           created_at: string
           created_by: string | null
@@ -46,6 +47,7 @@ export type Database = {
           to_season_id: string
         }
         Insert: {
+          competition_category: string
           completed_at?: string | null
           created_at?: string
           created_by?: string | null
@@ -58,6 +60,7 @@ export type Database = {
           to_season_id: string
         }
         Update: {
+          competition_category?: string
           completed_at?: string | null
           created_at?: string
           created_by?: string | null
@@ -91,6 +94,7 @@ export type Database = {
           available_season_id: string | null
           class_label: string
           closed_at: string | null
+          competition_category: string
           created_at: string
           generated_count: number
           id: string
@@ -105,6 +109,7 @@ export type Database = {
           available_season_id?: string | null
           class_label: string
           closed_at?: string | null
+          competition_category: string
           created_at?: string
           generated_count?: number
           id?: string
@@ -119,6 +124,7 @@ export type Database = {
           available_season_id?: string | null
           class_label?: string
           closed_at?: string | null
+          competition_category?: string
           created_at?: string
           generated_count?: number
           id?: string
@@ -149,6 +155,7 @@ export type Database = {
       generation_batches: {
         Row: {
           committed: boolean
+          competition_category: string
           completed_at: string | null
           created_at: string
           created_by: string | null
@@ -162,6 +169,7 @@ export type Database = {
         }
         Insert: {
           committed?: boolean
+          competition_category: string
           completed_at?: string | null
           created_at?: string
           created_by?: string | null
@@ -175,6 +183,7 @@ export type Database = {
         }
         Update: {
           committed?: boolean
+          competition_category?: string
           completed_at?: string | null
           created_at?: string
           created_by?: string | null
@@ -230,22 +239,28 @@ export type Database = {
         Row: {
           active_development_model_version: string
           active_generator_version_id: string | null
+          competition_category: string
           current_season_id: string | null
           id: number
+          league_status: string
           updated_at: string
         }
         Insert: {
           active_development_model_version?: string
           active_generator_version_id?: string | null
+          competition_category: string
           current_season_id?: string | null
           id?: number
+          league_status?: string
           updated_at?: string
         }
         Update: {
           active_development_model_version?: string
           active_generator_version_id?: string | null
+          competition_category?: string
           current_season_id?: string | null
           id?: number
+          league_status?: string
           updated_at?: string
         }
         Relationships: [
@@ -889,6 +904,7 @@ export type Database = {
       }
       seasons: {
         Row: {
+          competition_category: string
           created_at: string
           ends_on: string | null
           event_name: string | null
@@ -902,6 +918,7 @@ export type Database = {
           updated_at: string
         }
         Insert: {
+          competition_category: string
           created_at?: string
           ends_on?: string | null
           event_name?: string | null
@@ -915,6 +932,7 @@ export type Database = {
           updated_at?: string
         }
         Update: {
+          competition_category?: string
           created_at?: string
           ends_on?: string | null
           event_name?: string | null

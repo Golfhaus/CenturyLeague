@@ -13,7 +13,7 @@ Responsible for:
 - exporting population data
 - assigning players to teams
 - preserving season-by-season ratings
-- advancing careers between seasons
+- advancing careers after each monthly season
 - processing retirements
 
 ### League Manager
@@ -63,6 +63,10 @@ The commissioner can edit generator configuration for future players, but cannot
 
 Each player stores the generator version used to create them.
 
-Each offseason development run stores the development-model version and random seed used.
+Each post-season development run stores the development-model version and random seed used.
+
+## Season calendar
+
+CenturyLeague uses a monthly competition calendar: twelve seasons per calendar year. Season 1 is the November 2026 Inaugural Tournament. A completed season triggers one month of player aging/development and one month of retirement hazard before the next season begins.
 
 Changing a model does not retroactively regenerate existing players.

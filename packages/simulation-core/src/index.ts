@@ -1,3 +1,4 @@
+export * from './calendar.js';
 export * from './config.js';
 export * from './development.js';
 export * from './generator.js';

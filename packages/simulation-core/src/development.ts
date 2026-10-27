@@ -12,6 +12,7 @@ export interface DevelopmentProfile {
   declineRate: number;
   longevity: number;
   retirementTendency: number;
+  careerPersistence: number;
 }
 
 export interface DevelopmentResult {

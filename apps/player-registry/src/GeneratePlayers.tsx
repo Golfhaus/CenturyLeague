@@ -138,7 +138,17 @@ export default function GeneratePlayers() {
     setBusy(null);
 
     if (invokeError) {
-      setError(invokeError.message);
+      let message = invokeError.message;
+      const context = (invokeError as { context?: { json?: () => Promise<unknown> } }).context;
+      if (context?.json) {
+        try {
+          const payload = await context.json() as { error?: string };
+          if (payload?.error) message = payload.error;
+        } catch {
+          // Keep the SDK's fallback message when the response body is not JSON.
+        }
+      }
+      setError(message);
       return null;
     }
     if (!data) {

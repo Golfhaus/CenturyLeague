@@ -3,8 +3,8 @@ import type { CompetitionCategory } from './types.js';
 
 export interface PlayerBatchInput {
   seed: string;
-  menCount: number;
-  womenCount: number;
+  competitionCategory: CompetitionCategory;
+  count: number;
   seasonStart: string;
   entryType: PlayerEntryType;
   entryClassLabel: string;
@@ -12,8 +12,7 @@ export interface PlayerBatchInput {
 
 export interface PlayerBatchSummary {
   generatedCount: number;
-  menCount: number;
-  womenCount: number;
+  competitionCategory: CompetitionCategory;
   averageOverall: number;
   averageAgeYears: number;
   talentClasses: Record<string, number>;
@@ -25,13 +24,14 @@ export interface PlayerBatchSummary {
 
 export interface GeneratedPlayerBatch {
   seed: string;
+  competitionCategory: CompetitionCategory;
   players: GeneratedPermanentPlayer[];
   summary: PlayerBatchSummary;
 }
 
-function checkedCount(value: number, label: string): number {
-  if (!Number.isInteger(value) || value < 0) {
-    throw new Error(`${label} must be a nonnegative integer.`);
+function checkedCount(value: number): number {
+  if (!Number.isInteger(value) || value < 1) {
+    throw new Error('count must be a positive integer.');
   }
   return value;
 }
@@ -41,21 +41,21 @@ function addCount(record: Record<string, number>, key: string): void {
 }
 
 export function summarizePlayerBatch(
-  players: readonly GeneratedPermanentPlayer[]
+  players: readonly GeneratedPermanentPlayer[],
+  competitionCategory: CompetitionCategory
 ): PlayerBatchSummary {
   const talentClasses: Record<string, number> = {};
   const archetypes: Record<string, number> = {};
   const entryAges: Record<string, number> = {};
   const birthplaceTiers: Record<string, number> = {};
-  let menCount = 0;
-  let womenCount = 0;
   let totalOverall = 0;
   let totalAge = 0;
   let internationalCount = 0;
 
   for (const player of players) {
-    if (player.competitionCategory === 'men') menCount += 1;
-    else womenCount += 1;
+    if (player.competitionCategory !== competitionCategory) {
+      throw new Error('Mixed competition categories are not allowed in one generation batch.');
+    }
     totalOverall += player.roleRatings.overall;
     totalAge += player.ageYears;
     addCount(talentClasses, player.metadata.talentClass);
@@ -67,8 +67,7 @@ export function summarizePlayerBatch(
 
   return {
     generatedCount:players.length,
-    menCount,
-    womenCount,
+    competitionCategory,
     averageOverall:players.length ? totalOverall / players.length : 0,
     averageAgeYears:players.length ? totalAge / players.length : 0,
     talentClasses,
@@ -80,33 +79,25 @@ export function summarizePlayerBatch(
 }
 
 export function generatePlayerBatch(input: PlayerBatchInput): GeneratedPlayerBatch {
-  const menCount = checkedCount(input.menCount, 'menCount');
-  const womenCount = checkedCount(input.womenCount, 'womenCount');
-  const total = menCount + womenCount;
-
-  if (total < 1) throw new Error('At least one player must be requested.');
-  if (total > 2000) throw new Error('A single batch may not exceed 2,000 players.');
+  const count = checkedCount(input.count);
+  if (count > 2000) throw new Error('A single batch may not exceed 2,000 players.');
 
   const players: GeneratedPermanentPlayer[] = [];
 
-  function generateCategory(category: CompetitionCategory, count: number): void {
-    for (let i = 0; i < count; i += 1) {
-      players.push(generatePermanentPlayer({
-        seed:`${input.seed}:${category}:${i}`,
-        competitionCategory:category,
-        seasonStart:input.seasonStart,
-        entryType:input.entryType,
-        entryClassLabel:input.entryClassLabel
-      }));
-    }
+  for (let i = 0; i < count; i += 1) {
+    players.push(generatePermanentPlayer({
+      seed:`${input.seed}:${input.competitionCategory}:${i}`,
+      competitionCategory:input.competitionCategory,
+      seasonStart:input.seasonStart,
+      entryType:input.entryType,
+      entryClassLabel:input.entryClassLabel
+    }));
   }
-
-  generateCategory('men', menCount);
-  generateCategory('women', womenCount);
 
   return {
     seed:input.seed,
+    competitionCategory:input.competitionCategory,
     players,
-    summary:summarizePlayerBatch(players)
+    summary:summarizePlayerBatch(players, input.competitionCategory)
   };
 }

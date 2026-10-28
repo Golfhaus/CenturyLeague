@@ -51,9 +51,11 @@ assert.ok(ages20to24 / 900 >= 0.90);
 const rightPct = (batch.summary.preferredSides.right ?? 0) / 900;
 const leftPct = (batch.summary.preferredSides.left ?? 0) / 900;
 const bothPct = (batch.summary.preferredSides.both ?? 0) / 900;
+const secondaryArchetypePct = batch.players.filter((player) => Boolean(player.secondaryArchetype)).length / 900;
 assert.ok(rightPct >= 0.72 && rightPct <= 0.84);
 assert.ok(leftPct >= 0.12 && leftPct <= 0.24);
 assert.ok(bothPct >= 0.01 && bothPct <= 0.08);
+assert.ok(secondaryArchetypePct >= 0.34 && secondaryArchetypePct <= 0.46);
 
 // Prove that collision resolution changes only identity, not the underlying player profile.
 const reserved = batch.players.slice(0, 50).map((player) =>
@@ -94,6 +96,7 @@ const summary = {
   internationalPct,
   ages20to24Pct: ages20to24 / 900,
   preferredSidePct: { right:rightPct, left:leftPct, both:bothPct },
+  secondaryArchetypePct,
   menAverageHeightCm: avg(batch.players, 'heightCm'),
   menAverageWeightKg: avg(batch.players, 'weightKg'),
   reservedNameRerollTest: rerolled.summary.nameCollisionRerolls,

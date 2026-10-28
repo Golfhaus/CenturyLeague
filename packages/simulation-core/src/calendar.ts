@@ -43,7 +43,26 @@ export function integerAgeOnDate(dateOfBirth: string, referenceDate: string): nu
 export function ageYearsOnDate(dateOfBirth: string, referenceDate: string): number {
   const birth = parseDateOnly(dateOfBirth);
   const reference = parseDateOnly(referenceDate);
-  return (reference.getTime() - birth.getTime()) / (365.2425 * DAY_MS);
+  const wholeYears = integerAgeOnDate(dateOfBirth, referenceDate);
+
+  // Use actual birthday-to-birthday intervals rather than an average-year divisor.
+  // Date.UTC intentionally rolls Feb. 29 to Mar. 1 in non-leap years, matching
+  // integerAgeOnDate's month/day convention.
+  const lastBirthday = new Date(Date.UTC(
+    birth.getUTCFullYear() + wholeYears,
+    birth.getUTCMonth(),
+    birth.getUTCDate()
+  ));
+  const nextBirthday = new Date(Date.UTC(
+    birth.getUTCFullYear() + wholeYears + 1,
+    birth.getUTCMonth(),
+    birth.getUTCDate()
+  ));
+
+  const fraction = (reference.getTime() - lastBirthday.getTime())
+    / (nextBirthday.getTime() - lastBirthday.getTime());
+
+  return wholeYears + fraction;
 }
 
 export function generateBirthDateForEntryAge(

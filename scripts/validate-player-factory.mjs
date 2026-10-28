@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import {
+  ageYearsOnDate,
   generatePlayerBatch,
   integerAgeOnDate,
   INAUGURAL_SEASON_START,
@@ -16,6 +17,9 @@ const batch = generatePlayerBatch({
 });
 
 assert.equal(batch.players.length, 900);
+assert.equal(ageYearsOnDate('2005-11-01', INAUGURAL_SEASON_START), 21);
+assert.equal(ageYearsOnDate('2004-11-01', INAUGURAL_SEASON_START), 22);
+assert.equal(ageYearsOnDate('2004-02-29', '2025-03-01'), 21);
 assert.equal(batch.summary.competitionCategory, 'men');
 
 const fullNames = new Set();

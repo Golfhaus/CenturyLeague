@@ -7,7 +7,7 @@ The repository is organized as a monorepo so player generation, lifecycle develo
 ## Planned applications
 
 - `apps/player-registry` — player creation, population browsing, lifecycle advancement, exports, retirements, and roster assignment.
-- `apps/match-simulator` — future Century match simulation consuming the same player records.
+- `apps/match-simulator` — exhibition simulation entry point consuming the same player records; the event engine lives in the shared core.
 - `packages/simulation-core` — shared player attributes, archetypes, generation logic, development logic, and role calculations.
 - `supabase` — database migrations and backend functions.
 - `docs` — model and architecture specifications.
@@ -19,6 +19,8 @@ The commissioner may configure universe-wide generation and development rules, b
 ## Status
 
 Initial architecture and Player Generator v1.0 specification are being implemented.
+
+The first event-based exhibition engine is available. It supports fluid player deployment, all 35 eligible players, fatigue and authorized interchanges, score-triggered quarters, bonuses, a qualifying central kick to finish at exactly 100, team/player box scores and compact podcast briefing data. See [Match Engine v0.1](docs/MATCH_ENGINE_V0.md) for the experimental settings, remaining rule coverage and CLI/replay instructions.
 
 
 ## Season and player-pool cadence

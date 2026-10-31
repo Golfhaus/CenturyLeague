@@ -16,7 +16,8 @@
     "validate:players": "npm run build:core && node scripts/validate-player-factory.mjs",
     "validate:edge-mirror": "node scripts/validate-edge-mirror.mjs",
     "validate:matches": "npm run build:core && node scripts/validate-matches.mjs",
-    "simulate:exhibitions": "npm run build:core && node scripts/run-exhibitions.mjs"
+    "simulate:exhibitions": "npm run build:core && node scripts/run-exhibitions.mjs",
+    "analyze:matches": "npm run build:core && node scripts/analyze-match-variation.mjs"
   },
   "devDependencies": {
     "typescript": "7.0.2"

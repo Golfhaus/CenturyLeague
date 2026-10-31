@@ -67,6 +67,14 @@ The importer joins all 630 draft UUIDs against the canonical snapshot and requir
 
 Persist the complete result file, the seed and the matching source version. `replay-exhibition.mjs` compares every event and statistic, not merely the final score. A rerun produces files only; it cannot double-count league standings because no result-commit operation exists in this exhibition release.
 
+### Eight-team match-variation study
+
+`scripts/analyze-match-variation.mjs` runs 30 independent exhibitions per pairing among the original four clubs plus Wilmington Cape CC, Erie City Rovers, Frederick Forge and Greensboro Crescent CC: 28 pairings, 840 matches and 210 appearances per club. Simulation sides alternate evenly within each pairing. The runner freezes the existing v0.1 engine, roster ratings and coach tendencies, and resets fatigue and injury availability before each fixture.
+
+Use `npm run analyze:matches -- --players /private/canonical_players.json --draft /private/Century_Draft_State_After_Round_35.json --coaches /private/century_founding_coaches.json --output /private/variation-study --repeats 30`. An optional `--teams` file can supply eight distinct existing club names. Atomic per-pair checkpoints allow an interrupted run to resume only when its manifest matches the source and inputs.
+
+Outputs distinguish series predictability from individual-match variation: series splits, sweeps and strongly favored pairings; distinct scorelines, margins and time distributions; team statistics; quarter and player point reconciliation; and seeds/public match inputs. The runner preserves one full event ledger per pairing plus every match's compact record and player box score. Thresholds such as 24–6 and 27–3 are descriptive diagnostic flags, not targets that the engine tries to produce.
+
 ## Verification
 
 `validate:matches` exercises every score from 0–99 with each scoring category, bonus ownership/cancellation/caps, post-victory rejection, exact replay, input immutability, quarter and score reconciliation, player participation, on-field limits, penalty countdowns, injury stress cases, genuine ability differences and safe abort behavior. Existing player-generation, lifecycle, pool, edge-mirror, type and registry build checks remain applicable.

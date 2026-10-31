@@ -75,6 +75,10 @@ Use `npm run analyze:matches -- --players /private/canonical_players.json --draf
 
 Outputs distinguish series predictability from individual-match variation: series splits, sweeps and strongly favored pairings; distinct scorelines, margins and time distributions; team statistics; quarter and player point reconciliation; and seeds/public match inputs. The runner preserves one full event ledger per pairing plus every match's compact record and player box score. Thresholds such as 24–6 and 27–3 are descriptive diagnostic flags, not targets that the engine tries to produce.
 
+For a paired neutral-coaching control, add `--neutral-coaches --baseline /private/variation-study` and choose a new output directory. This sets all ten existing preference sliders to 3 without editing the original coach records or any player attribute. The engine, default match rules, club selection, raw source snapshots, repetitions, seeds and side assignments must match the baseline; mismatches are rejected before simulation.
+
+The control writes `paired_comparison.json` with both condition summaries, club and series changes and all matched fixture outcomes. Universal lineup and substitution logic remains active. Original rosters still reflect their coaches' draft choices. Identical seeds provide reproducibility, but changed decisions can alter subsequent event sequences, so random draws are not aligned action-by-action and the count of changed winners is descriptive rather than a percentage of victories caused by coaching. Small series changes need additional sampling before strong conclusions.
+
 ## Verification
 
 `validate:matches` exercises every score from 0–99 with each scoring category, bonus ownership/cancellation/caps, post-victory rejection, exact replay, input immutability, quarter and score reconciliation, player participation, on-field limits, penalty countdowns, injury stress cases, genuine ability differences and safe abort behavior. Existing player-generation, lifecycle, pool, edge-mirror, type and registry build checks remain applicable.

@@ -2,12 +2,15 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { performance } from 'node:perf_hooks';
-import { importDraftedTeams, simulateMatch, matchBriefing, MATCH_ENGINE_VERSION } from '../packages/simulation-core/dist/match/index.js';
+import { importDraftedTeams, simulateMatch, matchBriefing, MATCH_ENGINE_VERSION, TACTIC_KEYS } from '../packages/simulation-core/dist/match/index.js';
 
 const args = process.argv.slice(2);
 const option = (name, fallback) => { const i = args.indexOf(name); return i === -1 ? fallback : args[i + 1]; };
 const sources = ['--players', '--draft', '--coaches'].map(k => option(k));
-if (sources.some(p => !p)) throw new Error('Usage: node scripts/analyze-match-variation.mjs --players POPULATION.json --draft ROUND_35.json --coaches COACHES.json [--output DIRECTORY] [--repeats 30] [--teams NAMES.json]');
+if (sources.some(p => !p)) throw new Error('Usage: node scripts/analyze-match-variation.mjs --players POPULATION.json --draft ROUND_35.json --coaches COACHES.json [--output DIRECTORY] [--repeats 30] [--teams NAMES.json] [--neutral-coaches --baseline BASELINE_DIRECTORY]');
+const neutralCoaches = args.includes('--neutral-coaches');
+const baselineDirectory = option('--baseline');
+if (baselineDirectory && !neutralCoaches) throw new Error('--baseline comparison requires --neutral-coaches');
 const repeats = Number(option('--repeats', '30'));
 if (!Number.isInteger(repeats) || repeats < 2 || repeats > 1000 || repeats % 2) throw new Error('Use an even number of repeats from 2–1000 to balance sides');
 const output = path.resolve(option('--output', 'variation-exhibitions'));
@@ -20,8 +23,10 @@ const names = option('--teams') ? JSON.parse(fs.readFileSync(option('--teams'), 
   'Wilmington Cape CC', 'Erie City Rovers', 'Frederick Forge', 'Greensboro Crescent CC'
 ];
 if (!Array.isArray(names) || names.length !== 8 || new Set(names).size !== 8) throw new Error('Select exactly eight distinct clubs');
-const teams = names.map(name => allTeams.find(t => t.name === name));
-if (teams.some(t => !t)) throw new Error('Selected club is not present in the canonical draft');
+const originalTeams = names.map(name => allTeams.find(t => t.name === name));
+if (originalTeams.some(t => !t)) throw new Error('Selected club is not present in the canonical draft');
+const teams = originalTeams.map(t => neutralCoaches ? { ...t, coach: { ...t.coach,
+  tactics: Object.fromEntries(TACTIC_KEYS.map(key => [key, 3])) } } : t);
 const digest = s => createHash('sha256').update(s).digest('hex');
 const sourceFiles = ['engine.ts', 'input.ts', 'scoring.ts', 'statistics.ts', 'types.ts', 'report.ts']
   .map(f => path.join('packages/simulation-core/src/match', f))
@@ -33,6 +38,22 @@ const manifest = { engineVersion: MATCH_ENGINE_VERSION, engineSourceCommit: 'ebd
   alternatesSides: true, carryover: 'none: fresh fatigue and availability for every match',
   sourceSHA256: raw.map(digest), inputSHA256: digest(JSON.stringify(teams)),
   notes: 'Same frozen v0.1 exhibition engine and defaults; no parameters adjusted to obtain a desired split.' };
+let baseline = null;
+if (neutralCoaches) {
+  manifest.coachingCondition = 'All ten tactical preferences neutralized to 3; no coach ability ratings exist';
+  manifest.originalInputSHA256 = digest(JSON.stringify(originalTeams));
+  if (baselineDirectory) {
+    baseline = JSON.parse(fs.readFileSync(path.join(baselineDirectory, 'summary.json'), 'utf8'));
+    const prior = baseline.manifest;
+    for (const key of ['engineVersion', 'engineSourceSHA256', 'selection', 'repeatsPerPair', 'expectedMatches', 'seedScheme', 'sourceSHA256']) {
+      if (JSON.stringify(prior[key]) !== JSON.stringify(manifest[key])) throw new Error(`Baseline differs in ${key}`);
+    }
+    if (prior.inputSHA256 !== manifest.originalInputSHA256) throw new Error('Original roster/coach input does not match baseline');
+    const priorTeams = JSON.parse(fs.readFileSync(path.join(baselineDirectory, 'teams.json'), 'utf8'));
+    if (JSON.stringify(priorTeams) !== JSON.stringify(originalTeams)) throw new Error('Baseline team records differ');
+    manifest.pairedBaselineInputSHA256 = prior.inputSHA256;
+  }
+}
 fs.mkdirSync(output, { recursive: true });
 fs.mkdirSync(path.join(output, 'samples'), { recursive: true });
 const manifestPath = path.join(output, 'manifest.json');
@@ -146,4 +167,43 @@ const summary = { manifest, matches: allGames.length, pairings: pairs.length,
   clubs, pairs };
 fs.writeFileSync(path.join(output, 'summary.json'), JSON.stringify(summary, null, 2));
 fs.writeFileSync(path.join(output, 'matches.ndjson'), allGames.map(g => JSON.stringify(g)).join('\n') + '\n');
+if (baseline) {
+  if (digest(JSON.stringify(originalTeams)) !== manifest.originalInputSHA256) throw new Error('Simulation mutated original roster/coach inputs');
+  if (!teams.every(t => TACTIC_KEYS.every(key => t.coach.tactics[key] === 3))) throw new Error('Neutral preferences changed during the run');
+  const priorGames = fs.readFileSync(path.join(baselineDirectory, 'matches.ndjson'), 'utf8').trim().split('\n').map(line => JSON.parse(line));
+  if (priorGames.length !== allGames.length) throw new Error('Baseline has a different number of matches');
+  const beforeById = new Map(priorGames.map(g => [g.id, g]));
+  const pairedGames = allGames.map(g => {
+    const prior = beforeById.get(g.id);
+    if (!prior || prior.seed !== g.seed || JSON.stringify(prior.sides) !== JSON.stringify(g.sides) ||
+      JSON.stringify(prior.pair) !== JSON.stringify(g.pair)) throw new Error(`Fixture/seed mismatch: ${g.id}`);
+    return { id: g.id, seed: g.seed, pair: g.pair, sides: g.sides, originalWinner: prior.winner,
+      neutralWinner: g.winner, originalScores: prior.scores, neutralScores: g.scores,
+      originalMargin: prior.margin, neutralMargin: g.margin, originalPlayingMinutes: prior.playingMinutes,
+      neutralPlayingMinutes: g.playingMinutes };
+  });
+  const comparison = { matches: allGames.length, winnerChanges: pairedGames.filter(g => g.originalWinner !== g.neutralWinner).length,
+    controls: { sameRostersAndRatings: true, sameSeedsAndSides: true, sameEngineSource: true,
+      allTacticsSetTo3: teams.every(t => TACTIC_KEYS.every(k => t.coach.tactics[k] === 3)),
+      inputMutation: false, condition: manifest.coachingCondition,
+      interpretation: 'Preferences are the only input intervention. Different decisions change subsequent event sequences, so random draws are not event-aligned.' },
+    originalSummary: baseline, neutralSummary: summary,
+    clubs: clubs.map(t => {
+      const prior = baseline.clubs.find(c => c.i === t.i);
+      return { i: t.i, name: t.name, originalWins: prior.wins, neutralWins: t.wins,
+        winChange: t.wins - prior.wins, originalMeanMargin: prior.meanSignedMargin,
+        neutralMeanMargin: t.meanSignedMargin, meanMarginChange: t.meanSignedMargin - prior.meanSignedMargin,
+        originalShots: prior.meanShots, neutralShots: t.meanShots,
+        originalCatches: prior.meanCatches, neutralCatches: t.meanCatches };
+    }),
+    pairs: pairs.map(p => {
+      const prior = baseline.pairs.find(q => q.a === p.a && q.b === p.b);
+      return { a: p.a, b: p.b, names: p.names, originalWins: prior.wins, neutralWins: p.wins,
+        firstTeamWinChange: p.wins[0] - prior.wins[0], originalMeanSignedMargin: prior.signedMargin.mean,
+        neutralMeanSignedMargin: p.signedMargin.mean, originalMeanAbsoluteMargin: prior.absoluteMargin.mean,
+        neutralMeanAbsoluteMargin: p.absoluteMargin.mean };
+    }), pairedGames };
+  fs.writeFileSync(path.join(output, 'paired_comparison.json'), JSON.stringify(comparison, null, 2));
+  console.log(JSON.stringify({ pairedWinnerChanges: comparison.winnerChanges, controls: comparison.controls }));
+}
 console.log(JSON.stringify({ ...summary, manifest: undefined, clubs: undefined, pairs: undefined }, null, 2));

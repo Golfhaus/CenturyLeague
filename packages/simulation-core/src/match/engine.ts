@@ -231,6 +231,9 @@ class ExhibitionMatch {
     }
   }
   private startPenalties(): void {
+    // Advantage may persist through neutral contests; its delayed penalties
+    // cannot start until the advantage has ended or a point score stands.
+    if (this.advantage) return;
     const waiting: Penalty[] = [];
     for (const penalty of this.pending) {
       const p = this.players.find(x => x.id === penalty.playerId)!;

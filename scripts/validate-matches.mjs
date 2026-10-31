@@ -61,11 +61,14 @@ function audit(result) {
   const byId = new Map(result.players.map(p => [p.id, p]));
   let lastPlaying = 0;
   let lastElapsed = 0;
+  let advantageActive = false;
   const actionTypes = new Set(['ball_up', 'shot', 'kick', 'hand_punch', 'carry', 'catch', 'receive', 'intercept_catch',
     'interception', 'aerial_spoil', 'ground_recovery', 'tackle_complete', 'tackle_dislodged', 'foul', 'free_kick', 'bounce', 'kick_back', 'ball_in']);
   for (const e of result.events) {
     assert.ok(e.playingSeconds >= lastPlaying && e.elapsedSeconds >= lastElapsed);
     lastPlaying = e.playingSeconds; lastElapsed = e.elapsedSeconds;
+    if (e.type === 'advantage') advantageActive = true;
+    if (e.type === 'advantage_recalled' || (e.type === 'score' && e.data.kind !== 'bonus')) advantageActive = false;
     if (e.type === 'lineup') for (const id of e.data.playerIds) active[e.side].add(id);
     if (actionTypes.has(e.type)) {
       assert.ok(active[e.side].has(e.playerId), `${e.type}: off-field actor ${e.playerId}, event ${e.id}`);
@@ -78,6 +81,7 @@ function audit(result) {
     }
     if (e.type === 'injury') { active[e.side].delete(e.playerId); injured.add(e.playerId); }
     if (e.type === 'penalty_start') {
+      assert.equal(advantageActive, false, 'delayed penalty began during active advantage');
       assert.ok(active[e.side].delete(e.playerId));
       penalized.set(e.playerId, e.data.expiresAtPlayingSeconds);
     }
@@ -131,5 +135,25 @@ for (let i = 0; i < 12; i++) {
   audit(r); strongWins += order[r.winner].id === 'Strong' ? 1 : 0;
 }
 assert.ok(strongWins >= 10, 'large underlying attribute advantages must affect results');
-console.log(JSON.stringify({ checks, stressMatches: 24, strongWins, penaltyEvents, injuryEvents,
+let delayedPenaltyContestWindows = 0;
+const aggressive = structuredClone(base.teams);
+for (const team of aggressive) {
+  team.coach.tactics.defensive_aggression = 5;
+  team.coach.tactics.pressure = 5;
+  for (const player of team.players) player.ratings.discipline = 1;
+}
+for (let i = 0; i < 12; i++) {
+  const result = simulateMatch({ id: `advantage-${i}`, seed: `advantage-${i}`, teams: aggressive });
+  audit(result);
+  let active = false; let pending = false;
+  for (const event of result.events) {
+    if (event.type === 'foul' && event.data.shortHanded) pending = true;
+    if (event.type === 'advantage') active = true;
+    if (event.type === 'ball_up' && active && pending) delayedPenaltyContestWindows++;
+    if (event.type === 'advantage_recalled' || (event.type === 'score' && event.data.kind !== 'bonus')) active = false;
+    if (event.type === 'penalty_start') pending = false;
+  }
+}
+assert.ok(delayedPenaltyContestWindows > 0, 'regression batch must exercise neutral contests during delayed penalty advantage');
+console.log(JSON.stringify({ checks, stressMatches: 24, strongWins, penaltyEvents, injuryEvents, delayedPenaltyContestWindows,
   defaultMinimumPlayers: DEFAULT_MATCH_CONFIG.minimumPlayers, status: 'passed' }));

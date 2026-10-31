@@ -93,6 +93,23 @@ In the initial frozen-engine audit, Wilmington won 9/500 against Erie and 20/500
 
 Repeat with `--condition neutral` to produce a separate paired control using the same seeds and side assignments. Both clubs' ten preferences are neutralized; the comparison therefore measures the combined tactical matchup rather than isolating the selected club's own coach. Each condition records opponent splits, Wilson intervals, opportunity metrics, all player box scores, compact match records and one complete replay ledger per opponent. Atomic opponent checkpoints preserve completed series and reject changed manifests. The 850-match record is a one-club profile, not a complete league standings simulation.
 
+### Full-league balance and roster-repair studies
+
+`sample:league` completes every unordered pairing of all 18 drafted clubs. The default 50 fixtures per pairing produces 153 series, 7,650 matches and 850 appearances per club. Each series balances the two simulation sides 25 times each. These are neutral exhibitions without a home-advantage coefficient. Coaches retain their original preferences; fatigue and injury availability reset for each fixture.
+
+```bash
+npm run sample:league -- --players /private/canonical_players.json --draft /private/Century_Draft_State_After_Round_35.json --coaches /private/century_founding_coaches.json --output /private/league-study --repeats 50 --workers 6
+npm run probe:roster-repair -- --study /private/league-study --players /private/canonical_players.json --output /private/repair-probe
+```
+
+The league runner distributes independent series across Node worker threads. Worker count does not affect fixture IDs, seeds or side assignments. Atomic pair checkpoints and a strict manifest guard support resuming an interrupted study. Every new match reconciles all credited player statistics, official points, quarters and playing time. Output retains every match's player/team box scores and one complete event ledger per pairing. Team indices in compact records identify canonical clubs; score/team-stat/quarter arrays are normalized to the pair's `a,b` order, while a player's `side` retains the original simulation side and `teamIndex` identifies its club.
+
+Summary bands below 25%, 25–75% and above 75% are descriptive, not parity targets. Pairwise Wilson intervals describe sampling uncertainty. Aggregate club intervals summarize a fixed balanced opponent mix; they are not forecasts against an arbitrary schedule. A finite sweep does not establish impossibility, and rating/result correlations alone cannot validate the engine's weighting of different styles.
+
+The separate repair probe uses Wilmington's established ball-winning deficit as a hypothesis. It replaces eight players with actual undrafted founding players in hypothetical inputs only. Departures have the lowest mean of the ball-up and ground-contest attribute formulas among players with at least five quality-matched candidates. A candidate must be within 0.25 of the outgoing player's computed Overall and within 0.5 of its raw attribute mean. One variant maximizes ball-winning attributes; another selects the closest Overall/raw-mean match without considering that skill. Both use the same departure slots, no duplicated signing within a variant, original coaching, three fixed opponents (Manchester, Anacostia, Erie), 50 seeds per opponent and balanced sides. The separate baseline uses identical seeds and sides. All 450 fixtures complete irrespective of results.
+
+The probe records sanitized rosters, exact replacements, matching constraints, seeds, outcomes and nine complete replay ledgers. It tests whether modest, actual-pool recruitment can change performance under the frozen engine. It does not simulate contract availability, prove optimal recruitment, measure long-term development, or establish that the current contest weights are the best interpretation of Century. Do not apply its hypothetical signings to the canonical draft.
+
 ## Verification
 
 `validate:matches` exercises every score from 0–99 with each scoring category, bonus ownership/cancellation/caps, post-victory rejection, exact replay, input immutability, quarter and score reconciliation, player participation, on-field limits, penalty countdowns, injury stress cases, genuine ability differences and safe abort behavior. Existing player-generation, lifecycle, pool, edge-mirror, type and registry build checks remain applicable.

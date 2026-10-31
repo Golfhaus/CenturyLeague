@@ -87,6 +87,12 @@ The fresh samples are reported separately from the 30-game series that selected 
 
 In the initial frozen-engine audit, Wilmington won 9/500 against Erie and 20/500 against Frederick under neutral preferences. Thus both previously swept matchups produced reproducible underdog victories with unchanged players and mechanics. At those observed rates, the plug-in estimates of a fresh 0–30 series are about 58% and 29%. These are estimates for these conditions, not universal team win probabilities or a requirement to equalize teams. Team-strength differences remain part of the model.
 
+### One-club full-league sampling
+
+`scripts/analyze-club-opponents.mjs` profiles one club against every other drafted team. Use `npm run sample:club -- --players /private/canonical_players.json --draft /private/Century_Draft_State_After_Round_35.json --coaches /private/century_founding_coaches.json --club "Wilmington Cape CC" --output /private/club-study --repeats 50 --condition original`. This completes 17 × 50 = 850 fixtures, balancing simulation sides 25 times each per opponent. Every fixture starts rested and healthy.
+
+Repeat with `--condition neutral` to produce a separate paired control using the same seeds and side assignments. Both clubs' ten preferences are neutralized; the comparison therefore measures the combined tactical matchup rather than isolating the selected club's own coach. Each condition records opponent splits, Wilson intervals, opportunity metrics, all player box scores, compact match records and one complete replay ledger per opponent. Atomic opponent checkpoints preserve completed series and reject changed manifests. The 850-match record is a one-club profile, not a complete league standings simulation.
+
 ## Verification
 
 `validate:matches` exercises every score from 0–99 with each scoring category, bonus ownership/cancellation/caps, post-victory rejection, exact replay, input immutability, quarter and score reconciliation, player participation, on-field limits, penalty countdowns, injury stress cases, genuine ability differences and safe abort behavior. Existing player-generation, lifecycle, pool, edge-mirror, type and registry build checks remain applicable.

@@ -18,7 +18,8 @@
     "validate:matches": "npm run build:core && node scripts/validate-matches.mjs",
     "simulate:exhibitions": "npm run build:core && node scripts/run-exhibitions.mjs",
     "analyze:matches": "npm run build:core && node scripts/analyze-match-variation.mjs",
-    "audit:matches": "npm run build:core && node scripts/audit-match-engine.mjs"
+    "audit:matches": "npm run build:core && node scripts/audit-match-engine.mjs",
+    "sample:club": "npm run build:core && node scripts/analyze-club-opponents.mjs"
   },
   "devDependencies": {
     "typescript": "7.0.2"

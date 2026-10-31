@@ -110,6 +110,20 @@ The separate repair probe uses Wilmington's established ball-winning deficit as 
 
 The probe records sanitized rosters, exact replacements, matching constraints, seeds, outcomes and nine complete replay ledgers. It tests whether modest, actual-pool recruitment can change performance under the frozen engine. It does not simulate contract availability, prove optimal recruitment, measure long-term development, or establish that the current contest weights are the best interpretation of Century. Do not apply its hypothetical signings to the canonical draft.
 
+### Two final style diagnostics
+
+`check:styles` runs two prespecified diagnostics on synthetic copies of Roanoke's 35-player roster. This club supplies a concrete, moderately successful mixed roster; it is not selected by outcomes of the new study. The six inputs are its unmodified attribute mix plus ball-winning, finishing, distribution, running and aerial emphases. Diagnostic IDs replace real player/team identities. Canonical records, signings and official league results are never changed.
+
+```bash
+npm run check:styles -- --study /private/league-study --output /private/style-checks --workers 6
+```
+
+For each profile, a target attribute direction is projected onto the nullspace of eight linear constraints: raw attribute sum, the three existing role-weight sums, and stamina/durability/recovery/discipline. The direction is scaled to a maximum two-point individual attribute shift, then reduced only if necessary to stay within 1–20. Every player's raw mean, defensive/central/attacking ratings, Overall and four fixed attributes must remain equal within 1e-9. All 35 specialist players must receive meaningful changes in this source roster. This avoids the previous repair probe's low-exposure reserve replacements. These controls match broad ratings, not unknowable true match strength, and do not equate the tactical value of every raw attribute.
+
+Test 1 completes 15 neutral-coaching pairings × 50 fixtures = 750 matches. Every roster gets 250 appearances with balanced sides. Test 2 adds five specialist-versus-original-mix series × 50 = 250 matches. It changes only the specialist coach to one prespecified plausible preset; the opponent stays neutral. Each tactical trial reuses the corresponding neutral trial's seed and sides. Decisions can desynchronize subsequent random draws, so this is a paired outcome comparison, not action-by-action common randomness or an optimal-coaching search.
+
+The manifest fixes profiles, directions, presets, seed scheme, source hashes and all 1,000 fixtures before simulation. Atomic series checkpoints permit exact resumption. Every result verifies legal scores/qualifying winning kicks, all credited player statistics, quarter points and player time. Summaries include measured exposure: at least 90% of specialist player-time must come from players with a material attribute change. All outcomes and player box scores, one complete replay ledger per series, tactical winner changes, intervals and sanitized experimental rosters are retained. Matched summary ratings and a small number of constructed profiles cannot establish that all coherent styles are equally viable; report failures and mixed results rather than tuning toward parity.
+
 ## Verification
 
 `validate:matches` exercises every score from 0–99 with each scoring category, bonus ownership/cancellation/caps, post-victory rejection, exact replay, input immutability, quarter and score reconciliation, player participation, on-field limits, penalty countdowns, injury stress cases, genuine ability differences and safe abort behavior. Existing player-generation, lifecycle, pool, edge-mirror, type and registry build checks remain applicable.

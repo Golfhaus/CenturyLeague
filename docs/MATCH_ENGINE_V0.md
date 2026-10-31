@@ -79,6 +79,14 @@ For a paired neutral-coaching control, add `--neutral-coaches --baseline /privat
 
 The control writes `paired_comparison.json` with both condition summaries, club and series changes and all matched fixture outcomes. Universal lineup and substitution logic remains active. Original rosters still reflect their coaches' draft choices. Identical seeds provide reproducibility, but changed decisions can alter subsequent event sequences, so random draws are not aligned action-by-action and the count of changed winners is descriptive rather than a percentage of victories caused by coaching. Small series changes need additional sampling before strong conclusions.
 
+### Opportunity and rare-upset audit
+
+`scripts/audit-match-engine.mjs` audits possession gains, pass retention and shot creation from the neutral study, then extends each swept pairing with a predeclared fresh sample (default 500 matches per pairing). Use `npm run audit:matches -- --study /private/neutral-study --output /private/upset-audit --stress-matches 500`. It verifies the engine hash and neutral inputs, balances simulation sides and completes the full sample regardless of when an upset occurs. No match-outcome floor, coefficient change or prescribed winner is introduced.
+
+The fresh samples are reported separately from the 30-game series that selected the matchups. Wilson intervals describe observed upset rates; a finite winless sample is not interpreted as zero probability. Compact records preserve every outcome, team box score and observational control-sequence metrics. Complete event ledgers preserve every underdog victory plus first trials and closest losses. Control sequences end at opponent control, restarts, completed tackles, ball-ins or scores; same-team recoveries continue the sequence. Shot and official-point totals reconcile with match statistics.
+
+In the initial frozen-engine audit, Wilmington won 9/500 against Erie and 20/500 against Frederick under neutral preferences. Thus both previously swept matchups produced reproducible underdog victories with unchanged players and mechanics. At those observed rates, the plug-in estimates of a fresh 0–30 series are about 58% and 29%. These are estimates for these conditions, not universal team win probabilities or a requirement to equalize teams. Team-strength differences remain part of the model.
+
 ## Verification
 
 `validate:matches` exercises every score from 0–99 with each scoring category, bonus ownership/cancellation/caps, post-victory rejection, exact replay, input immutability, quarter and score reconciliation, player participation, on-field limits, penalty countdowns, injury stress cases, genuine ability differences and safe abort behavior. Existing player-generation, lifecycle, pool, edge-mirror, type and registry build checks remain applicable.

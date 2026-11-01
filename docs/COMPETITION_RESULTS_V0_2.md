@@ -37,9 +37,9 @@ An explicit policy supplies nonnegative integer win/loss table points and an ord
 
 ## Rehearsal persistence
 
-`scripts/lib/competition-store.mjs` stores a checksummed envelope explicitly marked `local-rehearsal`. Writes hold an exclusive lock, validate the expected revision, write a private temporary file, fsync, atomically rename and fsync the parent directory. Exact retries do not rewrite the file. A busy store rejects a write; it never automatically removes another writer's lock. If a process dies while holding a lock, recover only after confirming the writer is absent and the stored checksum/state validate.
+`scripts/lib/competition-store.mjs` stores a checksummed envelope explicitly marked `local-rehearsal`. A worker holds a nonblocking exclusive operating-system `flock`, validates the expected revision, writes a private temporary file, fsyncs, atomically renames and fsyncs the parent directory. Exact retries do not rewrite the file. A busy store rejects a write. The kernel releases the lock when its writer exits, including an abrupt exit. The empty `.writer-lock` file is persistent coordination state: do not unlink it or infer that its presence means a lock is held. All mutation callers must use this adapter; the internal worker entry is not a public API.
 
-The checksum detects accidental corruption, not malicious editing. The adapter is a local POSIX rehearsal/test tool, not a second authoritative live store or production authorization system. The future database adapter should use per-fixture unique constraints and transactional revision/row locking rather than loading an entire season ledger for every write.
+The checksum detects accidental corruption, not malicious editing. The adapter requires Linux/util-linux `flock` and one local host/filesystem with advisory-lock support (as in Codespaces and Linux CI). It is not a distributed/multi-host lock, a second authoritative live store or a production authorization system. A missing lock utility fails closed; it does not fall back to an unsafe write. The future database adapter should use per-fixture unique constraints and transactional revision/row locking rather than loading an entire season ledger for every write.
 
 ## Commands
 
@@ -71,6 +71,6 @@ This validates the completed canonical draft, strips hidden development fields a
 
 ## Validation evidence
 
-The validator passes 82 checks covering lifecycle gates, frozen definitions, malformed fixtures, unsupported engine identity, roster/config/seed tampering, falsified score/quarter/player/time/ledger data, competitive cross-season/category/competition/classification contamination, exact retries, conflicting results, revisions, completion, unranked and explicit-policy tables, ties, corrupted store checksums and concurrent independent writers.
+The validator passes 85 checks covering lifecycle gates, frozen definitions, malformed fixtures, unsupported engine identity, roster/config/seed tampering, falsified score/quarter/player/time/ledger data, competitive cross-season/category/competition/classification contamination, exact retries, conflicting results, revisions, completion, unranked and explicit-policy tables, ties, corrupted store checksums, concurrent independent writers and automatic kernel-lock release after an abrupt holder exit.
 
 The real nine-match exhibition round completed the acceptance rehearsal: nine accepted records, nine immediate no-op retries, all nine exact replays, 18 teams with one appearance each and no ranking policy invented. A repeated rehearsal run also accepted zero additional results. Type checks, the edge mirror check and the adopted v0.1 source/default guard pass. Rehearsal results remain clearly separate from official data; live database writes are zero.

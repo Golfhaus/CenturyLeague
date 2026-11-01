@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { spawn } from 'node:child_process';
+import { once } from 'node:events';
 import { ATTRIBUTE_KEYS } from '../packages/simulation-core/dist/types.js';
 import { simulateMatch, MATCH_ENGINE_VERSION } from '../packages/simulation-core/dist/match/index.js';
 import { createCompetition, activateCompetition, simulateCompetitionFixture, acceptCompetitionResult,
@@ -100,14 +101,17 @@ try{
   const file=path.join(temporary,'state.json');initializeCompetitionStore(file,definition);activateCompetitionStore(file,0);
   check(()=>assert.throws(()=>initializeCompetitionStore(file,definition),/already exists/));
   const before=fs.readFileSync(file,'utf8');
-  check(()=>{fs.writeFileSync(file+'.lock','held');try{assert.throws(()=>commitCompetitionStore(file,r1,meta),/locked/);}finally{fs.unlinkSync(file+'.lock');}assert.equal(fs.readFileSync(file,'utf8'),before);});
+  const holder=spawn('flock',['--exclusive','--nonblock','--no-fork',file+'.writer-lock',process.execPath,'-e',"process.stdout.write('locked');process.stdin.resume();"],{stdio:['pipe','pipe','pipe']});
+  await Promise.race([once(holder.stdout,'data'),once(holder,'error').then(([e])=>Promise.reject(e))]);
+  try{check(()=>{assert.throws(()=>commitCompetitionStore(file,r1,meta),/locked/);assert.equal(fs.readFileSync(file,'utf8'),before);});}
+  finally{const exited=once(holder,'close');holder.kill('SIGKILL');await exited;}
   commitCompetitionStore(file,r1,meta);const committed=fs.readFileSync(file,'utf8');
   check(()=>{assert.equal(commitCompetitionStore(file,clone(r1),meta).added,false);assert.equal(fs.readFileSync(file,'utf8'),committed);});
   check(()=>{assert.throws(()=>commitCompetitionStore(file,r2,meta),/Stale/);assert.equal(fs.readFileSync(file,'utf8'),committed);});
   check(()=>{const corrupt=JSON.parse(committed);corrupt.state.revision++;fs.writeFileSync(file,JSON.stringify(corrupt));assert.throws(()=>readCompetitionStore(file),/checksum/);fs.writeFileSync(file,committed);});
   commitCompetitionStore(file,r2,{...meta,expectedRevision:2});
   check(()=>assert.equal(readCompetitionStore(file,{replay:true}).status,'complete'));
-  check(()=>assert.ok(!fs.existsSync(file+'.lock')));
+  check(()=>assert.equal(commitCompetitionStore(file,r2,{...meta,expectedRevision:0}).added,false));
   // Competing independent processes may report busy or stale, but cannot lose or double-count a result.
   const raceFile=path.join(temporary,'race.json');initializeCompetitionStore(raceFile,definition);activateCompetitionStore(raceFile,0);
   const moduleURL=new URL('./lib/competition-store.mjs',import.meta.url).href;
@@ -117,5 +121,10 @@ try{
   check(()=>assert.equal(races.filter(r=>r.code===0).length,1));
   check(()=>assert.equal(readCompetitionStore(raceFile).accepted.length,1));
   check(()=>assert.equal(readCompetitionStore(raceFile).revision,2));
+  check(()=>validateCompetitionState(readCompetitionStore(raceFile),true));
+  const raceBefore=fs.readFileSync(raceFile,'utf8');
+  const retry=await run(readCompetitionStore(raceFile).accepted[0].result);
+  check(()=>assert.equal(retry.code,0,'separate-process exact retry must succeed'));
+  check(()=>assert.equal(fs.readFileSync(raceFile,'utf8'),raceBefore));
 }finally{fs.rmSync(temporary,{recursive:true,force:true});}
-console.log(JSON.stringify({checks,status:'passed',concurrentWritersTested:true,matchInputsReplayed:2,liveDatabaseWrites:0}));
+console.log(JSON.stringify({checks,status:'passed',concurrentWritersTested:true,writerCrashReleaseTested:true,matchInputsReplayed:2,liveDatabaseWrites:0}));

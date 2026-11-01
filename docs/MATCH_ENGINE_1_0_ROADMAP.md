@@ -24,13 +24,13 @@ The canonical import completed atomically, preserving all current player abiliti
 
 The additive database migration, backend-only transactional RPCs and authenticated `manage-matches` endpoint are deployed. Definitions, canonical season-roster links, immutable fixture inputs, generated proposals, insert-once accepted registrations and audit records are persisted. Compact security-invoker views derive fixture status and unranked exhibition records from accepted results. Exact retries do not increment records twice; stale different-fixture writes require a refreshed revision.
 
-The Match Center is implemented in the registry and staged in the engine PR: explicit exhibition creation, activation, simulation, proposal review, acceptance, saved-result reopening, replay verification, box scores and accepted-only round briefing exports. Its backend computes proposals from pinned inputs and derives the commissioner identity from a verified session. Browser roles cannot send result ledgers or call write RPCs. See [database workflow and validation](MATCH_WORKFLOW_DATABASE.md).
+The Match Center is implemented in the registry and published through PR #2: explicit exhibition creation, activation, simulation, proposal review, acceptance, saved-result reopening, replay verification, box scores and accepted-only round briefing exports. Its backend computes proposals from pinned inputs and derives the commissioner identity from a verified session. Browser roles cannot send result ledgers or call write RPCs. See [database workflow and validation](MATCH_WORKFLOW_DATABASE.md).
 
 Local isolated database/service tests pass 61 checks; CI passes 68 checks with a disposable PostgreSQL service, including independent-session contention and rollback. Nine additional Chromium checks cover the desktop/mobile surface with mocked API responses. The live permission probe rolled back without leaving competition/match records. The accepted gameplay source/default fingerprint is unchanged.
 
 ## Remaining integration and release checks
 
-- Publish the tested commissioner surface through the normal repository workflow and verify a signed-in session against the live endpoint.
+- The commissioner surface is published and production CI/deployment passed. Complete commissioner sign-in in the shared browser, then verify the session against the live endpoint.
 - Complete a representative exhibition through the deployed UI, reopen it after interruption, verify its replay and inspect accepted-only round exports. Keep it explicitly separate from the inaugural competition.
 - Before official activation, supply versioned availability/discipline policy and any required audited correction/void authority; preserve v0.1 replay support. Enable competitive creation only after these requirements and the eventual format are supplied.
 - Confirm database result persistence/authorization and commissioner workflow acceptance before declaring 1.0. The portable local rehearsal adapter remains useful for offline tests, but is not a second authoritative live store.

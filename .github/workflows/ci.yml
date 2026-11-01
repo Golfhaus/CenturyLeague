@@ -18,6 +18,7 @@ jobs:
       - run: npm run verify:match-baseline
       - run: npm run validate:matches
       - run: npm run validate:competition
+      - run: npm run validate:roster-import
       - run: npm run validate:generator
       - run: npm run validate:lifecycle
       - run: npm run validate:pool

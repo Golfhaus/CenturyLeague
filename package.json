@@ -28,7 +28,9 @@
     "validate:competition": "npm run build:core && node scripts/validate-competition.mjs",
     "competition": "npm run build:core && node scripts/manage-competition.mjs",
     "rehearse:competition": "npm run build:core && node scripts/rehearse-competition-round.mjs",
-    "prepare:draft-import": "npm run build:core && node scripts/prepare-draft-import.mjs"
+    "prepare:draft-import": "npm run build:core && node scripts/prepare-draft-import.mjs",
+    "prepare:roster-import": "npm run build:core && node scripts/prepare-founding-roster-import.mjs",
+    "validate:roster-import": "npm run build:core && node scripts/validate-roster-import.mjs"
   },
   "devDependencies": {
     "typescript": "7.0.2"

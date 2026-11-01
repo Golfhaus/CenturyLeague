@@ -2,7 +2,7 @@
 
 This is the first implementation milestone toward a 1.0 match-simulation workflow. It wraps the accepted v0.1 gameplay core; no v0.1 gameplay files, coefficients, default settings or replay identities change.
 
-The portable TypeScript module is `packages/simulation-core/src/competition`. The Node CLI and file store are an isolated rehearsal adapter. Supabase/PostgreSQL remains the authoritative live-database target. This increment does not apply a migration, assign live rosters, create official fixtures or convert historical exhibitions into official matches.
+The portable TypeScript module is `packages/simulation-core/src/competition`. The Node CLI and file store are an isolated rehearsal adapter. Supabase/PostgreSQL is authoritative for live rosters; competition/result acceptance still needs its database adapter. The separate founding-roster migration and canonical import are complete. No official fixtures have been created and historical exhibitions remain exhibitions.
 
 ## Competition lifecycle
 
@@ -67,10 +67,12 @@ It accepts nine stored results, retries each, replays all nine and checks one ap
 npm run prepare:draft-import -- --players /private/canonical_players.json --draft /private/Century_Draft_State_After_Round_35.json --coaches /private/century_founding_coaches.json --output /private/draft-import-proposal.json
 ```
 
-This validates the completed canonical draft, strips hidden development fields and prepares 18 public rosters/original coach profiles and 630 proposed assignments. It writes a proposal only and refuses to overwrite an existing output. An actual importer must resolve database team UUIDs, check player category/status and conflicting assignments, create a season snapshot, pin the input fingerprint and complete in one transaction. It must not silently replace existing player assignments or use team display names as database UUIDs.
+This validates the completed canonical draft, strips hidden development fields and prepares 18 public rosters/original coach profiles and 630 proposed assignments. It writes a proposal only and refuses to overwrite an existing output.
+
+The separate backend-only `import_founding_rosters_v1` now resolves team UUIDs, validates the full founding population and existing season snapshots, checks eligible/category/unassigned players, and commits teams, coaches, assignments, history and pinned public season rosters atomically. Its canonical live import completed on November 1, 2026: 18 teams, 18 original coaches, 630 assigned players and 270 free agents. See [request preparation, access controls and verification](FOUNDING_ROSTER_IMPORT.md). The inaugural format remains deferred until other engine work is ready.
 
 ## Validation evidence
 
 The validator passes 85 checks covering lifecycle gates, frozen definitions, malformed fixtures, unsupported engine identity, roster/config/seed tampering, falsified score/quarter/player/time/ledger data, competitive cross-season/category/competition/classification contamination, exact retries, conflicting results, revisions, completion, unranked and explicit-policy tables, ties, corrupted store checksums, concurrent independent writers and automatic kernel-lock release after an abrupt holder exit.
 
-The real nine-match exhibition round completed the acceptance rehearsal: nine accepted records, nine immediate no-op retries, all nine exact replays, 18 teams with one appearance each and no ranking policy invented. A repeated rehearsal run also accepted zero additional results. Type checks, the edge mirror check and the adopted v0.1 source/default guard pass. Rehearsal results remain clearly separate from official data; live database writes are zero.
+The real nine-match exhibition round completed the acceptance rehearsal: nine accepted records, nine immediate no-op retries, all nine exact replays, 18 teams with one appearance each and no ranking policy invented. A repeated rehearsal run also accepted zero additional results. Type checks, the edge mirror check and the adopted v0.1 source/default guard pass. Rehearsal results remain separate from official data; no live match results have been written. The roster-request validator adds 20 checks, and the backend importer was exercised with rolled-back failure/retry tests before its live import.

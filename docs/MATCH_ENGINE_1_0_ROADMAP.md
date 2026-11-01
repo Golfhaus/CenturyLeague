@@ -10,14 +10,15 @@ The accepted gameplay baseline is v0.1 (`0.1.0-exhibition`). Its source/default 
 - Record tables derived from accepted results; ranking only under an explicit policy.
 - Checksummed atomic local rehearsal adapter and CLI; independent-writer conflict tests.
 - Draft import proposal generator using the existing public canonical importer.
+- Atomic backend founding-roster importer, canonical live import and pinned season rosters.
 
 This increment is implementation work toward 1.0, not a declaration that official competition administration is deployed.
 
-## Live data readiness checked November 1, 2026
+## Live roster import completed November 1, 2026
 
-The CenturyLeague database has 900 active men's players. All 630 unique drafted player UUIDs match active men's database records. It currently has zero team records and zero assigned players. Men's Season 1 points to the November 2026 Inaugural Tournament; the women's league is planned and uninitialized. There are no competition or match-results tables.
+The CenturyLeague database has 900 active men's players, 18 teams, 18 original coaches and 630 assigned players, exactly 35 per team. The remaining 270 players are unassigned. Men's Season 1 points to the November 2026 Inaugural Tournament and remains in setup; the women's league is planned and uninitialized. There are no competition or match-results tables.
 
-The validated draft proposal contains all 18 teams, 35 players per team, 630 assignments and all original coach preferences. No live data or schema was changed during this readiness check. Before competitive fixtures can be activated, an atomic canonical draft/coach/season-roster import is required.
+The canonical import completed atomically, preserving all current player abilities, existing snapshot fields other than the initially empty team assignment, private development metadata and original coach profiles/preferences. It recorded draft history, 18 public match-team season snapshots and an audit receipt. Exact retry returned the same receipt without additional writes. See [the import record and backend contract](FOUNDING_ROSTER_IMPORT.md).
 
 ## Next integration: authoritative database acceptance
 
@@ -32,7 +33,7 @@ The local rehearsal store is not a substitute for this database integration.
 
 ## Competition policy and scheduling
 
-Confirm the inaugural format for the current 18-team draft before generating official fixtures. Define standings points, tie-breaks, knockout/series advancement and correction/forfeit authority where relevant. The new core accepts an explicit fixture list and therefore does not assume a tournament structure or import an older entrant count.
+The commissioner has deferred the inaugural format until the rest of the engine is ready. Continue database acceptance and workflow implementation using explicit disposable test fixtures. Format selection is not a blocker for that work. Before official fixtures are generated, confirm the format for the current 18 teams and define standings points, tie-breaks, knockout/series advancement and correction/forfeit authority where relevant. The new core accepts an explicit fixture list and does not assume a tournament structure or import an older entrant count.
 
 Later monthly scheduling must preserve the independently agreed competition structure and rest constraints when those are supplied as current scheduling policy. Match-engine balance tests and exhibition draws do not establish official competition rules.
 

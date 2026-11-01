@@ -32,6 +32,44 @@ export type Database = {
         }
         Relationships: []
       }
+      coaches: {
+        Row: {
+          created_at: string
+          id: string
+          name: string
+          profile: Json
+          source_coach_id: string
+          tactical_sliders: Json
+          team_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          name: string
+          profile: Json
+          source_coach_id: string
+          tactical_sliders: Json
+          team_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          name?: string
+          profile?: Json
+          source_coach_id?: string
+          tactical_sliders?: Json
+          team_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "coaches_team_id_fkey"
+            columns: ["team_id"]
+            isOneToOne: true
+            referencedRelation: "teams"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       development_runs: {
         Row: {
           competition_category: string
@@ -902,6 +940,50 @@ export type Database = {
           },
         ]
       }
+      roster_imports: {
+        Row: {
+          competition_category: string
+          completed_at: string
+          executed_by_role: string
+          id: string
+          payload_sha256: string
+          population_sha256: string
+          season_id: string
+          source_sha256: string[]
+          summary: Json
+        }
+        Insert: {
+          competition_category: string
+          completed_at?: string
+          executed_by_role?: string
+          id?: string
+          payload_sha256: string
+          population_sha256: string
+          season_id: string
+          source_sha256: string[]
+          summary: Json
+        }
+        Update: {
+          competition_category?: string
+          completed_at?: string
+          executed_by_role?: string
+          id?: string
+          payload_sha256?: string
+          population_sha256?: string
+          season_id?: string
+          source_sha256?: string[]
+          summary?: Json
+        }
+        Relationships: [
+          {
+            foreignKeyName: "roster_imports_season_id_fkey"
+            columns: ["season_id"]
+            isOneToOne: false
+            referencedRelation: "seasons"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       seasons: {
         Row: {
           competition_category: string
@@ -946,6 +1028,65 @@ export type Database = {
           updated_at?: string
         }
         Relationships: []
+      }
+      team_season_rosters: {
+        Row: {
+          coach_id: string
+          created_at: string
+          id: string
+          match_team: Json
+          roster_import_id: string
+          season_id: string
+          team_id: string
+        }
+        Insert: {
+          coach_id: string
+          created_at?: string
+          id?: string
+          match_team: Json
+          roster_import_id: string
+          season_id: string
+          team_id: string
+        }
+        Update: {
+          coach_id?: string
+          created_at?: string
+          id?: string
+          match_team?: Json
+          roster_import_id?: string
+          season_id?: string
+          team_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "team_season_rosters_coach_id_fkey"
+            columns: ["coach_id"]
+            isOneToOne: false
+            referencedRelation: "coaches"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "team_season_rosters_roster_import_id_fkey"
+            columns: ["roster_import_id"]
+            isOneToOne: false
+            referencedRelation: "roster_imports"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "team_season_rosters_season_id_fkey"
+            columns: ["season_id"]
+            isOneToOne: false
+            referencedRelation: "seasons"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "team_season_rosters_team_id_fkey"
+            columns: ["team_id"]
+            isOneToOne: false
+            referencedRelation: "teams"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       teams: {
         Row: {
@@ -1050,6 +1191,15 @@ export type Database = {
           p_season_id: string
           p_seed: string
           p_summary?: Json
+        }
+        Returns: Json
+      }
+      import_founding_rosters_v1: {
+        Args: {
+          p_payload: Json
+          p_population_sha256: string
+          p_season_id: string
+          p_source_sha256: string[]
         }
         Returns: Json
       }

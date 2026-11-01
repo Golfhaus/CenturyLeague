@@ -20,6 +20,18 @@ Versioned universe-level player-generation configuration.
 
 Team identity and competition category.
 
+### coaches
+
+One original founding coach per team, with its source identity, complete profile and validated ten tactical sliders. Registered app users have read access; browser roles cannot write.
+
+### roster_imports
+
+One audited founding import per season/category, with source, population and payload digests, execution role, completion time and summary. The privileged importer returns the same receipt on exact retry and rejects changed inputs.
+
+### team_season_rosters
+
+Pinned public match-team input for each imported season/team, preserving draft order, all 35 player identities and 25 abilities, coaching preferences, and references to the coach and import receipt. Registered app users have read access; browser roles cannot write.
+
 ### generation_batches
 
 Records every actual or disposable/test population generation run, including random seed and summary.
@@ -47,6 +59,8 @@ Continuous current values for all 25 abilities plus defensive, central, attackin
 ### player_season_snapshots
 
 Immutable month-by-month historical copy of ratings and roster state. The stored `age_years` value is fractional so players age correctly across monthly seasons.
+
+The initial founding import completes only the initially empty team assignment in existing setup-season snapshots. It does not replace their names, abilities, derived ratings or other historical fields.
 
 ### player_team_history
 
@@ -77,6 +91,10 @@ Retirement result and final career state.
 Singleton record identifying the current season and active models.
 
 ## Private simulation metadata
+
+### private.roster_import_payloads
+
+Backend-only archived canonical import payload, linked to its audit receipt. It contains draft player UUIDs and original coach profiles; it does not export private player development fields. Browser roles cannot read or write this archive.
 
 ### private.player_generation_metadata
 

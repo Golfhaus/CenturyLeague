@@ -16,7 +16,7 @@ This increment is implementation work toward 1.0, not a declaration that officia
 
 ## Live roster import completed November 1, 2026
 
-The CenturyLeague database has 900 active men's players, 18 teams, 18 original coaches and 630 assigned players, exactly 35 per team. The remaining 270 players are unassigned. Men's Season 1 points to the November 2026 Inaugural Tournament and remains in setup; the women's league is planned and uninitialized. There are no competition or match-results tables.
+The CenturyLeague database has 900 active men's players, 18 teams, 18 original coaches and 630 assigned players, exactly 35 per team. The remaining 270 players are unassigned. Men's Season 1 points to the November 2026 Inaugural Tournament and remains in setup; the women's league is planned and uninitialized. Competition/result tables now support explicitly separate exhibitions; official competitive activation remains deferred.
 
 The canonical import completed atomically, preserving all current player abilities, existing snapshot fields other than the initially empty team assignment, private development metadata and original coach profiles/preferences. It recorded draft history, 18 public match-team season snapshots and an audit receipt. Exact retry returned the same receipt without additional writes. See [the import record and backend contract](FOUNDING_ROSTER_IMPORT.md).
 
@@ -30,8 +30,8 @@ Local isolated database/service tests pass 61 checks; CI passes 68 checks with a
 
 ## Remaining integration and release checks
 
-- The commissioner surface is published and production CI/deployment passed. Complete commissioner sign-in in the shared browser, then verify the session against the live endpoint.
-- Complete a representative exhibition through the deployed UI, reopen it after interruption, verify its replay and inspect accepted-only round exports. Keep it explicitly separate from the inaugural competition.
+- Signed-in live acceptance is verified: the deployed UI created, activated, simulated, accepted, replayed, exported and reopened a complete exhibition after reload. Its one accepted result and one acceptance audit record remained unchanged after an exact retry. See [the live verification record](LIVE_EXHIBITION_VERIFICATION_2026_11_01.md).
+- Resolve cross-runtime numerical replay portability before 1.0: the live backend replay passed exactly, while Node v24.22.1 differed in 173 event Y-coordinate values by at most 2.85e-14 metres. Scores, player/team statistics, quarters and all other ledger fields matched. Record/pin the authoritative runtime or define a reviewed versioned replay-comparison policy without changing the frozen gameplay baseline or historical payloads.
 - Before official activation, supply versioned availability/discipline policy and any required audited correction/void authority; preserve v0.1 replay support. Enable competitive creation only after these requirements and the eventual format are supplied.
 - Confirm database result persistence/authorization and commissioner workflow acceptance before declaring 1.0. The portable local rehearsal adapter remains useful for offline tests, but is not a second authoritative live store.
 

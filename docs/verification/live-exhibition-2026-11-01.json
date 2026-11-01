@@ -1,0 +1,106 @@
+{
+  "status": "live-browser-workflow-passed",
+  "scores": [
+    99,
+    100
+  ],
+  "events": 5391,
+  "players": 70,
+  "acceptedMatches": 1,
+  "pendingFixtures": 0,
+  "exportStatus": "accepted",
+  "sha256": "8b66e3cfca7252a0402767f9dd3e1ae1009d7faf747d900ff182b7fae97fb1e1",
+  "backendExactReplay": true,
+  "nodeReplay": {
+    "runtime": "v24.22.1",
+    "differences": 173,
+    "maxDelta": 2.842170943040401e-14,
+    "nonNumeric": 0,
+    "groups": {
+      "result.events.#.data.targetY": 40,
+      "result.events.#.y": 133
+    },
+    "teamStatsExact": true,
+    "playerStatsExact": true,
+    "quartersExact": true
+  },
+  "winningPlay": {
+    "eventId": 5389,
+    "player": "Kiran Miranda",
+    "awardedPoints": 4,
+    "quarter": 4,
+    "playingSeconds": 7121.3600433742195,
+    "kind": "central_air",
+    "scores": [
+      99,
+      100
+    ],
+    "winning": true,
+    "deflected": false,
+    "bonusesLost": 0,
+    "bonusCredits": [],
+    "pointsCapped": 0,
+    "nominalPoints": 4,
+    "bonusesConverted": 0
+  },
+  "topScorers": [
+    {
+      "id": "a59f99c7-d986-4123-ade6-f4402700559f",
+      "name": "Nico Flores",
+      "team": "Roanoke Athletic",
+      "points": 19,
+      "centralAirScores": 3,
+      "shots": 15
+    },
+    {
+      "id": "3e1e61f2-884b-4bf7-8ff3-62533c20fbd4",
+      "name": "Wesley Carrillo",
+      "team": "Lynchburg Union",
+      "points": 11,
+      "centralAirScores": 2,
+      "shots": 5
+    },
+    {
+      "id": "81df8c85-518e-4da2-b57c-54ec1d0b0a98",
+      "name": "Noah Cannon",
+      "team": "Lynchburg Union",
+      "points": 11,
+      "centralAirScores": 2,
+      "shots": 5
+    },
+    {
+      "id": "f8ab22ae-5658-48b2-87bc-974e4a620145",
+      "name": "Ruben Edwards",
+      "team": "Lynchburg Union",
+      "points": 10,
+      "centralAirScores": 2,
+      "shots": 5
+    },
+    {
+      "id": "4cefe810-7619-4276-8bc7-b701fb321d67",
+      "name": "Andrew Bell",
+      "team": "Roanoke Athletic",
+      "points": 9,
+      "centralAirScores": 2,
+      "shots": 6
+    },
+    {
+      "id": "c6398705-e7a6-4883-8fe9-1e5cadb63311",
+      "name": "Cayden Atkins",
+      "team": "Lynchburg Union",
+      "points": 9,
+      "centralAirScores": 2,
+      "shots": 5
+    }
+  ],
+  "competitionId": "20d4ed84-4a67-4729-b448-54aafe6b3612",
+  "fixtureId": "8c27a4cb-b8b9-4831-84bf-a72c9605bd1f",
+  "proposalId": "2a7228c3-8dfd-4c65-8a0c-4c92e40ba20f",
+  "classification": "exhibition",
+  "revision": 2,
+  "acceptanceRows": 1,
+  "acceptanceAuditRows": 1,
+  "reloadRecovery": "passed",
+  "liveExactRetry": "no-op at original revision 1",
+  "officialCompetitions": 0
+}

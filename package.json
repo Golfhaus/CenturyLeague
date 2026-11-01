@@ -24,7 +24,11 @@
     "probe:roster-repair": "npm run build:core && node scripts/probe-roster-repair.mjs",
     "check:styles": "npm run build:core && node scripts/check-style-viability.mjs",
     "simulate:round": "npm run build:core && node scripts/run-exhibition-round.mjs",
-    "verify:match-baseline": "npm run build:core && node scripts/verify-match-baseline.mjs"
+    "verify:match-baseline": "npm run build:core && node scripts/verify-match-baseline.mjs",
+    "validate:competition": "npm run build:core && node scripts/validate-competition.mjs",
+    "competition": "npm run build:core && node scripts/manage-competition.mjs",
+    "rehearse:competition": "npm run build:core && node scripts/rehearse-competition-round.mjs",
+    "prepare:draft-import": "npm run build:core && node scripts/prepare-draft-import.mjs"
   },
   "devDependencies": {
     "typescript": "7.0.2"

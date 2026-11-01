@@ -25,7 +25,7 @@ New results must match the frozen fixture ID, seed, team order, all player attri
 
 Validation requires legal capped final scores, exactly four ordered quarters, the qualifying last winning kick, all 70 roster box scores, credited player/team statistic reconciliation, player-time reconciliation and full deterministic event/statistic replay. A failed proposal leaves the prior state intact.
 
-An identical result retry is a no-op, including when its expected revision predates the successful acceptance. A different result for the same fixture is rejected. New results require the exact current revision. No overwrite, correction, void, forfeit or administrative score entry is implemented; those need a separate audited policy and API before live use.
+An identical result retry is a no-op, including when its expected revision predates the successful acceptance. A different result for the same fixture is rejected. New results require the exact current revision. No overwrite, correction, void, forfeit or administrative score entry is implemented. [Commissioner policy v1](COMPETITION_POLICY_V1.md) approves audited corrections and default restarts for technical aborts; implementing the corresponding APIs remains required before use. Formal forfeits stay deferred unless needed.
 
 These functions validate data and workflow, not authorization. Actor labels are audit metadata, not proof of identity. The database adapter derives its actor from a verified session, enforces commissioner/service permissions and commits atomically in PostgreSQL. The local rehearsal actor label remains only metadata. A client-supplied digest or actor cannot grant authority.
 

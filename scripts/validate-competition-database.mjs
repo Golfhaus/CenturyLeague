@@ -13,6 +13,7 @@ const client=databaseURL?new pg.Client({connectionString:databaseURL}):null;
 if(client)await client.connect();
 const db=client?{exec:s=>client.query(s),query:(s,p)=>client.query(s,p),close:()=>client.end()}:new PGlite(); let checks=0;
 const check=(x)=>{assert.ok(x);checks++;};
+const checkEqual=(actual,expected)=>{assert.deepEqual(actual,expected);checks++;};
 const rejects=async(fn,pattern)=>{await assert.rejects(fn,pattern);checks++;};
 const query=(s,p)=>db.query(s,p);
 const rpc=async(name,args)=>{const vals=Object.values(args); return (await query(`select public.${name}(${vals.map((_,i)=>'$'+(i+1)).join(',')}) as receipt`,vals)).rows[0].receipt;};
@@ -118,6 +119,46 @@ check((await handleMatchAction(adapter,readonly,{action:'verify',proposalId:gene
 const brief=await handleMatchAction(adapter,readonly,{action:'briefing',competitionId:serviceId,roundId:'one'});
 check(brief.acceptedMatches===1&&brief.pendingFixtures===0&&brief.matches[0].winningPlay.eventId>0);
 check((await query('select accepted_by from match_results where fixture_id=$1',[serviceFixture])).rows[0].accepted_by===commissioner);
+// Approved technical-abort policy: no invented result, then recover/restart the pinned fixture.
+const countsFor=async competitionId=>(await query(`select jsonb_build_object(
+ 'status',c.status,'revision',c.revision,
+ 'proposals',(select count(*) from match_proposals p join competition_fixtures f on f.id=p.fixture_id where f.competition_id=c.id),
+ 'results',(select count(*) from match_results a join competition_fixtures f on f.id=a.fixture_id where f.competition_id=c.id),
+ 'played',(select coalesce(sum(played),0) from competition_team_records where competition_id=c.id)) snapshot
+ from competitions c where c.id=$1`,[competitionId])).rows[0].snapshot;
+const emptyActive={status:'active',revision:1,proposals:0,results:0,played:0};
+const abortFixture=randomUUID(),abortDefinition={...d,id:randomUUID(),name:'Technical abort guard',config:{maxEvents:100},fixtures:[{...d.fixtures[0],id:abortFixture,seed:'technical-abort-guard'}]};
+await create(abortDefinition);
+await rpc('activate_competition_v1',{actor:commissioner,id:abortDefinition.id,revision:0});
+const abortInput=(await query('select match_input from competition_fixtures where id=$1',[abortFixture])).rows[0].match_input;
+for(let attempt=0;attempt<2;attempt++)await rejects(()=>handleMatchAction(adapter,actor,{action:'simulate',fixtureId:abortFixture}),/exceeded safety limit; no result or forced winner recorded/);
+checkEqual(await countsFor(abortDefinition.id),emptyActive);
+checkEqual((await query('select match_input from competition_fixtures where id=$1',[abortFixture])).rows[0].match_input,abortInput);
+const retryFixture=randomUUID(),retryDefinition={...d,id:randomUUID(),name:'Interrupted request recovery',fixtures:[{...d.fixtures[0],id:retryFixture,seed:'interrupted-request-recovery'}]};
+await create(retryDefinition);
+await rpc('activate_competition_v1',{actor:commissioner,id:retryDefinition.id,revision:0});
+let interruptedResult;
+const outageBeforeWrite={...adapter,rpc:async(name,args)=>{
+ if(name==='stage_match_proposal_v1'){interruptedResult=structuredClone(args.p_result);throw Error('Synthetic outage before proposal write');}
+ return adapter.rpc(name,args);
+}};
+await rejects(()=>handleMatchAction(outageBeforeWrite,actor,{action:'simulate',fixtureId:retryFixture}),/Synthetic outage before proposal write/);
+checkEqual(await countsFor(retryDefinition.id),emptyActive);
+const lostReply={...adapter,rpc:async(name,args)=>{
+ const response=await adapter.rpc(name,args);
+ if(!response.error&&['stage_match_proposal_v1','accept_match_proposal_v1'].includes(name))throw Error('Synthetic lost reply after commit');
+ return response;
+}};
+await rejects(()=>handleMatchAction(lostReply,actor,{action:'simulate',fixtureId:retryFixture}),/Synthetic lost reply after commit/);
+checkEqual(await countsFor(retryDefinition.id),{...emptyActive,proposals:1});
+const recovered=await handleMatchAction(adapter,actor,{action:'simulate',fixtureId:retryFixture});
+check(recovered.added===false);
+const recoveredRow=(await query('select result from match_proposals where id=$1',[recovered.id])).rows[0];
+checkEqual(recoveredRow.result,JSON.parse(JSON.stringify(interruptedResult))); // Same pinned seed/input; no reroll after a failed write.
+await rejects(()=>handleMatchAction(lostReply,actor,{action:'accept',proposalId:recovered.id,expectedRevision:1}),/Synthetic lost reply after commit/);
+checkEqual(await countsFor(retryDefinition.id),{status:'complete',revision:2,proposals:1,results:1,played:2});
+check(!(await handleMatchAction(adapter,actor,{action:'accept',proposalId:recovered.id,expectedRevision:1})).added);
+check((await query("select count(*)::integer n from competition_audit where competition_id=$1 and action='accepted'",[retryDefinition.id])).rows[0].n===1);
 if(databaseURL){
  // Two real PostgreSQL sessions contend on the same competition row.
  const race={...d,id:randomUUID(),name:'Concurrency rehearsal',fixtures:d.fixtures.map(f=>({...f,id:randomUUID()}))};
@@ -149,4 +190,4 @@ await query('insert into app_users values($1,$2)',[randomUUID(),'viewer']);
 await db.exec('rollback');
 check((await query('select count(*)::integer n from app_users')).rows[0].n===2);
 console.log(JSON.stringify({checks,status:'passed',database:databaseURL?'isolated PostgreSQL server':'isolated PostgreSQL/WASM',officialResultsCreated:0,concurrentSessionsTested:Boolean(databaseURL)}));
-} catch(e){console.error(JSON.stringify({message:e.message,where:e.where,detail:e.detail}));process.exitCode=1;} finally {await db.close();}
+} catch(e){console.error(JSON.stringify({message:e.message.slice(0,1600),where:e.where,detail:e.detail}));process.exitCode=1;} finally {await db.close();}

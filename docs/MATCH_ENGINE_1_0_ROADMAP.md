@@ -26,26 +26,27 @@ The additive database migration, backend-only transactional RPCs and authenticat
 
 The Match Center is implemented in the registry and published through PR #2: explicit exhibition creation, activation, simulation, proposal review, acceptance, saved-result reopening, replay verification, box scores and accepted-only round briefing exports. Its backend computes proposals from pinned inputs and derives the commissioner identity from a verified session. Browser roles cannot send result ledgers or call write RPCs. See [database workflow and validation](MATCH_WORKFLOW_DATABASE.md).
 
-Local isolated database/service tests pass 61 checks; CI passes 68 checks with a disposable PostgreSQL service, including independent-session contention and rollback. Nine additional Chromium checks cover the desktop/mobile surface with mocked API responses. The live permission probe rolled back without leaving competition/match records. The accepted gameplay source/default fingerprint is unchanged.
+Local isolated database/service tests pass 75 checks, including technical-abort and interrupted-reply recovery. CI additionally exercises independent-session contention and rollback with a disposable PostgreSQL service. Nine additional Chromium checks cover the desktop/mobile surface with mocked API responses. The live permission probe rolled back without leaving competition/match records. The accepted gameplay source/default fingerprint is unchanged.
 
 ## Remaining integration and release checks
 
 - Signed-in live acceptance is verified: the deployed UI created, activated, simulated, accepted, replayed, exported and reopened a complete exhibition after reload. Its one accepted result and one acceptance audit record remained unchanged after an exact retry. See [the live verification record](LIVE_EXHIBITION_VERIFICATION_2026_11_01.md).
 - Resolve cross-runtime numerical replay portability before 1.0: the live backend replay passed exactly, while Node v24.22.1 differed in 173 event Y-coordinate values by at most 2.85e-14 metres. Scores, player/team statistics, quarters and all other ledger fields matched. Record/pin the authoritative runtime or define a reviewed versioned replay-comparison policy without changing the frozen gameplay baseline or historical payloads.
-- Before official activation, supply versioned availability/discipline policy and any required audited correction/void authority; preserve v0.1 replay support. Enable competitive creation only after these requirements and the eventual format are supplied.
+- The commissioner approved [availability, discipline, correction and technical-restart policy v1](COMPETITION_POLICY_V1.md) on November 1, 2026. Implement and validate those policies while preserving v0.1 replay support. Competitive creation remains gated on implementation/readiness and the eventual format.
+- Rehearse a four-team, two-round exhibition to verify cumulative records, unfinished rounds, recovery and accepted-only round exports. Use the approved restart/retry distinction for technical failures.
 - Confirm database result persistence/authorization and commissioner workflow acceptance before declaring 1.0. The portable local rehearsal adapter remains useful for offline tests, but is not a second authoritative live store.
 
 ## Competition policy and scheduling
 
-The commissioner has deferred the inaugural format until the rest of the engine is ready. Continue database acceptance and workflow implementation using explicit disposable test fixtures. Format selection is not a blocker for that work. Before official fixtures are generated, confirm the format for the current 18 teams and define standings points, tie-breaks, knockout/series advancement and correction/forfeit authority where relevant. The new core accepts an explicit fixture list and does not assume a tournament structure or import an older entrant count.
+The commissioner has deferred the inaugural format until the rest of the engine is ready. Continue database acceptance and workflow implementation using explicit disposable test fixtures. Format selection is not a blocker for that work. Before official fixtures are generated, confirm the format for the current 18 teams and define standings points, tie-breaks and knockout/series advancement where relevant. Commissioner correction authority and the default technical-restart policy are approved; formal forfeits remain deferred unless needed. The new core accepts an explicit fixture list and does not assume a tournament structure or import an older entrant count.
 
 Later monthly scheduling must preserve the independently agreed competition structure and rest constraints when those are supplied as current scheduling policy. Match-engine balance tests and exhibition draws do not establish official competition rules.
 
 ## Availability and discipline
 
-Exhibitions retain the approved reset of fatigue and injuries. Official persistence needs an explicit decision on injury durations, availability, recovery cadence and sanction carryover. No probabilities or durations have been guessed in this increment. Adding eligible-player availability must use a versioned adapter/engine change while preserving v0.1 replay support.
+Fatigue remains within-match, and exhibition injuries reset. The approved competitive policy carries injuries forward, uses calendar-day recovery across monthly seasons and initially requires full recovery for eligibility. Most absences should be short, with occasional longer injuries; quantitative distributions remain calibration work. Adding eligible-player availability must use a versioned adapter/engine change while preserving v0.1 replay support.
 
-Detailed bench misconduct, retaliation, offset fouls, dissent and escalation remain documented gameplay-rule extensions. Define what 1.0 must generate automatically and what, if anything, is commissioner administration. Do not infer sanctions from the current aggregate foul category.
+Serious/repeated misconduct may receive a suspension under an approved offense table; ambiguous incidents go to the commissioner. Bans follow players across transfers and monthly seasons, with eligible official matches counting toward service. Exhibitions neither enforce nor serve them. Detailed incident generation and the sanction table still require implementation/validation; do not infer unrecorded misconduct from aggregate fouls. See [policy v1](COMPETITION_POLICY_V1.md) for correction authority, finality and technical abort handling.
 
 ## User workflow and 1.0 acceptance
 

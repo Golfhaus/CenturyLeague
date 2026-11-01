@@ -1,11 +1,14 @@
-import { FormEvent, useEffect, useMemo, useState } from 'react';
+import { FormEvent, lazy, Suspense, useEffect, useMemo, useState } from 'react';
 import type { Session } from '@supabase/supabase-js';
 import { supabase, supabaseConfigured } from './lib/supabase';
 import GeneratePlayers from './GeneratePlayers';
 import PlayerDatabase from './PlayerDatabase';
 
+const MatchCenter = lazy(() => import('./MatchCenter'));
+
 type View =
   | 'dashboard'
+  | 'matches'
   | 'generate'
   | 'database'
   | 'development'
@@ -14,6 +17,7 @@ type View =
 
 const NAV_ITEMS: { id: View; label: string; description: string }[] = [
   { id: 'dashboard', label: 'Dashboard', description: 'Population and season overview' },
+  { id: 'matches', label: 'Match Center', description: 'Exhibitions, result review and matchday briefings' },
   { id: 'generate', label: 'Generate Players', description: 'Single player or population batch' },
   { id: 'database', label: 'Player Database', description: 'Search, filter, inspect and export' },
   { id: 'development', label: 'Development', description: 'Monthly season advancement and career changes' },
@@ -296,6 +300,8 @@ function App() {
               </div>
             </section>
           </>
+        ) : view === 'matches' ? (
+          <Suspense fallback={<p>Loading Match Center…</p>}><MatchCenter role={role} /></Suspense>
         ) : view === 'generate' ? (
           <GeneratePlayers />
         ) : view === 'database' ? (

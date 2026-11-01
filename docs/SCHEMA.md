@@ -136,3 +136,11 @@ Season advancement never destroys the prior state. Ratings in a season snapshot 
 The database enforces a case-insensitive unique full-name rule for rows in `players` whose status is `active`.
 
 This is a partial unique index, so historical name reuse is allowed after a player becomes `retired` or `exited_pool`. Application-level generation also reserves active names before preview, but the database index remains authoritative if application logic ever fails.
+
+## Match workflow persistence
+
+`competitions` pins the public definition, source digest, season/category/classification, creator, status and revision. `competition_rosters` links the definition's teams to canonical season snapshots. `competition_fixtures` stores each ordered fixture's immutable full input, including roster, coaching, seed, rules and provenance.
+
+`match_proposals` stores one backend-generated full event/statistic ledger and database-computed SHA-256 per fixture. `match_results` registers its one accepted proposal, verified-session actor and database acceptance time. `competition_audit` records creation, activation, proposal generation and acceptance. Pinned inputs, proposals, accepted registrations and audit rows reject updates/deletes. No result correction API is currently available.
+
+Browser roles have registered-app-user SELECT access through RLS and cannot mutate these tables or execute the write RPCs. The Edge backend verifies the session and commissioner role; the security-invoker RPCs recheck the actor's current database role. `competition_fixture_status` and `competition_team_records` are security-invoker read views. Proposed results never contribute to accepted record totals. This first backend enables unranked exhibitions only; official format/availability policies remain deferred.

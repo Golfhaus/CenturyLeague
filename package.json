@@ -30,9 +30,13 @@
     "rehearse:competition": "npm run build:core && node scripts/rehearse-competition-round.mjs",
     "prepare:draft-import": "npm run build:core && node scripts/prepare-draft-import.mjs",
     "prepare:roster-import": "npm run build:core && node scripts/prepare-founding-roster-import.mjs",
-    "validate:roster-import": "npm run build:core && node scripts/validate-roster-import.mjs"
+    "validate:roster-import": "npm run build:core && node scripts/validate-roster-import.mjs",
+    "validate:competition-db": "npm run build:core && node scripts/sync-match-edge.mjs --check && node --experimental-transform-types scripts/validate-competition-database.mjs",
+    "sync:match-edge": "node scripts/sync-match-edge.mjs"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "0.5.14",
+    "pg": "8.23.1",
     "typescript": "7.0.2"
   },
   "engines": {

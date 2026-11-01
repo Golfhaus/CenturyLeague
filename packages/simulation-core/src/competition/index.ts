@@ -60,7 +60,7 @@ function inputFor(d: CompetitionDefinition, f: CompetitionFixture): MatchInput {
     config: d.config, provenance: { competitionId: d.id, seasonKey: d.seasonKey, competitionCategory: d.category,
       classification: d.classification, engineSourceSHA256: d.engineSourceSHA256 } };
 }
-function validateResult(d: CompetitionDefinition, result: MatchResult, replay: boolean): void {
+export function validateCompetitionFixtureResult(d: CompetitionDefinition, result: MatchResult, replay = true): void {
   const fixture = fixtureFor(d, result.id), expected = inputFor(d, fixture);
   if (result.engineVersion !== d.engineVersion || result.seed !== fixture.seed || result.input.id !== fixture.id || result.input.seed !== fixture.seed ||
       competitionJSON(result.input.teams) !== competitionJSON(expected.teams)) throw new Error('Result does not match the frozen fixture/rosters');
@@ -99,7 +99,7 @@ export function validateCompetitionState(state: CompetitionState, replay = false
     if (accepted.fixtureId !== accepted.result.id || ids.has(accepted.fixtureId)) throw new Error('Duplicate/incorrect result registration'); ids.add(accepted.fixtureId);
     requireText(accepted.acceptedBy, 'Result acceptor');
     if (!Number.isFinite(Date.parse(accepted.acceptedAt))) throw new Error('Invalid acceptance time');
-    validateResult(state.definition, accepted.result, replay);
+    validateCompetitionFixtureResult(state.definition, accepted.result, replay);
   }
   if ((state.status === 'draft' && (state.accepted.length || state.revision !== 0)) ||
       (state.status !== 'draft' && state.revision !== 1+state.accepted.length) ||
@@ -132,7 +132,7 @@ export function acceptCompetitionResult(state: CompetitionState, result: MatchRe
   if (state.revision !== metadata.expectedRevision) throw new Error('Stale competition revision');
   requireText(metadata.acceptedBy, 'Result acceptor');
   if (!Number.isFinite(Date.parse(metadata.acceptedAt))) throw new Error('Invalid acceptance time');
-  validateResult(state.definition, result, true);
+  validateCompetitionFixtureResult(state.definition, result, true);
   const accepted = [...state.accepted, { fixtureId: result.id, acceptedBy: metadata.acceptedBy,
     acceptedAt: new Date(metadata.acceptedAt).toISOString(), result: JSON.parse(competitionJSON(result)) }];
   return { state: { ...state, accepted, revision: state.revision+1,

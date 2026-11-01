@@ -24,7 +24,7 @@ Run `npm run verify:match-baseline` to verify the adopted source and defaults, `
 
 See [the release decision and scope](docs/MATCH_ENGINE_V0_RELEASE.md) and [the engine model and CLI instructions](docs/MATCH_ENGINE_V0.md). The tested engine identity remains `0.1.0-exhibition` to preserve random-seed and saved-match compatibility. The core does not commit official standings or carry player injuries into future matches.
 
-The next implementation milestone is the [v0.2 competition/result foundation](docs/COMPETITION_RESULTS_V0_2.md), with validated acceptance, exact retry safety, tables and an isolated local rehearsal CLI. It does not write live database results or adopt a standings policy. See the [1.0 roadmap and live-data prerequisites](docs/MATCH_ENGINE_1_0_ROADMAP.md).
+The [v0.2 competition/result foundation](docs/COMPETITION_RESULTS_V0_2.md) includes validated acceptance, exact retry safety, tables and an isolated local rehearsal CLI. The [database-backed exhibition workflow](docs/MATCH_WORKFLOW_DATABASE.md) and Match Center are implemented; the backend is deployed and the UI is staged for publication. Official competitive creation and ranking policy remain deferred. See the [1.0 roadmap and live-data prerequisites](docs/MATCH_ENGINE_1_0_ROADMAP.md).
 
 The [canonical founding-roster import](docs/FOUNDING_ROSTER_IMPORT.md) is complete: 18 men's teams, 18 original coaches, 630 rostered players and 270 free agents, with player abilities preserved. The inaugural tournament format is deferred until the remaining engine work is ready.
 

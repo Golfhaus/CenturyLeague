@@ -2,7 +2,7 @@
 
 This is the first implementation milestone toward a 1.0 match-simulation workflow. It wraps the accepted v0.1 gameplay core; no v0.1 gameplay files, coefficients, default settings or replay identities change.
 
-The portable TypeScript module is `packages/simulation-core/src/competition`. The Node CLI and file store are an isolated rehearsal adapter. Supabase/PostgreSQL is authoritative for live rosters; competition/result acceptance still needs its database adapter. The separate founding-roster migration and canonical import are complete. No official fixtures have been created and historical exhibitions remain exhibitions.
+The portable TypeScript module is `packages/simulation-core/src/competition`. The Node CLI and file store are an isolated rehearsal adapter. Supabase/PostgreSQL is authoritative for live rosters; the [database-backed exhibition adapter and commissioner surface](MATCH_WORKFLOW_DATABASE.md) are now implemented. The separate founding-roster migration and canonical import are complete. No official fixtures have been created and historical exhibitions remain exhibitions.
 
 ## Competition lifecycle
 
@@ -27,7 +27,7 @@ Validation requires legal capped final scores, exactly four ordered quarters, th
 
 An identical result retry is a no-op, including when its expected revision predates the successful acceptance. A different result for the same fixture is rejected. New results require the exact current revision. No overwrite, correction, void, forfeit or administrative score entry is implemented; those need a separate audited policy and API before live use.
 
-These functions validate data and workflow, not authorization. Actor labels are audit metadata, not proof of identity. A future backend must derive its actor from a verified session, enforce commissioner/service permissions and commit atomically in PostgreSQL. A client-supplied digest or actor cannot grant authority.
+These functions validate data and workflow, not authorization. Actor labels are audit metadata, not proof of identity. The database adapter derives its actor from a verified session, enforces commissioner/service permissions and commits atomically in PostgreSQL. The local rehearsal actor label remains only metadata. A client-supplied digest or actor cannot grant authority.
 
 ## Standings policy
 
@@ -39,7 +39,7 @@ An explicit policy supplies nonnegative integer win/loss table points and an ord
 
 `scripts/lib/competition-store.mjs` stores a checksummed envelope explicitly marked `local-rehearsal`. A worker holds a nonblocking exclusive operating-system `flock`, validates the expected revision, writes a private temporary file, fsyncs, atomically renames and fsyncs the parent directory. Exact retries do not rewrite the file. A busy store rejects a write. The kernel releases the lock when its writer exits, including an abrupt exit. The empty `.writer-lock` file is persistent coordination state: do not unlink it or infer that its presence means a lock is held. All mutation callers must use this adapter; the internal worker entry is not a public API.
 
-The checksum detects accidental corruption, not malicious editing. The adapter requires Linux/util-linux `flock` and one local host/filesystem with advisory-lock support (as in Codespaces and Linux CI). It is not a distributed/multi-host lock, a second authoritative live store or a production authorization system. A missing lock utility fails closed; it does not fall back to an unsafe write. The future database adapter should use per-fixture unique constraints and transactional revision/row locking rather than loading an entire season ledger for every write.
+The checksum detects accidental corruption, not malicious editing. The adapter requires Linux/util-linux `flock` and one local host/filesystem with advisory-lock support (as in Codespaces and Linux CI). It is not a distributed/multi-host lock, a second authoritative live store or a production authorization system. A missing lock utility fails closed; it does not fall back to an unsafe write. The separate database adapter uses per-fixture unique constraints and transactional revision/row locking, without loading the entire season ledger for acceptance.
 
 ## Commands
 

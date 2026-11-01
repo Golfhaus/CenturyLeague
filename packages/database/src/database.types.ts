@@ -70,6 +70,177 @@ export type Database = {
           },
         ]
       }
+      competition_audit: {
+        Row: {
+          action: string
+          actor_id: string
+          competition_id: string
+          created_at: string
+          detail: Json
+          id: string
+        }
+        Insert: {
+          action: string
+          actor_id: string
+          competition_id: string
+          created_at?: string
+          detail?: Json
+          id?: string
+        }
+        Update: {
+          action?: string
+          actor_id?: string
+          competition_id?: string
+          created_at?: string
+          detail?: Json
+          id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "competition_audit_actor_id_fkey"
+            columns: ["actor_id"]
+            isOneToOne: false
+            referencedRelation: "app_users"
+            referencedColumns: ["user_id"]
+          },
+          {
+            foreignKeyName: "competition_audit_competition_id_fkey"
+            columns: ["competition_id"]
+            isOneToOne: false
+            referencedRelation: "competitions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      competition_fixtures: {
+        Row: {
+          competition_id: string
+          id: string
+          match_input: Json
+          ordinal: number
+          round_id: string
+        }
+        Insert: {
+          competition_id: string
+          id: string
+          match_input: Json
+          ordinal: number
+          round_id: string
+        }
+        Update: {
+          competition_id?: string
+          id?: string
+          match_input?: Json
+          ordinal?: number
+          round_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "competition_fixtures_competition_id_fkey"
+            columns: ["competition_id"]
+            isOneToOne: false
+            referencedRelation: "competitions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      competition_rosters: {
+        Row: {
+          competition_id: string
+          season_roster_id: string
+          team_id: string
+        }
+        Insert: {
+          competition_id: string
+          season_roster_id: string
+          team_id: string
+        }
+        Update: {
+          competition_id?: string
+          season_roster_id?: string
+          team_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "competition_rosters_competition_id_fkey"
+            columns: ["competition_id"]
+            isOneToOne: false
+            referencedRelation: "competitions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "competition_rosters_season_roster_id_fkey"
+            columns: ["season_roster_id"]
+            isOneToOne: false
+            referencedRelation: "team_season_rosters"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "competition_rosters_team_id_fkey"
+            columns: ["team_id"]
+            isOneToOne: false
+            referencedRelation: "teams"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      competitions: {
+        Row: {
+          classification: string
+          competition_category: string
+          created_at: string
+          created_by: string
+          definition: Json
+          definition_sha256: string
+          id: string
+          name: string
+          revision: number
+          season_id: string
+          status: string
+        }
+        Insert: {
+          classification: string
+          competition_category: string
+          created_at?: string
+          created_by: string
+          definition: Json
+          definition_sha256: string
+          id: string
+          name: string
+          revision?: number
+          season_id: string
+          status?: string
+        }
+        Update: {
+          classification?: string
+          competition_category?: string
+          created_at?: string
+          created_by?: string
+          definition?: Json
+          definition_sha256?: string
+          id?: string
+          name?: string
+          revision?: number
+          season_id?: string
+          status?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "competitions_created_by_fkey"
+            columns: ["created_by"]
+            isOneToOne: false
+            referencedRelation: "app_users"
+            referencedColumns: ["user_id"]
+          },
+          {
+            foreignKeyName: "competitions_season_id_fkey"
+            columns: ["season_id"]
+            isOneToOne: false
+            referencedRelation: "seasons"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       development_runs: {
         Row: {
           competition_category: string
@@ -314,6 +485,112 @@ export type Database = {
             columns: ["current_season_id"]
             isOneToOne: false
             referencedRelation: "seasons"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      match_proposals: {
+        Row: {
+          created_at: string
+          fixture_id: string
+          generated_by: string
+          id: string
+          result: Json
+          result_sha256: string
+        }
+        Insert: {
+          created_at?: string
+          fixture_id: string
+          generated_by: string
+          id?: string
+          result: Json
+          result_sha256: string
+        }
+        Update: {
+          created_at?: string
+          fixture_id?: string
+          generated_by?: string
+          id?: string
+          result?: Json
+          result_sha256?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "match_proposals_fixture_id_fkey"
+            columns: ["fixture_id"]
+            isOneToOne: true
+            referencedRelation: "competition_fixture_status"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "match_proposals_fixture_id_fkey"
+            columns: ["fixture_id"]
+            isOneToOne: true
+            referencedRelation: "competition_fixtures"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "match_proposals_generated_by_fkey"
+            columns: ["generated_by"]
+            isOneToOne: false
+            referencedRelation: "app_users"
+            referencedColumns: ["user_id"]
+          },
+        ]
+      }
+      match_results: {
+        Row: {
+          accepted_at: string
+          accepted_by: string
+          fixture_id: string
+          proposal_id: string
+        }
+        Insert: {
+          accepted_at?: string
+          accepted_by: string
+          fixture_id: string
+          proposal_id: string
+        }
+        Update: {
+          accepted_at?: string
+          accepted_by?: string
+          fixture_id?: string
+          proposal_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "match_results_accepted_by_fkey"
+            columns: ["accepted_by"]
+            isOneToOne: false
+            referencedRelation: "app_users"
+            referencedColumns: ["user_id"]
+          },
+          {
+            foreignKeyName: "match_results_fixture_id_fkey"
+            columns: ["fixture_id"]
+            isOneToOne: true
+            referencedRelation: "competition_fixture_status"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "match_results_fixture_id_fkey"
+            columns: ["fixture_id"]
+            isOneToOne: true
+            referencedRelation: "competition_fixtures"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "match_results_proposal_id_fkey"
+            columns: ["proposal_id"]
+            isOneToOne: true
+            referencedRelation: "competition_fixture_status"
+            referencedColumns: ["proposal_id"]
+          },
+          {
+            foreignKeyName: "match_results_proposal_id_fkey"
+            columns: ["proposal_id"]
+            isOneToOne: true
+            referencedRelation: "match_proposals"
             referencedColumns: ["id"]
           },
         ]
@@ -1117,6 +1394,65 @@ export type Database = {
       }
     }
     Views: {
+      competition_fixture_status: {
+        Row: {
+          accepted_at: string | null
+          accepted_by: string | null
+          competition_id: string | null
+          id: string | null
+          ordinal: number | null
+          proposal_id: string | null
+          result_sha256: string | null
+          round_id: string | null
+          scores: Json | null
+          teams: Json | null
+          winner: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "competition_fixtures_competition_id_fkey"
+            columns: ["competition_id"]
+            isOneToOne: false
+            referencedRelation: "competitions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "match_results_accepted_by_fkey"
+            columns: ["accepted_by"]
+            isOneToOne: false
+            referencedRelation: "app_users"
+            referencedColumns: ["user_id"]
+          },
+        ]
+      }
+      competition_team_records: {
+        Row: {
+          competition_id: string | null
+          losses: number | null
+          name: string | null
+          played: number | null
+          points_against: number | null
+          points_for: number | null
+          team_id: string | null
+          wins: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "competition_rosters_competition_id_fkey"
+            columns: ["competition_id"]
+            isOneToOne: false
+            referencedRelation: "competitions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "competition_rosters_team_id_fkey"
+            columns: ["team_id"]
+            isOneToOne: false
+            referencedRelation: "teams"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       player_registry: {
         Row: {
           acceleration: number | null
@@ -1183,6 +1519,22 @@ export type Database = {
       }
     }
     Functions: {
+      accept_match_proposal_v1: {
+        Args: {
+          p_actor: string
+          p_expected_revision: number
+          p_proposal_id: string
+        }
+        Returns: Json
+      }
+      activate_competition_v1: {
+        Args: {
+          p_actor: string
+          p_competition_id: string
+          p_expected_revision: number
+        }
+        Returns: Json
+      }
       commit_generated_players: {
         Args: {
           p_created_by?: string
@@ -1194,6 +1546,10 @@ export type Database = {
         }
         Returns: Json
       }
+      create_exhibition_competition_v1: {
+        Args: { p_actor: string; p_definition: Json; p_season_id: string }
+        Returns: Json
+      }
       import_founding_rosters_v1: {
         Args: {
           p_payload: Json
@@ -1201,6 +1557,10 @@ export type Database = {
           p_season_id: string
           p_source_sha256: string[]
         }
+        Returns: Json
+      }
+      stage_match_proposal_v1: {
+        Args: { p_actor: string; p_fixture_id: string; p_result: Json }
         Returns: Json
       }
     }

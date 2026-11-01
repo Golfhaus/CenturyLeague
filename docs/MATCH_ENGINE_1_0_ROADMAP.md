@@ -20,16 +20,20 @@ The CenturyLeague database has 900 active men's players, 18 teams, 18 original c
 
 The canonical import completed atomically, preserving all current player abilities, existing snapshot fields other than the initially empty team assignment, private development metadata and original coach profiles/preferences. It recorded draft history, 18 public match-team season snapshots and an audit receipt. Exact retry returned the same receipt without additional writes. See [the import record and backend contract](FOUNDING_ROSTER_IMPORT.md).
 
-## Next integration: authoritative database acceptance
+## Implemented: authoritative exhibition acceptance and commissioner surface
 
-- Add competition, fixture, pinned match-input, result and audit records using an additive reviewed migration; preserve independent men's/women's timelines.
-- Apply authorization consistent with the existing registry: public/browser actors cannot directly mutate results or ratings; accepted identities come from authenticated backend context.
-- Implement transactional insert-once result acceptance, unique fixture/result constraints and revision or row-lock protection. Return the existing accepted result on exact retries; reject conflicting payloads.
-- Store the full replay payload or an immutable referenced artifact with its digest; derive tables/aggregates from accepted records rather than incrementing counters blindly.
-- Test concurrent requests, interrupted retries, rollback behavior, read permissions, commissioner permissions and result tampering in an isolated test database before live activation.
-- Support an explicit audited correction/void operation if that is adopted; do not overwrite an accepted event ledger.
+The additive database migration, backend-only transactional RPCs and authenticated `manage-matches` endpoint are deployed. Definitions, canonical season-roster links, immutable fixture inputs, generated proposals, insert-once accepted registrations and audit records are persisted. Compact security-invoker views derive fixture status and unranked exhibition records from accepted results. Exact retries do not increment records twice; stale different-fixture writes require a refreshed revision.
 
-The local rehearsal store is not a substitute for this database integration.
+The Match Center is implemented in the registry and staged in the engine PR: explicit exhibition creation, activation, simulation, proposal review, acceptance, saved-result reopening, replay verification, box scores and accepted-only round briefing exports. Its backend computes proposals from pinned inputs and derives the commissioner identity from a verified session. Browser roles cannot send result ledgers or call write RPCs. See [database workflow and validation](MATCH_WORKFLOW_DATABASE.md).
+
+Local isolated database/service tests pass 61 checks; CI additionally uses a disposable PostgreSQL service for independent-session contention and rollback tests. The live permission probe rolled back without leaving competition/match records. The accepted gameplay source/default fingerprint is unchanged.
+
+## Remaining integration and release checks
+
+- Publish the tested commissioner surface through the normal repository workflow and verify a signed-in session against the live endpoint.
+- Complete a representative exhibition through the deployed UI, reopen it after interruption, verify its replay and inspect accepted-only round exports. Keep it explicitly separate from the inaugural competition.
+- Before official activation, supply versioned availability/discipline policy and any required audited correction/void authority; preserve v0.1 replay support. Enable competitive creation only after these requirements and the eventual format are supplied.
+- Confirm database result persistence/authorization and commissioner workflow acceptance before declaring 1.0. The portable local rehearsal adapter remains useful for offline tests, but is not a second authoritative live store.
 
 ## Competition policy and scheduling
 

@@ -1,2 +1,5 @@
 [functions.generate-players]
 verify_jwt = false
+
+[functions.manage-matches]
+verify_jwt = true

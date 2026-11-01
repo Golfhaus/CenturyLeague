@@ -27,7 +27,7 @@ Future responsibilities:
 
 ### Match Simulator
 
-Future responsibilities:
+Implemented in the shared core as the adopted v0.1 baseline:
 
 - match state and possessions
 - contests for possession
@@ -36,6 +36,8 @@ Future responsibilities:
 - tackling and loose balls
 - fatigue and substitutions
 - scoring and match statistics
+
+The core also provides exact seeded replay, event-derived box scores and summary briefings. The CLI can run one all-club exhibition round without changing persistent league state. Browser controls, scheduled competitions, official result commits/standings and persistent availability are separate future integrations. See [the v0.1 release scope](MATCH_ENGINE_V0_RELEASE.md).
 
 ## Shared simulation core
 
@@ -64,6 +66,8 @@ The commissioner can edit generator configuration for future players, but cannot
 Each player stores the generator version used to create them.
 
 Each post-season development run stores the development-model version and random seed used.
+
+Match results preserve engine identity, seed, public input snapshot, rules configuration and the full event ledger. The adopted match baseline has a checked source/default manifest; CI flags changes to it. Preserve historical replay compatibility when advancing match-model versions.
 
 ## Season calendar
 

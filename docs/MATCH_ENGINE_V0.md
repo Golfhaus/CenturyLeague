@@ -1,5 +1,7 @@
 # Century exhibition engine v0.1
 
+Adopted as the permanent v0.1 simulation baseline on November 1, 2026. The tested engine identity `0.1.0-exhibition` and gameplay source are retained for historical replay compatibility. See [the release decision, accepted scope and change policy](MATCH_ENGINE_V0_RELEASE.md).
+
 The first engine resolves individual actions and contests in TypeScript using the existing shared player attributes. A complete match produces the score, four quarter records, team/player statistics, a structured event ledger, a readable box score and an evidence-backed podcast briefing. No model API call is required to simulate a match.
 
 This is an exhibition model. Its coefficients are initial simulation choices, not empirically established Century rates. Results do not update standings, player ratings, development, injuries, roster assignments or future availability.

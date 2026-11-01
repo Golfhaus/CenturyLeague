@@ -2,9 +2,9 @@
 
 CenturyLeague is the simulation platform for the sport of Century.
 
-The repository is organized as a monorepo so player generation, lifecycle development, league management, and the future match simulator share one authoritative player model.
+The repository is organized as a monorepo so player generation, lifecycle development, league management, and match simulation share one authoritative player model.
 
-## Planned applications
+## Applications and packages
 
 - `apps/player-registry` — player creation, population browsing, lifecycle advancement, exports, retirements, and roster assignment.
 - `apps/match-simulator` — exhibition simulation entry point consuming the same player records; the event engine lives in the shared core.
@@ -18,9 +18,11 @@ The commissioner may configure universe-wide generation and development rules, b
 
 ## Status
 
-Initial architecture and Player Generator v1.0 specification are being implemented.
+The shared player generator and lifecycle models are implemented. Match Engine v0.1 is the adopted permanent simulation baseline as of November 1, 2026. It supports fluid player deployment, all 35 eligible players, fatigue and authorized interchanges, score-triggered quarters, bonuses, a qualifying central kick to finish at exactly 100, event-derived team/player box scores and podcast briefing data.
 
-The first event-based exhibition engine is available. It supports fluid player deployment, all 35 eligible players, fatigue and authorized interchanges, score-triggered quarters, bonuses, a qualifying central kick to finish at exactly 100, team/player box scores and compact podcast briefing data. See [Match Engine v0.1](docs/MATCH_ENGINE_V0.md) for the experimental settings, remaining rule coverage and CLI/replay instructions.
+Run `npm run verify:match-baseline` to verify the adopted source and defaults, `npm run validate:matches` for scoring/match checks, or `npm run simulate:round -- --players /private/players.json --draft /private/draft.json --coaches /private/coaches.json --round-id exhibition-round-02 --output /private/round-02` for a nine-match round covering all 18 clubs once. These commands require dependencies installed with `npm install`.
+
+See [the release decision and scope](docs/MATCH_ENGINE_V0_RELEASE.md) and [the engine model and CLI instructions](docs/MATCH_ENGINE_V0.md). The tested engine identity remains `0.1.0-exhibition` to preserve random-seed and saved-match compatibility. The core does not commit official standings or carry player injuries into future matches.
 
 
 ## Season and player-pool cadence

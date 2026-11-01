@@ -124,6 +124,18 @@ Test 1 completes 15 neutral-coaching pairings × 50 fixtures = 750 matches. Ever
 
 The manifest fixes profiles, directions, presets, seed scheme, source hashes and all 1,000 fixtures before simulation. Atomic series checkpoints permit exact resumption. Every result verifies legal scores/qualifying winning kicks, all credited player statistics, quarter points and player time. Summaries include measured exposure: at least 90% of specialist player-time must come from players with a material attribute change. All outcomes and player box scores, one complete replay ledger per series, tactical winner changes, intervals and sanitized experimental rosters are retained. Matched summary ratings and a small number of constructed profiles cannot establish that all coherent styles are equally viable; report failures and mixed results rather than tuning toward parity.
 
+### An all-club exhibition round
+
+`simulate:round` draws nine fixtures so that each of the 18 actual drafted teams features exactly once. A seeded Fisher–Yates shuffle of canonical team order pairs adjacent clubs; this is an unseeded exhibition draw with no home-advantage effect. The fixture list, match seeds, engine/input hashes and stopping rule are saved before simulation. Every club uses its original coach preferences and actual 35-player roster. Each fixed-seed fixture is run once, with no outcome-based redraws or rerolls.
+
+```bash
+npm run simulate:round -- --players /private/canonical_players.json --draft /private/Century_Draft_State_After_Round_35.json --coaches /private/century_founding_coaches.json --round-id exhibition-round-01 --output /private/exhibition-round
+```
+
+Use `--prepare-only` to inspect the draw before running, or `--draw-seed` to declare another draw before producing any results. Reusing an output directory requires an identical manifest; saved matches are verified rather than replaced with new outcomes. Use a new round ID and directory for a subsequent round.
+
+Outputs include every complete result/event ledger, standard Markdown box score, `round.json` with game-flow facts and leaders, and a structured `round_briefing.json` for summaries or podcast preparation. The runner verifies all credited player statistics, quarter points, player-minutes, qualifying capped winning kicks, exact replay, all-team coverage and source immutability. Narrative summaries must use recorded facts; venues, crowd reactions, quotes, diagnoses and tactical intent must not be invented. Injuries/penalties are described only as recorded, and exhibitions create no standings or persistent player changes.
+
 ## Verification
 
 `validate:matches` exercises every score from 0–99 with each scoring category, bonus ownership/cancellation/caps, post-victory rejection, exact replay, input immutability, quarter and score reconciliation, player participation, on-field limits, penalty countdowns, injury stress cases, genuine ability differences and safe abort behavior. Existing player-generation, lifecycle, pool, edge-mirror, type and registry build checks remain applicable.

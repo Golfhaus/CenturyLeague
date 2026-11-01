@@ -22,7 +22,8 @@
     "sample:club": "npm run build:core && node scripts/analyze-club-opponents.mjs",
     "sample:league": "npm run build:core && node scripts/analyze-league-balance.mjs",
     "probe:roster-repair": "npm run build:core && node scripts/probe-roster-repair.mjs",
-    "check:styles": "npm run build:core && node scripts/check-style-viability.mjs"
+    "check:styles": "npm run build:core && node scripts/check-style-viability.mjs",
+    "simulate:round": "npm run build:core && node scripts/run-exhibition-round.mjs"
   },
   "devDependencies": {
     "typescript": "7.0.2"

@@ -559,3 +559,5 @@ h1, h2, h3, h4 { margin-top: 0; }
 .match-center .notice button { display:block; margin-top:12px; }
 .match-center button:disabled { opacity:.45; cursor:not-allowed; }
 .match-center :focus-visible { outline:3px solid #a8d8ff; outline-offset:3px; }
+.main-content,.match-center,.match-center > * { min-width:0; }
+.match-table-wrap { max-width:100%; }

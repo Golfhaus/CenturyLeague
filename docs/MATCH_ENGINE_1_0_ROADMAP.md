@@ -26,7 +26,7 @@ The additive database migration, backend-only transactional RPCs and authenticat
 
 The Match Center is implemented in the registry and staged in the engine PR: explicit exhibition creation, activation, simulation, proposal review, acceptance, saved-result reopening, replay verification, box scores and accepted-only round briefing exports. Its backend computes proposals from pinned inputs and derives the commissioner identity from a verified session. Browser roles cannot send result ledgers or call write RPCs. See [database workflow and validation](MATCH_WORKFLOW_DATABASE.md).
 
-Local isolated database/service tests pass 61 checks; CI additionally uses a disposable PostgreSQL service for independent-session contention and rollback tests. The live permission probe rolled back without leaving competition/match records. The accepted gameplay source/default fingerprint is unchanged.
+Local isolated database/service tests pass 61 checks; CI passes 68 checks with a disposable PostgreSQL service, including independent-session contention and rollback. Nine additional Chromium checks cover the desktop/mobile surface with mocked API responses. The live permission probe rolled back without leaving competition/match records. The accepted gameplay source/default fingerprint is unchanged.
 
 ## Remaining integration and release checks
 

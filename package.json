@@ -14,7 +14,17 @@
     "validate:lifecycle": "npm run build:core && node scripts/validate-monthly-lifecycle.mjs",
     "validate:pool": "npm run build:core && node scripts/validate-pool-lifecycle.mjs",
     "validate:players": "npm run build:core && node scripts/validate-player-factory.mjs",
-    "validate:edge-mirror": "node scripts/validate-edge-mirror.mjs"
+    "validate:edge-mirror": "node scripts/validate-edge-mirror.mjs",
+    "validate:matches": "npm run build:core && node scripts/validate-matches.mjs",
+    "simulate:exhibitions": "npm run build:core && node scripts/run-exhibitions.mjs",
+    "analyze:matches": "npm run build:core && node scripts/analyze-match-variation.mjs",
+    "audit:matches": "npm run build:core && node scripts/audit-match-engine.mjs",
+    "sample:club": "npm run build:core && node scripts/analyze-club-opponents.mjs",
+    "sample:league": "npm run build:core && node scripts/analyze-league-balance.mjs",
+    "probe:roster-repair": "npm run build:core && node scripts/probe-roster-repair.mjs",
+    "check:styles": "npm run build:core && node scripts/check-style-viability.mjs",
+    "simulate:round": "npm run build:core && node scripts/run-exhibition-round.mjs",
+    "verify:match-baseline": "npm run build:core && node scripts/verify-match-baseline.mjs"
   },
   "devDependencies": {
     "typescript": "7.0.2"

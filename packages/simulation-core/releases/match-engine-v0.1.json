@@ -1,0 +1,56 @@
+{
+  "release": "match-engine-v0.1",
+  "status": "adopted-baseline",
+  "adoptedOn": "2026-11-01",
+  "engineVersion": "0.1.0-exhibition",
+  "gameplaySourceCommit": "ebd0a56161e2536fdaa167f376f05b3b303dc9bd",
+  "sourceSHA256": "9513ba17bef8814027cc3408731f7d26db9c8ce8cd5a25f52c42175286db3521",
+  "hashMethod": "SHA-256 of UTF-8 source files in the listed order, joined with a single newline; retain each file's own trailing newline.",
+  "sourceFiles": [
+    "packages/simulation-core/src/match/engine.ts",
+    "packages/simulation-core/src/match/input.ts",
+    "packages/simulation-core/src/match/scoring.ts",
+    "packages/simulation-core/src/match/statistics.ts",
+    "packages/simulation-core/src/match/types.ts",
+    "packages/simulation-core/src/match/report.ts",
+    "packages/simulation-core/src/random.ts",
+    "packages/simulation-core/src/roleRatings.ts",
+    "packages/simulation-core/src/config.ts",
+    "packages/simulation-core/src/types.ts"
+  ],
+  "defaultConfig": {
+    "fieldLength": 150,
+    "fieldWidth": 95,
+    "onField": 15,
+    "minimumPlayers": 12,
+    "standardPenaltySeconds": 120,
+    "seriousPenaltySeconds": 300,
+    "intervalSeconds": [600, 1200, 600],
+    "maxEvents": 40000,
+    "maxPlayingSeconds": 18000,
+    "fatiguePerSecond": 0.0009,
+    "benchRecoveryPerSecond": 0.0012,
+    "injuryChancePerContest": 0.0008,
+    "substitutionReviewSeconds": 35
+  },
+  "scope": "Permanent event-based match-simulation baseline, including seeded exhibitions, event-derived statistics and summary briefings. Official competition administration remains separate.",
+  "compatibility": "Retain the engine version string because it is part of random-seed construction. The exhibition suffix does not mean the adopted source is temporary.",
+  "knownLimits": [
+    "Aggregate contact/foul generation; full bench misconduct, retaliation, offset-foul and escalating-discipline taxonomy is not generated.",
+    "Deliberate backwards carries through the opponent's scoring zone and their special restart are not selected by the action policy.",
+    "Coaching preferences and disposal decisions are approximate; tested profiles expose substantial sensitivity to winning possession.",
+    "Two- and five-minute penalties and the twelve-player floor are v0.1 simulation defaults, not an amendment of the supplied rulebook.",
+    "Match fatigue and injuries reset; long-term availability, standings, result commits, scheduling and competition state are not implemented by this core."
+  ],
+  "validation": {
+    "scoringAndMatchChecks": 549,
+    "fullLeagueMatches": 7650,
+    "fullLeaguePairings": 153,
+    "fullLeagueSavedReplays": 153,
+    "finalStyleDiagnosticMatches": 1000,
+    "finalStyleSavedReplays": 20,
+    "allClubExhibitionMatches": 9,
+    "allClubExhibitionSavedReplays": 9
+  },
+  "changePolicy": "Preserve historical seeds, inputs, configurations, engine identity and results. Intentional gameplay changes require an explicit version/compatibility decision, a recorded rationale and appropriate regression/calibration checks. Never silently replace this baseline or reroll saved results."
+}

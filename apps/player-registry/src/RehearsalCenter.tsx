@@ -3,6 +3,7 @@ import {supabase} from './lib/supabase';
 import {request as requestMatch,download} from './lib/match-api';
 import type {Review} from './lib/match-api';
 import type {ReplayReport,CompetitiveMatchInput} from '@century-league/simulation-core';
+import {APPROVED_RECOVERY_POLICY} from '@century-league/simulation-core/competitive/policies';
 import MatchReview from './MatchReview';
 
 type Team={id:string;name:string};
@@ -10,7 +11,7 @@ type Planned={id:string;seasonId:string;roundId:string;matchDate:string;teamIds:
 type Fixture={id:string;seasonId:string;roundId:string;matchDate:string;teams:Team[];proposalId:string|null;acceptedId:string|null;
   scores:number[]|null;status:string;eligibilityChanged:boolean;blocked:boolean;eligibleCounts:number[];
   availability:{playerId:string;name:string;eligible:boolean;injuryIds:string[];suspensionIds:string[]}[]};
-type Detail={id:string;name:string;status:string;revision:number;fixtures:Fixture[];
+type Detail={id:string;name:string;status:string;revision:number;fixtures:Fixture[];policy:typeof APPROVED_RECOVERY_POLICY;
   records:{teamId:string;name:string;played:number;wins:number;losses:number;pointsFor:number;pointsAgainst:number}[];
   injuries:{id:string;name:string;recoveredOn:string}[];suspensions:{id:string;name:string;remaining:number}[];
   incidents:{id:string;name:string;reason:string;eventIds:number[]}[];reviews:{id:string;resultId:string}[];
@@ -55,9 +56,10 @@ export default function RehearsalCenter({mode='rehearsal'}:{mode?:'rehearsal'|'o
   async function operate(operation:Record<string,unknown>){await request({action:'rehearsal-command',rehearsalId:selected,commandId:key(operation),expectedRevision:detail!.revision,operation});await reload();setMessage('Commissioner decision recorded.');}
   async function reviewMatch(f:Fixture){setReview(await request({action:'rehearsal-proposal',rehearsalId:selected,proposalId:f.proposalId}));}
   const reasonReady=reason.trim().length>=10;
+  const recoveryPolicy=detail?.policy??APPROVED_RECOVERY_POLICY,totalWeight=recoveryPolicy.bands.reduce((s,b)=>s+b.weight,0);
   return <section className="generate-stack rehearsal-center" aria-label={official?'Official competition':'Competitive rehearsal'} aria-busy={busy}>
     <p>{official?'Official results share injury recovery and suspension service across competitions and monthly seasons.':'Test persistent injury recovery, bans and corrections. These matches do not count toward official league records. The inaugural tournament remains unscheduled.'}</p>
-    <p className="match-note">Recovery candidate: 80% take 1–3 calendar days, 18% take 4–10 days, and 2% take 11–28 days. Serious or repeated conduct goes to commissioner review; there are no automatic bans.</p>
+    <p className="match-note">{recoveryPolicy.id===APPROVED_RECOVERY_POLICY.id?'Adopted recovery policy':'Pinned historical recovery policy'}: {recoveryPolicy.bands.map(b=>`${100*b.weight/totalWeight}% take ${b.minimumDays}–${b.maximumDays} calendar days`).join(', ')}. Serious or repeated conduct goes to commissioner review; there are no automatic bans.</p>
     <div role="status" aria-live="polite">{busy?`Working on ${label}…`:message}</div>{error?<p role="alert" className="notice warning">{error}</p>:null}
     <div className="match-controls"><label>Saved {label}<select aria-label={`Saved ${label}`} value={selected} disabled={busy} onChange={e=>setSelected(e.target.value)}><option value="">Choose {label}</option>{list.map(r=><option key={r.id} value={r.id}>{r.name}</option>)}</select></label><button className="primary-button" disabled={busy} onClick={()=>run(async()=>{await Promise.all([reload(),loadList()]);})}>Refresh {label}</button></div>
     {detail?<>

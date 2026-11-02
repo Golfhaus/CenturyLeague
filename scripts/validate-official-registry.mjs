@@ -5,6 +5,7 @@ import {PGlite} from '@electric-sql/pglite';
 import pg from 'pg';
 import {input as sample} from './replay-runtime-probe.mjs';
 import {handleMatchAction} from '../supabase/functions/manage-matches/service.ts';
+import {APPROVED_RECOVERY_POLICY,CANDIDATE_RECOVERY_POLICY} from '../packages/simulation-core/dist/competitive/index.js';
 const url=process.env.COMPETITION_TEST_DATABASE_URL;
 if(url&&!['localhost','127.0.0.1'].includes(new URL(url).hostname))throw Error('Disposable localhost database required');
 const client=url?new pg.Client({connectionString:url}):null;if(client)await client.connect();
@@ -44,6 +45,18 @@ try{
  await rejects(()=>act(definition),/Official competition disabled/);
  await rejects(()=>db.query("update private.official_release_gates set activation_enabled=true where category='men'"),/permission denied/);
  check((await db.query('select count(*)::integer n from private.official_competition_bindings')).rows[0].n===0);
+ const historicalStream=randomUUID();
+ await db.query('select create_operations_candidate_v1($1,$2,$3,$4)',[actor.id,historicalStream,'men',JSON.stringify(CANDIDATE_RECOVERY_POLICY)]);
+ const history=(await db.query('select * from private.competition_operation_streams_candidate order by id')).rows;
+ await db.exec('reset role');
+ await db.exec(fs.readFileSync('supabase/migrations/20261102132159_adopt_calendar_recovery_v1.sql','utf8'));
+ equal((await db.query('select * from private.competition_operation_streams_candidate order by id')).rows,history);
+ const adopted=await act({action:'official-readiness'});
+ check(adopted.every(g=>g.policyApproved&&!g.formatApproved&&!g.activationEnabled&&!g.hasJournal));
+ for(const gate of adopted)equal(gate.policy,APPROVED_RECOVERY_POLICY);
+ await rejects(()=>act(definition),/Official competition disabled/);
+ await db.exec('set role service_role');
+ await rejects(()=>db.query("update private.official_release_gates set policy_approved=false where category='men'"),/permission denied/);
  await db.exec('reset role');
  // Owner-only switches are confined to this disposable database. No production
  // API or commissioner browser has permission to approve these decisions.
@@ -52,6 +65,7 @@ try{
  check((await act(definition)).added);check(!(await act(definition)).added);
  let d=await detail(firstCompetition);journal=(await db.query('select stream_id from private.official_competition_bindings where competition_id=$1',[firstCompetition])).rows[0].stream_id;
  check(d.id===firstCompetition&&d.status==='draft'&&d.fixtures.length===1);
+ equal(d.policy,APPROVED_RECOVERY_POLICY);
  await rejects(()=>propose(firstCompetition,firstFixture),/Activate/);
  await db.exec('reset role');await db.exec("update private.official_release_gates set activation_enabled=false where category='men'");await db.exec('set role service_role');
  await rejects(()=>db.query('select activate_competition_v1($1,$2,0)',[actor.id,firstCompetition]),/Official competition disabled/);

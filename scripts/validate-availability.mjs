@@ -10,7 +10,7 @@ import { competitionJSON } from '../packages/simulation-core/dist/competition/in
 import { compareMatchReplay, COORDINATE_REPLAY_POLICY } from '../packages/simulation-core/dist/competition/replay.js';
 import { candidateProbe } from './availability-runtime-probe.mjs';
 import { createOperations, prepareCompetitiveInput, availabilityFor, simulateCompetitiveMatch, executeOperation, operationsView,
- CANDIDATE_RECOVERY_POLICY, calendarDate, addCalendarDays, recoveryDays, validateCompetitiveInput, operationsTeamRecords } from '../packages/simulation-core/dist/competitive/index.js';
+ CANDIDATE_RECOVERY_POLICY, APPROVED_RECOVERY_POLICY, calendarDate, addCalendarDays, recoveryDays, validateCompetitiveInput, operationsTeamRecords } from '../packages/simulation-core/dist/competitive/index.js';
 
 let checks=0;const check=x=>{assert.ok(x);checks++;};const equal=(a,b)=>{assert.deepEqual(a,b);checks++;};
 const rejects=(f,p)=>{assert.throws(f,p);checks++;};
@@ -34,6 +34,12 @@ rejects(()=>addCalendarDays('2026-10-31',-1),/duration/);
 const durations=Array.from({length:1000},(_,i)=>recoveryDays(CANDIDATE_RECOVERY_POLICY,'sample-'+i,1,'p'));
 check(durations.every(d=>d>=1&&d<=28));check(durations.filter(d=>d<=3).length>700);check(durations.filter(d=>d>10).length>0);
 equal(recoveryDays(policy,'seed',17,'p'),recoveryDays(policy,'seed',17,'p'));
+equal(APPROVED_RECOVERY_POLICY,{id:'recovery-calendar-v1',bands:[{weight:80,minimumDays:1,maximumDays:4},{weight:18,minimumDays:5,maximumDays:10},{weight:2,minimumDays:11,maximumDays:28}]});
+check(APPROVED_RECOVERY_POLICY.id!==CANDIDATE_RECOVERY_POLICY.id);
+const adoptedDurations=Array.from({length:20000},(_,i)=>recoveryDays(APPROVED_RECOVERY_POLICY,'adoption-'+i,1,'p'));
+equal([...new Set(adoptedDurations)].sort((a,b)=>a-b),Array.from({length:28},(_,i)=>i+1));
+check(adoptedDurations.every(Number.isInteger));
+equal(APPROVED_RECOVERY_POLICY.bands.reduce((s,b)=>s+b.weight*(b.minimumDays+b.maximumDays)/200,0),3.74);
 rejects(()=>createOperations('men',{id:'bad',bands:[{weight:1,minimumDays:0,maximumDays:3}]}),/policy/);
 const initial=structuredClone(state),original=simulateCompetitiveMatch(prepareCompetitiveInput(state,base('original'),'2026-10-31'));
 check(original.events.some(e=>e.type==='injury')&&original.events.some(e=>e.type==='foul'&&e.data.serious));

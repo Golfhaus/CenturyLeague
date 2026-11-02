@@ -1,0 +1,161 @@
+{
+  "verifiedAt": "2026-11-02",
+  "pullRequest": 6,
+  "mergeCommit": "eb9db71592689c003ab174470d1e41311a2a9262",
+  "sourceTree": "8e0f8c2ade7db25c9012a9f3b14967f171c960d8",
+  "ci": {
+    "pullRequestRun": 41436435283,
+    "job": 125247218071,
+    "status": "success",
+    "officialRegistryChecks": 67,
+    "rehearsalChecks": 59,
+    "exhibitionDatabaseChecks": 110,
+    "operationsDatabaseChecks": 47,
+    "availabilityChecks": 67,
+    "matchChecks": 549,
+    "replayChecks": 26,
+    "competitionChecks": 85,
+    "independentPostgreSQLSessions": true
+  },
+  "local": {
+    "officialRegistryChecks": 64,
+    "rehearsalChecks": 56,
+    "exhibitionDatabaseChecks": 103,
+    "denoTypecheck": "passed using pinned npm SDK and manual node_modules resolution",
+    "applicationTypes": "passed",
+    "productionBuild": "passed"
+  },
+  "deployment": {
+    "function": "manage-matches",
+    "version": 4,
+    "verifyJWT": true,
+    "bundleSHA256": "2dce0cd0e2d7dd143ce0f5a816f7de2fab976c54edf095320252fa9b49cecf2c",
+    "frontendRun": 41436780555,
+    "frontendStatus": "success",
+    "liveScript": "/CenturyLeague/assets/index-BFtk1czB.js"
+  },
+  "live": {
+    "gates": [
+      {
+        "category": "men",
+        "streamId": null,
+        "formatApproved": false,
+        "policyApproved": false,
+        "activationEnabled": false
+      },
+      {
+        "category": "women",
+        "streamId": null,
+        "formatApproved": false,
+        "policyApproved": false,
+        "activationEnabled": false
+      }
+    ],
+    "views": [
+      {
+        "name": "competition_fixture_status",
+        "options": [
+          "security_invoker=true"
+        ]
+      },
+      {
+        "name": "competition_team_records",
+        "options": [
+          "security_invoker=true"
+        ]
+      }
+    ],
+    "readinessRPC": [
+      {
+        "policy": {
+          "id": "recovery-calendar-v1-candidate",
+          "bands": [
+            {
+              "weight": 80,
+              "maximumDays": 3,
+              "minimumDays": 1
+            },
+            {
+              "weight": 18,
+              "maximumDays": 10,
+              "minimumDays": 4
+            },
+            {
+              "weight": 2,
+              "maximumDays": 28,
+              "minimumDays": 11
+            }
+          ]
+        },
+        "category": "men",
+        "hasJournal": false,
+        "formatApproved": false,
+        "policyApproved": false,
+        "activationEnabled": false
+      },
+      {
+        "policy": {
+          "id": "recovery-calendar-v1-candidate",
+          "bands": [
+            {
+              "weight": 80,
+              "maximumDays": 3,
+              "minimumDays": 1
+            },
+            {
+              "weight": 18,
+              "maximumDays": 10,
+              "minimumDays": 4
+            },
+            {
+              "weight": 2,
+              "maximumDays": 28,
+              "minimumDays": 11
+            }
+          ]
+        },
+        "category": "women",
+        "hasJournal": false,
+        "formatApproved": false,
+        "policyApproved": false,
+        "activationEnabled": false
+      }
+    ],
+    "rosteredPlayers": 630,
+    "canonicalRosters": 18,
+    "officialJournals": 0,
+    "exhibitionResults": 5,
+    "serviceCanApprove": false,
+    "browserCanReadGates": false,
+    "officialCompetitions": 0,
+    "officialRegistrations": 0,
+    "rehearsalRegistrations": 3,
+    "browserCanCallReadiness": false,
+    "browserCanWriteDispositions": false,
+    "serviceCanInitializePointer": true
+  },
+  "advisors": [
+    {
+      "name": "rls_enabled_no_policy",
+      "level": "INFO",
+      "count": 13,
+      "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0008_rls_enabled_no_policy"
+    },
+    {
+      "name": "auth_leaked_password_protection",
+      "level": "WARN",
+      "count": 1,
+      "remediation": "https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection"
+    }
+  ],
+  "browser": {
+    "signedIn": false,
+    "status": "final signed-in visual check pending; existing session no longer available; no email link requested"
+  },
+  "policy": {
+    "numericChoices": "recommended; not yet adopted",
+    "automaticBans": false,
+    "inauguralFormat": "deferred",
+    "officialActivation": false
+  }
+}

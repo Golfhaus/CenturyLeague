@@ -4,7 +4,7 @@ The official registry adapter connects the accepted-result transaction to one du
 
 ## Adopted recovery policy · November 2, 2026
 
-The commissioner adopted **80% uniformly 1–4 calendar days, 18% uniformly 5–10 days, and 2% uniformly 11–28 days** as `recovery-calendar-v1`. The exact mean is **3.74 days**, and eligibility begins on the recovery date. New rehearsals and future official category journals use this policy. Both categories record recovery approval while format approval and activation remain off; no official journal or competition is initialized by adoption.
+The commissioner adopted **80% uniformly 1–4 calendar days, 18% uniformly 5–10 days, and 2% uniformly 11–28 days** as `recovery-calendar-v1`. The exact mean is **3.74 days**, and eligibility begins on the recovery date. New rehearsals and future official category journals use this policy. The pending migration will record recovery approval for both categories while leaving format approval and activation off; it initializes no official journal or competition.
 
 `20261102132159_adopt_calendar_recovery_v1.sql` updates only the uninitialized official category configuration. It refuses to rewrite policy after an official journal is initialized. Existing validation journals keep their immutable original policy, revision and hash head. The UI displays the actual selected journal policy, so the historical 1–3 / 4–10 day rehearsal remains accurately labeled. The adopted policy is a separate configuration export; both frozen gameplay source fingerprints remain unchanged.
 
@@ -69,3 +69,12 @@ The updated shared review screen also reopened the existing closed integrated re
 The Round 1 download contains exactly one active accepted replacement, zero pending fixtures, 70 player totals and 191 credited points. The superseded source is excluded. These checks used the deployed authenticated backend through the intended UI. No official competition, fixture, result or approval gate was created or changed. The [current commissioner-screen proof](verification/official-visual-verified-2026-11-02.jpg) excludes the account sidebar.
 
 This completes the previously blocked signed-in readiness/UI regression check. It does not claim that an official competition has been activated or played: the deferred exact format and its fixture integration, and the final controlled official acceptance rehearsal still precede workflow 1.0 activation. The revised recovery policy above is now adopted.
+
+
+## Recovery adoption deployment status
+
+[PR #7](https://github.com/Golfhaus/CenturyLeague/pull/7) implements the revised policy and is merged. PostgreSQL CI passed 74 official registry checks and 60 rehearsal integration checks; the availability suite passed 72 checks. Both frozen source identities, application/Deno types and the production build pass. The backend is deployed as authenticated `manage-matches` version 5, and frontend deployment `41453230186` succeeded. New rehearsal creation uses the adopted distribution.
+
+**The official category database update remains pending.** Supabase's separate migration confirmation expired twice before executing `20261102132159_adopt_calendar_recovery_v1.sql`. Read-only verification confirms both official category configurations still contain the historical candidate policy with approval false, format false and activation false. No official journal or competition exists. The existing validation journal remains at revision 7 with exactly the same hash head as before adoption; its policy and recovery dates were not rewritten.
+
+The signed-in UI displays the adopted 1–4 / 5–10 / 11–28 day ranges for new work and the original 1–3 / 4–10 / 11–28 ranges for the selected historical rehearsal. The official approval rows correctly remain Pending until the database confirmation succeeds. [Deployment evidence](verification/recovery-adoption-2026-11-02.json) and [screen proof](verification/recovery-adoption-2026-11-02.jpg) record this partial deployment explicitly. Complete the outstanding confirmation before treating the official registry policy as applied; no further gameplay rebalance or additional login email is needed.

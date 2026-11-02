@@ -1,0 +1,91 @@
+{
+  "date": "2026-11-02",
+  "policy": {
+    "id": "recovery-calendar-v1",
+    "bands": [
+      {
+        "weight": 80,
+        "minimumDays": 1,
+        "maximumDays": 4
+      },
+      {
+        "weight": 18,
+        "minimumDays": 5,
+        "maximumDays": 10
+      },
+      {
+        "weight": 2,
+        "minimumDays": 11,
+        "maximumDays": 28
+      }
+    ],
+    "meanCalendarDays": 3.74,
+    "commissionerDecision": "adopted"
+  },
+  "source": {
+    "pullRequest": 7,
+    "mergeCommit": "5d84c73230e6bc4331f1b2304d0efca639dd8a3a",
+    "tree": "1333ab3580ece004f471e157d70ca364f8ae5236"
+  },
+  "validation": {
+    "ciRun": 41452854791,
+    "postMergeCI": 41453230333,
+    "status": "success",
+    "officialPostgreSQLChecks": 74,
+    "rehearsalPostgreSQLChecks": 60,
+    "availabilityChecks": 72,
+    "localOfficialChecks": 71,
+    "localRehearsalChecks": 57,
+    "types": "passed",
+    "productionBuild": "passed",
+    "deno": "passed",
+    "baselineFingerprintUnchanged": true,
+    "availabilityAdapterFingerprintUnchanged": true
+  },
+  "deployment": {
+    "backendVersion": 5,
+    "backendBundleSHA256": "42d505db5ed15099d13d19772cff9c8d716a9fff22e9e8b6d36f09060c474339",
+    "verifyJWT": true,
+    "frontendRun": 41453230186,
+    "frontendStatus": "success",
+    "newRehearsalDefault": "recovery-calendar-v1",
+    "officialDatabaseMigration": "pending",
+    "migrationFile": "20261102132159_adopt_calendar_recovery_v1.sql",
+    "confirmationAttempts": 2,
+    "confirmationResult": "expired after 2 minutes; no migration applied"
+  },
+  "live": {
+    "gates": [
+      {
+        "journal": null,
+        "approved": false,
+        "category": "men",
+        "policyId": "recovery-calendar-v1-candidate",
+        "formatApproved": false,
+        "activationEnabled": false
+      },
+      {
+        "journal": null,
+        "approved": false,
+        "category": "women",
+        "policyId": "recovery-calendar-v1-candidate",
+        "formatApproved": false,
+        "activationEnabled": false
+      }
+    ],
+    "historicalHead": "1dafc82c8c822b64b5cb0f010d16f07c0513e0165b485a46d9b00e8e25783dac",
+    "historicalRevision": 7,
+    "officialCompetitions": 0
+  },
+  "historicalJournalUnchanged": true,
+  "browser": {
+    "signedIn": true,
+    "adoptedRangesVisible": true,
+    "historicalRangesVisible": true,
+    "officialApprovalDisplayed": "Pending",
+    "formatDisplayed": "Deferred",
+    "activationDisplayed": "Off",
+    "screenshot": "recovery-adoption-2026-11-02.jpg"
+  },
+  "officialMatchesCreated": 0
+}

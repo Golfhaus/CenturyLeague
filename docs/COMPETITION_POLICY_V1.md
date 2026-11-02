@@ -50,7 +50,7 @@ Formal forfeits and other administrative abandonment outcomes remain deferred un
 - Completed: technical abort/interrupted request regression checks preserve unplayed records and recover saved records without duplication.
 - Completed: [versioned cross-runtime replay comparison](REPLAY_PORTABILITY_V1.md), retaining exact match facts and explicitly bounded lateral coordinate rounding.
 - Completed: [four-team, two-round live rehearsal](FOUR_TEAM_VALIDATION_2026_11_01.md) for cumulative records, partial rounds, recovery and accepted-only briefing exports.
-- A [competitive operations candidate](COMPETITIVE_OPERATIONS_CANDIDATE.md) now implements/tests eligibility, recovery, discipline decisions, carryover/service and correction projections with durable validation storage. Connect the official transaction/UI boundary and calibrate its explicit candidate choices before activation; its migration is not applied live.
+- A [competitive operations candidate](COMPETITIVE_OPERATIONS_CANDIDATE.md) now implements/tests eligibility, recovery, discipline decisions, carryover/service and correction projections with durable validation storage. The [commissioner rehearsal transaction/UI](COMPETITIVE_REHEARSAL_INTEGRATION.md) is now deployed. Adopt/calibrate the explicit candidate choices and bind the authoritative official category-wide journal before official activation.
 - Continue to defer the inaugural tournament format until the rest of the engine is ready.
 
 ## Restart/retry regression evidence

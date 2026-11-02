@@ -1,0 +1,3173 @@
+{
+  "classification": "competitive-rehearsal",
+  "rehearsalId": "a1b9ef69-87e4-42e3-96e1-e95bf0e2fa3b",
+  "status": "closed",
+  "revision": 7,
+  "registrations": 3,
+  "activeResults": 2,
+  "originalLedgerPreserved": true,
+  "originalSHA256": "30d125c50acb55ae14022d6f996c4f98326ecbcf1304534f54b656e7eb9804ec",
+  "closedStateRecoveredAfterReload": true,
+  "closedCorrectionDisabled": true,
+  "deployedReplay": "exact",
+  "outstandingRehearsalBan": {
+    "player": "Ryan Campos",
+    "remaining": 1,
+    "historicalReplacementDidNotServeLaterBan": true
+  },
+  "publicBaseline": {
+    "officialCompetitions": 0,
+    "exhibitionResults": 5,
+    "seasonRosterSnapshots": 18
+  },
+  "publication": {
+    "pr": 5,
+    "merge": "835e7e5835f912dbec99595b5d5aa526bb179e12",
+    "dateFix": "d1f1f8a5da31ce1176b3f65747761d20523f8ac8",
+    "ci": 41379259044,
+    "dateFixCI": 41379818385,
+    "frontendDeployment": 41379818378,
+    "backendVersion": 3,
+    "verifyJWT": true
+  },
+  "checks": {
+    "domain": 67,
+    "postgresIntegration": 59,
+    "postgresStorage": 47,
+    "exhibitionPostgres": 110,
+    "matches": 549,
+    "competition": 85,
+    "replay": 26
+  },
+  "briefings": [
+    {
+      "classification": "competitive-rehearsal",
+      "rehearsalId": "a1b9ef69-87e4-42e3-96e1-e95bf0e2fa3b",
+      "roundId": "Round 1",
+      "acceptedMatches": 1,
+      "pendingFixtures": 0,
+      "matches": [
+        {
+          "id": "e928e87c-56c5-4948-bac1-44d63daf5492",
+          "engineVersion": "0.2.0-availability-candidate",
+          "seed": "a1b9ef69-87e4-42e3-96e1-e95bf0e2fa3b:97c90641-9e3c-44ce-b764-5460af13bb5c",
+          "teams": [
+            "Roanoke Athletic",
+            "Lynchburg Union"
+          ],
+          "scores": [
+            100,
+            91
+          ],
+          "winner": "Roanoke Athletic",
+          "playingMinutes": 105.73474090970976,
+          "elapsedMinutes": 186.018074243043,
+          "quarters": [
+            {
+              "points": [
+                16,
+                25
+              ],
+              "quarter": 1,
+              "cumulative": [
+                16,
+                25
+              ],
+              "elapsedSeconds": 1857.7510891813902,
+              "playingSeconds": 1342.75108918139
+            },
+            {
+              "points": [
+                34,
+                20
+              ],
+              "quarter": 2,
+              "cumulative": [
+                50,
+                45
+              ],
+              "elapsedSeconds": 2266.9923459348756,
+              "playingSeconds": 1562.9923459348734
+            },
+            {
+              "points": [
+                25,
+                17
+              ],
+              "quarter": 3,
+              "cumulative": [
+                75,
+                62
+              ],
+              "elapsedSeconds": 1949.7038705850018,
+              "playingSeconds": 1448.7038705850014
+            },
+            {
+              "points": [
+                25,
+                29
+              ],
+              "quarter": 4,
+              "cumulative": [
+                100,
+                91
+              ],
+              "elapsedSeconds": 2686.637148881313,
+              "playingSeconds": 1989.637148881321
+            }
+          ],
+          "topScorers": [
+            {
+              "id": "a59f99c7-d986-4123-ade6-f4402700559f",
+              "name": "Nico Flores",
+              "team": "Roanoke Athletic",
+              "points": 21,
+              "centralAirScores": 5,
+              "shots": 9
+            },
+            {
+              "id": "c9e71b7f-60f2-4c9e-ac8e-904be0bd0894",
+              "name": "Brian Patel",
+              "team": "Roanoke Athletic",
+              "points": 17,
+              "centralAirScores": 4,
+              "shots": 9
+            },
+            {
+              "id": "575de6f7-7003-4232-bf36-c0bceac93aa0",
+              "name": "Dawson Kim",
+              "team": "Roanoke Athletic",
+              "points": 12,
+              "centralAirScores": 3,
+              "shots": 6
+            },
+            {
+              "id": "81df8c85-518e-4da2-b57c-54ec1d0b0a98",
+              "name": "Noah Cannon",
+              "team": "Lynchburg Union",
+              "points": 12,
+              "centralAirScores": 3,
+              "shots": 3
+            },
+            {
+              "id": "0d2d3706-c339-4ede-a7a9-2205d0d39f65",
+              "name": "Colin Atkins",
+              "team": "Roanoke Athletic",
+              "points": 10,
+              "centralAirScores": 2,
+              "shots": 5
+            },
+            {
+              "id": "f8ab22ae-5658-48b2-87bc-974e4a620145",
+              "name": "Ruben Edwards",
+              "team": "Lynchburg Union",
+              "points": 8,
+              "centralAirScores": 2,
+              "shots": 2
+            }
+          ],
+          "leadChanges": 5,
+          "largestLead": 13,
+          "largestScoringRun": {
+            "side": 1,
+            "points": 20,
+            "endingEventId": 1020
+          },
+          "leadHistory": [
+            {
+              "eventId": 26,
+              "side": 1,
+              "margin": 2
+            },
+            {
+              "eventId": 70,
+              "side": 0,
+              "margin": 2
+            },
+            {
+              "eventId": 881,
+              "side": 1,
+              "margin": 1
+            },
+            {
+              "eventId": 1473,
+              "side": 0,
+              "margin": 2
+            },
+            {
+              "eventId": 4021,
+              "side": 1,
+              "margin": 1
+            },
+            {
+              "eventId": 4123,
+              "side": 0,
+              "margin": 4
+            }
+          ],
+          "teamStats": [
+            {
+              "kicks": 231,
+              "shots": 75,
+              "points": 100,
+              "spoils": 51,
+              "bounces": 76,
+              "carries": 96,
+              "catches": 94,
+              "entries": 304,
+              "tackles": 13,
+              "evasions": 8,
+              "turnovers": 65,
+              "ballUpsWon": 46,
+              "recoveries": 120,
+              "handPunches": 148,
+              "timesTackled": 20,
+              "bonusesEarned": 3,
+              "interceptions": 32,
+              "playerSeconds": 95161.26681873878,
+              "outerAirScores": 9,
+              "completedPasses": 207,
+              "transitionShots": 20,
+              "bonusesConverted": 2,
+              "centralAirScores": 20,
+              "possessionSeconds": 2890.0734661560273,
+              "shortHandedSeconds": 0,
+              "centralBounceScores": 5
+            },
+            {
+              "kicks": 214,
+              "shots": 58,
+              "points": 91,
+              "spoils": 53,
+              "bounces": 70,
+              "carries": 83,
+              "catches": 105,
+              "entries": 313,
+              "tackles": 20,
+              "evasions": 16,
+              "turnovers": 77,
+              "ballUpsWon": 52,
+              "recoveries": 93,
+              "handPunches": 150,
+              "timesTackled": 13,
+              "interceptions": 33,
+              "playerSeconds": 95161.26681873878,
+              "outerAirScores": 13,
+              "completedPasses": 204,
+              "transitionShots": 8,
+              "centralAirScores": 18,
+              "possessionSeconds": 2956.010988426559,
+              "shortHandedSeconds": 0,
+              "centralBounceScores": 3
+            }
+          ],
+          "winningPlay": {
+            "eventId": 4796,
+            "player": "Spencer Walsh",
+            "awardedPoints": 3,
+            "quarter": 4,
+            "playingSeconds": 6344.084454582586,
+            "kind": "central_air",
+            "scores": [
+              100,
+              91
+            ],
+            "winning": true,
+            "deflected": false,
+            "bonusesLost": 0,
+            "bonusCredits": [],
+            "pointsCapped": 1,
+            "nominalPoints": 4,
+            "bonusesConverted": 0
+          },
+          "noteworthy": [],
+          "evidencePolicy": "Use only these recorded facts and cited event IDs. Do not invent dialogue, injuries, crowd reactions, or tactical causes.",
+          "standings": null,
+          "requiresReview": false
+        }
+      ],
+      "playerTotals": [
+        {
+          "id": "a59f99c7-d986-4123-ade6-f4402700559f",
+          "name": "Nico Flores",
+          "secondsPlayed": 4922.151438783004,
+          "stats": {
+            "kicks": 24,
+            "shots": 9,
+            "points": 21,
+            "spoils": 1,
+            "bounces": 8,
+            "carries": 9,
+            "catches": 13,
+            "entries": 6,
+            "evasions": 1,
+            "turnovers": 5,
+            "ballUpsWon": 2,
+            "recoveries": 16,
+            "handPunches": 22,
+            "timesTackled": 1,
+            "interceptions": 3,
+            "outerAirScores": 1,
+            "completedPasses": 31,
+            "centralAirScores": 5
+          }
+        },
+        {
+          "id": "c9e71b7f-60f2-4c9e-ac8e-904be0bd0894",
+          "name": "Brian Patel",
+          "secondsPlayed": 4534.107806021369,
+          "stats": {
+            "kicks": 19,
+            "shots": 9,
+            "points": 17,
+            "spoils": 2,
+            "bounces": 4,
+            "carries": 5,
+            "catches": 6,
+            "entries": 8,
+            "tackles": 2,
+            "turnovers": 6,
+            "ballUpsWon": 4,
+            "recoveries": 11,
+            "handPunches": 12,
+            "timesTackled": 1,
+            "interceptions": 3,
+            "outerAirScores": 1,
+            "completedPasses": 15,
+            "centralAirScores": 4
+          }
+        },
+        {
+          "id": "0d2d3706-c339-4ede-a7a9-2205d0d39f65",
+          "name": "Colin Atkins",
+          "secondsPlayed": 4997.852818834676,
+          "stats": {
+            "kicks": 15,
+            "shots": 5,
+            "points": 10,
+            "spoils": 4,
+            "bounces": 3,
+            "carries": 4,
+            "catches": 3,
+            "entries": 7,
+            "turnovers": 4,
+            "ballUpsWon": 1,
+            "recoveries": 4,
+            "handPunches": 1,
+            "timesTackled": 1,
+            "outerAirScores": 2,
+            "completedPasses": 6,
+            "centralAirScores": 2
+          }
+        },
+        {
+          "id": "b959107a-8182-4d41-800b-62396b52205a",
+          "name": "Andre Pratt",
+          "secondsPlayed": 4350.007991684332,
+          "stats": {
+            "kicks": 9,
+            "points": 2,
+            "spoils": 1,
+            "bounces": 4,
+            "carries": 5,
+            "catches": 4,
+            "entries": 10,
+            "tackles": 1,
+            "evasions": 1,
+            "turnovers": 3,
+            "ballUpsWon": 2,
+            "recoveries": 6,
+            "handPunches": 7,
+            "timesTackled": 1,
+            "interceptions": 3,
+            "completedPasses": 8,
+            "centralBounceScores": 1
+          }
+        },
+        {
+          "id": "575de6f7-7003-4232-bf36-c0bceac93aa0",
+          "name": "Dawson Kim",
+          "secondsPlayed": 4533.568473149044,
+          "stats": {
+            "kicks": 10,
+            "shots": 6,
+            "points": 12,
+            "spoils": 4,
+            "bounces": 7,
+            "carries": 9,
+            "catches": 4,
+            "entries": 10,
+            "tackles": 2,
+            "evasions": 1,
+            "turnovers": 1,
+            "ballUpsWon": 4,
+            "recoveries": 6,
+            "handPunches": 8,
+            "timesTackled": 2,
+            "interceptions": 2,
+            "completedPasses": 8,
+            "centralAirScores": 3
+          }
+        },
+        {
+          "id": "4cefe810-7619-4276-8bc7-b701fb321d67",
+          "name": "Andrew Bell",
+          "secondsPlayed": 4226.291524187185,
+          "stats": {
+            "kicks": 10,
+            "shots": 4,
+            "points": 1,
+            "spoils": 2,
+            "bounces": 3,
+            "carries": 4,
+            "catches": 3,
+            "entries": 11,
+            "tackles": 1,
+            "turnovers": 3,
+            "recoveries": 7,
+            "handPunches": 4,
+            "timesTackled": 1,
+            "bonusesEarned": 1,
+            "completedPasses": 7,
+            "bonusesConverted": 1
+          }
+        },
+        {
+          "id": "ce7d1a69-ae3e-47a3-a562-2ee5c20c5ad5",
+          "name": "Felipe Smith",
+          "secondsPlayed": 3955.9259809339183,
+          "stats": {
+            "kicks": 10,
+            "shots": 4,
+            "points": 5,
+            "bounces": 4,
+            "carries": 5,
+            "catches": 9,
+            "entries": 14,
+            "turnovers": 6,
+            "ballUpsWon": 2,
+            "recoveries": 3,
+            "handPunches": 7,
+            "timesTackled": 1,
+            "interceptions": 2,
+            "outerAirScores": 1,
+            "completedPasses": 9,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "16af8265-8b57-48bc-b0df-5793b25f729d",
+          "name": "Daniel Rice",
+          "secondsPlayed": 4398.554548982694,
+          "stats": {
+            "kicks": 9,
+            "shots": 3,
+            "points": 2,
+            "spoils": 4,
+            "bounces": 2,
+            "carries": 3,
+            "catches": 1,
+            "entries": 11,
+            "evasions": 1,
+            "turnovers": 3,
+            "ballUpsWon": 1,
+            "recoveries": 5,
+            "handPunches": 4,
+            "timesTackled": 1,
+            "completedPasses": 8,
+            "centralBounceScores": 1
+          }
+        },
+        {
+          "id": "b24c9bbb-789a-4d52-bc5e-9e3c21ca06c4",
+          "name": "Arthur Dean",
+          "secondsPlayed": 3974.125355659009,
+          "stats": {
+            "kicks": 9,
+            "shots": 2,
+            "spoils": 5,
+            "bounces": 3,
+            "carries": 4,
+            "catches": 1,
+            "entries": 12,
+            "tackles": 1,
+            "turnovers": 3,
+            "ballUpsWon": 1,
+            "recoveries": 5,
+            "handPunches": 2,
+            "timesTackled": 1,
+            "interceptions": 2,
+            "completedPasses": 4
+          }
+        },
+        {
+          "id": "6c0f3feb-65d3-4226-a454-5f1caf7a233f",
+          "name": "Brody Boone",
+          "secondsPlayed": 3500.8754309062856,
+          "stats": {
+            "kicks": 7,
+            "shots": 2,
+            "points": 2,
+            "spoils": 3,
+            "bounces": 2,
+            "carries": 3,
+            "catches": 2,
+            "entries": 14,
+            "turnovers": 4,
+            "ballUpsWon": 3,
+            "recoveries": 5,
+            "handPunches": 6,
+            "timesTackled": 1,
+            "completedPasses": 8,
+            "centralBounceScores": 1
+          }
+        },
+        {
+          "id": "5c4c353f-e0f9-4d03-854f-af16f876952d",
+          "name": "Sean Mora",
+          "secondsPlayed": 3674.262383377555,
+          "stats": {
+            "kicks": 8,
+            "shots": 3,
+            "points": 1,
+            "bounces": 2,
+            "carries": 2,
+            "catches": 3,
+            "entries": 13,
+            "turnovers": 1,
+            "recoveries": 2,
+            "handPunches": 6,
+            "interceptions": 2,
+            "outerAirScores": 1,
+            "completedPasses": 8
+          }
+        },
+        {
+          "id": "f7ee304e-ca3a-45c6-ac41-25b3c8c7b56a",
+          "name": "Ruben Lane",
+          "secondsPlayed": 4143.306623742859,
+          "stats": {
+            "kicks": 7,
+            "shots": 3,
+            "spoils": 1,
+            "bounces": 4,
+            "carries": 6,
+            "catches": 3,
+            "entries": 11,
+            "tackles": 1,
+            "evasions": 2,
+            "turnovers": 1,
+            "ballUpsWon": 2,
+            "recoveries": 5,
+            "handPunches": 5,
+            "timesTackled": 2,
+            "bonusesEarned": 1,
+            "completedPasses": 6
+          }
+        },
+        {
+          "id": "2fe353b7-9dec-4514-a26a-9b77e7c0b023",
+          "name": "Louis Whitney",
+          "secondsPlayed": 3896.0321416535653,
+          "stats": {
+            "kicks": 9,
+            "shots": 4,
+            "points": 1,
+            "spoils": 1,
+            "bounces": 3,
+            "carries": 5,
+            "catches": 8,
+            "entries": 13,
+            "turnovers": 1,
+            "ballUpsWon": 3,
+            "recoveries": 2,
+            "handPunches": 5,
+            "timesTackled": 2,
+            "bonusesEarned": 1,
+            "interceptions": 3,
+            "completedPasses": 6,
+            "bonusesConverted": 1
+          }
+        },
+        {
+          "id": "f40675ae-68c7-4e95-8acc-fb2bd6bc3e2a",
+          "name": "Tristan Chan",
+          "secondsPlayed": 3963.0672815429866,
+          "stats": {
+            "kicks": 12,
+            "shots": 4,
+            "points": 4,
+            "bounces": 4,
+            "carries": 4,
+            "catches": 4,
+            "entries": 12,
+            "tackles": 1,
+            "evasions": 1,
+            "turnovers": 3,
+            "ballUpsWon": 2,
+            "recoveries": 2,
+            "handPunches": 6,
+            "interceptions": 2,
+            "completedPasses": 11,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "b3f3da48-7379-4d03-b4eb-601d4d7cb930",
+          "name": "Gerardo Miranda",
+          "secondsPlayed": 3974.0979042470804,
+          "stats": {
+            "kicks": 10,
+            "shots": 2,
+            "points": 3,
+            "spoils": 4,
+            "bounces": 3,
+            "carries": 4,
+            "catches": 1,
+            "entries": 13,
+            "tackles": 1,
+            "turnovers": 3,
+            "ballUpsWon": 4,
+            "recoveries": 4,
+            "handPunches": 6,
+            "timesTackled": 1,
+            "outerAirScores": 1,
+            "completedPasses": 10,
+            "centralBounceScores": 1
+          }
+        },
+        {
+          "id": "4ac24639-8614-4e77-ad88-a1545af210eb",
+          "name": "Christian Weaver",
+          "secondsPlayed": 4126.076015942625,
+          "stats": {
+            "kicks": 5,
+            "spoils": 2,
+            "bounces": 7,
+            "carries": 7,
+            "catches": 2,
+            "entries": 13,
+            "tackles": 1,
+            "turnovers": 4,
+            "ballUpsWon": 2,
+            "recoveries": 7,
+            "handPunches": 8,
+            "interceptions": 1,
+            "completedPasses": 8
+          }
+        },
+        {
+          "id": "855820a1-9788-425f-9aff-4d961837d89a",
+          "name": "Zane Simmons",
+          "secondsPlayed": 3574.181804222497,
+          "stats": {
+            "kicks": 11,
+            "shots": 2,
+            "points": 2,
+            "spoils": 3,
+            "bounces": 2,
+            "carries": 3,
+            "catches": 11,
+            "entries": 14,
+            "turnovers": 3,
+            "ballUpsWon": 1,
+            "recoveries": 4,
+            "handPunches": 6,
+            "timesTackled": 1,
+            "interceptions": 3,
+            "completedPasses": 8,
+            "centralBounceScores": 1
+          }
+        },
+        {
+          "id": "dfbc11cb-242e-4433-843f-96677b34e54a",
+          "name": "Charles Pierce",
+          "secondsPlayed": 3081.2561330722306,
+          "stats": {
+            "kicks": 8,
+            "shots": 2,
+            "points": 1,
+            "spoils": 3,
+            "bounces": 3,
+            "carries": 3,
+            "catches": 4,
+            "entries": 13,
+            "turnovers": 2,
+            "ballUpsWon": 1,
+            "recoveries": 1,
+            "handPunches": 6,
+            "interceptions": 2,
+            "outerAirScores": 1,
+            "completedPasses": 7
+          }
+        },
+        {
+          "id": "576aed66-eb06-4d65-80d1-d634d6aad419",
+          "name": "Sawyer Lowe",
+          "secondsPlayed": 3578.070129644172,
+          "stats": {
+            "kicks": 6,
+            "shots": 1,
+            "bounces": 1,
+            "carries": 1,
+            "entries": 14,
+            "tackles": 1,
+            "turnovers": 1,
+            "ballUpsWon": 2,
+            "recoveries": 6,
+            "handPunches": 5,
+            "completedPasses": 7
+          }
+        },
+        {
+          "id": "b178fc0f-01b4-4d94-8278-87497835020b",
+          "name": "Colin West",
+          "secondsPlayed": 2564.625714218048,
+          "stats": {
+            "kicks": 6,
+            "shots": 3,
+            "points": 4,
+            "spoils": 2,
+            "carries": 1,
+            "catches": 3,
+            "entries": 11,
+            "turnovers": 2,
+            "recoveries": 4,
+            "handPunches": 2,
+            "timesTackled": 1,
+            "interceptions": 1,
+            "completedPasses": 3,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "b6e1b75d-1041-4b7f-b5e5-9b9c9b5fe94f",
+          "name": "Malik Perry",
+          "secondsPlayed": 1157.4359639479544,
+          "stats": {
+            "kicks": 3,
+            "shots": 1,
+            "points": 1,
+            "catches": 1,
+            "entries": 5,
+            "recoveries": 1,
+            "handPunches": 1,
+            "outerAirScores": 1,
+            "completedPasses": 2
+          }
+        },
+        {
+          "id": "610b8151-cd06-472a-9620-f0c1bbc2f87e",
+          "name": "Reid Yu",
+          "secondsPlayed": 2874.8238342924033,
+          "stats": {
+            "kicks": 3,
+            "spoils": 1,
+            "bounces": 1,
+            "carries": 1,
+            "entries": 13,
+            "ballUpsWon": 2,
+            "recoveries": 4,
+            "handPunches": 4,
+            "interceptions": 1,
+            "completedPasses": 5
+          }
+        },
+        {
+          "id": "0a13a9bd-5458-45e9-a7dd-d24ac339da72",
+          "name": "Robert Soto",
+          "secondsPlayed": 990.5582438967655,
+          "stats": {
+            "spoils": 1,
+            "entries": 5
+          }
+        },
+        {
+          "id": "1df7b60d-6111-4176-9f23-337203fb0804",
+          "name": "Spencer Walsh",
+          "secondsPlayed": 2590.4825630979044,
+          "stats": {
+            "kicks": 8,
+            "shots": 3,
+            "points": 3,
+            "spoils": 1,
+            "bounces": 2,
+            "carries": 2,
+            "catches": 3,
+            "entries": 12,
+            "turnovers": 2,
+            "ballUpsWon": 3,
+            "recoveries": 4,
+            "handPunches": 6,
+            "interceptions": 1,
+            "completedPasses": 8,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "7dd71b98-eaa9-4eb1-8081-8dd8f697d7e4",
+          "name": "Zion Walters",
+          "secondsPlayed": 2858.0057100973913,
+          "stats": {
+            "kicks": 6,
+            "shots": 2,
+            "points": 4,
+            "spoils": 3,
+            "bounces": 3,
+            "carries": 4,
+            "catches": 3,
+            "entries": 13,
+            "evasions": 1,
+            "turnovers": 4,
+            "ballUpsWon": 2,
+            "recoveries": 2,
+            "handPunches": 5,
+            "timesTackled": 1,
+            "interceptions": 1,
+            "completedPasses": 5,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "22466e85-64a0-42f7-8c5d-4f05034c87b7",
+          "name": "Max Curry",
+          "secondsPlayed": 1942.4910808773934,
+          "stats": {
+            "kicks": 2,
+            "spoils": 1,
+            "bounces": 1,
+            "carries": 1,
+            "catches": 1,
+            "entries": 11,
+            "ballUpsWon": 1,
+            "handPunches": 2,
+            "completedPasses": 3
+          }
+        },
+        {
+          "id": "865c1aeb-370b-4f87-8713-3319cba9ecd2",
+          "name": "Hassan Clay",
+          "secondsPlayed": 379.655280770862,
+          "stats": {
+            "entries": 2
+          }
+        },
+        {
+          "id": "88789b56-2408-49a6-9554-577f43eadea6",
+          "name": "Alan Henderson",
+          "secondsPlayed": 603.8350710577564,
+          "stats": {
+            "kicks": 2,
+            "catches": 1,
+            "entries": 3,
+            "recoveries": 1,
+            "handPunches": 1,
+            "completedPasses": 3
+          }
+        },
+        {
+          "id": "8befaf64-83f8-4438-b909-67f4f571f889",
+          "name": "Damon Meyer",
+          "secondsPlayed": 1200.0317612992715,
+          "stats": {
+            "kicks": 1,
+            "shots": 1,
+            "points": 4,
+            "spoils": 1,
+            "carries": 1,
+            "entries": 7,
+            "tackles": 1,
+            "ballUpsWon": 1,
+            "recoveries": 1,
+            "handPunches": 1,
+            "timesTackled": 1,
+            "completedPasses": 1,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "a2610e68-2c0c-4728-a33b-ba91eafdd4ad",
+          "name": "Ravi Everett",
+          "secondsPlayed": 595.5098085959442,
+          "stats": {
+            "kicks": 2,
+            "spoils": 1,
+            "entries": 3,
+            "recoveries": 2,
+            "completedPasses": 2
+          }
+        },
+        {
+          "id": "99dbc474-0d7d-492b-b811-a92ea1e11b1c",
+          "name": "Julian Higgins",
+          "secondsPlayed": 0,
+          "stats": {}
+        },
+        {
+          "id": "d07bd140-72ef-49a9-af63-97017bca7ba8",
+          "name": "Sawyer Hoffman",
+          "secondsPlayed": 0,
+          "stats": {}
+        },
+        {
+          "id": "e83d3d31-0151-4885-966f-17979ed1e1c0",
+          "name": "Kareem Soto",
+          "secondsPlayed": 0,
+          "stats": {}
+        },
+        {
+          "id": "87fc51a0-28fa-4211-abb1-ceff5f661fa6",
+          "name": "Finn Hurley",
+          "secondsPlayed": 0,
+          "stats": {}
+        },
+        {
+          "id": "eaa0a681-abd8-445e-b84e-6b6bc56dc2dc",
+          "name": "Jonah Grant",
+          "secondsPlayed": 0,
+          "stats": {}
+        },
+        {
+          "id": "f8ab22ae-5658-48b2-87bc-974e4a620145",
+          "name": "Ruben Edwards",
+          "secondsPlayed": 4972.052826545107,
+          "stats": {
+            "kicks": 20,
+            "shots": 2,
+            "points": 8,
+            "spoils": 5,
+            "bounces": 5,
+            "carries": 6,
+            "catches": 7,
+            "entries": 7,
+            "tackles": 3,
+            "evasions": 1,
+            "turnovers": 10,
+            "ballUpsWon": 7,
+            "recoveries": 6,
+            "handPunches": 9,
+            "timesTackled": 1,
+            "interceptions": 2,
+            "completedPasses": 16,
+            "centralAirScores": 2
+          }
+        },
+        {
+          "id": "6794072f-9036-439c-bfaf-f45ffa718ee6",
+          "name": "Ryan Campos",
+          "secondsPlayed": 4941.921014939375,
+          "stats": {
+            "kicks": 14,
+            "shots": 7,
+            "points": 8,
+            "spoils": 5,
+            "bounces": 9,
+            "carries": 9,
+            "catches": 8,
+            "entries": 6,
+            "tackles": 2,
+            "evasions": 3,
+            "turnovers": 2,
+            "ballUpsWon": 5,
+            "recoveries": 7,
+            "handPunches": 16,
+            "interceptions": 3,
+            "outerAirScores": 2,
+            "completedPasses": 20,
+            "centralAirScores": 1,
+            "centralBounceScores": 1
+          }
+        },
+        {
+          "id": "cebe4c8a-985b-4a92-8e85-eaba89f8fd61",
+          "name": "Vincent Zimmerman",
+          "secondsPlayed": 4526.806834239349,
+          "stats": {
+            "kicks": 22,
+            "shots": 7,
+            "points": 6,
+            "spoils": 10,
+            "bounces": 2,
+            "carries": 3,
+            "catches": 9,
+            "entries": 10,
+            "turnovers": 5,
+            "ballUpsWon": 8,
+            "recoveries": 6,
+            "handPunches": 6,
+            "timesTackled": 1,
+            "interceptions": 2,
+            "outerAirScores": 2,
+            "completedPasses": 14,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "4c62cd26-f813-499f-bbb4-02c30070f4d6",
+          "name": "Russell Gomez",
+          "secondsPlayed": 4730.166232561817,
+          "stats": {
+            "kicks": 6,
+            "shots": 1,
+            "spoils": 1,
+            "bounces": 6,
+            "carries": 6,
+            "catches": 9,
+            "entries": 9,
+            "tackles": 1,
+            "turnovers": 5,
+            "recoveries": 3,
+            "handPunches": 9,
+            "interceptions": 2,
+            "completedPasses": 9
+          }
+        },
+        {
+          "id": "c6398705-e7a6-4883-8fe9-1e5cadb63311",
+          "name": "Cayden Atkins",
+          "secondsPlayed": 4271.571042319157,
+          "stats": {
+            "kicks": 12,
+            "shots": 4,
+            "points": 6,
+            "bounces": 6,
+            "carries": 6,
+            "catches": 6,
+            "entries": 13,
+            "evasions": 2,
+            "turnovers": 4,
+            "recoveries": 4,
+            "handPunches": 6,
+            "completedPasses": 10,
+            "centralAirScores": 1,
+            "centralBounceScores": 1
+          }
+        },
+        {
+          "id": "3e1e61f2-884b-4bf7-8ff3-62533c20fbd4",
+          "name": "Wesley Carrillo",
+          "secondsPlayed": 4551.233355056319,
+          "stats": {
+            "kicks": 12,
+            "shots": 4,
+            "points": 7,
+            "spoils": 5,
+            "bounces": 9,
+            "carries": 10,
+            "catches": 7,
+            "entries": 10,
+            "tackles": 1,
+            "evasions": 3,
+            "turnovers": 4,
+            "ballUpsWon": 2,
+            "recoveries": 7,
+            "handPunches": 12,
+            "timesTackled": 1,
+            "interceptions": 2,
+            "outerAirScores": 3,
+            "completedPasses": 15,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "8b8d1d20-b213-4230-bbd3-c38010ac42c3",
+          "name": "Timothy Francis",
+          "secondsPlayed": 4154.106511810819,
+          "stats": {
+            "kicks": 5,
+            "shots": 3,
+            "points": 5,
+            "spoils": 1,
+            "bounces": 2,
+            "carries": 2,
+            "catches": 1,
+            "entries": 13,
+            "tackles": 1,
+            "evasions": 1,
+            "turnovers": 2,
+            "recoveries": 6,
+            "handPunches": 6,
+            "interceptions": 1,
+            "outerAirScores": 1,
+            "completedPasses": 6,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "81df8c85-518e-4da2-b57c-54ec1d0b0a98",
+          "name": "Noah Cannon",
+          "secondsPlayed": 4464.359708826859,
+          "stats": {
+            "kicks": 7,
+            "shots": 3,
+            "points": 12,
+            "spoils": 4,
+            "bounces": 1,
+            "carries": 2,
+            "catches": 6,
+            "entries": 12,
+            "turnovers": 2,
+            "ballUpsWon": 2,
+            "recoveries": 3,
+            "handPunches": 5,
+            "timesTackled": 1,
+            "interceptions": 1,
+            "completedPasses": 6,
+            "centralAirScores": 3
+          }
+        },
+        {
+          "id": "dcc84597-1c88-4e4d-b2cf-efdfd7a94583",
+          "name": "Kiran Miranda",
+          "secondsPlayed": 4385.418115048167,
+          "stats": {
+            "kicks": 11,
+            "bounces": 4,
+            "carries": 5,
+            "catches": 4,
+            "entries": 12,
+            "tackles": 3,
+            "evasions": 1,
+            "turnovers": 4,
+            "ballUpsWon": 5,
+            "recoveries": 5,
+            "handPunches": 7,
+            "timesTackled": 1,
+            "interceptions": 2,
+            "completedPasses": 12
+          }
+        },
+        {
+          "id": "6fde251e-d215-426a-bd8b-73cadaae4d33",
+          "name": "Aaron Hicks",
+          "secondsPlayed": 3740.704223594432,
+          "stats": {
+            "kicks": 10,
+            "shots": 1,
+            "points": 4,
+            "spoils": 1,
+            "bounces": 2,
+            "carries": 3,
+            "catches": 5,
+            "entries": 13,
+            "tackles": 2,
+            "turnovers": 1,
+            "ballUpsWon": 3,
+            "recoveries": 2,
+            "handPunches": 4,
+            "timesTackled": 1,
+            "interceptions": 3,
+            "completedPasses": 10,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "245de12a-8c08-4af7-99f3-9d58d7afc2ad",
+          "name": "Steven Dean",
+          "secondsPlayed": 3420.162714848714,
+          "stats": {
+            "kicks": 10,
+            "shots": 2,
+            "bounces": 3,
+            "carries": 3,
+            "catches": 2,
+            "entries": 13,
+            "turnovers": 3,
+            "ballUpsWon": 3,
+            "recoveries": 3,
+            "handPunches": 4,
+            "interceptions": 1,
+            "completedPasses": 8
+          }
+        },
+        {
+          "id": "2fa65604-5d77-4255-8503-ac38fb53d53f",
+          "name": "Elliot Baldwin",
+          "secondsPlayed": 4137.330929815746,
+          "stats": {
+            "kicks": 6,
+            "shots": 4,
+            "points": 6,
+            "spoils": 1,
+            "bounces": 2,
+            "carries": 2,
+            "catches": 3,
+            "entries": 14,
+            "turnovers": 2,
+            "ballUpsWon": 1,
+            "recoveries": 4,
+            "handPunches": 6,
+            "interceptions": 1,
+            "outerAirScores": 2,
+            "completedPasses": 4,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "707de835-aa32-402d-a31a-16ae8475df91",
+          "name": "Israel Love",
+          "secondsPlayed": 4189.71187702889,
+          "stats": {
+            "kicks": 9,
+            "shots": 3,
+            "points": 5,
+            "spoils": 2,
+            "bounces": 3,
+            "carries": 5,
+            "catches": 6,
+            "entries": 14,
+            "tackles": 2,
+            "turnovers": 5,
+            "ballUpsWon": 2,
+            "recoveries": 9,
+            "handPunches": 9,
+            "timesTackled": 2,
+            "interceptions": 1,
+            "outerAirScores": 1,
+            "completedPasses": 9,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "defc1016-d417-4680-bd6d-32a21634dc7b",
+          "name": "Hayden Lam",
+          "secondsPlayed": 3689.600204765831,
+          "stats": {
+            "kicks": 12,
+            "shots": 1,
+            "spoils": 1,
+            "bounces": 2,
+            "carries": 2,
+            "catches": 2,
+            "entries": 14,
+            "evasions": 1,
+            "turnovers": 6,
+            "ballUpsWon": 1,
+            "recoveries": 3,
+            "handPunches": 6,
+            "interceptions": 1,
+            "completedPasses": 11
+          }
+        },
+        {
+          "id": "8f4df536-b48e-46d0-a375-117da6aa33b8",
+          "name": "Alejandro Alvarez",
+          "secondsPlayed": 1373.9702494846651,
+          "stats": {
+            "entries": 6,
+            "ballUpsWon": 1,
+            "handPunches": 1,
+            "completedPasses": 1
+          }
+        },
+        {
+          "id": "674ed656-9742-4e5c-b629-12244c131125",
+          "name": "Adam Aguirre",
+          "secondsPlayed": 3755.074694816328,
+          "stats": {
+            "kicks": 8,
+            "shots": 2,
+            "points": 4,
+            "spoils": 4,
+            "catches": 7,
+            "entries": 15,
+            "tackles": 1,
+            "turnovers": 3,
+            "ballUpsWon": 2,
+            "recoveries": 2,
+            "handPunches": 6,
+            "interceptions": 3,
+            "completedPasses": 8,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "5ea0767f-46e0-4a0f-ab69-11a4f5f58676",
+          "name": "Thomas Buchanan",
+          "secondsPlayed": 3857.913498892287,
+          "stats": {
+            "kicks": 11,
+            "shots": 2,
+            "points": 1,
+            "spoils": 2,
+            "bounces": 1,
+            "carries": 2,
+            "catches": 5,
+            "entries": 13,
+            "turnovers": 5,
+            "recoveries": 5,
+            "handPunches": 4,
+            "timesTackled": 1,
+            "outerAirScores": 1,
+            "completedPasses": 7
+          }
+        },
+        {
+          "id": "3891ae4a-1eba-4a7b-9297-e6944390df9e",
+          "name": "Emilio Hicks",
+          "secondsPlayed": 3621.4505575329777,
+          "stats": {
+            "kicks": 5,
+            "shots": 1,
+            "points": 4,
+            "catches": 2,
+            "entries": 15,
+            "turnovers": 4,
+            "ballUpsWon": 3,
+            "recoveries": 4,
+            "handPunches": 6,
+            "interceptions": 2,
+            "completedPasses": 6,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "9346e1f2-5d1e-4635-965c-8e3afb9327e1",
+          "name": "Ramon Schmidt",
+          "secondsPlayed": 3517.127932822497,
+          "stats": {
+            "kicks": 7,
+            "shots": 3,
+            "points": 5,
+            "spoils": 3,
+            "bounces": 2,
+            "carries": 3,
+            "catches": 3,
+            "entries": 15,
+            "tackles": 2,
+            "evasions": 1,
+            "turnovers": 1,
+            "ballUpsWon": 1,
+            "recoveries": 3,
+            "handPunches": 6,
+            "timesTackled": 1,
+            "outerAirScores": 1,
+            "completedPasses": 7,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "44171c79-2b35-4fd0-8edf-2cfd5a29999b",
+          "name": "Tristan Morales",
+          "secondsPlayed": 2528.136973574245,
+          "stats": {
+            "kicks": 2,
+            "shots": 1,
+            "bounces": 2,
+            "carries": 2,
+            "entries": 11,
+            "turnovers": 1,
+            "recoveries": 1,
+            "handPunches": 2,
+            "interceptions": 1,
+            "completedPasses": 2
+          }
+        },
+        {
+          "id": "92585243-3565-4df1-91ed-28c30d1f9389",
+          "name": "Mohammad Hahn",
+          "secondsPlayed": 1712.716432226042,
+          "stats": {
+            "kicks": 2,
+            "shots": 1,
+            "carries": 1,
+            "catches": 1,
+            "entries": 10,
+            "timesTackled": 1,
+            "completedPasses": 1
+          }
+        },
+        {
+          "id": "5089e8b3-f0c2-4e5d-b04e-3098e2209420",
+          "name": "Khalil Owens",
+          "secondsPlayed": 1625.855445085501,
+          "stats": {
+            "kicks": 3,
+            "shots": 1,
+            "spoils": 2,
+            "catches": 1,
+            "entries": 9,
+            "ballUpsWon": 2,
+            "recoveries": 1,
+            "handPunches": 4,
+            "completedPasses": 5
+          }
+        },
+        {
+          "id": "ae2a63f8-79b0-43a0-89b1-4ef43f1e54d9",
+          "name": "Cole Wilson",
+          "secondsPlayed": 3935.3304252269445,
+          "stats": {
+            "kicks": 5,
+            "spoils": 1,
+            "bounces": 5,
+            "carries": 7,
+            "catches": 2,
+            "entries": 14,
+            "evasions": 2,
+            "turnovers": 2,
+            "ballUpsWon": 1,
+            "recoveries": 5,
+            "handPunches": 6,
+            "timesTackled": 2,
+            "completedPasses": 7
+          }
+        },
+        {
+          "id": "57c214ab-a672-4b64-9306-eaf125ec6506",
+          "name": "DeAndre Reyes",
+          "secondsPlayed": 2986.323318868095,
+          "stats": {
+            "kicks": 4,
+            "shots": 2,
+            "points": 4,
+            "spoils": 1,
+            "bounces": 2,
+            "carries": 2,
+            "catches": 3,
+            "entries": 15,
+            "tackles": 1,
+            "evasions": 1,
+            "turnovers": 3,
+            "ballUpsWon": 2,
+            "recoveries": 3,
+            "handPunches": 5,
+            "interceptions": 2,
+            "completedPasses": 3,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "0f0fe7a4-84cd-435f-8934-902c57e359fd",
+          "name": "Nikhil Cabrera",
+          "secondsPlayed": 424.85596283299384,
+          "stats": {
+            "spoils": 1,
+            "entries": 3
+          }
+        },
+        {
+          "id": "3784a7ac-9c3a-483e-89d0-ed40e7e8ce1b",
+          "name": "Tariq Maldonado",
+          "secondsPlayed": 2959.732583721029,
+          "stats": {
+            "kicks": 6,
+            "shots": 2,
+            "points": 4,
+            "spoils": 1,
+            "bounces": 1,
+            "carries": 1,
+            "catches": 3,
+            "entries": 13,
+            "tackles": 1,
+            "turnovers": 1,
+            "ballUpsWon": 1,
+            "handPunches": 4,
+            "interceptions": 2,
+            "completedPasses": 6,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "47f17c97-d0b7-4007-bd96-22ad933a92e5",
+          "name": "Henry Wright",
+          "secondsPlayed": 1805.7573361988993,
+          "stats": {
+            "kicks": 5,
+            "shots": 1,
+            "points": 2,
+            "catches": 2,
+            "entries": 9,
+            "turnovers": 2,
+            "recoveries": 1,
+            "centralBounceScores": 1
+          }
+        },
+        {
+          "id": "2837b86a-eb75-4a56-9bcf-693da111c1b9",
+          "name": "Matthew Payne",
+          "secondsPlayed": 0,
+          "stats": {}
+        },
+        {
+          "id": "5807703f-bf29-43c3-bb13-c485bdb118fe",
+          "name": "Diego Gilbert",
+          "secondsPlayed": 448.61142040102277,
+          "stats": {
+            "spoils": 1,
+            "entries": 3
+          }
+        },
+        {
+          "id": "c12bc903-6780-40cf-9127-8a0c15aa01ab",
+          "name": "Rohan Reid",
+          "secondsPlayed": 433.26439565466717,
+          "stats": {
+            "spoils": 1,
+            "bounces": 1,
+            "carries": 1,
+            "catches": 1,
+            "entries": 2,
+            "handPunches": 1,
+            "interceptions": 1,
+            "completedPasses": 1
+          }
+        },
+        {
+          "id": "fb330eb9-7e11-4835-b6ee-272bd2cbd85b",
+          "name": "Jonathan Murphy",
+          "secondsPlayed": 0,
+          "stats": {}
+        },
+        {
+          "id": "e6b71a45-d52a-4fb5-af83-b4a15670d365",
+          "name": "Jaden Romero",
+          "secondsPlayed": 0,
+          "stats": {}
+        },
+        {
+          "id": "29e09258-3301-4422-977a-d8df52181546",
+          "name": "Grant Sullivan",
+          "secondsPlayed": 0,
+          "stats": {}
+        },
+        {
+          "id": "dae4d317-9efe-4b8f-8673-cd7bfe22a2e8",
+          "name": "Owen Joseph",
+          "secondsPlayed": 0,
+          "stats": {}
+        },
+        {
+          "id": "d5ec1475-dc2a-4ab1-b6e4-c349bdbd69de",
+          "name": "Cesar Daniels",
+          "secondsPlayed": 0,
+          "stats": {}
+        }
+      ],
+      "evidencePolicy": "Active accepted rehearsal facts only; voided/superseded results omitted. Review flags remain explicit. Injuries and bans persist within this rehearsal; official league records are unchanged."
+    },
+    {
+      "classification": "competitive-rehearsal",
+      "rehearsalId": "a1b9ef69-87e4-42e3-96e1-e95bf0e2fa3b",
+      "roundId": "Round 2",
+      "acceptedMatches": 1,
+      "pendingFixtures": 0,
+      "matches": [
+        {
+          "id": "8fa05128-84f9-41a9-a08b-69af7cef5752",
+          "engineVersion": "0.2.0-availability-candidate",
+          "seed": "a1b9ef69-87e4-42e3-96e1-e95bf0e2fa3b:8fa05128-84f9-41a9-a08b-69af7cef5752",
+          "teams": [
+            "Roanoke Athletic",
+            "Lynchburg Union"
+          ],
+          "scores": [
+            100,
+            98
+          ],
+          "winner": "Roanoke Athletic",
+          "playingMinutes": 98.49989958312338,
+          "elapsedMinutes": 180.39989958312353,
+          "quarters": [
+            {
+              "points": [
+                12,
+                27
+              ],
+              "quarter": 1,
+              "cumulative": [
+                12,
+                27
+              ],
+              "elapsedSeconds": 1680.5795430769099,
+              "playingSeconds": 1188.5795430769097
+            },
+            {
+              "points": [
+                21,
+                26
+              ],
+              "quarter": 2,
+              "cumulative": [
+                33,
+                53
+              ],
+              "elapsedSeconds": 1873.3545144653422,
+              "playingSeconds": 1354.3545144653415
+            },
+            {
+              "points": [
+                35,
+                23
+              ],
+              "quarter": 3,
+              "cumulative": [
+                68,
+                76
+              ],
+              "elapsedSeconds": 2000.7759393742444,
+              "playingSeconds": 1322.775939374244
+            },
+            {
+              "points": [
+                32,
+                22
+              ],
+              "quarter": 4,
+              "cumulative": [
+                100,
+                98
+              ],
+              "elapsedSeconds": 2869.2839780709155,
+              "playingSeconds": 2044.2839780709078
+            }
+          ],
+          "topScorers": [
+            {
+              "id": "f8ab22ae-5658-48b2-87bc-974e4a620145",
+              "name": "Ruben Edwards",
+              "team": "Lynchburg Union",
+              "points": 17,
+              "centralAirScores": 4,
+              "shots": 8
+            },
+            {
+              "id": "a59f99c7-d986-4123-ade6-f4402700559f",
+              "name": "Nico Flores",
+              "team": "Roanoke Athletic",
+              "points": 15,
+              "centralAirScores": 2,
+              "shots": 13
+            },
+            {
+              "id": "0d2d3706-c339-4ede-a7a9-2205d0d39f65",
+              "name": "Colin Atkins",
+              "team": "Roanoke Athletic",
+              "points": 14,
+              "centralAirScores": 3,
+              "shots": 7
+            },
+            {
+              "id": "ce7d1a69-ae3e-47a3-a562-2ee5c20c5ad5",
+              "name": "Felipe Smith",
+              "team": "Roanoke Athletic",
+              "points": 12,
+              "centralAirScores": 3,
+              "shots": 7
+            },
+            {
+              "id": "cebe4c8a-985b-4a92-8e85-eaba89f8fd61",
+              "name": "Vincent Zimmerman",
+              "team": "Lynchburg Union",
+              "points": 12,
+              "centralAirScores": 2,
+              "shots": 5
+            },
+            {
+              "id": "c6398705-e7a6-4883-8fe9-1e5cadb63311",
+              "name": "Cayden Atkins",
+              "team": "Lynchburg Union",
+              "points": 12,
+              "centralAirScores": 2,
+              "shots": 7
+            }
+          ],
+          "leadChanges": 1,
+          "largestLead": 20,
+          "largestScoringRun": {
+            "side": 1,
+            "points": 12,
+            "endingEventId": 1924
+          },
+          "leadHistory": [
+            {
+              "eventId": 129,
+              "side": 1,
+              "margin": 4
+            },
+            {
+              "eventId": 4478,
+              "side": 0,
+              "margin": 2
+            }
+          ],
+          "teamStats": [
+            {
+              "fouls": 2,
+              "kicks": 219,
+              "shots": 79,
+              "points": 100,
+              "spoils": 40,
+              "bounces": 72,
+              "carries": 91,
+              "catches": 83,
+              "entries": 283,
+              "tackles": 18,
+              "evasions": 15,
+              "turnovers": 68,
+              "ballUpsWon": 65,
+              "recoveries": 101,
+              "handPunches": 124,
+              "freeKicksWon": 3,
+              "timesTackled": 16,
+              "bonusesEarned": 3,
+              "interceptions": 26,
+              "playerSeconds": 88649.90962481109,
+              "outerAirScores": 17,
+              "completedPasses": 167,
+              "transitionShots": 24,
+              "bonusesConverted": 1,
+              "centralAirScores": 20,
+              "possessionSeconds": 2635.553431213135,
+              "shortHandedSeconds": 0,
+              "centralBounceScores": 1
+            },
+            {
+              "fouls": 3,
+              "kicks": 199,
+              "shots": 62,
+              "points": 98,
+              "spoils": 53,
+              "bounces": 59,
+              "carries": 79,
+              "catches": 101,
+              "entries": 291,
+              "tackles": 16,
+              "evasions": 10,
+              "penalties": 1,
+              "turnovers": 57,
+              "ballUpsWon": 38,
+              "recoveries": 95,
+              "handPunches": 137,
+              "freeKicksWon": 2,
+              "timesTackled": 18,
+              "bonusesEarned": 2,
+              "interceptions": 33,
+              "playerSeconds": 88349.90962481109,
+              "outerAirScores": 7,
+              "completedPasses": 191,
+              "transitionShots": 15,
+              "bonusesConverted": 1,
+              "centralAirScores": 20,
+              "possessionSeconds": 2776.4405437742716,
+              "shortHandedSeconds": 299.99999999999994,
+              "centralBounceScores": 5
+            }
+          ],
+          "winningPlay": {
+            "eventId": 4478,
+            "player": "Ravi Everett",
+            "awardedPoints": 4,
+            "quarter": 4,
+            "playingSeconds": 5909.993974987403,
+            "kind": "central_air",
+            "scores": [
+              100,
+              98
+            ],
+            "winning": true,
+            "deflected": false,
+            "bonusesLost": 0,
+            "bonusCredits": [],
+            "pointsCapped": 0,
+            "nominalPoints": 4,
+            "bonusesConverted": 0
+          },
+          "noteworthy": [
+            {
+              "eventId": 1928,
+              "quarter": 3,
+              "playingSeconds": 2542.934057542251,
+              "type": "penalty_start",
+              "player": "Ryan Campos",
+              "team": "Lynchburg Union",
+              "detail": {
+                "durationSeconds": 300,
+                "expiresAtPlayingSeconds": 2842.934057542251
+              }
+            },
+            {
+              "eventId": 3625,
+              "quarter": 4,
+              "playingSeconds": 4766.261521682364,
+              "type": "advantage_recalled",
+              "player": "Ravi Everett",
+              "team": "Roanoke Athletic"
+            },
+            {
+              "eventId": 4192,
+              "quarter": 4,
+              "playingSeconds": 5526.359756145147,
+              "type": "advantage_recalled",
+              "player": "Emilio Hicks",
+              "team": "Lynchburg Union"
+            }
+          ],
+          "evidencePolicy": "Use only these recorded facts and cited event IDs. Do not invent dialogue, injuries, crowd reactions, or tactical causes.",
+          "standings": null,
+          "requiresReview": false
+        }
+      ],
+      "playerTotals": [
+        {
+          "id": "a59f99c7-d986-4123-ade6-f4402700559f",
+          "name": "Nico Flores",
+          "secondsPlayed": 4471.735045063172,
+          "stats": {
+            "kicks": 27,
+            "shots": 13,
+            "points": 15,
+            "spoils": 3,
+            "bounces": 4,
+            "carries": 8,
+            "catches": 13,
+            "entries": 5,
+            "tackles": 1,
+            "evasions": 3,
+            "turnovers": 6,
+            "ballUpsWon": 3,
+            "recoveries": 14,
+            "handPunches": 9,
+            "freeKicksWon": 1,
+            "timesTackled": 3,
+            "interceptions": 4,
+            "outerAirScores": 5,
+            "completedPasses": 15,
+            "centralAirScores": 2,
+            "centralBounceScores": 1
+          }
+        },
+        {
+          "id": "c9e71b7f-60f2-4c9e-ac8e-904be0bd0894",
+          "name": "Brian Patel",
+          "secondsPlayed": 4341.5570348221345,
+          "stats": {
+            "fouls": 1,
+            "kicks": 12,
+            "shots": 5,
+            "points": 8,
+            "spoils": 2,
+            "bounces": 2,
+            "carries": 4,
+            "catches": 7,
+            "entries": 8,
+            "evasions": 2,
+            "turnovers": 1,
+            "ballUpsWon": 6,
+            "recoveries": 5,
+            "handPunches": 10,
+            "timesTackled": 2,
+            "interceptions": 2,
+            "completedPasses": 15,
+            "centralAirScores": 2
+          }
+        },
+        {
+          "id": "0d2d3706-c339-4ede-a7a9-2205d0d39f65",
+          "name": "Colin Atkins",
+          "secondsPlayed": 4553.850427041028,
+          "stats": {
+            "fouls": 1,
+            "kicks": 14,
+            "shots": 7,
+            "points": 14,
+            "spoils": 2,
+            "bounces": 8,
+            "carries": 8,
+            "catches": 1,
+            "entries": 7,
+            "tackles": 1,
+            "evasions": 2,
+            "turnovers": 4,
+            "ballUpsWon": 2,
+            "recoveries": 10,
+            "handPunches": 8,
+            "interceptions": 2,
+            "outerAirScores": 2,
+            "completedPasses": 8,
+            "centralAirScores": 3
+          }
+        },
+        {
+          "id": "b959107a-8182-4d41-800b-62396b52205a",
+          "name": "Andre Pratt",
+          "secondsPlayed": 4008.9826484064247,
+          "stats": {
+            "kicks": 8,
+            "shots": 2,
+            "points": 5,
+            "spoils": 7,
+            "bounces": 2,
+            "carries": 3,
+            "catches": 2,
+            "entries": 9,
+            "tackles": 3,
+            "ballUpsWon": 3,
+            "recoveries": 5,
+            "handPunches": 6,
+            "timesTackled": 1,
+            "interceptions": 3,
+            "outerAirScores": 1,
+            "completedPasses": 8,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "575de6f7-7003-4232-bf36-c0bceac93aa0",
+          "name": "Dawson Kim",
+          "secondsPlayed": 4213.843514235541,
+          "stats": {
+            "kicks": 10,
+            "shots": 1,
+            "bounces": 2,
+            "carries": 3,
+            "catches": 3,
+            "entries": 9,
+            "evasions": 1,
+            "turnovers": 4,
+            "ballUpsWon": 4,
+            "recoveries": 3,
+            "handPunches": 3,
+            "timesTackled": 1,
+            "interceptions": 4,
+            "completedPasses": 6
+          }
+        },
+        {
+          "id": "4cefe810-7619-4276-8bc7-b701fb321d67",
+          "name": "Andrew Bell",
+          "secondsPlayed": 4033.8467054235643,
+          "stats": {
+            "kicks": 17,
+            "shots": 8,
+            "points": 10,
+            "spoils": 2,
+            "bounces": 8,
+            "carries": 9,
+            "catches": 11,
+            "entries": 11,
+            "turnovers": 3,
+            "ballUpsWon": 5,
+            "recoveries": 4,
+            "handPunches": 9,
+            "timesTackled": 1,
+            "interceptions": 2,
+            "outerAirScores": 2,
+            "completedPasses": 14,
+            "centralAirScores": 2
+          }
+        },
+        {
+          "id": "ce7d1a69-ae3e-47a3-a562-2ee5c20c5ad5",
+          "name": "Felipe Smith",
+          "secondsPlayed": 3890.9789184125743,
+          "stats": {
+            "kicks": 14,
+            "shots": 7,
+            "points": 12,
+            "bounces": 3,
+            "carries": 3,
+            "catches": 8,
+            "entries": 11,
+            "tackles": 1,
+            "turnovers": 1,
+            "ballUpsWon": 1,
+            "recoveries": 4,
+            "handPunches": 6,
+            "bonusesEarned": 1,
+            "interceptions": 1,
+            "completedPasses": 10,
+            "centralAirScores": 3
+          }
+        },
+        {
+          "id": "16af8265-8b57-48bc-b0df-5793b25f729d",
+          "name": "Daniel Rice",
+          "secondsPlayed": 4103.717687012037,
+          "stats": {
+            "kicks": 7,
+            "shots": 2,
+            "points": 1,
+            "spoils": 1,
+            "bounces": 1,
+            "carries": 1,
+            "catches": 2,
+            "entries": 10,
+            "turnovers": 3,
+            "ballUpsWon": 2,
+            "recoveries": 5,
+            "handPunches": 5,
+            "interceptions": 1,
+            "outerAirScores": 1,
+            "completedPasses": 7
+          }
+        },
+        {
+          "id": "b24c9bbb-789a-4d52-bc5e-9e3c21ca06c4",
+          "name": "Arthur Dean",
+          "secondsPlayed": 3700.6404479072103,
+          "stats": {
+            "kicks": 7,
+            "shots": 2,
+            "spoils": 5,
+            "bounces": 3,
+            "carries": 4,
+            "catches": 2,
+            "entries": 12,
+            "evasions": 1,
+            "turnovers": 4,
+            "ballUpsWon": 3,
+            "recoveries": 5,
+            "handPunches": 4,
+            "timesTackled": 1,
+            "interceptions": 1,
+            "completedPasses": 6
+          }
+        },
+        {
+          "id": "6c0f3feb-65d3-4226-a454-5f1caf7a233f",
+          "name": "Brody Boone",
+          "secondsPlayed": 3211.340639822185,
+          "stats": {
+            "kicks": 7,
+            "shots": 3,
+            "points": 5,
+            "spoils": 4,
+            "bounces": 1,
+            "carries": 2,
+            "catches": 1,
+            "entries": 12,
+            "tackles": 1,
+            "turnovers": 2,
+            "ballUpsWon": 2,
+            "recoveries": 3,
+            "handPunches": 1,
+            "timesTackled": 1,
+            "outerAirScores": 1,
+            "completedPasses": 3,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "5c4c353f-e0f9-4d03-854f-af16f876952d",
+          "name": "Sean Mora",
+          "secondsPlayed": 3539.9400196666015,
+          "stats": {
+            "kicks": 7,
+            "shots": 3,
+            "points": 2,
+            "spoils": 3,
+            "bounces": 1,
+            "carries": 2,
+            "catches": 3,
+            "entries": 12,
+            "tackles": 1,
+            "evasions": 1,
+            "turnovers": 1,
+            "ballUpsWon": 1,
+            "recoveries": 2,
+            "handPunches": 3,
+            "freeKicksWon": 1,
+            "bonusesEarned": 1,
+            "interceptions": 1,
+            "outerAirScores": 1,
+            "completedPasses": 4,
+            "bonusesConverted": 1
+          }
+        },
+        {
+          "id": "f7ee304e-ca3a-45c6-ac41-25b3c8c7b56a",
+          "name": "Ruben Lane",
+          "secondsPlayed": 4140.208339619021,
+          "stats": {
+            "kicks": 11,
+            "shots": 3,
+            "points": 4,
+            "bounces": 1,
+            "carries": 3,
+            "catches": 2,
+            "entries": 9,
+            "tackles": 1,
+            "turnovers": 2,
+            "ballUpsWon": 5,
+            "recoveries": 1,
+            "handPunches": 2,
+            "timesTackled": 2,
+            "interceptions": 1,
+            "completedPasses": 5,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "2fe353b7-9dec-4514-a26a-9b77e7c0b023",
+          "name": "Louis Whitney",
+          "secondsPlayed": 3627.217630159532,
+          "stats": {
+            "kicks": 8,
+            "shots": 1,
+            "points": 4,
+            "spoils": 2,
+            "bounces": 1,
+            "carries": 1,
+            "catches": 5,
+            "entries": 12,
+            "evasions": 1,
+            "turnovers": 4,
+            "ballUpsWon": 1,
+            "recoveries": 5,
+            "handPunches": 8,
+            "interceptions": 2,
+            "completedPasses": 9,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "f40675ae-68c7-4e95-8acc-fb2bd6bc3e2a",
+          "name": "Tristan Chan",
+          "secondsPlayed": 3776.4821007505293,
+          "stats": {
+            "kicks": 5,
+            "bounces": 6,
+            "carries": 7,
+            "catches": 3,
+            "entries": 12,
+            "evasions": 3,
+            "turnovers": 3,
+            "ballUpsWon": 4,
+            "recoveries": 4,
+            "handPunches": 9,
+            "timesTackled": 1,
+            "completedPasses": 9
+          }
+        },
+        {
+          "id": "b3f3da48-7379-4d03-b4eb-601d4d7cb930",
+          "name": "Gerardo Miranda",
+          "secondsPlayed": 3624.389556412609,
+          "stats": {
+            "kicks": 5,
+            "shots": 1,
+            "points": 1,
+            "bounces": 2,
+            "carries": 2,
+            "catches": 2,
+            "entries": 13,
+            "turnovers": 3,
+            "ballUpsWon": 3,
+            "recoveries": 3,
+            "handPunches": 5,
+            "outerAirScores": 1,
+            "completedPasses": 6
+          }
+        },
+        {
+          "id": "4ac24639-8614-4e77-ad88-a1545af210eb",
+          "name": "Christian Weaver",
+          "secondsPlayed": 3873.129892229453,
+          "stats": {
+            "kicks": 5,
+            "shots": 2,
+            "spoils": 2,
+            "bounces": 2,
+            "carries": 2,
+            "catches": 2,
+            "entries": 11,
+            "tackles": 1,
+            "turnovers": 2,
+            "ballUpsWon": 2,
+            "recoveries": 3,
+            "handPunches": 5,
+            "completedPasses": 7
+          }
+        },
+        {
+          "id": "855820a1-9788-425f-9aff-4d961837d89a",
+          "name": "Zane Simmons",
+          "secondsPlayed": 3180.8763272262527,
+          "stats": {
+            "kicks": 1,
+            "shots": 1,
+            "points": 1,
+            "bounces": 1,
+            "carries": 2,
+            "catches": 2,
+            "entries": 13,
+            "tackles": 1,
+            "handPunches": 2,
+            "timesTackled": 1,
+            "outerAirScores": 1,
+            "completedPasses": 2
+          }
+        },
+        {
+          "id": "dfbc11cb-242e-4433-843f-96677b34e54a",
+          "name": "Charles Pierce",
+          "secondsPlayed": 2715.718528176157,
+          "stats": {
+            "kicks": 4,
+            "spoils": 2,
+            "bounces": 3,
+            "carries": 3,
+            "entries": 14,
+            "evasions": 1,
+            "turnovers": 2,
+            "ballUpsWon": 1,
+            "recoveries": 1,
+            "handPunches": 1,
+            "completedPasses": 1
+          }
+        },
+        {
+          "id": "576aed66-eb06-4d65-80d1-d634d6aad419",
+          "name": "Sawyer Lowe",
+          "secondsPlayed": 3352.3339895880767,
+          "stats": {
+            "kicks": 11,
+            "shots": 3,
+            "points": 1,
+            "bounces": 4,
+            "carries": 6,
+            "catches": 4,
+            "entries": 12,
+            "turnovers": 8,
+            "ballUpsWon": 5,
+            "recoveries": 6,
+            "handPunches": 7,
+            "timesTackled": 2,
+            "outerAirScores": 1,
+            "completedPasses": 6
+          }
+        },
+        {
+          "id": "b178fc0f-01b4-4d94-8278-87497835020b",
+          "name": "Colin West",
+          "secondsPlayed": 2122.237299900467,
+          "stats": {
+            "kicks": 8,
+            "shots": 2,
+            "bounces": 3,
+            "carries": 3,
+            "entries": 11,
+            "tackles": 1,
+            "turnovers": 4,
+            "ballUpsWon": 2,
+            "recoveries": 4,
+            "handPunches": 4,
+            "completedPasses": 5
+          }
+        },
+        {
+          "id": "b6e1b75d-1041-4b7f-b5e5-9b9c9b5fe94f",
+          "name": "Malik Perry",
+          "secondsPlayed": 1511.627044050535,
+          "stats": {
+            "kicks": 5,
+            "shots": 1,
+            "points": 1,
+            "bounces": 2,
+            "carries": 2,
+            "catches": 2,
+            "entries": 8,
+            "ballUpsWon": 2,
+            "recoveries": 1,
+            "handPunches": 1,
+            "outerAirScores": 1,
+            "completedPasses": 4
+          }
+        },
+        {
+          "id": "610b8151-cd06-472a-9620-f0c1bbc2f87e",
+          "name": "Reid Yu",
+          "secondsPlayed": 2517.320671788743,
+          "stats": {
+            "kicks": 7,
+            "shots": 3,
+            "points": 4,
+            "bounces": 4,
+            "carries": 4,
+            "catches": 1,
+            "entries": 12,
+            "tackles": 1,
+            "turnovers": 3,
+            "ballUpsWon": 3,
+            "recoveries": 3,
+            "handPunches": 2,
+            "interceptions": 1,
+            "completedPasses": 3,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "0a13a9bd-5458-45e9-a7dd-d24ac339da72",
+          "name": "Robert Soto",
+          "secondsPlayed": 827.5699035806813,
+          "stats": {
+            "kicks": 1,
+            "catches": 1,
+            "entries": 5
+          }
+        },
+        {
+          "id": "1df7b60d-6111-4176-9f23-337203fb0804",
+          "name": "Spencer Walsh",
+          "secondsPlayed": 2551.651807272632,
+          "stats": {
+            "kicks": 6,
+            "shots": 2,
+            "points": 4,
+            "spoils": 1,
+            "bounces": 5,
+            "carries": 5,
+            "catches": 1,
+            "entries": 11,
+            "turnovers": 4,
+            "ballUpsWon": 2,
+            "recoveries": 2,
+            "handPunches": 1,
+            "completedPasses": 1,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "7dd71b98-eaa9-4eb1-8081-8dd8f697d7e4",
+          "name": "Zion Walters",
+          "secondsPlayed": 2770.352091618465,
+          "stats": {
+            "kicks": 5,
+            "shots": 3,
+            "spoils": 2,
+            "bounces": 2,
+            "carries": 2,
+            "catches": 3,
+            "entries": 12,
+            "tackles": 2,
+            "turnovers": 2,
+            "ballUpsWon": 2,
+            "recoveries": 4,
+            "handPunches": 6,
+            "interceptions": 1,
+            "completedPasses": 6
+          }
+        },
+        {
+          "id": "22466e85-64a0-42f7-8c5d-4f05034c87b7",
+          "name": "Max Curry",
+          "secondsPlayed": 1335.5127291509768,
+          "stats": {
+            "kicks": 1,
+            "spoils": 1,
+            "catches": 1,
+            "entries": 6,
+            "tackles": 2,
+            "turnovers": 1,
+            "ballUpsWon": 1,
+            "handPunches": 2,
+            "completedPasses": 2
+          }
+        },
+        {
+          "id": "865c1aeb-370b-4f87-8713-3319cba9ecd2",
+          "name": "Hassan Clay",
+          "secondsPlayed": 537.2188362147076,
+          "stats": {
+            "kicks": 3,
+            "shots": 1,
+            "entries": 3,
+            "turnovers": 1,
+            "recoveries": 3,
+            "handPunches": 2,
+            "bonusesEarned": 1,
+            "completedPasses": 3
+          }
+        },
+        {
+          "id": "88789b56-2408-49a6-9554-577f43eadea6",
+          "name": "Alan Henderson",
+          "secondsPlayed": 533.6352923176717,
+          "stats": {
+            "spoils": 1,
+            "entries": 4
+          }
+        },
+        {
+          "id": "8befaf64-83f8-4438-b909-67f4f571f889",
+          "name": "Damon Meyer",
+          "secondsPlayed": 912.4752626722911,
+          "stats": {
+            "kicks": 1,
+            "shots": 1,
+            "entries": 5,
+            "recoveries": 1,
+            "handPunches": 1,
+            "completedPasses": 1
+          }
+        },
+        {
+          "id": "a2610e68-2c0c-4728-a33b-ba91eafdd4ad",
+          "name": "Ravi Everett",
+          "secondsPlayed": 519.0070994225796,
+          "stats": {
+            "kicks": 2,
+            "shots": 2,
+            "points": 8,
+            "bounces": 1,
+            "carries": 2,
+            "entries": 3,
+            "handPunches": 1,
+            "freeKicksWon": 1,
+            "centralAirScores": 2
+          }
+        },
+        {
+          "id": "99dbc474-0d7d-492b-b811-a92ea1e11b1c",
+          "name": "Julian Higgins",
+          "secondsPlayed": 0,
+          "stats": {}
+        },
+        {
+          "id": "d07bd140-72ef-49a9-af63-97017bca7ba8",
+          "name": "Sawyer Hoffman",
+          "secondsPlayed": 150.5121348472545,
+          "stats": {
+            "catches": 1,
+            "entries": 1,
+            "tackles": 1,
+            "handPunches": 1,
+            "completedPasses": 1
+          }
+        },
+        {
+          "id": "e83d3d31-0151-4885-966f-17979ed1e1c0",
+          "name": "Kareem Soto",
+          "secondsPlayed": 0,
+          "stats": {}
+        },
+        {
+          "id": "87fc51a0-28fa-4211-abb1-ceff5f661fa6",
+          "name": "Finn Hurley",
+          "secondsPlayed": 0,
+          "stats": {}
+        },
+        {
+          "id": "eaa0a681-abd8-445e-b84e-6b6bc56dc2dc",
+          "name": "Jonah Grant",
+          "secondsPlayed": 0,
+          "stats": {}
+        },
+        {
+          "id": "f8ab22ae-5658-48b2-87bc-974e4a620145",
+          "name": "Ruben Edwards",
+          "secondsPlayed": 4746.426766780157,
+          "stats": {
+            "kicks": 16,
+            "shots": 8,
+            "points": 17,
+            "spoils": 5,
+            "bounces": 1,
+            "carries": 1,
+            "catches": 6,
+            "entries": 6,
+            "tackles": 3,
+            "turnovers": 3,
+            "ballUpsWon": 4,
+            "recoveries": 6,
+            "handPunches": 8,
+            "outerAirScores": 1,
+            "completedPasses": 12,
+            "centralAirScores": 4
+          }
+        },
+        {
+          "id": "6794072f-9036-439c-bfaf-f45ffa718ee6",
+          "name": "Ryan Campos",
+          "secondsPlayed": 4385.705997022523,
+          "stats": {
+            "fouls": 1,
+            "kicks": 20,
+            "shots": 6,
+            "points": 6,
+            "spoils": 5,
+            "bounces": 9,
+            "carries": 10,
+            "catches": 5,
+            "entries": 5,
+            "tackles": 1,
+            "evasions": 2,
+            "penalties": 1,
+            "turnovers": 5,
+            "ballUpsWon": 5,
+            "recoveries": 10,
+            "handPunches": 12,
+            "timesTackled": 1,
+            "interceptions": 8,
+            "completedPasses": 23,
+            "centralAirScores": 1,
+            "centralBounceScores": 1
+          }
+        },
+        {
+          "id": "cebe4c8a-985b-4a92-8e85-eaba89f8fd61",
+          "name": "Vincent Zimmerman",
+          "secondsPlayed": 4322.284153170037,
+          "stats": {
+            "kicks": 13,
+            "shots": 5,
+            "points": 12,
+            "spoils": 7,
+            "bounces": 6,
+            "carries": 7,
+            "catches": 8,
+            "entries": 10,
+            "evasions": 1,
+            "turnovers": 3,
+            "ballUpsWon": 2,
+            "recoveries": 6,
+            "handPunches": 8,
+            "timesTackled": 1,
+            "interceptions": 3,
+            "completedPasses": 11,
+            "centralAirScores": 2,
+            "centralBounceScores": 2
+          }
+        },
+        {
+          "id": "4c62cd26-f813-499f-bbb4-02c30070f4d6",
+          "name": "Russell Gomez",
+          "secondsPlayed": 4511.422136453796,
+          "stats": {
+            "kicks": 11,
+            "shots": 3,
+            "points": 5,
+            "spoils": 2,
+            "bounces": 5,
+            "carries": 6,
+            "catches": 6,
+            "entries": 9,
+            "tackles": 2,
+            "evasions": 1,
+            "turnovers": 5,
+            "ballUpsWon": 2,
+            "recoveries": 7,
+            "handPunches": 8,
+            "timesTackled": 1,
+            "interceptions": 2,
+            "outerAirScores": 1,
+            "completedPasses": 8,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "c6398705-e7a6-4883-8fe9-1e5cadb63311",
+          "name": "Cayden Atkins",
+          "secondsPlayed": 3986.376865905909,
+          "stats": {
+            "kicks": 14,
+            "shots": 7,
+            "points": 12,
+            "spoils": 1,
+            "bounces": 3,
+            "carries": 4,
+            "catches": 9,
+            "entries": 12,
+            "tackles": 1,
+            "evasions": 1,
+            "turnovers": 2,
+            "ballUpsWon": 3,
+            "recoveries": 5,
+            "handPunches": 11,
+            "timesTackled": 1,
+            "outerAirScores": 2,
+            "completedPasses": 12,
+            "centralAirScores": 2,
+            "centralBounceScores": 1
+          }
+        },
+        {
+          "id": "3e1e61f2-884b-4bf7-8ff3-62533c20fbd4",
+          "name": "Wesley Carrillo",
+          "secondsPlayed": 4282.984090032011,
+          "stats": {
+            "fouls": 1,
+            "kicks": 12,
+            "shots": 2,
+            "points": 4,
+            "spoils": 5,
+            "bounces": 3,
+            "carries": 6,
+            "catches": 6,
+            "entries": 9,
+            "tackles": 2,
+            "evasions": 1,
+            "turnovers": 4,
+            "recoveries": 5,
+            "handPunches": 4,
+            "timesTackled": 3,
+            "interceptions": 4,
+            "completedPasses": 10,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "8b8d1d20-b213-4230-bbd3-c38010ac42c3",
+          "name": "Timothy Francis",
+          "secondsPlayed": 3927.747915761336,
+          "stats": {
+            "kicks": 8,
+            "spoils": 1,
+            "bounces": 1,
+            "carries": 2,
+            "catches": 3,
+            "entries": 12,
+            "turnovers": 2,
+            "ballUpsWon": 2,
+            "recoveries": 8,
+            "handPunches": 7,
+            "timesTackled": 1,
+            "interceptions": 1,
+            "completedPasses": 11
+          }
+        },
+        {
+          "id": "81df8c85-518e-4da2-b57c-54ec1d0b0a98",
+          "name": "Noah Cannon",
+          "secondsPlayed": 4181.24014262853,
+          "stats": {
+            "kicks": 6,
+            "shots": 2,
+            "points": 4,
+            "spoils": 2,
+            "bounces": 1,
+            "carries": 3,
+            "catches": 2,
+            "entries": 12,
+            "turnovers": 2,
+            "ballUpsWon": 4,
+            "recoveries": 2,
+            "handPunches": 6,
+            "timesTackled": 2,
+            "interceptions": 1,
+            "completedPasses": 8,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "dcc84597-1c88-4e4d-b2cf-efdfd7a94583",
+          "name": "Kiran Miranda",
+          "secondsPlayed": 4234.232649732207,
+          "stats": {
+            "kicks": 14,
+            "shots": 5,
+            "points": 2,
+            "spoils": 1,
+            "bounces": 4,
+            "carries": 5,
+            "catches": 4,
+            "entries": 11,
+            "turnovers": 3,
+            "ballUpsWon": 3,
+            "recoveries": 8,
+            "handPunches": 6,
+            "timesTackled": 1,
+            "interceptions": 3,
+            "outerAirScores": 2,
+            "completedPasses": 11
+          }
+        },
+        {
+          "id": "6fde251e-d215-426a-bd8b-73cadaae4d33",
+          "name": "Aaron Hicks",
+          "secondsPlayed": 3660.2086170822845,
+          "stats": {
+            "kicks": 9,
+            "shots": 3,
+            "points": 8,
+            "spoils": 1,
+            "bounces": 5,
+            "carries": 5,
+            "catches": 5,
+            "entries": 14,
+            "turnovers": 2,
+            "ballUpsWon": 1,
+            "recoveries": 3,
+            "handPunches": 6,
+            "completedPasses": 9,
+            "centralAirScores": 2
+          }
+        },
+        {
+          "id": "245de12a-8c08-4af7-99f3-9d58d7afc2ad",
+          "name": "Steven Dean",
+          "secondsPlayed": 3772.8666815761703,
+          "stats": {
+            "kicks": 4,
+            "shots": 1,
+            "points": 4,
+            "spoils": 3,
+            "bounces": 2,
+            "carries": 3,
+            "catches": 2,
+            "entries": 13,
+            "tackles": 1,
+            "ballUpsWon": 2,
+            "recoveries": 2,
+            "handPunches": 8,
+            "freeKicksWon": 1,
+            "interceptions": 1,
+            "completedPasses": 9,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "2fa65604-5d77-4255-8503-ac38fb53d53f",
+          "name": "Elliot Baldwin",
+          "secondsPlayed": 3680.8729651223985,
+          "stats": {
+            "kicks": 4,
+            "spoils": 1,
+            "bounces": 4,
+            "carries": 5,
+            "catches": 2,
+            "entries": 13,
+            "recoveries": 3,
+            "handPunches": 5,
+            "timesTackled": 1,
+            "completedPasses": 9
+          }
+        },
+        {
+          "id": "707de835-aa32-402d-a31a-16ae8475df91",
+          "name": "Israel Love",
+          "secondsPlayed": 3862.213095514045,
+          "stats": {
+            "kicks": 6,
+            "shots": 1,
+            "points": 4,
+            "spoils": 2,
+            "bounces": 1,
+            "carries": 1,
+            "catches": 4,
+            "entries": 13,
+            "evasions": 1,
+            "turnovers": 4,
+            "ballUpsWon": 3,
+            "recoveries": 1,
+            "handPunches": 3,
+            "completedPasses": 4,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "defc1016-d417-4680-bd6d-32a21634dc7b",
+          "name": "Hayden Lam",
+          "secondsPlayed": 2842.7914942460843,
+          "stats": {
+            "kicks": 6,
+            "shots": 5,
+            "points": 4,
+            "spoils": 1,
+            "bounces": 2,
+            "carries": 4,
+            "catches": 6,
+            "entries": 12,
+            "evasions": 2,
+            "turnovers": 5,
+            "ballUpsWon": 1,
+            "recoveries": 4,
+            "handPunches": 7,
+            "timesTackled": 2,
+            "interceptions": 1,
+            "completedPasses": 4,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "8f4df536-b48e-46d0-a375-117da6aa33b8",
+          "name": "Alejandro Alvarez",
+          "secondsPlayed": 1450.2352084529005,
+          "stats": {
+            "kicks": 2,
+            "entries": 7,
+            "tackles": 1,
+            "turnovers": 1,
+            "ballUpsWon": 1,
+            "recoveries": 1,
+            "handPunches": 1,
+            "completedPasses": 1
+          }
+        },
+        {
+          "id": "674ed656-9742-4e5c-b629-12244c131125",
+          "name": "Adam Aguirre",
+          "secondsPlayed": 3709.541347911932,
+          "stats": {
+            "fouls": 1,
+            "kicks": 8,
+            "shots": 3,
+            "points": 4,
+            "spoils": 2,
+            "bounces": 4,
+            "carries": 6,
+            "catches": 8,
+            "entries": 13,
+            "evasions": 1,
+            "turnovers": 2,
+            "ballUpsWon": 1,
+            "recoveries": 2,
+            "handPunches": 6,
+            "timesTackled": 2,
+            "interceptions": 3,
+            "completedPasses": 5,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "5ea0767f-46e0-4a0f-ab69-11a4f5f58676",
+          "name": "Thomas Buchanan",
+          "secondsPlayed": 3669.5284838594266,
+          "stats": {
+            "kicks": 5,
+            "shots": 1,
+            "points": 2,
+            "bounces": 1,
+            "carries": 2,
+            "catches": 5,
+            "entries": 13,
+            "tackles": 1,
+            "turnovers": 1,
+            "ballUpsWon": 1,
+            "recoveries": 3,
+            "handPunches": 6,
+            "timesTackled": 1,
+            "interceptions": 2,
+            "completedPasses": 8,
+            "centralBounceScores": 1
+          }
+        },
+        {
+          "id": "3891ae4a-1eba-4a7b-9297-e6944390df9e",
+          "name": "Emilio Hicks",
+          "secondsPlayed": 3337.2331501569242,
+          "stats": {
+            "kicks": 7,
+            "shots": 2,
+            "points": 5,
+            "spoils": 2,
+            "bounces": 1,
+            "carries": 2,
+            "catches": 1,
+            "entries": 13,
+            "tackles": 1,
+            "turnovers": 3,
+            "ballUpsWon": 2,
+            "recoveries": 3,
+            "handPunches": 4,
+            "freeKicksWon": 1,
+            "outerAirScores": 1,
+            "completedPasses": 6,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "9346e1f2-5d1e-4635-965c-8e3afb9327e1",
+          "name": "Ramon Schmidt",
+          "secondsPlayed": 3300.070403188047,
+          "stats": {
+            "kicks": 6,
+            "shots": 1,
+            "spoils": 5,
+            "bounces": 1,
+            "carries": 1,
+            "catches": 1,
+            "entries": 14,
+            "turnovers": 2,
+            "recoveries": 2,
+            "handPunches": 5,
+            "bonusesEarned": 1,
+            "completedPasses": 7
+          }
+        },
+        {
+          "id": "44171c79-2b35-4fd0-8edf-2cfd5a29999b",
+          "name": "Tristan Morales",
+          "secondsPlayed": 2083.8712382860836,
+          "stats": {
+            "kicks": 4,
+            "shots": 1,
+            "points": 4,
+            "spoils": 2,
+            "catches": 1,
+            "entries": 11,
+            "turnovers": 1,
+            "recoveries": 1,
+            "handPunches": 1,
+            "completedPasses": 3,
+            "centralAirScores": 1
+          }
+        },
+        {
+          "id": "92585243-3565-4df1-91ed-28c30d1f9389",
+          "name": "Mohammad Hahn",
+          "secondsPlayed": 1487.8834161024186,
+          "stats": {
+            "kicks": 2,
+            "catches": 1,
+            "entries": 9,
+            "tackles": 1,
+            "recoveries": 2,
+            "handPunches": 3,
+            "interceptions": 1,
+            "completedPasses": 3
+          }
+        },
+        {
+          "id": "5089e8b3-f0c2-4e5d-b04e-3098e2209420",
+          "name": "Khalil Owens",
+          "secondsPlayed": 1278.5207585157818,
+          "stats": {
+            "kicks": 2,
+            "shots": 1,
+            "spoils": 2,
+            "bounces": 1,
+            "carries": 1,
+            "catches": 1,
+            "entries": 6,
+            "recoveries": 1,
+            "handPunches": 1,
+            "completedPasses": 2
+          }
+        },
+        {
+          "id": "ae2a63f8-79b0-43a0-89b1-4ef43f1e54d9",
+          "name": "Cole Wilson",
+          "secondsPlayed": 3597.7111236505352,
+          "stats": {
+            "kicks": 9,
+            "shots": 3,
+            "points": 1,
+            "bounces": 3,
+            "carries": 4,
+            "catches": 7,
+            "entries": 14,
+            "tackles": 1,
+            "turnovers": 2,
+            "ballUpsWon": 1,
+            "recoveries": 3,
+            "handPunches": 4,
+            "timesTackled": 1,
+            "bonusesEarned": 1,
+            "interceptions": 1,
+            "completedPasses": 5,
+            "bonusesConverted": 1
+          }
+        },
+        {
+          "id": "57c214ab-a672-4b64-9306-eaf125ec6506",
+          "name": "DeAndre Reyes",
+          "secondsPlayed": 2741.7362659112678,
+          "stats": {
+            "kicks": 2,
+            "shots": 1,
+            "spoils": 2,
+            "bounces": 1,
+            "carries": 1,
+            "entries": 13,
+            "tackles": 1,
+            "recoveries": 3,
+            "handPunches": 1,
+            "completedPasses": 2
+          }
+        },
+        {
+          "id": "0f0fe7a4-84cd-435f-8934-902c57e359fd",
+          "name": "Nikhil Cabrera",
+          "secondsPlayed": 0,
+          "stats": {}
+        },
+        {
+          "id": "3784a7ac-9c3a-483e-89d0-ed40e7e8ce1b",
+          "name": "Tariq Maldonado",
+          "secondsPlayed": 2741.9899454550705,
+          "stats": {
+            "kicks": 7,
+            "shots": 1,
+            "spoils": 1,
+            "catches": 6,
+            "entries": 13,
+            "turnovers": 3,
+            "recoveries": 3,
+            "handPunches": 2,
+            "interceptions": 1,
+            "completedPasses": 4
+          }
+        },
+        {
+          "id": "47f17c97-d0b7-4007-bd96-22ad933a92e5",
+          "name": "Henry Wright",
+          "secondsPlayed": 1521.2329631944879,
+          "stats": {
+            "kicks": 1,
+            "catches": 2,
+            "entries": 8,
+            "turnovers": 1,
+            "handPunches": 3,
+            "interceptions": 1,
+            "completedPasses": 3
+          }
+        },
+        {
+          "id": "2837b86a-eb75-4a56-9bcf-693da111c1b9",
+          "name": "Matthew Payne",
+          "secondsPlayed": 0,
+          "stats": {}
+        },
+        {
+          "id": "5807703f-bf29-43c3-bb13-c485bdb118fe",
+          "name": "Diego Gilbert",
+          "secondsPlayed": 281.3932673902484,
+          "stats": {
+            "kicks": 1,
+            "entries": 2,
+            "turnovers": 1,
+            "recoveries": 1
+          }
+        },
+        {
+          "id": "c12bc903-6780-40cf-9127-8a0c15aa01ab",
+          "name": "Rohan Reid",
+          "secondsPlayed": 566.8367642404512,
+          "stats": {
+            "entries": 3,
+            "handPunches": 1,
+            "completedPasses": 1
+          }
+        },
+        {
+          "id": "fb330eb9-7e11-4835-b6ee-272bd2cbd85b",
+          "name": "Jonathan Murphy",
+          "secondsPlayed": 0,
+          "stats": {}
+        },
+        {
+          "id": "e6b71a45-d52a-4fb5-af83-b4a15670d365",
+          "name": "Jaden Romero",
+          "secondsPlayed": 0,
+          "stats": {}
+        },
+        {
+          "id": "29e09258-3301-4422-977a-d8df52181546",
+          "name": "Grant Sullivan",
+          "secondsPlayed": 0,
+          "stats": {}
+        },
+        {
+          "id": "dae4d317-9efe-4b8f-8673-cd7bfe22a2e8",
+          "name": "Owen Joseph",
+          "secondsPlayed": 184.75171746803682,
+          "stats": {
+            "entries": 1
+          }
+        },
+        {
+          "id": "d5ec1475-dc2a-4ab1-b6e4-c349bdbd69de",
+          "name": "Cesar Daniels",
+          "secondsPlayed": 0,
+          "stats": {}
+        }
+      ],
+      "evidencePolicy": "Active accepted rehearsal facts only; voided/superseded results omitted. Review flags remain explicit. Injuries and bans persist within this rehearsal; official league records are unchanged."
+    }
+  ],
+  "databaseEvidence": {
+    "events": [
+      {
+        "id": "ded4832e-b31e-44c0-afe4-b9c22afcb7e4",
+        "type": "accept",
+        "revision": 1
+      },
+      {
+        "id": "dd70a9cf-f63f-4eb4-872a-bb967f2564ee",
+        "type": "accept",
+        "revision": 2
+      },
+      {
+        "id": "b6112ab5-3020-4770-bd63-236917e5da91",
+        "type": "discipline",
+        "revision": 3
+      },
+      {
+        "id": "54bf1ecc-167d-4a9b-9ee3-5d8d30b62402",
+        "type": "correct",
+        "revision": 4
+      },
+      {
+        "id": "976f7553-ec0d-4cb3-8096-5e69cc243af5",
+        "type": "accept",
+        "revision": 5
+      },
+      {
+        "id": "7ac4b4f0-21a0-4673-8656-b75d501dfd64",
+        "type": "resolve-review",
+        "revision": 6
+      },
+      {
+        "id": "c0de1419-ef21-437b-8c07-a3faafd42c70",
+        "type": "close",
+        "revision": 7
+      }
+    ],
+    "fixtures": [
+      {
+        "id": "97c90641-9e3c-44ce-b764-5460af13bb5c",
+        "date": "2026-11-01",
+        "seed": "a1b9ef69-87e4-42e3-96e1-e95bf0e2fa3b:97c90641-9e3c-44ce-b764-5460af13bb5c",
+        "scores": [
+          100,
+          91
+        ],
+        "sha256": "30d125c50acb55ae14022d6f996c4f98326ecbcf1304534f54b656e7eb9804ec",
+        "source": null,
+        "proposal": "3b81af02-b5f8-4836-87e8-c6703290a40b",
+        "replaces": null
+      },
+      {
+        "id": "8fa05128-84f9-41a9-a08b-69af7cef5752",
+        "date": "2026-11-03",
+        "seed": "a1b9ef69-87e4-42e3-96e1-e95bf0e2fa3b:8fa05128-84f9-41a9-a08b-69af7cef5752",
+        "scores": [
+          100,
+          98
+        ],
+        "sha256": "647dbe81099896f9dffde3e0c2cea929342419e5152f0ad68cf65e135f64c234",
+        "source": null,
+        "proposal": "d4fa7a0a-1ae5-4b80-b6f0-59f1a6467fa6",
+        "replaces": null
+      },
+      {
+        "id": "e928e87c-56c5-4948-bac1-44d63daf5492",
+        "date": "2026-11-01",
+        "seed": "a1b9ef69-87e4-42e3-96e1-e95bf0e2fa3b:97c90641-9e3c-44ce-b764-5460af13bb5c",
+        "scores": [
+          100,
+          91
+        ],
+        "sha256": "e876ea500ff530404325e82dc7311efbc65a37c10f6d1d0d87717f2c751bc67e",
+        "source": "97c90641-9e3c-44ce-b764-5460af13bb5c",
+        "proposal": "337f87ac-912f-4d26-878c-f6c3c9ad8ae1",
+        "replaces": "ded4832e-b31e-44c0-afe4-b9c22afcb7e4"
+      }
+    ],
+    "revision": 7,
+    "registrations": 3,
+    "rosterSnapshots": 18,
+    "exhibitionResults": 5,
+    "officialCompetitions": 0
+  },
+  "finalCheck": {
+    "banServices": 0,
+    "rosteredPlayers": 630,
+    "exhibitionResults": 5,
+    "rehearsalInjuries": 0,
+    "officialCompetitions": 0,
+    "seasonRosterSnapshots": 18
+  }
+}

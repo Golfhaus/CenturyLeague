@@ -1,6 +1,6 @@
 # Competitive availability and corrections: implementation candidate
 
-Implemented November 1, 2026, as a staged increment toward workflow 1.0. This is **validation-only** code and storage, not an activated official competition or a new adopted gameplay release. The current exhibition endpoint, accepted exhibition ledgers and frozen `0.1.0-exhibition` source/default fingerprint remain unchanged.
+Implemented November 1, 2026, as a staged increment toward workflow 1.0. This remains **validation-only** code and storage, not an activated official competition or a new adopted gameplay release. The [integrated commissioner rehearsal](COMPETITIVE_REHEARSAL_INTEGRATION.md) is now published, with both migrations deployed to protected private storage. The current exhibition endpoint, accepted exhibition ledgers and frozen `0.1.0-exhibition` source/default fingerprint remain unchanged.
 
 ## Implemented behavior
 
@@ -40,7 +40,7 @@ Backend-only security-invoker RPCs check a fresh commissioner registration, stag
 
 The validation database adapter resolves an acceptance's full result from saved proposal storage and ignores a caller-supplied result context. It verifies the saved digest, current eligibility and full candidate replay before constructing the compact acceptance event. Proposals contain the raw ledger once; journal events hold compact source references and effects. Source proposal storage by itself has no availability or record contribution.
 
-This migration is committed for isolated testing and has **not been applied to the live project**. There is no new public Edge endpoint or commissioner UI for these operations yet. The helper is a backend validation adapter, not an alternate authoritative official store.
+This migration and the following integration migration are now deployed for commissioner rehearsals. The authenticated `manage-matches` endpoint and Match Center expose protected rehearsal controls. Official competition remains disabled; the validation helper is not an alternate authoritative official store.
 
 ## Verification
 
@@ -54,7 +54,7 @@ npm run validate:operations-db
 
 The domain suite covers healthy-match compatibility, excluded players, recovery dates/month transitions, manual incident decisions, transfer/season ban carryover, proposal invalidation, exhaustion/technical aborts, retries, correction finality, preserved history, affected-match review, historical replacement eligibility and independent Node/Deno replay. The database suite covers actual migration execution, immutable saved proposals, digest/reference checks, ignored forged result context, recovery through a fresh client, derived effects, rollback, damaged-head detection, access controls and correction preservation. CI adds separate PostgreSQL sessions racing on the same stream.
 
-Local results: 65 domain checks, 43 PostgreSQL/WASM storage checks, 26 existing replay checks, typecheck and production build pass. The frozen engine source/default fingerprint remains `9513ba17bef8814027cc3408731f7d26db9c8ce8cd5a25f52c42175286db3521`. CI runs the new checks against PostgreSQL alongside the existing match/competition suites.
+Local results: 67 domain checks, 43 PostgreSQL/WASM storage checks, 56 integrated service/storage checks, 26 existing replay checks, typecheck and production build pass. PostgreSQL CI passes 47 storage checks and 59 integration checks. The frozen engine source/default fingerprint remains `9513ba17bef8814027cc3408731f7d26db9c8ce8cd5a25f52c42175286db3521`. CI runs the new checks against PostgreSQL alongside the existing match/competition suites.
 
 ## Integration gates before official use
 

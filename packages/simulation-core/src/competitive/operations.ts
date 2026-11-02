@@ -58,6 +58,14 @@ export function operationsView(state: OperationsState, beforeSequence = Infinity
     const op=e.operation;
     if(op.type==='accept') {
       if(!e.accepted)throw new Error('Missing accepted-result evidence');
+      if(e.accepted.replaces){
+        const original=results.find(r=>r.id===e.accepted!.replaces);
+        if(!original)throw new Error('Missing replacement source');
+        const correctionId=original.voidedBy??e.id;
+        for(const r of results)if(!r.voidedBy&&r.sequence>original.sequence&&r.matchDate>=original.matchDate&&
+            r.playerIds.some(id=>e.accepted!.playerIds.includes(id))&&!reviews.some(v=>v.resultId===r.id&&v.correctionId===correctionId))
+          reviews.push({id:`${e.id}:${r.id}`,resultId:r.id,correctionId,resolvedBy:null});
+      }
       results.push(structuredClone(e.accepted));
     } else if(op.type==='discipline') {
       const source=results.find(r=>r.discipline.some(c=>c.id===op.caseId));

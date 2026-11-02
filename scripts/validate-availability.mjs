@@ -121,6 +121,20 @@ accept('accepted-replacement',simulateCompetitiveMatch(replacement),'comp-a','20
 check(operationsView(state).active.some(r=>r.replaces===firstEvidence.id));
 for(const review of operationsView(state).reviews.filter(r=>!r.resolvedBy))apply('uphold-'+review.id,{type:'resolve-review',reviewId:review.id,reason:'Commissioner reviewed the affected fixture and upheld its result'});
 check(operationsView(state).reviews.every(r=>r.resolvedBy));
+// A corrected pairing can introduce different players. Later matches involving
+// those players need review even when the original void did not overlap them.
+let changedPairing=structuredClone(first.state);
+const alienBase=base('other-players','other-players','comp-c',0);
+for(const t of alienBase.teams){t.id+='-other';for(const p of t.players)p.id+='-other';}
+const alien=simulateCompetitiveMatch(prepareCompetitiveInput(changedPairing,alienBase,'2026-11-03'));
+const step=(id,operation,context)=>{changedPairing=executeOperation(changedPairing,{id,at,expectedRevision:changedPairing.revision,operation},actor,context).state;};
+step('other-later',{type:'accept',proposalId:'other-proposal',resultSHA256:'a'.repeat(64),competitionId:'comp-c',matchDate:'2026-11-03'},{result:alien});
+step('void-for-pairing',{type:'correct',resultId:firstEvidence.id,kind:'administrative',reason:'Correct the original pairing to the intended canonical participants'});
+check(!operationsView(changedPairing).reviews.some(r=>r.resultId==='other-later'));
+const changedBase={...alienBase,id:'corrected-pairing',seed:original.seed,provenance:{classification:'competitive',competitionId:'comp-a',competitionCategory:'men'}};
+const changedResult=simulateCompetitiveMatch(prepareCompetitiveInput(changedPairing,changedBase,'2026-10-31',firstEvidence.id));
+step('changed-pairing',{type:'accept',proposalId:'changed-proposal',resultSHA256:'b'.repeat(64),competitionId:'comp-a',matchDate:'2026-10-31',replaces:firstEvidence.id},{result:changedResult});
+check(operationsView(changedPairing).reviews.some(r=>r.resultId==='other-later'&&!r.resolvedBy));
 const directory=fs.mkdtempSync(path.join(os.tmpdir(),'century-availability-'));let crossRuntime;
 try{
  const output=path.join(directory,'deno.json');

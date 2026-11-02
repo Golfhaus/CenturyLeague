@@ -3,6 +3,7 @@ import { validateMatchInput } from '../match/input.ts';
 import type { MatchInput, MatchResult } from '../match/types.ts';
 import type { CompetitionDefinition, CompetitionFixture, CompetitionState, CompetitionTableRow, StandingsPolicy } from './types.ts';
 export * from './types.ts';
+export * from './replay.ts';
 export const COMPETITION_ENGINE_SOURCE_SHA256 = '9513ba17bef8814027cc3408731f7d26db9c8ce8cd5a25f52c42175286db3521';
 
 /** Stable JSON is an integrity/comparison format, not a signature or authorization mechanism. */

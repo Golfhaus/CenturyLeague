@@ -159,6 +159,44 @@ await rejects(()=>handleMatchAction(lostReply,actor,{action:'accept',proposalId:
 checkEqual(await countsFor(retryDefinition.id),{status:'complete',revision:2,proposals:1,results:1,played:2});
 check(!(await handleMatchAction(adapter,actor,{action:'accept',proposalId:recovered.id,expectedRevision:1})).added);
 check((await query("select count(*)::integer n from competition_audit where competition_id=$1 and action='accepted'",[retryDefinition.id])).rows[0].n===1);
+// Four clubs across two rounds: proposals are not records, partial round exports
+// stay honest, and a new request client recovers the same pinned proposal.
+const multiId=randomUUID(),multiFixtures=[[0,1],[2,3],[0,2],[1,3]].map((pair,i)=>({id:randomUUID(),roundId:i<2?'round-1':'round-2',teamIds:pair.map(j=>teams[j].id)}));
+await handleMatchAction(adapter,actor,{action:'create-exhibition',competitionId:multiId,seasonId:season,name:'Four-team two-round rehearsal',fixtures:multiFixtures});
+await handleMatchAction(adapter,actor,{action:'activate',competitionId:multiId,expectedRevision:0});
+const snapshotsBefore=(await query('select match_team from team_season_rosters order by team_id')).rows;
+const multiResults=[],multiProposals=[];
+for(const f of multiFixtures){
+ const p=await handleMatchAction(adapter,actor,{action:'simulate',fixtureId:f.id});multiProposals.push(p);
+ const proposal=await handleMatchAction(adapter,readonly,{action:'proposal',proposalId:p.id});multiResults.push(proposal.result);
+ check(proposal.result.players.length===70);
+ check((await handleMatchAction(adapter,readonly,{action:'verify',proposalId:p.id})).replay.exact);
+}
+checkEqual(await countsFor(multiId),{...emptyActive,proposals:4});
+const roundBrief=roundId=>handleMatchAction(adapter,readonly,{action:'briefing',competitionId:multiId,roundId});
+check((await roundBrief('round-1')).acceptedMatches===0);
+for(let i=0;i<4;i++){
+ const receipt=await handleMatchAction(adapter,actor,{action:'accept',proposalId:multiProposals[i].id,expectedRevision:1+i});
+ check(receipt.status===(i===3?'complete':'active'));
+ if(i===0){const b=await roundBrief('round-1');check(b.acceptedMatches===1&&b.pendingFixtures===1&&b.matches.length===1);}
+ if(i===1){
+  const b=await roundBrief('round-1');check(b.acceptedMatches===2&&b.pendingFixtures===0);
+  const d=await handleMatchAction(adapter,readonly,{action:'detail',competitionId:multiId});check(d.records.every(r=>r.played===1));
+  const freshClient={from:name=>adapter.from(name),rpc:(name,args)=>adapter.rpc(name,args)};
+  const recovered=await handleMatchAction(freshClient,actor,{action:'simulate',fixtureId:multiFixtures[2].id});check(recovered.id===multiProposals[2].id&&!recovered.added);
+ }
+}
+const multiDetail=await handleMatchAction(adapter,readonly,{action:'detail',competitionId:multiId});
+check(multiDetail.competition.status==='complete'&&multiDetail.competition.revision===5);
+check(multiDetail.records.every(r=>r.played===2));
+check(multiDetail.records.reduce((s,r)=>s+r.wins,0)===4&&multiDetail.records.reduce((s,r)=>s+r.losses,0)===4);
+check(multiDetail.records.reduce((s,r)=>s+r.points_for,0)===multiResults.reduce((s,r)=>s+r.scores[0]+r.scores[1],0));
+check(multiDetail.records.reduce((s,r)=>s+r.points_for-r.points_against,0)===0);
+check((await roundBrief('round-2')).acceptedMatches===2);
+check(!(await handleMatchAction(adapter,actor,{action:'accept',proposalId:multiProposals[0].id,expectedRevision:1})).added);
+checkEqual(await countsFor(multiId),{status:'complete',revision:5,proposals:4,results:4,played:8});
+checkEqual((await query('select match_team from team_season_rosters order by team_id')).rows,snapshotsBefore);
+check((await query("select count(*)::integer n from competition_audit where competition_id=$1 and action='accepted'",[multiId])).rows[0].n===4);
 if(databaseURL){
  // Two real PostgreSQL sessions contend on the same competition row.
  const race={...d,id:randomUUID(),name:'Concurrency rehearsal',fixtures:d.fixtures.map(f=>({...f,id:randomUUID()}))};

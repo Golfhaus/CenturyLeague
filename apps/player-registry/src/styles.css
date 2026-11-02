@@ -557,6 +557,8 @@ h1, h2, h3, h4 { margin-top: 0; }
 .match-center li { margin:12px 0; line-height:1.5; }
 .match-note { color:#9aafc2; line-height:1.6; }
 .match-center .notice button { display:block; margin-top:12px; }
+.rehearsal-center > label { display:grid; gap:8px; color:#c8d8e6; }
+.rehearsal-center textarea { width:100%; min-height:90px; resize:vertical; padding:11px; border:1px solid #334a60; border-radius:9px; background:#0b1118; color:#edf5fb; font:inherit; }
 .match-center button:disabled { opacity:.45; cursor:not-allowed; }
 .match-center :focus-visible { outline:3px solid #a8d8ff; outline-offset:3px; }
 .main-content,.match-center,.match-center > * { min-width:0; }

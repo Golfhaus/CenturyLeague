@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+import {createHash} from 'node:crypto';
+import assert from 'node:assert/strict';
+const baseline=JSON.parse(fs.readFileSync('packages/simulation-core/releases/match-engine-v0.1.json'));
+const files=[...baseline.sourceFiles,'packages/simulation-core/src/competitive/availability.ts','packages/simulation-core/src/competitive/engine.ts'];
+const sha=createHash('sha256').update(files.map(f=>fs.readFileSync(f,'utf8')).join('\n')).digest('hex');
+const output=`/** Pinned adapter + frozen gameplay source identity. */\nexport const COMPETITIVE_SOURCE_SHA256 = '${sha}';\n`;
+const target='packages/simulation-core/src/competitive/release.ts';
+if(process.argv.includes('--write'))fs.writeFileSync(target,output);else assert.equal(fs.readFileSync(target,'utf8'),output,'Competitive adapter source identity changed');
+console.log(JSON.stringify({sourceSHA256:sha,files:files.length,status:'passed'}));

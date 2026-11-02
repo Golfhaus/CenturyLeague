@@ -1,38 +1,16 @@
-import { useEffect, useState } from 'react';
-import type { MatchResult, ReplayReport, matchBriefing } from '@century-league/simulation-core';
+import { lazy, Suspense, useEffect, useState } from 'react';
+import type { ReplayReport } from '@century-league/simulation-core';
 import { supabase } from './lib/supabase';
+import MatchReview from './MatchReview';
+import {request,download} from './lib/match-api';
+import type {Review} from './lib/match-api';
+const RehearsalCenter=lazy(()=>import('./RehearsalCenter'));
 
 type Competition = { id:string; name:string; season_id:string; competition_category:string; classification:string; status:string; revision:number };
 type Fixture = { id:string; round_id:string; teams:{id:string;name:string}[]; proposal_id:string|null; scores:number[]|null; accepted_at:string|null };
 type RecordRow = { team_id:string; name:string; played:number; wins:number; losses:number; points_for:number; points_against:number };
 type Detail = { competition:Competition; fixtures:Fixture[]; records:RecordRow[] };
-type Review = { id:string; fixtureId:string; sha256:string; result:MatchResult; briefing:ReturnType<typeof matchBriefing> };
 type PlannedFixture = { id:string; roundId:string; teamIds:[string,string] };
-async function request<T>(body:Record<string,unknown>):Promise<T> {
-  if(!supabase)throw Error('Database is not configured');
-  const {data,error}=await supabase.functions.invoke('manage-matches',{body});
-  if(error){let message=error.message;try{message=(await error.context.json()).error??message;}catch{/* Network failures have no JSON body. */}throw Error(message);}
-  return data as T;
-}
-function download(name:string,data:unknown) {
-  const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));
-  const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
-}
-function MatchReview({review,accepted}:{review:Review;accepted:boolean}) {
-  const {result:r,briefing:b}=review;
-  const stats=['points','shots','centralAirScores','bonusesConverted','catches','tackles','recoveries','turnovers','fouls'];
-  return <section className="preview-panel match-review" aria-label="Match review">
-    <p className="eyebrow">{accepted?'Accepted exhibition':'Proposed exhibition · awaiting acceptance'}</p>
-    <h3>{r.input.teams[0].name} {r.scores[0]}–{r.scores[1]} {r.input.teams[1].name}</h3>
-    <p>{b.winner} won in {b.playingMinutes.toFixed(1)} playing minutes. {b.leadChanges} lead changes; largest lead {b.largestLead}.</p>
-    <p>{b.winningPlay.player} delivered the winning central kick, credited with {b.winningPlay.awardedPoints} points (event {b.winningPlay.eventId}).</p>
-    <div className="match-table-wrap"><table><caption>Quarter scores</caption><thead><tr><th>Quarter</th><th>Quarter points</th><th>Running score</th></tr></thead><tbody>{r.quarters.map(q=><tr key={q.quarter}><th>{q.quarter}</th><td>{q.points.join('–')}</td><td>{q.cumulative.join('–')}</td></tr>)}</tbody></table></div>
-    <div className="match-table-wrap"><table><caption>Team statistics</caption><thead><tr><th>Statistic</th>{r.input.teams.map(t=><th key={t.id}>{t.name}</th>)}</tr></thead><tbody>{stats.map(stat=><tr key={stat}><th>{stat.replace(/([A-Z])/g,' $1')}</th>{r.teamStats.map((s,i)=><td key={i}>{s[stat]??0}</td>)}</tr>)}</tbody></table></div>
-    {r.input.teams.map((t,side)=><details key={t.id}><summary>{t.name}: all 35 player statistics</summary><div className="match-table-wrap"><table><thead><tr><th>Player</th><th>Minutes</th><th>Points</th><th>Shots</th><th>Tackles</th><th>Recoveries</th></tr></thead><tbody>{r.players.filter(p=>p.side===side).map(p=><tr key={p.id}><th>{p.name}</th><td>{(p.secondsPlayed/60).toFixed(1)}</td>{['points','shots','tackles','recoveries'].map(s=><td key={s}>{p.stats[s]??0}</td>)}</tr>)}</tbody></table></div></details>)}
-    <details><summary>Recorded incidents ({b.noteworthy.length})</summary><ul>{b.noteworthy.map(e=><li key={e.eventId}>Q{e.quarter}, {(e.playingSeconds/60).toFixed(1)} minutes: {e.type.replaceAll('_',' ')} — {e.player??'Team'} ({e.team??'match'}), event {e.eventId}.</li>)}</ul></details>
-    <p className="match-note">Exhibition fatigue and injuries reset after the match. Accepted exhibition records remain separate from official competition.</p>
-  </section>;
-}
 export default function MatchCenter({role}:{role:string|null}) {
   const [competitions,setCompetitions]=useState<Competition[]>([]),[selected,setSelected]=useState('');
   const [detail,setDetail]=useState<Detail|null>(null),[round,setRound]=useState(''),[review,setReview]=useState<Review|null>(null);
@@ -42,6 +20,7 @@ export default function MatchCenter({role}:{role:string|null}) {
   const [plan,setPlan]=useState<PlannedFixture[]>([]),[draftId,setDraftId]=useState(()=>crypto.randomUUID());
   const [busy,setBusy]=useState(''),[loading,setLoading]=useState(true),[message,setMessage]=useState(''),[error,setError]=useState(''),[refresh,setRefresh]=useState(0);
   const commissioner=role==='commissioner';
+  const [showRehearsal,setShowRehearsal]=useState(false);
   useEffect(()=>{let ignore=false;
     Promise.all([request<Competition[]>({action:'list'}),supabase!.from('seasons').select('id,label,competition_category').neq('status','complete').order('starts_on',{ascending:false})])
       .then(([list,available])=>{if(ignore)return;if(available.error)throw available.error;setCompetitions(list);setSeasons(available.data??[]);setSeasonId(id=>id||available.data?.[0]?.id||'');})
@@ -86,6 +65,7 @@ export default function MatchCenter({role}:{role:string|null}) {
       <button className="primary-button" disabled={Boolean(busy)} onClick={()=>run('Replaying saved match…',async()=>{const {replay}=await request<{replay:ReplayReport}>({action:'verify',proposalId:review.id});setMessage(replay.exact?`Exact event and statistic replay passed (${replay.policy}).`:`Replay passed with ${replay.coordinateDifferences} bounded coordinate rounding differences (${replay.policy}). Scores, events, timing and statistics match exactly.`);})}>Verify replay</button>
       <button className="primary-button" disabled={Boolean(busy)} onClick={()=>download(`century-${review.fixtureId}.json`,{classification:'exhibition',status:reviewedFixture?.accepted_at?'accepted':'proposed',...review})}>Export match data</button>
     </div></>:null}
+    {commissioner?<details className="generator-panel" onToggle={e=>setShowRehearsal(e.currentTarget.open)}><summary>Competitive rehearsal · persistent availability</summary>{showRehearsal?<Suspense fallback={<p>Loading competitive rehearsal…</p>}><RehearsalCenter/></Suspense>:null}</details>:null}
     {commissioner?<details className="generator-panel"><summary>Prepare an exhibition</summary><p>Choose a season and add the fixtures you want to test. Team rosters and original coaching preferences are loaded from that season.</p>
       <div className="match-controls"><label>Season<select aria-label="Season" value={seasonId} disabled={Boolean(busy)} onChange={e=>setSeasonId(e.target.value)}><option value="">Choose season</option>{seasons.map(s=><option key={s.id} value={s.id}>{s.label} · {s.competition_category}</option>)}</select></label><label>Exhibition name<input value={name} maxLength={160} disabled={Boolean(busy)} onChange={e=>setName(e.target.value)}/></label></div>
       {!teams.length?<p>No imported team rosters are available for this season.</p>:null}

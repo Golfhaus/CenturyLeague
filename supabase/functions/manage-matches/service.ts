@@ -3,7 +3,9 @@ import { simulateMatch, MATCH_ENGINE_VERSION } from './simulation/match/engine.t
 import { matchBriefing } from './simulation/match/report.ts';
 import type { CompetitionDefinition } from './simulation/competition/types.ts';
 import type { MatchInput, MatchResult, MatchTeam } from './simulation/match/types.ts';
-export class RequestError extends Error {status:number;constructor(message:string,status=400){super(message);this.status=status;}}
+import { RequestError } from './shared.ts';
+import { handleRehearsalAction } from './rehearsal-service.ts';
+export { RequestError } from './shared.ts';
 // The interface is intentionally structural: the same service runs with a fake adapter in request tests.
 type DB = { from:(name:string)=>any; rpc:(name:string,args:Record<string,unknown>)=>PromiseLike<{data:any;error:any}> };
 const uuid=(v:unknown)=>typeof v==='string'&&/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/.test(v);
@@ -12,6 +14,7 @@ function revision(value:unknown):number{if(!Number.isSafeInteger(value)||Number(
 async function value(p:PromiseLike<{data:any;error:any}>){const {data,error}=await p;if(error)throw new RequestError(error.code==='40001'?'The competition changed. Refresh before accepting another result.':error.message,error.code==='40001'?409:400);return data;}
 export async function handleMatchAction(db:DB,actor:{id:string;role:string},body:any):Promise<any>{
  if(!body||typeof body!=='object'||Array.isArray(body))throw new RequestError('Action required');
+ if(typeof body.action==='string'&&body.action.startsWith('rehearsal-'))return handleRehearsalAction(db,actor,body);
  const read=['list','detail','proposal','briefing','verify'];
  const write=['create-exhibition','activate','simulate','accept'];
  if(![...read,...write].includes(body.action))throw new RequestError('Unknown match action');

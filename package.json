@@ -37,7 +37,9 @@
     "verify:match-export": "npm run build:core && node scripts/verify-match-export.mjs",
     "verify:availability-adapter": "node scripts/verify-availability-adapter.mjs",
     "validate:availability": "npm run build:core && npm run verify:availability-adapter && node scripts/validate-availability.mjs",
-    "validate:operations-db": "npm run build:core && node scripts/validate-operations-database.mjs"
+    "validate:operations-db": "npm run build:core && node scripts/validate-operations-database.mjs",
+    "verify:competitive-source": "node scripts/verify-competitive-source.mjs",
+    "validate:rehearsal-integration": "npm run build:core && node scripts/sync-match-edge.mjs --check && node --experimental-transform-types scripts/validate-rehearsal-integration.mjs"
   },
   "devDependencies": {
     "@electric-sql/pglite": "0.5.14",

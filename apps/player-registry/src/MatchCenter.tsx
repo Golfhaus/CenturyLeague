@@ -5,6 +5,7 @@ import MatchReview from './MatchReview';
 import {request,download} from './lib/match-api';
 import type {Review} from './lib/match-api';
 const RehearsalCenter=lazy(()=>import('./RehearsalCenter'));
+const OfficialCenter=lazy(()=>import('./OfficialCenter'));
 
 type Competition = { id:string; name:string; season_id:string; competition_category:string; classification:string; status:string; revision:number };
 type Fixture = { id:string; round_id:string; teams:{id:string;name:string}[]; proposal_id:string|null; scores:number[]|null; accepted_at:string|null };
@@ -21,6 +22,7 @@ export default function MatchCenter({role}:{role:string|null}) {
   const [busy,setBusy]=useState(''),[loading,setLoading]=useState(true),[message,setMessage]=useState(''),[error,setError]=useState(''),[refresh,setRefresh]=useState(0);
   const commissioner=role==='commissioner';
   const [showRehearsal,setShowRehearsal]=useState(false);
+  const [showOfficial,setShowOfficial]=useState(false);
   useEffect(()=>{let ignore=false;
     Promise.all([request<Competition[]>({action:'list'}),supabase!.from('seasons').select('id,label,competition_category').neq('status','complete').order('starts_on',{ascending:false})])
       .then(([list,available])=>{if(ignore)return;if(available.error)throw available.error;setCompetitions(list);setSeasons(available.data??[]);setSeasonId(id=>id||available.data?.[0]?.id||'');})
@@ -65,6 +67,7 @@ export default function MatchCenter({role}:{role:string|null}) {
       <button className="primary-button" disabled={Boolean(busy)} onClick={()=>run('Replaying saved match…',async()=>{const {replay}=await request<{replay:ReplayReport}>({action:'verify',proposalId:review.id});setMessage(replay.exact?`Exact event and statistic replay passed (${replay.policy}).`:`Replay passed with ${replay.coordinateDifferences} bounded coordinate rounding differences (${replay.policy}). Scores, events, timing and statistics match exactly.`);})}>Verify replay</button>
       <button className="primary-button" disabled={Boolean(busy)} onClick={()=>download(`century-${review.fixtureId}.json`,{classification:'exhibition',status:reviewedFixture?.accepted_at?'accepted':'proposed',...review})}>Export match data</button>
     </div></>:null}
+    {commissioner?<details className="generator-panel" onToggle={e=>setShowOfficial(e.currentTarget.open)}><summary>Official competition · release readiness</summary>{showOfficial?<Suspense fallback={<p>Loading official competition…</p>}><OfficialCenter/></Suspense>:null}</details>:null}
     {commissioner?<details className="generator-panel" onToggle={e=>setShowRehearsal(e.currentTarget.open)}><summary>Competitive rehearsal · persistent availability</summary>{showRehearsal?<Suspense fallback={<p>Loading competitive rehearsal…</p>}><RehearsalCenter/></Suspense>:null}</details>:null}
     {commissioner?<details className="generator-panel"><summary>Prepare an exhibition</summary><p>Choose a season and add the fixtures you want to test. Team rosters and original coaching preferences are loaded from that season.</p>
       <div className="match-controls"><label>Season<select aria-label="Season" value={seasonId} disabled={Boolean(busy)} onChange={e=>setSeasonId(e.target.value)}><option value="">Choose season</option>{seasons.map(s=><option key={s.id} value={s.id}>{s.label} · {s.competition_category}</option>)}</select></label><label>Exhibition name<input value={name} maxLength={160} disabled={Boolean(busy)} onChange={e=>setName(e.target.value)}/></label></div>

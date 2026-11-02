@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "century-recovery-calibration-v1",
+  "policy": {
+    "id": "recovery-calendar-v1-candidate",
+    "bands": [
+      {
+        "weight": 80,
+        "minimumDays": 1,
+        "maximumDays": 3
+      },
+      {
+        "weight": 18,
+        "minimumDays": 4,
+        "maximumDays": 10
+      },
+      {
+        "weight": 2,
+        "minimumDays": 11,
+        "maximumDays": 28
+      }
+    ]
+  },
+  "draws": 20000,
+  "recovery": {
+    "exactMeanDays": 3.25,
+    "sampledMeanDays": 3.23425,
+    "bands": [
+      {
+        "weight": 80,
+        "minimumDays": 1,
+        "maximumDays": 3,
+        "observed": 0.7991
+      },
+      {
+        "weight": 18,
+        "minimumDays": 4,
+        "maximumDays": 10,
+        "observed": 0.1819
+      },
+      {
+        "weight": 2,
+        "minimumDays": 11,
+        "maximumDays": 28,
+        "observed": 0.019
+      }
+    ]
+  },
+  "cadence": [
+    {
+      "gapDays": 1,
+      "probabilityOfMissingNext": 0.7333333333333323,
+      "expectedFutureMatchesMissedPerInjury": 2.2499999999999996
+    },
+    {
+      "gapDays": 2,
+      "probabilityOfMissingNext": 0.4666666666666666,
+      "expectedFutureMatchesMissedPerInjury": 0.9352380952380952
+    },
+    {
+      "gapDays": 3,
+      "probabilityOfMissingNext": 0.20000000000000012,
+      "expectedFutureMatchesMissedPerInjury": 0.4252380952380951
+    },
+    {
+      "gapDays": 7,
+      "probabilityOfMissingNext": 0.09714285714285702,
+      "expectedFutureMatchesMissedPerInjury": 0.1204761904761904
+    }
+  ],
+  "injuryContext": {
+    "matches": 48,
+    "teams": [
+      {
+        "id": "1379b09d-2b4d-488f-aa5d-d8bfd8a5610b",
+        "name": "Roanoke Athletic"
+      },
+      {
+        "id": "2a89573a-68d2-49c8-aee9-d654a602e4b8",
+        "name": "Lynchburg Union"
+      }
+    ],
+    "source": "two canonical rosters from an immutable rehearsal export",
+    "sourceSHA256": "99e2a339648bdc27117178b0c58e2c6d424a691e82de7bba4dbecd4b7286cfcd",
+    "totalInjuries": 1,
+    "matchesWithInjury": 1,
+    "maximumInjuriesInMatch": 1,
+    "seriousFlags": 2,
+    "caveat": "Each match starts healthy. This small two-team sample describes incidence only; it is not a season availability forecast or league-wide estimate."
+  },
+  "interpretation": "Eligible on recoveredOn: an injury of D days misses floor((D-1)/gapDays) later fixtures. Cadences are illustrations, not an adopted tournament schedule. No automatic suspension tariff is inferred from flags.",
+  "liveWrites": 0
+}

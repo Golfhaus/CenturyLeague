@@ -39,7 +39,9 @@
     "validate:availability": "npm run build:core && npm run verify:availability-adapter && node scripts/validate-availability.mjs",
     "validate:operations-db": "npm run build:core && node scripts/validate-operations-database.mjs",
     "verify:competitive-source": "node scripts/verify-competitive-source.mjs",
-    "validate:rehearsal-integration": "npm run build:core && node scripts/sync-match-edge.mjs --check && node --experimental-transform-types scripts/validate-rehearsal-integration.mjs"
+    "validate:rehearsal-integration": "npm run build:core && node scripts/sync-match-edge.mjs --check && node --experimental-transform-types scripts/validate-rehearsal-integration.mjs",
+    "validate:official-registry": "npm run build:core && node scripts/sync-match-edge.mjs --check && node --experimental-transform-types scripts/validate-official-registry.mjs",
+    "calibrate:availability": "npm run build:core && node scripts/calibrate-availability.mjs"
   },
   "devDependencies": {
     "@electric-sql/pglite": "0.5.14",

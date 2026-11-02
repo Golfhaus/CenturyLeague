@@ -14,3 +14,4 @@ export * from './types.js';
 export * from './validation.js';
 export * from './match/index.js';
 export * from './competition/index.js';
+export * from './competitive/index.js';

@@ -32,8 +32,12 @@ jobs:
       - run: npm run validate:matches
       - run: npm run validate:competition
       - run: npm run validate:replay
+      - run: npm run validate:availability
       - run: npm run validate:roster-import
       - run: npm run validate:competition-db
+        env:
+          COMPETITION_TEST_DATABASE_URL: postgres://postgres:postgres@localhost:5432/century_test
+      - run: npm run validate:operations-db
         env:
           COMPETITION_TEST_DATABASE_URL: postgres://postgres:postgres@localhost:5432/century_test
       - run: npm run validate:generator

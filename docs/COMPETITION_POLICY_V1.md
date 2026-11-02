@@ -8,10 +8,11 @@ Fatigue remains within-match. Exhibition injuries reset at the end of the match.
 
 ## Competitive injuries and availability
 
-- Injuries carry forward into later competitive matches. Most absences should be short, with occasional longer injuries. Exact severity probabilities and duration distributions remain calibration work.
+- Injuries carry forward into later competitive matches. The commissioner adopted `recovery-calendar-v1` on November 2, 2026: **80% uniformly 1–4 calendar days, 18% uniformly 5–10 days, and 2% uniformly 11–28 days**. A player is eligible on the recovery date; the exact mean absence is 3.74 calendar days.
 - Recovery runs in calendar days and continues across monthly season boundaries.
 - Players must be fully recovered to be eligible initially; partially recovered participation is outside this initial policy.
 - Availability and its source evidence must be pinned for each match through a versioned adapter while retaining replay support for earlier engine versions. Public player abilities remain governed by the existing generation/development model.
+- Existing rehearsal journals retain their originally pinned recovery policy and effects. New rehearsals and future official category journals use the adopted distribution. The underlying gameplay injury chance is unchanged; policy adoption does not activate a competition or choose its format.
 
 ## Suspensions
 
@@ -50,7 +51,7 @@ Formal forfeits and other administrative abandonment outcomes remain deferred un
 - Completed: technical abort/interrupted request regression checks preserve unplayed records and recover saved records without duplication.
 - Completed: [versioned cross-runtime replay comparison](REPLAY_PORTABILITY_V1.md), retaining exact match facts and explicitly bounded lateral coordinate rounding.
 - Completed: [four-team, two-round live rehearsal](FOUR_TEAM_VALIDATION_2026_11_01.md) for cumulative records, partial rounds, recovery and accepted-only briefing exports.
-- A [competitive operations candidate](COMPETITIVE_OPERATIONS_CANDIDATE.md) now implements/tests eligibility, recovery, discipline decisions, carryover/service and correction projections with durable validation storage. The [commissioner rehearsal transaction/UI](COMPETITIVE_REHEARSAL_INTEGRATION.md) is now deployed. Adopt/calibrate the explicit candidate choices and bind the authoritative official category-wide journal before official activation.
+- The [competitive operations implementation](COMPETITIVE_OPERATIONS_CANDIDATE.md), [commissioner rehearsal transaction/UI](COMPETITIVE_REHEARSAL_INTEGRATION.md), and [official category-wide registry adapter](OFFICIAL_REGISTRY_READINESS.md) are deployed and validated. The recovery distribution above is adopted. Automatic discipline tariffs remain off pending an approved named-offense table; the deferred format and final controlled official acceptance check still precede activation.
 - Continue to defer the inaugural tournament format until the rest of the engine is ready.
 
 ## Restart/retry regression evidence

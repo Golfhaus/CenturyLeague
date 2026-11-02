@@ -42,7 +42,8 @@ try{
  const create={action:'rehearsal-create',rehearsalId:stream,name:'Integrated validation',fixtures:fixtureIds.map((id,i)=>({id,seasonId:season,roundId:'Round '+(i+1),matchDate:['2026-11-01','2026-11-03','2026-11-07'][i],teamIds:teams.map(t=>t.id)})),classification:'competitive',policy:{bands:'forged'},teams:[{ratings:'forged'}]};
  check((await act(create)).added);check(!(await act(create)).added);
  let d=await detail();check(d.fixtures.length===3&&d.records.every(r=>r.played===0));
- check(d.policy.id==='recovery-calendar-v1-candidate');
+ check(d.policy.id==='recovery-calendar-v1');
+ equal(d.policy.bands,[{weight:80,minimumDays:1,maximumDays:4},{weight:18,minimumDays:5,maximumDays:10},{weight:2,minimumDays:11,maximumDays:28}]);
  await rejects(()=>operate({type:'close',reason:'Try to close an unfinished fixture list'}),/Resolve|Pending/);
  const first=await propose(fixtureIds[0]),second=await propose(fixtureIds[1]),third=await propose(fixtureIds[2]);
  const original=await proposal(first.id);check(original.result.players.length===70&&original.result.config.injuryChancePerContest===0.0008);

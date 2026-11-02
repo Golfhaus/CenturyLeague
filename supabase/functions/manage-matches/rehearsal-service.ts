@@ -2,7 +2,7 @@ import { RequestError, matchRPC } from './shared.ts';
 import type { MatchDB } from './shared.ts';
 import { competitionJSON } from './simulation/competition/index.ts';
 import { compareMatchReplay, COORDINATE_REPLAY_POLICY } from './simulation/competition/replay.ts';
-import { CANDIDATE_RECOVERY_POLICY, COMPETITIVE_SOURCE_SHA256, availabilityFor, prepareCompetitiveInput,
+import { APPROVED_RECOVERY_POLICY, COMPETITIVE_SOURCE_SHA256, availabilityFor, prepareCompetitiveInput,
   simulateCompetitiveMatch, executeOperation, operationsView, operationsTeamRecords, calendarDate } from './simulation/competitive/index.ts';
 import type { OperationsState, OperationCommand, CompetitiveMatchInput } from './simulation/competitive/index.ts';
 import { matchBriefing } from './simulation/match/report.ts';
@@ -91,7 +91,7 @@ export async function handleRehearsalAction(db: MatchDB, actor: {id:string;role:
   if(body.action==='rehearsal-list')return matchRPC(db,'list_competitive_rehearsals_v1',{p_actor:actor.id});
   if(body.action==='rehearsal-create'){
     if(!Array.isArray(body.fixtures)||!body.fixtures.length||body.fixtures.length>32)throw new RequestError('Supply explicit rehearsal fixtures');
-    return matchRPC(db,'create_competitive_rehearsal_v1',{p_actor:actor.id,p_id:id(body.rehearsalId),p_name:text(body.name),p_fixtures:body.fixtures.map(fixtureDefinition),p_policy:CANDIDATE_RECOVERY_POLICY,p_source_sha:COMPETITIVE_SOURCE_SHA256});
+    return matchRPC(db,'create_competitive_rehearsal_v1',{p_actor:actor.id,p_id:id(body.rehearsalId),p_name:text(body.name),p_fixtures:body.fixtures.map(fixtureDefinition),p_policy:APPROVED_RECOVERY_POLICY,p_source_sha:COMPETITIVE_SOURCE_SHA256});
   }
   return handleCompetitiveWorkflow(db,actor,body,rehearsalWorkflow);
 }

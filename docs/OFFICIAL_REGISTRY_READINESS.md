@@ -2,9 +2,15 @@
 
 The official registry adapter connects the accepted-result transaction to one durable availability journal per league category. The migration ships both categories disabled. It creates no official competition, fixture, result or journal, and does not adopt an inaugural format.
 
-## Recovery calibration and recommendation
+## Adopted recovery policy · November 2, 2026
 
-Retain the proposed distribution for initial adoption: 80% uniformly 1–3 calendar days, 18% uniformly 4–10 days, and 2% uniformly 11–28 days. Its exact mean is **3.25 days**. A separate 20,000-draw deterministic probe produced 79.91% / 18.19% / 1.90% and a 3.234-day mean. This validates the recovery sampler, not the gameplay injury rate.
+The commissioner adopted **80% uniformly 1–4 calendar days, 18% uniformly 5–10 days, and 2% uniformly 11–28 days** as `recovery-calendar-v1`. The exact mean is **3.74 days**, and eligibility begins on the recovery date. New rehearsals and future official category journals use this policy. Both categories record recovery approval while format approval and activation remain off; no official journal or competition is initialized by adoption.
+
+`20261102132159_adopt_calendar_recovery_v1.sql` updates only the uninitialized official category configuration. It refuses to rewrite policy after an official journal is initialized. Existing validation journals keep their immutable original policy, revision and hash head. The UI displays the actual selected journal policy, so the historical 1–3 / 4–10 day rehearsal remains accurately labeled. The adopted policy is a separate configuration export; both frozen gameplay source fingerprints remain unchanged.
+
+## Original recovery calibration (historical candidate)
+
+The original, subsequently revised candidate was: 80% uniformly 1–3 calendar days, 18% uniformly 4–10 days, and 2% uniformly 11–28 days. Its exact mean is **3.25 days**. A separate 20,000-draw deterministic probe produced 79.91% / 18.19% / 1.90% and a 3.234-day mean. This validates the recovery sampler, not the gameplay injury rate.
 
 A player is eligible on the recovery date. The following figures are exact consequences of the proposed duration policy; they are scheduling illustrations rather than an adopted fixture cadence.
 
@@ -17,7 +23,7 @@ A player is eligible on the recovery date. The following figures are exact conse
 
 Forty-eight independent, initially healthy Roanoke–Lynchburg matches produced one injury and two serious-foul flags. That small two-team sample cannot establish a reliable league injury rate or predict cumulative season availability. It gives no basis to rebalance the frozen gameplay injury chance. Keep the accepted gameplay settings and inspect actual availability during the first competition. [Machine-readable evidence](verification/recovery-calibration-2026-11-02.json) records the source digest and caveat. Run `npm run calibrate:availability -- <immutable-match-export> <report-path>` to repeat with those rosters; without an export the script uses explicitly fictional controlled rosters.
 
-Retain manual commissioner review for serious/repeated flags. Three recorded fouls is a review threshold, not a named offense or automatic ban. Keep explicit reasoned decisions, dismissal at zero matches, and consecutive service of overlapping bans. A healthy rostered player serves at most the oldest outstanding ban per accepted official match. No automatic tariff is enabled without an approved named-offense table. These numeric choices remain recommendations pending commissioner adoption.
+Retain manual commissioner review for serious/repeated flags. Three recorded fouls is a review threshold, not a named offense or automatic ban. Keep explicit reasoned decisions, dismissal at zero matches, and consecutive service of overlapping bans. A healthy rostered player serves at most the oldest outstanding ban per accepted official match. No automatic tariff is enabled without an approved named-offense table. Automatic sanction durations are not adopted by the recovery-policy change.
 
 ## Authoritative integration
 
@@ -41,7 +47,7 @@ The isolated service/database harness exercises canonical generation, default co
 
 The existing exhibition and rehearsal integration regressions, availability domain checks, replay/source guards, application types and production build remain required. The gameplay baseline fingerprint and availability adapter fingerprint are unchanged.
 
-Before official activation: adopt the recovery/manual-discipline choices above; decide the inaugural format, standings/tie-break/advancement rules where applicable; bind that exact format to fixture preparation; perform the final signed-in official workflow rehearsal under controlled release conditions; then enable only the intended category and declare workflow 1.0. The format remains deferred until the engineering checks are complete. No additional broad league-balance sweep is required.
+Before official activation: decide the inaugural format, standings/tie-break/advancement rules where applicable; bind that exact format to fixture preparation; perform the final signed-in official workflow rehearsal under controlled release conditions; then enable only the intended category and declare workflow 1.0. The format remains deferred until the engineering checks are complete. No additional broad league-balance sweep is required.
 
 ## Deployment verification · November 2, 2026
 
@@ -62,4 +68,4 @@ The updated shared review screen also reopened the existing closed integrated re
 
 The Round 1 download contains exactly one active accepted replacement, zero pending fixtures, 70 player totals and 191 credited points. The superseded source is excluded. These checks used the deployed authenticated backend through the intended UI. No official competition, fixture, result or approval gate was created or changed. The [current commissioner-screen proof](verification/official-visual-verified-2026-11-02.jpg) excludes the account sidebar.
 
-This completes the previously blocked signed-in readiness/UI regression check. It does not claim that an official competition has been activated or played: numeric policy adoption, the deferred exact format and its fixture integration, and the final controlled official acceptance rehearsal still precede workflow 1.0 activation.
+This completes the previously blocked signed-in readiness/UI regression check. It does not claim that an official competition has been activated or played: the deferred exact format and its fixture integration, and the final controlled official acceptance rehearsal still precede workflow 1.0 activation. The revised recovery policy above is now adopted.

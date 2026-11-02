@@ -151,11 +151,45 @@
     }
   ],
   "browser": {
-    "signedIn": false,
-    "status": "blocked by automatic approval review before email submission",
-    "emailSent": false,
-    "reviewReason": "Another magic-link email was rejected because of the earlier email rate-limit problems and restriction on fresh requests.",
-    "screenshot": "official-signin-pending-2026-11-02.jpg"
+    "signedIn": true,
+    "status": "passed live signed-in readiness and shared review/export regression",
+    "url": "https://golfhaus.github.io/CenturyLeague/#",
+    "commissionerRoleVisible": true,
+    "bothCategoryGatesOff": true,
+    "savedOfficialCompetitions": 0,
+    "refreshPassed": true,
+    "reloadPreservedAuthorizationAndGates": true,
+    "savedRehearsal": {
+      "id": "a1b9ef69-87e4-42e3-96e1-e95bf0e2fa3b",
+      "status": "closed",
+      "auditEvents": 7,
+      "activeAcceptedMatches": 2,
+      "supersededSourceVisible": true,
+      "replacementScores": [
+        100,
+        91
+      ],
+      "replay": "exact"
+    },
+    "briefingExport": {
+      "classification": "competitive-rehearsal",
+      "roundId": "Round 1",
+      "acceptedMatches": 1,
+      "pendingFixtures": 0,
+      "matchId": "e928e87c-56c5-4948-bac1-44d63daf5492",
+      "playerTotals": 70,
+      "creditedPoints": 191,
+      "supersededSourceExcluded": true
+    },
+    "officialMutationsPerformed": false,
+    "agentRequestedFreshEmail": false,
+    "screenshot": "official-visual-verified-2026-11-02.jpg",
+    "priorAuthenticationBlock": {
+      "status": "blocked by automatic approval review before email submission",
+      "reason": "Another magic-link email was rejected because of the earlier email rate-limit problems and restriction on fresh requests.",
+      "emailSent": false,
+      "resolvedBy": "User completed email-link sign-in directly in the cloud browser"
+    }
   },
   "policy": {
     "numericChoices": "recommended; not yet adopted",

@@ -49,32 +49,94 @@
     "frontendRun": 41453230186,
     "frontendStatus": "success",
     "newRehearsalDefault": "recovery-calendar-v1",
-    "officialDatabaseMigration": "pending",
+    "officialDatabaseMigration": "applied",
     "migrationFile": "20261102132159_adopt_calendar_recovery_v1.sql",
-    "confirmationAttempts": 2,
-    "confirmationResult": "expired after 2 minutes; no migration applied"
+    "confirmationAttempts": 3,
+    "confirmationResult": "success; database verified",
+    "expiredAttempts": 2
   },
   "live": {
     "gates": [
       {
+        "policy": {
+          "id": "recovery-calendar-v1",
+          "bands": [
+            {
+              "weight": 80,
+              "maximumDays": 4,
+              "minimumDays": 1
+            },
+            {
+              "weight": 18,
+              "maximumDays": 10,
+              "minimumDays": 5
+            },
+            {
+              "weight": 2,
+              "maximumDays": 28,
+              "minimumDays": 11
+            }
+          ]
+        },
         "journal": null,
-        "approved": false,
         "category": "men",
-        "policyId": "recovery-calendar-v1-candidate",
         "formatApproved": false,
+        "policyApproved": true,
         "activationEnabled": false
       },
       {
+        "policy": {
+          "id": "recovery-calendar-v1",
+          "bands": [
+            {
+              "weight": 80,
+              "maximumDays": 4,
+              "minimumDays": 1
+            },
+            {
+              "weight": 18,
+              "maximumDays": 10,
+              "minimumDays": 5
+            },
+            {
+              "weight": 2,
+              "maximumDays": 28,
+              "minimumDays": 11
+            }
+          ]
+        },
         "journal": null,
-        "approved": false,
         "category": "women",
-        "policyId": "recovery-calendar-v1-candidate",
         "formatApproved": false,
+        "policyApproved": true,
         "activationEnabled": false
       }
     ],
-    "historicalHead": "1dafc82c8c822b64b5cb0f010d16f07c0513e0165b485a46d9b00e8e25783dac",
-    "historicalRevision": 7,
+    "officialJournals": 0,
+    "historicalJournal": {
+      "head": "1dafc82c8c822b64b5cb0f010d16f07c0513e0165b485a46d9b00e8e25783dac",
+      "policy": {
+        "id": "recovery-calendar-v1-candidate",
+        "bands": [
+          {
+            "weight": 80,
+            "maximumDays": 3,
+            "minimumDays": 1
+          },
+          {
+            "weight": 18,
+            "maximumDays": 10,
+            "minimumDays": 4
+          },
+          {
+            "weight": 2,
+            "maximumDays": 28,
+            "minimumDays": 11
+          }
+        ]
+      },
+      "revision": 7
+    },
     "officialCompetitions": 0
   },
   "historicalJournalUnchanged": true,
@@ -82,10 +144,10 @@
     "signedIn": true,
     "adoptedRangesVisible": true,
     "historicalRangesVisible": true,
-    "officialApprovalDisplayed": "Pending",
+    "officialApprovalDisplayed": "Approved",
     "formatDisplayed": "Deferred",
     "activationDisplayed": "Off",
-    "screenshot": "recovery-adoption-2026-11-02.jpg"
+    "screenshot": "recovery-approved-2026-11-02.jpg"
   },
   "officialMatchesCreated": 0
 }

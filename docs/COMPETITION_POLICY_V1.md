@@ -47,15 +47,15 @@ Formal forfeits and other administrative abandonment outcomes remain deferred un
 
 ## Remaining validation
 
-- Verify that technical aborts and interrupted requests preserve unplayed records and recover saved records without duplication.
-- Resolve the recorded cross-runtime coordinate replay discrepancy.
-- Rehearse a four-team, two-round exhibition for cumulative records, partial rounds, recovery and accepted-only briefing exports.
+- Completed: technical abort/interrupted request regression checks preserve unplayed records and recover saved records without duplication.
+- Completed: [versioned cross-runtime replay comparison](REPLAY_PORTABILITY_V1.md), retaining exact match facts and explicitly bounded lateral coordinate rounding.
+- Completed: [four-team, two-round live rehearsal](FOUR_TEAM_VALIDATION_2026_11_01.md) for cumulative records, partial rounds, recovery and accepted-only briefing exports.
 - Implement and validate competitive injury/suspension persistence and audited corrections against this policy before official activation.
 - Continue to defer the inaugural tournament format until the rest of the engine is ready.
 
 ## Restart/retry regression evidence
 
-The isolated database/service harness now passes 75 checks locally. The technical-abort additions run the actual backend service against the migration and confirm:
+The expanded isolated database/service harness now passes 103 checks locally and 110 checks against PostgreSQL in CI. The technical-abort additions run the actual backend service against the migration and confirm:
 
 - Two attempts at the same safety-limited fixture both abort without a proposal, accepted result, changed revision or team-record contribution; the pinned input remains unchanged.
 - A simulated outage before proposal storage leaves the fixture unplayed. Restarting the original input/seed reproduces the same serialized result.

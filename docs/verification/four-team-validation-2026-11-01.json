@@ -1,0 +1,992 @@
+{
+  "classification": "exhibition",
+  "competitionId": "c37ed747-7edf-4197-b51d-2628ce9f4baa",
+  "status": "complete",
+  "revision": 5,
+  "acceptedMatches": 4,
+  "acceptanceAuditEvents": 4,
+  "playerBoxScoresPerMatch": 70,
+  "rosterSnapshots": 18,
+  "officialCompetitions": 0,
+  "partialRound": {
+    "acceptedMatches": 1,
+    "pendingFixtures": 1
+  },
+  "recovery": {
+    "identicalProposalAndDigestAfterReload": true,
+    "fixtureId": "4b75004d-130b-42c5-ac60-9d11d3ce79cf",
+    "proposalId": "a2369da6-cd48-4248-8b8e-00f561c6a17d",
+    "sha256": "037d25b3d53f244e398e9113debfd3c17a99cb67b1ce8ff6a4d898db5a382b85"
+  },
+  "verification": {
+    "ciRun": 41368104951,
+    "ciConclusion": "success",
+    "postgresChecks": 110,
+    "replayChecks": 26,
+    "matchChecks": 549,
+    "competitionChecks": 85,
+    "frontendDeployment": 41368105026,
+    "backendVersion": 2,
+    "backendVerifyJWT": true,
+    "deployedReplay": "Exact event and statistic replay passed (century-replay-coordinate-v1).",
+    "portableNodeReplay": {
+      "fixtureId": "4b75004d-130b-42c5-ac60-9d11d3ce79cf",
+      "coordinateDifferences": 66,
+      "maxCoordinateDelta": 1.4210854715202004e-14,
+      "maxCoordinateULPs": 4
+    }
+  },
+  "briefings": [
+    {
+      "competitionId": "c37ed747-7edf-4197-b51d-2628ce9f4baa",
+      "roundId": "Round 1",
+      "acceptedMatches": 2,
+      "pendingFixtures": 0,
+      "matches": [
+        {
+          "id": "c66321f3-5470-4993-b6e0-d3420def85d2",
+          "engineVersion": "0.1.0-exhibition",
+          "seed": "c37ed747-7edf-4197-b51d-2628ce9f4baa:c66321f3-5470-4993-b6e0-d3420def85d2",
+          "teams": [
+            "Roanoke Athletic",
+            "Lynchburg Union"
+          ],
+          "scores": [
+            100,
+            88
+          ],
+          "winner": "Roanoke Athletic",
+          "playingMinutes": 106.05741348511944,
+          "elapsedMinutes": 191.62408015178613,
+          "quarters": [
+            {
+              "points": [
+                28,
+                4
+              ],
+              "quarter": 1,
+              "cumulative": [
+                28,
+                4
+              ],
+              "elapsedSeconds": 1000.0985092289512,
+              "playingSeconds": 660.0985092289511
+            },
+            {
+              "points": [
+                23,
+                25
+              ],
+              "quarter": 2,
+              "cumulative": [
+                51,
+                29
+              ],
+              "elapsedSeconds": 2391.049310014327,
+              "playingSeconds": 1687.0493100143267
+            },
+            {
+              "points": [
+                26,
+                25
+              ],
+              "quarter": 3,
+              "cumulative": [
+                77,
+                54
+              ],
+              "elapsedSeconds": 2050.7441983498848,
+              "playingSeconds": 1358.7441983498857
+            },
+            {
+              "points": [
+                23,
+                34
+              ],
+              "quarter": 4,
+              "cumulative": [
+                100,
+                88
+              ],
+              "elapsedSeconds": 3655.5527915140046,
+              "playingSeconds": 2657.552791514003
+            }
+          ],
+          "topScorers": [
+            {
+              "id": "ce7d1a69-ae3e-47a3-a562-2ee5c20c5ad5",
+              "name": "Felipe Smith",
+              "team": "Roanoke Athletic",
+              "points": 21,
+              "centralAirScores": 4,
+              "shots": 7
+            },
+            {
+              "id": "6794072f-9036-439c-bfaf-f45ffa718ee6",
+              "name": "Ryan Campos",
+              "team": "Lynchburg Union",
+              "points": 17,
+              "centralAirScores": 4,
+              "shots": 8
+            },
+            {
+              "id": "8b8d1d20-b213-4230-bbd3-c38010ac42c3",
+              "name": "Timothy Francis",
+              "team": "Lynchburg Union",
+              "points": 12,
+              "centralAirScores": 2,
+              "shots": 7
+            },
+            {
+              "id": "c9e71b7f-60f2-4c9e-ac8e-904be0bd0894",
+              "name": "Brian Patel",
+              "team": "Roanoke Athletic",
+              "points": 11,
+              "centralAirScores": 2,
+              "shots": 6
+            },
+            {
+              "id": "dcc84597-1c88-4e4d-b2cf-efdfd7a94583",
+              "name": "Kiran Miranda",
+              "team": "Lynchburg Union",
+              "points": 11,
+              "centralAirScores": 2,
+              "shots": 6
+            },
+            {
+              "id": "a59f99c7-d986-4123-ade6-f4402700559f",
+              "name": "Nico Flores",
+              "team": "Roanoke Athletic",
+              "points": 10,
+              "centralAirScores": 1,
+              "shots": 13
+            }
+          ],
+          "leadChanges": 0,
+          "largestLead": 27,
+          "largestScoringRun": {
+            "side": 0,
+            "points": 14,
+            "endingEventId": 104
+          },
+          "leadHistory": [
+            {
+              "eventId": 20,
+              "side": 0,
+              "margin": 4
+            }
+          ],
+          "teamStats": [
+            {
+              "fouls": 1,
+              "kicks": 233,
+              "shots": 83,
+              "points": 100,
+              "spoils": 68,
+              "bounces": 105,
+              "carries": 126,
+              "catches": 85,
+              "entries": 312,
+              "tackles": 14,
+              "evasions": 19,
+              "turnovers": 60,
+              "ballUpsWon": 62,
+              "recoveries": 119,
+              "handPunches": 130,
+              "freeKicksWon": 1,
+              "timesTackled": 20,
+              "bonusesEarned": 5,
+              "interceptions": 19,
+              "playerSeconds": 95451.67213660752,
+              "outerAirScores": 19,
+              "completedPasses": 189,
+              "transitionShots": 21,
+              "bonusesConverted": 1,
+              "centralAirScores": 18,
+              "possessionSeconds": 2980.3415636994177,
+              "shortHandedSeconds": 0,
+              "centralBounceScores": 4
+            },
+            {
+              "fouls": 1,
+              "kicks": 209,
+              "shots": 63,
+              "points": 88,
+              "spoils": 55,
+              "bounces": 62,
+              "carries": 77,
+              "catches": 89,
+              "entries": 318,
+              "tackles": 20,
+              "evasions": 14,
+              "turnovers": 62,
+              "ballUpsWon": 49,
+              "recoveries": 99,
+              "handPunches": 136,
+              "freeKicksWon": 1,
+              "timesTackled": 14,
+              "bonusesEarned": 4,
+              "interceptions": 30,
+              "playerSeconds": 95451.67213660752,
+              "outerAirScores": 15,
+              "completedPasses": 186,
+              "transitionShots": 11,
+              "bonusesConverted": 1,
+              "centralAirScores": 16,
+              "possessionSeconds": 2846.1032454077504,
+              "shortHandedSeconds": 0,
+              "centralBounceScores": 3,
+              "outerDeflectedScores": 1
+            }
+          ],
+          "winningPlay": {
+            "eventId": 4868,
+            "player": "Ruben Lane",
+            "awardedPoints": 4,
+            "quarter": 4,
+            "playingSeconds": 6363.444809107166,
+            "kind": "central_air",
+            "scores": [
+              100,
+              88
+            ],
+            "winning": true,
+            "deflected": false,
+            "bonusesLost": 0,
+            "bonusCredits": [],
+            "pointsCapped": 0,
+            "nominalPoints": 4,
+            "bonusesConverted": 0
+          },
+          "noteworthy": [],
+          "evidencePolicy": "Use only these recorded facts and cited event IDs. Do not invent dialogue, injuries, crowd reactions, or tactical causes.",
+          "standings": null
+        },
+        {
+          "id": "cf0cf88c-6c0a-4ea1-90c6-9cb62e1f4c29",
+          "engineVersion": "0.1.0-exhibition",
+          "seed": "c37ed747-7edf-4197-b51d-2628ce9f4baa:cf0cf88c-6c0a-4ea1-90c6-9cb62e1f4c29",
+          "teams": [
+            "Wilmington Cape CC",
+            "Asheville Highland"
+          ],
+          "scores": [
+            75,
+            100
+          ],
+          "winner": "Asheville Highland",
+          "playingMinutes": 64.65372851715851,
+          "elapsedMinutes": 137.77039518382523,
+          "quarters": [
+            {
+              "points": [
+                15,
+                28
+              ],
+              "quarter": 1,
+              "cumulative": [
+                15,
+                28
+              ],
+              "elapsedSeconds": 2227.655244237464,
+              "playingSeconds": 1578.655244237464
+            },
+            {
+              "points": [
+                12,
+                22
+              ],
+              "quarter": 2,
+              "cumulative": [
+                27,
+                50
+              ],
+              "elapsedSeconds": 604.7260722892588,
+              "playingSeconds": 361.72607228925926
+            },
+            {
+              "points": [
+                40,
+                28
+              ],
+              "quarter": 3,
+              "cumulative": [
+                67,
+                78
+              ],
+              "elapsedSeconds": 1896.3954211328792,
+              "playingSeconds": 1170.395421132876
+            },
+            {
+              "points": [
+                8,
+                22
+              ],
+              "quarter": 4,
+              "cumulative": [
+                75,
+                100
+              ],
+              "elapsedSeconds": 1137.4469733699116,
+              "playingSeconds": 768.4469733699111
+            }
+          ],
+          "topScorers": [
+            {
+              "id": "18f955b9-c4b5-49b9-a84e-e2ba1cffa021",
+              "name": "Jesse Perry",
+              "team": "Asheville Highland",
+              "points": 22,
+              "centralAirScores": 5,
+              "shots": 14
+            },
+            {
+              "id": "1be9150a-46d0-483f-86e2-d8136373ca5d",
+              "name": "Edgar Fernandez",
+              "team": "Wilmington Cape CC",
+              "points": 15,
+              "centralAirScores": 3,
+              "shots": 6
+            },
+            {
+              "id": "14f34e93-c1fc-447b-96cd-413338457d89",
+              "name": "Paul West",
+              "team": "Asheville Highland",
+              "points": 14,
+              "centralAirScores": 4,
+              "shots": 4
+            },
+            {
+              "id": "ee1a25dd-9200-43ea-89fc-225caa6d713a",
+              "name": "Colin Day",
+              "team": "Asheville Highland",
+              "points": 12,
+              "centralAirScores": 3,
+              "shots": 6
+            },
+            {
+              "id": "9a785d08-ba82-427a-9acc-c46f60a0e97c",
+              "name": "Theodore Leonard",
+              "team": "Wilmington Cape CC",
+              "points": 9,
+              "centralAirScores": 2,
+              "shots": 3
+            },
+            {
+              "id": "f06eb7cb-8d37-4939-a218-aa6b7173bb32",
+              "name": "Andre Walker",
+              "team": "Wilmington Cape CC",
+              "points": 9,
+              "centralAirScores": 2,
+              "shots": 5
+            }
+          ],
+          "leadChanges": 0,
+          "largestLead": 31,
+          "largestScoringRun": {
+            "side": 1,
+            "points": 22,
+            "endingEventId": 1432
+          },
+          "leadHistory": [
+            {
+              "eventId": 89,
+              "side": 1,
+              "margin": 1
+            }
+          ],
+          "teamStats": [
+            {
+              "fouls": 1,
+              "kicks": 128,
+              "shots": 42,
+              "points": 75,
+              "spoils": 31,
+              "bounces": 73,
+              "carries": 87,
+              "catches": 55,
+              "entries": 181,
+              "tackles": 18,
+              "evasions": 11,
+              "turnovers": 39,
+              "ballUpsWon": 32,
+              "recoveries": 61,
+              "handPunches": 73,
+              "freeKicksWon": 1,
+              "timesTackled": 13,
+              "bonusesEarned": 1,
+              "interceptions": 17,
+              "playerSeconds": 58188.35566544265,
+              "outerAirScores": 7,
+              "completedPasses": 105,
+              "transitionShots": 3,
+              "centralAirScores": 15,
+              "possessionSeconds": 1766.8676779818488,
+              "shortHandedSeconds": 0,
+              "centralBounceScores": 3,
+              "outerDeflectedScores": 1
+            },
+            {
+              "fouls": 1,
+              "kicks": 152,
+              "shots": 73,
+              "points": 100,
+              "spoils": 39,
+              "bounces": 80,
+              "carries": 99,
+              "catches": 42,
+              "entries": 182,
+              "tackles": 13,
+              "evasions": 12,
+              "turnovers": 33,
+              "ballUpsWon": 52,
+              "recoveries": 81,
+              "handPunches": 71,
+              "freeKicksWon": 1,
+              "timesTackled": 18,
+              "bonusesEarned": 1,
+              "interceptions": 12,
+              "playerSeconds": 58188.35566544265,
+              "outerAirScores": 5,
+              "completedPasses": 98,
+              "transitionShots": 13,
+              "bonusesConverted": 1,
+              "centralAirScores": 23,
+              "possessionSeconds": 1707.3560330476605,
+              "shortHandedSeconds": 0,
+              "centralBounceScores": 2
+            }
+          ],
+          "winningPlay": {
+            "eventId": 3165,
+            "player": "Paul West",
+            "awardedPoints": 2,
+            "quarter": 4,
+            "playingSeconds": 3879.2237110295105,
+            "kind": "central_air",
+            "scores": [
+              75,
+              100
+            ],
+            "winning": true,
+            "deflected": false,
+            "bonusesLost": 0,
+            "bonusCredits": [],
+            "pointsCapped": 2,
+            "nominalPoints": 4,
+            "bonusesConverted": 0
+          },
+          "noteworthy": [],
+          "evidencePolicy": "Use only these recorded facts and cited event IDs. Do not invent dialogue, injuries, crowd reactions, or tactical causes.",
+          "standings": null
+        }
+      ],
+      "evidencePolicy": "Accepted match facts only; pending fixtures are omitted. Fatigue and injuries reset after each exhibition."
+    },
+    {
+      "competitionId": "c37ed747-7edf-4197-b51d-2628ce9f4baa",
+      "roundId": "Round 2",
+      "acceptedMatches": 2,
+      "pendingFixtures": 0,
+      "matches": [
+        {
+          "id": "4b75004d-130b-42c5-ac60-9d11d3ce79cf",
+          "engineVersion": "0.1.0-exhibition",
+          "seed": "c37ed747-7edf-4197-b51d-2628ce9f4baa:4b75004d-130b-42c5-ac60-9d11d3ce79cf",
+          "teams": [
+            "Roanoke Athletic",
+            "Wilmington Cape CC"
+          ],
+          "scores": [
+            100,
+            96
+          ],
+          "winner": "Roanoke Athletic",
+          "playingMinutes": 83.88969594880668,
+          "elapsedMinutes": 165.28969594880667,
+          "quarters": [
+            {
+              "points": [
+                17,
+                26
+              ],
+              "quarter": 1,
+              "cumulative": [
+                17,
+                26
+              ],
+              "elapsedSeconds": 1394.6244270486059,
+              "playingSeconds": 930.6244270486059
+            },
+            {
+              "points": [
+                14,
+                25
+              ],
+              "quarter": 2,
+              "cumulative": [
+                31,
+                51
+              ],
+              "elapsedSeconds": 1794.5794575818582,
+              "playingSeconds": 1218.5794575818582
+            },
+            {
+              "points": [
+                46,
+                22
+              ],
+              "quarter": 3,
+              "cumulative": [
+                77,
+                73
+              ],
+              "elapsedSeconds": 2711.1500649375375,
+              "playingSeconds": 1829.1500649375375
+            },
+            {
+              "points": [
+                23,
+                23
+              ],
+              "quarter": 4,
+              "cumulative": [
+                100,
+                96
+              ],
+              "elapsedSeconds": 1617.0278073603986,
+              "playingSeconds": 1055.0278073603986
+            }
+          ],
+          "topScorers": [
+            {
+              "id": "9a785d08-ba82-427a-9acc-c46f60a0e97c",
+              "name": "Theodore Leonard",
+              "team": "Wilmington Cape CC",
+              "points": 16,
+              "centralAirScores": 3,
+              "shots": 8
+            },
+            {
+              "id": "c9e71b7f-60f2-4c9e-ac8e-904be0bd0894",
+              "name": "Brian Patel",
+              "team": "Roanoke Athletic",
+              "points": 14,
+              "centralAirScores": 3,
+              "shots": 5
+            },
+            {
+              "id": "f7ee304e-ca3a-45c6-ac41-25b3c8c7b56a",
+              "name": "Ruben Lane",
+              "team": "Roanoke Athletic",
+              "points": 13,
+              "centralAirScores": 2,
+              "shots": 9
+            },
+            {
+              "id": "621c75a3-d58f-49a7-8244-691fe61a133b",
+              "name": "Tobias Malone",
+              "team": "Wilmington Cape CC",
+              "points": 11,
+              "centralAirScores": 2,
+              "shots": 5
+            },
+            {
+              "id": "4ac24639-8614-4e77-ad88-a1545af210eb",
+              "name": "Christian Weaver",
+              "team": "Roanoke Athletic",
+              "points": 9,
+              "centralAirScores": 2,
+              "shots": 3
+            },
+            {
+              "id": "f06eb7cb-8d37-4939-a218-aa6b7173bb32",
+              "name": "Andre Walker",
+              "team": "Wilmington Cape CC",
+              "points": 8,
+              "centralAirScores": 2,
+              "shots": 3
+            }
+          ],
+          "leadChanges": 11,
+          "largestLead": 22,
+          "largestScoringRun": {
+            "side": 0,
+            "points": 18,
+            "endingEventId": 2402
+          },
+          "leadHistory": [
+            {
+              "eventId": 50,
+              "side": 1,
+              "margin": 3
+            },
+            {
+              "eventId": 65,
+              "side": 0,
+              "margin": 1
+            },
+            {
+              "eventId": 124,
+              "side": 1,
+              "margin": 4
+            },
+            {
+              "eventId": 2402,
+              "side": 0,
+              "margin": 4
+            },
+            {
+              "eventId": 2507,
+              "side": 1,
+              "margin": 3
+            },
+            {
+              "eventId": 3087,
+              "side": 0,
+              "margin": 4
+            },
+            {
+              "eventId": 3123,
+              "side": 1,
+              "margin": 4
+            },
+            {
+              "eventId": 3174,
+              "side": 0,
+              "margin": 1
+            },
+            {
+              "eventId": 3248,
+              "side": 1,
+              "margin": 2
+            },
+            {
+              "eventId": 3287,
+              "side": 0,
+              "margin": 2
+            },
+            {
+              "eventId": 3430,
+              "side": 1,
+              "margin": 4
+            },
+            {
+              "eventId": 3557,
+              "side": 0,
+              "margin": 1
+            }
+          ],
+          "teamStats": [
+            {
+              "fouls": 1,
+              "kicks": 190,
+              "shots": 69,
+              "points": 100,
+              "spoils": 36,
+              "bounces": 67,
+              "carries": 81,
+              "catches": 67,
+              "entries": 241,
+              "tackles": 30,
+              "evasions": 16,
+              "turnovers": 46,
+              "ballUpsWon": 60,
+              "recoveries": 84,
+              "handPunches": 106,
+              "timesTackled": 14,
+              "bonusesEarned": 4,
+              "interceptions": 19,
+              "playerSeconds": 75500.726353926,
+              "outerAirScores": 20,
+              "completedPasses": 154,
+              "transitionShots": 17,
+              "bonusesConverted": 3,
+              "centralAirScores": 19,
+              "possessionSeconds": 2356.2153156782733,
+              "shortHandedSeconds": 0,
+              "centralBounceScores": 2
+            },
+            {
+              "kicks": 162,
+              "shots": 55,
+              "points": 96,
+              "spoils": 52,
+              "bounces": 61,
+              "carries": 92,
+              "catches": 73,
+              "entries": 250,
+              "tackles": 14,
+              "evasions": 15,
+              "turnovers": 47,
+              "ballUpsWon": 55,
+              "recoveries": 73,
+              "handPunches": 100,
+              "freeKicksWon": 1,
+              "timesTackled": 30,
+              "bonusesEarned": 3,
+              "interceptions": 19,
+              "playerSeconds": 75500.726353926,
+              "outerAirScores": 9,
+              "completedPasses": 146,
+              "transitionShots": 7,
+              "bonusesConverted": 3,
+              "centralAirScores": 18,
+              "possessionSeconds": 2203.166441250127,
+              "shortHandedSeconds": 0,
+              "centralBounceScores": 5,
+              "outerDeflectedScores": 1
+            }
+          ],
+          "winningPlay": {
+            "eventId": 3910,
+            "player": "Felipe Smith",
+            "awardedPoints": 1,
+            "quarter": 4,
+            "playingSeconds": 5033.3817569284,
+            "kind": "central_air",
+            "scores": [
+              100,
+              96
+            ],
+            "winning": true,
+            "deflected": false,
+            "bonusesLost": 0,
+            "bonusCredits": [],
+            "pointsCapped": 3,
+            "nominalPoints": 4,
+            "bonusesConverted": 0
+          },
+          "noteworthy": [],
+          "evidencePolicy": "Use only these recorded facts and cited event IDs. Do not invent dialogue, injuries, crowd reactions, or tactical causes.",
+          "standings": null
+        },
+        {
+          "id": "5f1590de-2590-48c2-b6b3-f6042ec39a60",
+          "engineVersion": "0.1.0-exhibition",
+          "seed": "c37ed747-7edf-4197-b51d-2628ce9f4baa:5f1590de-2590-48c2-b6b3-f6042ec39a60",
+          "teams": [
+            "Lynchburg Union",
+            "Asheville Highland"
+          ],
+          "scores": [
+            74,
+            100
+          ],
+          "winner": "Asheville Highland",
+          "playingMinutes": 67.97774178366998,
+          "elapsedMinutes": 142.07774178366978,
+          "quarters": [
+            {
+              "points": [
+                24,
+                26
+              ],
+              "quarter": 1,
+              "cumulative": [
+                24,
+                26
+              ],
+              "elapsedSeconds": 1879.3776789782808,
+              "playingSeconds": 1286.3776789782805
+            },
+            {
+              "points": [
+                7,
+                27
+              ],
+              "quarter": 2,
+              "cumulative": [
+                31,
+                53
+              ],
+              "elapsedSeconds": 1040.632443025103,
+              "playingSeconds": 673.6324430251027
+            },
+            {
+              "points": [
+                13,
+                23
+              ],
+              "quarter": 3,
+              "cumulative": [
+                44,
+                76
+              ],
+              "elapsedSeconds": 937.4372805595867,
+              "playingSeconds": 583.4372805595874
+            },
+            {
+              "points": [
+                30,
+                24
+              ],
+              "quarter": 4,
+              "cumulative": [
+                74,
+                100
+              ],
+              "elapsedSeconds": 2267.217104457217,
+              "playingSeconds": 1535.2171044572283
+            }
+          ],
+          "topScorers": [
+            {
+              "id": "7ea1107f-b0d1-46e2-8ef1-038807226e5a",
+              "name": "Joaquin Montgomery",
+              "team": "Asheville Highland",
+              "points": 17,
+              "centralAirScores": 4,
+              "shots": 6
+            },
+            {
+              "id": "62503396-6915-4002-aa90-9ee399ded914",
+              "name": "Keegan Fleming",
+              "team": "Asheville Highland",
+              "points": 16,
+              "centralAirScores": 4,
+              "shots": 6
+            },
+            {
+              "id": "18f955b9-c4b5-49b9-a84e-e2ba1cffa021",
+              "name": "Jesse Perry",
+              "team": "Asheville Highland",
+              "points": 14,
+              "centralAirScores": 2,
+              "shots": 11
+            },
+            {
+              "id": "6794072f-9036-439c-bfaf-f45ffa718ee6",
+              "name": "Ryan Campos",
+              "team": "Lynchburg Union",
+              "points": 10,
+              "centralAirScores": 2,
+              "shots": 5
+            },
+            {
+              "id": "cebe4c8a-985b-4a92-8e85-eaba89f8fd61",
+              "name": "Vincent Zimmerman",
+              "team": "Lynchburg Union",
+              "points": 10,
+              "centralAirScores": 2,
+              "shots": 4
+            },
+            {
+              "id": "014c3985-6f53-4b89-b879-823b67bbf1f2",
+              "name": "Isaac Goodman",
+              "team": "Asheville Highland",
+              "points": 9,
+              "centralAirScores": 2,
+              "shots": 4
+            }
+          ],
+          "leadChanges": 2,
+          "largestLead": 33,
+          "largestScoringRun": {
+            "side": 1,
+            "points": 27,
+            "endingEventId": 1139
+          },
+          "leadHistory": [
+            {
+              "eventId": 92,
+              "side": 1,
+              "margin": 2
+            },
+            {
+              "eventId": 161,
+              "side": 0,
+              "margin": 1
+            },
+            {
+              "eventId": 967,
+              "side": 1,
+              "margin": 2
+            }
+          ],
+          "teamStats": [
+            {
+              "fouls": 1,
+              "kicks": 159,
+              "shots": 49,
+              "points": 74,
+              "spoils": 25,
+              "bounces": 47,
+              "carries": 56,
+              "catches": 77,
+              "entries": 205,
+              "tackles": 13,
+              "evasions": 4,
+              "turnovers": 40,
+              "ballUpsWon": 41,
+              "recoveries": 62,
+              "handPunches": 70,
+              "timesTackled": 9,
+              "bonusesEarned": 2,
+              "interceptions": 19,
+              "playerSeconds": 61179.967605302925,
+              "outerAirScores": 12,
+              "completedPasses": 117,
+              "transitionShots": 7,
+              "bonusesConverted": 2,
+              "centralAirScores": 13,
+              "possessionSeconds": 1947.147546573054,
+              "shortHandedSeconds": 0,
+              "centralBounceScores": 4
+            },
+            {
+              "kicks": 146,
+              "shots": 59,
+              "points": 100,
+              "spoils": 32,
+              "bounces": 70,
+              "carries": 84,
+              "catches": 56,
+              "entries": 191,
+              "tackles": 9,
+              "evasions": 19,
+              "turnovers": 41,
+              "ballUpsWon": 42,
+              "recoveries": 66,
+              "handPunches": 83,
+              "freeKicksWon": 1,
+              "timesTackled": 13,
+              "interceptions": 22,
+              "playerSeconds": 61179.967605302925,
+              "outerAirScores": 11,
+              "completedPasses": 114,
+              "transitionShots": 16,
+              "centralAirScores": 22,
+              "possessionSeconds": 1738.5169604471423,
+              "shortHandedSeconds": 0,
+              "centralBounceScores": 2
+            }
+          ],
+          "winningPlay": {
+            "eventId": 3154,
+            "player": "Paul West",
+            "awardedPoints": 1,
+            "quarter": 4,
+            "playingSeconds": 4078.664507020199,
+            "kind": "central_air",
+            "scores": [
+              74,
+              100
+            ],
+            "winning": true,
+            "deflected": false,
+            "bonusesLost": 0,
+            "bonusCredits": [],
+            "pointsCapped": 3,
+            "nominalPoints": 4,
+            "bonusesConverted": 0
+          },
+          "noteworthy": [],
+          "evidencePolicy": "Use only these recorded facts and cited event IDs. Do not invent dialogue, injuries, crowd reactions, or tactical causes.",
+          "standings": null
+        }
+      ],
+      "evidencePolicy": "Accepted match facts only; pending fixtures are omitted. Fatigue and injuries reset after each exhibition."
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import type { MatchResult, matchBriefing } from '@century-league/simulation-core';
+import type { MatchResult, ReplayReport, matchBriefing } from '@century-league/simulation-core';
 import { supabase } from './lib/supabase';
 
 type Competition = { id:string; name:string; season_id:string; competition_category:string; classification:string; status:string; revision:number };
@@ -83,7 +83,7 @@ export default function MatchCenter({role}:{role:string|null}) {
     </section>
     {review?<><MatchReview review={review} accepted={Boolean(reviewedFixture?.accepted_at)}/><div className="generator-actions">
       {!reviewedFixture?.accepted_at&&commissioner?<button className="primary-button" disabled={Boolean(busy)||!detail} onClick={()=>run('Accepting result…',async()=>{await request({action:'accept',proposalId:review.id,expectedRevision:detail!.competition.revision});await reload();setMessage('Result accepted. Exhibition records updated once.');})}>Accept reviewed result</button>:null}
-      <button className="primary-button" disabled={Boolean(busy)} onClick={()=>run('Replaying saved match…',async()=>{await request({action:'verify',proposalId:review.id});setMessage('Exact event and statistic replay passed.');})}>Verify replay</button>
+      <button className="primary-button" disabled={Boolean(busy)} onClick={()=>run('Replaying saved match…',async()=>{const {replay}=await request<{replay:ReplayReport}>({action:'verify',proposalId:review.id});setMessage(replay.exact?`Exact event and statistic replay passed (${replay.policy}).`:`Replay passed with ${replay.coordinateDifferences} bounded coordinate rounding differences (${replay.policy}). Scores, events, timing and statistics match exactly.`);})}>Verify replay</button>
       <button className="primary-button" disabled={Boolean(busy)} onClick={()=>download(`century-${review.fixtureId}.json`,{classification:'exhibition',status:reviewedFixture?.accepted_at?'accepted':'proposed',...review})}>Export match data</button>
     </div></>:null}
     {commissioner?<details className="generator-panel"><summary>Prepare an exhibition</summary><p>Choose a season and add the fixtures you want to test. Team rosters and original coaching preferences are loaded from that season.</p>

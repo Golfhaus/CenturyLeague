@@ -1,4 +1,4 @@
-import { createCompetition, validateCompetitionFixtureResult, COMPETITION_ENGINE_SOURCE_SHA256 } from './simulation/competition/index.ts';
+import { createCompetition, validateCompetitionFixtureResult, verifyMatchReplay, COORDINATE_REPLAY_POLICY, COMPETITION_ENGINE_SOURCE_SHA256 } from './simulation/competition/index.ts';
 import { simulateMatch, MATCH_ENGINE_VERSION } from './simulation/match/engine.ts';
 import { matchBriefing } from './simulation/match/report.ts';
 import type { CompetitionDefinition } from './simulation/competition/types.ts';
@@ -65,8 +65,10 @@ export async function handleMatchAction(db:DB,actor:{id:string;role:string},body
  if(body.action==='verify'){
   const f=await value(db.from('competition_fixtures').select('competition_id').eq('id',p.fixture_id).single());
   const c=await value(db.from('competitions').select('definition').eq('id',f.competition_id).single());
-  validateCompetitionFixtureResult(c.definition,p.result as MatchResult,true);
-  return {id:p.id,verified:true,sha256:p.result_sha256};
+  validateCompetitionFixtureResult(c.definition,p.result as MatchResult,false);
+  const replay=verifyMatchReplay(p.result as MatchResult,COORDINATE_REPLAY_POLICY);
+  if(!replay.equivalent)throw new RequestError(`Replay mismatch at ${replay.firstMismatch}`);
+  return {id:p.id,verified:true,sha256:p.result_sha256,replay};
  }
  return {id:p.id,fixtureId:p.fixture_id,sha256:p.result_sha256,result:p.result,briefing:matchBriefing(p.result)};
 }

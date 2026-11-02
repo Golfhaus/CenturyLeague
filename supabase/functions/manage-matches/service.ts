@@ -5,6 +5,7 @@ import type { CompetitionDefinition } from './simulation/competition/types.ts';
 import type { MatchInput, MatchResult, MatchTeam } from './simulation/match/types.ts';
 import { RequestError } from './shared.ts';
 import { handleRehearsalAction } from './rehearsal-service.ts';
+import { handleOfficialAction } from './official-service.ts';
 export { RequestError } from './shared.ts';
 // The interface is intentionally structural: the same service runs with a fake adapter in request tests.
 type DB = { from:(name:string)=>any; rpc:(name:string,args:Record<string,unknown>)=>PromiseLike<{data:any;error:any}> };
@@ -15,17 +16,19 @@ async function value(p:PromiseLike<{data:any;error:any}>){const {data,error}=awa
 export async function handleMatchAction(db:DB,actor:{id:string;role:string},body:any):Promise<any>{
  if(!body||typeof body!=='object'||Array.isArray(body))throw new RequestError('Action required');
  if(typeof body.action==='string'&&body.action.startsWith('rehearsal-'))return handleRehearsalAction(db,actor,body);
+ if(typeof body.action==='string'&&body.action.startsWith('official-'))return handleOfficialAction(db,actor,body);
  const read=['list','detail','proposal','briefing','verify'];
  const write=['create-exhibition','activate','simulate','accept'];
  if(![...read,...write].includes(body.action))throw new RequestError('Unknown match action');
  if(write.includes(body.action)&&actor.role!=='commissioner')throw new RequestError('Commissioner access required',403);
- if(body.action==='list')return value(db.from('competitions').select('id,name,season_id,competition_category,classification,status,revision,created_at').order('created_at',{ascending:false}).limit(200));
+ if(body.action==='list')return value(db.from('competitions').select('id,name,season_id,competition_category,classification,status,revision,created_at').eq('classification','exhibition').order('created_at',{ascending:false}).limit(200));
  if(body.action==='detail'){
   const competitionId=id(body.competitionId);
   const [competition,fixtures,records]=await Promise.all([
    value(db.from('competitions').select('id,name,season_id,competition_category,classification,status,revision').eq('id',competitionId).single()),
    value(db.from('competition_fixture_status').select('*').eq('competition_id',competitionId).order('ordinal')),
    value(db.from('competition_team_records').select('*').eq('competition_id',competitionId).order('name'))]);
+  if(competition.classification!=='exhibition')throw new RequestError('Use the official competition workflow for these records',409);
   return {competition,fixtures,records};
  }
  if(body.action==='create-exhibition'){
@@ -48,6 +51,7 @@ export async function handleMatchAction(db:DB,actor:{id:string;role:string},body
   if(prior)return {id:prior.id,added:false,sha256:prior.result_sha256};
   const fixture=await value(db.from('competition_fixtures').select('competition_id,match_input').eq('id',fixtureId).single());
   const competition=await value(db.from('competitions').select('status,definition').eq('id',fixture.competition_id).single());
+  if(competition.definition.classification!=='exhibition')throw new RequestError('Use the official competition workflow',409);
   if(competition.status!=='active')throw new RequestError('Activate the exhibition before simulating');
   const result=simulateMatch(fixture.match_input as MatchInput);
   // Generated here from immutable DB inputs, never received from the caller. Full replay is available separately.
@@ -56,6 +60,8 @@ export async function handleMatchAction(db:DB,actor:{id:string;role:string},body
  }
  if(body.action==='briefing'){
   const competitionId=id(body.competitionId);
+  const c=await value(db.from('competitions').select('classification').eq('id',competitionId).single());
+  if(c.classification!=='exhibition')throw new RequestError('Use the official competition briefing',409);
   if(typeof body.roundId!=='string'||!body.roundId.trim())throw new RequestError('Select a round');
   const fixtures=await value(db.from('competition_fixture_status').select('id,proposal_id,accepted_at').eq('competition_id',competitionId).eq('round_id',body.roundId).order('ordinal'));
   const accepted=fixtures.filter((f:any)=>f.accepted_at);

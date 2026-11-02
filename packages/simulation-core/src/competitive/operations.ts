@@ -100,10 +100,11 @@ export function availabilityFor(state: OperationsState, input: MatchInput, match
   if(replacesResultId)pinned.replacesResultId=replacesResultId;
   return pinned;
 }
-export function operationsTeamRecords(state: OperationsState) {
+export function operationsTeamRecords(state: OperationsState, competitionId?: string) {
   const view=operationsView(state);
-  const rows=[...new Set(view.results.flatMap(r=>r.teamIds))].map(teamId=>({teamId,played:0,wins:0,losses:0,pointsFor:0,pointsAgainst:0}));
-  for(const result of view.active)for(const side of [0,1]){
+  const scoped=(r: AcceptedEvidence)=>!competitionId||r.competitionId===competitionId;
+  const rows=[...new Set(view.results.filter(scoped).flatMap(r=>r.teamIds))].map(teamId=>({teamId,played:0,wins:0,losses:0,pointsFor:0,pointsAgainst:0}));
+  for(const result of view.active.filter(scoped))for(const side of [0,1]){
     const row=rows.find(r=>r.teamId===result.teamIds[side])!;
     row.played++;if(side===result.winner)row.wins++;else row.losses++;
     row.pointsFor+=result.scores[side];row.pointsAgainst+=result.scores[1-side];

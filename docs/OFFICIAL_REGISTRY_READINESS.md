@@ -1,0 +1,44 @@
+# Official registry readiness
+
+The official registry adapter connects the accepted-result transaction to one durable availability journal per league category. The migration ships both categories disabled. It creates no official competition, fixture, result or journal, and does not adopt an inaugural format.
+
+## Recovery calibration and recommendation
+
+Retain the proposed distribution for initial adoption: 80% uniformly 1–3 calendar days, 18% uniformly 4–10 days, and 2% uniformly 11–28 days. Its exact mean is **3.25 days**. A separate 20,000-draw deterministic probe produced 79.91% / 18.19% / 1.90% and a 3.234-day mean. This validates the recovery sampler, not the gameplay injury rate.
+
+A player is eligible on the recovery date. The following figures are exact consequences of the proposed duration policy; they are scheduling illustrations rather than an adopted fixture cadence.
+
+| Days between matches | Chance an injury misses the next match | Expected later matches missed per injury |
+| --- | --- | --- |
+| 1 | 73.33% | 2.250 |
+| 2 | 46.67% | 0.935 |
+| 3 | 20.00% | 0.425 |
+| 7 | 9.71% | 0.120 |
+
+Forty-eight independent, initially healthy Roanoke–Lynchburg matches produced one injury and two serious-foul flags. That small two-team sample cannot establish a reliable league injury rate or predict cumulative season availability. It gives no basis to rebalance the frozen gameplay injury chance. Keep the accepted gameplay settings and inspect actual availability during the first competition. [Machine-readable evidence](verification/recovery-calibration-2026-11-02.json) records the source digest and caveat. Run `npm run calibrate:availability -- <immutable-match-export> <report-path>` to repeat with those rosters; without an export the script uses explicitly fictional controlled rosters.
+
+Retain manual commissioner review for serious/repeated flags. Three recorded fouls is a review threshold, not a named offense or automatic ban. Keep explicit reasoned decisions, dismissal at zero matches, and consecutive service of overlapping bans. A healthy rostered player serves at most the oldest outstanding ban per accepted official match. No automatic tariff is enabled without an approved named-offense table. These numeric choices remain recommendations pending commissioner adoption.
+
+## Authoritative integration
+
+`20261102111203_official_competition_registry.sql` adds category release gates, immutable competition/journal bindings, canonical dated fixture metadata, immutable availability pins, and compact result dispositions. Existing candidate-named engine/storage identifiers remain stable internal replay identities; renaming them would change historical ledgers. Workflow release status is separate from the engine version.
+
+An official competition imports public abilities and coaching from canonical season rosters. It never accepts browser-supplied rosters, result ledgers, recovery policies, actor identities or source fingerprints. New competitions and monthly seasons use the existing category journal. Stable player IDs carry injuries and bans across transfers. Men's and women's journals are separate. Validation journals and exhibitions remain separate from official effects.
+
+Proposals are computed on the backend from immutable pins. The compact journal acceptance, public immutable result registration, active disposition and audit receipt commit in one transaction. A public registration failure rolls back the journal event, revision and hash head. Lost replies recover the saved proposal/result. The legacy exhibition acceptance path cannot register an official result without the corresponding category event.
+
+Voiding preserves the source ledger and registration, removes it from active records and effects, and flags affected later results throughout the category. Replacements preserve the original seed/date, pin corrected canonical inputs, and remain separate auditable fixtures. Public team records omit voided sources. Official round/player exports omit voided and superseded contributions. Competition closure/reopening is explicit and recorded; it does not reset the category journal.
+
+## Commissioner surface and API
+
+Match Center adds **Official competition · release readiness**, including a gate-status table and the shared saved-competition review, simulation, acceptance, discipline, correction, replay and export controls. Official draft creation remains an API operation requiring an explicit recorded format decision; no generic tournament planner or format is invented in the UI. The existing rehearsal planner remains available separately.
+
+The `official-*` actions use the existing authenticated `manage-matches` endpoint. Readiness/list/detail/replay/export remain readable to the commissioner while activation is paused. Database gates reject official creation, activation, pinning, proposal staging and journal mutations while disabled. Only a controlled database release change can approve policy/format and enable activation: the service role can read the gates and initialize their journal pointer, but cannot change approval flags. A category's journal pointer cannot be cleared or replaced. Browser roles cannot call these backend RPCs or access private operational tables. Registered readers use security-invoker public result views.
+
+## Verification and remaining release steps
+
+The isolated service/database harness exercises canonical generation, default configuration, complete 70-player ledgers, cross-month transfer and suspension service, shared-journal record scoping, immutable source replay, corrections/replacements, downstream review, active-only exports, closure/reopening, authorization, disabled-gate bypass rejection, transaction rollback and lost-reply recovery. PostgreSQL CI adds simultaneous writers against different competitions sharing the same journal revision.
+
+The existing exhibition and rehearsal integration regressions, availability domain checks, replay/source guards, application types and production build remain required. The gameplay baseline fingerprint and availability adapter fingerprint are unchanged.
+
+Before official activation: adopt the recovery/manual-discipline choices above; decide the inaugural format, standings/tie-break/advancement rules where applicable; bind that exact format to fixture preparation; perform the final signed-in official workflow rehearsal under controlled release conditions; then enable only the intended category and declare workflow 1.0. The format remains deferred until the engineering checks are complete. No additional broad league-balance sweep is required.

@@ -15,7 +15,9 @@
     "matchChecks": 549,
     "replayChecks": 26,
     "competitionChecks": 85,
-    "independentPostgreSQLSessions": true
+    "independentPostgreSQLSessions": true,
+    "postMergeRun": 41436780546,
+    "postMergeStatus": "success"
   },
   "local": {
     "officialRegistryChecks": 64,
@@ -150,7 +152,10 @@
   ],
   "browser": {
     "signedIn": false,
-    "status": "final signed-in visual check pending; existing session no longer available; no email link requested"
+    "status": "blocked by automatic approval review before email submission",
+    "emailSent": false,
+    "reviewReason": "Another magic-link email was rejected because of the earlier email rate-limit problems and restriction on fresh requests.",
+    "screenshot": "official-signin-pending-2026-11-02.jpg"
   },
   "policy": {
     "numericChoices": "recommended; not yet adopted",

@@ -1,0 +1,574 @@
+{
+  "id": "inaugural-18-double-elimination-v1",
+  "reference": "Commissioner-approved 18-club double-elimination inaugural, November 2-3, 2026",
+  "startsOn": "2026-11-03",
+  "endsOn": "2026-12-04",
+  "timeZone": "America/New_York",
+  "rosterPolicy": "Frozen November 2026 entry rosters throughout inaugural",
+  "decemberDivisionalWindow": {
+    "startsOn": "2026-12-08",
+    "endsOn": "2026-12-27"
+  },
+  "seeds": [
+    {
+      "seed": 1,
+      "name": "Erie City Rovers",
+      "wins": 753,
+      "losses": 97
+    },
+    {
+      "seed": 2,
+      "name": "Sporting Durham",
+      "wins": 694,
+      "losses": 156
+    },
+    {
+      "seed": 3,
+      "name": "Frederick Forge",
+      "wins": 692,
+      "losses": 158
+    },
+    {
+      "seed": 4,
+      "name": "Hampden Works CC",
+      "wins": 642,
+      "losses": 208
+    },
+    {
+      "seed": 5,
+      "name": "Sporting Brandywine",
+      "wins": 634,
+      "losses": 216
+    },
+    {
+      "seed": 6,
+      "name": "Asheville Highland",
+      "wins": 568,
+      "losses": 282
+    },
+    {
+      "seed": 7,
+      "name": "Roanoke Athletic",
+      "wins": 509,
+      "losses": 341
+    },
+    {
+      "seed": 8,
+      "name": "Hagerstown Albion",
+      "wins": 447,
+      "losses": 403
+    },
+    {
+      "seed": 9,
+      "name": "Anacostia United",
+      "wins": 395,
+      "losses": 455
+    },
+    {
+      "seed": 10,
+      "name": "Norfolk Maritime",
+      "wins": 349,
+      "losses": 501
+    },
+    {
+      "seed": 11,
+      "name": "Lynchburg Union",
+      "wins": 339,
+      "losses": 511
+    },
+    {
+      "seed": 12,
+      "name": "Greensboro Crescent CC",
+      "wins": 327,
+      "losses": 523
+    },
+    {
+      "seed": 13,
+      "name": "Philadelphia Northwest",
+      "wins": 301,
+      "losses": 549
+    },
+    {
+      "seed": 14,
+      "name": "Lancaster Red Rose CC",
+      "wins": 280,
+      "losses": 570
+    },
+    {
+      "seed": 15,
+      "name": "Dover Town CC",
+      "wins": 269,
+      "losses": 581
+    },
+    {
+      "seed": 16,
+      "name": "Silver Spring Athletic",
+      "wins": 222,
+      "losses": 628
+    },
+    {
+      "seed": 17,
+      "name": "Manchester Borough CC",
+      "wins": 118,
+      "losses": 732
+    },
+    {
+      "seed": 18,
+      "name": "Wilmington Cape CC",
+      "wins": 111,
+      "losses": 739
+    }
+  ],
+  "slots": [
+    {
+      "code": "M01",
+      "stage": "Upper preliminary",
+      "window": 1,
+      "matchDate": "2026-11-03",
+      "startsAt": "2026-11-03T19:00:00-05:00",
+      "entrants": [
+        "S15",
+        "S18"
+      ]
+    },
+    {
+      "code": "M02",
+      "stage": "Upper preliminary",
+      "window": 1,
+      "matchDate": "2026-11-03",
+      "startsAt": "2026-11-03T19:00:00-05:00",
+      "entrants": [
+        "S16",
+        "S17"
+      ]
+    },
+    {
+      "code": "M03",
+      "stage": "Upper round of 16",
+      "window": 1,
+      "matchDate": "2026-11-03",
+      "startsAt": "2026-11-03T19:00:00-05:00",
+      "entrants": [
+        "S8",
+        "S9"
+      ]
+    },
+    {
+      "code": "M04",
+      "stage": "Upper round of 16",
+      "window": 1,
+      "matchDate": "2026-11-03",
+      "startsAt": "2026-11-03T19:00:00-05:00",
+      "entrants": [
+        "S5",
+        "S12"
+      ]
+    },
+    {
+      "code": "M05",
+      "stage": "Upper round of 16",
+      "window": 1,
+      "matchDate": "2026-11-03",
+      "startsAt": "2026-11-03T19:00:00-05:00",
+      "entrants": [
+        "S4",
+        "S13"
+      ]
+    },
+    {
+      "code": "M06",
+      "stage": "Upper round of 16",
+      "window": 1,
+      "matchDate": "2026-11-03",
+      "startsAt": "2026-11-03T19:00:00-05:00",
+      "entrants": [
+        "S3",
+        "S14"
+      ]
+    },
+    {
+      "code": "M07",
+      "stage": "Upper round of 16",
+      "window": 1,
+      "matchDate": "2026-11-03",
+      "startsAt": "2026-11-03T19:00:00-05:00",
+      "entrants": [
+        "S6",
+        "S11"
+      ]
+    },
+    {
+      "code": "M08",
+      "stage": "Upper round of 16",
+      "window": 1,
+      "matchDate": "2026-11-03",
+      "startsAt": "2026-11-03T19:00:00-05:00",
+      "entrants": [
+        "S7",
+        "S10"
+      ]
+    },
+    {
+      "code": "M09",
+      "stage": "Upper round of 16",
+      "window": 2,
+      "matchDate": "2026-11-06",
+      "startsAt": "2026-11-06T19:00:00-05:00",
+      "entrants": [
+        "S1",
+        "W:M02"
+      ]
+    },
+    {
+      "code": "M10",
+      "stage": "Upper round of 16",
+      "window": 2,
+      "matchDate": "2026-11-06",
+      "startsAt": "2026-11-06T19:00:00-05:00",
+      "entrants": [
+        "S2",
+        "W:M01"
+      ]
+    },
+    {
+      "code": "M11",
+      "stage": "Lower entry",
+      "window": 2,
+      "matchDate": "2026-11-06",
+      "startsAt": "2026-11-06T19:00:00-05:00",
+      "entrants": [
+        "L:M01",
+        "L:M03"
+      ]
+    },
+    {
+      "code": "M12",
+      "stage": "Lower entry",
+      "window": 2,
+      "matchDate": "2026-11-06",
+      "startsAt": "2026-11-06T19:00:00-05:00",
+      "entrants": [
+        "L:M02",
+        "L:M08"
+      ]
+    },
+    {
+      "code": "M13",
+      "stage": "Lower round 1",
+      "window": 2,
+      "matchDate": "2026-11-06",
+      "startsAt": "2026-11-06T19:00:00-05:00",
+      "entrants": [
+        "L:M04",
+        "L:M05"
+      ]
+    },
+    {
+      "code": "M14",
+      "stage": "Lower round 1",
+      "window": 2,
+      "matchDate": "2026-11-06",
+      "startsAt": "2026-11-06T19:00:00-05:00",
+      "entrants": [
+        "L:M06",
+        "L:M07"
+      ]
+    },
+    {
+      "code": "M15",
+      "stage": "Upper quarterfinals",
+      "window": 3,
+      "matchDate": "2026-11-10",
+      "startsAt": "2026-11-10T19:00:00-05:00",
+      "entrants": [
+        "W:M09",
+        "W:M03"
+      ]
+    },
+    {
+      "code": "M16",
+      "stage": "Upper quarterfinals",
+      "window": 3,
+      "matchDate": "2026-11-10",
+      "startsAt": "2026-11-10T19:00:00-05:00",
+      "entrants": [
+        "W:M04",
+        "W:M05"
+      ]
+    },
+    {
+      "code": "M17",
+      "stage": "Upper quarterfinals",
+      "window": 3,
+      "matchDate": "2026-11-10",
+      "startsAt": "2026-11-10T19:00:00-05:00",
+      "entrants": [
+        "W:M06",
+        "W:M07"
+      ]
+    },
+    {
+      "code": "M18",
+      "stage": "Upper quarterfinals",
+      "window": 3,
+      "matchDate": "2026-11-10",
+      "startsAt": "2026-11-10T19:00:00-05:00",
+      "entrants": [
+        "W:M08",
+        "W:M10"
+      ]
+    },
+    {
+      "code": "M19",
+      "stage": "Lower round 1",
+      "window": 3,
+      "matchDate": "2026-11-10",
+      "startsAt": "2026-11-10T19:00:00-05:00",
+      "entrants": [
+        "L:M09",
+        "W:M11"
+      ]
+    },
+    {
+      "code": "M20",
+      "stage": "Lower round 1",
+      "window": 3,
+      "matchDate": "2026-11-10",
+      "startsAt": "2026-11-10T19:00:00-05:00",
+      "entrants": [
+        "L:M10",
+        "W:M12"
+      ]
+    },
+    {
+      "code": "M21",
+      "stage": "Lower round 2",
+      "window": 4,
+      "matchDate": "2026-11-13",
+      "startsAt": "2026-11-13T19:00:00-05:00",
+      "entrants": [
+        "W:M19",
+        "L:M18"
+      ]
+    },
+    {
+      "code": "M22",
+      "stage": "Lower round 2",
+      "window": 4,
+      "matchDate": "2026-11-13",
+      "startsAt": "2026-11-13T19:00:00-05:00",
+      "entrants": [
+        "W:M13",
+        "L:M17"
+      ]
+    },
+    {
+      "code": "M23",
+      "stage": "Lower round 2",
+      "window": 4,
+      "matchDate": "2026-11-13",
+      "startsAt": "2026-11-13T19:00:00-05:00",
+      "entrants": [
+        "W:M14",
+        "L:M16"
+      ]
+    },
+    {
+      "code": "M24",
+      "stage": "Lower round 2",
+      "window": 4,
+      "matchDate": "2026-11-13",
+      "startsAt": "2026-11-13T19:00:00-05:00",
+      "entrants": [
+        "W:M20",
+        "L:M15"
+      ]
+    },
+    {
+      "code": "M25",
+      "stage": "Division placement",
+      "window": 4,
+      "matchDate": "2026-11-13",
+      "startsAt": "2026-11-13T19:00:00-05:00",
+      "entrants": [
+        "Best original seed among losers L1–L4",
+        "Worst original seed among losers L1–L4"
+      ],
+      "pool": "A",
+      "ranks": [
+        1,
+        4
+      ]
+    },
+    {
+      "code": "M26",
+      "stage": "Division placement",
+      "window": 4,
+      "matchDate": "2026-11-13",
+      "startsAt": "2026-11-13T19:00:00-05:00",
+      "entrants": [
+        "Second-best original seed among losers L1–L4",
+        "Second-worst original seed among losers L1–L4"
+      ],
+      "pool": "A",
+      "ranks": [
+        2,
+        3
+      ]
+    },
+    {
+      "code": "M27",
+      "stage": "Upper semifinals",
+      "window": 5,
+      "matchDate": "2026-11-17",
+      "startsAt": "2026-11-17T19:00:00-05:00",
+      "entrants": [
+        "W:M15",
+        "W:M16"
+      ]
+    },
+    {
+      "code": "M28",
+      "stage": "Upper semifinals",
+      "window": 5,
+      "matchDate": "2026-11-17",
+      "startsAt": "2026-11-17T19:00:00-05:00",
+      "entrants": [
+        "W:M17",
+        "W:M18"
+      ]
+    },
+    {
+      "code": "M29",
+      "stage": "Lower round 3",
+      "window": 5,
+      "matchDate": "2026-11-17",
+      "startsAt": "2026-11-17T19:00:00-05:00",
+      "entrants": [
+        "W:M21",
+        "W:M22"
+      ]
+    },
+    {
+      "code": "M30",
+      "stage": "Lower round 3",
+      "window": 5,
+      "matchDate": "2026-11-17",
+      "startsAt": "2026-11-17T19:00:00-05:00",
+      "entrants": [
+        "W:M23",
+        "W:M24"
+      ]
+    },
+    {
+      "code": "M31",
+      "stage": "Division placement",
+      "window": 5,
+      "matchDate": "2026-11-17",
+      "startsAt": "2026-11-17T19:00:00-05:00",
+      "entrants": [
+        "Best original seed among losers L5–L8",
+        "Worst original seed among losers L5–L8"
+      ],
+      "pool": "B",
+      "ranks": [
+        1,
+        4
+      ]
+    },
+    {
+      "code": "M32",
+      "stage": "Division placement",
+      "window": 5,
+      "matchDate": "2026-11-17",
+      "startsAt": "2026-11-17T19:00:00-05:00",
+      "entrants": [
+        "Second-best original seed among losers L5–L8",
+        "Second-worst original seed among losers L5–L8"
+      ],
+      "pool": "B",
+      "ranks": [
+        2,
+        3
+      ]
+    },
+    {
+      "code": "M33",
+      "stage": "Lower round 4",
+      "window": 6,
+      "matchDate": "2026-11-20",
+      "startsAt": "2026-11-20T19:00:00-05:00",
+      "entrants": [
+        "W:M29",
+        "L:M27"
+      ]
+    },
+    {
+      "code": "M34",
+      "stage": "Lower round 4",
+      "window": 6,
+      "matchDate": "2026-11-20",
+      "startsAt": "2026-11-20T19:00:00-05:00",
+      "entrants": [
+        "W:M30",
+        "L:M28"
+      ]
+    },
+    {
+      "code": "M35",
+      "stage": "Upper final",
+      "window": 7,
+      "matchDate": "2026-11-24",
+      "startsAt": "2026-11-24T19:00:00-05:00",
+      "entrants": [
+        "W:M27",
+        "W:M28"
+      ]
+    },
+    {
+      "code": "M36",
+      "stage": "Lower semifinal",
+      "window": 7,
+      "matchDate": "2026-11-24",
+      "startsAt": "2026-11-24T19:00:00-05:00",
+      "entrants": [
+        "W:M33",
+        "W:M34"
+      ]
+    },
+    {
+      "code": "M37",
+      "stage": "Lower final",
+      "window": 8,
+      "matchDate": "2026-11-27",
+      "startsAt": "2026-11-27T19:00:00-05:00",
+      "entrants": [
+        "W:M36",
+        "L:M35"
+      ]
+    },
+    {
+      "code": "M38",
+      "stage": "Grand final",
+      "window": 9,
+      "matchDate": "2026-12-01",
+      "startsAt": "2026-12-01T19:00:00-05:00",
+      "entrants": [
+        "W:M35",
+        "W:M37"
+      ]
+    },
+    {
+      "code": "M39",
+      "stage": "Grand final reset",
+      "window": 10,
+      "matchDate": "2026-12-04",
+      "startsAt": "2026-12-04T19:00:00-05:00",
+      "entrants": [
+        "W:M35",
+        "W:M37"
+      ],
+      "conditional": true
+    }
+  ]
+}

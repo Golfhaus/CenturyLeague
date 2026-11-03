@@ -58,6 +58,7 @@ try{
  await db.exec('set role service_role');
  await rejects(()=>db.query("update private.official_release_gates set policy_approved=false where category='men'"),/permission denied/);
  await db.exec('reset role');
+ await db.exec(fs.readFileSync('supabase/migrations/20261103111414_inaugural_tournament_v1.sql','utf8'));
  // Owner-only switches are confined to this disposable database. No production
  // API or commissioner browser has permission to approve these decisions.
  await db.exec("update private.official_release_gates set policy_approved=true,format_approved=true,activation_enabled=true where category='men'");

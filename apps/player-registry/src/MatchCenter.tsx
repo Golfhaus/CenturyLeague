@@ -48,7 +48,7 @@ export default function MatchCenter({role}:{role:string|null}) {
     setPlan(p=>[...p,{id:crypto.randomUUID(),roundId:roundName.trim(),teamIds:[first,second]}]);setError('');
   }
   return <div className="generate-stack match-center" aria-busy={Boolean(busy)}>
-    <p className="match-note">The inaugural tournament format will be decided once the engine is ready. This workspace supports explicit exhibition fixtures; no official tournament is scheduled.</p>
+    <p className="match-note">The inaugural uses an 18-club double-elimination bracket, November 3–December 4, 2026. Commissioner controls show official readiness, dated fixtures and bracket progression.</p>
     <div role="status" aria-live="polite">{busy||message}</div>{error?<div role="alert" className="notice warning">{error}<button className="link-button" disabled={Boolean(busy)} onClick={()=>{setError('');setRefresh(n=>n+1);}}>Refresh match data</button></div>:null}
     <section className="generator-panel">
       <div className="match-controls"><label>Competition<select aria-label="Competition" value={selected} disabled={Boolean(busy)||loading} onChange={e=>{setSelected(e.target.value);setError('');setMessage('');}}><option value="">{loading?'Loading…':'Choose an exhibition'}</option>{competitions.map(c=><option key={c.id} value={c.id}>{c.name} · {c.competition_category} · {c.status}</option>)}</select></label><button className="primary-button" disabled={Boolean(busy)} onClick={()=>setRefresh(n=>n+1)}>Refresh</button></div>

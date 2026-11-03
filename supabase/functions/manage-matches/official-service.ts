@@ -13,6 +13,11 @@ export async function handleOfficialAction(db:MatchDB,actor:{id:string;role:stri
  if(actor.role!=='commissioner')throw new RequestError('Commissioner access required',403);
  if(body.action==='official-readiness')return matchRPC(db,'official_readiness_v1',{p_actor:actor.id});
  if(body.action==='official-list')return matchRPC(db,'list_official_competitions_v1',{p_actor:actor.id});
+ if(body.action==='official-register-inaugural')return matchRPC(db,'register_inaugural_tournament_v1',{p_actor:actor.id,p_id:uuid(body.competitionId),p_season:uuid(body.seasonId)});
+ if(body.action==='official-advance'){
+  if(!Number.isSafeInteger(body.expectedRevision)||body.expectedRevision<0)throw new RequestError('Current category journal revision required');
+  return matchRPC(db,'advance_official_tournament_v1',{p_actor:actor.id,p_competition:uuid(body.competitionId),p_expected_revision:body.expectedRevision});
+ }
  if(body.action==='official-create'){
   if(typeof body.name!=='string'||body.name.length>160||!Array.isArray(body.fixtures)||body.fixtures.length<1||body.fixtures.length>500)throw new RequestError('Name and explicit official fixtures required');
   const fixtures=body.fixtures.map((f:any)=>({id:uuid(f.id),roundId:f.roundId,matchDate:f.matchDate,teamIds:Array.isArray(f.teamIds)?f.teamIds.map(uuid):[]}));
@@ -26,5 +31,11 @@ export async function handleOfficialAction(db:MatchDB,actor:{id:string;role:stri
  }
  const action=String(body.action).slice('official-'.length);
  if(!delegated.includes(action))throw new RequestError('Unknown official action');
+ if(action==='simulate')await matchRPC(db,'check_official_tournament_fixture_v1',{p_actor:actor.id,p_fixture:uuid(body.fixtureId)});
+ if(action==='detail'){
+  const detail=await handleCompetitiveWorkflow(db,actor,{...body,action:'rehearsal-detail',rehearsalId:uuid(body.competitionId)},workflow);
+  const tournament=await matchRPC(db,'read_official_tournament_v1',{p_actor:actor.id,p_competition:body.competitionId});
+  return {...detail,tournament};
+ }
  return handleCompetitiveWorkflow(db,actor,{...body,action:`rehearsal-${action}`,rehearsalId:uuid(body.competitionId)},workflow);
 }

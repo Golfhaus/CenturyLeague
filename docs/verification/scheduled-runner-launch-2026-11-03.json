@@ -1,0 +1,69 @@
+{
+  "date": "2026-11-03",
+  "scope": "Scheduled official inaugural runner launch",
+  "sourceCommit": "cd081e318c21bee5563e18067415bae63169de77",
+  "sourceTree": "e49d5c35e55aaf811559d72986395958d6b8a643",
+  "ci": {
+    "run": 41648809307,
+    "status": "success",
+    "runnerChecks": 37,
+    "simultaneousClaims": true,
+    "lostAcceptanceReplyRecovered": true,
+    "officialRegistryChecks": 75,
+    "inauguralChecks": 277,
+    "inauguralMatches": 39,
+    "reset": true
+  },
+  "local": {
+    "runnerChecks": 35,
+    "build": "passed",
+    "types": "passed",
+    "frozenFingerprints": "unchanged"
+  },
+  "live": {
+    "worker": "run-official-fixture",
+    "workerVersion": 1,
+    "workerDedicatedAuthentication": true,
+    "commissionerEndpoint": "manage-matches",
+    "commissionerVersion": 7,
+    "commissionerJWTVerification": true,
+    "authenticatedProbe": {
+      "requestId": 1,
+      "http": 200,
+      "status": "paused"
+    },
+    "invalidCredentialProbe": {
+      "requestId": 2,
+      "http": 401
+    },
+    "clockExtensions": [
+      "pg_cron",
+      "pg_net"
+    ],
+    "requestQueueBrowserAccess": false,
+    "credentialValuesRecorded": false,
+    "launchStatus": "configured but disabled; clock activation pending",
+    "officialResults": 0
+  },
+  "calendar": {
+    "timeZone": "America/New_York",
+    "localStart": "19:00",
+    "start": "2026-11-03",
+    "grandFinal": "2026-12-01",
+    "conditionalReset": "2026-12-04",
+    "decemberDivisionalWindow": [
+      "2026-12-08",
+      "2026-12-27"
+    ]
+  },
+  "policy": {
+    "singleWorkerLeaseSeconds": 180,
+    "attemptLimit": 3,
+    "recoverSavedInputsAndSeed": true,
+    "manualReviewRequired": true,
+    "automaticDiscipline": false,
+    "automaticForfeits": false,
+    "LLMRequiredForSimulation": false,
+    "decemberFixturesNotYetRegistered": true
+  }
+}

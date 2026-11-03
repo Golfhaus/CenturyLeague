@@ -50,6 +50,9 @@ jobs:
       - run: npm run validate:inaugural
         env:
           COMPETITION_TEST_DATABASE_URL: postgres://postgres:postgres@localhost:5432/century_test
+      - run: npm run validate:scheduled-runner
+        env:
+          COMPETITION_TEST_DATABASE_URL: postgres://postgres:postgres@localhost:5432/century_test
       - run: npm run validate:generator
       - run: npm run validate:lifecycle
       - run: npm run validate:pool

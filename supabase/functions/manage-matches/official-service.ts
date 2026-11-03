@@ -13,6 +13,9 @@ export async function handleOfficialAction(db:MatchDB,actor:{id:string;role:stri
  if(actor.role!=='commissioner')throw new RequestError('Commissioner access required',403);
  if(body.action==='official-readiness')return matchRPC(db,'official_readiness_v1',{p_actor:actor.id});
  if(body.action==='official-list')return matchRPC(db,'list_official_competitions_v1',{p_actor:actor.id});
+ if(body.action==='official-runner-status')return matchRPC(db,'scheduled_official_status_v1',{p_actor:actor.id});
+ if(body.action==='official-runner-control')return matchRPC(db,'control_scheduled_official_v1',{p_actor:actor.id,p_paused:body.paused,p_reason:body.reason});
+ if(body.action==='official-runner-retry')return matchRPC(db,'retry_scheduled_official_v1',{p_actor:actor.id,p_job:uuid(body.jobId),p_reason:body.reason});
  if(body.action==='official-register-inaugural')return matchRPC(db,'register_inaugural_tournament_v1',{p_actor:actor.id,p_id:uuid(body.competitionId),p_season:uuid(body.seasonId)});
  if(body.action==='official-advance'){
   if(!Number.isSafeInteger(body.expectedRevision)||body.expectedRevision<0)throw new RequestError('Current category journal revision required');

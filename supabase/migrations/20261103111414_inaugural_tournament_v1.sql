@@ -216,6 +216,7 @@ declare c public.competitions; stream uuid; slot jsonb; teams jsonb; added integ
   perform private.insert_official_fixture_v1(c.id,jsonb_build_object('id',private.inaugural_fixture_id_v1(c.id,slot->>'code'),'roundId','Window '||(slot->>'window'),'matchDate',slot->>'matchDate','teamIds',teams),c.id::text||':'||private.inaugural_fixture_id_v1(c.id,slot->>'code')::text);
   added:=added+1;
  end loop;
+ if added>0 then insert into public.competition_audit(competition_id,actor_id,action,detail) values(c.id,p_actor,'created',jsonb_build_object('kind','bracket-fixtures-prepared','added',added,'journalRevision',p_expected_revision)); end if;
  return jsonb_build_object('added',added,'tournament',public.read_official_tournament_v1(p_actor,c.id));
 end $$;
 

@@ -48,7 +48,7 @@ try{
  await db.exec('set role service_role');
  await rejects(()=>handleMatchAction(adapter,viewer,{action:'official-register-inaugural',competitionId:competition,seasonId:season}),/Commissioner/);
  const reg={action:'official-register-inaugural',seasonId:season};check((await act(reg)).added);check(!(await act(reg)).added);
- let d=await detail();eq(d.fixtures.length,8);eq(d.tournament.slots.length,39);eq(d.status,'draft');eq(d.tournament.complete,false);
+ let d=await detail();eq(d.fixtures.length,8);eq(d.tournament.slots.length,39);eq(d.status,'draft');eq(d.tournament.complete,false);eq(d.records.length,18);eq(d.records.reduce((n,r)=>n+r.played,0),0);
  eq(d.tournament.slots.map(s=>s.startsAt),template.slots.map(s=>s.startsAt));
  eq((await db.query('select count(*)::integer n from competition_rosters where competition_id=$1',[competition])).rows[0].n,18);
  await rejects(()=>act({action:'official-activate',expectedRevision:0}),/disabled/);
@@ -61,6 +61,7 @@ try{
  await rejects(()=>act({action:'official-create',competitionId:randomUUID(),seasonId:season,name:'Tampered span',fixtures:opening,formatDecision:{...originalFormat,endsOn:'2027-01-01'}}),/Exact approved/);
  await rejects(()=>advanceWithStale(),/changed/);
  async function advanceWithStale(){return act({action:'official-advance',expectedRevision:999});}
+ if(process.argv.includes('--registration-only')){console.log(JSON.stringify({status:'passed',checks,mode:'registration-only',liveWrites:0}));} else {
  // Owner-only disposable clock replacement. Production due-time gate is tested
  // above and never disabled in a deployment. Move only the test clock past all dates.
  await db.exec('reset role');
@@ -115,4 +116,5 @@ try{
  await rejects(()=>db.query('select advance_official_tournament_v1($1,$2,0)',[actor.id,competition]),/permission denied/);
  await rejects(()=>db.query('select private.inaugural_template_v1()'),/permission denied/);
  console.log(JSON.stringify({status:'passed',checks,simulated,reset:simulated===39,database:url?'isolated PostgreSQL':'isolated PostgreSQL/WASM',liveWrites:0}));
+ }
 }catch(e){console.error(e);process.exitCode=1;}finally{await db.close();if(admin){await admin.query('drop database '+testDatabase);await admin.end();}}

@@ -35,6 +35,10 @@ export async function handleOfficialAction(db:MatchDB,actor:{id:string;role:stri
  if(action==='detail'){
   const detail=await handleCompetitiveWorkflow(db,actor,{...body,action:'rehearsal-detail',rehearsalId:uuid(body.competitionId)},workflow);
   const tournament=await matchRPC(db,'read_official_tournament_v1',{p_actor:actor.id,p_competition:body.competitionId});
+  if(tournament){
+   const records=tournament.seeds.map((team:{teamId:string;name:string})=>detail.records.find((r:{teamId:string})=>r.teamId===team.teamId)??{teamId:team.teamId,name:team.name,played:0,wins:0,losses:0,pointsFor:0,pointsAgainst:0});
+   return {...detail,records,tournament};
+  }
   return {...detail,tournament};
  }
  return handleCompetitiveWorkflow(db,actor,{...body,action:`rehearsal-${action}`,rehearsalId:uuid(body.competitionId)},workflow);

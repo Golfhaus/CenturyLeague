@@ -42,18 +42,33 @@
     ],
     "requestQueueBrowserAccess": false,
     "credentialValuesRecorded": false,
-    "launchStatus": "Awaiting Supabase explicit confirmation; initial confirmation expired without execution",
+    "launchStatus": "enabled and verified",
     "officialResults": 0,
-    "clockInstalled": false,
-    "runnerEnabled": false,
-    "competitionStatus": "draft",
+    "clockInstalled": true,
+    "runnerEnabled": true,
+    "competitionStatus": "active",
     "additionalAuthenticatedProbe": {
       "requestId": 3,
       "http": 200,
       "status": "paused"
     },
     "frontendRun": 41653711242,
-    "frontendConclusion": "success"
+    "frontendConclusion": "success",
+    "clock": {
+      "id": 1,
+      "name": "century-inaugural-runner-v1",
+      "active": true,
+      "pollSchedule": "* * * * *",
+      "firstDueEastern": "2026-11-03T19:00:00",
+      "timeZone": "America/New_York",
+      "verifiedRun": {
+        "status": "succeeded",
+        "start": "2026-11-03T14:44:00.10505+00:00",
+        "end": "2026-11-03T14:44:00.431118+00:00"
+      }
+    },
+    "launchVerifiedAt": "2026-11-03T14:44:15Z",
+    "womenReleaseEnabled": false
   },
   "calendar": {
     "timeZone": "America/New_York",

@@ -45,7 +45,55 @@
     "unchanged": true
   },
   "liveDeployment": {
-    "status": "pending final CI"
+    "status": "deployed; final signed-in screen check pending",
+    "migrationVersion": "20261103113046",
+    "migrationFile": "20261103111414_inaugural_tournament_v1.sql",
+    "edgeFunction": "manage-matches",
+    "edgeVersion": 6,
+    "verifyJWT": true,
+    "frontendRun": 41628349975,
+    "frontendConclusion": "success",
+    "competitionId": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+    "competitionStatus": "draft",
+    "journalId": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+    "journalRevision": 0,
+    "slots": 39,
+    "openingFixtures": 8,
+    "rosters": 18,
+    "initialZeroGameRecords": 18,
+    "officialResults": 0,
+    "officialPins": 0,
+    "activationEnabled": false,
+    "womenFormatApproved": false,
+    "womenJournal": null,
+    "browserRPCAccess": false,
+    "privateGateBrowserAccess": false,
+    "publicViewsSecurityInvoker": true,
+    "preservedExhibitionResults": 5,
+    "preservedRehearsalRegistrations": 3,
+    "historicalValidationJournal": {
+      "id": "a1b9ef69-87e4-42e3-96e1-e95bf0e2fa3b",
+      "revision": 7,
+      "head": "1dafc82c8c822b64b5cb0f010d16f07c0513e0165b485a46d9b00e8e25783dac",
+      "unchanged": true
+    },
+    "securityAdvisor": "Unchanged: 13 intentional deny-all private-table notices and pre-existing leaked-password protection warning",
+    "signIn": "Earlier cloud browser session expired; no new login email requested by agent"
   },
-  "automaticExecutionEnabled": false
+  "automaticExecutionEnabled": false,
+  "finalPostgresCI": {
+    "run": 41627818451,
+    "sourceCommit": "137cd2796bc4c44d7a2fb4d28650eea58da32bd8",
+    "conclusion": "success",
+    "inauguralChecks": 276,
+    "played": 39,
+    "reset": true,
+    "officialRegistryChecks": 74,
+    "rehearsalChecks": 60
+  },
+  "mergedPR": {
+    "number": 8,
+    "commit": "a786a86a090c9ecadd3803370adf088285d3adc8",
+    "tree": "ccaf22c52f29cc0d0dbe285315fdbe1e075ecad0"
+  }
 }

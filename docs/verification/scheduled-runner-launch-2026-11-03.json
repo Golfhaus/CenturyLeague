@@ -42,8 +42,18 @@
     ],
     "requestQueueBrowserAccess": false,
     "credentialValuesRecorded": false,
-    "launchStatus": "configured but disabled; clock activation pending",
-    "officialResults": 0
+    "launchStatus": "Awaiting Supabase explicit confirmation; initial confirmation expired without execution",
+    "officialResults": 0,
+    "clockInstalled": false,
+    "runnerEnabled": false,
+    "competitionStatus": "draft",
+    "additionalAuthenticatedProbe": {
+      "requestId": 3,
+      "http": 200,
+      "status": "paused"
+    },
+    "frontendRun": 41653711242,
+    "frontendConclusion": "success"
   },
   "calendar": {
     "timeZone": "America/New_York",
@@ -65,5 +75,14 @@
     "automaticForfeits": false,
     "LLMRequiredForSimulation": false,
     "decemberFixturesNotYetRegistered": true
-  }
+  },
+  "finalCI": {
+    "run": 41649668695,
+    "status": "success",
+    "sourceCommit": "9080c8df910dac3d3424d9795a533db877aaf7a5",
+    "runnerChecks": 37,
+    "inauguralChecks": 277,
+    "officialRegistryChecks": 75
+  },
+  "mergeCommit": "588718df99135e6aece699987bd1ba5bacc18c31"
 }

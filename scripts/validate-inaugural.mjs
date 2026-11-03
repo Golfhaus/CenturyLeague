@@ -33,6 +33,8 @@ try{
  await db.exec('reset role');
  await db.exec(fs.readFileSync('supabase/migrations/20261102132159_adopt_calendar_recovery_v1.sql','utf8'));
  await db.exec(fs.readFileSync('supabase/migrations/20261103111414_inaugural_tournament_v1.sql','utf8'));
+ await db.exec(fs.readFileSync('supabase/migrations/20261103131011_allow_tournament_detail_authorization_lock.sql','utf8'));
+ check((await db.query("select provolatile from pg_proc where oid='public.read_official_tournament_v1(uuid,uuid)'::regprocedure")).rows[0].provolatile==='v');
  await db.query('insert into app_users values($1,$3),($2,$4)',[actor.id,viewer.id,'commissioner','viewer']);
  await db.query("insert into seasons values($1,'setup','men','2026-11-01')",[season]);
  for(const seed of template.seeds){

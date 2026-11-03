@@ -59,6 +59,8 @@ try{
  await rejects(()=>db.query("update private.official_release_gates set policy_approved=false where category='men'"),/permission denied/);
  await db.exec('reset role');
  await db.exec(fs.readFileSync('supabase/migrations/20261103111414_inaugural_tournament_v1.sql','utf8'));
+ await db.exec(fs.readFileSync('supabase/migrations/20261103131011_allow_tournament_detail_authorization_lock.sql','utf8'));
+ check((await db.query("select provolatile from pg_proc where oid='public.read_official_tournament_v1(uuid,uuid)'::regprocedure")).rows[0].provolatile==='v');
  // Owner-only switches are confined to this disposable database. No production
  // API or commissioner browser has permission to approve these decisions.
  await db.exec("update private.official_release_gates set policy_approved=true,format_approved=true,activation_enabled=true where category='men'");

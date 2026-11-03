@@ -3,3 +3,7 @@ verify_jwt = false
 
 [functions.manage-matches]
 verify_jwt = true
+
+# The queue worker authenticates a dedicated Vault-held bearer token itself.
+[functions.run-official-fixture]
+verify_jwt = false

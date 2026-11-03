@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-03",
+  "scope": "Inaugural tournament integration before scheduled execution",
+  "formatId": "inaugural-18-double-elimination-v1",
+  "calendar": {
+    "start": "2026-11-03",
+    "grandFinal": "2026-12-01",
+    "conditionalReset": "2026-12-04",
+    "localStart": "19:00",
+    "timeZone": "America/New_York",
+    "decemberDivisionalWindow": [
+      "2026-12-08",
+      "2026-12-27"
+    ]
+  },
+  "structural": {
+    "draws": 2000,
+    "reset": 1002,
+    "noReset": 998
+  },
+  "isolatedLocalTournament": {
+    "checks": 274,
+    "played": 39,
+    "reset": true,
+    "liveWrites": 0
+  },
+  "postgresCI": {
+    "run": 41627185030,
+    "sourceCommit": "843fa20752bee6a3dde4ceff4f7d0f574b123fc9",
+    "conclusion": "success",
+    "inauguralChecks": 268,
+    "played": 38,
+    "reset": false,
+    "officialRegistryChecks": 74,
+    "rehearsalChecks": 60,
+    "concurrentRegistryWriters": true
+  },
+  "finalRegistrationSmoke": {
+    "checks": 18,
+    "conclusion": "passed"
+  },
+  "fingerprints": {
+    "gameplay": "9513ba17bef8814027cc3408731f7d26db9c8ce8cd5a25f52c42175286db3521",
+    "availabilityAdapter": "c221b03cd89fb52ea13294a6686e47f9ded99a08f77b0c520fe5498657f58bc5",
+    "unchanged": true
+  },
+  "liveDeployment": {
+    "status": "pending final CI"
+  },
+  "automaticExecutionEnabled": false
+}

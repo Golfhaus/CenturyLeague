@@ -12,6 +12,8 @@ type Fixture={id:string;seasonId:string;roundId:string;matchDate:string;teams:Te
   scores:number[]|null;status:string;eligibilityChanged:boolean;blocked:boolean;eligibleCounts:number[];
   availability:{playerId:string;name:string;eligible:boolean;injuryIds:string[];suspensionIds:string[]}[]};
 type Detail={id:string;name:string;status:string;revision:number;fixtures:Fixture[];policy:typeof APPROVED_RECOVERY_POLICY;
+  tournament?:{rosterPolicy:string;complete:boolean;champion:string|null;seeds:{teamId:string;seed:number;name:string}[];divisions:Record<string,(string|null)[]>;
+    slots:{code:string;matchDate:string;startsAt:string;stage:string;routes:string[];teamIds:(string|null)[];status:string}[]}|null;
   records:{teamId:string;name:string;played:number;wins:number;losses:number;pointsFor:number;pointsAgainst:number}[];
   injuries:{id:string;name:string;recoveredOn:string}[];suspensions:{id:string;name:string;remaining:number}[];
   incidents:{id:string;name:string;reason:string;eventIds:number[]}[];reviews:{id:string;resultId:string}[];
@@ -58,12 +60,18 @@ export default function RehearsalCenter({mode='rehearsal'}:{mode?:'rehearsal'|'o
   const reasonReady=reason.trim().length>=10;
   const recoveryPolicy=detail?.policy??APPROVED_RECOVERY_POLICY,totalWeight=recoveryPolicy.bands.reduce((s,b)=>s+b.weight,0);
   return <section className="generate-stack rehearsal-center" aria-label={official?'Official competition':'Competitive rehearsal'} aria-busy={busy}>
-    <p>{official?'Official results share injury recovery and suspension service across competitions and monthly seasons.':'Test persistent injury recovery, bans and corrections. These matches do not count toward official league records. The inaugural tournament remains unscheduled.'}</p>
+    <p>{official?'Official results share injury recovery and suspension service across competitions and monthly seasons.':'Test persistent injury recovery, bans and corrections. These matches do not count toward official league records.'}</p>
     <p className="match-note">{recoveryPolicy.id===APPROVED_RECOVERY_POLICY.id?'Adopted recovery policy':'Pinned historical recovery policy'}: {recoveryPolicy.bands.map(b=>`${100*b.weight/totalWeight}% take ${b.minimumDays}–${b.maximumDays} calendar days`).join(', ')}. Serious or repeated conduct goes to commissioner review; there are no automatic bans.</p>
     <div role="status" aria-live="polite">{busy?`Working on ${label}…`:message}</div>{error?<p role="alert" className="notice warning">{error}</p>:null}
     <div className="match-controls"><label>Saved {label}<select aria-label={`Saved ${label}`} value={selected} disabled={busy} onChange={e=>setSelected(e.target.value)}><option value="">Choose {label}</option>{list.map(r=><option key={r.id} value={r.id}>{r.name}</option>)}</select></label><button className="primary-button" disabled={busy} onClick={()=>run(async()=>{await Promise.all([reload(),loadList()]);})}>Refresh {label}</button></div>
     {detail?<>
       <h3>{detail.name} <span className="status-tag">{official?'official':'rehearsal'} · {detail.status}</span></h3>
+      {detail.tournament?<details><summary>Inaugural bracket · all match slots</summary>
+        <p>{detail.tournament.rosterPolicy}. Starts: 7 p.m. Eastern. W / L means winner / loser of the named match; A / B identifies a placement pool ranked by original seed.</p>
+        <button className="primary-button" disabled={busy||detail.status==='closed'} onClick={()=>run(async()=>{await requestMatch({action:'official-advance',competitionId:selected,expectedRevision:detail.revision});await reload();setMessage('Resolved bracket fixtures prepared from accepted results.');})}>Prepare resolved bracket fixtures</button>
+        <div className="match-table-wrap"><table><caption>Inaugural tournament schedule</caption><thead><tr><th>Match</th><th>Date</th><th>Stage</th><th>Participants / feeder</th><th>Status</th></tr></thead><tbody>{detail.tournament.slots.map(s=><tr key={s.code}><th>{s.code}</th><td>{s.matchDate}</td><td>{s.stage}</td><td>{s.teamIds.map((id,i)=>detail.tournament!.seeds.find(t=>t.teamId===id)?.name??s.routes[i].replace(':',' ')).join(' v ')}</td><td>{s.status.replaceAll('-',' ')}</td></tr>)}</tbody></table></div>
+        {detail.tournament.complete?<ul>{Object.entries(detail.tournament.divisions).map(([division,ids])=><li key={division}>{division}: {ids.map(id=>detail.tournament!.seeds.find(t=>t.teamId===id)?.name).join(', ')}</li>)}</ul>:null}
+      </details>:null}
       {official&&detail.status==='draft'?<button className="primary-button" disabled={busy} onClick={()=>run(async()=>{await requestMatch({action:'official-activate',competitionId:selected,expectedRevision:0});await reload();setMessage('Official competition activated.');})}>Activate competition</button>:null}
       <div className="match-table-wrap"><table><caption>{official?"Official competition":"Rehearsal"} fixtures</caption><thead><tr><th>Date / round</th><th>Match</th><th>Eligible</th><th>Score / status</th><th>Action</th></tr></thead><tbody>{detail.fixtures.map(f=><tr key={f.id}>
         <td>{f.matchDate}<br/>{f.roundId}</td><th>{f.teams.map(t=>t.name).join(' v ')}</th><td>{f.eligibleCounts.join(' / ')}</td><td>{f.scores?.join('–')??'—'} · {f.status}{f.eligibilityChanged?' · eligibility changed':''}{f.blocked?' · review required':''}</td>

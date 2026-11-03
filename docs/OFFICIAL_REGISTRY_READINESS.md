@@ -1,5 +1,9 @@
 # Official registry readiness
 
+## Inaugural preparation · November 3, 2026
+
+The approved inaugural format is now integrated as the dated 18-team draw, November 3–December 4, with December divisional play reserved December 8–27. See [the inaugural integration](INAUGURAL_TOURNAMENT_V1.md). The new migration approves the men’s format and permits canonical draft registration while retaining the activation gate. The following sections describe the prior adapter and its historical release stages; no scheduler is installed by this preparation step. Final live registration and commissioner-screen verification are recorded separately.
+
 The official registry adapter connects the accepted-result transaction to one durable availability journal per league category. The migration ships both categories disabled. It creates no official competition, fixture, result or journal, and does not adopt an inaugural format.
 
 ## Adopted recovery policy · November 2, 2026

@@ -45,7 +45,7 @@
     "unchanged": true
   },
   "liveDeployment": {
-    "status": "deployed; final signed-in screen check pending",
+    "status": "deployed; signed-in commissioner screen verification passed",
     "migrationVersion": "20261103113046",
     "migrationFile": "20261103111414_inaugural_tournament_v1.sql",
     "edgeFunction": "manage-matches",
@@ -78,7 +78,7 @@
       "unchanged": true
     },
     "securityAdvisor": "Unchanged: 13 intentional deny-all private-table notices and pre-existing leaked-password protection warning",
-    "signIn": "Earlier cloud browser session expired; no new login email requested by agent"
+    "signIn": "Commissioner signed in directly; verified through rendered app. No agent-requested login email."
   },
   "automaticExecutionEnabled": false,
   "finalPostgresCI": {
@@ -95,5 +95,46 @@
     "number": 8,
     "commit": "a786a86a090c9ecadd3803370adf088285d3adc8",
     "tree": "ccaf22c52f29cc0d0dbe285315fdbe1e075ecad0"
+  },
+  "signedInVerification": {
+    "date": "2026-11-03",
+    "role": "commissioner",
+    "status": "passed",
+    "menGate": [
+      "Approved",
+      "Approved",
+      "Off"
+    ],
+    "womenGate": [
+      "Approved",
+      "Deferred",
+      "Off"
+    ],
+    "registeredCompetition": "Century League Inaugural Tournament 2026",
+    "competitionStatus": "draft",
+    "bracketSlots": 39,
+    "openingFixtures": 8,
+    "eligiblePerSide": 35,
+    "zeroGameTeamRecords": 18,
+    "grandFinal": "2026-12-01",
+    "conditionalReset": "2026-12-04",
+    "localStart": "19:00 America/New_York",
+    "simulationsExecuted": 0,
+    "officialResults": 0,
+    "executionEnabled": false,
+    "issueFound": "PostgREST invoked the STABLE tournament-detail RPC in a read-only transaction, but commissioner authorization requires SELECT FOR SHARE",
+    "fix": "Mark read_official_tournament_v1 VOLATILE; preserve invoker permissions and backend-only grants; reload PostgREST schema",
+    "fixMigration": "20261103131011_allow_tournament_detail_authorization_lock.sql",
+    "fixPR": 9,
+    "fixCommit": "33f7841685b0e64d08ac746781a5399d87efb2c7",
+    "regressionSmokeChecks": 19,
+    "officialHarnessChecks": 72,
+    "postgresCI": 41642190346,
+    "postgresCIConclusion": "success",
+    "postgresInauguralChecks": 271,
+    "postgresOfficialChecks": 75,
+    "postgresTournamentMatches": 38,
+    "postgresReset": false,
+    "fixMergeCommit": "8b6ef71c9011e96b224112c43ea999505ec87bd7"
   }
 }

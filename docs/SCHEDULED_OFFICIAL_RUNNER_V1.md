@@ -27,3 +27,13 @@ The deployment must revoke browser/public access to the pg_net request queue, wh
 `npm run validate:scheduled-runner` uses an isolated database and a fixed test clock. It covers due-time boundaries, token rejection, disabled execution, lease fencing, stable command IDs, review pauses, manual retries, bounded failure, successful real gameplay and statistics, lost acceptance replies, future-fixture exclusion and browser-role denial. PostgreSQL CI also races two independent worker claims. HTTP/Vault operations are stubbed in this disposable test; the live clock is verified separately before the first due window, with no official simulation.
 
 This is the scheduling layer for the inaugural. December divisional fixtures remain to be generated from the tournament's division allocations before their reserved December 8–27 program can be scheduled.
+
+## API handoff repair — November 4, 2026
+
+API sessions preload `safeupdate`; database Cron and direct SQL checks can succeed while API execution fails. All six control-row updates in claim, finish, pause/resume and dispatch now explicitly filter `where singleton = true`. The protection stays enabled, and function permissions and security modes are preserved.
+
+The worker boundary reports only fixed stage names (`backend`, `claim`, `workflow`, `finish`) and validated SQLSTATE/PostgREST codes. It never reports raw exception messages, RPC arguments, credentials, request headers or match ledgers. A pre-claim database failure is visible as a 503 with stage/code, even though its transaction rolled back and no job attempt was recorded. Internal workflow RPC failures are also logged using those safe fields.
+
+The completion watch must check the dispatch/claim handoff as well as job status: repeated unsuccessful HTTP responses and due queued jobs with no claim are actionable even without a failed job row. Accepted official results remain the only evidence of matchday completion.
+
+Regression checks inspect all six installed updates (because isolated test databases do not preload `safeupdate`) and exercise sanitized claim/finish/backend failures, successful idle replies and unauthenticated rejection. Live verification must observe the normal scheduler → endpoint → claim → accepted-result → finish path after deployment, rather than treating Cron success as proof of execution.

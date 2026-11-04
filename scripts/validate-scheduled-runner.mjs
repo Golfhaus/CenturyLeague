@@ -5,6 +5,7 @@ import {PGlite} from '@electric-sql/pglite';
 import pg from 'pg';
 import {input as sample} from './replay-runtime-probe.mjs';
 import {runScheduledOfficialMatch} from '../supabase/functions/manage-matches/scheduled-worker.ts';
+import {createRunnerHandler} from '../supabase/functions/run-official-fixture/handler.ts';
 const url=process.env.COMPETITION_TEST_DATABASE_URL;
 if(url&&!['localhost','127.0.0.1'].includes(new URL(url).hostname))throw Error('Disposable localhost database required');
 const database='century_runner_'+randomUUID().replaceAll('-',''),admin=url?new pg.Client({connectionString:url}):null;
@@ -22,6 +23,31 @@ const fenced=(c,name,args)=>rpc('scheduled_official_rpc_v1',{p_token:token,p_job
 try{
  await db.exec(fs.readFileSync('supabase/tests/competition-bootstrap.sql','utf8').replace(/create role (anon|authenticated|service_role)([^;]*);/g,(_,role,options)=>`do $bootstrap$ begin if not exists(select 1 from pg_roles where rolname='${role}') then create role ${role}${options}; end if; end $bootstrap$;`));
  for(const f of ['20261101185535_competition_result_acceptance.sql','20261102013314_competition_operations_candidate.sql','20261102022215_integrate_competitive_rehearsals.sql','20261102111203_official_competition_registry.sql','20261102132159_adopt_calendar_recovery_v1.sql','20261103111414_inaugural_tournament_v1.sql','20261103131011_allow_tournament_detail_authorization_lock.sql','20261103134708_scheduled_official_runner_v1.sql'])await db.exec(fs.readFileSync('supabase/migrations/'+f,'utf8'));
+ await db.exec(fs.readFileSync('supabase/migrations/20261104050936_repair_scheduled_runner_safeupdate.sql','utf8'));
+ // PGlite/vanilla PostgreSQL do not preload Supabase's safeupdate extension.
+ // Inspect the installed functions so the exact live API regression still fails here.
+ let scopedUpdates=0;
+ for(const signature of ['public.claim_scheduled_official_v1(text)','public.finish_scheduled_official_v1(text,uuid,uuid,text,text)','public.control_scheduled_official_v1(uuid,boolean,text)','private.dispatch_scheduled_official_v1()']){
+  const definition=(await db.query('select pg_get_functiondef($1::regprocedure) definition',[signature])).rows[0].definition;
+  for(const match of definition.matchAll(/update private\.scheduled_official_control set [^;]+;/gi)){
+   check(/where singleton = true;/i.test(match[0]));scopedUpdates++;
+  }
+ }
+ eq(scopedUpdates,6);
+ const logs=[],request=()=>new Request('https://runner.test',{method:'POST',headers:{Authorization:'Bearer '+token}});
+ for(const failedStage of ['claim','finish']){
+  const failureDB={rpc:async name=>name==='claim_scheduled_official_v1'&&failedStage==='finish'
+   ?{data:{status:'claimed',jobId:randomUUID(),leaseId:randomUUID(),actorId:actor,competitionId:competition,fixtureId:randomUUID(),commandId:randomUUID()},error:null}
+   :{data:null,error:{code:'21000',message:'private diagnostics '+token,details:token,hint:token}}};
+  const response=await createRunnerHandler(()=>failureDB,x=>logs.push(x))(request());
+  eq(response.status,503);const body=await response.json();eq(body.stage,failedStage);eq(body.code,'21000');
+  check(!JSON.stringify([body,logs]).includes(token));
+ }
+ const backendResponse=await createRunnerHandler(()=>{throw Error(token);},x=>logs.push(x))(request());
+ eq((await backendResponse.json()).code,'backend_unavailable');check(!JSON.stringify(logs).includes(token));
+ const idleResponse=await createRunnerHandler(()=>({rpc:async()=>({data:{status:'idle'},error:null})}))(request());
+ eq(idleResponse.status,200);eq((await idleResponse.json()).status,'idle');
+ const denied=await createRunnerHandler(()=>{throw Error('must not construct backend');})(new Request('https://runner.test',{method:'POST'}));eq(denied.status,401);
  await db.exec(`create schema vault;create table vault.decrypted_secrets(id uuid primary key,decrypted_secret text);
  create schema net;create table net.test_requests(id bigint generated always as identity,url text,authenticated boolean);
  create function net.http_post(url text,headers jsonb,body jsonb,timeout_milliseconds integer) returns bigint language plpgsql as $$ declare rid bigint;begin insert into net.test_requests(url,authenticated) values(url,headers->>'Authorization'='Bearer '||repeat('a',64)) returning id into rid;return rid;end $$;`);

@@ -12,6 +12,10 @@ import type { MatchConfig, MatchInput, MatchEvent, MatchPlayer, MatchResult,
 
 export const LAB_ENGINE_VERSION = '2.0.0-lab';
 const MATCH_ENGINE_VERSION = LAB_ENGINE_VERSION;
+import { resolveStreakSettings, confidenceProbability, seriousFoulProbability, counter, recordProbability, telemetry } from './streaks.js';
+import type { StreakSettings, ResolvedStreakSettings, StreakTelemetry } from './streaks.js';
+export interface LabMatchInput extends CompetitiveMatchInput { lab?: StreakSettings }
+export interface LabMatchResult extends MatchResult { labTelemetry?: StreakTelemetry }
 type Player = MatchPlayer & { side: Side; x: number; y: number; energy: number;
   stint: number; available: boolean; on: boolean; penaltyUntil: number | null };
 interface Penalty { side: Side; playerId: string; duration: number }
@@ -19,7 +23,7 @@ interface Advantage { side: Side; playerId: string; x: number; y: number; scoreA
 const other = (side: Side): Side => side === 0 ? 1 : 0;
 
 /** Event simulation with broad spatial movement, not a frame-by-frame physics model. */
-export function simulateLabMatch(input: CompetitiveMatchInput): MatchResult {
+export function simulateLabMatch(input: LabMatchInput): LabMatchResult {
   return new AvailabilityMatch(input).run();
 }
 
@@ -44,7 +48,12 @@ class AvailabilityMatch {
   private lastReview = 0;
   private exchanges = new Map<string, string>();
 
-  constructor(private readonly input: CompetitiveMatchInput) {
+  private readonly settings: ResolvedStreakSettings;
+  private readonly labTelemetry: StreakTelemetry | undefined;
+
+  constructor(private readonly input: LabMatchInput) {
+    this.settings = resolveStreakSettings(input.lab);
+    this.labTelemetry = input.lab ? telemetry(this.settings) : undefined;
     validateCompetitiveInput(input);
     this.config = { ...DEFAULT_MATCH_CONFIG, ...input.config };
     // Retain the frozen gameplay random namespace; availability must not reroll healthy matches.
@@ -85,8 +94,24 @@ class AvailabilityMatch {
     this.exchanges.delete(chosen.id);
     return chosen;
   }
-  private chance(a: number, b: number, base = 0): boolean {
-    return this.rng.next() < 1 / (1 + Math.exp(-((a - b) / 3.4 + base)));
+  private executionProbability(probability: number, side: Side, category: string, opposing = false): number {
+    if (!this.settings.enabled.includes('confidence')) return probability;
+    return confidenceProbability(probability, this.settings.streaks[side],
+      opposing ? this.settings.streaks[other(side)] : 0, this.settings.confidenceScale);
+  }
+  private executionRoll(probability: number, side: Side, category: string, opposing = false): number {
+    const adjusted = this.executionProbability(probability, side, category, opposing);
+    const roll = this.rng.next();
+    if (this.labTelemetry) {
+      const row = this.labTelemetry.confidence[category] ??= [counter(), counter()];
+      recordProbability(row[side], probability, adjusted, roll);
+    }
+    return roll < adjusted ? 1 : 0;
+  }
+  private chance(a: number, b: number, base = 0, side?: Side, category = 'unmodified'): boolean {
+    const probability = 1 / (1 + Math.exp(-((a - b) / 3.4 + base)));
+    if (side !== undefined) return Boolean(this.executionRoll(probability, side, category, true));
+    return this.rng.next() < probability;
   }
   private duration(base: number, side: Side): number {
     return Math.max(1, base * (1.3 - this.tactic(side, 'tempo') * 0.1) * (0.75 + this.rng.next() * 0.5));
@@ -260,7 +285,7 @@ class AvailabilityMatch {
     const a = this.pick(this.on(0), ['verticalLeap', 'strength', 'contestedPossession']);
     const b = this.pick(this.on(1), ['verticalLeap', 'strength', 'contestedPossession']);
     const winner = this.chance(this.skill(a, ['verticalLeap', 'strength', 'contestedPossession']),
-      this.skill(b, ['verticalLeap', 'strength', 'contestedPossession'])) ? a : b;
+      this.skill(b, ['verticalLeap', 'strength', 'contestedPossession']), 0, a.side, 'ball-up') ? a : b;
     this.action('ball_up', winner, 3, { otherPlayerId: winner === a ? b.id : a.id,
       data: { center }, credits: [{ playerId: winner.id, stat: 'ballUpsWon' }] });
     if (this.advantage && winner.side !== this.advantage.side) { this.enforceAdvantage(); return; }
@@ -278,7 +303,7 @@ class AvailabilityMatch {
     const a = this.pick(this.on(0), ['groundBallSkill', 'contestedPossession', 'anticipation']);
     const b = this.pick(this.on(1), ['groundBallSkill', 'contestedPossession', 'anticipation']);
     const winner = this.chance(this.skill(a, ['groundBallSkill', 'contestedPossession']),
-      this.skill(b, ['groundBallSkill', 'contestedPossession'])) ? a : b;
+      this.skill(b, ['groundBallSkill', 'contestedPossession']), 0, a.side, 'ground-recovery') ? a : b;
     const previous = this.carrier;
     this.action('ground_recovery', winner, 3, { otherPlayerId: winner === a ? b.id : a.id,
       credits: [{ playerId: winner.id, stat: 'recoveries' },
@@ -300,7 +325,12 @@ class AvailabilityMatch {
     this.reviewSubstitutions(true);
   }
   private foul(offender: Player, victim: Player, scoreAllowed: boolean): void {
-    const serious = this.rng.next() < 0.09;
+    const baseline = 0.09;
+    const adjusted = this.settings.enabled.includes('frustration') ? seriousFoulProbability(baseline,
+      this.settings.streaks[offender.side], offender.ratings.discipline, this.settings.frustrationScale) : baseline;
+    const roll = this.rng.next();
+    const serious = roll < adjusted;
+    if (this.labTelemetry) recordProbability(this.labTelemetry.severity[offender.side], baseline, adjusted, roll);
     const duration = serious ? this.config.seriousPenaltySeconds : this.config.standardPenaltySeconds;
     const shortHanded = serious || this.rng.next() < 0.13;
     if (shortHanded && !this.pending.some(p => p.playerId === offender.id)) {
@@ -411,9 +441,14 @@ class AvailabilityMatch {
       0.12, 0.78);
     const outer = 0.27;
     const bounce = this.rng.next() < clamp(0.11 + distance * 0.003 - power * 0.004, 0.05, 0.45);
+    const adjustedCentral = this.executionProbability(central, p.side, 'shot-central');
     const roll = this.rng.next();
-    if (roll < central) this.scored(p, bounce ? 'central_bounce' : 'central_air');
-    else if (roll < central + outer) this.scored(p, bounce ? 'bonus' : 'outer_air');
+    if (this.labTelemetry) {
+      const row = this.labTelemetry.confidence['shot-central'] ??= [counter(), counter()];
+      recordProbability(row[p.side], central, adjustedCentral, roll);
+    }
+    if (roll < adjustedCentral) this.scored(p, bounce ? 'central_bounce' : 'central_air');
+    else if (roll < adjustedCentral + outer) this.scored(p, bounce ? 'bonus' : 'outer_air');
     else this.ballIn(other(p.side), true);
   }
   private ballIn(side: Side, endLine = false): void {
@@ -443,7 +478,7 @@ class AvailabilityMatch {
     const skill = this.skill(p, kick ? ['kickingAccuracy', 'decisionMaking', 'oppositeSideSkill']
       : ['handPassing', 'decisionMaking']);
     const defense = this.skill(defender, ['anticipation', 'defensiveSpoiling']);
-    const accurate = this.chance(skill, defense, (kick ? 0.9 : 1.8) - (risk - 3) * 0.17);
+    const accurate = this.chance(skill, defense, (kick ? 0.9 : 1.8) - (risk - 3) * 0.17, p.side, 'disposal');
     this.action(kick ? 'kick' : 'hand_punch', p, this.duration(kick ? 7 : 4, p.side), {
       otherPlayerId: receiver.id, data: { targetX: target.x, targetY: target.y, aerial: kick && aerial >= 3 },
       credits: [{ playerId: p.id, stat: kick ? 'kicks' : 'handPunches' }] });
@@ -487,6 +522,7 @@ class AvailabilityMatch {
       (this.tactic(defender.side, 'physicality') - 3) * 0.015 -
       this.distance(defender) * 0.007, 0.08, 0.8);
     if (contact) {
+      if (this.labTelemetry) this.labTelemetry.contacts[defender.side]++;
       const foulRisk = 0.025 + Math.max(0, challenge - 3) * 0.013 +
         Math.max(0, 12 - defender.ratings.discipline) * 0.006;
       if (this.rng.next() < foulRisk) { this.foul(defender, p, this.progress(p.side) > this.config.fieldLength - 35); return; }
@@ -517,7 +553,7 @@ class AvailabilityMatch {
     }
     if (this.rng.next() < Math.max(0.005, 0.06 - this.skill(p, ['ballCarrying', 'agility']) * 0.003)) this.looseBall();
   }
-  run(): MatchResult {
+  run(): LabMatchResult {
     this.emit('match_start', { data: { engineVersion: MATCH_ENGINE_VERSION, seed: this.input.seed } });
     this.lineup(); this.ballUp(true);
     while (this.score.winner === null) {
@@ -550,6 +586,7 @@ class AvailabilityMatch {
     return { engineVersion: MATCH_ENGINE_VERSION, status: 'complete', id: this.input.id, seed: this.input.seed,
       input: JSON.parse(JSON.stringify(this.input)) as MatchInput, config: this.config,
       winner: this.score.winner, scores: [...this.score.scores], playingSeconds: this.playing,
-      elapsedSeconds: this.elapsed, quarters: this.quarters, events: this.events, ...stats };
+      elapsedSeconds: this.elapsed, quarters: this.quarters, events: this.events, ...stats,
+      ...(this.labTelemetry ? { labTelemetry: this.labTelemetry } : {}) };
   }
 }

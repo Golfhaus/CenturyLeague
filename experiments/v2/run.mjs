@@ -11,6 +11,7 @@ export async function runStudy(options) {
   assert.ok(Number.isSafeInteger(trials) && trials >= 2 && trials <= 10000 && trials % 2 === 0,
     'Trials per pairing must be even and between 2 and 10000');
   validateFeatures(enabledFeatures);
+  assert.equal(enabledFeatures.length, 0, 'Use run-streaks.mjs for feature experiments; this runner checks baseline equivalence only');
   const baselineVerification = verifyBaseline(), isolation = verifyImportBoundary();
   const engines = await loadEngines();
   const inputPath = teamsFile ? path.resolve(teamsFile) : null;

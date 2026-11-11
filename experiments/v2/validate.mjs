@@ -7,7 +7,7 @@ import { runStudy } from './run.mjs';
 
 const baseline = verifyBaseline(), isolation = verifyImportBoundary();
 validateFeatures([]);
-assert.throws(() => validateFeatures(['confidence']), /not implemented/);
+assert.throws(() => validateFeatures(['weather']), /not implemented/);
 assert.throws(() => validateFeatures(['unknown']), /Unknown feature/);
 const engines = await loadEngines(), teams = syntheticTeams(engines);
 const input = inputFor(engines, teams.slice(0, 2), 'lab-validation', 'lab-validation-1', '2026-11-11');

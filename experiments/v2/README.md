@@ -51,7 +51,7 @@ Generated builds and results are ignored by git. Do not commit copied player dat
 
 ## Feature work and study order
 
-`features.json` is the registry of proposals and measurement goals. All gameplay modifications are **planned**, with none enabled or silently stubbed. `--features confidence` (or any other planned feature) fails explicitly. The current comparison runner supports baseline equivalence only; before enabling a feature, implement its isolated scenarios, parameters, telemetry and effect-comparison report, and stop requiring baseline equality for that explicitly named experiment.
+`features.json` is the registry of proposals and measurement goals. Confidence and frustration are implemented for lab-only testing; all other gameplay modifications remain **planned**. Defaults enable nothing. `run.mjs` remains a baseline-equivalence runner and rejects any enabled features; `run-streaks.mjs` is the separately named feature experiment. Planned features such as weather fail explicitly rather than silently running a stub.
 
 1. Establish no-feature v1.0/v2.0 equivalence.
 2. Implement and test confidence and frustration independently, then home support, halftime adaptation, fixed weather and temperature tolerance.
@@ -65,3 +65,26 @@ Halftime is triggered by the leading score reaching 50, not elapsed minutes. Con
 Weather tests use prescribed conditions first. A later live-data adapter must pin location, scheduled fixture time, provider, data validity time, units, quality/fallback status and selected conditions before simulation. Retries reuse the saved weather. Wind affects action difficulty for everyone; existing skill determines execution. Heat/cold tolerance remains a separate proposal, not a change to existing ratings.
 
 All earlier numerical suggestions are calibration candidates, not approved coefficients. No test should target a preferred club, demand parity between unequal squads, reroll disappointing results or use official competition state as its experiment store.
+
+## Confidence/frustration pilot (v2.0 only)
+
+Confidence and frustration are now implemented as independent, default-off laboratory features. Use the streak-specific runner rather than the baseline-equivalence runner:
+
+```bash
+node experiments/v2/validate-streaks.mjs
+node experiments/v2/run-streaks.mjs --study-id streak-pilot-001 --trials 64 --workers 4
+```
+
+The prespecified pilot has two synthetic mirror-roster profiles (neutral and higher-pressure tactics), 64 side-balanced trials per profile, and six arms: control; confidence at three and five wins; frustration at three and five losses; and three wins versus three losses with both features enabled. This yields 128 matched fixtures and 768 engine results. No real player records are changed. Identical mirrored ratings are controlled test inputs, not claims about real club strength.
+
+Pre-match settings are saved in `input.lab`: signed consecutive-result streaks, enabled features and explicit coefficient scales. They never consult a mutable live table or update history during a match. Confidence multiplies odds by 1.005/1.01/1.015/1.02 at winning streaks of 2/3/4/5+, for ball-up and loose-ball contests, disposal accuracy and central shot outcomes. Opposed confidence cancels when both teams have the same streak. Catching, tackling, physical speed, fatigue and player ratings receive no extra confidence modifier.
+
+Frustration changes only the existing serious-foul classification draw (baseline 9% conditional on a foul). The extra relative factor is 2% per loss beyond the first, capped at 8%, then multiplied by `(21 - Discipline) / 20`. Thus a Discipline-11 player on three losses has a 9.18% conditional severity chance, versus 9%; at five losses, 9.36%. Existing Discipline effects on ordinary foul occurrence remain unchanged. This is an aggregate foul-severity proxy, not a new retaliation/bench-misconduct taxonomy.
+
+Telemetry records opportunities, outcomes, baseline/adjusted probability sums and same-draw threshold changes without consuming extra random draws. Contested ball/recovery probability is evaluated from simulation side 0's perspective, with the opposing side included in the odds ratio; those telemetry counters must not be mistaken for all contests involving only the focal club. Saved compact records distinguish contacts, actual foul opportunities and serious events, including the opponent in the combined arm.
+
+The streak runner saves a manifest before simulation and gzip ledgers for every fixture/arm. It checks scoring/statistics for every result, fully replays the first declared fixture of each profile/arm, and checks those controls against v1.0. Resumption replays every saved result and never silently rerolls a corrupt ledger. Source/roster hashes must match the original manifest; changed code requires a new study ID. Worker threads are local computation, separate from tournament resources.
+
+Reports include within-arm win intervals, paired winner differences, a conservative approximate paired interval from Bonferroni-combined Wilson discordance intervals, score margins, foul denominators and local threshold changes. The ordinary paired normal interval is secondary and can be misleading with zero discordance. A pilot of this size cannot reliably settle a 2–4 percentage-point match effect or a very small rare-foul increase; controlled probability sweeps verify the mechanics, and larger fresh-seed studies are required for calibration.
+
+The earlier setup evidence is a historical checkpoint from before these features. Baseline defaults remain off and must still reproduce v1.0. Nothing in this pilot adopts v2.0 or changes official competition.

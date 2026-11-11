@@ -19,6 +19,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
+      - run: npm install --ignore-scripts
+      - run: npx tsc --noEmit --target ES2022 --module ESNext --moduleResolution Bundler --strict --skipLibCheck experiments/v2/src/engine.ts
       - run: node experiments/v2/validate.mjs
       - run: node experiments/v2/validate-streaks.mjs
       - run: node experiments/v2/run-streaks.mjs --study-id ci-streak-smoke --trials 2 --workers 2

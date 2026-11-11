@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
-import { createHash } from 'node:crypto';
+import { createHash, randomUUID } from 'node:crypto';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { stripTypeScriptTypes } from 'node:module';
 
@@ -153,7 +153,7 @@ export function auditResult(result, engines) {
 }
 
 export function atomicJSON(file, value, exclusive = false) {
-  const tmp = `${file}.tmp`;
+  const tmp = `${file}.${randomUUID()}.tmp`;
   fs.writeFileSync(tmp, JSON.stringify(value, null, 2) + '\n', { flag: 'wx' });
   try {
     if (exclusive) fs.linkSync(tmp, file);

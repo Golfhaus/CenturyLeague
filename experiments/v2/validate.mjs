@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import { labRoot, verifyBaseline, verifyImportBoundary, validateFeatures, loadEngines,
-  syntheticTeams, inputFor, auditResult, sportingJSON } from './tools.mjs';
+  syntheticTeams, inputFor, auditResult, sportingJSON, atomicJSON } from './tools.mjs';
 import { runStudy } from './run.mjs';
 
 const baseline = verifyBaseline(), isolation = verifyImportBoundary();
@@ -44,6 +44,11 @@ for (let score = 0; score < 100; score++) for (const kind of ['central_air', 'ce
 const studyId = 'setup-validation-reserved', dir = path.join(labRoot, 'runs', studyId);
 fs.rmSync(dir, { recursive: true, force: true });
 const first = await runStudy({ studyId, internalValidation: true, trials: 4 });
+const atomicFile = path.join(dir, 'atomic-write-check.json');
+fs.writeFileSync(atomicFile + '.tmp', 'interrupted write');
+atomicJSON(atomicFile, { status: 'complete' }, true);
+assert.deepEqual(JSON.parse(fs.readFileSync(atomicFile, 'utf8')), { status: 'complete' });
+fs.rmSync(atomicFile); fs.rmSync(atomicFile + '.tmp');
 const manifestFile = path.join(dir, 'manifest.json'), manifest = fs.readFileSync(manifestFile, 'utf8');
 const second = await runStudy({ studyId, internalValidation: true, trials: 4 });
 assert.equal(second.resumedFixtures, first.matchedFixtures);
@@ -69,6 +74,6 @@ verifyBaseline();
 console.log(JSON.stringify({ status: 'passed', releaseLabels: ['v1.0', 'v2.0'], baseline, isolation,
   matchedFixtures: first.matchedFixtures, engineResults: first.matchedFixtures * 2,
   fullReplaysPerPass: first.fullReplays, exactResumeVerified: true, corruptLedgerRejected: true,
-  baselineTamperingRejected: true, unavailablePlayersExcluded: true, scoreTransitionsChecked: 500,
+  baselineTamperingRejected: true, interruptedTemporaryWriteSafe: true, unavailablePlayersExcluded: true, scoreTransitionsChecked: 500,
   unimplementedFeaturesRejected: true, officialWrites: 0, networkRequests: 0,
   interpretation: 'Synthetic setup checks only; no modifier effects or official matches simulated.' }, null, 2));

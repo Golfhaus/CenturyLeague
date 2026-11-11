@@ -24,6 +24,7 @@
     "exactResumeVerified": true,
     "corruptLedgerRejected": true,
     "baselineTamperingRejected": true,
+    "interruptedTemporaryWriteSafe": true,
     "unavailablePlayersExcluded": true,
     "scoreTransitionsChecked": 500,
     "unimplementedFeaturesRejected": true,
@@ -31,7 +32,7 @@
     "networkRequests": 0,
     "interpretation": "Synthetic setup checks only; no modifier effects or official matches simulated."
   },
-  "sourceSHA256": "dc9356e8cc029af972cf77d89576e7e0cac814c6a28a3f4f1eb10542cb3d83b3",
+  "sourceSHA256": "d0848e344ce8bd1387012f963bd7d130c420bbce70903465fc23d3e093b7bb03",
   "originalMatchValidation": {
     "checks": 549,
     "stressMatches": 24,
@@ -47,7 +48,7 @@
     "competitiveSourceHash": "passed",
     "availabilityAdapter": "passed; zero frozen gameplay edits",
     "edgeMirror": "passed; 20 files",
-    "nodeReplayAssertions": "passed; see PR validation notes"
+    "nodeReplayAssertions": "passed; 25 assertions; Deno portability not executed locally"
   },
   "notExecutedLocally": [
     "TypeScript semantic typecheck",

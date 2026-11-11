@@ -1,0 +1,29 @@
+{
+  "releaseLabel": "v2.0",
+  "engineVersion": "2.0.0-lab",
+  "status": "experimental-setup",
+  "defaultEnabledFeatures": [],
+  "features": [
+    {"id":"confidence","status":"planned","phase":1,"measure":"Capped change in winning frequency and pressure execution across official-result streak lengths."},
+    {"id":"frustration","status":"planned","phase":1,"measure":"Serious fouls per eligible incident, stratified by Discipline; retain numerator and denominator."},
+    {"id":"home-support","status":"planned","phase":1,"measure":"Home versus neutral comparison; crowd effect vanishes after five losses; confidence disabled in isolated test."},
+    {"id":"halftime-adaptation","status":"planned","phase":1,"measure":"Evaluate at the score-triggered halftime break; deficit, observed performance, personnel, fatigue and distance from original root strategy."},
+    {"id":"weather","status":"planned","phase":1,"measure":"Fixed weather scenarios before live retrieval; inspect action-specific effects and fatigue."},
+    {"id":"temperature-tolerance","status":"planned","phase":1,"dependsOn":["weather"],"measure":"Independent heat/cold traits with modest situational effects; no changes to the existing 25 ratings."},
+    {"id":"chemistry","status":"planned","phase":2,"measure":"Shared-player exposure and diminishing coordination returns."},
+    {"id":"pressure","status":"planned","phase":2,"measure":"Pressure-sensitive decisions and execution moderated by existing attributes."},
+    {"id":"leadership","status":"planned","phase":2,"measure":"Limited local influence based on existing attributes."},
+    {"id":"momentum","status":"planned","phase":2,"measure":"Short-lived effect, decay at intervals, runaway-match frequency."},
+    {"id":"sharpness","status":"planned","phase":2,"measure":"Individual and smaller shared variation without persistent rating changes."},
+    {"id":"preparation","status":"planned","phase":2,"measure":"Observed opponent tendencies and response to changed approaches."},
+    {"id":"match-significance","status":"planned","phase":2,"measure":"Effort, tactical risk, fatigue and discipline tradeoffs."},
+    {"id":"travel-recovery","status":"planned","phase":2,"measure":"Only effects beyond existing fatigue and availability accounting."},
+    {"id":"expectations","status":"planned","phase":2,"measure":"Decision changes without duplicating pressure or halftime effects."}
+  ],
+  "experiments": {
+    "baseline-equivalence": {"status":"ready","enabledFeatures":[],"goal":"Exact v1.0/v2.0 sporting equivalence, excluding only the top-level and match_start engineVersion labels."},
+    "single-feature": {"status":"planned","goal":"One implemented feature at a time; match seeds, opponents and simulation sides."},
+    "interactions": {"status":"planned","goal":"Inspect stacking and double counting after individual features pass."},
+    "season-rehearsal": {"status":"planned","goal":"Fresh validation seeds and accumulating histories; no official writes."}
+  }
+}

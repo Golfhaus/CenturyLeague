@@ -1,0 +1,22 @@
+name: Century v2.0 isolated engine laboratory
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/v2/**'
+      - 'packages/simulation-core/**'
+      - '.github/workflows/engine-lab.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  setup-and-equivalence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: node experiments/v2/validate.mjs

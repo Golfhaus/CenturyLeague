@@ -11,7 +11,7 @@
       ],
       "peakLiftReviewPoints": 3,
       "nextCandidateScale": 0.35,
-      "candidateStatus": "implemented-under-explicit-shared-psych-v1-policy; prespecified studies pending",
+      "candidateStatus": "tested-under-shared-psych-v1; confidence and combined point estimates exceed proposed review levels; revision required; not adopted",
       "historicalScale": 1
     },
     "homeSupport": {

@@ -62,3 +62,7 @@ Review the actual paired uncertainty before claiming a match-level ceiling. Redu
 Source commit: `23e2c5a41a25e6a4bfed9aa06989b468fb735e21`. Source fingerprint: `2d487e1db4c7701042433beb8abf6c80ef95c9d6a58d2bea3c2efb6cbbf2e793`. Runtime: `{"arch": "x64", "node": "v24.22.1", "platform": "linux", "v8": "13.6.233.17-node.58"}`.
 
 See the [prespecified plan](SHARED_PSYCHOLOGY_STUDY_PLAN_2026_11_12.md), [aggregate evidence](verification/shared-psychology-2026-11-12.json), and [compact research archive](verification/shared-psychology-2026-11-12.tar.gz).
+
+## Subsequent reliability resolution and reduction
+
+This report preserves the first candidate and its then-open reliability gate. The [later investigation](NUMERIC_RETENTION_RESOLUTION_2026_11_12.md) identifies and contains the installed V8 optimizer defect in the lab, and the [second candidate report](SHARED_PSYCHOLOGY_REDUCTION_RESULTS_2026_11_12.md) records the completed fresh reduction study. The historical outcomes and diagnostic evidence above are unchanged.

@@ -10,8 +10,8 @@
         1.5
       ],
       "peakLiftReviewPoints": 3,
-      "nextCandidateScale": 0.35,
-      "candidateStatus": "tested-under-shared-psych-v1; confidence and combined point estimates exceed proposed review levels; revision required; not adopted",
+      "nextCandidateScale": 0.2,
+      "candidateStatus": "tested reduced-020; 6400-seed confirmation confidence +1.89 points and shared stack +1.91; provisional, broader validation and adoption pending",
       "historicalScale": 1
     },
     "homeSupport": {

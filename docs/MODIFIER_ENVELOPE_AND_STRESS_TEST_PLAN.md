@@ -1,6 +1,6 @@
 # Shared modifier budget and perfect-storm testing
 
-**Status: proposed test criteria and validated scenario definitions, not adopted rules or measured combined effects.** No engine coefficient or active tournament file changes in this step. v1.0 remains frozen. Current v2.0 implements confidence/frustration only; home support, weather, temperature tolerance and halftime adaptation are still planned.
+**Status: proposed full-stack criteria and validated scenario definitions, not adopted rules.** v1.0 remains frozen. Current v2.0 lab code implements confidence, frustration and home support, with a separately tested shared psychological candidate. Weather, temperature tolerance and halftime adaptation remain planned; the full combined envelope is unmeasured.
 
 ## Why change the approach
 
@@ -25,7 +25,7 @@ For a control matchup close to 50–50, prefer even the favorable extreme around
 
 For stronger or weaker clubs, measure change from their own baseline. Do not clamp a legitimately dominant club to 65%, turn the weaker club into an equal, prescribe winners, force upsets or reroll inconvenient results. Zero losses in a finite sample triggers investigation and more precision; it does not prove mathematical invincibility.
 
-A lower confidence scale of **0.35 of the tested candidate** is a starting value for a future study, not a change applied now. It would reduce three-/five-win execution-odds bonuses from 1%/2% to 0.35%/0.70%. It does not imply the match-level effect will fall by exactly 65%; it must be measured again.
+The first shared candidate used confidence scale **0.35** and was flagged for revision. The [second candidate](SHARED_PSYCHOLOGY_REDUCTION_RESULTS_2026_11_12.md) uses scale **0.20** and a shared per-club action-odds cap of **0.60%**, with home support unchanged at 0.40%. Fresh 6,400-seed confirmation estimated confidence +1.89 points, peak crowd support +1.64 points and the full psychological stack +1.91 points versus control. These are measured subgroup estimates with uncertainty, not adopted coefficients or universal ceilings. The [retention anomaly resolution](NUMERIC_RETENTION_RESOLUTION_2026_11_12.md) and qualified runtime are prerequisites for research.
 
 ## Model the mechanisms without double counting
 
@@ -45,7 +45,7 @@ Weather candidates include temperate conditions, warm wind/rain, cold wind/rain 
 
 Weather-fit labels require real matched-style test cohorts and their own unchanged-roster control, not a hidden buff attached to the label. Quality labels likewise require genuine generated/copied roster fixtures before execution. Adaptation enabled for one coach does not guarantee a helpful decision or assume knowledge of future outcomes.
 
-The plan compiler reports **36 cells with currently available features and 192 blocked by missing features**. All 228 remain planning-only: compiling or validating the matrix does not simulate any of them or establish a combined ceiling.
+The plan compiler reports **84 cells with currently available features and 144 blocked by missing features**. The full 228-cell matrix has not been executed. Compiling or validating it performs no simulations, and the separate psychological subgroup studies do not establish the full combined ceiling.
 
 ## Execution sequence
 

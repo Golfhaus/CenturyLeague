@@ -33,3 +33,7 @@ node experiments/v2/run-streaks.mjs --study-id shared-psych-reduced-confirm-001 
 ```
 
 Weather, temperature traits and halftime adaptation are still outside this study. Adoption remains a separate decision after the inaugural tournament and explicit commissioner approval.
+
+## Completion checkpoint
+
+Both prespecified studies completed all 26,752 outcomes with fixed settings, fresh seeds and every result retained. See [results and remaining gates](SHARED_PSYCHOLOGY_REDUCTION_RESULTS_2026_11_12.md). The archive preserves this plan before this completion note. The 6,400-seed confirmation estimated confidence +1.89 points, peak crowd support +1.64 points and maximum psychology +1.91 points versus control. This is a provisional lower candidate, not adoption or a measured full-stack ceiling.

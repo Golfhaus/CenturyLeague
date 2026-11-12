@@ -4,14 +4,20 @@ import assert from 'node:assert/strict';
 import { Worker } from 'node:worker_threads';
 import { availableParallelism } from 'node:os';
 import { labRoot, baseline, hash, readJSON, atomicJSON, loadEngines, syntheticTeams, sourceFingerprint, verifyBaseline, verifyImportBoundary } from './tools.mjs';
+import { qualifyStudyRuntime, ensureQualifiedStudyProcess } from './runtime.mjs';
 const args=process.argv.slice(2),opts={};
-for(let i=0;i<args.length;i+=2){assert.ok(['--study-id','--trials','--workers','--date','--arms'].includes(args[i])&&args[i+1]&&!args[i+1].startsWith('--'),'Invalid option');assert.ok(!(args[i]in opts),'Duplicate option');opts[args[i]]=args[i+1];}
+for(let i=0;i<args.length;i+=2){assert.ok(['--study-id','--trials','--workers','--date','--arms','--psychology-candidate'].includes(args[i])&&args[i+1]&&!args[i+1].startsWith('--'),'Invalid option');assert.ok(!(args[i]in opts),'Duplicate option');opts[args[i]]=args[i+1];}
 const studyId=opts['--study-id'],trials=Number(opts['--trials']??64),workers=Number(opts['--workers']??Math.min(4,availableParallelism())),matchDate=opts['--date']??'2026-11-11';
 assert.match(studyId??'',/^[a-z0-9][a-z0-9-]{0,79}$/);
 assert.ok(Number.isSafeInteger(trials)&&trials>=2&&trials<=10000&&trials%2===0,'Even trials required');
 assert.ok(Number.isSafeInteger(workers)&&workers>=1&&workers<=8,'Use 1–8 workers');
 const armSet=opts['--arms']??'all';
-assert.ok(['all','confidence','psychology','psychology-peak'].includes(armSet),'Use --arms all, confidence, psychology or psychology-peak');
+assert.ok(['all','confidence','psychology','psychology-peak','psychology-calibration'].includes(armSet),'Invalid arm set');
+const candidate=opts['--psychology-candidate']??'first-035';
+assert.ok(['first-035','reduced-020'].includes(candidate),'Unknown psychological candidate');
+assert.ok(armSet.startsWith('psychology')||!opts['--psychology-candidate'],'Psychological candidate requires psychological arms');
+ensureQualifiedStudyProcess();
+const runtime=qualifyStudyRuntime();
 const e=await loadEngines(),sourceSHA256=sourceFingerprint();
 const [a]=syntheticTeams(e);
 const mirror=(id,pressure)=>{
@@ -32,8 +38,8 @@ const allArms=[
  {id:'combined-3',enabled:['confidence','frustration'],focal:3,opponent:-3}
 ];
 const psychological=armSet.startsWith('psychology');
-const sharedPolicy={version:'shared-psych-v1',homeOddsBonus:.004,maximumOddsBonus:.009};
-const confidenceScale=psychological ? 0.35 : 1;
+const sharedPolicy={version:'shared-psych-v1',homeOddsBonus:.004,maximumOddsBonus:candidate==='reduced-020'?.006:.009};
+const confidenceScale=psychological ? (candidate==='reduced-020'?.20:.35) : 1;
 const psychArms=[
  ...allArms.filter(arm=>['control','confidence-3','confidence-5'].includes(arm.id)).map(arm=>({...arm,home:null})),
  {id:'home-ordinary',enabled:['home-support'],focal:0,opponent:0,home:'focal'},
@@ -43,10 +49,10 @@ const psychArms=[
  {id:'home-losing-5',enabled:['home-support'],focal:-5,opponent:0,home:'focal'},
  {id:'shared-adverse-5',enabled:['confidence','frustration','home-support'],focal:-5,opponent:5,home:'opponent'}
 ];
-const arms=armSet==='psychology'?psychArms:armSet==='psychology-peak'?psychArms.filter(arm=>['control','confidence-5','shared-full-5'].includes(arm.id)):armSet==='confidence'?allArms.filter(arm=>['control','confidence-3','confidence-5'].includes(arm.id)):allArms;
+const arms=armSet==='psychology'?psychArms:armSet==='psychology-calibration'?psychArms.filter(arm=>['control','confidence-5','home-hot-5','shared-full-5'].includes(arm.id)):armSet==='psychology-peak'?psychArms.filter(arm=>['control','confidence-5','shared-full-5'].includes(arm.id)):armSet==='confidence'?allArms.filter(arm=>['control','confidence-3','confidence-5'].includes(arm.id)):allArms;
 const fixtures=profiles.flatMap(profile=>Array.from({length:trials},(_,trial)=>({id:`${studyId}-${profile.id}-${trial}`,profile:profile.id,trial,swap:Boolean(trial%2),seed:`century-streak-study:${studyId}:${profile.id}:${trial}`})));
 const coefficients={confidenceOddsPerExtraWin:.005,confidenceOddsCap:.02,frustrationRelativePerExtraLoss:.02,frustrationRelativeCap:.08,disciplineDamping:'(21 - Discipline) / 20',scales:[confidenceScale,1],baselineSeverityProbability:.09,...(psychological?{sharedPsychology:sharedPolicy}:{} )};
-const manifest={schema:'century-streak-study-v1',classification:'lab-only',studyId,experiment:psychological?'shared-psychology-study':armSet==='confidence'?'confidence-precision-study':'confidence-frustration-pilot',armSet,runtime:{node:process.version,v8:process.versions.v8,platform:process.platform,arch:process.arch},baselineCommit:baseline.sourceCommit,sourceSHA256,matchDate,
+const manifest={schema:'century-streak-study-v1',classification:'lab-only',studyId,experiment:psychological?'shared-psychology-study':armSet==='confidence'?'confidence-precision-study':'confidence-frustration-pilot',armSet,...(psychological?{candidate}:{}),runtime,baselineCommit:baseline.sourceCommit,sourceSHA256,matchDate,
  profiles,profilesSHA256:hash(JSON.stringify(profiles)),arms,coefficients,fixtures,trialsPerProfile:trials,
  stoppingRule:'Complete all prespecified fixtures and arms, retain every outcome; no outcome-based tuning or stopping.',
  seedPolicy:'Matched seeds across arms; side-balanced independent trials. Divergent decisions can desynchronize later draws.',
@@ -63,7 +69,7 @@ try {
   let finished=0,failed=false;
   function fail(error){if(!failed){failed=true;reject(error);}}
   for(let index=0;index<Math.min(workers,fixtures.length);index++) {
-   const worker=new Worker(new URL('./streak-worker.mjs',import.meta.url),{workerData:{dir,profiles,arms,matchDate,confidenceScale,...(psychological?{sharedPolicy}:{} )}});pool.push(worker);
+   const worker=new Worker(new URL('./streak-worker.mjs',import.meta.url),{workerData:{dir,profiles,arms,matchDate,confidenceScale,requiredExecArgv:runtime.workerExecArgv,...(psychological?{sharedPolicy}:{} )}});pool.push(worker);
    worker.on('error',fail);worker.on('exit',code=>{if(code!==0&&!failed&&finished<fixtures.length)fail(Error(`Worker exited ${code}`));});
    worker.on('message',message=>{
     if(failed)return;if(message.error){fail(Error(`${message.fixtureId}: ${message.error}`));return;}

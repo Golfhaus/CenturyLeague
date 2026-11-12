@@ -6,6 +6,7 @@ import assert from 'node:assert/strict';
 import { randomUUID } from 'node:crypto';
 import { loadEngines, inputFor, hash, sportingJSON, auditResult, atomicJSON } from './tools.mjs';
 const e=await loadEngines(false);
+if(workerData.requiredExecArgv)assert.deepEqual(process.execArgv,workerData.requiredExecArgv,'Worker did not inherit qualified runtime flags');
 const withoutTelemetry=r=>{const {labTelemetry,...rest}=r;return sportingJSON(rest);};
 parentPort.on('message',fixture=>{
   try {
@@ -22,9 +23,9 @@ parentPort.on('message',fixture=>{
     for(const arm of workerData.arms) {
       const streaks=[0,0];streaks[focalSide]=arm.focal;streaks[opposingSide]=arm.opponent;
       const input={...structuredClone(base),lab:{enabled:arm.enabled,streaks,confidenceScale:workerData.confidenceScale??1,frustrationScale:1,...(workerData.sharedPolicy?{psychology:{...workerData.sharedPolicy,homeSide:arm.home==='focal'?focalSide:arm.home==='opponent'?opposingSide:null}}:{})}};
-      // Capture a detached artifact immediately. Do not retain live engine return objects
-      // across subsequent simulations; a duration mismatch was observed in screen-001.
-      const result=saved?saved.results[arm.id]:JSON.parse(JSON.stringify(e.simulateV2(input)));
+      // The public engine now owns the snapshot boundary; this caller retains its
+      // direct return value so regressions cannot be masked by a second clone.
+      const result=saved?saved.results[arm.id]:e.simulateV2(input);
       Object.freeze(result);
       assert.ok(result && result.engineVersion==='2.0.0-lab');
       assert.equal(hash(JSON.stringify(result.input)),hash(JSON.stringify(input)),'Saved input differs');
@@ -49,7 +50,10 @@ parentPort.on('message',fixture=>{
         confidenceProbabilityShiftSum:Object.values(t.confidence).flat().reduce((s,c)=>s+c.adjustedProbabilitySum-c.baselineProbabilitySum,0),
         resultSHA256:hash(JSON.stringify(result))});
     }
-    for(const result of Object.values(results))auditResult(result,e);
+    for(const [id,result] of Object.entries(results)) {
+      auditResult(result,e);
+      assert.equal(hash(JSON.stringify(result)),arms.find(arm=>arm.id===id).resultSHA256,'Retained result changed after a later simulation');
+    }
     if(results['home-losing-5']) {
       const sporting = r => JSON.stringify({events:r.events,scores:r.scores,quarters:r.quarters,players:r.players,teamStats:r.teamStats,playingSeconds:r.playingSeconds,elapsedSeconds:r.elapsedSeconds});
       assert.equal(hash(sporting(results['control'])),hash(sporting(results['home-losing-5'])),'Losing home support failed exact neutralization');

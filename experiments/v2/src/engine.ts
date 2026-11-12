@@ -24,7 +24,14 @@ const other = (side: Side): Side => side === 0 ? 1 : 0;
 
 /** Event simulation with broad spatial movement, not a frame-by-frame physics model. */
 export function simulateLabMatch(input: LabMatchInput): LabMatchResult {
-  return new AvailabilityMatch(input).run();
+  const live = new AvailabilityMatch(input).run();
+  const end = live.events[live.events.length - 1];
+  if (end.type !== 'match_end' || live.playingSeconds !== end.playingSeconds || live.elapsedSeconds !== end.elapsedSeconds)
+    throw new Error('Lab engine returned clocks inconsistent with its event ledger');
+  // Own the public artifact before another match can run. V8 13.6 Maglev can
+  // alias materialized numeric fields across activations (upstream 547819997).
+  // Do not reconstruct or round clocks to hide a mismatch.
+  return Object.freeze(JSON.parse(JSON.stringify(live)) as LabMatchResult);
 }
 
 class AvailabilityMatch {

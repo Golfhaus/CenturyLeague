@@ -31,3 +31,5 @@ jobs:
       - run: node experiments/v2/run-streaks.mjs --study-id ci-psychology-smoke --arms psychology --trials 2 --workers 2
       - run: node experiments/v2/run-streaks.mjs --study-id ci-psychology-smoke --arms psychology --trials 2 --workers 2
       - run: node experiments/v2/run-streaks.mjs --study-id ci-psychology-peak-smoke --arms psychology-peak --trials 2 --workers 2
+      - run: node experiments/v2/run-streaks.mjs --study-id ci-psychology-reduced-smoke --arms psychology-calibration --psychology-candidate reduced-020 --trials 2 --workers 2
+      - run: node experiments/v2/run-streaks.mjs --study-id ci-psychology-reduced-smoke --arms psychology-calibration --psychology-candidate reduced-020 --trials 2 --workers 2

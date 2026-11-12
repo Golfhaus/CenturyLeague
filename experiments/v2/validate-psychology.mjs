@@ -11,6 +11,13 @@ assert.ok(Math.abs(pc.confidenceOddsBonus-.007)<1e-14);
 assert.ok(Math.abs(pc.homeOddsBonus-.0052)<1e-14);
 assert.ok(Math.abs(pc.rawOddsBonus-.0122364)<1e-14);
 assert.equal(pc.appliedOddsBonus,.009);assert.equal(pc.saturated,true);
+const reduced=e.resolveStreakSettings({enabled:['confidence','home-support'],streaks:[5,-5],confidenceScale:.20,
+ psychology:{...policy,maximumOddsBonus:.006}});
+const rc=e.psychologyContribution(reduced,0);
+assert.ok(Math.abs(rc.confidenceOddsBonus-.004)<1e-14);
+assert.ok(Math.abs(rc.homeOddsBonus-.0052)<1e-14);
+assert.ok(Math.abs(rc.rawOddsBonus-.0092208)<1e-14);
+assert.equal(rc.appliedOddsBonus,.006);assert.equal(rc.saturated,true);
 assert.equal(e.psychologyContribution(peak,1).appliedOddsBonus,0);
 assert.equal(e.psychologyContribution(settings(['home-support'],[-5,0]),0).appliedOddsBonus,0);
 assert.equal(e.psychologyContribution(settings(['home-support'],[5,0],{homeSide:null}),0).appliedOddsBonus,0);
@@ -43,4 +50,5 @@ assert.equal(hash(JSON.stringify(input)),original);
 assert.equal(r.labTelemetry.psychology.contributions[0].appliedOddsBonus,.009);
 verifyBaseline();
 console.log(JSON.stringify({status:'passed',version:policy.version,confidenceScale:.35,homeBaseOddsBonus:.004,sharedMaximumOddsBonus:.009,
+ reducedCandidate:{confidenceScale:.20,sharedMaximumOddsBonus:.006,peakConfidenceOddsBonus:rc.confidenceOddsBonus,peakHomeOddsBonus:rc.homeOddsBonus,rawPeakOddsBonus:rc.rawOddsBonus},
  exhaustiveContributionChecks:capped.length,fullReplay:true,losingHomeNeutralization:true,neutralSiteParity:true,noOutcomeClamps:true,officialWrites:0}));

@@ -34,8 +34,14 @@ Complete every scheduled condition, retain every outcome and use fresh study IDs
 
 ```bash
 node experiments/v2/validate-psychology.mjs
-node experiments/v2/run-streaks.mjs --study-id shared-psych-screen-001 --arms psychology --trials 64 --workers 8 --date 2026-11-12
-node experiments/v2/run-streaks.mjs --study-id shared-psych-confirm-001 --arms psychology-peak --trials 1024 --workers 8 --date 2026-11-12
+node experiments/v2/run-streaks.mjs --study-id shared-psych-screen-002 --arms psychology --trials 64 --workers 8 --date 2026-11-12
+node experiments/v2/run-streaks.mjs --study-id shared-psych-confirm-002 --arms psychology-peak --trials 1024 --workers 8 --date 2026-11-12
 ```
 
 Weather, heat/cold tolerance and halftime adaptation remain unimplemented. These studies address the psychological subgroup only, not the full perfect-storm envelope. No v2.0 adoption or production deployment is authorized by passing these checks.
+
+## Technical amendment before replacement studies
+
+The initial `shared-psych-screen-001` was stopped after 22 saved fixtures when fixture `neutral-22` failed exact home-neutralization comparison. Only root duration summaries differed; scores, events, quarters and statistics agreed, and the control root clocks contradicted its own final event. `shared-psych-confirm-001` never started. The [abort evidence](verification/shared-psych-screen-001-abort.json) and [full captured mismatch](verification/shared-psych-screen-001-mismatch.json.gz) preserve that diagnostic sample; it is excluded from calibration.
+
+Diagnostic instrumentation affected reproducibility, so the underlying cause remains unresolved. The laboratory now captures detached immutable result artifacts immediately and checks clock consistency on return and again after retaining all conditions. A regression retains the original first 32 fixture inputs across all nine conditions. Replacement studies use IDs `002`, the same sample sizes, conditions, coefficients and stopping rule, and fresh seeds. This is a technical restart, not a coefficient or outcome-based change. These checks must pass before any research estimates are used.

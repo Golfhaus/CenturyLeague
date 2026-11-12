@@ -134,6 +134,14 @@ export function sportingJSON(result) {
 
 export function auditResult(result, engines) {
   assert.equal(result.status, 'complete');
+  const end = result.events.at(-1);
+  assert.equal(end.type, 'match_end');
+  assert.equal(result.playingSeconds, end.playingSeconds, 'Root playing clock differs from final event');
+  assert.equal(result.elapsedSeconds, end.elapsedSeconds, 'Root elapsed clock differs from final event');
+  const playingTotal = result.quarters.reduce((sum, quarter) => sum + quarter.playingSeconds, 0);
+  assert.ok(Math.abs(playingTotal - result.playingSeconds) < 1e-7, 'Quarter playing total differs from match clock');
+  // Elapsed match time also includes the intervals between quarters.
+  assert.ok(result.quarters.reduce((sum, quarter) => sum + quarter.elapsedSeconds, 0) <= result.elapsedSeconds + 1e-7);
   const starts = result.events.filter(event => event.type === 'match_start');
   assert.equal(starts.length, 1);
   assert.equal(starts[0].data.engineVersion, result.engineVersion);

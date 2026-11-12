@@ -1,0 +1,18 @@
+{
+  "status": "planning-only",
+  "scenarioDefinitions": 19,
+  "scenarioCells": 228,
+  "featureAvailableCells": 36,
+  "blockedCells": 192,
+  "missingFeatures": [
+    "home-support",
+    "weather",
+    "temperature-tolerance",
+    "halftime-adaptation"
+  ],
+  "actualSimulations": 0,
+  "engineChanges": 0,
+  "date": "2026-11-11",
+  "interpretation": "Plan/schema/gating validation only; no combined-effect simulations or engine coefficient changes.",
+  "criteriaStatus": "proposed-not-adopted"
+}

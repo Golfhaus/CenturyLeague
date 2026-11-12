@@ -1,0 +1,265 @@
+{
+  "releaseLabel": "v1.0",
+  "sourceCommit": "3bbf8814a521758252fb23bc1a52fbaa1e5573b6",
+  "exhibitionReplayIdentity": "0.1.0-exhibition",
+  "competitiveReplayIdentity": "0.2.0-availability-candidate",
+  "policy": "Public release label only. Preserve internal replay and random-seed identities and all pinned source bytes.",
+  "files": [
+    {
+      "path": "package.json",
+      "gitBlobSHA": "8d51d8a7333e9ac14c23f8f1c8d212433e6c0eac"
+    },
+    {
+      "path": "packages/simulation-core/package.json",
+      "gitBlobSHA": "ba8b4471ee062206f0f2c668d8c9aeaa18a30f33"
+    },
+    {
+      "path": "packages/simulation-core/releases/match-engine-v0.1.json",
+      "gitBlobSHA": "82ca8a1aa09351b589ae221ab17be3ae99d6914d"
+    },
+    {
+      "path": "packages/simulation-core/src/batch.ts",
+      "gitBlobSHA": "b0159db736296db6f9a2c0bbf8eae3c26c4a6e92"
+    },
+    {
+      "path": "packages/simulation-core/src/body.ts",
+      "gitBlobSHA": "0fffd13b2167cc85cff37de2654fb0f32d49ca49"
+    },
+    {
+      "path": "packages/simulation-core/src/calendar.ts",
+      "gitBlobSHA": "d8c7c3d5c79c0595dea178250dc82fdfce0b6ac1"
+    },
+    {
+      "path": "packages/simulation-core/src/competition/index.ts",
+      "gitBlobSHA": "7b4dcbe46526f8354c16dcae963571dd74d06cdc"
+    },
+    {
+      "path": "packages/simulation-core/src/competition/replay.ts",
+      "gitBlobSHA": "608150f173539afab2c5d9645cb86b4be311a4c0"
+    },
+    {
+      "path": "packages/simulation-core/src/competition/types.ts",
+      "gitBlobSHA": "e412979a8263c561ff339217a8d7e66a30ceb772"
+    },
+    {
+      "path": "packages/simulation-core/src/competitive/availability.ts",
+      "gitBlobSHA": "f231e9d3470ea9aecc635f71df75049ffe2b37c1"
+    },
+    {
+      "path": "packages/simulation-core/src/competitive/engine.ts",
+      "gitBlobSHA": "75ac06a5d8b8edb76579693470c61b9fa46d05a5"
+    },
+    {
+      "path": "packages/simulation-core/src/competitive/index.ts",
+      "gitBlobSHA": "1670ef4e235a86bc37c07d489fbc91988b0d36d9"
+    },
+    {
+      "path": "packages/simulation-core/src/competitive/operations.ts",
+      "gitBlobSHA": "c78c43c1d06b4d093e3116ac92f9af2e6f8b5db9"
+    },
+    {
+      "path": "packages/simulation-core/src/competitive/policies.ts",
+      "gitBlobSHA": "5cc221f10e8b1e51194622d389a417e342cd1e2d"
+    },
+    {
+      "path": "packages/simulation-core/src/competitive/release.ts",
+      "gitBlobSHA": "3fe685099631feae6a1c1df4306de2557d574b06"
+    },
+    {
+      "path": "packages/simulation-core/src/config.ts",
+      "gitBlobSHA": "2b5633f5d7c2f27e0fe1825efc6020f30336aca0"
+    },
+    {
+      "path": "packages/simulation-core/src/development.ts",
+      "gitBlobSHA": "04041c7d4a1bf4caef09bcd583f4b88ac8728f62"
+    },
+    {
+      "path": "packages/simulation-core/src/generator.ts",
+      "gitBlobSHA": "2fdccf62ad5c86b69312baf2e8f9d69240cf230a"
+    },
+    {
+      "path": "packages/simulation-core/src/geography.ts",
+      "gitBlobSHA": "6da086600d9f7a722b760ef25994e4a53f0dc63d"
+    },
+    {
+      "path": "packages/simulation-core/src/identity.ts",
+      "gitBlobSHA": "1c7326c4a8d17830307f781022810915da08cc3d"
+    },
+    {
+      "path": "packages/simulation-core/src/index.ts",
+      "gitBlobSHA": "06dfb2f03b4ebe7e34d0e99aa776d57e8d142875"
+    },
+    {
+      "path": "packages/simulation-core/src/match/engine.ts",
+      "gitBlobSHA": "bfb54ec67f9e51b5e6ed36b0fd84523f213c6642"
+    },
+    {
+      "path": "packages/simulation-core/src/match/index.ts",
+      "gitBlobSHA": "8539ba676da02de2eadc56aa920a8b63012dd6bf"
+    },
+    {
+      "path": "packages/simulation-core/src/match/input.ts",
+      "gitBlobSHA": "964c968d6bcfaadccb8a578cee22db404ac8df43"
+    },
+    {
+      "path": "packages/simulation-core/src/match/report.ts",
+      "gitBlobSHA": "9f73dc1ec000e64e29819abfba2c3459830f509b"
+    },
+    {
+      "path": "packages/simulation-core/src/match/scoring.ts",
+      "gitBlobSHA": "3e506e5e163f3c1fcc35701d3751eb292a13db36"
+    },
+    {
+      "path": "packages/simulation-core/src/match/statistics.ts",
+      "gitBlobSHA": "04b5ea269184ab39b924792f70ddc8605a946964"
+    },
+    {
+      "path": "packages/simulation-core/src/match/types.ts",
+      "gitBlobSHA": "dc998488a4665130d057af7bd2d3902ba299445c"
+    },
+    {
+      "path": "packages/simulation-core/src/nameData.ts",
+      "gitBlobSHA": "040fbc14f6d62ed9280d96c53d74950a8dbadbc2"
+    },
+    {
+      "path": "packages/simulation-core/src/playerFactory.ts",
+      "gitBlobSHA": "1856c6245f31f04b08bcfb0404b49aff7dd850e1"
+    },
+    {
+      "path": "packages/simulation-core/src/poolLifecycle.ts",
+      "gitBlobSHA": "dddb57f3c79910fc8a436dd1f824bceebfe77ea3"
+    },
+    {
+      "path": "packages/simulation-core/src/random.ts",
+      "gitBlobSHA": "323c7470c85890b90e10f40dedb33b04ebf0931b"
+    },
+    {
+      "path": "packages/simulation-core/src/roleRatings.ts",
+      "gitBlobSHA": "840c5a44e1cc7d917419d0e7c6fa107ed8af2ec4"
+    },
+    {
+      "path": "packages/simulation-core/src/types.ts",
+      "gitBlobSHA": "8b51fce0bf9f47d4644cfe744b358a876b35d4f9"
+    },
+    {
+      "path": "packages/simulation-core/src/validation.ts",
+      "gitBlobSHA": "deff6636676428157c447b88b7e269f00ecd0d71"
+    },
+    {
+      "path": "packages/simulation-core/tsconfig.json",
+      "gitBlobSHA": "df59da5785d255887cdd04b90db5c5d937a26a7e"
+    },
+    {
+      "path": "scripts/sync-match-edge.mjs",
+      "gitBlobSHA": "5ff510f87f8c1ae1fa8f88fbf044197084080266"
+    },
+    {
+      "path": "scripts/validate-availability.mjs",
+      "gitBlobSHA": "3a5601102efb731a37d9d230521075c21b17e4ce"
+    },
+    {
+      "path": "scripts/validate-matches.mjs",
+      "gitBlobSHA": "09d61d255c2ce4f30062ba57713ab02b25d9a7d3"
+    },
+    {
+      "path": "scripts/validate-replay.mjs",
+      "gitBlobSHA": "ae471c841300b55dae61c6229af05c994edcf574"
+    },
+    {
+      "path": "scripts/verify-availability-adapter.mjs",
+      "gitBlobSHA": "46fce8efb69274192a612eb8ea41ff23c6d3ab45"
+    },
+    {
+      "path": "scripts/verify-competitive-source.mjs",
+      "gitBlobSHA": "6bc2cc98031eaa62ae72de05c2e203c6480e0b03"
+    },
+    {
+      "path": "scripts/verify-match-baseline.mjs",
+      "gitBlobSHA": "b857888df616fccb0826d4f36d51a710067f7871"
+    },
+    {
+      "path": "supabase/functions/manage-matches/simulation/competition/index.ts",
+      "gitBlobSHA": "d521172888a22187a8d9578e3a6996f79a5dee1f"
+    },
+    {
+      "path": "supabase/functions/manage-matches/simulation/competition/replay.ts",
+      "gitBlobSHA": "90f4bf1859b61bc0bcf818a68fb759d6bdbe833b"
+    },
+    {
+      "path": "supabase/functions/manage-matches/simulation/competition/types.ts",
+      "gitBlobSHA": "6e49b040f624ccba8847c27d6d1d04081536726d"
+    },
+    {
+      "path": "supabase/functions/manage-matches/simulation/competitive/availability.ts",
+      "gitBlobSHA": "8abaaa5a6a3e089884597ac2913b2cd65c69962f"
+    },
+    {
+      "path": "supabase/functions/manage-matches/simulation/competitive/engine.ts",
+      "gitBlobSHA": "9f999aa3170d3c2d1319bb25aa831c39a3aa6999"
+    },
+    {
+      "path": "supabase/functions/manage-matches/simulation/competitive/index.ts",
+      "gitBlobSHA": "1df6a4d9d7fd255ca2f2adf366d26c66a3f5446b"
+    },
+    {
+      "path": "supabase/functions/manage-matches/simulation/competitive/operations.ts",
+      "gitBlobSHA": "d334509a3571403c82edc111b1b05640dc78c740"
+    },
+    {
+      "path": "supabase/functions/manage-matches/simulation/competitive/policies.ts",
+      "gitBlobSHA": "2b4a49131c5bcd5009c9212e1c85a9fb79407689"
+    },
+    {
+      "path": "supabase/functions/manage-matches/simulation/competitive/release.ts",
+      "gitBlobSHA": "3fe685099631feae6a1c1df4306de2557d574b06"
+    },
+    {
+      "path": "supabase/functions/manage-matches/simulation/config.ts",
+      "gitBlobSHA": "0babd6091e3335743ca96edfb9a128947edb69ae"
+    },
+    {
+      "path": "supabase/functions/manage-matches/simulation/match/engine.ts",
+      "gitBlobSHA": "66c94fa66f75a519d07c92dbfd8bedf163745161"
+    },
+    {
+      "path": "supabase/functions/manage-matches/simulation/match/index.ts",
+      "gitBlobSHA": "2244f668551fac8f3b6dfd9036adfc98585c1b0a"
+    },
+    {
+      "path": "supabase/functions/manage-matches/simulation/match/input.ts",
+      "gitBlobSHA": "5f4fde0997d733ec075c47f9f647582dd0984b1a"
+    },
+    {
+      "path": "supabase/functions/manage-matches/simulation/match/report.ts",
+      "gitBlobSHA": "29d3f6a2f324b58c85d7de01bd7d8767f36eb62a"
+    },
+    {
+      "path": "supabase/functions/manage-matches/simulation/match/scoring.ts",
+      "gitBlobSHA": "a59a00ca6e5d2467c27419e48b29272b8ff84f6c"
+    },
+    {
+      "path": "supabase/functions/manage-matches/simulation/match/statistics.ts",
+      "gitBlobSHA": "a563fe67001b441f0b4f41cc28b8b7b83be90d2b"
+    },
+    {
+      "path": "supabase/functions/manage-matches/simulation/match/types.ts",
+      "gitBlobSHA": "4f6145b4c664d1a1743da4baffd95d0d70c971dd"
+    },
+    {
+      "path": "supabase/functions/manage-matches/simulation/random.ts",
+      "gitBlobSHA": "323c7470c85890b90e10f40dedb33b04ebf0931b"
+    },
+    {
+      "path": "supabase/functions/manage-matches/simulation/roleRatings.ts",
+      "gitBlobSHA": "64040cc14963044eff62ff5e6e713757c7f30014"
+    },
+    {
+      "path": "supabase/functions/manage-matches/simulation/types.ts",
+      "gitBlobSHA": "8b51fce0bf9f47d4644cfe744b358a876b35d4f9"
+    },
+    {
+      "path": "tsconfig.base.json",
+      "gitBlobSHA": "f5cfac84c2593fea4305ad1104cc97ddf6718e26"
+    }
+  ]
+}

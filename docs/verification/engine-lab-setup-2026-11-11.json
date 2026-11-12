@@ -1,0 +1,59 @@
+{
+  "date": "2026-11-11",
+  "runtime": "Node v24.22.1",
+  "scope": "Isolated synthetic engine setup; no feature calibration or official execution",
+  "labValidation": {
+    "status": "passed",
+    "releaseLabels": [
+      "v1.0",
+      "v2.0"
+    ],
+    "baseline": {
+      "releaseLabel": "v1.0",
+      "sourceCommit": "3bbf8814a521758252fb23bc1a52fbaa1e5573b6",
+      "protectedFiles": 64,
+      "gameplaySourceSHA256": "9513ba17bef8814027cc3408731f7d26db9c8ce8cd5a25f52c42175286db3521"
+    },
+    "isolation": {
+      "pureGameplayFiles": 10,
+      "officialAcceptanceImports": 0
+    },
+    "matchedFixtures": 12,
+    "engineResults": 24,
+    "fullReplaysPerPass": 24,
+    "exactResumeVerified": true,
+    "corruptLedgerRejected": true,
+    "baselineTamperingRejected": true,
+    "interruptedTemporaryWriteSafe": true,
+    "unavailablePlayersExcluded": true,
+    "scoreTransitionsChecked": 500,
+    "unimplementedFeaturesRejected": true,
+    "officialWrites": 0,
+    "networkRequests": 0,
+    "interpretation": "Synthetic setup checks only; no modifier effects or official matches simulated."
+  },
+  "sourceSHA256": "d0848e344ce8bd1387012f963bd7d130c420bbce70903465fc23d3e093b7bb03",
+  "originalMatchValidation": {
+    "checks": 549,
+    "stressMatches": 24,
+    "strongWins": 12,
+    "penaltyEvents": 8,
+    "injuryEvents": 16,
+    "delayedPenaltyContestWindows": 1,
+    "defaultMinimumPlayers": 12,
+    "status": "passed"
+  },
+  "additionalChecks": {
+    "adoptedBaselineHash": "passed",
+    "competitiveSourceHash": "passed",
+    "availabilityAdapter": "passed; zero frozen gameplay edits",
+    "edgeMirror": "passed; 20 files",
+    "nodeReplayAssertions": "passed; 25 assertions; Deno portability not executed locally"
+  },
+  "notExecutedLocally": [
+    "TypeScript semantic typecheck",
+    "Deno cross-runtime portability suite",
+    "Live official scheduler/database execution"
+  ],
+  "officialChanges": []
+}

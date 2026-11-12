@@ -1,0 +1,511 @@
+{
+  "schema": "century-streak-pilot-summary-v1",
+  "studyId": "confidence-precision-001",
+  "status": "completed",
+  "classification": "lab-only",
+  "sourceSHA256": "e35b5a67562e81a2cab008c6307466bdd7642fa2355af730233facfefc4bbd44",
+  "experiment": "confidence-precision-study",
+  "armSet": "confidence",
+  "runtime": {
+    "node": "v24.22.1",
+    "v8": "13.6.233.17-node.58",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "analysisPlan": {
+    "primaryContrast": "confidence-5 minus confidence-3 focal win probability on the same fixtures",
+    "primaryInterval": "Paired mean difference +/- 1.96 estimated standard errors; large-sample approximation",
+    "secondary": [
+      "Each confidence arm versus control",
+      "Paired score-margin differences",
+      "Separate neutral/pressure profile estimates"
+    ],
+    "priorDiscordancePlanningEstimate": 0.324,
+    "precisionDesign": "6400 independent matched fixture seeds target approximately 1.4 percentage-point 95% half-width and about 80% power for a 2-point difference, conditional on prior discordance estimate. Not guaranteed.",
+    "decisionPolicy": "No coefficient changes or outcome-dependent stopping. Direction supported only if the primary 95% interval excludes zero; otherwise report unresolved direction, not equivalence or an engine bug."
+  },
+  "primaryContrast": {
+    "caseId": "confidence-5",
+    "referenceId": "confidence-3",
+    "matchedFixtures": 6400,
+    "winRateDifference": 0.0390625,
+    "standardError": 0.007082375585053517,
+    "approximate95": [
+      0.02518104385329511,
+      0.05294395614670489
+    ],
+    "improved": 1157,
+    "worsened": 907,
+    "unchanged": 4336,
+    "meanScoreMarginDifference": 1.92140625,
+    "scoreMarginDifference95": [
+      1.322316950487056,
+      2.520495549512944
+    ],
+    "intervalCaution": "Prespecified large-sample paired interval across independent matched fixture seeds."
+  },
+  "profilePrimaryContrasts": [
+    {
+      "id": "neutral",
+      "caseId": "confidence-5",
+      "referenceId": "confidence-3",
+      "matchedFixtures": 3200,
+      "winRateDifference": 0.044375,
+      "standardError": 0.010000091580934003,
+      "approximate95": [
+        0.024774820501369352,
+        0.06397517949863064
+      ],
+      "improved": 586,
+      "worsened": 444,
+      "unchanged": 2170,
+      "meanScoreMarginDifference": 2.1109375,
+      "scoreMarginDifference95": [
+        1.266711772166877,
+        2.955163227833123
+      ],
+      "intervalCaution": "Prespecified large-sample paired interval across independent matched fixture seeds."
+    },
+    {
+      "id": "pressure",
+      "caseId": "confidence-5",
+      "referenceId": "confidence-3",
+      "matchedFixtures": 3200,
+      "winRateDifference": 0.03375,
+      "standardError": 0.010032549986780959,
+      "approximate95": [
+        0.014086202025909322,
+        0.05341379797409068
+      ],
+      "improved": 571,
+      "worsened": 463,
+      "unchanged": 2166,
+      "meanScoreMarginDifference": 1.731875,
+      "scoreMarginDifference95": [
+        0.8815497755524461,
+        2.582200224447554
+      ],
+      "intervalCaution": "Prespecified large-sample paired interval across independent matched fixture seeds."
+    }
+  ],
+  "matchedFixtures": 6400,
+  "engineResults": 19200,
+  "fullReplays": 6,
+  "frozenControls": 2,
+  "resumedFixtures": 0,
+  "coefficients": {
+    "confidenceOddsPerExtraWin": 0.005,
+    "confidenceOddsCap": 0.02,
+    "frustrationRelativePerExtraLoss": 0.02,
+    "frustrationRelativeCap": 0.08,
+    "disciplineDamping": "(21 - Discipline) / 20",
+    "scales": [
+      1,
+      1
+    ],
+    "baselineSeverityProbability": 0.09
+  },
+  "arms": [
+    {
+      "id": "control",
+      "matches": 6400,
+      "wins": 3269,
+      "winRate": 0.51078125,
+      "winRate95Wilson": [
+        0.4985313028483614,
+        0.5230182620253231
+      ],
+      "pairedWinRateDifference": 0,
+      "pairedWinRateDifference95Approx": [
+        0,
+        0
+      ],
+      "pairedDifference95ConservativeWilson": [
+        -0.0007843666935084231,
+        0.0007843666935084231
+      ],
+      "pairedIntervalMethod": "Bonferroni combination of Wilson intervals for positive and negative discordance; avoids zero-width interval when no winners change.",
+      "discordantWins": 0,
+      "discordantLosses": 0,
+      "meanFocalScore": 90.99078125,
+      "meanOpponentScore": 90.50140625,
+      "meanScoreMargin": 0.489375,
+      "contacts": 342472,
+      "foulOpportunities": 16739,
+      "seriousFouls": 1467,
+      "seriousPerFoul": 0.0876396439452775,
+      "opponentFoulOpportunities": 16715,
+      "opponentSeriousFouls": 1504,
+      "expectedSeverityGivenObservedFouls": 1506.5099999999836,
+      "meanSeverityProbability": 0.08999999999999903,
+      "severityThresholdChanges": 0,
+      "confidenceChecks": 6212575,
+      "confidenceThresholdChanges": 0
+    },
+    {
+      "id": "confidence-3",
+      "matches": 6400,
+      "wins": 3505,
+      "winRate": 0.54765625,
+      "winRate95Wilson": [
+        0.5354370554637874,
+        0.5598182675285864
+      ],
+      "pairedWinRateDifference": 0.036875,
+      "pairedWinRateDifference95Approx": [
+        0.02251177315448618,
+        0.051238226845513817
+      ],
+      "pairedDifference95ConservativeWilson": [
+        0.015721470340880617,
+        0.05797068261547317
+      ],
+      "pairedIntervalMethod": "Bonferroni combination of Wilson intervals for positive and negative discordance; avoids zero-width interval when no winners change.",
+      "discordantWins": 1222,
+      "discordantLosses": 986,
+      "meanFocalScore": 91.67421875,
+      "meanOpponentScore": 89.11421875,
+      "meanScoreMargin": 2.56,
+      "contacts": 338537,
+      "foulOpportunities": 16672,
+      "seriousFouls": 1440,
+      "seriousPerFoul": 0.08637236084452975,
+      "opponentFoulOpportunities": 16603,
+      "opponentSeriousFouls": 1520,
+      "expectedSeverityGivenObservedFouls": 1500.4799999999807,
+      "meanSeverityProbability": 0.08999999999999884,
+      "severityThresholdChanges": 0,
+      "confidenceChecks": 6167486,
+      "confidenceThresholdChanges": 11665
+    },
+    {
+      "id": "confidence-5",
+      "matches": 6400,
+      "wins": 3755,
+      "winRate": 0.58671875,
+      "winRate95Wilson": [
+        0.5746058855329647,
+        0.5987275710597154
+      ],
+      "pairedWinRateDifference": 0.0759375,
+      "pairedWinRateDifference95Approx": [
+        0.06028125615486657,
+        0.09159374384513344
+      ],
+      "pairedDifference95ConservativeWilson": [
+        0.05333075700806841,
+        0.098425117300355
+      ],
+      "pairedIntervalMethod": "Bonferroni combination of Wilson intervals for positive and negative discordance; avoids zero-width interval when no winners change.",
+      "discordantWins": 1568,
+      "discordantLosses": 1082,
+      "meanFocalScore": 92.60484375,
+      "meanOpponentScore": 88.1234375,
+      "meanScoreMargin": 4.48140625,
+      "contacts": 334942,
+      "foulOpportunities": 16473,
+      "seriousFouls": 1457,
+      "seriousPerFoul": 0.08844776300613125,
+      "opponentFoulOpportunities": 16687,
+      "opponentSeriousFouls": 1530,
+      "expectedSeverityGivenObservedFouls": 1482.5699999999817,
+      "meanSeverityProbability": 0.08999999999999889,
+      "severityThresholdChanges": 0,
+      "confidenceChecks": 6130324,
+      "confidenceThresholdChanges": 22502
+    }
+  ],
+  "profiles": [
+    {
+      "id": "neutral",
+      "arms": [
+        {
+          "id": "control",
+          "matches": 3200,
+          "wins": 1640,
+          "winRate": 0.5125,
+          "winRate95Wilson": [
+            0.4951766899472415,
+            0.5297933335395625
+          ],
+          "pairedWinRateDifference": 0,
+          "pairedWinRateDifference95Approx": [
+            0,
+            0
+          ],
+          "pairedDifference95ConservativeWilson": [
+            -0.0015675038891742332,
+            0.0015675038891742332
+          ],
+          "pairedIntervalMethod": "Bonferroni combination of Wilson intervals for positive and negative discordance; avoids zero-width interval when no winners change.",
+          "discordantWins": 0,
+          "discordantLosses": 0,
+          "meanFocalScore": 91.0228125,
+          "meanOpponentScore": 90.435625,
+          "meanScoreMargin": 0.5871875,
+          "contacts": 116834,
+          "foulOpportunities": 3796,
+          "seriousFouls": 331,
+          "seriousPerFoul": 0.08719704952581665,
+          "opponentFoulOpportunities": 3775,
+          "opponentSeriousFouls": 377,
+          "expectedSeverityGivenObservedFouls": 341.6399999999996,
+          "meanSeverityProbability": 0.08999999999999989,
+          "severityThresholdChanges": 0,
+          "confidenceChecks": 3090553,
+          "confidenceThresholdChanges": 0
+        },
+        {
+          "id": "confidence-3",
+          "matches": 3200,
+          "wins": 1753,
+          "winRate": 0.5478125,
+          "winRate95Wilson": [
+            0.5305206892423736,
+            0.5649896505946522
+          ],
+          "pairedWinRateDifference": 0.0353125,
+          "pairedWinRateDifference95Approx": [
+            0.01515251833222057,
+            0.05547248166777942
+          ],
+          "pairedDifference95ConservativeWilson": [
+            0.005564358312669826,
+            0.06494993672515725
+          ],
+          "pairedIntervalMethod": "Bonferroni combination of Wilson intervals for positive and negative discordance; avoids zero-width interval when no winners change.",
+          "discordantWins": 600,
+          "discordantLosses": 487,
+          "meanFocalScore": 91.643125,
+          "meanOpponentScore": 89.12375,
+          "meanScoreMargin": 2.519375,
+          "contacts": 115752,
+          "foulOpportunities": 3755,
+          "seriousFouls": 308,
+          "seriousPerFoul": 0.08202396804260985,
+          "opponentFoulOpportunities": 3779,
+          "opponentSeriousFouls": 373,
+          "expectedSeverityGivenObservedFouls": 337.9499999999992,
+          "meanSeverityProbability": 0.08999999999999979,
+          "severityThresholdChanges": 0,
+          "confidenceChecks": 3070070,
+          "confidenceThresholdChanges": 5743
+        },
+        {
+          "id": "confidence-5",
+          "matches": 3200,
+          "wins": 1895,
+          "winRate": 0.5921875,
+          "winRate95Wilson": [
+            0.5750597029374931,
+            0.609094220277687
+          ],
+          "pairedWinRateDifference": 0.0796875,
+          "pairedWinRateDifference95Approx": [
+            0.057696425303305016,
+            0.10167857469669497
+          ],
+          "pairedDifference95ConservativeWilson": [
+            0.04785077533928836,
+            0.1112744037283745
+          ],
+          "pairedIntervalMethod": "Bonferroni combination of Wilson intervals for positive and negative discordance; avoids zero-width interval when no winners change.",
+          "discordantWins": 782,
+          "discordantLosses": 527,
+          "meanFocalScore": 92.615,
+          "meanOpponentScore": 87.9846875,
+          "meanScoreMargin": 4.6303125,
+          "contacts": 114436,
+          "foulOpportunities": 3681,
+          "seriousFouls": 318,
+          "seriousPerFoul": 0.08638956805215973,
+          "opponentFoulOpportunities": 3739,
+          "opponentSeriousFouls": 381,
+          "expectedSeverityGivenObservedFouls": 331.2899999999996,
+          "meanSeverityProbability": 0.0899999999999999,
+          "severityThresholdChanges": 0,
+          "confidenceChecks": 3053441,
+          "confidenceThresholdChanges": 11177
+        }
+      ]
+    },
+    {
+      "id": "pressure",
+      "arms": [
+        {
+          "id": "control",
+          "matches": 3200,
+          "wins": 1629,
+          "winRate": 0.5090625,
+          "winRate95Wilson": [
+            0.4917407475600378,
+            0.526362519467895
+          ],
+          "pairedWinRateDifference": 0,
+          "pairedWinRateDifference95Approx": [
+            0,
+            0
+          ],
+          "pairedDifference95ConservativeWilson": [
+            -0.0015675038891742332,
+            0.0015675038891742332
+          ],
+          "pairedIntervalMethod": "Bonferroni combination of Wilson intervals for positive and negative discordance; avoids zero-width interval when no winners change.",
+          "discordantWins": 0,
+          "discordantLosses": 0,
+          "meanFocalScore": 90.95875,
+          "meanOpponentScore": 90.5671875,
+          "meanScoreMargin": 0.3915625,
+          "contacts": 225638,
+          "foulOpportunities": 12943,
+          "seriousFouls": 1136,
+          "seriousPerFoul": 0.08776945066831492,
+          "opponentFoulOpportunities": 12940,
+          "opponentSeriousFouls": 1127,
+          "expectedSeverityGivenObservedFouls": 1164.8699999999928,
+          "meanSeverityProbability": 0.08999999999999944,
+          "severityThresholdChanges": 0,
+          "confidenceChecks": 3122022,
+          "confidenceThresholdChanges": 0
+        },
+        {
+          "id": "confidence-3",
+          "matches": 3200,
+          "wins": 1752,
+          "winRate": 0.5475,
+          "winRate95Wilson": [
+            0.5302075290957101,
+            0.5646785601541454
+          ],
+          "pairedWinRateDifference": 0.0384375,
+          "pairedWinRateDifference95Approx": [
+            0.017970272625410358,
+            0.05890472737458964
+          ],
+          "pairedDifference95ConservativeWilson": [
+            0.00832890047411916,
+            0.06842559766440054
+          ],
+          "pairedIntervalMethod": "Bonferroni combination of Wilson intervals for positive and negative discordance; avoids zero-width interval when no winners change.",
+          "discordantWins": 622,
+          "discordantLosses": 499,
+          "meanFocalScore": 91.7053125,
+          "meanOpponentScore": 89.1046875,
+          "meanScoreMargin": 2.600625,
+          "contacts": 222785,
+          "foulOpportunities": 12917,
+          "seriousFouls": 1132,
+          "seriousPerFoul": 0.08763644809166216,
+          "opponentFoulOpportunities": 12824,
+          "opponentSeriousFouls": 1147,
+          "expectedSeverityGivenObservedFouls": 1162.5299999999934,
+          "meanSeverityProbability": 0.08999999999999948,
+          "severityThresholdChanges": 0,
+          "confidenceChecks": 3097416,
+          "confidenceThresholdChanges": 5922
+        },
+        {
+          "id": "confidence-5",
+          "matches": 3200,
+          "wins": 1860,
+          "winRate": 0.58125,
+          "winRate95Wilson": [
+            0.5640686964942558,
+            0.5982364561699709
+          ],
+          "pairedWinRateDifference": 0.0721875,
+          "pairedWinRateDifference95Approx": [
+            0.04989436224323472,
+            0.09448063775676528
+          ],
+          "pairedDifference95ConservativeWilson": [
+            0.04002799250856787,
+            0.1041206991174326
+          ],
+          "pairedIntervalMethod": "Bonferroni combination of Wilson intervals for positive and negative discordance; avoids zero-width interval when no winners change.",
+          "discordantWins": 786,
+          "discordantLosses": 555,
+          "meanFocalScore": 92.5946875,
+          "meanOpponentScore": 88.2621875,
+          "meanScoreMargin": 4.3325,
+          "contacts": 220506,
+          "foulOpportunities": 12792,
+          "seriousFouls": 1139,
+          "seriousPerFoul": 0.08904002501563477,
+          "opponentFoulOpportunities": 12948,
+          "opponentSeriousFouls": 1149,
+          "expectedSeverityGivenObservedFouls": 1151.279999999994,
+          "meanSeverityProbability": 0.08999999999999954,
+          "severityThresholdChanges": 0,
+          "confidenceChecks": 3076883,
+          "confidenceThresholdChanges": 11325
+        }
+      ]
+    }
+  ],
+  "interpretation": "Synthetic mirror-roster pilot, not actual club performance. Within-arm weather/home/halftime effects absent. No persistent histories.",
+  "limitations": [
+    "Synthetic mirror-roster study, not a survey of actual club strengths or all possible roster/coach profiles.",
+    "Aggregate serious-foul model only; no explicit retaliation taxonomy.",
+    "Severity rates condition on observed foul opportunities; match trajectories and denominators can change.",
+    "Paired intervals are approximate; the conservative Wilson combination is the primary interval, especially with few discordant winners.",
+    "No player-rating changes, official writes, live weather calls, calibration acceptance or adoption."
+  ],
+  "recordedVerification": {
+    "allDeclaredFixturesPresent": true,
+    "all19200CompactOutcomesReconciled": true,
+    "independentPrimaryIntervalRecalculation": true,
+    "balancedSidesPerProfile": true,
+    "sourceCommit": "d4fab747869326d738b136dc24f42e2ac521e8a1",
+    "baselineUnchanged": true,
+    "engineGitBlobSHA": "088e52ee005324c625337eb6604adaba13350311",
+    "streakHelperGitBlobSHA": "2535b7b7732839466986876c5c8320b8bae1f401"
+  },
+  "independentlyRecomputedPrimary": {
+    "n": 6400,
+    "delta": 0.0390625,
+    "ci": [
+      0.02518104385329511,
+      0.05294395614670489
+    ],
+    "improved": 1157,
+    "worsened": 907,
+    "unchanged": 4336,
+    "marginDelta": 1.92140625
+  },
+  "independentlyRecomputedProfiles": {
+    "neutral": {
+      "n": 3200,
+      "delta": 0.044375,
+      "ci": [
+        0.024774820501368977,
+        0.06397517949863102
+      ],
+      "improved": 586,
+      "worsened": 444,
+      "unchanged": 2170,
+      "marginDelta": 2.1109375
+    },
+    "pressure": {
+      "n": 3200,
+      "delta": 0.03375,
+      "ci": [
+        0.014086202025909027,
+        0.053413797974090974
+      ],
+      "improved": 571,
+      "worsened": 463,
+      "unchanged": 2166,
+      "marginDelta": 1.731875
+    }
+  },
+  "decision": "positive",
+  "interpretationOfPrimary": "The larger fresh sample supports a higher win probability at five wins than at three in these tested profiles. The earlier one-win decline is consistent with sampling noise; it is not reproduced as a reliable reversal.",
+  "calibrationObservation": "Three-win confidence was +3.69 percentage points versus control and five-win confidence was +7.59 points. The three-win estimate fits the earlier 2\u20134 point design target; the five-win cap may be stronger than the intended subtle effect. No coefficients were changed.",
+  "archive": {
+    "path": "docs/verification/confidence-precision-2026-11-11.tar.gz",
+    "sha256": "8709cad104950d035a5508bb7e8bcfd40791a34a31aec88b140a1b3800da393e",
+    "sizeBytes": 1107587,
+    "contents": "Prespecified plan, complete manifest, aggregate summary and all 19200 compact outcome rows with full-result checksums. Full event ledgers are reproducible from the pinned source and runtime."
+  }
+}

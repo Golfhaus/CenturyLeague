@@ -1,0 +1,109 @@
+{
+  "classification": "lab-only-reliability-evidence-not-calibration",
+  "date": "2026-11-12",
+  "preFixSourceCommit": "7c72114f157f167db208ca35cdebc1986592f8a4",
+  "runtime": {
+    "node": "v24.22.1",
+    "v8": "13.6.233.17-node.58"
+  },
+  "preFixComparison": {
+    "default": {
+      "fixtures": 96,
+      "results": 864,
+      "clockMismatches": [
+        {
+          "mode": "default",
+          "fixture": "shared-psych-screen-001-neutral-7-diag2",
+          "seed": "century-streak-study:shared-psych-screen-001:neutral:7",
+          "arm": "control",
+          "initialPlayingSeconds": 6255.360205576988,
+          "retainedPlayingSeconds": 4989.075526462868,
+          "finalEventPlayingSeconds": 6255.360205576988,
+          "retainedElapsedSeconds": 9563.075526462868,
+          "finalEventElapsedSeconds": 11189.360205576988,
+          "clockMismatch": true
+        }
+      ]
+    },
+    "no-maglev": {
+      "fixtures": 96,
+      "results": 864,
+      "clockMismatches": []
+    }
+  },
+  "fixedRetention": {
+    "status": "passed",
+    "node": "v24.22.1",
+    "v8": "13.6.233.17-node.58",
+    "originalFixtures": 32,
+    "includesOriginalFailure": true,
+    "modes": [
+      {
+        "mode": "default",
+        "fixtures": 96,
+        "results": 864,
+        "workerExecArgv": []
+      },
+      {
+        "mode": "qualified",
+        "fixtures": 96,
+        "results": 864,
+        "workerExecArgv": [
+          "--no-maglev"
+        ]
+      }
+    ],
+    "upstreamProbeWithMaglev": "reproduced-upstream-aliasing-defect",
+    "upstreamProbeWithoutMaglev": "passed",
+    "exactCrossRuntimeResults": 864,
+    "checks": [
+      "public engine returns retained directly",
+      "clock/event agreement",
+      "quarter playing totals",
+      "full post-retention hashes",
+      "zero home equivalence",
+      "default/qualified exact equality"
+    ]
+  },
+  "policyChecks": {
+    "status": "passed",
+    "version": "shared-psych-v1",
+    "confidenceScale": 0.35,
+    "homeBaseOddsBonus": 0.004,
+    "sharedMaximumOddsBonus": 0.009,
+    "reducedCandidate": {
+      "confidenceScale": 0.2,
+      "sharedMaximumOddsBonus": 0.006,
+      "peakConfidenceOddsBonus": 0.004,
+      "peakHomeOddsBonus": 0.005200000000000001,
+      "rawPeakOddsBonus": 0.009220800000000029
+    },
+    "exhaustiveContributionChecks": 294,
+    "fullReplay": true,
+    "losingHomeNeutralization": true,
+    "neutralSiteParity": true,
+    "noOutcomeClamps": true,
+    "officialWrites": 0
+  },
+  "sourceReferences": {
+    "node": "https://github.com/nodejs/node/blob/v24.22.1/deps/v8/src/maglev/maglev-code-generator.cc",
+    "upstreamFix": "https://github.com/v8/v8/commit/7d5eb1df2a721c8fe3aa03b999464c4b86242080",
+    "upstreamRegression": "https://github.com/v8/v8/blob/7d5eb1df2a721c8fe3aa03b999464c4b86242080/test/mjsunit/maglev/regress-547819997.js"
+  },
+  "rootCause": "Optimization-sensitive aliasing of materialized numeric storage in the installed Maglev compiler. The installed source contains the old BuildHeapNumber literal path, and the upstream numeric-isolation regression fails with Maglev enabled but passes disabled. The original match artifact initially had correct clocks, then retained clocks changed to those of a later simulation, while its event ledger remained unchanged.",
+  "resolution": "Detach and freeze public v2.0 return artifacts, reject inconsistent clocks before capture, qualify the study parent with --no-maglev before workers inherit its flags, verify inherited flags, and recheck complete result checksums after retention. No original clocks are reconstructed or rounded.",
+  "scope": "Contained in the v2.0 lab. The installed V8 binary is not patched globally; removal of the qualification guard requires a patched-runtime qualification. v1.0 and official execution paths are unchanged.",
+  "officialChanges": [],
+  "artifacts": [
+    {
+      "path": "docs/verification/numeric-retention-diagnostic-2026-11-12.csv.gz",
+      "bytes": 9902,
+      "sha256": "9791c8187a7f5a9b95daefe69d7e14e448234bbbdc2e2a74825b5fa5065e7bfa"
+    },
+    {
+      "path": "docs/verification/numeric-retention-pre-fix-failure-2026-11-12.json.gz",
+      "bytes": 1232891,
+      "sha256": "ef292bbb1933d7fe907f90b8644aaa9f8ceba7c15d6452042159a85e99b7e03c"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+name: Century v2.0 isolated engine laboratory
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/v2/**'
+      - 'packages/simulation-core/**'
+      - '.github/workflows/engine-lab.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  setup-and-equivalence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm install --ignore-scripts
+      - run: npx tsc --noEmit --target ES2022 --module ESNext --moduleResolution Bundler --strict --skipLibCheck experiments/v2/src/engine.ts
+      - run: node experiments/v2/validate.mjs
+      - run: node experiments/v2/validate-streaks.mjs
+      - run: node experiments/v2/run-streaks.mjs --study-id ci-streak-smoke --trials 2 --workers 2
+      - run: node experiments/v2/run-streaks.mjs --study-id ci-streak-smoke --trials 2 --workers 2
+      - run: node experiments/v2/validate-envelope.mjs
+      - run: node experiments/v2/validate-psychology.mjs
+      - run: node experiments/v2/validate-psychology-retention.mjs
+      - run: node experiments/v2/run-streaks.mjs --study-id ci-psychology-smoke --arms psychology --trials 2 --workers 2
+      - run: node experiments/v2/run-streaks.mjs --study-id ci-psychology-smoke --arms psychology --trials 2 --workers 2
+      - run: node experiments/v2/run-streaks.mjs --study-id ci-psychology-peak-smoke --arms psychology-peak --trials 2 --workers 2
+      - run: node experiments/v2/run-streaks.mjs --study-id ci-psychology-reduced-smoke --arms psychology-calibration --psychology-candidate reduced-020 --trials 2 --workers 2
+      - run: node experiments/v2/run-streaks.mjs --study-id ci-psychology-reduced-smoke --arms psychology-calibration --psychology-candidate reduced-020 --trials 2 --workers 2

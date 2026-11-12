@@ -1,0 +1,22 @@
+import assert from 'node:assert/strict';
+import path from 'node:path';
+import {labRoot,readJSON,verifyBaseline} from './tools.mjs';
+import {compilePlan,validateScenario,assessEnvelope} from './plan-envelope.mjs';
+const plan=readJSON(path.join(labRoot,'envelope-plan.json')),matrix=compilePlan(plan);
+assert.equal(matrix.cases.length,19*3*2*2);
+assert.ok(matrix.cases.every(x=>x.executionStatus==='planning-only-not-simulated'));
+assert.equal(matrix.criteriaAreOutcomeClamps,false);
+for(const name of ['full-favored-cold','full-adverse-cold','full-favored-heat','full-adverse-heat'])assert.ok(matrix.cases.filter(x=>x.scenarioId===name).every(x=>x.missingFeatures.length>0));
+const first=structuredClone(plan.scenarios[0]);
+assert.throws(()=>validateScenario({...first,home:[0,1]},plan),/one host/);
+assert.throws(()=>validateScenario({...first,thermalTraits:'focal-favored'},plan));
+assert.throws(()=>validateScenario({...first,environment:'hot-and-cold'},plan));
+assert.throws(()=>validateScenario({...first,adaptation:'focal-only'},plan));
+assert.equal(assessEnvelope({baselineWinRate:.5,modifiedWinRate:.60,upsetsObserved:40}).status,'within-provisional-outer-screen');
+assert.equal(assessEnvelope({baselineWinRate:.5,modifiedWinRate:.7,upsetsObserved:30}).status,'review-required');
+assert.equal(assessEnvelope({baselineWinRate:.5,modifiedWinRate:.3,upsetsObserved:30}).status,'review-required');
+assert.equal(assessEnvelope({baselineWinRate:.9,modifiedWinRate:.94,upsetsObserved:6}).status,'within-provisional-outer-screen');
+assert.equal(assessEnvelope({baselineWinRate:.5,modifiedWinRate:1,upsetsObserved:0}).status,'review-required');
+verifyBaseline();
+console.log(JSON.stringify({status:'passed',scenarioCells:matrix.cases.length,featureAvailableCells:matrix.cases.filter(x=>!x.missingFeatures.length).length,
+ blockedCells:matrix.cases.filter(x=>x.missingFeatures.length).length,actualSimulations:0,engineChanges:0,zeroUpsetsTreatedAsUncertain:true}));

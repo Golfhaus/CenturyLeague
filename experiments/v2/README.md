@@ -89,6 +89,6 @@ Reports include within-arm win intervals, paired winner differences, a conservat
 
 The earlier setup evidence is a historical checkpoint from before these features. Baseline defaults remain off and must still reproduce v1.0. Nothing in this pilot adopts v2.0 or changes official competition.
 
-## Larger confidence-only study
+## Shared modifier envelope
 
-`--arms confidence` selects only control, three-win and five-win confidence, leaving all coefficients unchanged. The fixed 6,400-pair / 19,200-run plan and primary five-versus-three analysis are specified in [the precision study plan](../../docs/CONFIDENCE_PRECISION_PLAN_2026_11_11.md). The manifest now records Node/V8/platform/architecture as well as source and inputs; resumption requires that runtime identity. Summary output includes the direct paired five-versus-three win and score-margin contrasts, separately by profile. Default `--arms all` retains the six-condition pilot.
+[The combined modifier plan](../../docs/MODIFIER_ENVELOPE_AND_STRESS_TEST_PLAN.md) replaces isolated acceptance targets with a proposed shared budget and realistic favorable/adverse corners. `envelope-plan.json` is planning data, not engine configuration. `node experiments/v2/validate-envelope.mjs` validates 228 scenario cells and review-only diagnostics; `node experiments/v2/plan-envelope.mjs` reports implementation gates. Neither command simulates matches or changes coefficients. Full-stack effects remain unmeasured until the missing home/weather/trait/halftime mechanisms exist.

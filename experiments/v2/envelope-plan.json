@@ -1,0 +1,443 @@
+{
+  "schema": "century-modifier-envelope-plan-v1",
+  "status": "proposed-test-criteria-not-adopted",
+  "runtimeIntegration": false,
+  "purpose": "Calibrate the whole stack before adopting isolated modifiers; do not clip results or force upsets.",
+  "budgets": {
+    "confidence": {
+      "typicalLiftPoints": [
+        0.5,
+        1.5
+      ],
+      "peakLiftReviewPoints": 3,
+      "nextCandidateScale": 0.35,
+      "candidateStatus": "proposed-not-run",
+      "historicalScale": 1
+    },
+    "homeSupport": {
+      "typicalLiftPoints": [
+        1,
+        2
+      ],
+      "peakLiftReviewPoints": 3,
+      "losingStreakNeutralizesAt": 5
+    },
+    "combinedPsychological": {
+      "peakLiftReviewPoints": 4,
+      "note": "Measure confidence, crowd support and frustration together; no duplicate motivation bonuses."
+    },
+    "frustration": {
+      "peakAbsoluteWinChangeReviewPoints": 1,
+      "mechanism": "Existing foul-severity risk only; preserve Discipline and use incident denominators."
+    },
+    "weather": {
+      "extremeDifferentialReviewPoints": 8,
+      "note": "Shared physical conditions; relative advantage emerges from roster/tactics/rotation, not a team-strength scalar."
+    },
+    "wholeStack": {
+      "ordinaryLiftPoints": [
+        3,
+        5
+      ],
+      "preferredExtremeLiftPoints": 10,
+      "outerExtremeLiftReviewPoints": 15,
+      "balancedBaselineRange": [
+        0.45,
+        0.55
+      ],
+      "preferredFavoredWinRate": 0.6,
+      "outerFavoredWinRateReview": 0.65
+    },
+    "personalMechanisms": {
+      "includedInWholeStackBudget": true,
+      "automaticAbilityBonusAllowed": false,
+      "note": "Halftime decisions and heat/cold traits must be measured, not assumed small; useful tactical changes may have large conditional effects."
+    }
+  },
+  "axes": {
+    "quality": [
+      "matched",
+      "focal-weaker",
+      "focal-stronger"
+    ],
+    "tacticalContext": [
+      "neutral",
+      "pressure"
+    ],
+    "roleSwap": [
+      false,
+      true
+    ]
+  },
+  "environments": {
+    "temperate": {
+      "temperatureC": 18,
+      "relativeHumidity": 55,
+      "windKmh": 5,
+      "gustKmh": 10,
+      "rainMmPerHour": 0,
+      "thermalBand": "neutral"
+    },
+    "wind-wet": {
+      "temperatureC": 17,
+      "relativeHumidity": 85,
+      "windKmh": 35,
+      "gustKmh": 50,
+      "rainMmPerHour": 5,
+      "thermalBand": "neutral"
+    },
+    "cold-wind-wet": {
+      "temperatureC": 4,
+      "relativeHumidity": 90,
+      "windKmh": 35,
+      "gustKmh": 50,
+      "rainMmPerHour": 5,
+      "thermalBand": "cold"
+    },
+    "hot-humid": {
+      "temperatureC": 35,
+      "relativeHumidity": 80,
+      "windKmh": 5,
+      "gustKmh": 10,
+      "rainMmPerHour": 0,
+      "thermalBand": "hot"
+    },
+    "hot-wind-wet": {
+      "temperatureC": 35,
+      "relativeHumidity": 80,
+      "windKmh": 35,
+      "gustKmh": 50,
+      "rainMmPerHour": 5,
+      "thermalBand": "hot"
+    }
+  },
+  "environmentStatus": "Fixed lab scenario candidates only; not live observations, approved playable limits, or an implemented weather response curve.",
+  "scenarios": [
+    {
+      "id": "control",
+      "requires": [],
+      "streaks": [
+        0,
+        0
+      ],
+      "home": null,
+      "environment": "temperate",
+      "weatherFit": "matched",
+      "thermalTraits": "neutral",
+      "adaptation": "off"
+    },
+    {
+      "id": "confidence-peak",
+      "requires": [
+        "confidence"
+      ],
+      "streaks": [
+        5,
+        0
+      ],
+      "home": null,
+      "environment": "temperate",
+      "weatherFit": "matched",
+      "thermalTraits": "neutral",
+      "adaptation": "off"
+    },
+    {
+      "id": "frustration-peak",
+      "requires": [
+        "frustration"
+      ],
+      "streaks": [
+        -5,
+        0
+      ],
+      "home": null,
+      "environment": "temperate",
+      "weatherFit": "matched",
+      "thermalTraits": "neutral",
+      "adaptation": "off"
+    },
+    {
+      "id": "home-only",
+      "requires": [
+        "home-support"
+      ],
+      "streaks": [
+        0,
+        0
+      ],
+      "home": 0,
+      "environment": "temperate",
+      "weatherFit": "matched",
+      "thermalTraits": "neutral",
+      "adaptation": "off"
+    },
+    {
+      "id": "home-losing-five",
+      "requires": [
+        "confidence",
+        "frustration",
+        "home-support"
+      ],
+      "streaks": [
+        -5,
+        5
+      ],
+      "home": 0,
+      "environment": "temperate",
+      "weatherFit": "matched",
+      "thermalTraits": "neutral",
+      "adaptation": "off"
+    },
+    {
+      "id": "psych-favored",
+      "requires": [
+        "confidence",
+        "frustration",
+        "home-support"
+      ],
+      "streaks": [
+        5,
+        -5
+      ],
+      "home": 0,
+      "environment": "temperate",
+      "weatherFit": "matched",
+      "thermalTraits": "neutral",
+      "adaptation": "off"
+    },
+    {
+      "id": "psych-adverse",
+      "requires": [
+        "confidence",
+        "frustration",
+        "home-support"
+      ],
+      "streaks": [
+        -5,
+        5
+      ],
+      "home": 1,
+      "environment": "temperate",
+      "weatherFit": "matched",
+      "thermalTraits": "neutral",
+      "adaptation": "off"
+    },
+    {
+      "id": "wind-wet-matched",
+      "requires": [
+        "weather"
+      ],
+      "streaks": [
+        0,
+        0
+      ],
+      "home": null,
+      "environment": "wind-wet",
+      "weatherFit": "matched",
+      "thermalTraits": "neutral",
+      "adaptation": "off"
+    },
+    {
+      "id": "wind-wet-favored",
+      "requires": [
+        "weather"
+      ],
+      "streaks": [
+        0,
+        0
+      ],
+      "home": null,
+      "environment": "wind-wet",
+      "weatherFit": "focal-favored",
+      "thermalTraits": "neutral",
+      "adaptation": "off"
+    },
+    {
+      "id": "wind-wet-adverse",
+      "requires": [
+        "weather"
+      ],
+      "streaks": [
+        0,
+        0
+      ],
+      "home": null,
+      "environment": "wind-wet",
+      "weatherFit": "opponent-favored",
+      "thermalTraits": "neutral",
+      "adaptation": "off"
+    },
+    {
+      "id": "cold-traits-favored",
+      "requires": [
+        "weather",
+        "temperature-tolerance"
+      ],
+      "streaks": [
+        0,
+        0
+      ],
+      "home": null,
+      "environment": "cold-wind-wet",
+      "weatherFit": "matched",
+      "thermalTraits": "focal-favored",
+      "adaptation": "off"
+    },
+    {
+      "id": "heat-traits-favored",
+      "requires": [
+        "weather",
+        "temperature-tolerance"
+      ],
+      "streaks": [
+        0,
+        0
+      ],
+      "home": null,
+      "environment": "hot-humid",
+      "weatherFit": "matched",
+      "thermalTraits": "focal-favored",
+      "adaptation": "off"
+    },
+    {
+      "id": "adaptation-focal",
+      "requires": [
+        "halftime-adaptation"
+      ],
+      "streaks": [
+        0,
+        0
+      ],
+      "home": null,
+      "environment": "temperate",
+      "weatherFit": "matched",
+      "thermalTraits": "neutral",
+      "adaptation": "focal-only"
+    },
+    {
+      "id": "adaptation-opponent",
+      "requires": [
+        "halftime-adaptation"
+      ],
+      "streaks": [
+        0,
+        0
+      ],
+      "home": null,
+      "environment": "temperate",
+      "weatherFit": "matched",
+      "thermalTraits": "neutral",
+      "adaptation": "opponent-only"
+    },
+    {
+      "id": "adaptation-both",
+      "requires": [
+        "halftime-adaptation"
+      ],
+      "streaks": [
+        0,
+        0
+      ],
+      "home": null,
+      "environment": "temperate",
+      "weatherFit": "matched",
+      "thermalTraits": "neutral",
+      "adaptation": "both"
+    },
+    {
+      "id": "full-favored-cold",
+      "requires": [
+        "confidence",
+        "frustration",
+        "home-support",
+        "weather",
+        "temperature-tolerance",
+        "halftime-adaptation"
+      ],
+      "streaks": [
+        5,
+        -5
+      ],
+      "home": 0,
+      "environment": "cold-wind-wet",
+      "weatherFit": "focal-favored",
+      "thermalTraits": "focal-favored",
+      "adaptation": "focal-only"
+    },
+    {
+      "id": "full-adverse-cold",
+      "requires": [
+        "confidence",
+        "frustration",
+        "home-support",
+        "weather",
+        "temperature-tolerance",
+        "halftime-adaptation"
+      ],
+      "streaks": [
+        -5,
+        5
+      ],
+      "home": 1,
+      "environment": "cold-wind-wet",
+      "weatherFit": "opponent-favored",
+      "thermalTraits": "opponent-favored",
+      "adaptation": "opponent-only"
+    },
+    {
+      "id": "full-favored-heat",
+      "requires": [
+        "confidence",
+        "frustration",
+        "home-support",
+        "weather",
+        "temperature-tolerance",
+        "halftime-adaptation"
+      ],
+      "streaks": [
+        5,
+        -5
+      ],
+      "home": 0,
+      "environment": "hot-wind-wet",
+      "weatherFit": "focal-favored",
+      "thermalTraits": "focal-favored",
+      "adaptation": "focal-only"
+    },
+    {
+      "id": "full-adverse-heat",
+      "requires": [
+        "confidence",
+        "frustration",
+        "home-support",
+        "weather",
+        "temperature-tolerance",
+        "halftime-adaptation"
+      ],
+      "streaks": [
+        -5,
+        5
+      ],
+      "home": 1,
+      "environment": "hot-wind-wet",
+      "weatherFit": "opponent-favored",
+      "thermalTraits": "opponent-favored",
+      "adaptation": "opponent-only"
+    }
+  ],
+  "stages": [
+    "Validate logical scenarios and implementation gates",
+    "Implement shared psychological accounting and fixed weather/trait mechanisms with single-feature checks",
+    "Prespecified corner screening with all conditions retained",
+    "Add leave-one-feature-out ablations to diagnose each selected extreme",
+    "Confirm selected extrema on fresh seeds before acceptance",
+    "Repeat with copied real-club rosters and season histories before adoption"
+  ],
+  "notYetMeasured": [
+    "Combined home/confidence ceiling",
+    "Weather response curves",
+    "Temperature-trait interaction",
+    "Halftime policy interaction",
+    "Actual perfect-storm win probabilities"
+  ]
+}

@@ -88,3 +88,7 @@ The streak runner saves a manifest before simulation and gzip ledgers for every 
 Reports include within-arm win intervals, paired winner differences, a conservative approximate paired interval from Bonferroni-combined Wilson discordance intervals, score margins, foul denominators and local threshold changes. The ordinary paired normal interval is secondary and can be misleading with zero discordance. A pilot of this size cannot reliably settle a 2–4 percentage-point match effect or a very small rare-foul increase; controlled probability sweeps verify the mechanics, and larger fresh-seed studies are required for calibration.
 
 The earlier setup evidence is a historical checkpoint from before these features. Baseline defaults remain off and must still reproduce v1.0. Nothing in this pilot adopts v2.0 or changes official competition.
+
+## Larger confidence-only study
+
+`--arms confidence` selects only control, three-win and five-win confidence, leaving all coefficients unchanged. The fixed 6,400-pair / 19,200-run plan and primary five-versus-three analysis are specified in [the precision study plan](../../docs/CONFIDENCE_PRECISION_PLAN_2026_11_11.md). The manifest now records Node/V8/platform/architecture as well as source and inputs; resumption requires that runtime identity. Summary output includes the direct paired five-versus-three win and score-margin contrasts, separately by profile. Default `--arms all` retains the six-condition pilot.

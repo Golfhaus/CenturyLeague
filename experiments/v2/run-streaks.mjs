@@ -5,11 +5,13 @@ import { Worker } from 'node:worker_threads';
 import { availableParallelism } from 'node:os';
 import { labRoot, baseline, hash, readJSON, atomicJSON, loadEngines, syntheticTeams, sourceFingerprint, verifyBaseline, verifyImportBoundary } from './tools.mjs';
 const args=process.argv.slice(2),opts={};
-for(let i=0;i<args.length;i+=2){assert.ok(['--study-id','--trials','--workers','--date'].includes(args[i])&&args[i+1]&&!args[i+1].startsWith('--'),'Invalid option');assert.ok(!(args[i]in opts),'Duplicate option');opts[args[i]]=args[i+1];}
+for(let i=0;i<args.length;i+=2){assert.ok(['--study-id','--trials','--workers','--date','--arms'].includes(args[i])&&args[i+1]&&!args[i+1].startsWith('--'),'Invalid option');assert.ok(!(args[i]in opts),'Duplicate option');opts[args[i]]=args[i+1];}
 const studyId=opts['--study-id'],trials=Number(opts['--trials']??64),workers=Number(opts['--workers']??Math.min(4,availableParallelism())),matchDate=opts['--date']??'2026-11-11';
 assert.match(studyId??'',/^[a-z0-9][a-z0-9-]{0,79}$/);
 assert.ok(Number.isSafeInteger(trials)&&trials>=2&&trials<=10000&&trials%2===0,'Even trials required');
 assert.ok(Number.isSafeInteger(workers)&&workers>=1&&workers<=8,'Use 1–8 workers');
+const armSet=opts['--arms']??'all';
+assert.ok(['all','confidence'].includes(armSet),'Use --arms all or confidence');
 const e=await loadEngines(),sourceSHA256=sourceFingerprint();
 const [a]=syntheticTeams(e);
 const mirror=(id,pressure)=>{
@@ -21,7 +23,7 @@ const mirror=(id,pressure)=>{
  return{id,teams:[first,second]};
 };
 const profiles=[mirror('neutral',false),mirror('pressure',true)];
-const arms=[
+const allArms=[
  {id:'control',enabled:[],focal:0,opponent:0},
  {id:'confidence-3',enabled:['confidence'],focal:3,opponent:0},
  {id:'confidence-5',enabled:['confidence'],focal:5,opponent:0},
@@ -29,15 +31,17 @@ const arms=[
  {id:'frustration-5',enabled:['frustration'],focal:-5,opponent:0},
  {id:'combined-3',enabled:['confidence','frustration'],focal:3,opponent:-3}
 ];
+const arms=armSet==='confidence'?allArms.filter(arm=>['control','confidence-3','confidence-5'].includes(arm.id)):allArms;
 const fixtures=profiles.flatMap(profile=>Array.from({length:trials},(_,trial)=>({id:`${studyId}-${profile.id}-${trial}`,profile:profile.id,trial,swap:Boolean(trial%2),seed:`century-streak-study:${studyId}:${profile.id}:${trial}`})));
 const coefficients={confidenceOddsPerExtraWin:.005,confidenceOddsCap:.02,frustrationRelativePerExtraLoss:.02,frustrationRelativeCap:.08,disciplineDamping:'(21 - Discipline) / 20',scales:[1,1],baselineSeverityProbability:.09};
-const manifest={schema:'century-streak-study-v1',classification:'lab-only',studyId,experiment:'confidence-frustration-pilot',baselineCommit:baseline.sourceCommit,sourceSHA256,matchDate,
+const manifest={schema:'century-streak-study-v1',classification:'lab-only',studyId,experiment:armSet==='confidence'?'confidence-precision-study':'confidence-frustration-pilot',armSet,runtime:{node:process.version,v8:process.versions.v8,platform:process.platform,arch:process.arch},baselineCommit:baseline.sourceCommit,sourceSHA256,matchDate,
  profiles,profilesSHA256:hash(JSON.stringify(profiles)),arms,coefficients,fixtures,trialsPerProfile:trials,
  stoppingRule:'Complete all prespecified fixtures and arms, retain every outcome; no outcome-based tuning or stopping.',
  seedPolicy:'Matched seeds across arms; side-balanced independent trials. Divergent decisions can desynchronize later draws.',
  replayPolicy:'Full replay of first fixture of each profile/arm; every saved result replays on resumption. Frozen v1.0 control checked for first fixture per profile.',
  interpretation:'Synthetic mirror-roster pilot, not actual club performance. Within-arm weather/home/halftime effects absent. No persistent histories.',
- thresholds:'No win-rate acceptance threshold is applied to this small pilot. Report observed effects and uncertainty; use fresh seeds for confirmation.'};
+ analysisPlan:{primaryContrast:'confidence-5 minus confidence-3 focal win probability on the same fixtures',primaryInterval:'Paired mean difference +/- 1.96 estimated standard errors; large-sample approximation',secondary:['Each confidence arm versus control','Paired score-margin differences','Separate neutral/pressure profile estimates'],priorDiscordancePlanningEstimate:.324,precisionDesign:'6400 independent matched fixture seeds target approximately 1.4 percentage-point 95% half-width and about 80% power for a 2-point difference, conditional on prior discordance estimate. Not guaranteed.',decisionPolicy:'No coefficient changes or outcome-dependent stopping. Direction supported only if the primary 95% interval excludes zero; otherwise report unresolved direction, not equivalence or an engine bug.'},
+ thresholds:'Report observed effects and uncertainty; no result-dependent stopping or adopted-coefficient decision.'};
 const dir=path.join(labRoot,'runs',studyId);fs.mkdirSync(dir,{recursive:true});
 const manifestPath=path.join(dir,'manifest.json');
 if(fs.existsSync(manifestPath))assert.deepEqual(readJSON(manifestPath),manifest,'Study changed; choose new study ID');else atomicJSON(manifestPath,manifest,true);
@@ -52,14 +56,15 @@ try {
    worker.on('message',message=>{
     if(failed)return;if(message.error){fail(Error(`${message.fixtureId}: ${message.error}`));return;}
     records.push(message.record);resumed+=Number(message.resumed);finished++;
-    if(finished%16===0||finished===fixtures.length)console.log(JSON.stringify({completedFixtures:finished,totalFixtures:fixtures.length,engineResults:finished*arms.length}));
+    if(finished%(fixtures.length>=1000?128:16)===0||finished===fixtures.length)console.log(JSON.stringify({completedFixtures:finished,totalFixtures:fixtures.length,engineResults:finished*arms.length}));
     if(finished===fixtures.length){resolve();return;}if(next<fixtures.length)worker.postMessage(fixtures[next++]);
    });
    if(next<fixtures.length)worker.postMessage(fixtures[next++]);
   }
  });
 }finally{await Promise.all(pool.map(worker=>worker.terminate()));}
-records.sort((a,b)=>fixtures.findIndex(x=>x.id===a.fixture.id)-fixtures.findIndex(x=>x.id===b.fixture.id));
+const fixtureOrder=new Map(fixtures.map((fixture,index)=>[fixture.id,index]));
+records.sort((a,b)=>fixtureOrder.get(a.fixture.id)-fixtureOrder.get(b.fixture.id));
 verifyBaseline();verifyImportBoundary();assert.equal(sourceFingerprint(),sourceSHA256,'Source changed during study');
 const sum=(rows,key)=>rows.reduce((s,row)=>s+row[key],0);
 function wilson(successes,n,z=1.96){
@@ -90,10 +95,20 @@ function summarize(subset){
  });
  return summaries;
 }
+function pairedContrast(subset,caseId='confidence-5',referenceId='confidence-3') {
+ const n=subset.length;const differences=subset.map(record=>record.arms.find(arm=>arm.id===caseId).focalWin-record.arms.find(arm=>arm.id===referenceId).focalWin);
+ const delta=differences.reduce((s,x)=>s+x,0)/n;
+ const variance=differences.reduce((s,x)=>s+(x-delta)**2,0)/Math.max(1,n-1),se=Math.sqrt(variance/n);
+ const marginDifferences=subset.map(record=>{const a=record.arms.find(arm=>arm.id===caseId),b=record.arms.find(arm=>arm.id===referenceId);return(a.focalScore-a.opponentScore)-(b.focalScore-b.opponentScore);});
+ const marginDelta=marginDifferences.reduce((s,x)=>s+x,0)/n;
+ const marginSE=Math.sqrt(marginDifferences.reduce((s,x)=>s+(x-marginDelta)**2,0)/Math.max(1,n-1)/n);
+ return{caseId,referenceId,matchedFixtures:n,winRateDifference:delta,standardError:se,approximate95:[Math.max(-1,delta-1.96*se),Math.min(1,delta+1.96*se)],improved:differences.filter(x=>x===1).length,worsened:differences.filter(x=>x===-1).length,unchanged:differences.filter(x=>x===0).length,meanScoreMarginDifference:marginDelta,scoreMarginDifference95:[marginDelta-1.96*marginSE,marginDelta+1.96*marginSE],intervalCaution:n<1000?'Exploratory small-sample approximation; do not use zero discordance as proof of no effect.':'Prespecified large-sample paired interval across independent matched fixture seeds.'};
+}
 const summary={schema:'century-streak-pilot-summary-v1',studyId,status:'completed',classification:'lab-only',sourceSHA256,
+ experiment:manifest.experiment,armSet,runtime:manifest.runtime,analysisPlan:manifest.analysisPlan,primaryContrast:pairedContrast(records),profilePrimaryContrasts:profiles.map(profile=>({id:profile.id,...pairedContrast(records.filter(record=>record.fixture.profile===profile.id))})),
  matchedFixtures:fixtures.length,engineResults:fixtures.length*arms.length,fullReplays:profiles.length*arms.length,frozenControls:profiles.length,resumedFixtures:resumed,
  coefficients,arms:summarize(records),profiles:profiles.map(profile=>({id:profile.id,arms:summarize(records.filter(r=>r.fixture.profile===profile.id))})),
- interpretation:manifest.interpretation,limitations:['Small synthetic pilot; intervals may be wider than the proposed 2–4 percentage-point confidence target.','Aggregate serious-foul model only; no explicit retaliation taxonomy.','Severity rates condition on observed foul opportunities; match trajectories and denominators can change.','Paired intervals are approximate; the conservative Wilson combination is the primary interval, especially with few discordant winners.','No player-rating changes, official writes, live weather calls, calibration acceptance or adoption.'],
+ interpretation:manifest.interpretation,limitations:['Synthetic mirror-roster study, not a survey of actual club strengths or all possible roster/coach profiles.','Aggregate serious-foul model only; no explicit retaliation taxonomy.','Severity rates condition on observed foul opportunities; match trajectories and denominators can change.','Paired intervals are approximate; the conservative Wilson combination is the primary interval, especially with few discordant winners.','No player-rating changes, official writes, live weather calls, calibration acceptance or adoption.'],
  records};
 const summaryFile=path.join(dir,'summary.json');
 // Resumption is operational metadata; immutable sporting results and manifest remain fixed.

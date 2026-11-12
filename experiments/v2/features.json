@@ -20,9 +20,10 @@
     },
     {
       "id": "home-support",
-      "status": "planned",
+      "status": "implemented",
       "phase": 1,
-      "measure": "Home versus neutral comparison; crowd effect vanishes after five losses; confidence disabled in isolated test."
+      "measure": "Home versus neutral comparison; crowd effect vanishes after five losses; confidence disabled in isolated test.",
+      "approval": "lab-only candidate; not calibrated or adopted"
     },
     {
       "id": "halftime-adaptation",
@@ -121,6 +122,10 @@
     "streak-pilot": {
       "status": "ready",
       "goal": "Separate and combined confidence/frustration arms; pinned coefficients, exposures, paired outcomes and uncertainty."
+    },
+    "shared-psychology": {
+      "status": "ready",
+      "goal": "Reduced confidence, home support and shared ceiling; isolated and combined matched comparisons; no match-outcome clamp."
     }
   }
 }

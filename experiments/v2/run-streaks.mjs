@@ -11,7 +11,7 @@ assert.match(studyId??'',/^[a-z0-9][a-z0-9-]{0,79}$/);
 assert.ok(Number.isSafeInteger(trials)&&trials>=2&&trials<=10000&&trials%2===0,'Even trials required');
 assert.ok(Number.isSafeInteger(workers)&&workers>=1&&workers<=8,'Use 1–8 workers');
 const armSet=opts['--arms']??'all';
-assert.ok(['all','confidence'].includes(armSet),'Use --arms all or confidence');
+assert.ok(['all','confidence','psychology','psychology-peak'].includes(armSet),'Use --arms all, confidence, psychology or psychology-peak');
 const e=await loadEngines(),sourceSHA256=sourceFingerprint();
 const [a]=syntheticTeams(e);
 const mirror=(id,pressure)=>{
@@ -31,16 +31,28 @@ const allArms=[
  {id:'frustration-5',enabled:['frustration'],focal:-5,opponent:0},
  {id:'combined-3',enabled:['confidence','frustration'],focal:3,opponent:-3}
 ];
-const arms=armSet==='confidence'?allArms.filter(arm=>['control','confidence-3','confidence-5'].includes(arm.id)):allArms;
+const psychological=armSet.startsWith('psychology');
+const sharedPolicy={version:'shared-psych-v1',homeOddsBonus:.004,maximumOddsBonus:.009};
+const confidenceScale=psychological ? 0.35 : 1;
+const psychArms=[
+ ...allArms.filter(arm=>['control','confidence-3','confidence-5'].includes(arm.id)).map(arm=>({...arm,home:null})),
+ {id:'home-ordinary',enabled:['home-support'],focal:0,opponent:0,home:'focal'},
+ {id:'home-hot-5',enabled:['home-support'],focal:5,opponent:0,home:'focal'},
+ {id:'shared-hot-5',enabled:['confidence','home-support'],focal:5,opponent:0,home:'focal'},
+ {id:'shared-full-5',enabled:['confidence','frustration','home-support'],focal:5,opponent:-5,home:'focal'},
+ {id:'home-losing-5',enabled:['home-support'],focal:-5,opponent:0,home:'focal'},
+ {id:'shared-adverse-5',enabled:['confidence','frustration','home-support'],focal:-5,opponent:5,home:'opponent'}
+];
+const arms=armSet==='psychology'?psychArms:armSet==='psychology-peak'?psychArms.filter(arm=>['control','confidence-5','shared-full-5'].includes(arm.id)):armSet==='confidence'?allArms.filter(arm=>['control','confidence-3','confidence-5'].includes(arm.id)):allArms;
 const fixtures=profiles.flatMap(profile=>Array.from({length:trials},(_,trial)=>({id:`${studyId}-${profile.id}-${trial}`,profile:profile.id,trial,swap:Boolean(trial%2),seed:`century-streak-study:${studyId}:${profile.id}:${trial}`})));
-const coefficients={confidenceOddsPerExtraWin:.005,confidenceOddsCap:.02,frustrationRelativePerExtraLoss:.02,frustrationRelativeCap:.08,disciplineDamping:'(21 - Discipline) / 20',scales:[1,1],baselineSeverityProbability:.09};
-const manifest={schema:'century-streak-study-v1',classification:'lab-only',studyId,experiment:armSet==='confidence'?'confidence-precision-study':'confidence-frustration-pilot',armSet,runtime:{node:process.version,v8:process.versions.v8,platform:process.platform,arch:process.arch},baselineCommit:baseline.sourceCommit,sourceSHA256,matchDate,
+const coefficients={confidenceOddsPerExtraWin:.005,confidenceOddsCap:.02,frustrationRelativePerExtraLoss:.02,frustrationRelativeCap:.08,disciplineDamping:'(21 - Discipline) / 20',scales:[confidenceScale,1],baselineSeverityProbability:.09,...(psychological?{sharedPsychology:sharedPolicy}:{} )};
+const manifest={schema:'century-streak-study-v1',classification:'lab-only',studyId,experiment:psychological?'shared-psychology-study':armSet==='confidence'?'confidence-precision-study':'confidence-frustration-pilot',armSet,runtime:{node:process.version,v8:process.versions.v8,platform:process.platform,arch:process.arch},baselineCommit:baseline.sourceCommit,sourceSHA256,matchDate,
  profiles,profilesSHA256:hash(JSON.stringify(profiles)),arms,coefficients,fixtures,trialsPerProfile:trials,
  stoppingRule:'Complete all prespecified fixtures and arms, retain every outcome; no outcome-based tuning or stopping.',
  seedPolicy:'Matched seeds across arms; side-balanced independent trials. Divergent decisions can desynchronize later draws.',
  replayPolicy:'Full replay of first fixture of each profile/arm; every saved result replays on resumption. Frozen v1.0 control checked for first fixture per profile.',
- interpretation:'Synthetic mirror-roster pilot, not actual club performance. Within-arm weather/home/halftime effects absent. No persistent histories.',
- analysisPlan:{primaryContrast:'confidence-5 minus confidence-3 focal win probability on the same fixtures',primaryInterval:'Paired mean difference +/- 1.96 estimated standard errors; large-sample approximation',secondary:['Each confidence arm versus control','Paired score-margin differences','Separate neutral/pressure profile estimates'],priorDiscordancePlanningEstimate:.324,precisionDesign:'6400 independent matched fixture seeds target approximately 1.4 percentage-point 95% half-width and about 80% power for a 2-point difference, conditional on prior discordance estimate. Not guaranteed.',decisionPolicy:'No coefficient changes or outcome-dependent stopping. Direction supported only if the primary 95% interval excludes zero; otherwise report unresolved direction, not equivalence or an engine bug.'},
+ interpretation:psychological?'Synthetic mirror-roster shared-psychology study; home support only in explicitly named arms. Weather, temperature traits and halftime adaptation absent. No official histories.':'Synthetic mirror-roster pilot, not actual club performance. Within-arm weather/home/halftime effects absent. No persistent histories.',
+ analysisPlan:{primaryContrast:psychological?'shared-full-5 minus control focal win probability on the same fixtures':'confidence-5 minus confidence-3 focal win probability on the same fixtures',primaryInterval:'Paired mean difference +/- 1.96 estimated standard errors; large-sample approximation',secondary:['Each confidence arm versus control','Paired score-margin differences','Separate neutral/pressure profile estimates'],priorDiscordancePlanningEstimate:.324,precisionDesign:psychological?'Exploratory screening followed by fixed fresh-seed confirmation; not a certification that the true psychological lift is below four points.':'6400 independent matched fixture seeds target approximately 1.4 percentage-point 95% half-width and about 80% power for a 2-point difference, conditional on prior discordance estimate. Not guaranteed.',decisionPolicy:'No coefficient changes or outcome-dependent stopping. Direction supported only if the primary 95% interval excludes zero; otherwise report unresolved direction, not equivalence or an engine bug.'},
  thresholds:'Report observed effects and uncertainty; no result-dependent stopping or adopted-coefficient decision.'};
 const dir=path.join(labRoot,'runs',studyId);fs.mkdirSync(dir,{recursive:true});
 const manifestPath=path.join(dir,'manifest.json');
@@ -51,7 +63,7 @@ try {
   let finished=0,failed=false;
   function fail(error){if(!failed){failed=true;reject(error);}}
   for(let index=0;index<Math.min(workers,fixtures.length);index++) {
-   const worker=new Worker(new URL('./streak-worker.mjs',import.meta.url),{workerData:{dir,profiles,arms,matchDate}});pool.push(worker);
+   const worker=new Worker(new URL('./streak-worker.mjs',import.meta.url),{workerData:{dir,profiles,arms,matchDate,confidenceScale,...(psychological?{sharedPolicy}:{} )}});pool.push(worker);
    worker.on('error',fail);worker.on('exit',code=>{if(code!==0&&!failed&&finished<fixtures.length)fail(Error(`Worker exited ${code}`));});
    worker.on('message',message=>{
     if(failed)return;if(message.error){fail(Error(`${message.fixtureId}: ${message.error}`));return;}
@@ -105,7 +117,7 @@ function pairedContrast(subset,caseId='confidence-5',referenceId='confidence-3')
  return{caseId,referenceId,matchedFixtures:n,winRateDifference:delta,standardError:se,approximate95:[Math.max(-1,delta-1.96*se),Math.min(1,delta+1.96*se)],improved:differences.filter(x=>x===1).length,worsened:differences.filter(x=>x===-1).length,unchanged:differences.filter(x=>x===0).length,meanScoreMarginDifference:marginDelta,scoreMarginDifference95:[marginDelta-1.96*marginSE,marginDelta+1.96*marginSE],intervalCaution:n<1000?'Exploratory small-sample approximation; do not use zero discordance as proof of no effect.':'Prespecified large-sample paired interval across independent matched fixture seeds.'};
 }
 const summary={schema:'century-streak-pilot-summary-v1',studyId,status:'completed',classification:'lab-only',sourceSHA256,
- experiment:manifest.experiment,armSet,runtime:manifest.runtime,analysisPlan:manifest.analysisPlan,primaryContrast:pairedContrast(records),profilePrimaryContrasts:profiles.map(profile=>({id:profile.id,...pairedContrast(records.filter(record=>record.fixture.profile===profile.id))})),
+ experiment:manifest.experiment,armSet,runtime:manifest.runtime,analysisPlan:manifest.analysisPlan,primaryContrast:pairedContrast(records,psychological?'shared-full-5':'confidence-5',psychological?'control':'confidence-3'),profilePrimaryContrasts:profiles.map(profile=>({id:profile.id,...pairedContrast(records.filter(record=>record.fixture.profile===profile.id),psychological?'shared-full-5':'confidence-5',psychological?'control':'confidence-3')})),
  matchedFixtures:fixtures.length,engineResults:fixtures.length*arms.length,fullReplays:profiles.length*arms.length,frozenControls:profiles.length,resumedFixtures:resumed,
  coefficients,arms:summarize(records),profiles:profiles.map(profile=>({id:profile.id,arms:summarize(records.filter(r=>r.fixture.profile===profile.id))})),
  interpretation:manifest.interpretation,limitations:['Synthetic mirror-roster study, not a survey of actual club strengths or all possible roster/coach profiles.','Aggregate serious-foul model only; no explicit retaliation taxonomy.','Severity rates condition on observed foul opportunities; match trajectories and denominators can change.','Paired intervals are approximate; the conservative Wilson combination is the primary interval, especially with few discordant winners.','No player-rating changes, official writes, live weather calls, calibration acceptance or adoption.'],

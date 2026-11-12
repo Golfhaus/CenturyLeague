@@ -21,7 +21,7 @@ parentPort.on('message',fixture=>{
     const results={},arms=[];
     for(const arm of workerData.arms) {
       const streaks=[0,0];streaks[focalSide]=arm.focal;streaks[opposingSide]=arm.opponent;
-      const input={...structuredClone(base),lab:{enabled:arm.enabled,streaks,confidenceScale:1,frustrationScale:1}};
+      const input={...structuredClone(base),lab:{enabled:arm.enabled,streaks,confidenceScale:workerData.confidenceScale??1,frustrationScale:1,...(workerData.sharedPolicy?{psychology:{...workerData.sharedPolicy,homeSide:arm.home==='focal'?focalSide:arm.home==='opponent'?opposingSide:null}}:{})}};
       const result=saved?saved.results[arm.id]:e.simulateV2(input);
       assert.ok(result && result.engineVersion==='2.0.0-lab');
       assert.equal(hash(JSON.stringify(result.input)),hash(JSON.stringify(input)),'Saved input differs');
@@ -42,9 +42,16 @@ parentPort.on('message',fixture=>{
         severityThresholdChanges:t.severity.reduce((s,c)=>s+c.immediateOutcomesChanged,0),
         confidenceChecks:Object.values(t.confidence).flat().reduce((s,c)=>s+c.opportunities,0),
         confidenceThresholdChanges:Object.values(t.confidence).flat().reduce((s,c)=>s+c.immediateOutcomesChanged,0),
+        ...(t.psychology?{psychologyContributions:t.psychology.contributions,homeSide:input.lab.psychology.homeSide}:{}),
         confidenceProbabilityShiftSum:Object.values(t.confidence).flat().reduce((s,c)=>s+c.adjustedProbabilitySum-c.baselineProbabilitySum,0),
         resultSHA256:hash(JSON.stringify(result))});
     }
+    if(results['home-losing-5']) {
+      const sporting = r => JSON.stringify({events:r.events,scores:r.scores,quarters:r.quarters,players:r.players,teamStats:r.teamStats,playingSeconds:r.playingSeconds,elapsedSeconds:r.elapsedSeconds});
+      assert.equal(hash(sporting(results['control'])),hash(sporting(results['home-losing-5'])),'Losing home support failed exact neutralization');
+    }
+    for(const r of Object.values(results))for(const c of r.labTelemetry.psychology?.contributions??[])
+      assert.ok(c.appliedOddsBonus<=r.input.lab.psychology.maximumOddsBonus,'Shared psychological cap exceeded');
     assert.equal(JSON.stringify(base),snapshot,'Copied input mutated');
     const record={fixture,arms};
     if(saved)assert.deepEqual(saved.record,record,'Saved summary differs');

@@ -12,7 +12,7 @@ import type { MatchConfig, MatchInput, MatchEvent, MatchPlayer, MatchResult,
 
 export const LAB_ENGINE_VERSION = '2.0.0-lab';
 const MATCH_ENGINE_VERSION = LAB_ENGINE_VERSION;
-import { resolveStreakSettings, confidenceProbability, seriousFoulProbability, counter, recordProbability, telemetry } from './streaks.js';
+import { resolveStreakSettings, psychologicalProbability, seriousFoulProbability, counter, recordProbability, telemetry } from './streaks.js';
 import type { StreakSettings, ResolvedStreakSettings, StreakTelemetry } from './streaks.js';
 export interface LabMatchInput extends CompetitiveMatchInput { lab?: StreakSettings }
 export interface LabMatchResult extends MatchResult { labTelemetry?: StreakTelemetry }
@@ -95,9 +95,8 @@ class AvailabilityMatch {
     return chosen;
   }
   private executionProbability(probability: number, side: Side, category: string, opposing = false): number {
-    if (!this.settings.enabled.includes('confidence')) return probability;
-    return confidenceProbability(probability, this.settings.streaks[side],
-      opposing ? this.settings.streaks[other(side)] : 0, this.settings.confidenceScale);
+    if (!this.settings.enabled.includes('confidence') && !this.settings.enabled.includes('home-support')) return probability;
+    return psychologicalProbability(probability, this.settings, side, opposing);
   }
   private executionRoll(probability: number, side: Side, category: string, opposing = false): number {
     const adjusted = this.executionProbability(probability, side, category, opposing);

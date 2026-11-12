@@ -92,3 +92,7 @@ The earlier setup evidence is a historical checkpoint from before these features
 ## Shared modifier envelope
 
 [The combined modifier plan](../../docs/MODIFIER_ENVELOPE_AND_STRESS_TEST_PLAN.md) replaces isolated acceptance targets with a proposed shared budget and realistic favorable/adverse corners. `envelope-plan.json` is planning data, not engine configuration. `node experiments/v2/validate-envelope.mjs` validates 228 scenario cells and review-only diagnostics; `node experiments/v2/plan-envelope.mjs` reports implementation gates. Neither command simulates matches or changes coefficients. Full-stack effects remain unmeasured until the missing home/weather/trait/halftime mechanisms exist.
+
+## Shared psychological candidate
+
+The [November 12 shared-psychology plan](../../docs/SHARED_PSYCHOLOGY_STUDY_PLAN_2026_11_12.md) implements home support and reduced confidence under an explicit `shared-psych-v1` input policy. `--arms psychology` screens nine conditions; `--arms psychology-peak` confirms three selected-in-advance conditions. Legacy `--arms all` and `--arms confidence` preserve their original calculations. `node experiments/v2/validate-psychology.mjs` checks neutralization, saturation and replay. Home support is now lab-implemented; weather, temperature tolerance and halftime adaptation remain planned. The legacy telemetry field named `confidence` records the shared execution checks in the new policy; `psychology.contributions` distinguishes confidence, home support and cap saturation.

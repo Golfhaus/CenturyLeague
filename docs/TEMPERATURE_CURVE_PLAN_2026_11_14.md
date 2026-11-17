@@ -1,0 +1,23 @@
+# Temperature response and normal tolerance screen
+
+Lab only; follows the completed copied-club heat validation. No coefficient, official coach, rating, v1.0 file, deployment or result changes. The 0.35 tolerance setting remains a provisional comparison, not the default.
+
+## Fixed design before execution
+
+Study `copied-club-temperature-curve-001`: the same four canonical pair profiles and eight copied clubs as before, **256 fresh matched seeds per pairing**, split equally between simulation sides. **1,024 fixture clusters × 10 arms = 10,240 outcomes**, fixed before execution. No earlier outcomes are pooled, no seed replacements, no tuning or outcome-dependent stopping/expansion. A new study-specific seed namespace prevents reuse.
+
+One common 18 C control (mean tolerance, traits disabled) and 28/32/35 C, each with (a) shared weather/mean tolerance, (b) normal traits with original 0.50 moderation, (c) the same traits with provisional 0.35 moderation. All conditions pin 80% humidity, no wind/rain/gusts, alternate-quarter ends, healthy lab availability, original tactics, match date 2026-11-14 and disabled psychology. At 18 C, normal traits must be exactly neutral in preflight; do not simulate duplicate identity arms in the research sample.
+
+Normal traits reuse the existing player-ID seeded independent heat/cold draw method: mean .5, SD .15, clipped [.1,.9]. The exact same player traits are retained across temperature, side and coefficient variants. Only the impact of the heat trait is active here. Do not regenerate a favorable population. These fixed copied squads are not a sample of every possible trait allocation.
+
+Primary family: at 28/32/35 C under provisional 0.35 normal traits, paired difference from temperate in fixture mean time-weighted active energy. Each fixture's measure is the arithmetic mean of its two clubs' energy-seconds / active-player-seconds, giving equal club weight. Pool the four equally sized pairings; no signed winner-margin pooling. Bonferroni approximate 95% family intervals across three contrasts, z = NormalDist.inv_cdf(1-.05/6). This is a physical-response diagnostic screen, not a fresh high-precision winner-rate confirmation. Report between-fixture sample uncertainty conditional on these fixed squads/traits; pooling does not imply league-representative clubs.
+
+Secondary: temperature-response curves for mean tolerance and normal 0.50; adjacent increments; normal 0.35 versus same-temperature mean tolerance and versus normal 0.50. Report paired nominal intervals for physical diagnostics, and all 12 matchup × temperature winner/margin contrasts under normal 0.35 with family protection: score z = NormalDist.inv_cdf(1-.05/24), win Wilson discordance z = NormalDist.inv_cdf(1-.05/48). Also report trait-specific winner/margin changes under 0.35 versus mean tolerance and 0.50, explicitly exploratory nominal intervals, per side. Preserve all arms and uncertainty; no selecting the most reassuring estimate. Winner intervals will be wide with 256 seeds per matchup and cannot certify an eight/fifteen-point ceiling or validate a tiny normal-trait effect.
+
+Report energy/fatigue, duration, scoring and shot denominators; direct heat-only weather execution penalties must remain zero (energy can alter upstream execution quality). Held-state fatigue/recovery factors must increase/decrease smoothly at 28/32/35 C with no extra RNG draws. Actual match-level curves may fluctuate as actions, rotation and duration change. Do not force monotonic match outcomes or reinterpret a chance winner fluctuation as a discontinuity.
+
+## Qualification, integrity and delivery
+
+Before research: construction/role checks for every arm and side, exact neutral normal-trait parity, trait identity across variants, expected held-state multipliers, mean-trait neutrality, rosters immutable, four exact historical result replays, save/resume and corrupt telemetry rejection. Qualified no-Maglev parent/workers; preserve the 64-file lock. Fully replay first two fixtures per pairing/arm and frozen v1 controls. Audit every saved clock, input, score, statistic and retained checksum; independently recompute primary/family winner contrasts from compact CSV. Full gzip/CRC and result-hash audits remain a separate stage.
+
+Use the existing supervisor: 15-second heartbeat and 300-second no-checkpoint-progress deadline. A failure preserves checkpoints, does not automatically reroll or retry, and is reported separately from completed computation. Keep the report/data bundle small; full ledgers and bulk saving remain separate. Keep 0.35 provisional; any later coefficient change, extreme/full-stack confirmation or adoption requires its own fixed plan.

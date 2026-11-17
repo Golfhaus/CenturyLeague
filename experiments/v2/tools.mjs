@@ -37,6 +37,7 @@ function walk(dir) {
 const allowed = new Set([
   'experiments/v2/src/engine.ts',
   'experiments/v2/src/streaks.ts',
+  'experiments/v2/src/weather.ts',
   'packages/simulation-core/src/match/input.ts',
   'packages/simulation-core/src/match/scoring.ts',
   'packages/simulation-core/src/match/statistics.ts',
@@ -94,14 +95,14 @@ export function buildLab() {
 export async function loadEngines(rebuild = true) {
   const root = rebuild ? buildLab() : path.join(labRoot, 'build');
   const load = relative => import(pathToFileURL(path.join(root, relative)).href);
-  const [v1, v2, availability, types, random, scoring, statistics, streaks] = await Promise.all([
+  const [v1, v2, availability, types, random, scoring, statistics, streaks, weather] = await Promise.all([
     load('packages/simulation-core/src/competitive/engine.js'), load('experiments/v2/src/engine.js'),
     load('packages/simulation-core/src/competitive/availability.js'), load('packages/simulation-core/src/types.js'),
     load('packages/simulation-core/src/random.js'), load('packages/simulation-core/src/match/scoring.js'),
-    load('packages/simulation-core/src/match/statistics.js'), load('experiments/v2/src/streaks.js')
+    load('packages/simulation-core/src/match/statistics.js'), load('experiments/v2/src/streaks.js'), load('experiments/v2/src/weather.js')
   ]);
   return { simulateV1: v1.simulateCompetitiveMatch, simulateV2: v2.simulateLabMatch,
-    ...availability, ...types, ...random, ...scoring, ...statistics, ...streaks };
+    ...availability, ...types, ...random, ...scoring, ...statistics, ...streaks, ...weather };
 }
 
 export function sourceFingerprint() {

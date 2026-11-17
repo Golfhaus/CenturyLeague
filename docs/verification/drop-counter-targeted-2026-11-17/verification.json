@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "pairedClusters": 256,
+  "outcomes": 1024,
+  "exactFutureReplays": 64,
+  "sourceSHA256": "b888ec93d27ffd5df599f3f8106f606e738295b0521de51d3c0cc5dacc7ad1d0",
+  "harnessSHA256": "1a6d6c810a58988b76a08b97ba529692cd6f65bea832791d43b513fd3b13e3f8",
+  "outcomesCSVSHA256": "1f678131400dd3e5a140776d7c34e14ccb4a719f06fb05351b854c4203f10f75",
+  "historicalCompactMetricMatches": 1248,
+  "historicalEventByteMatchClaimed": false,
+  "scientificRetries": 0,
+  "seedReplacement": false,
+  "sampleExtended": false,
+  "officialGameplayChanged": false,
+  "sourceCommitBeforeOutcomes": "44688c6",
+  "computationSeconds": 179.78,
+  "auditSeconds": 25.48,
+  "sourcePublication": "blocked-by-automatic-approval-review; no retry; branch absent on read-only check",
+  "limits": "Conditional fixed-history maximal-pressure 50-48 states only. One fixed primary contrast with conservative distribution-free 95% bounds; components, interaction, margins and subgroup splits are descriptive. New recovered adapter; compact historical metrics matched, not full historical event bytes. No policy revision, natural coaching frequency, pre-match modifier effect or official adoption."
+}

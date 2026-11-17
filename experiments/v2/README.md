@@ -1,5 +1,7 @@
 # Century engine laboratory — v2.0
 
+Current weather milestone: fixed-weather-v1 implements default-off shared wind/rain, thermal fatigue/recovery and separate heat/cold traits. These are explicitly bounded laboratory hypotheses, not empirical Century coefficients or approved playable-weather limits. See [the fixed screen plan](../../docs/WEATHER_THERMAL_SCREEN_PLAN_2026_11_13.md). Historical sections below preserve earlier feature status; halftime adaptation remains unimplemented. `--arms psychology-weather` is the separately named copied-club weather screen. Calm weather and disabled features preserve prior sporting results exactly; old studies replay from their pinned source.
+
 The active inaugural tournament is **v1.0**. The separate candidate being developed here is **v2.0**. This directory is an experimental setup, not an adopted gameplay release.
 
 ## Release labels and historical compatibility

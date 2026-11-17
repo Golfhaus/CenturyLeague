@@ -33,18 +33,20 @@
     },
     {
       "id": "weather",
-      "status": "planned",
+      "status": "implemented",
       "phase": 1,
-      "measure": "Fixed weather scenarios before live retrieval; inspect action-specific effects and fatigue."
+      "measure": "Fixed weather scenarios before live retrieval; inspect action-specific effects and fatigue.",
+      "approval": "fixed-weather-v1 lab hypothesis only; not calibrated or adopted"
     },
     {
       "id": "temperature-tolerance",
-      "status": "planned",
+      "status": "implemented",
       "phase": 1,
       "dependsOn": [
         "weather"
       ],
-      "measure": "Independent heat/cold traits with modest situational effects; no changes to the existing 25 ratings."
+      "measure": "Independent heat/cold traits with modest situational effects; no changes to the existing 25 ratings.",
+      "approval": "fixed-weather-v1 lab hypothesis only; not calibrated or adopted"
     },
     {
       "id": "chemistry",

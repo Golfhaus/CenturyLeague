@@ -14,8 +14,15 @@ export const LAB_ENGINE_VERSION = '2.0.0-lab';
 const MATCH_ENGINE_VERSION = LAB_ENGINE_VERSION;
 import { resolveStreakSettings, psychologicalProbability, seriousFoulProbability, counter, recordProbability, telemetry } from './streaks.js';
 import type { StreakSettings, ResolvedStreakSettings, StreakTelemetry } from './streaks.js';
-export interface LabMatchInput extends CompetitiveMatchInput { lab?: StreakSettings }
-export interface LabMatchResult extends MatchResult { labTelemetry?: StreakTelemetry }
+import { resolveWeather, thermalMultipliers, weatherRange, weatherMovement, weatherWind, weatherProbability, WEATHER_CANDIDATE } from './weather.js';
+import type { WeatherSettings, WeatherAction } from './weather.js';
+interface WeatherTelemetry {
+  conditions: WeatherSettings['conditions']; probabilities: Record<string, ReturnType<typeof counter>[]>;
+  activePlayerSeconds: [number,number]; energySeconds: [number,number]; extraRequestedFatigue: [number,number];
+  energyFloorSeconds: [number,number]; finalMeanEnergy?: [number,number];
+}
+export interface LabMatchInput extends CompetitiveMatchInput { lab?: StreakSettings; weather?: WeatherSettings }
+export interface LabMatchResult extends MatchResult { labTelemetry?: StreakTelemetry; weatherTelemetry?: WeatherTelemetry }
 type Player = MatchPlayer & { side: Side; x: number; y: number; energy: number;
   stint: number; available: boolean; on: boolean; penaltyUntil: number | null };
 interface Penalty { side: Side; playerId: string; duration: number }
@@ -57,10 +64,18 @@ class AvailabilityMatch {
 
   private readonly settings: ResolvedStreakSettings;
   private readonly labTelemetry: StreakTelemetry | undefined;
+  private readonly weather: WeatherSettings | undefined;
+  private readonly weatherTelemetry: WeatherTelemetry | undefined;
+  private readonly thermal = new Map<string, {fatigue:number;recovery:number}>();
+  private readonly movementMultiplier: number;
 
   constructor(private readonly input: LabMatchInput) {
     this.settings = resolveStreakSettings(input.lab);
     this.labTelemetry = input.lab ? telemetry(this.settings) : undefined;
+    this.weather=resolveWeather(input.weather,input.teams.flatMap(t=>t.players.map(p=>p.id)));
+    this.movementMultiplier=weatherMovement(this.weather);
+    if(this.weather?.enabled.includes('weather'))this.weatherTelemetry={conditions:{...this.weather.conditions},
+      probabilities:{},activePlayerSeconds:[0,0],energySeconds:[0,0],extraRequestedFatigue:[0,0],energyFloorSeconds:[0,0]};
     validateCompetitiveInput(input);
     this.config = { ...DEFAULT_MATCH_CONFIG, ...input.config };
     // Retain the frozen gameplay random namespace; availability must not reroll healthy matches.
@@ -70,6 +85,7 @@ class AvailabilityMatch {
       ...p, ratings: { ...p.ratings }, side: s as Side, x: this.ball.x, y: this.ball.y,
       energy: 1, stint: 0, available: true, on: false, penaltyUntil: null
     })));
+    for(const p of this.players)this.thermal.set(p.id,thermalMultipliers(this.weather,p.id));
   }
 
   private emit(type: string, fields: Partial<MatchEvent> = {}): MatchEvent {
@@ -105,19 +121,29 @@ class AvailabilityMatch {
     if (!this.settings.enabled.includes('confidence') && !this.settings.enabled.includes('home-support')) return probability;
     return psychologicalProbability(probability, this.settings, side, opposing);
   }
-  private executionRoll(probability: number, side: Side, category: string, opposing = false): number {
-    const adjusted = this.executionProbability(probability, side, category, opposing);
+  private recordWeather(category: WeatherAction, side: Side, baseline: number, adjusted: number, roll: number): void {
+    if(!this.weatherTelemetry)return;
+    const row=this.weatherTelemetry.probabilities[category]??=[counter(),counter()];
+    recordProbability(row[side],baseline,adjusted,roll);
+  }
+  private executionRoll(probability: number, side: Side, category: string, opposing = false, physical?: {side:Side;category:WeatherAction}): number {
+    const physicalProbability=physical?weatherProbability(probability,this.weather,physical.side,this.quarter,physical.category):probability;
+    const adjusted = this.executionProbability(physicalProbability, side, category, opposing);
     const roll = this.rng.next();
+    if(physical)this.recordWeather(physical.category,physical.side,probability,physicalProbability,roll);
     if (this.labTelemetry) {
       const row = this.labTelemetry.confidence[category] ??= [counter(), counter()];
-      recordProbability(row[side], probability, adjusted, roll);
+      recordProbability(row[side], physicalProbability, adjusted, roll);
     }
     return roll < adjusted ? 1 : 0;
   }
-  private chance(a: number, b: number, base = 0, side?: Side, category = 'unmodified'): boolean {
+  private chance(a: number, b: number, base = 0, side?: Side, category = 'unmodified', physical?: {side:Side;category:WeatherAction}): boolean {
     const probability = 1 / (1 + Math.exp(-((a - b) / 3.4 + base)));
-    if (side !== undefined) return Boolean(this.executionRoll(probability, side, category, true));
-    return this.rng.next() < probability;
+    if (side !== undefined) return Boolean(this.executionRoll(probability, side, category, true, physical));
+    const adjusted=physical?weatherProbability(probability,this.weather,physical.side,this.quarter,physical.category):probability;
+    const roll=this.rng.next();
+    if(physical)this.recordWeather(physical.category,physical.side,probability,adjusted,roll);
+    return roll < adjusted;
   }
   private duration(base: number, side: Side): number {
     return Math.max(1, base * (1.3 - this.tactic(side, 'tempo') * 0.1) * (0.75 + this.rng.next() * 0.5));
@@ -138,7 +164,7 @@ class AvailabilityMatch {
       if (this.exchanges.has(p.id)) { tx = this.config.fieldLength / 2; ty = 0; }
       const d = Math.hypot(tx - p.x, ty - p.y);
       const pace = (1.3 + p.ratings.speed / 7) * (0.6 + 0.4 * p.energy);
-      const movement = Math.min(d, pace * seconds);
+      const movement = Math.min(d, pace * seconds * this.movementMultiplier);
       if (d > 0) { p.x += (tx - p.x) * movement / d; p.y += (ty - p.y) * movement / d; }
     }
   }
@@ -154,13 +180,20 @@ class AvailabilityMatch {
         if (mode === 'playing' && p.on) {
           const effort = 0.85 + this.tactic(p.side, 'pressure') * 0.07 +
             this.tactic(p.side, 'running_movement_emphasis') * 0.035 + this.tactic(p.side, 'physicality') * 0.02;
-          p.energy = clamp(p.energy - step * this.config.fatiguePerSecond * effort *
-            (1.5 - p.ratings.stamina / 25), 0.15, 1);
+          const loss=step*this.config.fatiguePerSecond*effort*(1.5-p.ratings.stamina/25);
+          const adjustedLoss=loss*this.thermal.get(p.id)!.fatigue;
+          p.energy = clamp(p.energy-adjustedLoss,0.15,1);
+          if(this.weatherTelemetry){
+            this.weatherTelemetry.activePlayerSeconds[p.side]+=step;
+            this.weatherTelemetry.energySeconds[p.side]+=step*p.energy;
+            this.weatherTelemetry.extraRequestedFatigue[p.side]+=adjustedLoss-loss;
+            if(p.energy===.15)this.weatherTelemetry.energyFloorSeconds[p.side]+=step;
+          }
           p.stint += step;
         } else {
           const multiplier = mode === 'interval' ? 0.65 : p.on ? 0.18 : 1;
           p.energy = clamp(p.energy + step * this.config.benchRecoveryPerSecond *
-            (0.6 + p.ratings.recovery / 20) * multiplier, 0.15, 1);
+            (0.6 + p.ratings.recovery / 20) * multiplier * this.thermal.get(p.id)!.recovery, 0.15, 1);
         }
       }
       this.elapsed += step;
@@ -441,17 +474,21 @@ class AvailabilityMatch {
       }
       this.looseBall(); return;
     }
-    const reaches = clamp(0.95 - Math.max(0, distance - (20 + power * 2)) * 0.02, 0.2, 0.98);
-    if (this.rng.next() > reaches) { this.looseBall(); return; }
+    const baseReaches=clamp(0.95-Math.max(0,distance-(20+power*2))*.02,.2,.98);
+    const reaches=clamp(0.95-Math.max(0,distance-(20+power*2)*weatherRange(this.weather,p.side,this.quarter))*.02,.2,.98);
+    const reachRoll=this.rng.next();this.recordWeather('shot-reach',p.side,baseReaches,reaches,reachRoll);
+    if (reachRoll > reaches) { this.looseBall(); return; }
     const central = clamp(0.48 + (accuracy - 11) * 0.035 - distance * 0.003 - anglePenalty * 0.3,
       0.12, 0.78);
     const outer = 0.27;
     const bounce = this.rng.next() < clamp(0.11 + distance * 0.003 - power * 0.004, 0.05, 0.45);
-    const adjustedCentral = this.executionProbability(central, p.side, 'shot-central');
+    const weatherCentral=weatherProbability(central,this.weather,p.side,this.quarter,'shot-central');
+    const adjustedCentral = this.executionProbability(weatherCentral, p.side, 'shot-central');
     const roll = this.rng.next();
+    this.recordWeather('shot-central',p.side,central,weatherCentral,roll);
     if (this.labTelemetry) {
       const row = this.labTelemetry.confidence['shot-central'] ??= [counter(), counter()];
-      recordProbability(row[p.side], central, adjustedCentral, roll);
+      recordProbability(row[p.side], weatherCentral, adjustedCentral, roll);
     }
     if (roll < adjustedCentral) this.scored(p, bounce ? 'central_bounce' : 'central_air');
     else if (roll < adjustedCentral + outer) this.scored(p, bounce ? 'bonus' : 'outer_air');
@@ -475,8 +512,9 @@ class AvailabilityMatch {
     const advance = kick ? 16 + this.skill(p, ['kickingPower']) * 1.4 + (risk - 3) * 3 + counter
       : 6 + this.rng.next() * 10;
     const target = {
-      x: clamp(this.ball.x + this.dir(p.side) * advance, 3, this.config.fieldLength - 3),
-      y: clamp(this.ball.y + this.rng.normal(0, 3 + this.tactic(p.side, 'width') * 2.5), 2, this.config.fieldWidth - 2)
+      x: clamp(this.ball.x + this.dir(p.side) * advance * (kick?weatherRange(this.weather,p.side,this.quarter):1), 3, this.config.fieldLength - 3),
+      y: clamp(this.ball.y + this.rng.normal(0, 3 + this.tactic(p.side, 'width') * 2.5) +
+        (kick?weatherWind(this.weather,p.side,this.quarter).cross*WEATHER_CANDIDATE.crosswindDriftMetresPerKmh:0), 2, this.config.fieldWidth - 2)
     };
     const receiver = this.pick(this.on(p.side).filter(q => q !== p),
       kick ? ['aerialMarking', 'anticipation'] : ['awareness', 'groundBallSkill'], target);
@@ -484,7 +522,7 @@ class AvailabilityMatch {
     const skill = this.skill(p, kick ? ['kickingAccuracy', 'decisionMaking', 'oppositeSideSkill']
       : ['handPassing', 'decisionMaking']);
     const defense = this.skill(defender, ['anticipation', 'defensiveSpoiling']);
-    const accurate = this.chance(skill, defense, (kick ? 0.9 : 1.8) - (risk - 3) * 0.17, p.side, 'disposal');
+    const accurate = this.chance(skill, defense, (kick ? 0.9 : 1.8) - (risk - 3) * 0.17, p.side, 'disposal',{side:p.side,category:kick?'kick':'hand'});
     this.action(kick ? 'kick' : 'hand_punch', p, this.duration(kick ? 7 : 4, p.side), {
       otherPlayerId: receiver.id, data: { targetX: target.x, targetY: target.y, aerial: kick && aerial >= 3 },
       credits: [{ playerId: p.id, stat: kick ? 'kicks' : 'handPunches' }] });
@@ -493,7 +531,7 @@ class AvailabilityMatch {
     this.noDirectScore = false; // another participant touches every resolved pass below
     if (!accurate && this.rng.next() < 0.12) { this.ballIn(other(p.side)); return; }
     const caught = kick && accurate && this.chance(this.skill(receiver, ['aerialMarking', 'verticalLeap', 'anticipation']),
-      this.skill(defender, ['defensiveSpoiling', 'verticalLeap']), 0.6 + (aerial - 3) * 0.08);
+      this.skill(defender, ['defensiveSpoiling', 'verticalLeap']), 0.6 + (aerial - 3) * 0.08,undefined,'unmodified',{side:p.side,category:'catch'});
     if (caught) {
       this.emit('catch', { side: p.side, playerId: receiver.id, otherPlayerId: defender.id, ...this.ball,
         data: { freeMovement: true }, credits: [{ playerId: receiver.id, stat: 'catches' },
@@ -545,7 +583,7 @@ class AvailabilityMatch {
       this.emit('evasion', { side: p.side, playerId: p.id, otherPlayerId: defender.id,
         credits: [{ playerId: p.id, stat: 'evasions' }] });
     }
-    const distance = (1.2 + this.skill(p, ['speed', 'acceleration']) / 8) * seconds;
+    const distance = (1.2 + this.skill(p, ['speed', 'acceleration']) / 8) * seconds * this.movementMultiplier;
     const through = this.progress(p.side) + distance >= this.config.fieldLength;
     this.ball.x = clamp(this.ball.x + this.dir(p.side) * distance, 1, this.config.fieldLength - 1);
     p.x = this.ball.x; p.y = this.ball.y;
@@ -589,10 +627,14 @@ class AvailabilityMatch {
       pendingBonuses: this.score.bonuses.map(b => b.length),
       finalCondition: this.players.map(p => ({ playerId: p.id, energy: p.energy, available: p.available })) } });
     const stats = projectStatistics(this.input, this.events);
+    if(this.weatherTelemetry)this.weatherTelemetry.finalMeanEnergy=[0,1].map(side=>{
+      const players=this.players.filter(p=>p.side===side);return players.reduce((s,p)=>s+p.energy,0)/players.length;
+    }) as [number,number];
     return { engineVersion: MATCH_ENGINE_VERSION, status: 'complete', id: this.input.id, seed: this.input.seed,
       input: JSON.parse(JSON.stringify(this.input)) as MatchInput, config: this.config,
       winner: this.score.winner, scores: [...this.score.scores], playingSeconds: this.playing,
       elapsedSeconds: this.elapsed, quarters: this.quarters, events: this.events, ...stats,
-      ...(this.labTelemetry ? { labTelemetry: this.labTelemetry } : {}) };
+      ...(this.labTelemetry ? { labTelemetry: this.labTelemetry } : {}),
+      ...(this.weatherTelemetry ? {weatherTelemetry:this.weatherTelemetry}: {}) };
   }
 }

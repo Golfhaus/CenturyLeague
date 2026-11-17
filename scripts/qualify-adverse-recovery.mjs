@@ -1,0 +1,11 @@
+// Environment recovery only: validate the archived source and replay saved compact hashes.
+import fs from'node:fs';import path from'node:path';import assert from'node:assert/strict';import{gunzipSync}from'node:zlib';
+import{hash,loadEngines,sourceFingerprint,verifyBaseline,auditResult}from'../experiments/v2/tools.mjs';import{ensureQualifiedStudyProcess,qualifyStudyRuntime}from'../experiments/v2/runtime.mjs';import{adverseInput,adverseArms,adverseHarnessFingerprint,verifyAdverseScreen}from'./adverse-confirmation-spec.mjs';import{stageRow}from'../experiments/v2/modifier-stage-fixtures.mjs';
+ensureQualifiedStudyProcess();const runtime=qualifyStudyRuntime(),root=process.argv[2],m=JSON.parse(fs.readFileSync(path.join(root,'matched/manifest.json'))),expected=JSON.parse(fs.readFileSync(path.join(root,'environment-recovery.json')));
+assert.equal(sourceFingerprint(),expected.sourceSHA256);assert.equal(adverseHarnessFingerprint(),expected.harnessSHA256);for(const k of['node','v8','platform','arch'])assert.equal(runtime[k],m.runtime[k]);verifyAdverseScreen(path.join(root,'reproduction/prior-screen'),sourceFingerprint(),fs.readFileSync(path.join(root,'reproduction/profiles.json')));verifyBaseline();
+const records=gunzipSync(fs.readFileSync(path.join(root,'recovery-checkpoints/matched/completed-compact-records.jsonl.gz'))).toString().trim().split('\n').map(s=>JSON.parse(s)),e=await loadEngines();let replays=0;
+for(const saved of records.slice(0,2)){
+ const f=saved.fixture,p=m.profiles.find(p=>p.id===f.profile);
+ for(const arm of adverseArms('matched')){const input=adverseInput(e,p,f,arm),r=e.simulateV2(input),row=saved.arms.find(r=>r.id===arm.id);auditResult(r,e);assert.equal(hash(JSON.stringify(r)),row.resultSHA256);assert.deepEqual({...stageRow(r,input,f,arm),resultSHA256:row.resultSHA256},row);replays++;}
+}
+const proof={status:'passed',archivedSourceIdentityVerified:true,identicalRuntimeVersionsVerified:true,originalSelectionEvidenceVerified:true,savedCompactRecords:records.length,fullResultsExactlyReplayed:replays,sourceSHA256:sourceFingerprint(),harnessSHA256:adverseHarnessFingerprint(),runtime};fs.writeFileSync(path.join(root,'recovery-qualification.json'),JSON.stringify(proof,null,2)+'\n');console.log(JSON.stringify(proof));

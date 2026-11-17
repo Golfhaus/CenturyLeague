@@ -1,0 +1,1468 @@
+{
+  "schema": "century-real-club-validation-analysis-v1",
+  "classification": "lab-only-not-adopted",
+  "studyId": "real-club-psychology-validation-001",
+  "simulationSourceCommit": "3d2691e",
+  "sourceSHA256": "15b6289b98b64d768a0bc64d98197b443c6a9ece881ee99262319e05eccd449c",
+  "matchedFixtures": 2048,
+  "outcomes": 10240,
+  "overall": [
+    {
+      "arm": "control",
+      "matchedFixtures": 2048,
+      "wins": 1025,
+      "controlWins": 1025,
+      "liftPoints": 0.0,
+      "conservative95Points": [
+        -0.24470671964517657,
+        0.24470671964517657
+      ],
+      "approximate95Points": [
+        0.0,
+        0.0
+      ],
+      "improved": 0,
+      "worsened": 0,
+      "meanScoreMarginChange": 0.0,
+      "focalSeriousFouls": 165,
+      "focalFoulOpportunities": 2094,
+      "opponentSeriousFouls": 190,
+      "opponentFoulOpportunities": 2069
+    },
+    {
+      "arm": "confidence-5",
+      "matchedFixtures": 2048,
+      "wins": 1036,
+      "controlWins": 1025,
+      "liftPoints": 0.537109375,
+      "conservative95Points": [
+        -2.3308705559648075,
+        3.4024606204998684
+      ],
+      "approximate95Points": [
+        -1.3214173727555862,
+        2.3956361227555862
+      ],
+      "improved": 194,
+      "worsened": 183,
+      "meanScoreMarginChange": 0.53564453125,
+      "focalSeriousFouls": 163,
+      "focalFoulOpportunities": 2049,
+      "opponentSeriousFouls": 194,
+      "opponentFoulOpportunities": 1994
+    },
+    {
+      "arm": "home-hot-5",
+      "matchedFixtures": 2048,
+      "wins": 1040,
+      "controlWins": 1025,
+      "liftPoints": 0.732421875,
+      "conservative95Points": [
+        -2.316892215388973,
+        3.7781513943004206
+      ],
+      "approximate95Points": [
+        -1.2592648063515177,
+        2.724108556351518
+      ],
+      "improved": 224,
+      "worsened": 209,
+      "meanScoreMarginChange": 0.63232421875,
+      "focalSeriousFouls": 152,
+      "focalFoulOpportunities": 2037,
+      "opponentSeriousFouls": 193,
+      "opponentFoulOpportunities": 1985
+    },
+    {
+      "arm": "shared-full-5",
+      "matchedFixtures": 2048,
+      "wins": 1046,
+      "controlWins": 1025,
+      "liftPoints": 1.025390625,
+      "conservative95Points": [
+        -2.1145026034008336,
+        4.16026545387686
+      ],
+      "approximate95Points": [
+        -1.0339190270687109,
+        3.084700277068711
+      ],
+      "improved": 242,
+      "worsened": 221,
+      "meanScoreMarginChange": 0.80029296875,
+      "focalSeriousFouls": 153,
+      "focalFoulOpportunities": 2065,
+      "opponentSeriousFouls": 206,
+      "opponentFoulOpportunities": 1976
+    },
+    {
+      "arm": "shared-adverse-5",
+      "matchedFixtures": 2048,
+      "wins": 976,
+      "controlWins": 1025,
+      "liftPoints": -2.392578125,
+      "conservative95Points": [
+        -5.59485788947873,
+        0.8214112383680028
+      ],
+      "approximate95Points": [
+        -4.506872109571244,
+        -0.27828414042875527
+      ],
+      "improved": 220,
+      "worsened": 269,
+      "meanScoreMarginChange": -1.6650390625,
+      "focalSeriousFouls": 167,
+      "focalFoulOpportunities": 2047,
+      "opponentSeriousFouls": 191,
+      "opponentFoulOpportunities": 2041
+    }
+  ],
+  "profiles": [
+    {
+      "id": "pair-1-focal-0",
+      "pairId": "pair-1",
+      "focalClub": "Dover Town CC",
+      "opponent": "Lancaster Red Rose CC",
+      "historicalFocalWins": 25,
+      "effects": [
+        {
+          "arm": "control",
+          "matchedFixtures": 256,
+          "wins": 124,
+          "controlWins": 124,
+          "liftPoints": 0.0,
+          "conservative95Points": [
+            -1.9246849237780348,
+            1.9246849237780348
+          ],
+          "approximate95Points": [
+            0.0,
+            0.0
+          ],
+          "improved": 0,
+          "worsened": 0,
+          "meanScoreMarginChange": 0.0,
+          "focalSeriousFouls": 20,
+          "focalFoulOpportunities": 247,
+          "opponentSeriousFouls": 19,
+          "opponentFoulOpportunities": 245
+        },
+        {
+          "arm": "confidence-5",
+          "matchedFixtures": 256,
+          "wins": 127,
+          "controlWins": 124,
+          "liftPoints": 1.171875,
+          "conservative95Points": [
+            -7.2977807093798726,
+            9.596420906478825
+          ],
+          "approximate95Points": [
+            -4.304602995592901,
+            6.6483529955929015
+          ],
+          "improved": 27,
+          "worsened": 24,
+          "meanScoreMarginChange": 1.71875,
+          "focalSeriousFouls": 21,
+          "focalFoulOpportunities": 222,
+          "opponentSeriousFouls": 22,
+          "opponentFoulOpportunities": 249
+        },
+        {
+          "arm": "home-hot-5",
+          "matchedFixtures": 256,
+          "wins": 139,
+          "controlWins": 124,
+          "liftPoints": 5.859375,
+          "conservative95Points": [
+            -3.1485021481357207,
+            14.641703133630484
+          ],
+          "approximate95Points": [
+            0.011031299208656697,
+            11.707718700791343
+          ],
+          "improved": 37,
+          "worsened": 22,
+          "meanScoreMarginChange": 2.6484375,
+          "focalSeriousFouls": 18,
+          "focalFoulOpportunities": 226,
+          "opponentSeriousFouls": 22,
+          "opponentFoulOpportunities": 247
+        },
+        {
+          "arm": "shared-full-5",
+          "matchedFixtures": 256,
+          "wins": 135,
+          "controlWins": 124,
+          "liftPoints": 4.296875,
+          "conservative95Points": [
+            -5.092843180502476,
+            13.521190569865302
+          ],
+          "approximate95Points": [
+            -1.8653548362557595,
+            10.459104836255758
+          ],
+          "improved": 38,
+          "worsened": 27,
+          "meanScoreMarginChange": 2.27734375,
+          "focalSeriousFouls": 19,
+          "focalFoulOpportunities": 226,
+          "opponentSeriousFouls": 23,
+          "opponentFoulOpportunities": 241
+        },
+        {
+          "arm": "shared-adverse-5",
+          "matchedFixtures": 256,
+          "wins": 117,
+          "controlWins": 124,
+          "liftPoints": -2.734375,
+          "conservative95Points": [
+            -12.130403208792947,
+            6.766909415562056
+          ],
+          "approximate95Points": [
+            -9.004586116816444,
+            3.5358361168164447
+          ],
+          "improved": 30,
+          "worsened": 37,
+          "meanScoreMarginChange": -1.6171875,
+          "focalSeriousFouls": 20,
+          "focalFoulOpportunities": 234,
+          "opponentSeriousFouls": 20,
+          "opponentFoulOpportunities": 262
+        }
+      ]
+    },
+    {
+      "id": "pair-1-focal-1",
+      "pairId": "pair-1",
+      "focalClub": "Lancaster Red Rose CC",
+      "opponent": "Dover Town CC",
+      "historicalFocalWins": 25,
+      "effects": [
+        {
+          "arm": "control",
+          "matchedFixtures": 256,
+          "wins": 116,
+          "controlWins": 116,
+          "liftPoints": 0.0,
+          "conservative95Points": [
+            -1.9246849237780348,
+            1.9246849237780348
+          ],
+          "approximate95Points": [
+            0.0,
+            0.0
+          ],
+          "improved": 0,
+          "worsened": 0,
+          "meanScoreMarginChange": 0.0,
+          "focalSeriousFouls": 19,
+          "focalFoulOpportunities": 262,
+          "opponentSeriousFouls": 20,
+          "opponentFoulOpportunities": 223
+        },
+        {
+          "arm": "confidence-5",
+          "matchedFixtures": 256,
+          "wins": 123,
+          "controlWins": 116,
+          "liftPoints": 2.734375,
+          "conservative95Points": [
+            -6.64994205087771,
+            12.013435844108596
+          ],
+          "approximate95Points": [
+            -3.4412696355935015,
+            8.910019635593503
+          ],
+          "improved": 36,
+          "worsened": 29,
+          "meanScoreMarginChange": 0.59765625,
+          "focalSeriousFouls": 17,
+          "focalFoulOpportunities": 246,
+          "opponentSeriousFouls": 26,
+          "opponentFoulOpportunities": 225
+        },
+        {
+          "arm": "home-hot-5",
+          "matchedFixtures": 256,
+          "wins": 123,
+          "controlWins": 116,
+          "liftPoints": 2.734375,
+          "conservative95Points": [
+            -6.64994205087771,
+            12.013435844108596
+          ],
+          "approximate95Points": [
+            -3.4412696355935015,
+            8.910019635593503
+          ],
+          "improved": 36,
+          "worsened": 29,
+          "meanScoreMarginChange": 0.4375,
+          "focalSeriousFouls": 17,
+          "focalFoulOpportunities": 241,
+          "opponentSeriousFouls": 24,
+          "opponentFoulOpportunities": 216
+        },
+        {
+          "arm": "shared-full-5",
+          "matchedFixtures": 256,
+          "wins": 134,
+          "controlWins": 116,
+          "liftPoints": 7.03125,
+          "conservative95Points": [
+            -2.520130888490696,
+            16.311972071084405
+          ],
+          "approximate95Points": [
+            0.7645226906029229,
+            13.297977309397076
+          ],
+          "improved": 43,
+          "worsened": 25,
+          "meanScoreMarginChange": 1.6171875,
+          "focalSeriousFouls": 16,
+          "focalFoulOpportunities": 246,
+          "opponentSeriousFouls": 24,
+          "opponentFoulOpportunities": 214
+        },
+        {
+          "arm": "shared-adverse-5",
+          "matchedFixtures": 256,
+          "wins": 125,
+          "controlWins": 116,
+          "liftPoints": 3.515625,
+          "conservative95Points": [
+            -5.105514740927363,
+            12.00143533222422
+          ],
+          "approximate95Points": [
+            -2.0524322833110156,
+            9.083682283311015
+          ],
+          "improved": 31,
+          "worsened": 22,
+          "meanScoreMarginChange": 0.08984375,
+          "focalSeriousFouls": 19,
+          "focalFoulOpportunities": 247,
+          "opponentSeriousFouls": 20,
+          "opponentFoulOpportunities": 218
+        }
+      ]
+    },
+    {
+      "id": "pair-2-focal-0",
+      "pairId": "pair-2",
+      "focalClub": "Anacostia United",
+      "opponent": "Hagerstown Albion",
+      "historicalFocalWins": 25,
+      "effects": [
+        {
+          "arm": "control",
+          "matchedFixtures": 256,
+          "wins": 125,
+          "controlWins": 125,
+          "liftPoints": 0.0,
+          "conservative95Points": [
+            -1.9246849237780348,
+            1.9246849237780348
+          ],
+          "approximate95Points": [
+            0.0,
+            0.0
+          ],
+          "improved": 0,
+          "worsened": 0,
+          "meanScoreMarginChange": 0.0,
+          "focalSeriousFouls": 16,
+          "focalFoulOpportunities": 224,
+          "opponentSeriousFouls": 22,
+          "opponentFoulOpportunities": 222
+        },
+        {
+          "arm": "confidence-5",
+          "matchedFixtures": 256,
+          "wins": 119,
+          "controlWins": 125,
+          "liftPoints": -2.34375,
+          "conservative95Points": [
+            -10.662535004444683,
+            6.065254610246776
+          ],
+          "approximate95Points": [
+            -7.760507752816354,
+            3.073007752816354
+          ],
+          "improved": 22,
+          "worsened": 28,
+          "meanScoreMarginChange": -0.76171875,
+          "focalSeriousFouls": 16,
+          "focalFoulOpportunities": 251,
+          "opponentSeriousFouls": 20,
+          "opponentFoulOpportunities": 215
+        },
+        {
+          "arm": "home-hot-5",
+          "matchedFixtures": 256,
+          "wins": 116,
+          "controlWins": 125,
+          "liftPoints": -3.515625,
+          "conservative95Points": [
+            -12.13750451484939,
+            5.241583923552534
+          ],
+          "approximate95Points": [
+            -9.188386469914505,
+            2.157136469914504
+          ],
+          "improved": 23,
+          "worsened": 32,
+          "meanScoreMarginChange": -0.6796875,
+          "focalSeriousFouls": 16,
+          "focalFoulOpportunities": 248,
+          "opponentSeriousFouls": 20,
+          "opponentFoulOpportunities": 213
+        },
+        {
+          "arm": "shared-full-5",
+          "matchedFixtures": 256,
+          "wins": 116,
+          "controlWins": 125,
+          "liftPoints": -3.515625,
+          "conservative95Points": [
+            -12.525473851474361,
+            5.629553260177509
+          ],
+          "approximate95Points": [
+            -9.491501927070013,
+            2.460251927070013
+          ],
+          "improved": 26,
+          "worsened": 35,
+          "meanScoreMarginChange": -0.3125,
+          "focalSeriousFouls": 18,
+          "focalFoulOpportunities": 254,
+          "opponentSeriousFouls": 21,
+          "opponentFoulOpportunities": 215
+        },
+        {
+          "arm": "shared-adverse-5",
+          "matchedFixtures": 256,
+          "wins": 120,
+          "controlWins": 125,
+          "liftPoints": -1.953125,
+          "conservative95Points": [
+            -10.760208970489611,
+            6.9291419753246934
+          ],
+          "approximate95Points": [
+            -7.739826440773025,
+            3.8335764407730246
+          ],
+          "improved": 26,
+          "worsened": 31,
+          "meanScoreMarginChange": -1.8984375,
+          "focalSeriousFouls": 22,
+          "focalFoulOpportunities": 210,
+          "opponentSeriousFouls": 25,
+          "opponentFoulOpportunities": 225
+        }
+      ]
+    },
+    {
+      "id": "pair-2-focal-1",
+      "pairId": "pair-2",
+      "focalClub": "Hagerstown Albion",
+      "opponent": "Anacostia United",
+      "historicalFocalWins": 25,
+      "effects": [
+        {
+          "arm": "control",
+          "matchedFixtures": 256,
+          "wins": 133,
+          "controlWins": 133,
+          "liftPoints": 0.0,
+          "conservative95Points": [
+            -1.9246849237780348,
+            1.9246849237780348
+          ],
+          "approximate95Points": [
+            0.0,
+            0.0
+          ],
+          "improved": 0,
+          "worsened": 0,
+          "meanScoreMarginChange": 0.0,
+          "focalSeriousFouls": 20,
+          "focalFoulOpportunities": 232,
+          "opponentSeriousFouls": 14,
+          "opponentFoulOpportunities": 244
+        },
+        {
+          "arm": "confidence-5",
+          "matchedFixtures": 256,
+          "wins": 146,
+          "controlWins": 133,
+          "liftPoints": 5.078125,
+          "conservative95Points": [
+            -2.4461664092704045,
+            12.4069405966992
+          ],
+          "approximate95Points": [
+            0.3281517068926751,
+            9.828098293107326
+          ],
+          "improved": 26,
+          "worsened": 13,
+          "meanScoreMarginChange": 1.06640625,
+          "focalSeriousFouls": 17,
+          "focalFoulOpportunities": 218,
+          "opponentSeriousFouls": 15,
+          "opponentFoulOpportunities": 228
+        },
+        {
+          "arm": "home-hot-5",
+          "matchedFixtures": 256,
+          "wins": 147,
+          "controlWins": 133,
+          "liftPoints": 5.46875,
+          "conservative95Points": [
+            -2.774560607809351,
+            13.501548194271127
+          ],
+          "approximate95Points": [
+            0.196511052144515,
+            10.740988947855485
+          ],
+          "improved": 31,
+          "worsened": 17,
+          "meanScoreMarginChange": 1.75390625,
+          "focalSeriousFouls": 19,
+          "focalFoulOpportunities": 231,
+          "opponentSeriousFouls": 15,
+          "opponentFoulOpportunities": 226
+        },
+        {
+          "arm": "shared-full-5",
+          "matchedFixtures": 256,
+          "wins": 144,
+          "controlWins": 133,
+          "liftPoints": 4.296875,
+          "conservative95Points": [
+            -4.180842914314514,
+            12.60919030367734
+          ],
+          "approximate95Points": [
+            -1.1560463330695145,
+            9.749796333069515
+          ],
+          "improved": 31,
+          "worsened": 20,
+          "meanScoreMarginChange": 1.42578125,
+          "focalSeriousFouls": 17,
+          "focalFoulOpportunities": 230,
+          "opponentSeriousFouls": 18,
+          "opponentFoulOpportunities": 214
+        },
+        {
+          "arm": "shared-adverse-5",
+          "matchedFixtures": 256,
+          "wins": 135,
+          "controlWins": 133,
+          "liftPoints": 0.78125,
+          "conservative95Points": [
+            -8.151235079607147,
+            9.68366187767311
+          ],
+          "approximate95Points": [
+            -5.06021109624729,
+            6.62271109624729
+          ],
+          "improved": 30,
+          "worsened": 28,
+          "meanScoreMarginChange": -0.96875,
+          "focalSeriousFouls": 19,
+          "focalFoulOpportunities": 216,
+          "opponentSeriousFouls": 13,
+          "opponentFoulOpportunities": 219
+        }
+      ]
+    },
+    {
+      "id": "pair-3-focal-0",
+      "pairId": "pair-3",
+      "focalClub": "Norfolk Maritime",
+      "opponent": "Philadelphia Northwest",
+      "historicalFocalWins": 27,
+      "effects": [
+        {
+          "arm": "control",
+          "matchedFixtures": 256,
+          "wins": 146,
+          "controlWins": 146,
+          "liftPoints": 0.0,
+          "conservative95Points": [
+            -1.9246849237780348,
+            1.9246849237780348
+          ],
+          "approximate95Points": [
+            0.0,
+            0.0
+          ],
+          "improved": 0,
+          "worsened": 0,
+          "meanScoreMarginChange": 0.0,
+          "focalSeriousFouls": 18,
+          "focalFoulOpportunities": 218,
+          "opponentSeriousFouls": 21,
+          "opponentFoulOpportunities": 253
+        },
+        {
+          "arm": "confidence-5",
+          "matchedFixtures": 256,
+          "wins": 149,
+          "controlWins": 146,
+          "liftPoints": 1.171875,
+          "conservative95Points": [
+            -6.547557232028865,
+            8.846197429127816
+          ],
+          "approximate95Points": [
+            -3.7380137273180245,
+            6.081763727318024
+          ],
+          "improved": 22,
+          "worsened": 19,
+          "meanScoreMarginChange": 0.6171875,
+          "focalSeriousFouls": 26,
+          "focalFoulOpportunities": 211,
+          "opponentSeriousFouls": 26,
+          "opponentFoulOpportunities": 255
+        },
+        {
+          "arm": "home-hot-5",
+          "matchedFixtures": 256,
+          "wins": 146,
+          "controlWins": 146,
+          "liftPoints": 0.0,
+          "conservative95Points": [
+            -8.089917474495245,
+            8.089917474495245
+          ],
+          "approximate95Points": [
+            -5.202893237345514,
+            5.202893237345514
+          ],
+          "improved": 23,
+          "worsened": 23,
+          "meanScoreMarginChange": -0.078125,
+          "focalSeriousFouls": 24,
+          "focalFoulOpportunities": 205,
+          "opponentSeriousFouls": 27,
+          "opponentFoulOpportunities": 250
+        },
+        {
+          "arm": "shared-full-5",
+          "matchedFixtures": 256,
+          "wins": 148,
+          "controlWins": 146,
+          "liftPoints": 0.78125,
+          "conservative95Points": [
+            -7.469198855468734,
+            9.001625653534703
+          ],
+          "approximate95Points": [
+            -4.532681107701902,
+            6.095181107701902
+          ],
+          "improved": 25,
+          "worsened": 23,
+          "meanScoreMarginChange": 0.453125,
+          "focalSeriousFouls": 25,
+          "focalFoulOpportunities": 216,
+          "opponentSeriousFouls": 27,
+          "opponentFoulOpportunities": 254
+        },
+        {
+          "arm": "shared-adverse-5",
+          "matchedFixtures": 256,
+          "wins": 138,
+          "controlWins": 146,
+          "liftPoints": -3.125,
+          "conservative95Points": [
+            -11.958743490595342,
+            5.829036298331472
+          ],
+          "approximate95Points": [
+            -8.954643440816842,
+            2.7046434408168416
+          ],
+          "improved": 25,
+          "worsened": 33,
+          "meanScoreMarginChange": -1.21484375,
+          "focalSeriousFouls": 13,
+          "focalFoulOpportunities": 233,
+          "opponentSeriousFouls": 22,
+          "opponentFoulOpportunities": 251
+        }
+      ]
+    },
+    {
+      "id": "pair-3-focal-1",
+      "pairId": "pair-3",
+      "focalClub": "Philadelphia Northwest",
+      "opponent": "Norfolk Maritime",
+      "historicalFocalWins": 23,
+      "effects": [
+        {
+          "arm": "control",
+          "matchedFixtures": 256,
+          "wins": 121,
+          "controlWins": 121,
+          "liftPoints": 0.0,
+          "conservative95Points": [
+            -1.9246849237780348,
+            1.9246849237780348
+          ],
+          "approximate95Points": [
+            0.0,
+            0.0
+          ],
+          "improved": 0,
+          "worsened": 0,
+          "meanScoreMarginChange": 0.0,
+          "focalSeriousFouls": 26,
+          "focalFoulOpportunities": 287,
+          "opponentSeriousFouls": 20,
+          "opponentFoulOpportunities": 199
+        },
+        {
+          "arm": "confidence-5",
+          "matchedFixtures": 256,
+          "wins": 122,
+          "controlWins": 121,
+          "liftPoints": 0.390625,
+          "conservative95Points": [
+            -7.63097606011536,
+            8.397189459148345
+          ],
+          "approximate95Points": [
+            -4.75518095198915,
+            5.53643095198915
+          ],
+          "improved": 23,
+          "worsened": 22,
+          "meanScoreMarginChange": 0.1953125,
+          "focalSeriousFouls": 23,
+          "focalFoulOpportunities": 266,
+          "opponentSeriousFouls": 15,
+          "opponentFoulOpportunities": 178
+        },
+        {
+          "arm": "home-hot-5",
+          "matchedFixtures": 256,
+          "wins": 118,
+          "controlWins": 121,
+          "liftPoints": -1.171875,
+          "conservative95Points": [
+            -10.000400232416043,
+            7.7017600353170925
+          ],
+          "approximate95Points": [
+            -6.961753547012399,
+            4.618003547012399
+          ],
+          "improved": 27,
+          "worsened": 30,
+          "meanScoreMarginChange": -0.36328125,
+          "focalSeriousFouls": 19,
+          "focalFoulOpportunities": 262,
+          "opponentSeriousFouls": 15,
+          "opponentFoulOpportunities": 179
+        },
+        {
+          "arm": "shared-full-5",
+          "matchedFixtures": 256,
+          "wins": 112,
+          "controlWins": 121,
+          "liftPoints": -3.515625,
+          "conservative95Points": [
+            -12.270095040599148,
+            5.374174449302293
+          ],
+          "approximate95Points": [
+            -9.291192805753845,
+            2.259942805753846
+          ],
+          "improved": 24,
+          "worsened": 33,
+          "meanScoreMarginChange": -0.7890625,
+          "focalSeriousFouls": 20,
+          "focalFoulOpportunities": 266,
+          "opponentSeriousFouls": 15,
+          "opponentFoulOpportunities": 184
+        },
+        {
+          "arm": "shared-adverse-5",
+          "matchedFixtures": 256,
+          "wins": 106,
+          "controlWins": 121,
+          "liftPoints": -5.859375,
+          "conservative95Points": [
+            -15.58667027818757,
+            4.093469292692806
+          ],
+          "approximate95Points": [
+            -12.4638288242837,
+            0.7450788242837001
+          ],
+          "improved": 30,
+          "worsened": 45,
+          "meanScoreMarginChange": -2.71875,
+          "focalSeriousFouls": 21,
+          "focalFoulOpportunities": 296,
+          "opponentSeriousFouls": 22,
+          "opponentFoulOpportunities": 220
+        }
+      ]
+    },
+    {
+      "id": "pair-4-focal-0",
+      "pairId": "pair-4",
+      "focalClub": "Greensboro Crescent CC",
+      "opponent": "Lynchburg Union",
+      "historicalFocalWins": 22,
+      "effects": [
+        {
+          "arm": "control",
+          "matchedFixtures": 256,
+          "wins": 124,
+          "controlWins": 124,
+          "liftPoints": 0.0,
+          "conservative95Points": [
+            -1.9246849237780348,
+            1.9246849237780348
+          ],
+          "approximate95Points": [
+            0.0,
+            0.0
+          ],
+          "improved": 0,
+          "worsened": 0,
+          "meanScoreMarginChange": 0.0,
+          "focalSeriousFouls": 31,
+          "focalFoulOpportunities": 385,
+          "opponentSeriousFouls": 32,
+          "opponentFoulOpportunities": 250
+        },
+        {
+          "arm": "confidence-5",
+          "matchedFixtures": 256,
+          "wins": 123,
+          "controlWins": 124,
+          "liftPoints": -0.390625,
+          "conservative95Points": [
+            -8.243302451068773,
+            7.477089052035792
+          ],
+          "approximate95Points": [
+            -5.420769939384275,
+            4.639519939384275
+          ],
+          "improved": 21,
+          "worsened": 22,
+          "meanScoreMarginChange": 0.22265625,
+          "focalSeriousFouls": 30,
+          "focalFoulOpportunities": 396,
+          "opponentSeriousFouls": 25,
+          "opponentFoulOpportunities": 247
+        },
+        {
+          "arm": "home-hot-5",
+          "matchedFixtures": 256,
+          "wins": 122,
+          "controlWins": 124,
+          "liftPoints": -0.78125,
+          "conservative95Points": [
+            -9.554121663626681,
+            8.021694865560711
+          ],
+          "approximate95Points": [
+            -6.521085098211171,
+            4.958585098211172
+          ],
+          "improved": 27,
+          "worsened": 29,
+          "meanScoreMarginChange": 0.4921875,
+          "focalSeriousFouls": 27,
+          "focalFoulOpportunities": 378,
+          "opponentSeriousFouls": 23,
+          "opponentFoulOpportunities": 242
+        },
+        {
+          "arm": "shared-full-5",
+          "matchedFixtures": 256,
+          "wins": 125,
+          "controlWins": 124,
+          "liftPoints": 0.390625,
+          "conservative95Points": [
+            -8.471169909850767,
+            9.237383308883748
+          ],
+          "approximate95Points": [
+            -5.4008414465409205,
+            6.1820914465409205
+          ],
+          "improved": 29,
+          "worsened": 28,
+          "meanScoreMarginChange": 0.55078125,
+          "focalSeriousFouls": 26,
+          "focalFoulOpportunities": 375,
+          "opponentSeriousFouls": 25,
+          "opponentFoulOpportunities": 243
+        },
+        {
+          "arm": "shared-adverse-5",
+          "matchedFixtures": 256,
+          "wins": 104,
+          "controlWins": 124,
+          "liftPoints": -7.8125,
+          "conservative95Points": [
+            -16.553349999167004,
+            1.2290820185073201
+          ],
+          "approximate95Points": [
+            -13.676741035007572,
+            -1.948258964992429
+          ],
+          "improved": 20,
+          "worsened": 40,
+          "meanScoreMarginChange": -2.7578125,
+          "focalSeriousFouls": 36,
+          "focalFoulOpportunities": 376,
+          "opponentSeriousFouls": 28,
+          "opponentFoulOpportunities": 248
+        }
+      ]
+    },
+    {
+      "id": "pair-4-focal-1",
+      "pairId": "pair-4",
+      "focalClub": "Lynchburg Union",
+      "opponent": "Greensboro Crescent CC",
+      "historicalFocalWins": 28,
+      "effects": [
+        {
+          "arm": "control",
+          "matchedFixtures": 256,
+          "wins": 136,
+          "controlWins": 136,
+          "liftPoints": 0.0,
+          "conservative95Points": [
+            -1.9246849237780348,
+            1.9246849237780348
+          ],
+          "approximate95Points": [
+            0.0,
+            0.0
+          ],
+          "improved": 0,
+          "worsened": 0,
+          "meanScoreMarginChange": 0.0,
+          "focalSeriousFouls": 15,
+          "focalFoulOpportunities": 239,
+          "opponentSeriousFouls": 42,
+          "opponentFoulOpportunities": 433
+        },
+        {
+          "arm": "confidence-5",
+          "matchedFixtures": 256,
+          "wins": 127,
+          "controlWins": 136,
+          "liftPoints": -3.515625,
+          "conservative95Points": [
+            -11.261988141212695,
+            4.3660675499158375
+          ],
+          "approximate95Points": [
+            -8.527456799717964,
+            1.4962067997179647
+          ],
+          "improved": 17,
+          "worsened": 26,
+          "meanScoreMarginChange": 0.62890625,
+          "focalSeriousFouls": 13,
+          "focalFoulOpportunities": 239,
+          "opponentSeriousFouls": 45,
+          "opponentFoulOpportunities": 397
+        },
+        {
+          "arm": "home-hot-5",
+          "matchedFixtures": 256,
+          "wins": 129,
+          "controlWins": 136,
+          "liftPoints": -2.734375,
+          "conservative95Points": [
+            -10.820814931607748,
+            5.457321138376859
+          ],
+          "approximate95Points": [
+            -7.982797582672937,
+            2.514047582672938
+          ],
+          "improved": 20,
+          "worsened": 27,
+          "meanScoreMarginChange": 0.84765625,
+          "focalSeriousFouls": 12,
+          "focalFoulOpportunities": 246,
+          "opponentSeriousFouls": 47,
+          "opponentFoulOpportunities": 412
+        },
+        {
+          "arm": "shared-full-5",
+          "matchedFixtures": 256,
+          "wins": 132,
+          "controlWins": 136,
+          "liftPoints": -1.5625,
+          "conservative95Points": [
+            -10.315428950460186,
+            7.250575354328253
+          ],
+          "approximate95Points": [
+            -7.299931649812877,
+            4.174931649812877
+          ],
+          "improved": 26,
+          "worsened": 30,
+          "meanScoreMarginChange": 1.1796875,
+          "focalSeriousFouls": 12,
+          "focalFoulOpportunities": 252,
+          "opponentSeriousFouls": 53,
+          "opponentFoulOpportunities": 411
+        },
+        {
+          "arm": "shared-adverse-5",
+          "matchedFixtures": 256,
+          "wins": 131,
+          "controlWins": 136,
+          "liftPoints": -1.953125,
+          "conservative95Points": [
+            -11.013740659753267,
+            7.182673664588352
+          ],
+          "approximate95Points": [
+            -7.939763049295452,
+            4.033513049295452
+          ],
+          "improved": 28,
+          "worsened": 33,
+          "meanScoreMarginChange": -2.234375,
+          "focalSeriousFouls": 17,
+          "focalFoulOpportunities": 235,
+          "opponentSeriousFouls": 41,
+          "opponentFoulOpportunities": 398
+        }
+      ]
+    }
+  ],
+  "simulationSideChecks": [
+    {
+      "swap": false,
+      "effects": [
+        {
+          "arm": "control",
+          "matchedFixtures": 1024,
+          "wins": 520,
+          "controlWins": 520,
+          "liftPoints": 0.0,
+          "conservative95Points": [
+            -0.48821873523865733,
+            0.48821873523865733
+          ],
+          "approximate95Points": [
+            0.0,
+            0.0
+          ],
+          "improved": 0,
+          "worsened": 0,
+          "meanScoreMarginChange": 0.0,
+          "focalSeriousFouls": 77,
+          "focalFoulOpportunities": 1034,
+          "opponentSeriousFouls": 105,
+          "opponentFoulOpportunities": 1001
+        },
+        {
+          "arm": "confidence-5",
+          "matchedFixtures": 1024,
+          "wins": 513,
+          "controlWins": 520,
+          "liftPoints": -0.68359375,
+          "conservative95Points": [
+            -4.89183032026697,
+            3.5313176857878132
+          ],
+          "approximate95Points": [
+            -3.4251332893236737,
+            2.0579457893236737
+          ],
+          "improved": 99,
+          "worsened": 106,
+          "meanScoreMarginChange": -0.3095703125,
+          "focalSeriousFouls": 78,
+          "focalFoulOpportunities": 1004,
+          "opponentSeriousFouls": 102,
+          "opponentFoulOpportunities": 974
+        },
+        {
+          "arm": "home-hot-5",
+          "matchedFixtures": 1024,
+          "wins": 517,
+          "controlWins": 520,
+          "liftPoints": -0.29296875,
+          "conservative95Points": [
+            -4.711641486899174,
+            4.128564643550961
+          ],
+          "approximate95Points": [
+            -3.1908306371398245,
+            2.6048931371398245
+          ],
+          "improved": 113,
+          "worsened": 116,
+          "meanScoreMarginChange": -0.0859375,
+          "focalSeriousFouls": 72,
+          "focalFoulOpportunities": 1004,
+          "opponentSeriousFouls": 99,
+          "opponentFoulOpportunities": 959
+        },
+        {
+          "arm": "shared-full-5",
+          "matchedFixtures": 1024,
+          "wins": 518,
+          "controlWins": 520,
+          "liftPoints": -0.1953125,
+          "conservative95Points": [
+            -4.7366632301651235,
+            4.3479453345996495
+          ],
+          "approximate95Points": [
+            -3.18661072288753,
+            2.7959857228875293
+          ],
+          "improved": 121,
+          "worsened": 123,
+          "meanScoreMarginChange": -0.1923828125,
+          "focalSeriousFouls": 72,
+          "focalFoulOpportunities": 1012,
+          "opponentSeriousFouls": 108,
+          "opponentFoulOpportunities": 954
+        },
+        {
+          "arm": "shared-adverse-5",
+          "matchedFixtures": 1024,
+          "wins": 506,
+          "controlWins": 520,
+          "liftPoints": -1.3671875,
+          "conservative95Points": [
+            -5.947877330649866,
+            3.226852061691547
+          ],
+          "approximate95Points": [
+            -4.393905527579934,
+            1.6595305275799337
+          ],
+          "improved": 118,
+          "worsened": 132,
+          "meanScoreMarginChange": -1.5537109375,
+          "focalSeriousFouls": 82,
+          "focalFoulOpportunities": 1010,
+          "opponentSeriousFouls": 101,
+          "opponentFoulOpportunities": 999
+        }
+      ]
+    },
+    {
+      "swap": true,
+      "effects": [
+        {
+          "arm": "control",
+          "matchedFixtures": 1024,
+          "wins": 505,
+          "controlWins": 505,
+          "liftPoints": 0.0,
+          "conservative95Points": [
+            -0.48821873523865733,
+            0.48821873523865733
+          ],
+          "approximate95Points": [
+            0.0,
+            0.0
+          ],
+          "improved": 0,
+          "worsened": 0,
+          "meanScoreMarginChange": 0.0,
+          "focalSeriousFouls": 88,
+          "focalFoulOpportunities": 1060,
+          "opponentSeriousFouls": 85,
+          "opponentFoulOpportunities": 1068
+        },
+        {
+          "arm": "confidence-5",
+          "matchedFixtures": 1024,
+          "wins": 523,
+          "controlWins": 505,
+          "liftPoints": 1.7578125,
+          "conservative95Points": [
+            -2.141824814902486,
+            5.640285874991753
+          ],
+          "approximate95Points": [
+            -0.7513724497788751,
+            4.266997449778875
+          ],
+          "improved": 95,
+          "worsened": 77,
+          "meanScoreMarginChange": 1.380859375,
+          "focalSeriousFouls": 85,
+          "focalFoulOpportunities": 1045,
+          "opponentSeriousFouls": 92,
+          "opponentFoulOpportunities": 1020
+        },
+        {
+          "arm": "home-hot-5",
+          "matchedFixtures": 1024,
+          "wins": 523,
+          "controlWins": 505,
+          "liftPoints": 1.7578125,
+          "conservative95Points": [
+            -2.4491166359925085,
+            5.947577696081774
+          ],
+          "approximate95Points": [
+            -0.9752294679560958,
+            4.490854467956096
+          ],
+          "improved": 111,
+          "worsened": 93,
+          "meanScoreMarginChange": 1.3505859375,
+          "focalSeriousFouls": 80,
+          "focalFoulOpportunities": 1033,
+          "opponentSeriousFouls": 94,
+          "opponentFoulOpportunities": 1026
+        },
+        {
+          "arm": "shared-full-5",
+          "matchedFixtures": 1024,
+          "wins": 528,
+          "controlWins": 505,
+          "liftPoints": 2.24609375,
+          "conservative95Points": [
+            -2.0930626790860023,
+            6.563318478088951
+          ],
+          "approximate95Points": [
+            -0.5844997003285439,
+            5.076687200328544
+          ],
+          "improved": 121,
+          "worsened": 98,
+          "meanScoreMarginChange": 1.79296875,
+          "focalSeriousFouls": 81,
+          "focalFoulOpportunities": 1053,
+          "opponentSeriousFouls": 98,
+          "opponentFoulOpportunities": 1022
+        },
+        {
+          "arm": "shared-adverse-5",
+          "matchedFixtures": 1024,
+          "wins": 470,
+          "controlWins": 505,
+          "liftPoints": -3.41796875,
+          "conservative95Points": [
+            -7.888281087110944,
+            1.0857179147151494
+          ],
+          "approximate95Points": [
+            -6.371064917205875,
+            -0.46487258279412497
+          ],
+          "improved": 102,
+          "worsened": 137,
+          "meanScoreMarginChange": -1.7763671875,
+          "focalSeriousFouls": 85,
+          "focalFoulOpportunities": 1037,
+          "opponentSeriousFouls": 90,
+          "opponentFoulOpportunities": 1042
+        }
+      ]
+    }
+  ],
+  "previousSyntheticConfirmation": [
+    {
+      "case": "confidence-5",
+      "reference": "control",
+      "matchedFixtures": 6400,
+      "liftPoints": 1.890625,
+      "approximate95Points": [
+        0.8014293255330096,
+        2.9798206744669904
+      ],
+      "conservative95Points": [
+        0.21752686965851725,
+        3.560757243781655
+      ],
+      "improved": 694,
+      "worsened": 573,
+      "unchanged": 5133,
+      "meanScoreMarginChange": 0.91375
+    },
+    {
+      "case": "home-hot-5",
+      "reference": "control",
+      "matchedFixtures": 6400,
+      "liftPoints": 1.640625,
+      "approximate95Points": [
+        0.4706436224583553,
+        2.8106063775416446
+      ],
+      "conservative95Points": [
+        -0.14134189742706776,
+        3.4200181942139944
+      ],
+      "improved": 783,
+      "worsened": 678,
+      "unchanged": 4939,
+      "meanScoreMarginChange": 1.11984375
+    },
+    {
+      "case": "shared-full-5",
+      "reference": "control",
+      "matchedFixtures": 6400,
+      "liftPoints": 1.90625,
+      "approximate95Points": [
+        0.6706047829777446,
+        3.141895217022255
+      ],
+      "conservative95Points": [
+        0.03831622042277938,
+        3.7711933815582173
+      ],
+      "improved": 876,
+      "worsened": 754,
+      "unchanged": 4770,
+      "meanScoreMarginChange": 1.2203125
+    }
+  ],
+  "profilePointEstimateFlags": [
+    {
+      "profile": "pair-1-focal-0",
+      "arm": "home-hot-5",
+      "liftPoints": 5.859375,
+      "conservative95Points": [
+        -3.1485021481357207,
+        14.641703133630484
+      ],
+      "reviewLevel": 3
+    },
+    {
+      "profile": "pair-1-focal-0",
+      "arm": "shared-full-5",
+      "liftPoints": 4.296875,
+      "conservative95Points": [
+        -5.092843180502476,
+        13.521190569865302
+      ],
+      "reviewLevel": 4
+    },
+    {
+      "profile": "pair-1-focal-1",
+      "arm": "shared-full-5",
+      "liftPoints": 7.03125,
+      "conservative95Points": [
+        -2.520130888490696,
+        16.311972071084405
+      ],
+      "reviewLevel": 4
+    },
+    {
+      "profile": "pair-2-focal-0",
+      "arm": "home-hot-5",
+      "liftPoints": -3.515625,
+      "conservative95Points": [
+        -12.13750451484939,
+        5.241583923552534
+      ],
+      "reviewLevel": 3
+    },
+    {
+      "profile": "pair-2-focal-1",
+      "arm": "confidence-5",
+      "liftPoints": 5.078125,
+      "conservative95Points": [
+        -2.4461664092704045,
+        12.4069405966992
+      ],
+      "reviewLevel": 3
+    },
+    {
+      "profile": "pair-2-focal-1",
+      "arm": "home-hot-5",
+      "liftPoints": 5.46875,
+      "conservative95Points": [
+        -2.774560607809351,
+        13.501548194271127
+      ],
+      "reviewLevel": 3
+    },
+    {
+      "profile": "pair-2-focal-1",
+      "arm": "shared-full-5",
+      "liftPoints": 4.296875,
+      "conservative95Points": [
+        -4.180842914314514,
+        12.60919030367734
+      ],
+      "reviewLevel": 4
+    },
+    {
+      "profile": "pair-3-focal-1",
+      "arm": "shared-adverse-5",
+      "liftPoints": -5.859375,
+      "conservative95Points": [
+        -15.58667027818757,
+        4.093469292692806
+      ],
+      "reviewLevel": 4
+    },
+    {
+      "profile": "pair-4-focal-0",
+      "arm": "shared-adverse-5",
+      "liftPoints": -7.8125,
+      "conservative95Points": [
+        -16.553349999167004,
+        1.2290820185073201
+      ],
+      "reviewLevel": 4
+    },
+    {
+      "profile": "pair-4-focal-1",
+      "arm": "confidence-5",
+      "liftPoints": -3.515625,
+      "conservative95Points": [
+        -11.261988141212695,
+        4.3660675499158375
+      ],
+      "reviewLevel": 3
+    }
+  ],
+  "intervalNote": "Conservative intervals are per contrast, not simultaneous across all profiles and arms.",
+  "samplingNote": "Eight selected copied founding clubs in four historical close pairings; no inference to all league clubs or current availability.",
+  "analysisMetadataClarification": "The written prespecified plan uses conservative intervals as primary; the generic manifest inherited a legacy approximate-interval label. Clarification was recorded before inspecting new winner outcomes."
+}

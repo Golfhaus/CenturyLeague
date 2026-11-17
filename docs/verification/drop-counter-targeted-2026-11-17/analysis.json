@@ -1,0 +1,184 @@
+{
+  "status": "completed",
+  "studyId": "drop-counter-targeted-v1",
+  "sourceSHA256": "b888ec93d27ffd5df599f3f8106f606e738295b0521de51d3c0cc5dacc7ad1d0",
+  "harnessSHA256": "1a6d6c810a58988b76a08b97ba529692cd6f65bea832791d43b513fd3b13e3f8",
+  "pairedClusters": 256,
+  "outcomes": 1024,
+  "primary": {
+    "arm": "drop-counter",
+    "n": 256,
+    "wins": 110,
+    "controlWins": 99,
+    "changedToFocal": 75,
+    "changedAgainstFocal": 64,
+    "winChangePP": 4.296875,
+    "meanMarginChange": 1.87890625,
+    "conservative95IntervalPP": [
+      -12.679393946757745,
+      21.273143946757745
+    ],
+    "intervalHalfWidthPP": 16.976268946757745
+  },
+  "cells": [
+    {
+      "arm": "hold",
+      "n": 256,
+      "wins": 99,
+      "winRatePct": 38.671875,
+      "meanMargin": -4.2421875,
+      "meanPlayingMinutes": 50.58941664665973,
+      "ratesPer60": {
+        "shots": 40.41729744149965,
+        "turnovers": 39.70383299789684,
+        "fouls": 2.302544340718171,
+        "substitutions": 264.3617407848296,
+        "pointsFor": 51.11926409554185,
+        "pointsAgainst": 53.77854065806143
+      }
+    },
+    {
+      "arm": "pressure-only",
+      "n": 256,
+      "wins": 123,
+      "winRatePct": 48.046875,
+      "meanMargin": -1.6796875,
+      "meanPlayingMinutes": 53.11441211857049,
+      "ratesPer60": {
+        "shots": 40.636039991966115,
+        "turnovers": 39.49316515670504,
+        "fouls": 2.334288756189605,
+        "substitutions": 264.4850651578309,
+        "pointsFor": 50.802772117222915,
+        "pointsAgainst": 50.44093529679277
+      }
+    },
+    {
+      "arm": "transition-only",
+      "n": 256,
+      "wins": 136,
+      "winRatePct": 53.125,
+      "meanMargin": 0.0625,
+      "meanPlayingMinutes": 50.67002433187883,
+      "ratesPer60": {
+        "shots": 41.597263920671296,
+        "turnovers": 40.061592662841555,
+        "fouls": 2.2572517283762474,
+        "substitutions": 264.42686384443635,
+        "pointsFor": 54.03527600592484,
+        "pointsAgainst": 51.59300364407513
+      }
+    },
+    {
+      "arm": "drop-counter",
+      "n": 256,
+      "wins": 110,
+      "winRatePct": 42.96875,
+      "meanMargin": -2.36328125,
+      "meanPlayingMinutes": 50.71425405593812,
+      "ratesPer60": {
+        "shots": 40.95557134112674,
+        "turnovers": 39.20402975477072,
+        "fouls": 2.4909786676672665,
+        "substitutions": 263.74796394020575,
+        "pointsFor": 52.537004627164166,
+        "pointsAgainst": 52.966802430676324
+      }
+    }
+  ],
+  "secondary": [
+    {
+      "arm": "pressure-only",
+      "n": 256,
+      "wins": 123,
+      "controlWins": 99,
+      "changedToFocal": 65,
+      "changedAgainstFocal": 41,
+      "winChangePP": 9.375,
+      "meanMarginChange": 2.5625
+    },
+    {
+      "arm": "transition-only",
+      "n": 256,
+      "wins": 136,
+      "controlWins": 99,
+      "changedToFocal": 77,
+      "changedAgainstFocal": 40,
+      "winChangePP": 14.453125,
+      "meanMarginChange": 4.3046875
+    }
+  ],
+  "interactionRiskDifferencePP": -19.53125,
+  "byTemplate": [
+    {
+      "template": 1,
+      "arm": "drop-counter",
+      "n": 64,
+      "wins": 28,
+      "controlWins": 28,
+      "changedToFocal": 17,
+      "changedAgainstFocal": 17,
+      "winChangePP": 0,
+      "meanMarginChange": 1.3125
+    },
+    {
+      "template": 2,
+      "arm": "drop-counter",
+      "n": 64,
+      "wins": 28,
+      "controlWins": 24,
+      "changedToFocal": 20,
+      "changedAgainstFocal": 16,
+      "winChangePP": 6.25,
+      "meanMarginChange": 2.890625
+    },
+    {
+      "template": 3,
+      "arm": "drop-counter",
+      "n": 64,
+      "wins": 30,
+      "controlWins": 20,
+      "changedToFocal": 20,
+      "changedAgainstFocal": 10,
+      "winChangePP": 15.625,
+      "meanMarginChange": 4.578125
+    },
+    {
+      "template": 4,
+      "arm": "drop-counter",
+      "n": 64,
+      "wins": 24,
+      "controlWins": 27,
+      "changedToFocal": 18,
+      "changedAgainstFocal": 21,
+      "winChangePP": -4.6875,
+      "meanMarginChange": -1.265625
+    }
+  ],
+  "bySide": [
+    {
+      "side": 0,
+      "arm": "drop-counter",
+      "n": 128,
+      "wins": 56,
+      "controlWins": 50,
+      "changedToFocal": 37,
+      "changedAgainstFocal": 31,
+      "winChangePP": 4.6875,
+      "meanMarginChange": 2.0546875
+    },
+    {
+      "side": 1,
+      "arm": "drop-counter",
+      "n": 128,
+      "wins": 54,
+      "controlWins": 49,
+      "changedToFocal": 38,
+      "changedAgainstFocal": 33,
+      "winChangePP": 3.90625,
+      "meanMarginChange": 1.703125
+    }
+  ],
+  "outcomesCSVSHA256": "1f678131400dd3e5a140776d7c34e14ccb4a719f06fb05351b854c4203f10f75",
+  "limits": "Conditional fixed-history maximal-pressure 50-48 states only. One fixed primary contrast with conservative distribution-free 95% bounds; components, interaction, margins and subgroup splits are descriptive. New recovered adapter; compact historical metrics matched, not full historical event bytes. No policy revision, natural coaching frequency, pre-match modifier effect or official adoption."
+}

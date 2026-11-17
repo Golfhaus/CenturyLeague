@@ -1,0 +1,22 @@
+import fs from'node:fs';import path from'node:path';import assert from'node:assert/strict';import{spawnSync}from'node:child_process';import{randomUUID}from'node:crypto';import{gunzipSync,gzipSync}from'node:zlib';
+import{loadEngines,hash,readJSON,labRoot,sourceFingerprint,verifyBaseline}from'../experiments/v2/tools.mjs';import{ensureQualifiedStudyProcess,qualifyStudyRuntime}from'../experiments/v2/runtime.mjs';import{stageInput}from'../experiments/v2/modifier-stage-fixtures.mjs';import{BROAD_ARMS,broadInput,broadHarnessFingerprint,MODERATE}from'./broad-modifier-spec.mjs';
+ensureQualifiedStudyProcess();qualifyStudyRuntime();const[profilesFile,priorDir,out]=process.argv.slice(2);const e=await loadEngines(),profiles=readJSON(profilesFile).profiles;assert.equal(profiles.length,60);let constructionChecks=0,legacy=0;const normal={};
+for(const p of profiles)for(const swap of[false,true])for(const arm of BROAD_ARMS){
+ const f={id:'broad-contract',seed:'broad-contract',trial:0,swap},input=broadInput(e,p,f,arm),side=Number(swap);assert.deepEqual(input.teams[side],p.teams[0]);assert.deepEqual(input.teams[1-side],p.teams[1]);assert.equal(input.lab.psychology.maximumOddsBonus,.006);
+ if(!arm.ordinary){const old=stageInput(e,p,f,arm,'combined');old.availability=e.pinAvailability(old,'men','2026-11-15',[],[]);assert.deepEqual(input,old);}
+ else{
+  assert.equal(input.lab.streaks[side],arm.direction==='favored'?2:-2);assert.equal(input.lab.psychology.homeSide,arm.direction==='favored'?side:1-side);
+  for(const trial of[0,2,4]){const x=broadInput(e,p,{...f,trial},arm);assert.deepEqual(x.weather.conditions,MODERATE[trial/2]);for(const[id,t]of Object.entries(x.weather.traits)){if(normal[id])assert.deepEqual(normal[id],t);else normal[id]=t;}}
+ }
+ constructionChecks++;
+}
+const original=path.join(labRoot,'runs','hot-favored-combined-confirmation-001'),om=readJSON(path.join(original,'manifest.json'));
+for(const f of om.fixtures.slice(0,2)){const saved=JSON.parse(gunzipSync(fs.readFileSync(path.join(original,f.id+'.json.gz'))));for(const arm of['control','hot-combined-favored']){const r=saved.results[arm];assert.equal(hash(JSON.stringify(e.simulateV2(r.input))),hash(JSON.stringify(r)));legacy++;}}
+const id='broad-preflight-'+randomUUID(),dir=path.join(labRoot,'runs',id),analysis=path.join(out,'qualification-compact');const args=['scripts/run-broad-modifier-validation.mjs','--study-id',id,'--trials','4','--workers','8','--profiles',profilesFile,'--screen-dir',priorDir];const run=()=>spawnSync(process.execPath,args,{encoding:'utf8',maxBuffer:4*1024*1024});
+try{
+ let r=run();assert.equal(r.status,0,r.stdout+r.stderr);let s=readJSON(path.join(dir,'summary.json'));assert.equal(s.engineResults,144);assert.equal(s.fullReplays,72);assert.equal(s.frozenControls,8);
+ r=run();assert.equal(r.status,0,r.stdout+r.stderr);const resumed=r.stdout.trim().split('\n').map(x=>{try{return JSON.parse(x);}catch{return null;}}).filter(x=>x?.status==='completed').at(-1);assert.equal(resumed.resumedFixtures,16);
+ fs.mkdirSync(analysis,{recursive:true});for(const[bin,args]of[[process.execPath,['scripts/audit-broad-modifier-validation.mjs',dir,analysis]],['python3',['scripts/analyze-broad-modifier-validation.py',analysis]],['python3',['scripts/recompute-broad-modifier-validation.py',analysis]]]){r=spawnSync(bin,args,{encoding:'utf8',maxBuffer:4*1024*1024});assert.equal(r.status,0,r.stdout+r.stderr);}
+ const m=readJSON(path.join(dir,'manifest.json')),file=path.join(dir,m.fixtures[0].id+'.json.gz'),bytes=fs.readFileSync(file),bad=JSON.parse(gunzipSync(bytes));bad.results['ordinary-favored'].labTelemetry.contacts[0]+=1;fs.writeFileSync(file,gzipSync(JSON.stringify(bad)));r=run();assert.notEqual(r.status,0);assert.ok((r.stdout+r.stderr).includes('Full enabled replay failed'));fs.writeFileSync(file,bytes);
+ const proof={status:'passed',constructionChecks,legacyResultsExactlyReplayed:legacy,ordinaryRegimesAllChecked:true,normalTraitsStableAcrossArmsAndContexts:true,sourceTeamsPreserved:true,saveResumeOutcomes:144,fullQualificationAuditAndIndependentAnalysis:true,corruptRetainedResultRejected:true,neutralV1ParityBothSides:true,sourceSHA256:sourceFingerprint(),harnessSHA256:broadHarnessFingerprint(),baseline:verifyBaseline()};fs.writeFileSync(path.join(out,'preflight-verification.json'),JSON.stringify(proof,null,2)+'\n');console.log(JSON.stringify(proof));
+}finally{fs.rmSync(dir,{recursive:true,force:true});}

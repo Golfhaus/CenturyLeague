@@ -1,0 +1,2437 @@
+{
+  "schema": "drop-counter-targeted-v1",
+  "date": "2026-11-17",
+  "status": "frozen-before-fresh-outcomes",
+  "contexts": 8,
+  "pairedClusters": 256,
+  "plannedOutcomes": 1024,
+  "armDeltas": {
+    "hold": {},
+    "pressure-only": {
+      "pressure": -0.5
+    },
+    "transition-only": {
+      "transition_emphasis": 0.5
+    },
+    "drop-counter": {
+      "pressure": -0.5,
+      "transition_emphasis": 0.5
+    }
+  },
+  "fixtures": [
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-00",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 0,
+      "continuationSeed": "c4acbda718197149d53802eda0ac954f2f12a46b6a1522b06942571954701558"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-01",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 1,
+      "continuationSeed": "4a14c49444f5d5bbf63d6dd57c39a46f8c4c84a04ec58414b5ff88faa5922f63"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-02",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 2,
+      "continuationSeed": "3af3b2a92f2dd183e67be45a772d19c5b36421c8f5dfbe43f88f86bf3dc85548"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-03",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 3,
+      "continuationSeed": "8e126b07d04fea8a680eca22fad0b0ba7a2e467b0094e81dd2d996c06dc42506"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-04",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 4,
+      "continuationSeed": "2036c942adcdac95c6dd29016a43994ea702b28a75ce9ee2a98439c9a6dddb70"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-05",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 5,
+      "continuationSeed": "4a46b0dbc132873e2f35311d0b3cede9382c6e42a27c0db2ea57ed1a18bad7e7"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-06",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 6,
+      "continuationSeed": "64d2081cee999d76cf06be306c812dcc874054b0cdd1293329b7d0f5a40ca86e"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-07",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 7,
+      "continuationSeed": "ced2165774e83a488ef095ebe14c312a84e7370192f28e2ae94370751732f52f"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-08",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 8,
+      "continuationSeed": "f99ac8a302204ec2ffbc36c91481918d674d1344e943f3a90967a6c0ee7462c1"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-09",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 9,
+      "continuationSeed": "e0283cb47a0c879c3ec70d897f51d5f427186d65711abbd2e15259a5aa81cfb2"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-10",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 10,
+      "continuationSeed": "4759b5ccc6dd501f851b034219f6e6b67d116a78ea40414cbabb08d5ae8ae0e8"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-11",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 11,
+      "continuationSeed": "ba1a142604deff1e55d356ab968e6b79d3df0bab8f6b084c36e6a42602952ee5"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-12",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 12,
+      "continuationSeed": "baecdeef6ff38abf5e623ba3dd03336b8551e4d49ff810e2511b5f08d65ec8a4"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-13",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 13,
+      "continuationSeed": "c93ea4b11b3ca04586a92781681a6a80ad3020778b733f6fc3e47b5d89285e06"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-14",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 14,
+      "continuationSeed": "440db9a28984b490217c0074349ca9cac8487880acfb045c16234428e8eb9a39"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-15",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 15,
+      "continuationSeed": "3e8198747593f214e2c236c767ed321772a83b0d147d72a56782cf02403a976d"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-16",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 16,
+      "continuationSeed": "72290969e02d3c6966ba638005f035433e997c81be70a2abf97940458622de3d"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-17",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 17,
+      "continuationSeed": "e700c5881dd587ed6f9c17e6f6e6ff1417eaf8c1b5d951b9166e35b264664ecd"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-18",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 18,
+      "continuationSeed": "70f49b0a04d2a41980379c23fa9f53b1537d6c38502afaf012eb8895992bcd9d"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-19",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 19,
+      "continuationSeed": "f2ccc02cdf8f1af2aa7035172f730fc70b2132abc267578b72f734af0eaaa0bb"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-20",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 20,
+      "continuationSeed": "52c80790a3c987ab1d522b575e012377ad835e36cd2316da845b8c434bd0c4ab"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-21",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 21,
+      "continuationSeed": "387bf59cf60df2dae9e61150ca44a6461219b3be17bcfe6b359d29d4a72477af"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-22",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 22,
+      "continuationSeed": "de46184de6ab295d23240e25499f01f6e0a85e4fabc7346447d68926f1267d67"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-23",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 23,
+      "continuationSeed": "18863b0fb3ba4d75d2a1a49c3951107ba147285b25b3a0f41ade316067ee328a"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-24",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 24,
+      "continuationSeed": "1ea8f80c1d9b586d10dfd219ebb77ab17c16ef5fe8665ad1f05528ff1c89b4d9"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-25",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 25,
+      "continuationSeed": "9ace8c392b11b0f072f9f1ca4880af2508b3a3ea156122fb00dbbb8bdecfe26d"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-26",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 26,
+      "continuationSeed": "6d3c3869982bcddf94e18189ed820724f92f5f5e262961277c1c49c50cd68a67"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-27",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 27,
+      "continuationSeed": "4dafdff43366b04c81f591b2a5683699f8c3dd801dd88ad73a57ce8c8c6e38d0"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-28",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 28,
+      "continuationSeed": "d617669a9cd4ea0c2880a227eaedd813bdd1c5ddf27018a538c99bf661b8a9a3"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-29",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 29,
+      "continuationSeed": "4207aeffc54e87cf3c90c398667b23a337bdc49629e10ba909a87aa111af7a82"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-30",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 30,
+      "continuationSeed": "443b63dd43713eb8b8942f5bf47e165fcfaad585f250437ec4a4f4a77b006fc9"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-0-trial-31",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 1,
+      "trial": 31,
+      "continuationSeed": "b2e803c37d83324d1dec3cc9745ed96c0a0a1d53e5e2ca3430240c5b8565ab37"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-00",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 0,
+      "continuationSeed": "f9e712a8829de7dab832096c426c7fc728ff18a2476b7586c7167c702703e7f8"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-01",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 1,
+      "continuationSeed": "d2b150c9d127d94e2d53c8e90a2ea03c22f55da272a74a9856d460ab9853b06f"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-02",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 2,
+      "continuationSeed": "d148ead9bb4e8c309830e1b040ab97d863c3040f30b4969a9011edccc9e5779f"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-03",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 3,
+      "continuationSeed": "281867bff6aada573aaed1382e1d2cc3f6d65295049a86dc14b6bcc740e0808d"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-04",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 4,
+      "continuationSeed": "7a543e5e0dc6cd9dbf18112be4886241d2e631f29f4be45375764db95b1a7d21"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-05",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 5,
+      "continuationSeed": "23acca77067d9fa0bb811d28aa2edaf9ac1e19eae54eea6d9098d6c05a8f5e2b"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-06",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 6,
+      "continuationSeed": "0f19902cdd6acbe9173d8ed36d9582a3f65d5e0c61cc4f0a30bfeb161de87858"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-07",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 7,
+      "continuationSeed": "354903e28c560437130f9186ff117a69696290a4809529a29cb13f4754bb9fe0"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-08",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 8,
+      "continuationSeed": "a0afdae41c046b61141995959cc1f8757fff4daa8d0d7f042817cf9afb4bd24d"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-09",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 9,
+      "continuationSeed": "115524d8f9b71174e8f8e46a24cfbb8b34cef77dc87c4dcf007d4d86e3b4de89"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-10",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 10,
+      "continuationSeed": "b301c6c9b03d6de1585499204bc2d9cb075bf8142bb7f409dfabd15acd16412c"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-11",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 11,
+      "continuationSeed": "fdc18d802e122fc176584555784de9350e3b34a3c31af2cf1d39fe13edbdb4f4"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-12",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 12,
+      "continuationSeed": "fa36dccdfd699260c675569c6b536c370a5252ff8eac2f8a0019f8a08ad499ad"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-13",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 13,
+      "continuationSeed": "f73aff07c35132ccb7ec0826980280ff0e06747e49da6be62164bd5a44f30bd3"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-14",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 14,
+      "continuationSeed": "1603dff19c6a9c492e9f117d068df15084d3a1aaffc79d7547b160aecd01aef1"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-15",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 15,
+      "continuationSeed": "1464ba22ded28a7cecfc2b97a0eb5c98555e96cef99d6ef0d47ceae3540569c7"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-16",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 16,
+      "continuationSeed": "235407cb29bade827923ec8e75289e15b3fee8e4dcab61005eddabd7a1ba6f1a"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-17",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 17,
+      "continuationSeed": "1d9e37eb3bab721934cf2c4196200c5f6dcabc311e490e9008ffaab9e002e889"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-18",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 18,
+      "continuationSeed": "6f071a5f63658b7921cfb209724c17dbc2a20aaa86e45bf0a960b5d1b51cf1ec"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-19",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 19,
+      "continuationSeed": "5bff1b988e269b581290b3b203b82b8ac94fc0f9d266740a4a84a01824835224"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-20",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 20,
+      "continuationSeed": "d1250ba9570ec573f3f548b876d936c13d68b592a6e480588e56709256f8c347"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-21",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 21,
+      "continuationSeed": "15a592cd631a34231ac1ad54d8ef9c2fa713000b1d0e7842ed75744ef8fcea18"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-22",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 22,
+      "continuationSeed": "4c6cdba276d95f9cc1aa1ccf775571a8cbe882f2629e1ae0a9cb29d333238629"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-23",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 23,
+      "continuationSeed": "11056da84c10d19a9bbeea26f1fe08fefdf82d126792cc7c4bdf655b377839ec"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-24",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 24,
+      "continuationSeed": "b9c3b8aff12591bd0df4f0dc9cf456796173f5cc45a813583a865d17da0cf4bd"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-25",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 25,
+      "continuationSeed": "322eabce5a67dd950390669d54bb590096ace7a261d64f424124384774a52004"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-26",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 26,
+      "continuationSeed": "e721cb09599eeefaaa0dca8688231c22cd2687143d7629d9c283e45b91a30f75"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-27",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 27,
+      "continuationSeed": "1ec6e95a8564d9102a0587517f5f67e91eadcf2a92dbea2a96ef39d7f4558351"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-28",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 28,
+      "continuationSeed": "24216edd465ad0f35bb682d9eb0327b0acd886d7e599732284bb4724cbd73e7c"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-29",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 29,
+      "continuationSeed": "2e44243ed4689beb023ff36901ba1fbca4a543d9a015b322dd799957b5b80ea3"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-30",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 30,
+      "continuationSeed": "33947aa13116765b94831411492d50c336405fcc30f1482c5623c071176e00ce"
+    },
+    {
+      "id": "quality-1-zero-pressure-50-48-side-1-trial-31",
+      "context": "quality-1-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 1,
+      "trial": 31,
+      "continuationSeed": "9f6bb88b42be0000bda2f002b6cef484b54a56362bd1c0659b810e2e2aea0521"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-00",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 0,
+      "continuationSeed": "8ee1ba693a7f81299e334a7deea8d4ceef579ae435e0242fd6a5b13bcb006e0a"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-01",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 1,
+      "continuationSeed": "a75912681c32a60b3b0d592e04dab2c6c739dfd61e1aba3eca94d64e14f9f62d"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-02",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 2,
+      "continuationSeed": "a18f08c653d59c38fe9f71a76e2d2154bf1decb6f3d551893625556919380fcc"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-03",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 3,
+      "continuationSeed": "cce605df33dbf81ec1dc53eeae0d10045e155076f7c6d847daa2560f933c3dd9"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-04",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 4,
+      "continuationSeed": "7b532e8f3c2ced48ce8ba945c91727c5d5226e7fe32cae176fbef6b7188d1b5f"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-05",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 5,
+      "continuationSeed": "77236f40a20aaee1f738ef6096e3cfe73cc1ca8c43128f6ad002e058f09db945"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-06",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 6,
+      "continuationSeed": "aba241509928cb7d315cf03dca72ba677225c7971081f1a1b5391b98c7b43b9f"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-07",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 7,
+      "continuationSeed": "922e9b7499496238ae15606c67a5fd17670bf1cb2a685cf422237a596aa0412d"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-08",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 8,
+      "continuationSeed": "c6544c60d27bf3e3e08cd1fd1d0bc556a0b31e46f39c817d44d5fcf79b356b57"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-09",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 9,
+      "continuationSeed": "10c45f8b5338b36ba5539985c1b0dc0bac9c903bd5ca7557cdf0ae7e65e03fd2"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-10",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 10,
+      "continuationSeed": "be3a205d531bf21ab8d25cd0db5e0ab9047fa7c159a5399c5e47c4eb9565d7df"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-11",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 11,
+      "continuationSeed": "ad283e5e09475b5b0bba71368077f1f2bbcec228399b4e738bca27d7965c1aaa"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-12",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 12,
+      "continuationSeed": "d491c4a8339c1a84da767e9a1aa886dbb4ce40ffbaf192db9414f703f71b4885"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-13",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 13,
+      "continuationSeed": "c56bb99bf0a932abb0fb26419706c0401f72a81903301fa0c4197e4129601552"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-14",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 14,
+      "continuationSeed": "6792e5dbbd63ba726773b2048ee0172b1c45ff1b40290116a9ad4a3199fecb6b"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-15",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 15,
+      "continuationSeed": "662d0bf18f9d916bf5a1c744dcfcf448417b73011b24519d3986751c2565d6ae"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-16",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 16,
+      "continuationSeed": "f541f0ece72267456586917893818325e8f4df01366f755d8acc1496daf44643"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-17",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 17,
+      "continuationSeed": "a094570b8959d848c561ed13c32bead969be1f145a3a960765cf20ea62dfdb09"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-18",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 18,
+      "continuationSeed": "22c69681730cefcc474b379aed26d1ebebd21a66dab125b0c6dc0aa71f48d438"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-19",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 19,
+      "continuationSeed": "e1aae210fd3108db5ca6003f8cd302739044c9ad47b14802fd5b5ee55ae5cafd"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-20",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 20,
+      "continuationSeed": "4ca8ae482ed08b2ef69787a42a37a954891ef63e7634a2e1852444c202c0082e"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-21",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 21,
+      "continuationSeed": "71452e812aeb9682124c0d92e9c1ee258006eb05369aa9508117b33f74ec534c"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-22",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 22,
+      "continuationSeed": "ec91558f1768e18d637e8132c694da269e22df821acb0566830bfc2339c90723"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-23",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 23,
+      "continuationSeed": "20d266e5a162fff0e489c3ac4a0e0351e14ce34a028ccaaca2e7a37d068ea321"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-24",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 24,
+      "continuationSeed": "e2372a020dbc7c13f090a0b2731464135066b0835540fdd5abc291e4c7787b96"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-25",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 25,
+      "continuationSeed": "8e6f6e361e255c6dfbc53aad74cd6f6ee24effad5ed3b607500ea5d3d552f967"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-26",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 26,
+      "continuationSeed": "26dc41e380ce8c86a07265b6c01093d9d4b55a3ad3efd8929bbb53e354b50a4c"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-27",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 27,
+      "continuationSeed": "094a23ed7de424746df6f0fd56b7785b720e6a76ed01492c0f4efcb8854d21dd"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-28",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 28,
+      "continuationSeed": "62a814f42d01b827996b98351a15097f3ea54074712e58c1589ba2d90c8a8f8b"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-29",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 29,
+      "continuationSeed": "b429f9134569f04cb93a888579c2f9e8efdeb3941b6db807000873ebdbbd9385"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-30",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 30,
+      "continuationSeed": "8b94566ac8e335581e211775e7b2712fdaf43a92585e7bae793504300f53ed6f"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-0-trial-31",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 2,
+      "trial": 31,
+      "continuationSeed": "183c05ab0f13d849735317713b3dc6defcd7b2b5d827538483b00c798c7aeae4"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-00",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 0,
+      "continuationSeed": "175c8c16a4bb30c46c03700dae203272565b7e26eaeb3179e439dfbe6bbd50f2"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-01",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 1,
+      "continuationSeed": "98e317d5e54ca5c2f5ad6dafe91a30776d2522cc8ac30f0c09f46737981dc461"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-02",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 2,
+      "continuationSeed": "7c3ea7f777884166a596f53f2f5139ecbd213b98b97982b4281051928f402475"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-03",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 3,
+      "continuationSeed": "3f7d777ddbc34b9124dfda3b5bfb6beedb644223ecf6033a85275f0fb199e2e4"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-04",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 4,
+      "continuationSeed": "84b5ce090703de64c431d5d57f11b4e680ffa336479484c8fc32576aed34eff5"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-05",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 5,
+      "continuationSeed": "03a17b5c2ef5b55f3de2e3f49cff7b28855f98000729ef6c33831dd480423c72"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-06",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 6,
+      "continuationSeed": "b1e3ec5d126aa3446a32326636983530ac2e1b8123d7d30fd51c2c5694d9c972"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-07",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 7,
+      "continuationSeed": "968c29d373cef9e4254a5f7700df7d6314872e475b7293c9d788551b878d812c"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-08",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 8,
+      "continuationSeed": "3a586cb419dde61d394d1e3903c3900e4dd1164171c23127b0ce1138cd4419a3"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-09",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 9,
+      "continuationSeed": "f9ce1923f8472f24f1d813a3444d2f3f42ad4fcb35c136745697a49ff5f4f563"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-10",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 10,
+      "continuationSeed": "7e3bca2a359d24641edcae3b61acb5e4e76f0cdeb101db015a2ccae92a47a9a9"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-11",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 11,
+      "continuationSeed": "75de8ebb763be59b9f315f489578eeb27b3b80530e0eb534ece578790c015078"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-12",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 12,
+      "continuationSeed": "10dc6cc3ee31e92e2fa7a6d86847fcc1cc5a5afa3855bdec4ab0bd9d4aa5341a"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-13",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 13,
+      "continuationSeed": "0dfcec3ce2a4d23bc36f57d20453379c26211988f7c71c5b09d29078b60d6f67"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-14",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 14,
+      "continuationSeed": "e7268ac0a1cf1ae5cff48c9be2225e7bfa49b921d36e4e397ddd87dac70c0227"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-15",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 15,
+      "continuationSeed": "73f07d6878eed40eb49e3ea949611d0e0fe08567f79a4f707d0c30bdb6c64b84"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-16",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 16,
+      "continuationSeed": "79143c8bd6c419a2e48ffc37e46aa081b9f57ebfc3f99e24cf97b742e32a7317"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-17",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 17,
+      "continuationSeed": "d30522f12d373541ea6e902b6b28e76062af0c61015939123ea0ae23fa95e7d0"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-18",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 18,
+      "continuationSeed": "5c9ed9a4c0af04fbcd8f0c0dd6b7bbcad6cc8c67e997db7f2296f02c71c3c97a"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-19",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 19,
+      "continuationSeed": "5f387d23ba05d1a245ca0b1b3dc1cc31cb6b36e3e13b5c346bacea866369c38f"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-20",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 20,
+      "continuationSeed": "0a99d70c880c4c621f2f1e6b7126f90c59c587a13db3561a334853ab051dd2ae"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-21",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 21,
+      "continuationSeed": "d79a3cd31710f245ae9e57736ef183694fa14950f19d98fc0565ade9b60be0fc"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-22",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 22,
+      "continuationSeed": "bb8f8f5483e33623b5d15a7c81a4498f6080492f57d09f72f5b02015b8edcea6"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-23",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 23,
+      "continuationSeed": "3b4b5503361e0d7713aec010498b7456ad93677f8e9d7ee650f5c9b13e9b17b0"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-24",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 24,
+      "continuationSeed": "1728fb5ba06e967db1aedaab85ef392ec7ce8345dfca04511105cd017e6f2c1d"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-25",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 25,
+      "continuationSeed": "45900523533b3003db735de947b07398a2e4bd522f282ab532e4c58bd4bc2ff8"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-26",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 26,
+      "continuationSeed": "c68e6fec2e66dd3a4999ba8dc0a3228455c3f2e9daa0f12cecf537bb255fedff"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-27",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 27,
+      "continuationSeed": "f1d9957fe1cedfb621a7ad5f149cefc351eb4308c0146ece0e1e4989c7287733"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-28",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 28,
+      "continuationSeed": "6d1b20138f4848fb2eba0c6dec08bc2180fd42efa82ace98755fa596b7a6ae99"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-29",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 29,
+      "continuationSeed": "c783bf602103e29abafad88426c786695d719b632d2c1c8e13114afdb1811245"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-30",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 30,
+      "continuationSeed": "7d774a38ef13fb3cd374ae6d07d1b4633a617185a44149cfebfa83bcc88ed02b"
+    },
+    {
+      "id": "quality-2-zero-pressure-50-48-side-1-trial-31",
+      "context": "quality-2-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 2,
+      "trial": 31,
+      "continuationSeed": "c4d036030e8058877f204ffda5bdb1d1fb807c39be8cbe57ee407b69a4fc1db0"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-00",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 0,
+      "continuationSeed": "ff354b709e3cc997386d31a9fb5172e994afb62d32bfcb9ac315b66642f4bf5c"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-01",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 1,
+      "continuationSeed": "d0fec2a70baf3bc7572c0bff5ea39c345844b2fa9ea216f519d763488ec65f74"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-02",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 2,
+      "continuationSeed": "50c7b472b06716010bdf4ffeb2c3a8b4f498f5606d70375cd91bf1b999f65ee4"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-03",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 3,
+      "continuationSeed": "3dc5322a9021f31897d6c79e9283de9f6966fde9340f7bfa890962d88ee308ba"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-04",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 4,
+      "continuationSeed": "bc5dfbafae93e757011341c5c1c7149efff1acd01e5e4184db430a88e51ae3d7"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-05",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 5,
+      "continuationSeed": "793db85fedf256468c07fdac2296250c8fb38a4ef23cdc0cc072fb57e305eeda"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-06",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 6,
+      "continuationSeed": "aec3f772da8ddf60d9c336a88718d8d758940c3d038ef1ce5d539c6ad5d91310"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-07",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 7,
+      "continuationSeed": "4c6b29a646b86d32fc8fadca60cf071033aa4f3af465f51a2c28e1cf26fc4169"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-08",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 8,
+      "continuationSeed": "1009dc5be79c963a5297d5aad4029bf2ea4c0e480ce764f8729a67ad5233a298"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-09",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 9,
+      "continuationSeed": "310a9264d48531f7be7da1e83d2c56ef6de06a0c3d3cb27f60bfc2f94eb36f9b"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-10",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 10,
+      "continuationSeed": "fd52b62340f9a278f31c888327d83295be15e0ff104c3f612ec49546818ea3c4"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-11",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 11,
+      "continuationSeed": "2776da9cbefad69ef6818348d04e8325be09618762040a343629aac5a2369bfd"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-12",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 12,
+      "continuationSeed": "ad0b400cfbf5065a7cb7b516e166bb853d50c7c3f55ea4f8341613aa1e341305"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-13",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 13,
+      "continuationSeed": "298606fc9b9833fa06ba5a04aa06f276cc960b62fc1ed6a5abfaace7871e9251"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-14",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 14,
+      "continuationSeed": "d9290441b095822fb30c8f22f1d6a7077f7c48053cde703ccd766fed31167395"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-15",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 15,
+      "continuationSeed": "0f94cd944993ca5871c26516588e30a27398b3d477b72a86c0897d9c03a3fdc1"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-16",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 16,
+      "continuationSeed": "e0bffc8581cc7ae6b6d9277e6825ab393078d93366603804b66a72cd055968a0"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-17",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 17,
+      "continuationSeed": "d761023ec855d7f8f38ba94e6c5c063b2d959de0472c11081086dbfc2ef9e706"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-18",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 18,
+      "continuationSeed": "ec8be25db2cf2c245221912bfc4b5bd56e7a747b37f5d31e45edcbf768c79004"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-19",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 19,
+      "continuationSeed": "07c6d63785a19e54ffb71e12f1ca5a034df948f39c6a6ed04c5dd54f53e81196"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-20",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 20,
+      "continuationSeed": "9ac9f1eb6ce3993a2a32d6b924d1fae88dad405fefa59f8b82801687d7c96f9a"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-21",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 21,
+      "continuationSeed": "ff0d338c25c77a082ebbcbf4aedf9401fbfe1ace6421fe383f1f470f6f2c379a"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-22",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 22,
+      "continuationSeed": "ba7da30fb13e2b592a7586b10170add1121b5af93e9550c937b54e5452f01fa4"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-23",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 23,
+      "continuationSeed": "b18ff3a1b7d6a92ed989133fd53464fc5b3a85bf4831c95ac338ce0eaa218299"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-24",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 24,
+      "continuationSeed": "3894780256ac02f96b2df1c7eaf030c452cf99208b828678b418b67c598f1cfe"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-25",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 25,
+      "continuationSeed": "1ee8735ce4d33d87f7090fbeb94f5e48ef3e53f18754f4d32bd82c237c2781c5"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-26",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 26,
+      "continuationSeed": "04a77b2bf297bded575eaabec35b1333430fb3a833e879494bcf35510a2dd932"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-27",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 27,
+      "continuationSeed": "58f5ff454d2b14b69706f72d8ddcadd9fa8dc26f8c0a6b02741e6739cb519c91"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-28",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 28,
+      "continuationSeed": "db8feb03393b3152e2c6fc3cb29e195d5dbca88bc2d7b4fe775e3fa070a9f362"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-29",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 29,
+      "continuationSeed": "10805cc8ed09ad9a1b9c26c39a42ea74a821cd953ba510b7e8384f14c3e368b2"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-30",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 30,
+      "continuationSeed": "34298c1997ab93c80e8ec252a998b2fc8a8c6580c61ed301acf1da43e313b3f5"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-0-trial-31",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 3,
+      "trial": 31,
+      "continuationSeed": "5f11be7642a319e080cf63cf92031c140727b73fef9762e9ec7e1d24fe3a6053"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-00",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 0,
+      "continuationSeed": "cd493cb7705185bbbb3d7b046855ba9206764ac2d650edad7cf28b641e8b088b"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-01",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 1,
+      "continuationSeed": "bfb582b0f03c5743715361d5a5f22f4b11ccde6b9598fed99b229800a0dfeded"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-02",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 2,
+      "continuationSeed": "241d5d683459802e709b459bdc415d9351692be1030f8e47919cf326d95d3e44"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-03",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 3,
+      "continuationSeed": "5ff3250303e03432504f49cfe8bd38b1649c5cfc95c109049af76fa7fae67582"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-04",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 4,
+      "continuationSeed": "8cb171703a15ffd84bca0283c37e5f186830d6445cac9c9f297d5122c0e21a68"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-05",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 5,
+      "continuationSeed": "6d684cf7d5d0ca439e1dbb30dd2f437a9a7f436343c2a4ab1c7bb0eca434dbf4"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-06",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 6,
+      "continuationSeed": "717732a83c0f903f6ce11f791726dcc860921583710d5d2f1250f0cdc86d6475"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-07",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 7,
+      "continuationSeed": "d1438bd3699cfc68d404b1a955dd39ec45d8dba8e95c12a909c93d2285d2e5cb"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-08",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 8,
+      "continuationSeed": "34e9a13dc815f488cf1946440089c6a7b4357bdeb3c89aee9f84364db8bc23af"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-09",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 9,
+      "continuationSeed": "32de08e4dc6048d21db2ecaf2baf46f841844b2553c532e294a761074629ffa7"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-10",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 10,
+      "continuationSeed": "199666ebe0891018046f90233035d7b05f14f7715cb72330d35acb58ec45fa6b"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-11",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 11,
+      "continuationSeed": "2c698126a3d4a02b3a82bbf0751b17e8042fcfa062537015b8733b39f20bba57"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-12",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 12,
+      "continuationSeed": "2b0b93a86b980a350f14f6799c51052f5c2c3f9995e40ee5135e4f91762221bc"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-13",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 13,
+      "continuationSeed": "7ef60ef8945fdba003ca9223dc415bcdc27f3b8cf31a6fbc01030cec7a07bb4b"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-14",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 14,
+      "continuationSeed": "df294e940c27afe6ffb8e971f2fa2fbdebe1be175546a8509eee8ed1ed0b22e4"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-15",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 15,
+      "continuationSeed": "e924e682c4a2b2fa220d78af5c82c176573c5b7fdbd8705af26f09e6304eff42"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-16",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 16,
+      "continuationSeed": "cac6ebc42b1bdd4c87338e0683930b25ddd1c16634014c09ebc9b192e8dcd742"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-17",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 17,
+      "continuationSeed": "0d97de1168ec849d0b1a32061e068e0fc78df4dd573ba54a9051de1defc124e4"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-18",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 18,
+      "continuationSeed": "67eeae209fc9808cf9439c3aec5410efce75ec07c89f37c759053268fd015d3b"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-19",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 19,
+      "continuationSeed": "24cdb491d986e4abc081e89456d17288ffa4620e4e47940cef173f5c763563c6"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-20",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 20,
+      "continuationSeed": "e40f921da7196187096df261dd3c32bf29916828090d8a4b7d123ef5ef7f8051"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-21",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 21,
+      "continuationSeed": "894f353de6a8302e14412afd7b335f8e07342fff6b042f1a67349e91a376edc4"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-22",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 22,
+      "continuationSeed": "00584ad298525d86fc1c0c7e8448549019336bb9e39e4c2adb1845696657c509"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-23",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 23,
+      "continuationSeed": "009f58805d6009818906f059da679816dbb34db55f26bfac6b2d7132d59e9d29"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-24",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 24,
+      "continuationSeed": "7fcbfa5075efb330110b6d0078b913c78644615eaf6f618cc5491f1a902f5380"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-25",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 25,
+      "continuationSeed": "75e9a0302e32139cf31089fbc39b9a154e247942c057fdbbbb794172f9d477a0"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-26",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 26,
+      "continuationSeed": "c8ea982c2b22bc6d3a6f1f6516e1a93b7df8abe119e646ef58306aa2226aae20"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-27",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 27,
+      "continuationSeed": "6f466e4d7e9847bef640b263cd06afa1456a2f0bcdbb447f0bffba754008d33e"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-28",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 28,
+      "continuationSeed": "c085c2181dda0086ffa2ddaab083807d16dec2c2f0fa5599b3570a75395f3b2a"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-29",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 29,
+      "continuationSeed": "aa07d0eb6a1c25dfa03148890338c3205d78fd7db44fa8aed157e120d5f21489"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-30",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 30,
+      "continuationSeed": "291b7fbf0b15358ac940cd617fa0a09bbc678d7f1e88955832de47d77aaa735e"
+    },
+    {
+      "id": "quality-3-zero-pressure-50-48-side-1-trial-31",
+      "context": "quality-3-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 3,
+      "trial": 31,
+      "continuationSeed": "3169d6ca83a6475835412d1617b181b815f238f2981648f0d4dcbee3d9641651"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-00",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 0,
+      "continuationSeed": "a3b353110bab8e273650a75beeea5cb70a1f0e9d6cab2331bca0474d126dafbb"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-01",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 1,
+      "continuationSeed": "3fee36916777bb958f3cf74b09b49dc7f4c30c6287d5353b46df3a11a1bfddfd"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-02",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 2,
+      "continuationSeed": "db7983f74b30b2093a4891fc8ad8c7b41006db13350baf45f4ab6a577e654a8a"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-03",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 3,
+      "continuationSeed": "7c1600cfe99c7ce8818743033d0d32497ae720feb39fd6ddcc2f297201de9319"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-04",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 4,
+      "continuationSeed": "ea39b15767d1ae898d124e16ebf1eed4445f1d03c8ac36783bcb64727c18a756"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-05",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 5,
+      "continuationSeed": "d1aa9bee2c96acb874962339f6ad246493c598b0c35f58b6bdc93f000ebfeee7"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-06",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 6,
+      "continuationSeed": "5dfaef4a2f36a4c21b12247d3af881bf0e41ecb15fb0c971010c46ec46cb4039"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-07",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 7,
+      "continuationSeed": "a43dba8171d8788d4f2b4bb67ec13d4b815e2c39ebacf5062030bdfe80658d51"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-08",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 8,
+      "continuationSeed": "6dcb117403f6e455b6299b703f2646869fef4ae0c0cf2b8e1d42cfabe22e23a9"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-09",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 9,
+      "continuationSeed": "ea570b655712d373f66923d041692054f9b44d263f88676b843e639b515ed80f"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-10",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 10,
+      "continuationSeed": "842255c86927515d599d65d4b3a6f199355d7db0c23f3b5d96e2fffea3bfdf08"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-11",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 11,
+      "continuationSeed": "04453456d468cba80e33d5fe6e33f9344e2f47b01ba37aff3db6a29f9c2c8b60"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-12",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 12,
+      "continuationSeed": "607ae10c83e807ddde039728f3c8d898e26c63dd96e6f6cf596f464cff265c77"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-13",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 13,
+      "continuationSeed": "9bf0a64faab6619a26c532aa417271b574689e27badee1d0b5b469d68e5783bd"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-14",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 14,
+      "continuationSeed": "0b2902200b1e11131fef23dfed405b5bea5ac38392be6c65ba688edf8bc72b56"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-15",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 15,
+      "continuationSeed": "6a69eefea285374d3af7a0335aaa972b446b99d21f7eb7178e10214dfe6efada"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-16",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 16,
+      "continuationSeed": "e82271b4f470200a9cf35c35b24580081d9e3e944adf99e54ca96a6b574e563f"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-17",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 17,
+      "continuationSeed": "4ddc50f02c38e0c02449775b17d9526eddab84bbc2104cbb2deb1311b160ab2f"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-18",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 18,
+      "continuationSeed": "e65703d419c84014a042526eac920dd674b3ae084c12885659d7dffacbdebaca"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-19",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 19,
+      "continuationSeed": "0773bde4fda1711e2a74e6135fe8c59010fdf8e165c07d5fc9ac458a070920d2"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-20",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 20,
+      "continuationSeed": "0daeb07deab1d574dd32d6da8c544b68b963de64f860e9f7536e05d77ef30d63"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-21",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 21,
+      "continuationSeed": "a249db174b4418f5fe955b556d7c01951e9065ea55cf18a99bc077d74871fa1c"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-22",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 22,
+      "continuationSeed": "f7903739135fa2f14a53b33089a484cfc3312350fdbe214370c95e1429461673"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-23",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 23,
+      "continuationSeed": "f20d6b07561ba293b5f3e7d4bfe81d48320834229939eab1ec626e51e5a2aecf"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-24",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 24,
+      "continuationSeed": "a72892a3b884c588e50cddefc1df64472585be3740759b1e2610b15b933641fe"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-25",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 25,
+      "continuationSeed": "e1248cef8b7edec96ceb0a3d7e3640543441d3ec5a835e5dcffefc436aaf004d"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-26",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 26,
+      "continuationSeed": "bca8fd0b3526687c0973ae681e95fac0cd5adf786d1fd959cf88213c5c1508e6"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-27",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 27,
+      "continuationSeed": "7a4d1c5d948076693a22f2e59df7d74b34530da1f78b00acbd88ea1f30b0bd77"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-28",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 28,
+      "continuationSeed": "f35aaa42edf4bc831f67241dfbda5b125e2c80b5b78f7503957806dddb7cb9db"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-29",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 29,
+      "continuationSeed": "97910ae3416bb4f3ea2f87c7998ad1ccf4feceb908489c8b4088bef41c84b149"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-30",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 30,
+      "continuationSeed": "eedf82cce0990af42744966f77bb31e3b59ca8337f1c19497dc7cce3331601ec"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-0-trial-31",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 0,
+      "template": 4,
+      "trial": 31,
+      "continuationSeed": "5f047ba770bba5f59e02b9a26e7e5178816f6e604a75e780ca4d66d820200a01"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-00",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 0,
+      "continuationSeed": "accc6ca423e86ca5cd81c7a101a0f0bece03c95562794fe4eb9a6d751bbbe337"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-01",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 1,
+      "continuationSeed": "72eeacbb131f75cd0a553bd71ac0e523a7a994c095ecfcc24e60c5a9bd529382"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-02",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 2,
+      "continuationSeed": "1dfe8b5be10813883c57bf864d26cbd496c57f5f293690d98527db8ff6f42821"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-03",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 3,
+      "continuationSeed": "df0fa427109721302eea19fa3cc18ea3b9bc5c9607de751eabf212ade9a99f86"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-04",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 4,
+      "continuationSeed": "afba7895a5b1a6f70b53803a1f67e9051674e442ec3736421305dd973211d84d"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-05",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 5,
+      "continuationSeed": "88613bec1c3fee33cd9d617da6c8ff43e1c9912778db9c3fa5c116ba2089467c"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-06",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 6,
+      "continuationSeed": "b2f563fa0253093fab9ed96feb62121da5b97202af9c91813164f36578b2db5d"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-07",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 7,
+      "continuationSeed": "1b738bddee94d4089dfc0f1a0ec1e4e88fe6ae07a5591831bb613375a77c3eb5"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-08",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 8,
+      "continuationSeed": "dfc35bdf7c2c358d21bdf6bce92917d1899f0fe86f34af855ae1f01f37c2adb7"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-09",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 9,
+      "continuationSeed": "2e8f699e66262f87868750fdeef7e25b7760cd46b61f703a8665b4ae3c1b66aa"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-10",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 10,
+      "continuationSeed": "7c98c325c8dfe9471438788dfe6a28676ec975f7a5dd41f534cb40b355ac2537"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-11",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 11,
+      "continuationSeed": "aeed58b75d1acd3cfb3ca8ffee04fbce7bceefc1efcf4ed29f705dc78d6308ae"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-12",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 12,
+      "continuationSeed": "3beb63372e084b6c96569784ebb2c018024c9edc9b4851b345785cde0e98e910"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-13",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 13,
+      "continuationSeed": "398c68baa4939afb3801e7e04c7e2e16756fc4c12a217daf65ccbf8e04912a27"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-14",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 14,
+      "continuationSeed": "4ebf7d66e477d0f90eb6f94a0b16c4f6b9a3e86665e76da96c5b6e27718b328d"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-15",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 15,
+      "continuationSeed": "61ad9c1995ce222d847c63e302bfaa9bf44f570947360cb64194c8e9e1b7cb25"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-16",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 16,
+      "continuationSeed": "58fce5416534652fd3abd72d913dbd7647d3f929ccfc02363ed39a14e52f3f64"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-17",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 17,
+      "continuationSeed": "7aa582d237a7f01e36769fda8b813c10ca208c96fbfe4a2d39d78802440c29da"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-18",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 18,
+      "continuationSeed": "341784733488bfdc5bc57abcf0d62fe780e42b8d0aeaca99830fcda4873441f3"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-19",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 19,
+      "continuationSeed": "e33e7e9920b4bb2bba00b44c9fb590dd4ed0c1c48bea7f7100de1c5ac042e64e"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-20",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 20,
+      "continuationSeed": "8ca5375b671add42b1c23fe55bc3c8947dd4e19db4eb9947af1ffd98008ec21e"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-21",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 21,
+      "continuationSeed": "336f2a92eb9e4f94de3c13e3357106a28df2942b511f2fdb6a4ce8e448f45566"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-22",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 22,
+      "continuationSeed": "8c326d867817398ef48a97dd8e0639615d21bbee812aeb9b1dee4a22f23161a5"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-23",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 23,
+      "continuationSeed": "d3480abc14c6424b84bafcf26b703d584282ba4e6368443e7c75c4b8cc2d7671"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-24",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 24,
+      "continuationSeed": "bf246256c098bb354aa722e03deb3be60cf740d182888c7057ba34773e67ab16"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-25",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 25,
+      "continuationSeed": "53123b177d3d741d061e6383cad935bfe0178d62c65d0b707861f16502102199"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-26",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 26,
+      "continuationSeed": "69170ed47db059fefabb9b45b5bfd2099d8a6f1e7531607fac113276ccbdaa3d"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-27",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 27,
+      "continuationSeed": "8cce57fc66a3ea6af0891aeef47cfae7abd295d26d34409214abf2f5429bbecb"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-28",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 28,
+      "continuationSeed": "af0f355afd55e9f61248d18031c9005e95f492ab4824aa2ab973ed264db08979"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-29",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 29,
+      "continuationSeed": "8edc167c61630eba5ad8d4c2f3c80c50b98362d8010af79f2e65d88878d07f3a"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-30",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 30,
+      "continuationSeed": "f94d0d7136d212b443ee8563bf5e4be18b242bcb429da0c33e22bbe30a0b7074"
+    },
+    {
+      "id": "quality-4-zero-pressure-50-48-side-1-trial-31",
+      "context": "quality-4-zero-pressure-50-48",
+      "trailingSide": 1,
+      "template": 4,
+      "trial": 31,
+      "continuationSeed": "01d287a787ad1d6bef459ba5410b8195587a8648346c01ed000d40e46bea337f"
+    }
+  ],
+  "prefixes": [
+    {
+      "context": "quality-1-zero-pressure-50-48",
+      "profile": "quality-1-zero-pressure",
+      "template": 1,
+      "tactics": "pressure",
+      "trailingScore": 48,
+      "deficit": 2,
+      "trailingSide": 0,
+      "file": "quality-1-zero-pressure-50-48-side-0.json.gz",
+      "snapshotSHA256": "17154ddb15097045c99c6b55ed36878cc3c850b54efc24d1bbe32f0333c92638",
+      "fileSHA256": "ab6b12f45cb630cd56ada4d62a4b4df9d6291a4da09f23977b52428f045fc121",
+      "proof": {
+        "events": 919,
+        "playingSeconds": 1106,
+        "elapsedSeconds": 3604,
+        "scores": [
+          48,
+          50
+        ],
+        "intervals": [
+          600,
+          1200
+        ],
+        "independentEnergyAndStintReplay": true,
+        "eligiblePlayers": 70
+      },
+      "decisions": [
+        {
+          "side": 0,
+          "choice": "hold",
+          "rootDistance": 0,
+          "deficit": 2
+        },
+        {
+          "side": 1,
+          "choice": "hold",
+          "rootDistance": 0,
+          "deficit": -2
+        }
+      ],
+      "diagnosticAvailable": false,
+      "alignedChoice": "hold",
+      "mismatchedChoice": "hold"
+    },
+    {
+      "context": "quality-1-zero-pressure-50-48",
+      "profile": "quality-1-zero-pressure",
+      "template": 1,
+      "tactics": "pressure",
+      "trailingScore": 48,
+      "deficit": 2,
+      "trailingSide": 1,
+      "file": "quality-1-zero-pressure-50-48-side-1.json.gz",
+      "snapshotSHA256": "75fa64102f9c0d7172bb188885be4e720838eec944b85c539a1c140fd8004ae9",
+      "fileSHA256": "f66b361fb1e1820d5d4b026dd16fb201f769df2742b96b29a6ce8df5d73a0eb7",
+      "proof": {
+        "events": 919,
+        "playingSeconds": 1106,
+        "elapsedSeconds": 3604,
+        "scores": [
+          50,
+          48
+        ],
+        "intervals": [
+          600,
+          1200
+        ],
+        "independentEnergyAndStintReplay": true,
+        "eligiblePlayers": 70
+      },
+      "decisions": [
+        {
+          "side": 0,
+          "choice": "hold",
+          "rootDistance": 0,
+          "deficit": -2
+        },
+        {
+          "side": 1,
+          "choice": "hold",
+          "rootDistance": 0,
+          "deficit": 2
+        }
+      ],
+      "diagnosticAvailable": false,
+      "alignedChoice": "hold",
+      "mismatchedChoice": "hold"
+    },
+    {
+      "context": "quality-2-zero-pressure-50-48",
+      "profile": "quality-2-zero-pressure",
+      "template": 2,
+      "tactics": "pressure",
+      "trailingScore": 48,
+      "deficit": 2,
+      "trailingSide": 0,
+      "file": "quality-2-zero-pressure-50-48-side-0.json.gz",
+      "snapshotSHA256": "4544a81e02a8a6dbaaf3f0744eded5792fb7c72635b12999692ac79ea66ae75b",
+      "fileSHA256": "595ebec271348122664f8e45b44974432f22b3413c689421a2c9c293346ca669",
+      "proof": {
+        "events": 936,
+        "playingSeconds": 1124,
+        "elapsedSeconds": 3622,
+        "scores": [
+          48,
+          50
+        ],
+        "intervals": [
+          600,
+          1200
+        ],
+        "independentEnergyAndStintReplay": true,
+        "eligiblePlayers": 70
+      },
+      "decisions": [
+        {
+          "side": 0,
+          "choice": "hold",
+          "rootDistance": 0,
+          "deficit": 2
+        },
+        {
+          "side": 1,
+          "choice": "hold",
+          "rootDistance": 0,
+          "deficit": -2
+        }
+      ],
+      "diagnosticAvailable": false,
+      "alignedChoice": "hold",
+      "mismatchedChoice": "hold"
+    },
+    {
+      "context": "quality-2-zero-pressure-50-48",
+      "profile": "quality-2-zero-pressure",
+      "template": 2,
+      "tactics": "pressure",
+      "trailingScore": 48,
+      "deficit": 2,
+      "trailingSide": 1,
+      "file": "quality-2-zero-pressure-50-48-side-1.json.gz",
+      "snapshotSHA256": "f5db798b82f8953a1797306180598ae041486a6368879662d2a5c6315ec5e0e4",
+      "fileSHA256": "88e121f33143f44667be9facd249f266c5f9eb686ae81a112938709200c988b7",
+      "proof": {
+        "events": 936,
+        "playingSeconds": 1124,
+        "elapsedSeconds": 3622,
+        "scores": [
+          50,
+          48
+        ],
+        "intervals": [
+          600,
+          1200
+        ],
+        "independentEnergyAndStintReplay": true,
+        "eligiblePlayers": 70
+      },
+      "decisions": [
+        {
+          "side": 0,
+          "choice": "hold",
+          "rootDistance": 0,
+          "deficit": -2
+        },
+        {
+          "side": 1,
+          "choice": "hold",
+          "rootDistance": 0,
+          "deficit": 2
+        }
+      ],
+      "diagnosticAvailable": false,
+      "alignedChoice": "hold",
+      "mismatchedChoice": "hold"
+    },
+    {
+      "context": "quality-3-zero-pressure-50-48",
+      "profile": "quality-3-zero-pressure",
+      "template": 3,
+      "tactics": "pressure",
+      "trailingScore": 48,
+      "deficit": 2,
+      "trailingSide": 0,
+      "file": "quality-3-zero-pressure-50-48-side-0.json.gz",
+      "snapshotSHA256": "266129babe22b9091c472c9020d049af83f7599219fc3095d05177d37c66875d",
+      "fileSHA256": "97f1f95a20f0607e37c51ebd981f3d86740d3dfdf37115aff50357ca9fb534fb",
+      "proof": {
+        "events": 953,
+        "playingSeconds": 1152,
+        "elapsedSeconds": 3650,
+        "scores": [
+          48,
+          50
+        ],
+        "intervals": [
+          600,
+          1200
+        ],
+        "independentEnergyAndStintReplay": true,
+        "eligiblePlayers": 70
+      },
+      "decisions": [
+        {
+          "side": 0,
+          "choice": "hold",
+          "rootDistance": 0,
+          "deficit": 2
+        },
+        {
+          "side": 1,
+          "choice": "hold",
+          "rootDistance": 0,
+          "deficit": -2
+        }
+      ],
+      "diagnosticAvailable": false,
+      "alignedChoice": "hold",
+      "mismatchedChoice": "hold"
+    },
+    {
+      "context": "quality-3-zero-pressure-50-48",
+      "profile": "quality-3-zero-pressure",
+      "template": 3,
+      "tactics": "pressure",
+      "trailingScore": 48,
+      "deficit": 2,
+      "trailingSide": 1,
+      "file": "quality-3-zero-pressure-50-48-side-1.json.gz",
+      "snapshotSHA256": "3a46c1e15757f138968bce316fd7c5ba055dab6af5564928c25006bbb87cc3b2",
+      "fileSHA256": "2bc725468d8025c06152c86ae22808028829f4fd0864cefb26ec66e498ae918e",
+      "proof": {
+        "events": 953,
+        "playingSeconds": 1152,
+        "elapsedSeconds": 3650,
+        "scores": [
+          50,
+          48
+        ],
+        "intervals": [
+          600,
+          1200
+        ],
+        "independentEnergyAndStintReplay": true,
+        "eligiblePlayers": 70
+      },
+      "decisions": [
+        {
+          "side": 0,
+          "choice": "hold",
+          "rootDistance": 0,
+          "deficit": -2
+        },
+        {
+          "side": 1,
+          "choice": "hold",
+          "rootDistance": 0,
+          "deficit": 2
+        }
+      ],
+      "diagnosticAvailable": false,
+      "alignedChoice": "hold",
+      "mismatchedChoice": "hold"
+    },
+    {
+      "context": "quality-4-zero-pressure-50-48",
+      "profile": "quality-4-zero-pressure",
+      "template": 4,
+      "tactics": "pressure",
+      "trailingScore": 48,
+      "deficit": 2,
+      "trailingSide": 0,
+      "file": "quality-4-zero-pressure-50-48-side-0.json.gz",
+      "snapshotSHA256": "f0e71ff1f84be1bc6bf00abeadc33e832a7103543ef8c0b5e1a673e646b451c1",
+      "fileSHA256": "de31cb366df2068fff2952dd192490a18170ac09dd164ff604180ff7f3b6e4c1",
+      "proof": {
+        "events": 939,
+        "playingSeconds": 1138,
+        "elapsedSeconds": 3636,
+        "scores": [
+          48,
+          50
+        ],
+        "intervals": [
+          600,
+          1200
+        ],
+        "independentEnergyAndStintReplay": true,
+        "eligiblePlayers": 70
+      },
+      "decisions": [
+        {
+          "side": 0,
+          "choice": "hold",
+          "rootDistance": 0,
+          "deficit": 2
+        },
+        {
+          "side": 1,
+          "choice": "hold",
+          "rootDistance": 0,
+          "deficit": -2
+        }
+      ],
+      "diagnosticAvailable": false,
+      "alignedChoice": "hold",
+      "mismatchedChoice": "hold"
+    },
+    {
+      "context": "quality-4-zero-pressure-50-48",
+      "profile": "quality-4-zero-pressure",
+      "template": 4,
+      "tactics": "pressure",
+      "trailingScore": 48,
+      "deficit": 2,
+      "trailingSide": 1,
+      "file": "quality-4-zero-pressure-50-48-side-1.json.gz",
+      "snapshotSHA256": "cd972515e313a27e2c1f577ffab02ead05246ef5108a35aad422a612c7e01504",
+      "fileSHA256": "527b2cb60208be55a250d0659b698b6d0a8ed602fb4cef2238325471f89423a0",
+      "proof": {
+        "events": 939,
+        "playingSeconds": 1138,
+        "elapsedSeconds": 3636,
+        "scores": [
+          50,
+          48
+        ],
+        "intervals": [
+          600,
+          1200
+        ],
+        "independentEnergyAndStintReplay": true,
+        "eligiblePlayers": 70
+      },
+      "decisions": [
+        {
+          "side": 0,
+          "choice": "hold",
+          "rootDistance": 0,
+          "deficit": -2
+        },
+        {
+          "side": 1,
+          "choice": "hold",
+          "rootDistance": 0,
+          "deficit": 2
+        }
+      ],
+      "diagnosticAvailable": false,
+      "alignedChoice": "hold",
+      "mismatchedChoice": "hold"
+    }
+  ],
+  "scope": "Only maximal-pressure 50-48 halftime states: four fixed synthetic roster histories, both orientations, 32 fresh seeds per state.",
+  "primary": "Drop-counter minus Hold, originally trailing side win probability. One primary comparison; fixed 95% Hoeffding bound sqrt(2*log(2/0.05)/256).",
+  "secondary": "Pressure-only, transition-only and interaction contrasts, margins, time and event rates are descriptive. No automatic action selection, threshold change, sample expansion, seed replacement, pooling with old pilots or official adoption.",
+  "replay": "First two trials per oriented state/arm: 64 matched future replays. Every scientific ledger independently audited.",
+  "recoveryGate": "New adapter must reproduce every saved compact metric for all 1248 historical single-slider outcomes and preserve native gameplay code outside declared restore/intervention wiring. Historical full ledgers/adapter source are unavailable; do not claim byte-exact historical-event reproduction.",
+  "preflight": "Two opposite-orientation checkpoints with separate seeds, 8 outcomes excluded from new sample.",
+  "operations": {
+    "workers": 2,
+    "clustersPerChunk": 8,
+    "chunkWallLimitSeconds": 900,
+    "automaticRetries": false
+  }
+}

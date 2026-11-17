@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "faults": [
+    "before publication",
+    "after publication",
+    "duplicate write",
+    "corrupt gzip"
+  ],
+  "storageSHA256": "5816074d291835ee5bdd0d4c2ba707308a5d56ae3dc3a92384b3f4542eca6914"
+}

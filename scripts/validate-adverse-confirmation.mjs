@@ -1,0 +1,23 @@
+import fs from'node:fs';import path from'node:path';import assert from'node:assert/strict';import{spawnSync}from'node:child_process';import{randomUUID}from'node:crypto';import{gunzipSync,gzipSync}from'node:zlib';
+import{loadEngines,hash,readJSON,labRoot,sourceFingerprint,verifyBaseline}from'../experiments/v2/tools.mjs';import{ensureQualifiedStudyProcess,qualifyStudyRuntime}from'../experiments/v2/runtime.mjs';import{adverseInput,adverseArms,adverseHarnessFingerprint,verifyAdverseScreen}from'./adverse-confirmation-spec.mjs';
+ensureQualifiedStudyProcess();qualifyStudyRuntime();const[profilesFile,screenDir,out]=process.argv.slice(2);assert.ok(out);fs.mkdirSync(out,{recursive:true});const e=await loadEngines(),bytes=fs.readFileSync(profilesFile),all=JSON.parse(bytes).profiles;verifyAdverseScreen(screenDir,sourceFingerprint(),bytes);let construction=0,legacy=0,qualified=0;
+const call=(binary,args)=>{const r=spawnSync(binary,args,{encoding:'utf8',maxBuffer:8*1024*1024});assert.equal(r.status,0,r.stdout+r.stderr);return r;};
+const original=path.join(labRoot,'runs/moderate-quality-modifier-validation-001'),om=readJSON(path.join(original,'manifest.json'));
+for(const cohort of['matched','stronger']){
+ const profiles=all.filter(p=>p.gap===(cohort==='matched'?0:-.1));assert.equal(profiles.length,8);
+ for(const p of profiles)for(const swap of[false,true])for(const arm of adverseArms(cohort)){
+  const f={id:'adverse-contract',seed:'adverse-contract',swap,trial:0},input=adverseInput(e,p,f,arm),side=Number(swap);assert.deepEqual(input.teams[side],p.teams[0]);assert.deepEqual(input.teams[1-side],p.teams[1]);assert.equal(input.availability.matchDate,'2026-11-15');assert.equal(input.lab.psychology.maximumOddsBonus,.006);assert.equal(input.weather.conditions.temperatureC,arm.id==='hot-combined-adverse'?35:18);construction++;
+ }
+ const old=om.fixtures.find(f=>f.profile===profiles[0].id),saved=JSON.parse(gunzipSync(fs.readFileSync(path.join(original,old.id+'.json.gz'))));
+ for(const arm of adverseArms(cohort)){const r=saved.results[arm.id];assert.deepEqual(adverseInput(e,profiles[0],old,arm),r.input);assert.equal(hash(JSON.stringify(e.simulateV2(r.input))),hash(JSON.stringify(r)));legacy++;}
+ const id=`adverse-preflight-${cohort}-${randomUUID()}`,dir=path.join(labRoot,'runs',id),dest=path.join(out,'qualification-'+cohort),args=['scripts/run-adverse-confirmation.mjs','--cohort',cohort,'--study-id',id,'--trials','6','--workers','8','--profiles',profilesFile,'--screen-dir',screenDir];
+ try{
+  call(process.execPath,args);const s=readJSON(path.join(dir,'summary.json'));assert.equal(s.matchedFixtures,12);assert.equal(s.engineResults,12*adverseArms(cohort).length);assert.equal(s.frozenControls,4);qualified+=s.engineResults;
+  const resumed=call(process.execPath,args).stdout.trim().split('\n').map(s=>{try{return JSON.parse(s);}catch{return null;}}).filter(x=>x?.status==='completed').at(-1);assert.equal(resumed.resumedFixtures,12);
+  for(const[b,a]of[[process.execPath,['scripts/audit-adverse-confirmation.mjs',dir,dest]],['python3',['scripts/analyze-adverse-confirmation.py',dest]],['python3',['scripts/recompute-adverse-confirmation.py',dest]]])call(b,a);
+  const m=readJSON(path.join(dir,'manifest.json')),file=path.join(dir,m.fixtures[0].id+'.json.gz'),originalBytes=fs.readFileSync(file),bad=JSON.parse(gunzipSync(originalBytes));
+  try{bad.results['psych-adverse'].labTelemetry.contacts[0]++;fs.writeFileSync(file,gzipSync(JSON.stringify(bad)));const r=spawnSync(process.execPath,args,{encoding:'utf8',maxBuffer:8*1024*1024});assert.notEqual(r.status,0);assert.ok((r.stdout+r.stderr).includes('Full enabled replay failed'));}finally{fs.writeFileSync(file,originalBytes);}
+ }finally{fs.rmSync(dir,{recursive:true,force:true});}
+}
+const r=spawnSync(process.execPath,['scripts/run-adverse-confirmation.mjs','--cohort','matched','--study-id','adverse-matched-confirmation-001','--trials','6','--profiles',profilesFile,'--screen-dir',screenDir],{encoding:'utf8'});assert.notEqual(r.status,0);assert.ok((r.stdout+r.stderr).includes('Fixed adverse protocol required'));
+const proof={status:'passed',constructionChecks:construction,legacyResultsExactlyReplayed:legacy,saveResumeOutcomes:qualified,fullQualificationAuditsAndIndependentAnalyses:true,corruptRetainedResultRejected:true,neutralV1ParityBothSides:true,researchSampleCannotUsePreflightSize:true,sourceSHA256:sourceFingerprint(),harnessSHA256:adverseHarnessFingerprint(),baseline:verifyBaseline()};fs.writeFileSync(path.join(out,'preflight-verification.json'),JSON.stringify(proof,null,2)+'\n');console.log(JSON.stringify(proof));

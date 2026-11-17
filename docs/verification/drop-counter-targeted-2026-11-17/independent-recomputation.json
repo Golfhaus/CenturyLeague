@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "outcomes": 1024,
+  "pairedClusters": 256,
+  "primaryComparisons": 1,
+  "secondaryContrasts": 2,
+  "subgroupContrasts": 6,
+  "interactionContrasts": 1,
+  "armCells": 4,
+  "outcomesCSVSHA256": "1f678131400dd3e5a140776d7c34e14ccb4a719f06fb05351b854c4203f10f75",
+  "method": "Independent Python CSV regrouping, paired discordance, conservative primary interval, margins, durations, rates and interaction."
+}

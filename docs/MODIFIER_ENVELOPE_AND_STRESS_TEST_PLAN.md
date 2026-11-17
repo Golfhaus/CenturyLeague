@@ -1,6 +1,6 @@
 # Shared modifier budget and perfect-storm testing
 
-**Status: proposed full-stack criteria and validated scenario definitions, not adopted rules.** v1.0 remains frozen. Current v2.0 lab code implements confidence, frustration and home support, with a separately tested shared psychological candidate. Weather, temperature tolerance and halftime adaptation remain planned; the full combined envelope is unmeasured.
+**Status: proposed full-stack criteria and validated scenario definitions, not adopted rules.** v1.0 remains frozen. Current v2.0 lab code implements confidence, frustration and home support, with a separately tested shared psychological candidate. A default-off fixed-weather/temperature candidate is now implemented for its [first corner screen](WEATHER_THERMAL_SCREEN_PLAN_2026_11_13.md); its coefficients are hypotheses. Halftime adaptation remains planned, and the full combined envelope is unmeasured.
 
 ## Why change the approach
 
@@ -45,7 +45,7 @@ Weather candidates include temperate conditions, warm wind/rain, cold wind/rain 
 
 Weather-fit labels require real matched-style test cohorts and their own unchanged-roster control, not a hidden buff attached to the label. Quality labels likewise require genuine generated/copied roster fixtures before execution. Adaptation enabled for one coach does not guarantee a helpful decision or assume knowledge of future outcomes.
 
-The plan compiler reports **84 cells with currently available features and 144 blocked by missing features**. The full 228-cell matrix has not been executed. Compiling or validating it performs no simulations, and the separate psychological subgroup studies do not establish the full combined ceiling.
+After the fixed-weather/trait implementation, the plan compiler reports **144 cells with currently available features and 84 blocked by halftime adaptation**. Feature availability does not establish suitable test cohorts, empirical calibration or completed matrix execution. The full 228-cell matrix has not been executed. Compiling or validating it performs no simulations, and the subgroup studies do not establish the full combined ceiling.
 
 ## Execution sequence
 

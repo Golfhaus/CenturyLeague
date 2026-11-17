@@ -5,6 +5,7 @@ import { parentPort, workerData } from 'node:worker_threads';
 import assert from 'node:assert/strict';
 import { randomUUID } from 'node:crypto';
 import { loadEngines, inputFor, hash, sportingJSON, auditResult, atomicJSON } from './tools.mjs';
+import {weatherForArm} from './weather-fixtures.mjs';
 const e=await loadEngines(false);
 if(workerData.requiredExecArgv)assert.deepEqual(process.execArgv,workerData.requiredExecArgv,'Worker did not inherit qualified runtime flags');
 const withoutTelemetry=r=>{const {labTelemetry,...rest}=r;return sportingJSON(rest);};
@@ -22,7 +23,8 @@ parentPort.on('message',fixture=>{
     const results={},arms=[];
     for(const arm of workerData.arms) {
       const streaks=[0,0];streaks[focalSide]=arm.focal;streaks[opposingSide]=arm.opponent;
-      const input={...structuredClone(base),lab:{enabled:arm.enabled,streaks,confidenceScale:workerData.confidenceScale??1,frustrationScale:1,...(workerData.sharedPolicy?{psychology:{...workerData.sharedPolicy,homeSide:arm.home==='focal'?focalSide:arm.home==='opponent'?opposingSide:null}}:{})}};
+      const weather=workerData.weatherStudy?weatherForArm(e,base,fixture,arm):undefined;
+      const input={...structuredClone(base),...(weather?{weather}:{}),lab:{enabled:arm.enabled,streaks,confidenceScale:workerData.confidenceScale??1,frustrationScale:1,...(workerData.sharedPolicy?{psychology:{...workerData.sharedPolicy,homeSide:arm.home==='focal'?focalSide:arm.home==='opponent'?opposingSide:null}}:{})}};
       // The public engine now owns the snapshot boundary; this caller retains its
       // direct return value so regressions cannot be masked by a second clone.
       const result=saved?saved.results[arm.id]:e.simulateV2(input);
@@ -48,6 +50,10 @@ parentPort.on('message',fixture=>{
         confidenceThresholdChanges:Object.values(t.confidence).flat().reduce((s,c)=>s+c.immediateOutcomesChanged,0),
         ...(t.psychology?{psychologyContributions:t.psychology.contributions,homeSide:input.lab.psychology.homeSide}:{}),
         confidenceProbabilityShiftSum:Object.values(t.confidence).flat().reduce((s,c)=>s+c.adjustedProbabilitySum-c.baselineProbabilitySum,0),
+        ...(workerData.weatherStudy?{weather:result.weatherTelemetry??null,
+          focalShots:result.teamStats[focalSide].shots,opponentShots:result.teamStats[opposingSide].shots,
+          focalMeanFinalEnergy:result.events.at(-1).data.finalCondition.filter(p=>base.teams[focalSide].players.some(x=>x.id===p.playerId)).reduce((s,p)=>s+p.energy,0)/base.teams[focalSide].players.length,
+          opponentMeanFinalEnergy:result.events.at(-1).data.finalCondition.filter(p=>base.teams[opposingSide].players.some(x=>x.id===p.playerId)).reduce((s,p)=>s+p.energy,0)/base.teams[opposingSide].players.length}:{}),
         resultSHA256:hash(JSON.stringify(result))});
     }
     for(const [id,result] of Object.entries(results)) {
@@ -57,6 +63,10 @@ parentPort.on('message',fixture=>{
     if(results['home-losing-5']) {
       const sporting = r => JSON.stringify({events:r.events,scores:r.scores,quarters:r.quarters,players:r.players,teamStats:r.teamStats,playingSeconds:r.playingSeconds,elapsedSeconds:r.elapsedSeconds});
       assert.equal(hash(sporting(results['control'])),hash(sporting(results['home-losing-5'])),'Losing home support failed exact neutralization');
+    }
+    if(results['calm-parity']){
+      const strip=r=>{const{weatherTelemetry,...rest}=structuredClone(r);delete rest.input.weather;return JSON.stringify(rest);};
+      assert.equal(hash(strip(results.control)),hash(strip(results['calm-parity'])),'Calm weather changed baseline sporting result');
     }
     for(const r of Object.values(results))for(const c of r.labTelemetry.psychology?.contributions??[])
       assert.ok(c.appliedOddsBonus<=r.input.lab.psychology.maximumOddsBonus,'Shared psychological cap exceeded');

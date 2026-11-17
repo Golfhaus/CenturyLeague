@@ -7,7 +7,7 @@ import { runStudy } from './run.mjs';
 
 const baseline = verifyBaseline(), isolation = verifyImportBoundary();
 validateFeatures([]);
-assert.throws(() => validateFeatures(['weather']), /not implemented/);
+assert.throws(() => validateFeatures(['halftime-adaptation']), /not implemented/);
 assert.throws(() => validateFeatures(['unknown']), /Unknown feature/);
 const engines = await loadEngines(), teams = syntheticTeams(engines);
 const input = inputFor(engines, teams.slice(0, 2), 'lab-validation', 'lab-validation-1', '2026-11-11');
@@ -56,7 +56,7 @@ assert.equal(fs.readFileSync(manifestFile, 'utf8'), manifest);
 await assert.rejects(runStudy({ studyId, internalValidation: true, trials: 2 }), /Study inputs\/source changed/);
 await assert.rejects(runStudy({ studyId: 'setup-validation-reserved', trials: 2 }), /reserved/);
 await assert.rejects(runStudy({ studyId: '../escape', trials: 2 }), /safe study ID/);
-await assert.rejects(runStudy({ studyId: 'unimplemented', enabledFeatures: ['weather'] }), /not implemented/);
+await assert.rejects(runStudy({ studyId: 'unimplemented', enabledFeatures: ['halftime-adaptation'] }), /not implemented/);
 // A corrupt saved event ledger must be rejected, not silently rerolled.
 const fixtureFile = path.join(dir, `${JSON.parse(manifest).fixtures[0].id}.json`);
 const fixtureText = fs.readFileSync(fixtureFile, 'utf8');

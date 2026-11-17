@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "sourceSHA256": "b888ec93d27ffd5df599f3f8106f606e738295b0521de51d3c0cc5dacc7ad1d0",
+  "harnessSHA256": "1a6d6c810a58988b76a08b97ba529692cd6f65bea832791d43b513fd3b13e3f8",
+  "fullOutcomesVerified": 1024,
+  "fixtureClusters": 256,
+  "replayEvidenceOutcomes": 64,
+  "outcomesCSVSHA256": "1f678131400dd3e5a140776d7c34e14ccb4a719f06fb05351b854c4203f10f75"
+}

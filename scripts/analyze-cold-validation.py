@@ -1,0 +1,62 @@
+"""Analyze the fixed cold response and tolerance study from audited compact outcomes."""
+import csv,gzip,json,math,statistics,sys
+from pathlib import Path
+p=Path(sys.argv[1]);m=json.loads((p/'manifest.json').read_text());groups={};ids=[a['id']for a in m['arms']]
+with gzip.open(p/'paired-outcomes.csv.gz','rt',newline='')as f:
+ for r in csv.DictReader(f):
+  g=groups.setdefault(r['fixture'],{'profile':r['profile'],'trial':int(r['trial']),'swap':r['swapped']=='true','arms':{}})
+  assert (g['profile'],g['trial'],g['swap'])==(r['profile'],int(r['trial']),r['swapped']=='true');assert r['arm']not in g['arms']
+  a={k:float(r[k])for k in ['focalWin','focalScore','opponentScore','playingSeconds','focalShots','opponentShots','focalMeanFinalEnergy','opponentMeanFinalEnergy']};a['weather']=json.loads(r['weatherJSON']);g['arms'][r['arm']]=a
+assert len(groups)==2048 and all(set(g['arms'])==set(ids)for g in groups.values());gs=list(groups.values())
+def interval(v,z=1.96):
+ n=len(v);mean=statistics.mean(v);se=statistics.stdev(v)/math.sqrt(n)
+ return {'n':n,'mean':mean,'standardError':se,'interval':[mean-z*se,mean+z*se],'z':z}
+def energy(g,arm):
+ w=g['arms'][arm]['weather'];return sum(w['energySeconds'][i]/w['activePlayerSeconds'][i]for i in [0,1])/2
+def physical_contrast(rows,hi,lo,z=1.96):
+ return {'activeEnergyPoints':interval([100*(energy(g,hi)-energy(g,lo))for g in rows],z),
+  'durationMinutes':interval([(g['arms'][hi]['playingSeconds']-g['arms'][lo]['playingSeconds'])/60 for g in rows]),
+  'combinedScore':interval([sum(g['arms'][hi][k]-g['arms'][lo][k]for k in ['focalScore','opponentScore'])for g in rows])}
+def wilson(k,n,z):
+ q=k/n;d=1+z*z/n;mid=(q+z*z/2/n)/d;h=z*math.sqrt(q*(1-q)/n+z*z/4/n/n)/d;return max(0,mid-h),min(1,mid+h)
+def competitive(rows,hi,lo,family=1):
+ z=statistics.NormalDist().inv_cdf(1-.05/(2*family));zw=statistics.NormalDist().inv_cdf(1-.05/(4*family));ds=[];wins=[]
+ for g in rows:
+  a,b=g['arms'][hi],g['arms'][lo];ds.append(a['focalScore']-a['opponentScore']-b['focalScore']+b['opponentScore']);wins.append(a['focalWin']-b['focalWin'])
+ n=len(rows);plus=wins.count(1);minus=wins.count(-1);a,b=wilson(plus,n,zw),wilson(minus,n,zw)
+ return {'contrast':hi+' minus '+lo,'n':n,'scoreMargin':interval(ds,z),'winChangePoints':100*statistics.mean(wins),
+  'winInterval':[100*(a[0]-b[1]),100*(a[1]-b[0])],'changedToFocal':plus,'changedAgainstFocal':minus,'familySize':family}
+def cell(rows,arm):
+ out={'n':len(rows),'focalWinRatePct':100*statistics.mean(g['arms'][arm]['focalWin']for g in rows),
+  'equalClubWeightedActiveEnergy':statistics.mean(energy(g,arm)for g in rows),'meanMinutes':statistics.mean(g['arms'][arm]['playingSeconds']for g in rows)/60,
+  'meanCombinedScore':statistics.mean(sum(g['arms'][arm][k]for k in ['focalScore','opponentScore'])for g in rows),'clubs':{}}
+ for role in ['focal','opponent']:
+  active=en=extra=checks=shift=shots=0
+  for g in rows:
+   r=g['arms'][arm];side=int(g['swap'])if role=='focal'else 1-int(g['swap']);w=r['weather'];active+=w['activePlayerSeconds'][side];en+=w['energySeconds'][side];extra+=w['extraRequestedFatigue'][side]
+   c=w['probabilities']['kick'][side];checks+=c['opportunities'];shift+=c['adjustedProbabilitySum']-c['baselineProbabilitySum'];shots+=r[role+'Shots']
+  out['clubs'][role]={'activeEnergy':en/active,'activePlayerSeconds':active,'requestedExtraFatigue':extra,'extraFatiguePer1000PlayerSeconds':1000*extra/active,
+   'meanFinalEnergy':statistics.mean(g['arms'][arm][role+'MeanFinalEnergy']for g in rows),'kickChecks':checks,'directWeatherKickShiftPoints':100*shift/checks,
+   'shotsPerMinute':60*shots/sum(g['arms'][arm]['playingSeconds']for g in rows)}
+ return out
+trait_pairs=[('wet-5-adverse-035','wet-5'),('wet-5-favored-035','wet-5'),('wet-5-adverse-050','wet-5'),('wet-5-favored-050','wet-5'),('wet-5-adverse-035','wet-5-adverse-050'),('wet-5-favored-035','wet-5-favored-050')]
+normal_pairs=[('dry-5-normal-035','dry-5'),('wet-5-normal-035','wet-5')]
+weather_pairs=[('dry0','dry18'),('dry-5','dry18'),('wet4','wet18'),('wet-5','wet18')]
+primary=competitive(gs,*trait_pairs[0]);pooled=[competitive(gs,hi,lo)for hi,lo in trait_pairs]
+physical=[{'contrast':hi+' minus '+lo,'values':physical_contrast(gs,hi,lo)}for hi,lo in trait_pairs+normal_pairs+weather_pairs]
+weights={'wet-5':1,'wet18':-1,'dry-5':-1,'dry18':1}
+interaction=interval([100*sum(weight*energy(g,key)for key,weight in weights.items())for g in gs])
+matchups=[]
+for profile in m['profiles']:
+ rows=[g for g in gs if g['profile']==profile['id']];assert len(rows)==512 and sum(g['swap']for g in rows)==256;assert sorted(g['trial']for g in rows)==list(range(512))
+ comparisons=[]
+ for hi,lo in trait_pairs+normal_pairs+weather_pairs:
+  comparisons.append({'overall':competitive(rows,hi,lo,4 if (hi,lo)==trait_pairs[0]else 1),'sides':[{'swap':side,'values':competitive([g for g in rows if g['swap']==side],hi,lo)}for side in [False,True]]})
+ matchups.append({'profile':profile['id'],'focal':profile['teams'][0]['name'],'opponent':profile['teams'][1]['name'],'cells':{arm:cell(rows,arm)for arm in ids},'contrasts':comparisons})
+old=json.loads((p/'prior-comparison/original-weather-screen-analysis.json').read_text())
+analysis={'status':'completed','fixtureClusters':2048,'outcomes':24576,'sourceSHA256':m['sourceSHA256'],'primary':primary,'pooledTraitContrasts':pooled,
+ 'primarySides':[{'swap':side,'values':competitive([g for g in gs if g['swap']==side],*trait_pairs[0])}for side in [False,True]],
+ 'physicalContrasts':physical,'physicalColdWetInteractionEnergyPoints':interaction,'physicalCells':{arm:cell(gs,arm)for arm in ids},'matchups':matchups,
+ 'historicalColdScreen':[x for x in old['contrasts']if x['case']in ['cold-traits-favored','cold-traits-adverse','cold-normal-traits']],
+ 'limits':'Primary pooled directional intervention on fixed pairings. Secondary/side intervals nominal except four-profile primary family. Earlier cold screen used 4 C, current severe cold -5 C; no pooling or direct calibration inference. No global ceiling, empirical physiology, psychology or adoption.'}
+(p/'analysis.json').write_text(json.dumps(analysis,indent=2)+'\n');print(json.dumps({'status':'completed','primary':primary,'pooledTraitContrasts':pooled,'physicalColdWetInteractionEnergyPoints':interaction},indent=2))

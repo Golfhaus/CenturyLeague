@@ -1,0 +1,16 @@
+{
+  "status": "qualified-before-scientific-outcomes",
+  "sourceSHA256": "69bf27bd608886512b21f078531feb348e8b033b20322081d177f8595ad06e77",
+  "harnessSHA256": "1f091658d203ccddac6d9adf2c95050aa97bc60b1e9073d93a44ae5183d64e97",
+  "plannedClusters": 384,
+  "plannedOutcomes": 1536,
+  "scientificValidationOutcomesGenerated": 0,
+  "preflightOutcomesExcluded": 8,
+  "plannedExactReplayOutcomes": 192,
+  "policy": "restored-halftime-policy-v1",
+  "legacyPolicyDecisionsMatched": 96,
+  "legacyDiagnosticDecisionsMatched": 96,
+  "thresholdsOrCostsChanged": false,
+  "officialGameplayChanged": false,
+  "planSHA256": "593f0728ad295fd86e1d7b964c22b6bd1b7ff8fcc34b8c9ebd62b7a17d71c5ee"
+}

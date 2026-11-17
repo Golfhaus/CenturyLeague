@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "behaviorChecks": [
+    "fatigue conservation",
+    "close-game threshold",
+    "fatigued press veto",
+    "leading-team press veto",
+    "leading conservation",
+    "no-evidence Hold",
+    "threshold boundaries",
+    "observation immutability"
+  ],
+  "sourceSHA256": "69bf27bd608886512b21f078531feb348e8b033b20322081d177f8595ad06e77"
+}

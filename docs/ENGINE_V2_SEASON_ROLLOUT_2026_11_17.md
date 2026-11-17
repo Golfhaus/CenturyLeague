@@ -20,7 +20,7 @@ Branch publication is a research checkpoint. Official engine adoption and activa
 
 Finish evaluation and integration of the already developed confidence, frustration, home support, weather, heat/cold tolerance and halftime coaching work, with the reliability, audit and replay infrastructure needed to operate them. Keep their agreed shared modifier budget and modest psychological influence as the evaluation framework. Existing review targets in the modifier-envelope plans remain provisional acceptance references, not clamps on match winners.
 
-The current halftime implementation is a controlled continuation and intervention adapter. The automatic observation, action-ranking and adoption policy still requires restoration/integration and validation. Neither the single-slider screen nor the targeted drop-and-counter test constitutes acceptance of a complete coaching policy. The targeted package result remains inconclusive; current thresholds were not changed.
+The automatic halftime observation, action-ranking and adoption policy has now been semantically restored and integrated into a separate full-match lab fork, with historical decision matches and fresh natural-history validation. The 1,536-match functional checks passed, but the isolated benefit estimate remains inconclusive and five changed winners went against the adapting focal team. Decision quality on genuine tactical/personnel mismatches and broader conditions remains an open gate. Neither the earlier mechanical screens nor the new functional validation establishes policy optimality or release acceptance. Current thresholds remain unchanged.
 
 ## Required gates before release
 

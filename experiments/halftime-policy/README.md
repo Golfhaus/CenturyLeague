@@ -27,4 +27,12 @@ node --no-maglev experiments/halftime-policy/analyze.mjs STUDY_DIR
 python3 experiments/halftime-policy/recompute.py STUDY_DIR
 ```
 
-For a fresh reproduction build, call `load()` from this experiment's `tools.mjs` under the pinned runtime. Compact aggregate recomputation needs only the CSV, analysis and manifest plus Python. Full ledgers remain separate from the small review bundle. Candidate adoption still requires broader/persistent-fatigue and holistic v2 validation, an isolated season rehearsal and the later release decision; v3 factors remain out of scope.
+## Completed validation: 17 November 2026
+
+All 1,536 outcomes passed ledger audits, including 3,072 own-observation reconstructions, 1,152 paired first-half checks and 192 replay receipts. Independent Python recomputation and supplemental cross-coach/no-op checks passed. There were no scientific retries, seed replacements or sample extensions.
+
+The focal-only policy changed tactics in 30/384 cases (7.8%), including 21/61 cases (34.4%) when trailing by 21+. Focal wins were 200/384 versus 205/384 with neither coach adapting: -1.30 percentage points, with the prospectively specified conservative 95% interval [-15.16, +12.56] points. All five changed winners went against the focal team; none went toward it. This does not prove harm, but benefit is not established and decision quality remains an open gate. Thresholds and costs remain unchanged.
+
+This is the full-match, pre-match policy effect including Hold. Earlier conditional second-half estimates cannot be pooled with it or added to it. The synthetic teams used mirrored skill patterns and shared starting tactical backgrounds; this was not a deliberate opposing-tactic/personnel-mismatch study. Review genuine mismatches and persistent-fatigue conditions before calling the policy settled, then run holistic v2 validation and an isolated season rehearsal. Machine-readable evidence is in `docs/verification/halftime-natural-policy-2026-11-17/`.
+
+For a fresh reproduction build, call `load()` from this experiment's `tools.mjs` under the pinned runtime. Compact aggregate recomputation needs only the CSV, analysis and manifest plus Python. Full ledgers remain separate from the small review bundle. The later release decision is still required; v3 factors remain out of scope.

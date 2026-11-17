@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "pairedClusters": 384,
+  "crossCoachDecisionChecks": 768,
+  "pairedFirstHalfChecks": 1152,
+  "noOpRowsChecked": 1398,
+  "outcomesCSVSHA256": "f2e6bc8f539b3646dc44dbaa999f19a9c38f570584d2ffee411d8ed400c98599"
+}

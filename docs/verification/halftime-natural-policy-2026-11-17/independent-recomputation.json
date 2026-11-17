@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "pairedClusters": 384,
+  "outcomes": 1536,
+  "primaryComparisons": 1,
+  "secondaryContrasts": 2,
+  "coverageCells": 6,
+  "deficitBands": 4,
+  "sideSplits": 2,
+  "armCells": 4,
+  "outcomesCSVSHA256": "f2e6bc8f539b3646dc44dbaa999f19a9c38f570584d2ffee411d8ed400c98599",
+  "method": "Independent Python CSV regrouping, discordant counts, means, Hoeffding bound, choices, coverage, deficits and interaction."
+}

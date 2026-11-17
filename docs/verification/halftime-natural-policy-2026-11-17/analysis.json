@@ -1,0 +1,306 @@
+{
+  "status": "completed",
+  "studyId": "halftime-natural-policy-validation-v1",
+  "sourceSHA256": "69bf27bd608886512b21f078531feb348e8b033b20322081d177f8595ad06e77",
+  "harnessSHA256": "1f091658d203ccddac6d9adf2c95050aa97bc60b1e9073d93a44ae5183d64e97",
+  "pairedClusters": 384,
+  "outcomes": 1536,
+  "primary": {
+    "arm": "focal-only",
+    "n": 384,
+    "wins": 200,
+    "controlWins": 205,
+    "changedToFocal": 0,
+    "changedAgainstFocal": 5,
+    "winChangePP": -1.3020833333333335,
+    "meanMarginChange": -0.4140625,
+    "conservative95IntervalPP": [
+      -15.16314888527056,
+      12.558982218603893
+    ],
+    "intervalHalfWidthPP": 13.861065551937227
+  },
+  "cells": [
+    {
+      "arm": "none",
+      "n": 384,
+      "wins": 205,
+      "winRatePct": 53.385416666666664,
+      "meanMargin": 2.03125,
+      "focalChanges": 0,
+      "opponentChanges": 0,
+      "focalChoices": {
+        "hold": 384
+      },
+      "opponentChoices": {
+        "hold": 384
+      }
+    },
+    {
+      "arm": "focal-only",
+      "n": 384,
+      "wins": 200,
+      "winRatePct": 52.083333333333336,
+      "meanMargin": 1.6171875,
+      "focalChanges": 30,
+      "opponentChanges": 0,
+      "focalChoices": {
+        "aerial-0.5": 3,
+        "drop-counter-0.5": 8,
+        "hold": 354,
+        "lower-aerial-0.5": 10,
+        "lower-aerial-1": 1,
+        "press-0.5": 8
+      },
+      "opponentChoices": {
+        "hold": 384
+      }
+    },
+    {
+      "arm": "opponent-only",
+      "n": 384,
+      "wins": 207,
+      "winRatePct": 53.90625,
+      "meanMargin": 2.6510416666666665,
+      "focalChanges": 0,
+      "opponentChanges": 42,
+      "focalChoices": {
+        "hold": 384
+      },
+      "opponentChoices": {
+        "aerial-0.5": 4,
+        "drop-counter-0.5": 12,
+        "hold": 342,
+        "lower-aerial-0.5": 12,
+        "lower-aerial-1": 1,
+        "press-0.5": 13
+      }
+    },
+    {
+      "arm": "both",
+      "n": 384,
+      "wins": 204,
+      "winRatePct": 53.125,
+      "meanMargin": 2.6171875,
+      "focalChanges": 30,
+      "opponentChanges": 42,
+      "focalChoices": {
+        "aerial-0.5": 3,
+        "drop-counter-0.5": 8,
+        "hold": 354,
+        "lower-aerial-0.5": 10,
+        "lower-aerial-1": 1,
+        "press-0.5": 8
+      },
+      "opponentChoices": {
+        "aerial-0.5": 4,
+        "drop-counter-0.5": 12,
+        "hold": 342,
+        "lower-aerial-0.5": 12,
+        "lower-aerial-1": 1,
+        "press-0.5": 13
+      }
+    }
+  ],
+  "coverage": [
+    {
+      "tactics": "neutral",
+      "quality": "stronger",
+      "n": 64,
+      "focalChanges": 2,
+      "choices": {
+        "aerial-0.5": 1,
+        "hold": 62,
+        "lower-aerial-1": 1
+      },
+      "arm": "focal-only",
+      "wins": 55,
+      "controlWins": 56,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 1,
+      "winChangePP": -1.5625,
+      "meanMarginChange": -0.625
+    },
+    {
+      "tactics": "neutral",
+      "quality": "matched",
+      "n": 64,
+      "focalChanges": 0,
+      "choices": {
+        "hold": 64
+      },
+      "arm": "focal-only",
+      "wins": 33,
+      "controlWins": 33,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 0,
+      "winChangePP": 0,
+      "meanMarginChange": 0
+    },
+    {
+      "tactics": "neutral",
+      "quality": "weaker",
+      "n": 64,
+      "focalChanges": 13,
+      "choices": {
+        "aerial-0.5": 1,
+        "hold": 51,
+        "lower-aerial-0.5": 4,
+        "press-0.5": 8
+      },
+      "arm": "focal-only",
+      "wins": 7,
+      "controlWins": 7,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 0,
+      "winChangePP": 0,
+      "meanMarginChange": 0.84375
+    },
+    {
+      "tactics": "pressure",
+      "quality": "stronger",
+      "n": 64,
+      "focalChanges": 0,
+      "choices": {
+        "hold": 64
+      },
+      "arm": "focal-only",
+      "wins": 60,
+      "controlWins": 60,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 0,
+      "winChangePP": 0,
+      "meanMarginChange": 0
+    },
+    {
+      "tactics": "pressure",
+      "quality": "matched",
+      "n": 64,
+      "focalChanges": 6,
+      "choices": {
+        "aerial-0.5": 1,
+        "drop-counter-0.5": 3,
+        "hold": 58,
+        "lower-aerial-0.5": 2
+      },
+      "arm": "focal-only",
+      "wins": 32,
+      "controlWins": 35,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 3,
+      "winChangePP": -4.6875,
+      "meanMarginChange": -1.75
+    },
+    {
+      "tactics": "pressure",
+      "quality": "weaker",
+      "n": 64,
+      "focalChanges": 9,
+      "choices": {
+        "drop-counter-0.5": 5,
+        "hold": 55,
+        "lower-aerial-0.5": 4
+      },
+      "arm": "focal-only",
+      "wins": 13,
+      "controlWins": 14,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 1,
+      "winChangePP": -1.5625,
+      "meanMarginChange": -0.953125
+    }
+  ],
+  "byDeficit": [
+    {
+      "band": "leading-or-tied",
+      "n": 213,
+      "changes": 3,
+      "choices": {
+        "aerial-0.5": 1,
+        "hold": 210,
+        "lower-aerial-0.5": 1,
+        "lower-aerial-1": 1
+      }
+    },
+    {
+      "band": "trailing-1-4",
+      "n": 19,
+      "changes": 1,
+      "choices": {
+        "aerial-0.5": 1,
+        "hold": 18
+      }
+    },
+    {
+      "band": "trailing-5-20",
+      "n": 91,
+      "changes": 5,
+      "choices": {
+        "hold": 86,
+        "lower-aerial-0.5": 3,
+        "press-0.5": 2
+      }
+    },
+    {
+      "band": "trailing-21-plus",
+      "n": 61,
+      "changes": 21,
+      "choices": {
+        "aerial-0.5": 1,
+        "drop-counter-0.5": 8,
+        "hold": 40,
+        "lower-aerial-0.5": 6,
+        "press-0.5": 6
+      }
+    }
+  ],
+  "secondary": [
+    {
+      "arm": "opponent-only",
+      "n": 384,
+      "wins": 207,
+      "controlWins": 205,
+      "changedToFocal": 5,
+      "changedAgainstFocal": 3,
+      "winChangePP": 0.5208333333333333,
+      "meanMarginChange": 0.6197916666666666
+    },
+    {
+      "arm": "both",
+      "n": 384,
+      "wins": 204,
+      "controlWins": 205,
+      "changedToFocal": 5,
+      "changedAgainstFocal": 6,
+      "winChangePP": -0.26041666666666663,
+      "meanMarginChange": 0.5859375
+    }
+  ],
+  "interactionRiskDifferencePP": 0.5208333333333333,
+  "sideSplits": [
+    {
+      "side": 0,
+      "arm": "focal-only",
+      "n": 192,
+      "wins": 101,
+      "controlWins": 103,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 2,
+      "winChangePP": -1.0416666666666665,
+      "meanMarginChange": -0.40625
+    },
+    {
+      "side": 1,
+      "arm": "focal-only",
+      "n": 192,
+      "wins": 99,
+      "controlWins": 102,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 3,
+      "winChangePP": -1.5625,
+      "meanMarginChange": -0.421875
+    }
+  ],
+  "outcomesCSVSHA256": "f2e6bc8f539b3646dc44dbaa999f19a9c38f570584d2ffee411d8ed400c98599",
+  "limits": "Natural first halves on 24 fixed synthetic profiles, four templates, +/-0.35 opponent rating gaps and two tactical backgrounds. Other modifiers disabled; this is not holistic v2 release validation, policy optimality, a natural league adoption rate, or official adoption. Earlier studies are not pooled. Primary interval amended prospectively before scientific outcomes to use a heterogeneous-stream distribution-free bound."
+}

@@ -1,0 +1,43 @@
+{
+  "status": "completed-and-verified",
+  "studyId": "halftime-natural-policy-validation-v1",
+  "pairedClusters": 384,
+  "outcomes": 1536,
+  "sourceSHA256": "69bf27bd608886512b21f078531feb348e8b033b20322081d177f8595ad06e77",
+  "harnessSHA256": "1f091658d203ccddac6d9adf2c95050aa97bc60b1e9073d93a44ae5183d64e97",
+  "outcomesCSVSHA256": "f2e6bc8f539b3646dc44dbaa999f19a9c38f570584d2ffee411d8ed400c98599",
+  "primary": {
+    "arm": "focal-only",
+    "n": 384,
+    "wins": 200,
+    "controlWins": 205,
+    "changedToFocal": 0,
+    "changedAgainstFocal": 5,
+    "winChangePP": -1.3020833333333335,
+    "meanMarginChange": -0.4140625,
+    "conservative95IntervalPP": [
+      -15.16314888527056,
+      12.558982218603893
+    ],
+    "intervalHalfWidthPP": 13.861065551937227
+  },
+  "verification": {
+    "status": "passed",
+    "sourceSHA256": "69bf27bd608886512b21f078531feb348e8b033b20322081d177f8595ad06e77",
+    "harnessSHA256": "1f091658d203ccddac6d9adf2c95050aa97bc60b1e9073d93a44ae5183d64e97",
+    "fullOutcomesVerified": 1536,
+    "fixtureClusters": 384,
+    "replayEvidenceOutcomes": 192,
+    "noOpGameplayComparisons": 1014,
+    "pairedFirstHalfChecks": 1152,
+    "ownObservationReconstructionChecks": 3072,
+    "outcomesCSVSHA256": "f2e6bc8f539b3646dc44dbaa999f19a9c38f570584d2ffee411d8ed400c98599"
+  },
+  "scientificRetries": 0,
+  "seedReplacements": 0,
+  "sampleExtensions": 0,
+  "thresholdsOrCostsChanged": false,
+  "officialGameplayChanged": false,
+  "releaseAcceptance": false,
+  "nextGate": "Review genuine opposing-tactic/personnel-fit mismatches and persistent fatigue before holistic v2 validation."
+}

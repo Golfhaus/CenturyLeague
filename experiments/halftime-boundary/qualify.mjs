@@ -20,7 +20,7 @@ for(const p of cases){
  const hold=e.simulate({...input,halftime:{sides:['hold','hold']}});auditPhysical(hold,e);assert.deepEqual(stripDecisionEvents(hold),stripDecisionEvents(native));holdEquivalence++;
  const on=e.simulate({...input,halftime:{sides:['policy','policy']}});assert.deepEqual(on,e.simulate({...input,halftime:{sides:['policy','policy']}}));auditPhysical(on,e);enabledReplays++;
  const prefix=r=>r.events.slice(0,r.events.findIndex(x=>x.type==='quarter_end'&&x.quarter===2)+1);assert.deepEqual(prefix(on),prefix(hold));firstHalfInvariance++;
- for(const d of on.halftimeTelemetry.decisions){assert.equal(d.policyVersion,'restored-halftime-policy-v2-boundary');assert.ok(d.rootDistance<=2);assert.deepEqual(d,e.decideHalftime(d.observation,'policy'));assert.equal(d.observation.side,d.side);}
+ for(const d of on.halftimeTelemetry.decisions){assert.equal(d.policyVersion,e.POLICY_VERSION);assert.ok(d.rootDistance<=2);assert.deepEqual(d,e.decideHalftime(d.observation,'policy'));assert.equal(d.observation.side,d.side);}
  atomicJSON(path.join(out,'progress.json'),{defaultOff,holdEquivalence,enabledReplays});
 }
 for(const settings of [{sides:['policy']},{sides:['unknown','hold']},{sides:['hold','hold'],futureWinner:0}])assert.throws(()=>e.validateSettings(settings));

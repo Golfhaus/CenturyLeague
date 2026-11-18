@@ -1,0 +1,10 @@
+{
+  "status": "failed-before-first-durable-case",
+  "firstCorrectionSourceSHA256": "9451526b8dd203800cc41a3b9e133f06807173d62f8a0f07d1793cc20eed25af",
+  "reason": "Blocked recipe with negative evidence multiplied by zero creates -0; JSON event copy canonicalizes to0, causing strict recomputation mismatch.",
+  "retainedCompletedCases": 0,
+  "firstAttemptStudy": "experiments/halftime-boundary/runs/confirmation",
+  "resolution": "Canonicalize zero estimated benefit; use a new qualified source and new confirmation ID with the same fixed seeds, preserving this attempt. No outcomes pooled.",
+  "preservedLocalSourceCheckpoint": "c7508202befefc1d0aca270de40d950af3ffad0d",
+  "preservedSourceGitTree": "62e098ceb34b2ca43ccea48658517a9d710b8c0f"
+}

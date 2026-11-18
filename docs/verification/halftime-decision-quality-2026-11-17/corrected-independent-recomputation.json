@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "pairedCases": 64,
+  "outcomes": 192,
+  "armCounts": 3,
+  "pairedFirstHalfGroups": 64,
+  "outcomesCSVSHA256": "ed6d3716d9629896ca699a5126ff2939b77b01bb3d7a5649a675bcf1daf18f18"
+}

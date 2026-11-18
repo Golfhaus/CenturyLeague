@@ -1,0 +1,17 @@
+# Halftime boundary-corrected candidate
+
+`restored-halftime-policy-v2-boundary-canonical` is a separate default-off laboratory candidate. The original `experiments/halftime-policy/` source and historical outcomes remain unchanged.
+
+The 384-case/768-outcome targeted original-policy evaluation found 55 selected aerial recipes with no aerial slider movement: the slider was at its limit, but a remaining ball-risk change retained full aerial-direction support. This is a recipe-support defect, not proof of sporting harm; it does not explain the earlier five adverse cases, which used interior aerial roots.
+
+This candidate assigns aerial response gain from actual aerial movement, makes fully blocked aerial recipes structurally inadmissible in automatic and diagnostic modes, and canonicalizes zero estimated benefit for exact JSON diagnostic recomputation. Other coefficients, adoption thresholds, recipes, physics and native personnel/recovery behavior are unchanged. A partial primary movement gets a proportional response rather than the larger movement of the secondary slider.
+
+Qualification includes all 96 historical policy and 96 diagnostic choices (interior roots), six default-off comparisons, six Hold equivalence checks, six enabled replays, six first-half checks, eight existing behavior checks and 18 boundary assertions. Strict TypeScript checking passed. A separate 64-case/192-outcome engineering confirmation uses Hold, original and corrected candidates on predeclared fresh boundary fixtures, preserving first halves, own observations, no-op sporting equality, physical ledgers and 48 exact replays. Its win counts are descriptive, not a powered policy-utility result.
+
+The first correction confirmation failed before any durable completed case because negative evidence times zero generated negative zero in a recomputed diagnostic while its JSON event copy held positive zero. Its source is preserved at local checkpoint c750820 and its equivalent published file tree and its plan/status remain retained. The new canonical source uses the same 64 planned seeds under a separate confirmation ID. No accepted outcomes are replaced, no outcomes are pooled and no seed was changed based on results. A qualification checker initially retained the former version literal; it was corrected to use the exported version and the full qualification was run in a new output directory.
+
+The fixed confirmation plans are in docs/halftime-boundary-confirmation-plan-2026-11-17.json and docs/halftime-boundary-canonical-confirmation-plan-2026-11-17.json. Use the pinned no-Maglev runtime. The confirm command refuses an existing manifest, so there is no automatic retry. Shared atomic storage retains its existing fault-test proof.
+
+The boundary correction is mechanically qualified. Policy utility, competitive moderate-workload coverage and holistic v2 release gates remain open. Extreme fatigue cases in the original evaluation lost under both arms, so their win-rate sensitivity was saturated. Neither those cases nor the correction confirmation model cross-match energy carry-over. The current tournament engine remains unchanged; December activation still requires validation and a release decision.
+
+Fresh engineering arm counts: Hold31/64 wins, original30/64, corrected25/64. The corrected candidate changed21/64 times versus51/64 originally. These adverse descriptive counts are disclosed; neither a sporting improvement nor release readiness is established by the mechanical fix.

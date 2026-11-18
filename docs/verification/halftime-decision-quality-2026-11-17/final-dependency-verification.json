@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "fixedSourceSHA256": "951e810a900b39807bd7b4ed9b018d43b5934efeb70a4cf7367f1604b31b4cc7",
+  "originalEvaluationHarnessSHA256": "4bbb2eb2fd2561edc72db92b7d0036df4893d1557396f36e07b3b43dc8ffc49b",
+  "confirmationRunnerSHA256": "23e99fee9dbd5afa3641b4cdb8b9dcc881f1c55e0358455f1c0167db2b29ceda",
+  "profilesSHA256": "833cdf9ffbf5068bc86314e948f40bed7805fd72d662053614c72766d8b87ea1",
+  "officialBaselineVerified": true
+}

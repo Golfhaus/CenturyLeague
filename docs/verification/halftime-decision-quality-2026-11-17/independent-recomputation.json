@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "pairedCases": 384,
+  "outcomes": 768,
+  "contexts": 12,
+  "recipeSplits": 10,
+  "sideSplits": 2,
+  "primaryIntervals": 1,
+  "fitConflicts": 3,
+  "outcomesCSVSHA256": "33c802204f83e7cd295108196e407da2b2d555d5cc18538b7c79dd763aadc494"
+}

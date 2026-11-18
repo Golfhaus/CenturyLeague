@@ -655,6 +655,6 @@ class AvailabilityMatch {
       elapsedSeconds: this.elapsed, quarters: this.quarters, events: this.events, ...stats,
       ...(this.labTelemetry ? { labTelemetry: this.labTelemetry } : {}),
       ...(this.weatherTelemetry ? {weatherTelemetry:this.weatherTelemetry}: {}),
-      ...(this.input.halftime?{halftimeTelemetry:{version:'restored-halftime-policy-v2-boundary',decisions:this.halftimeDecisions}}:{}) };
+      ...(this.input.halftime?{halftimeTelemetry:{version:'restored-halftime-policy-v2-boundary-canonical',decisions:this.halftimeDecisions}}:{}) };
   }
 }

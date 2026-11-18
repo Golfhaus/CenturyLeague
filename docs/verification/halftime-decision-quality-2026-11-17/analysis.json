@@ -1,0 +1,540 @@
+{
+  "status": "completed",
+  "sourceSHA256": "69bf27bd608886512b21f078531feb348e8b033b20322081d177f8595ad06e77",
+  "harnessSHA256": "4bbb2eb2fd2561edc72db92b7d0036df4893d1557396f36e07b3b43dc8ffc49b",
+  "pairedClusters": 384,
+  "outcomes": 768,
+  "primary": {
+    "n": 384,
+    "holdWins": 120,
+    "policyWins": 128,
+    "changedToFocal": 21,
+    "changedAgainstFocal": 13,
+    "winChangePP": 2.083333333333333,
+    "meanMarginChange": 0.7890625,
+    "changes": 180,
+    "choices": {
+      "aerial-0.5": 20,
+      "aerial-1": 18,
+      "conserve-0.5": 9,
+      "drop-counter-0.5": 35,
+      "drop-counter-1": 5,
+      "hold": 204,
+      "lower-aerial-0.5": 34,
+      "lower-aerial-1": 24,
+      "press-0.5": 34,
+      "press-1": 1
+    },
+    "meanPreEnergy": 0.7503953474565974,
+    "meanPostEnergy": 0.9704363870477234,
+    "preEnergyBelowHalf": 71,
+    "postEnergyBelowHalf": 0,
+    "conservative95IntervalPP": [
+      -11.777732218603894,
+      15.944398885270559
+    ]
+  },
+  "contexts": [
+    {
+      "context": "aerial-fit-low-root",
+      "n": 32,
+      "holdWins": 9,
+      "policyWins": 11,
+      "changedToFocal": 3,
+      "changedAgainstFocal": 1,
+      "winChangePP": 6.25,
+      "meanMarginChange": -0.28125,
+      "changes": 13,
+      "choices": {
+        "aerial-0.5": 10,
+        "aerial-1": 3,
+        "hold": 19
+      },
+      "meanPreEnergy": 0.8932873833996031,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0
+    },
+    {
+      "context": "ground-fit-high-root",
+      "n": 32,
+      "holdWins": 13,
+      "policyWins": 13,
+      "changedToFocal": 3,
+      "changedAgainstFocal": 3,
+      "winChangePP": 0,
+      "meanMarginChange": 0.8125,
+      "changes": 17,
+      "choices": {
+        "hold": 15,
+        "lower-aerial-0.5": 12,
+        "lower-aerial-1": 5
+      },
+      "meanPreEnergy": 0.8953592875911096,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0
+    },
+    {
+      "context": "aerial-fit-high-root",
+      "n": 32,
+      "holdWins": 22,
+      "policyWins": 25,
+      "changedToFocal": 6,
+      "changedAgainstFocal": 3,
+      "winChangePP": 9.375,
+      "meanMarginChange": 4.28125,
+      "changes": 25,
+      "choices": {
+        "aerial-0.5": 10,
+        "aerial-1": 15,
+        "hold": 7
+      },
+      "meanPreEnergy": 0.8938577224775257,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0
+    },
+    {
+      "context": "ground-fit-low-root",
+      "n": 32,
+      "holdWins": 10,
+      "policyWins": 12,
+      "changedToFocal": 8,
+      "changedAgainstFocal": 6,
+      "winChangePP": 6.25,
+      "meanMarginChange": 2.65625,
+      "changes": 30,
+      "choices": {
+        "hold": 2,
+        "lower-aerial-0.5": 12,
+        "lower-aerial-1": 18
+      },
+      "meanPreEnergy": 0.8965210717385855,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0
+    },
+    {
+      "context": "high-press-versus-counter",
+      "n": 32,
+      "holdWins": 6,
+      "policyWins": 6,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 0,
+      "winChangePP": 0,
+      "meanMarginChange": 1.0625,
+      "changes": 4,
+      "choices": {
+        "drop-counter-0.5": 3,
+        "hold": 28,
+        "lower-aerial-0.5": 1
+      },
+      "meanPreEnergy": 0.8752106426387598,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0
+    },
+    {
+      "context": "low-press-versus-flow",
+      "n": 32,
+      "holdWins": 9,
+      "policyWins": 10,
+      "changedToFocal": 1,
+      "changedAgainstFocal": 0,
+      "winChangePP": 3.125,
+      "meanMarginChange": 1.34375,
+      "changes": 1,
+      "choices": {
+        "hold": 31,
+        "lower-aerial-0.5": 1
+      },
+      "meanPreEnergy": 0.9081685506752785,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0
+    },
+    {
+      "context": "fatigue-high-load-short-bench",
+      "n": 32,
+      "holdWins": 0,
+      "policyWins": 0,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 0,
+      "winChangePP": 0,
+      "meanMarginChange": 2.03125,
+      "changes": 32,
+      "choices": {
+        "conserve-0.5": 7,
+        "drop-counter-0.5": 19,
+        "drop-counter-1": 5,
+        "lower-aerial-1": 1
+      },
+      "meanPreEnergy": 0.15451753946904234,
+      "meanPostEnergy": 0.7977804181679666,
+      "preEnergyBelowHalf": 32,
+      "postEnergyBelowHalf": 0
+    },
+    {
+      "context": "fatigue-managed-short-bench",
+      "n": 32,
+      "holdWins": 0,
+      "policyWins": 0,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 0,
+      "winChangePP": 0,
+      "meanMarginChange": -2.4375,
+      "changes": 31,
+      "choices": {
+        "hold": 1,
+        "lower-aerial-0.5": 1,
+        "press-0.5": 29,
+        "press-1": 1
+      },
+      "meanPreEnergy": 0.1759523278275752,
+      "meanPostEnergy": 0.8474562264047234,
+      "preEnergyBelowHalf": 32,
+      "postEnergyBelowHalf": 0
+    },
+    {
+      "context": "fatigue-high-load-deep-bench",
+      "n": 32,
+      "holdWins": 0,
+      "policyWins": 0,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 0,
+      "winChangePP": 0,
+      "meanMarginChange": -2.9375,
+      "changes": 20,
+      "choices": {
+        "conserve-0.5": 2,
+        "drop-counter-0.5": 13,
+        "hold": 12,
+        "lower-aerial-0.5": 5
+      },
+      "meanPreEnergy": 0.6306935319066843,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 7,
+      "postEnergyBelowHalf": 0
+    },
+    {
+      "context": "neutral-matched",
+      "n": 32,
+      "holdWins": 17,
+      "policyWins": 17,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 0,
+      "winChangePP": 0,
+      "meanMarginChange": 0,
+      "changes": 1,
+      "choices": {
+        "hold": 31,
+        "press-0.5": 1
+      },
+      "meanPreEnergy": 0.8895475444119121,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0
+    },
+    {
+      "context": "neutral-weaker",
+      "n": 32,
+      "holdWins": 5,
+      "policyWins": 5,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 0,
+      "winChangePP": 0,
+      "meanMarginChange": 2.9375,
+      "changes": 6,
+      "choices": {
+        "hold": 26,
+        "lower-aerial-0.5": 2,
+        "press-0.5": 4
+      },
+      "meanPreEnergy": 0.8970638253629359,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0
+    },
+    {
+      "context": "neutral-stronger",
+      "n": 32,
+      "holdWins": 29,
+      "policyWins": 29,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 0,
+      "winChangePP": 0,
+      "meanMarginChange": 0,
+      "changes": 0,
+      "choices": {
+        "hold": 32
+      },
+      "meanPreEnergy": 0.8945647419801521,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0
+    }
+  ],
+  "byRecipe": [
+    {
+      "recipe": "aerial-0.5",
+      "n": 20,
+      "holdWins": 11,
+      "policyWins": 13,
+      "changedToFocal": 4,
+      "changedAgainstFocal": 2,
+      "winChangePP": 10,
+      "meanMarginChange": -6.45,
+      "changes": 20,
+      "choices": {
+        "aerial-0.5": 20
+      },
+      "meanPreEnergy": 0.8992176794802328,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0
+    },
+    {
+      "recipe": "aerial-1",
+      "n": 18,
+      "holdWins": 9,
+      "policyWins": 12,
+      "changedToFocal": 5,
+      "changedAgainstFocal": 2,
+      "winChangePP": 16.666666666666664,
+      "meanMarginChange": 14.277777777777779,
+      "changes": 18,
+      "choices": {
+        "aerial-1": 18
+      },
+      "meanPreEnergy": 0.8863278768570708,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0
+    },
+    {
+      "recipe": "conserve-0.5",
+      "n": 9,
+      "holdWins": 0,
+      "policyWins": 0,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 0,
+      "winChangePP": 0,
+      "meanMarginChange": 0.5555555555555556,
+      "changes": 9,
+      "choices": {
+        "conserve-0.5": 9
+      },
+      "meanPreEnergy": 0.1956449458831308,
+      "meanPostEnergy": 0.8361210325755305,
+      "preEnergyBelowHalf": 9,
+      "postEnergyBelowHalf": 0
+    },
+    {
+      "recipe": "drop-counter-0.5",
+      "n": 35,
+      "holdWins": 0,
+      "policyWins": 0,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 0,
+      "winChangePP": 0,
+      "meanMarginChange": 0.2571428571428571,
+      "changes": 35,
+      "choices": {
+        "drop-counter-0.5": 35
+      },
+      "meanPreEnergy": 0.39929734639741576,
+      "meanPostEnergy": 0.8924704838919506,
+      "preEnergyBelowHalf": 21,
+      "postEnergyBelowHalf": 0
+    },
+    {
+      "recipe": "drop-counter-1",
+      "n": 5,
+      "holdWins": 0,
+      "policyWins": 0,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 0,
+      "winChangePP": 0,
+      "meanMarginChange": 0.8,
+      "changes": 5,
+      "choices": {
+        "drop-counter-1": 5
+      },
+      "meanPreEnergy": 0.15,
+      "meanPostEnergy": 0.8018034303953758,
+      "preEnergyBelowHalf": 5,
+      "postEnergyBelowHalf": 0
+    },
+    {
+      "recipe": "hold",
+      "n": 204,
+      "holdWins": 89,
+      "policyWins": 89,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 0,
+      "winChangePP": 0,
+      "meanMarginChange": 0,
+      "changes": 0,
+      "choices": {
+        "hold": 204
+      },
+      "meanPreEnergy": 0.8753965195049136,
+      "meanPostEnergy": 0.9993091175689788,
+      "preEnergyBelowHalf": 3,
+      "postEnergyBelowHalf": 0
+    },
+    {
+      "recipe": "lower-aerial-0.5",
+      "n": 34,
+      "holdWins": 7,
+      "policyWins": 7,
+      "changedToFocal": 6,
+      "changedAgainstFocal": 6,
+      "winChangePP": 0,
+      "meanMarginChange": 2.1176470588235294,
+      "changes": 34,
+      "choices": {
+        "lower-aerial-0.5": 34
+      },
+      "meanPreEnergy": 0.8405532485725479,
+      "meanPostEnergy": 0.9941779428753035,
+      "preEnergyBelowHalf": 2,
+      "postEnergyBelowHalf": 0
+    },
+    {
+      "recipe": "lower-aerial-1",
+      "n": 24,
+      "holdWins": 4,
+      "policyWins": 7,
+      "changedToFocal": 6,
+      "changedAgainstFocal": 3,
+      "winChangePP": 12.5,
+      "meanMarginChange": 2.9583333333333335,
+      "changes": 24,
+      "choices": {
+        "lower-aerial-1": 24
+      },
+      "meanPreEnergy": 0.866945978231565,
+      "meanPostEnergy": 0.9899333333333334,
+      "preEnergyBelowHalf": 1,
+      "postEnergyBelowHalf": 0
+    },
+    {
+      "recipe": "press-0.5",
+      "n": 34,
+      "holdWins": 0,
+      "policyWins": 0,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 0,
+      "winChangePP": 0,
+      "meanMarginChange": 0.6470588235294118,
+      "changes": 34,
+      "choices": {
+        "press-0.5": 34
+      },
+      "meanPreEnergy": 0.2826747795710879,
+      "meanPostEnergy": 0.8675334000584631,
+      "preEnergyBelowHalf": 29,
+      "postEnergyBelowHalf": 0
+    },
+    {
+      "recipe": "press-1",
+      "n": 1,
+      "holdWins": 0,
+      "policyWins": 0,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 0,
+      "winChangePP": 0,
+      "meanMarginChange": -8,
+      "changes": 1,
+      "choices": {
+        "press-1": 1
+      },
+      "meanPreEnergy": 0.15,
+      "meanPostEnergy": 0.9613536011313893,
+      "preEnergyBelowHalf": 1,
+      "postEnergyBelowHalf": 0
+    }
+  ],
+  "sideSplits": [
+    {
+      "side": 0,
+      "n": 192,
+      "holdWins": 65,
+      "policyWins": 65,
+      "changedToFocal": 8,
+      "changedAgainstFocal": 8,
+      "winChangePP": 0,
+      "meanMarginChange": 0.11458333333333333,
+      "changes": 88,
+      "choices": {
+        "aerial-0.5": 11,
+        "aerial-1": 6,
+        "conserve-0.5": 4,
+        "drop-counter-0.5": 17,
+        "drop-counter-1": 2,
+        "hold": 104,
+        "lower-aerial-0.5": 19,
+        "lower-aerial-1": 13,
+        "press-0.5": 15,
+        "press-1": 1
+      },
+      "meanPreEnergy": 0.750331769967075,
+      "meanPostEnergy": 0.969068528918189,
+      "preEnergyBelowHalf": 36,
+      "postEnergyBelowHalf": 0
+    },
+    {
+      "side": 1,
+      "n": 192,
+      "holdWins": 55,
+      "policyWins": 63,
+      "changedToFocal": 13,
+      "changedAgainstFocal": 5,
+      "winChangePP": 4.166666666666666,
+      "meanMarginChange": 1.4635416666666667,
+      "changes": 92,
+      "choices": {
+        "aerial-0.5": 9,
+        "aerial-1": 12,
+        "conserve-0.5": 5,
+        "drop-counter-0.5": 18,
+        "drop-counter-1": 3,
+        "hold": 100,
+        "lower-aerial-0.5": 15,
+        "lower-aerial-1": 11,
+        "press-0.5": 19
+      },
+      "meanPreEnergy": 0.7504589249461207,
+      "meanPostEnergy": 0.9718042451772583,
+      "preEnergyBelowHalf": 35,
+      "postEnergyBelowHalf": 0
+    }
+  ],
+  "fitEvidenceConflicts": [
+    {
+      "fixture": "fatigue-managed-short-bench-template-4-fresh-01",
+      "choice": "lower-aerial-0.5",
+      "personnelFit": 0.46259201016065293,
+      "routePerformance": -1,
+      "deficit": 47
+    },
+    {
+      "fixture": "fatigue-high-load-deep-bench-template-4-fresh-00",
+      "choice": "lower-aerial-0.5",
+      "personnelFit": 0.026629374183923932,
+      "routePerformance": -1,
+      "deficit": 19
+    },
+    {
+      "fixture": "fatigue-high-load-deep-bench-template-4-fresh-04",
+      "choice": "lower-aerial-0.5",
+      "personnelFit": 0.13363036101070946,
+      "routePerformance": -0.8928079112975726,
+      "deficit": 22
+    }
+  ],
+  "outcomesCSVSHA256": "33c802204f83e7cd295108196e407da2b2d555d5cc18538b7c79dd763aadc494",
+  "limits": "Synthetic targeted matrix, independent fresh seeds. Recipe/deficit/context splits are descriptive and not randomized after halftime selection. Tactical fit is not an oracle of optimal action. Within-match workload only, not cross-match carry-over. No thresholds/costs changed, no official writes, no holistic acceptance."
+}

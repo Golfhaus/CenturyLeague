@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "sourceSHA256": "951e810a900b39807bd7b4ed9b018d43b5934efeb70a4cf7367f1604b31b4cc7",
+  "checks": 18,
+  "scope": [
+    "Both aerial bounds",
+    "Zero benefit when primary lever cannot move",
+    "Structural veto applies in diagnostics",
+    "Partially clipped primary movement scales response",
+    "Interior-root decision preserved",
+    "Observation immutability"
+  ],
+  "fullPerformanceValidation": false
+}

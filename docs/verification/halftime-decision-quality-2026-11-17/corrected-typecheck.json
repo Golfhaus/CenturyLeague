@@ -1,0 +1,6 @@
+{
+  "status": "passed",
+  "sourceSHA256": "951e810a900b39807bd7b4ed9b018d43b5934efeb70a4cf7367f1604b31b4cc7",
+  "check": "TypeScript strict noEmit; ES2022 ESNext Bundler skipLibCheck",
+  "exitCode": 0
+}

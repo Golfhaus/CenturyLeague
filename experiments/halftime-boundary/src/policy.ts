@@ -2,7 +2,7 @@
 import {TACTIC_KEYS} from '../../../packages/simulation-core/src/match/types.js';
 import type {MatchEvent,Side,Tactics} from '../../../packages/simulation-core/src/match/types.js';
 import type {Ratings} from '../../../packages/simulation-core/src/types.js';
-export const POLICY_VERSION='restored-halftime-policy-v2-boundary';
+export const POLICY_VERSION='restored-halftime-policy-v2-boundary-canonical';
 export type PolicyMode='hold'|'policy'|'aligned-diagnostic'|'mismatched-diagnostic';
 export interface HalftimeSettings {sides:[PolicyMode,PolicyMode]}
 export interface PublicTotals {shots:number;kicks:number;hands:number;completedKicks:number;completedHands:number}
@@ -54,7 +54,7 @@ export function evaluateCandidates(o:DecisionObservation):Candidate[]{
   const tactics={...o.root};for(const key of Object.keys(changes[recipe]) as (keyof Tactics)[])tactics[key]=clamp(tactics[key]+changes[recipe][key]!*step,1,5);
   const changedSliders=TACTIC_KEYS.filter(k=>tactics[k]!==o.root[k]).length,distance=rootDistance(o.root,tactics),maxDelta=Math.max(...TACTIC_KEYS.map(k=>Math.abs(o.root[k]-tactics[k]))),signature=JSON.stringify(tactics);
   if(!changedSliders||seen.has(signature))continue;seen.add(signature);
-  const size=maxDelta>.5||distance>1?'major':'modest',responseDelta=recipe==='aerial'||recipe==='lower-aerial'?Math.abs(tactics.aerial_emphasis-o.root.aerial_emphasis):maxDelta,responseGain=responseDelta<=.5?1.3*responseDelta:.65+.7*(responseDelta-.5),estimatedBenefit=evidence[recipe]*responseGain;
+  const size=maxDelta>.5||distance>1?'major':'modest',responseDelta=recipe==='aerial'||recipe==='lower-aerial'?Math.abs(tactics.aerial_emphasis-o.root.aerial_emphasis):maxDelta,responseGain=responseDelta<=.5?1.3*responseDelta:.65+.7*(responseDelta-.5),estimatedBenefit=responseGain===0?0:evidence[recipe]*responseGain;
   const distanceCost=.10*distance,executionCost=.06*changedSliders+.06*distance*distance,workloadCost=recipe==='press'?.25*postFatigue*maxDelta:0,threshold=size==='major'?Math.max(.12,adoptionThreshold(deficit)):adoptionThreshold(deficit);
   let veto:string|null=null;
   if((recipe==='aerial'||recipe==='lower-aerial')&&responseDelta===0)veto='primary-lever-at-bound';else if(recipe==='press'&&!trailing)veto='not-trailing';else if(recipe==='press'&&med<.45)veto='energy-below-veto';else if(recipe==='drop-counter'&&highPressure===0)veto='root-not-high-pressure';else if(evidence[recipe]<.25)veto='insufficient-directional-evidence';else if(size==='major'&&(evidence[recipe]<.65||certainty[recipe]<.45))veto='major-change-needs-stronger-evidence';

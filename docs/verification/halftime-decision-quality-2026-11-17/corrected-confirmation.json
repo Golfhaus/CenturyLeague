@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "fixedSourceSHA256": "951e810a900b39807bd7b4ed9b018d43b5934efeb70a4cf7367f1604b31b4cc7",
+  "originalSourceSHA256": "69bf27bd608886512b21f078531feb348e8b033b20322081d177f8595ad06e77",
+  "fullOutcomesAudited": 192,
+  "pairedCases": 64,
+  "firstHalfEqualityChecks": 128,
+  "ownObservationReconstructions": 384,
+  "crossVersionObservationChecks": 128,
+  "replays": 48,
+  "noOpGameplayComparisons": 56,
+  "boundaryViolations": 0,
+  "cells": [
+    {
+      "arm": "hold",
+      "n": 64,
+      "wins": 31,
+      "changes": 0,
+      "choices": {
+        "hold": 64
+      }
+    },
+    {
+      "arm": "original",
+      "n": 64,
+      "wins": 30,
+      "changes": 51,
+      "choices": {
+        "aerial-0.5": 10,
+        "aerial-1": 14,
+        "hold": 13,
+        "lower-aerial-0.5": 16,
+        "lower-aerial-1": 8,
+        "press-0.5": 3
+      }
+    },
+    {
+      "arm": "corrected",
+      "n": 64,
+      "wins": 25,
+      "changes": 21,
+      "choices": {
+        "aerial-0.5": 4,
+        "aerial-1": 5,
+        "hold": 43,
+        "lower-aerial-0.5": 8,
+        "press-0.5": 4
+      }
+    }
+  ],
+  "outcomesCSVSHA256": "ed6d3716d9629896ca699a5126ff2939b77b01bb3d7a5649a675bcf1daf18f18",
+  "limits": "Fresh engineering confirmation: bounds, unchanged first halves, observation independence, no-op equivalence, exact replay and physical integrity. N64/192 outcomes; arm win counts are descriptive and do not establish expected policy benefit or holistic acceptance."
+}

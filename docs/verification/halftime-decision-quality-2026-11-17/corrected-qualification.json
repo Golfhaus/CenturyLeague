@@ -1,0 +1,81 @@
+{
+  "status": "passed",
+  "source": {
+    "sourceSHA256": "951e810a900b39807bd7b4ed9b018d43b5934efeb70a4cf7367f1604b31b4cc7",
+    "nativeSourceSHA256": "ad8492b0fccbf45e730dffe941d9476e39c5e1d386aedbc31ac524237bbb7329",
+    "files": [
+      [
+        "experiments/halftime-boundary/src/engine.ts",
+        "711c1e02c546f0cbc8e6c0c5ee236d3df1d62c6fc187d7a9c5a69d860fae6708"
+      ],
+      [
+        "experiments/halftime-boundary/src/policy.ts",
+        "2633a8adfe71d02c0e7064dcf1060e488533db13d308e7cf4bfd71e84b83c276"
+      ],
+      [
+        "experiments/v2/src/streaks.ts",
+        "9e2f5e507a8091a4848a0d17bd3e6edd113a626a652fa771fede838541206afd"
+      ],
+      [
+        "experiments/v2/src/weather.ts",
+        "e876fb3990e02262d7f31de6ffd362465fa59ae9de34c73f61f8d190b85045c5"
+      ],
+      [
+        "packages/simulation-core/src/competitive/availability.ts",
+        "5e42c120e3eea16c5b95a0ea136c2d4de5a0ef97804bdc97c4c9831bb83343d1"
+      ],
+      [
+        "packages/simulation-core/src/config.ts",
+        "f579f465ca82fcc8b209055765b4417caaa443edd816558b5e7ed8f4f446a219"
+      ],
+      [
+        "packages/simulation-core/src/match/input.ts",
+        "1cfc69255da5b098bb33378269a88de223bd3217ae2b8177a3d69a287cdea1a1"
+      ],
+      [
+        "packages/simulation-core/src/match/scoring.ts",
+        "5061c07cc31b12045b4d7fe13d58a7eed979687a0c11afdd2e915dab14c9eb3b"
+      ],
+      [
+        "packages/simulation-core/src/match/statistics.ts",
+        "2303cbec4b19ce1c733e113e6aff13738b0a67681eb5b815c409bcc1cb79a8de"
+      ],
+      [
+        "packages/simulation-core/src/match/types.ts",
+        "e47969f9c47b2ad94b2caeac307fdbda824d74c1ca285395b86bc577fdc901a6"
+      ],
+      [
+        "packages/simulation-core/src/random.ts",
+        "bf65b76780c77834c12962558df4be9bb95b5ac17e9534b6487d3fd114bca13c"
+      ],
+      [
+        "packages/simulation-core/src/roleRatings.ts",
+        "cdf8057a99f392afba6bd26a28317e434b78a822270b88690fcefc0c8f833974"
+      ],
+      [
+        "packages/simulation-core/src/types.ts",
+        "6194fbf7788c44d138c0443cb139db4e7c72555502ab43e67763942fa8c51b7c"
+      ]
+    ]
+  },
+  "runtime": {
+    "node": "v24.22.1",
+    "v8": "13.6.233.17-node.58",
+    "platform": "linux",
+    "arch": "x64",
+    "workerExecArgv": [
+      "--no-maglev"
+    ],
+    "numericIsolationProbe": "passed",
+    "publicResultBoundary": "detached-json-snapshot-frozen-root-v1"
+  },
+  "legacyPolicyDecisions": 96,
+  "legacyDiagnosticDecisions": 96,
+  "defaultOffComparisons": 6,
+  "holdEquivalenceComparisons": 6,
+  "enabledExactReplays": 6,
+  "firstHalfInvariance": 6,
+  "invalidSettingsRejected": 3,
+  "semantics": "Boundary correction only: blocked aerial recipes are inadmissible and aerial response scales with actual directional movement; other coefficients and thresholds unchanged. Historical interior-root decisions are regression evidence, not new sporting validation.",
+  "scientificValidationOutcomesGenerated": 0
+}

@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "sourceSHA256": "951e810a900b39807bd7b4ed9b018d43b5934efeb70a4cf7367f1604b31b4cc7",
+  "harnessSHA256": "3cdd87646e806711a1747f318e8a89f0647f92cfd73135cc6e67702d629905fa",
+  "fullOutcomesVerified": 3840,
+  "fixtureClusters": 480,
+  "pairedFirstHalfChecks": 1920,
+  "crossArmOwnObservationChecks": 3840,
+  "ownObservationReconstructions": 7680,
+  "replays": 240,
+  "noOpGameplayComparisons": 1569,
+  "weatherEnergyAndTelemetryAudits": 1920,
+  "psychologyAndFoulTelemetryAudits": 1920,
+  "outcomesCSVSHA256": "93442ba4e20ccc6df7e8632be6d6287d1942b02ff4a7ca3c587a767f09d85cf9"
+}

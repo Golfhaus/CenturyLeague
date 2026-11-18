@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "mode": "screen",
+  "pairedClusters": 480,
+  "outcomes": 3840,
+  "contrastGroups": 20,
+  "armCells": 120,
+  "factorialCells": 5,
+  "outcomesCSVSHA256": "93442ba4e20ccc6df7e8632be6d6287d1942b02ff4a7ca3c587a767f09d85cf9",
+  "confirmationInferenceVerified": false
+}

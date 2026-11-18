@@ -1,0 +1,16 @@
+{
+  "status": "frozen-before-confirmation-outcomes",
+  "sourceSHA256": "951e810a900b39807bd7b4ed9b018d43b5934efeb70a4cf7367f1604b31b4cc7",
+  "harnessSHA256": "3cdd87646e806711a1747f318e8a89f0647f92cfd73135cc6e67702d629905fa",
+  "planSHA256": "bf0894840e9762d2f7c88503cd1035113f722a2761b2289eb0d7f8c03e8e91e9",
+  "selectedScenes": [
+    "hot-favored",
+    "cold-adverse"
+  ],
+  "screenCSVsha256": "93442ba4e20ccc6df7e8632be6d6287d1942b02ff4a7ca3c587a767f09d85cf9",
+  "plannedClusters": 512,
+  "plannedOutcomes": 1536,
+  "confirmationOutcomesAtFreeze": 0,
+  "sourceOrCoefficientsChanged": false,
+  "officialWrites": false
+}

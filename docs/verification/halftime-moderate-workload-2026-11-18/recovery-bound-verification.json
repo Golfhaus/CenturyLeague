@@ -1,0 +1,127 @@
+{
+  "status": "passed",
+  "sourceSHA256": "951e810a900b39807bd7b4ed9b018d43b5934efeb70a4cf7367f1604b31b4cc7",
+  "harnessSHA256": "0cfd8a3e64a7722695bbe51ccbadf0ffe2f7658ed8eab11e488dc776d74b7e14",
+  "scope": "No-weather default-config halftime only. General lower bound uses legal recovery>=1; actual roster-specific bound also verified. Current evidence does not cover changed intervals/physics or cross-match carry-over.",
+  "generalMinimumPostIntervalEnergy": 0.7584,
+  "pressVetoEnergy": 0.45,
+  "pressLowEnergyVetoReachable": false,
+  "minimumObservedActiveEnergy": 1,
+  "minimumRosterSpecificBound": 0.9853799999999999,
+  "minimumObservedPreIntervalEnergy": 0.4181216310018671,
+  "maximumObservedPreIntervalEnergy": 1,
+  "decisionObservationsChecked": 1152,
+  "activePlayerEnergyChecks": 17274,
+  "selectedBlockedAerialRecipes": 0,
+  "contexts": [
+    {
+      "context": "eligible-28-load-2-gap--0.15",
+      "n": 32,
+      "holdWins": 20,
+      "policyWins": 20
+    },
+    {
+      "context": "eligible-28-load-2-gap-0",
+      "n": 32,
+      "holdWins": 15,
+      "policyWins": 15
+    },
+    {
+      "context": "eligible-28-load-2-gap-0.15",
+      "n": 32,
+      "holdWins": 13,
+      "policyWins": 13
+    },
+    {
+      "context": "eligible-28-load-3-gap--0.15",
+      "n": 32,
+      "holdWins": 20,
+      "policyWins": 19
+    },
+    {
+      "context": "eligible-28-load-3-gap-0",
+      "n": 32,
+      "holdWins": 13,
+      "policyWins": 13
+    },
+    {
+      "context": "eligible-28-load-3-gap-0.15",
+      "n": 32,
+      "holdWins": 13,
+      "policyWins": 13
+    },
+    {
+      "context": "eligible-28-load-4-gap--0.15",
+      "n": 32,
+      "holdWins": 17,
+      "policyWins": 18
+    },
+    {
+      "context": "eligible-28-load-4-gap-0",
+      "n": 32,
+      "holdWins": 14,
+      "policyWins": 14
+    },
+    {
+      "context": "eligible-28-load-4-gap-0.15",
+      "n": 32,
+      "holdWins": 11,
+      "policyWins": 10
+    },
+    {
+      "context": "eligible-35-load-2-gap--0.15",
+      "n": 32,
+      "holdWins": 23,
+      "policyWins": 24
+    },
+    {
+      "context": "eligible-35-load-2-gap-0",
+      "n": 32,
+      "holdWins": 18,
+      "policyWins": 19
+    },
+    {
+      "context": "eligible-35-load-2-gap-0.15",
+      "n": 32,
+      "holdWins": 11,
+      "policyWins": 11
+    },
+    {
+      "context": "eligible-35-load-3-gap--0.15",
+      "n": 32,
+      "holdWins": 21,
+      "policyWins": 21
+    },
+    {
+      "context": "eligible-35-load-3-gap-0",
+      "n": 32,
+      "holdWins": 15,
+      "policyWins": 15
+    },
+    {
+      "context": "eligible-35-load-3-gap-0.15",
+      "n": 32,
+      "holdWins": 8,
+      "policyWins": 9
+    },
+    {
+      "context": "eligible-35-load-4-gap--0.15",
+      "n": 32,
+      "holdWins": 22,
+      "policyWins": 22
+    },
+    {
+      "context": "eligible-35-load-4-gap-0",
+      "n": 32,
+      "holdWins": 15,
+      "policyWins": 16
+    },
+    {
+      "context": "eligible-35-load-4-gap-0.15",
+      "n": 32,
+      "holdWins": 10,
+      "policyWins": 8
+    }
+  ],
+  "saturatedControlContexts": []
+}

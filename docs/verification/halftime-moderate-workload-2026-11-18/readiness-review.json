@@ -1,0 +1,54 @@
+{
+  "status": "review-completed",
+  "researchContinuationAllowed": true,
+  "halftimeCandidateFrozenForHolisticResearch": true,
+  "finalAdoptionAccepted": false,
+  "holisticStudyCompleted": false,
+  "sourceSHA256": "951e810a900b39807bd7b4ed9b018d43b5934efeb70a4cf7367f1604b31b4cc7",
+  "harnessSHA256": "0cfd8a3e64a7722695bbe51ccbadf0ffe2f7658ed8eab11e488dc776d74b7e14",
+  "primary": {
+    "n": 576,
+    "holdWins": 279,
+    "policyWins": 280,
+    "changedToFocal": 5,
+    "changedAgainstFocal": 4,
+    "winChangePP": 0.1736111111111111,
+    "meanMarginChange": 0.19444444444444445,
+    "changes": 52,
+    "choices": {
+      "aerial-0.5": 8,
+      "hold": 524,
+      "lower-aerial-0.5": 13,
+      "lower-aerial-1": 1,
+      "press-0.5": 30
+    },
+    "meanPreEnergy": 0.8564813312898667,
+    "meanPostEnergy": 1,
+    "preEnergyBelowHalf": 0,
+    "postEnergyBelowHalf": 0,
+    "meanFinalEnergyChange": -0.0007510032369970446,
+    "meanSecondHalfPlayingChange": -13.079010354657532,
+    "conservative95IntervalPP": [
+      -11.143901520060718,
+      11.491123742282939
+    ]
+  },
+  "functionalChecks": "passed",
+  "competitiveContexts": 18,
+  "saturatedControlContexts": [],
+  "newImplementationDefectsDetected": 0,
+  "assessment": "The corrected candidate passed functional integrity, independent recomputation and competitive-context coverage in this fixed workload matrix. No new implementation defect was detected. The +0.17-point estimate and wide interval do not establish benefit, non-inferiority, safety or optimality. Hold remains valid; thresholds and costs are unchanged.",
+  "nextStep": "Keep this source fixed as the halftime candidate for holistic research, using the prepared factorial design and qualified weather-aware audit prerequisites. Holistic tests, copied real-club confirmation, an isolated season rehearsal and the explicit release decision remain outstanding.",
+  "mechanismReview": {
+    "fitEvidenceDisagreements": 6,
+    "interpretation": "Six aerial choices oppose the soft personnel-fit signal while the observed public route-performance signal supports the selected direction. This follows the unchanged75% route/25% fit weighting and is disclosed, not reclassified as a hard violation or proof of optimality.",
+    "conservationChosen": 0,
+    "conservationInterpretation": "All active players recovered fully before decisions; mean case-median pre-interval energy was85.65%. This matrix does not force a conservation decision or retest extreme-fatigue policy utility. The native45% post-interval veto is mathematically unreachable here, with deterministic safeguard checks retained."
+  },
+  "outcomesPooledFromEarlierStudies": false,
+  "sourceOrThresholdsChanged": false,
+  "scientificRetries": 0,
+  "seedReplacements": 0,
+  "sampleExtensions": 0,
+  "officialWrites": false
+}

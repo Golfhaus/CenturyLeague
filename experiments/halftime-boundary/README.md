@@ -15,3 +15,7 @@ The fixed confirmation plans are in docs/halftime-boundary-confirmation-plan-202
 The boundary correction is mechanically qualified. Policy utility, competitive moderate-workload coverage and holistic v2 release gates remain open. Extreme fatigue cases in the original evaluation lost under both arms, so their win-rate sensitivity was saturated. Neither those cases nor the correction confirmation model cross-match energy carry-over. The current tournament engine remains unchanged; December activation still requires validation and a release decision.
 
 Fresh engineering arm counts: Hold31/64 wins, original30/64, corrected25/64. The corrected candidate changed21/64 times versus51/64 originally. These adverse descriptive counts are disclosed; neither a sporting improvement nor release readiness is established by the mechanical fix.
+
+## 18 November continuation
+
+The unchanged source passed the matched-availability workload review (576 pairs /1,152 audited outcomes). Policy 280/576 wins versus Hold 279/576 (+0.17pp; conservative 95% interval[-11.14,+11.49]); 52 tactical changes. All 18 contexts had control wins and losses. No new implementation defect was detected. The source is frozen for holistic research, without claiming benefit, non-inferiority or final acceptance. See docs/HALFTIME_MODERATE_WORKLOAD_2026_11_18.md and the separate holistic design draft.

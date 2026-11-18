@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "sourceSHA256": "951e810a900b39807bd7b4ed9b018d43b5934efeb70a4cf7367f1604b31b4cc7",
+  "harnessSHA256": "0cfd8a3e64a7722695bbe51ccbadf0ffe2f7658ed8eab11e488dc776d74b7e14",
+  "fullOutcomesVerified": 1152,
+  "pairedFirstHalfChecks": 576,
+  "ownObservationReconstructionChecks": 2304,
+  "replays": 144,
+  "noOpGameplayComparisons": 524,
+  "outcomesCSVSHA256": "c91480957898f9cc350b4595f37c996b9c2a90bcd8b737bcb60738e49cbf05c7"
+}

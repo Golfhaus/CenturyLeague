@@ -1,0 +1,715 @@
+{
+  "status": "completed",
+  "sourceSHA256": "951e810a900b39807bd7b4ed9b018d43b5934efeb70a4cf7367f1604b31b4cc7",
+  "harnessSHA256": "0cfd8a3e64a7722695bbe51ccbadf0ffe2f7658ed8eab11e488dc776d74b7e14",
+  "pairedClusters": 576,
+  "outcomes": 1152,
+  "primary": {
+    "n": 576,
+    "holdWins": 279,
+    "policyWins": 280,
+    "changedToFocal": 5,
+    "changedAgainstFocal": 4,
+    "winChangePP": 0.1736111111111111,
+    "meanMarginChange": 0.19444444444444445,
+    "changes": 52,
+    "choices": {
+      "aerial-0.5": 8,
+      "hold": 524,
+      "lower-aerial-0.5": 13,
+      "lower-aerial-1": 1,
+      "press-0.5": 30
+    },
+    "meanPreEnergy": 0.8564813312898667,
+    "meanPostEnergy": 1,
+    "preEnergyBelowHalf": 0,
+    "postEnergyBelowHalf": 0,
+    "meanFinalEnergyChange": -0.0007510032369970446,
+    "meanSecondHalfPlayingChange": -13.079010354657532,
+    "conservative95IntervalPP": [
+      -11.143901520060718,
+      11.491123742282939
+    ]
+  },
+  "contexts": [
+    {
+      "context": "eligible-28-load-2-gap--0.15",
+      "n": 32,
+      "holdWins": 20,
+      "policyWins": 20,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 0,
+      "winChangePP": 0,
+      "meanMarginChange": 0,
+      "changes": 0,
+      "choices": {
+        "hold": 32
+      },
+      "meanPreEnergy": 0.8668963550851145,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0,
+      "meanFinalEnergyChange": 0,
+      "meanSecondHalfPlayingChange": 0
+    },
+    {
+      "context": "eligible-28-load-2-gap-0",
+      "n": 32,
+      "holdWins": 15,
+      "policyWins": 15,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 0,
+      "winChangePP": 0,
+      "meanMarginChange": -0.875,
+      "changes": 2,
+      "choices": {
+        "hold": 30,
+        "press-0.5": 2
+      },
+      "meanPreEnergy": 0.8635857031620547,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0,
+      "meanFinalEnergyChange": -0.0004152972376129174,
+      "meanSecondHalfPlayingChange": -54.852849289988654
+    },
+    {
+      "context": "eligible-28-load-2-gap-0.15",
+      "n": 32,
+      "holdWins": 13,
+      "policyWins": 13,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 0,
+      "winChangePP": 0,
+      "meanMarginChange": -1.625,
+      "changes": 3,
+      "choices": {
+        "hold": 29,
+        "press-0.5": 3
+      },
+      "meanPreEnergy": 0.8648251999808663,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0,
+      "meanFinalEnergyChange": 0.00043655778625468697,
+      "meanSecondHalfPlayingChange": -53.120279751965995
+    },
+    {
+      "context": "eligible-28-load-3-gap--0.15",
+      "n": 32,
+      "holdWins": 20,
+      "policyWins": 19,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 1,
+      "winChangePP": -3.125,
+      "meanMarginChange": 0.6875,
+      "changes": 3,
+      "choices": {
+        "aerial-0.5": 1,
+        "hold": 29,
+        "lower-aerial-0.5": 1,
+        "press-0.5": 1
+      },
+      "meanPreEnergy": 0.8209058955681884,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0,
+      "meanFinalEnergyChange": -0.002529537557564996,
+      "meanSecondHalfPlayingChange": 38.76117569103735
+    },
+    {
+      "context": "eligible-28-load-3-gap-0",
+      "n": 32,
+      "holdWins": 13,
+      "policyWins": 13,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 0,
+      "winChangePP": 0,
+      "meanMarginChange": -0.34375,
+      "changes": 5,
+      "choices": {
+        "hold": 27,
+        "lower-aerial-0.5": 1,
+        "press-0.5": 4
+      },
+      "meanPreEnergy": 0.8350828127994618,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0,
+      "meanFinalEnergyChange": -0.0023704780601992333,
+      "meanSecondHalfPlayingChange": -17.162458213781065
+    },
+    {
+      "context": "eligible-28-load-3-gap-0.15",
+      "n": 32,
+      "holdWins": 13,
+      "policyWins": 13,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 0,
+      "winChangePP": 0,
+      "meanMarginChange": 2.6875,
+      "changes": 4,
+      "choices": {
+        "hold": 28,
+        "lower-aerial-0.5": 2,
+        "press-0.5": 2
+      },
+      "meanPreEnergy": 0.8369204535519535,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0,
+      "meanFinalEnergyChange": -0.0037359884141531553,
+      "meanSecondHalfPlayingChange": 113.94455321948408
+    },
+    {
+      "context": "eligible-28-load-4-gap--0.15",
+      "n": 32,
+      "holdWins": 17,
+      "policyWins": 18,
+      "changedToFocal": 1,
+      "changedAgainstFocal": 0,
+      "winChangePP": 3.125,
+      "meanMarginChange": 2.71875,
+      "changes": 3,
+      "choices": {
+        "aerial-0.5": 2,
+        "hold": 29,
+        "lower-aerial-1": 1
+      },
+      "meanPreEnergy": 0.8168058497134194,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0,
+      "meanFinalEnergyChange": 0.0018772682471774396,
+      "meanSecondHalfPlayingChange": -11.257901605185452
+    },
+    {
+      "context": "eligible-28-load-4-gap-0",
+      "n": 32,
+      "holdWins": 14,
+      "policyWins": 14,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 0,
+      "winChangePP": 0,
+      "meanMarginChange": 0.25,
+      "changes": 3,
+      "choices": {
+        "aerial-0.5": 1,
+        "hold": 29,
+        "lower-aerial-0.5": 1,
+        "press-0.5": 1
+      },
+      "meanPreEnergy": 0.8123182475433699,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0,
+      "meanFinalEnergyChange": -0.000779106639185928,
+      "meanSecondHalfPlayingChange": -52.30367779132976
+    },
+    {
+      "context": "eligible-28-load-4-gap-0.15",
+      "n": 32,
+      "holdWins": 11,
+      "policyWins": 10,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 1,
+      "winChangePP": -3.125,
+      "meanMarginChange": -1.96875,
+      "changes": 3,
+      "choices": {
+        "hold": 29,
+        "press-0.5": 3
+      },
+      "meanPreEnergy": 0.8171607088442663,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0,
+      "meanFinalEnergyChange": -0.0034824578157398624,
+      "meanSecondHalfPlayingChange": 7.291824379979715
+    },
+    {
+      "context": "eligible-35-load-2-gap--0.15",
+      "n": 32,
+      "holdWins": 23,
+      "policyWins": 24,
+      "changedToFocal": 1,
+      "changedAgainstFocal": 0,
+      "winChangePP": 3.125,
+      "meanMarginChange": 0.875,
+      "changes": 2,
+      "choices": {
+        "hold": 30,
+        "lower-aerial-0.5": 1,
+        "press-0.5": 1
+      },
+      "meanPreEnergy": 0.8896459262464959,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0,
+      "meanFinalEnergyChange": -0.0005239324965251833,
+      "meanSecondHalfPlayingChange": -47.57065580495406
+    },
+    {
+      "context": "eligible-35-load-2-gap-0",
+      "n": 32,
+      "holdWins": 18,
+      "policyWins": 19,
+      "changedToFocal": 1,
+      "changedAgainstFocal": 0,
+      "winChangePP": 3.125,
+      "meanMarginChange": -0.34375,
+      "changes": 2,
+      "choices": {
+        "hold": 30,
+        "lower-aerial-0.5": 2
+      },
+      "meanPreEnergy": 0.8762226283774761,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0,
+      "meanFinalEnergyChange": 0.00011321740761476018,
+      "meanSecondHalfPlayingChange": -31.78004168386569
+    },
+    {
+      "context": "eligible-35-load-2-gap-0.15",
+      "n": 32,
+      "holdWins": 11,
+      "policyWins": 11,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 0,
+      "winChangePP": 0,
+      "meanMarginChange": 0.53125,
+      "changes": 3,
+      "choices": {
+        "aerial-0.5": 1,
+        "hold": 29,
+        "press-0.5": 2
+      },
+      "meanPreEnergy": 0.88130811244836,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0,
+      "meanFinalEnergyChange": 0.0008046374294426901,
+      "meanSecondHalfPlayingChange": -4.246122083789743
+    },
+    {
+      "context": "eligible-35-load-3-gap--0.15",
+      "n": 32,
+      "holdWins": 21,
+      "policyWins": 21,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 0,
+      "winChangePP": 0,
+      "meanMarginChange": 0,
+      "changes": 0,
+      "choices": {
+        "hold": 32
+      },
+      "meanPreEnergy": 0.8750346633799947,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0,
+      "meanFinalEnergyChange": 0,
+      "meanSecondHalfPlayingChange": 0
+    },
+    {
+      "context": "eligible-35-load-3-gap-0",
+      "n": 32,
+      "holdWins": 15,
+      "policyWins": 15,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 0,
+      "winChangePP": 0,
+      "meanMarginChange": -0.5625,
+      "changes": 3,
+      "choices": {
+        "hold": 29,
+        "lower-aerial-0.5": 1,
+        "press-0.5": 2
+      },
+      "meanPreEnergy": 0.8735632353404276,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0,
+      "meanFinalEnergyChange": -0.00024137714881829891,
+      "meanSecondHalfPlayingChange": -22.52273302672984
+    },
+    {
+      "context": "eligible-35-load-3-gap-0.15",
+      "n": 32,
+      "holdWins": 8,
+      "policyWins": 9,
+      "changedToFocal": 1,
+      "changedAgainstFocal": 0,
+      "winChangePP": 3.125,
+      "meanMarginChange": 1.5,
+      "changes": 5,
+      "choices": {
+        "aerial-0.5": 1,
+        "hold": 27,
+        "press-0.5": 4
+      },
+      "meanPreEnergy": 0.8749940714217711,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0,
+      "meanFinalEnergyChange": -0.0007784017400407628,
+      "meanSecondHalfPlayingChange": 13.5724464043451
+    },
+    {
+      "context": "eligible-35-load-4-gap--0.15",
+      "n": 32,
+      "holdWins": 22,
+      "policyWins": 22,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 0,
+      "winChangePP": 0,
+      "meanMarginChange": 0.53125,
+      "changes": 2,
+      "choices": {
+        "aerial-0.5": 1,
+        "hold": 30,
+        "press-0.5": 1
+      },
+      "meanPreEnergy": 0.8742252256287327,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0,
+      "meanFinalEnergyChange": -0.001064416871103882,
+      "meanSecondHalfPlayingChange": 19.81134649014578
+    },
+    {
+      "context": "eligible-35-load-4-gap-0",
+      "n": 32,
+      "holdWins": 15,
+      "policyWins": 16,
+      "changedToFocal": 1,
+      "changedAgainstFocal": 0,
+      "winChangePP": 3.125,
+      "meanMarginChange": 0.8125,
+      "changes": 1,
+      "choices": {
+        "hold": 31,
+        "lower-aerial-0.5": 1
+      },
+      "meanPreEnergy": 0.8688879058524829,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0,
+      "meanFinalEnergyChange": 0.0004558181456845341,
+      "meanSecondHalfPlayingChange": -19.06510588372049
+    },
+    {
+      "context": "eligible-35-load-4-gap-0.15",
+      "n": 32,
+      "holdWins": 10,
+      "policyWins": 8,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 2,
+      "winChangePP": -6.25,
+      "meanMarginChange": -1.375,
+      "changes": 8,
+      "choices": {
+        "aerial-0.5": 1,
+        "hold": 24,
+        "lower-aerial-0.5": 3,
+        "press-0.5": 4
+      },
+      "meanPreEnergy": 0.8682809682731567,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0,
+      "meanFinalEnergyChange": -0.0012845633011766937,
+      "meanSecondHalfPlayingChange": -114.92170743351687
+    }
+  ],
+  "byRecipe": [
+    {
+      "recipe": "aerial-0.5",
+      "n": 8,
+      "holdWins": 3,
+      "policyWins": 3,
+      "changedToFocal": 1,
+      "changedAgainstFocal": 1,
+      "winChangePP": 0,
+      "meanMarginChange": 10,
+      "changes": 8,
+      "choices": {
+        "aerial-0.5": 8
+      },
+      "meanPreEnergy": 0.8370759904404511,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0,
+      "meanFinalEnergyChange": 0.001046401379221601,
+      "meanSecondHalfPlayingChange": -340.56304136471965
+    },
+    {
+      "recipe": "hold",
+      "n": 524,
+      "holdWins": 270,
+      "policyWins": 270,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 0,
+      "winChangePP": 0,
+      "meanMarginChange": 0,
+      "changes": 0,
+      "choices": {
+        "hold": 524
+      },
+      "meanPreEnergy": 0.8571449529576376,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0,
+      "meanFinalEnergyChange": 0,
+      "meanSecondHalfPlayingChange": 0
+    },
+    {
+      "recipe": "lower-aerial-0.5",
+      "n": 13,
+      "holdWins": 4,
+      "policyWins": 5,
+      "changedToFocal": 3,
+      "changedAgainstFocal": 2,
+      "winChangePP": 7.6923076923076925,
+      "meanMarginChange": 7.6923076923076925,
+      "changes": 13,
+      "choices": {
+        "lower-aerial-0.5": 13
+      },
+      "meanPreEnergy": 0.8666672364206403,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0,
+      "meanFinalEnergyChange": -0.005607743218779899,
+      "meanSecondHalfPlayingChange": -36.95963061319382
+    },
+    {
+      "recipe": "lower-aerial-1",
+      "n": 1,
+      "holdWins": 1,
+      "policyWins": 1,
+      "changedToFocal": 0,
+      "changedAgainstFocal": 0,
+      "winChangePP": 0,
+      "meanMarginChange": 10,
+      "changes": 1,
+      "choices": {
+        "lower-aerial-1": 1
+      },
+      "meanPreEnergy": 0.8112125217539815,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0,
+      "meanFinalEnergyChange": 0.005463964152988221,
+      "meanSecondHalfPlayingChange": 490.7586638397115
+    },
+    {
+      "recipe": "press-0.5",
+      "n": 30,
+      "holdWins": 1,
+      "policyWins": 1,
+      "changedToFocal": 1,
+      "changedAgainstFocal": 1,
+      "winChangePP": 0,
+      "meanMarginChange": -2.6,
+      "changes": 30,
+      "choices": {
+        "press-0.5": 30
+      },
+      "meanPreEnergy": 0.8471598984805109,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0,
+      "meanFinalEnergyChange": -0.012450412595097334,
+      "meanSecondHalfPlayingChange": -160.6429699744391
+    }
+  ],
+  "byDeficit": [
+    {
+      "deficitBand": "leading-or-tied",
+      "n": 284,
+      "holdWins": 218,
+      "policyWins": 219,
+      "changedToFocal": 1,
+      "changedAgainstFocal": 0,
+      "winChangePP": 0.35211267605633806,
+      "meanMarginChange": 0.1056338028169014,
+      "changes": 3,
+      "choices": {
+        "aerial-0.5": 1,
+        "hold": 281,
+        "lower-aerial-0.5": 2
+      },
+      "meanPreEnergy": 0.8581727694840269,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0,
+      "meanFinalEnergyChange": -0.00007677805850407831,
+      "meanSecondHalfPlayingChange": -7.8974881084512765
+    },
+    {
+      "deficitBand": "trailing-5-20",
+      "n": 167,
+      "holdWins": 40,
+      "policyWins": 38,
+      "changedToFocal": 1,
+      "changedAgainstFocal": 3,
+      "winChangePP": -1.1976047904191618,
+      "meanMarginChange": -0.08383233532934131,
+      "changes": 17,
+      "choices": {
+        "aerial-0.5": 5,
+        "hold": 150,
+        "lower-aerial-0.5": 7,
+        "lower-aerial-1": 1,
+        "press-0.5": 4
+      },
+      "meanPreEnergy": 0.8566889156946886,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0,
+      "meanFinalEnergyChange": -0.000020854630601372475,
+      "meanSecondHalfPlayingChange": -15.219463734001733
+    },
+    {
+      "deficitBand": "trailing-1-4",
+      "n": 34,
+      "holdWins": 14,
+      "policyWins": 15,
+      "changedToFocal": 1,
+      "changedAgainstFocal": 0,
+      "winChangePP": 2.941176470588235,
+      "meanMarginChange": 1,
+      "changes": 1,
+      "choices": {
+        "hold": 33,
+        "lower-aerial-0.5": 1
+      },
+      "meanPreEnergy": 0.8633782779492987,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0,
+      "meanFinalEnergyChange": -0.00027393956541188155,
+      "meanSecondHalfPlayingChange": -0.8188132453877401
+    },
+    {
+      "deficitBand": "trailing-21-plus",
+      "n": 91,
+      "holdWins": 7,
+      "policyWins": 8,
+      "changedToFocal": 2,
+      "changedAgainstFocal": 1,
+      "winChangePP": 1.098901098901099,
+      "meanMarginChange": 0.6813186813186813,
+      "changes": 31,
+      "choices": {
+        "aerial-0.5": 2,
+        "hold": 60,
+        "lower-aerial-0.5": 3,
+        "press-0.5": 26
+      },
+      "meanPreEnergy": 0.848244724375934,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0,
+      "meanFinalEnergyChange": -0.0043733651358319366,
+      "meanSecondHalfPlayingChange": -29.902563160012125
+    }
+  ],
+  "sideSplits": [
+    {
+      "side": 0,
+      "n": 288,
+      "holdWins": 138,
+      "policyWins": 138,
+      "changedToFocal": 1,
+      "changedAgainstFocal": 1,
+      "winChangePP": 0,
+      "meanMarginChange": 0.1284722222222222,
+      "changes": 23,
+      "choices": {
+        "aerial-0.5": 3,
+        "hold": 265,
+        "lower-aerial-0.5": 5,
+        "press-0.5": 15
+      },
+      "meanPreEnergy": 0.8556281817411181,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0,
+      "meanFinalEnergyChange": -0.0008010424974830053,
+      "meanSecondHalfPlayingChange": 0.0823920181474749
+    },
+    {
+      "side": 1,
+      "n": 288,
+      "holdWins": 141,
+      "policyWins": 142,
+      "changedToFocal": 4,
+      "changedAgainstFocal": 3,
+      "winChangePP": 0.3472222222222222,
+      "meanMarginChange": 0.2604166666666667,
+      "changes": 29,
+      "choices": {
+        "aerial-0.5": 5,
+        "hold": 259,
+        "lower-aerial-0.5": 8,
+        "lower-aerial-1": 1,
+        "press-0.5": 15
+      },
+      "meanPreEnergy": 0.8573344808386142,
+      "meanPostEnergy": 1,
+      "preEnergyBelowHalf": 0,
+      "postEnergyBelowHalf": 0,
+      "meanFinalEnergyChange": -0.0007009639765110839,
+      "meanSecondHalfPlayingChange": -26.24041272746254
+    }
+  ],
+  "fitEvidenceConflicts": [
+    {
+      "fixture": "eligible-28-load-3-gap-0-template-1-moderate-01",
+      "choice": "lower-aerial-0.5",
+      "personnelFit": 0.06307977501782602,
+      "routePerformance": -0.7992727650511663,
+      "deficit": 20
+    },
+    {
+      "fixture": "eligible-28-load-3-gap-0.15-template-4-moderate-06",
+      "choice": "lower-aerial-0.5",
+      "personnelFit": 0.02926268989620458,
+      "routePerformance": -0.7278407285820182,
+      "deficit": 23
+    },
+    {
+      "fixture": "eligible-28-load-4-gap--0.15-template-2-moderate-03",
+      "choice": "aerial-0.5",
+      "personnelFit": -0.4972144517244814,
+      "routePerformance": 0.806812169312169,
+      "deficit": 21
+    },
+    {
+      "fixture": "eligible-28-load-4-gap--0.15-template-4-moderate-03",
+      "choice": "aerial-0.5",
+      "personnelFit": -0.1568461159992959,
+      "routePerformance": 0.7716658017644006,
+      "deficit": 24
+    },
+    {
+      "fixture": "eligible-35-load-2-gap-0-template-4-moderate-06",
+      "choice": "lower-aerial-0.5",
+      "personnelFit": 0.07222589525242758,
+      "routePerformance": -0.7649349700764445,
+      "deficit": 11
+    },
+    {
+      "fixture": "eligible-35-load-4-gap-0.15-template-1-moderate-06",
+      "choice": "aerial-0.5",
+      "personnelFit": -0.08162488360060156,
+      "routePerformance": 0.7489785216365193,
+      "deficit": 13
+    }
+  ],
+  "outcomesCSVSHA256": "c91480957898f9cc350b4595f37c996b9c2a90bcd8b737bcb60738e49cbf05c7",
+  "limits": "Corrected policy, matched-availability workload matrix, independent fresh seeds. Recipe/deficit/context splits are descriptive and not randomized after halftime selection. Tactical fit is not an oracle of optimal action. Within-match workload only, not cross-match carry-over. No thresholds/costs changed, no official writes, no holistic acceptance."
+}

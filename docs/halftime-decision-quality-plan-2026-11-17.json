@@ -1,0 +1,3490 @@
+{
+  "studyId": "halftime-decision-quality-v1",
+  "sourceSHA256": "69bf27bd608886512b21f078531feb348e8b033b20322081d177f8595ad06e77",
+  "harnessSHA256": "4bbb2eb2fd2561edc72db92b7d0036df4893d1557396f36e07b3b43dc8ffc49b",
+  "profilesSHA256": "833cdf9ffbf5068bc86314e948f40bed7805fd72d662053614c72766d8b87ea1",
+  "arms": [
+    "hold",
+    "policy"
+  ],
+  "fixtures": [
+    {
+      "id": "aerial-fit-low-root-template-1-fresh-00",
+      "profile": "aerial-fit-low-root-template-1",
+      "context": "aerial-fit-low-root",
+      "template": 1,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "3ce7724d78ec7624b67ffbe3148dfc8cd21625102e05e44becb29454f9f849c2"
+    },
+    {
+      "id": "aerial-fit-low-root-template-1-fresh-01",
+      "profile": "aerial-fit-low-root-template-1",
+      "context": "aerial-fit-low-root",
+      "template": 1,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "369c2b22a533edcb4fc862d62dc89150394a3650847ea5218ea79a4ad6f7b94a"
+    },
+    {
+      "id": "aerial-fit-low-root-template-1-fresh-02",
+      "profile": "aerial-fit-low-root-template-1",
+      "context": "aerial-fit-low-root",
+      "template": 1,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "2b44d9f25a4f317c8bec1ace6e777eb6a7be0d2a757680ff0edc1b02023a6e62"
+    },
+    {
+      "id": "aerial-fit-low-root-template-1-fresh-03",
+      "profile": "aerial-fit-low-root-template-1",
+      "context": "aerial-fit-low-root",
+      "template": 1,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "725bd9216a9e8a014e0d02e7e85c1a033adb0cf3ef9245b573734684a04eb32b"
+    },
+    {
+      "id": "aerial-fit-low-root-template-1-fresh-04",
+      "profile": "aerial-fit-low-root-template-1",
+      "context": "aerial-fit-low-root",
+      "template": 1,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "f189e72f03dd0290aaf005edace5c8420978d72a668536db9122b969c2843a9f"
+    },
+    {
+      "id": "aerial-fit-low-root-template-1-fresh-05",
+      "profile": "aerial-fit-low-root-template-1",
+      "context": "aerial-fit-low-root",
+      "template": 1,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "5fed6eb1c8a9a2886ced6b639cc973fc5a9f849d2c5d32905beff386f3d6f266"
+    },
+    {
+      "id": "aerial-fit-low-root-template-1-fresh-06",
+      "profile": "aerial-fit-low-root-template-1",
+      "context": "aerial-fit-low-root",
+      "template": 1,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "31c155d26e92f7ad0d1677244f928fdfb99b0093b422d56b6abe2c3365672f78"
+    },
+    {
+      "id": "aerial-fit-low-root-template-1-fresh-07",
+      "profile": "aerial-fit-low-root-template-1",
+      "context": "aerial-fit-low-root",
+      "template": 1,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "7d9d971c710974bc15fb2ea52194332f7a60aa2cdca9764381f83e3b28a7c8e6"
+    },
+    {
+      "id": "aerial-fit-low-root-template-2-fresh-00",
+      "profile": "aerial-fit-low-root-template-2",
+      "context": "aerial-fit-low-root",
+      "template": 2,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "028c5550b7cbf1de85fb4c23dcecf249575d6d3c55f0ed45e7af8870f9058a2d"
+    },
+    {
+      "id": "aerial-fit-low-root-template-2-fresh-01",
+      "profile": "aerial-fit-low-root-template-2",
+      "context": "aerial-fit-low-root",
+      "template": 2,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "fc9c8643f0d40fe26f37b5c028568b0bcfbcd2f1b3ee097af422137cd9b62954"
+    },
+    {
+      "id": "aerial-fit-low-root-template-2-fresh-02",
+      "profile": "aerial-fit-low-root-template-2",
+      "context": "aerial-fit-low-root",
+      "template": 2,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "ee520ae2f9b9212466e22c96fab39d3cb7fb7090318b5831fafa2fef815255d3"
+    },
+    {
+      "id": "aerial-fit-low-root-template-2-fresh-03",
+      "profile": "aerial-fit-low-root-template-2",
+      "context": "aerial-fit-low-root",
+      "template": 2,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "02601563888540cad9dac1ec06a1db165591b742164533f306619d19190e93e4"
+    },
+    {
+      "id": "aerial-fit-low-root-template-2-fresh-04",
+      "profile": "aerial-fit-low-root-template-2",
+      "context": "aerial-fit-low-root",
+      "template": 2,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "27103817078408a81ae4664f932da7b1dc950428f494d2d8136de16ca30eb80d"
+    },
+    {
+      "id": "aerial-fit-low-root-template-2-fresh-05",
+      "profile": "aerial-fit-low-root-template-2",
+      "context": "aerial-fit-low-root",
+      "template": 2,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "90a1f93772af960c712d8c8f2edd6b0f9b420f151e946ca0dae55d34cc52cc31"
+    },
+    {
+      "id": "aerial-fit-low-root-template-2-fresh-06",
+      "profile": "aerial-fit-low-root-template-2",
+      "context": "aerial-fit-low-root",
+      "template": 2,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "dea8e9242fd4ad539ac14ef6e9b6005ed0b44b04a790c07707ce17e1eb4199d2"
+    },
+    {
+      "id": "aerial-fit-low-root-template-2-fresh-07",
+      "profile": "aerial-fit-low-root-template-2",
+      "context": "aerial-fit-low-root",
+      "template": 2,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "388445c5d0af9624471f5abde9a646cd2ad8ccebcf53126a141a3f5a5859fbbe"
+    },
+    {
+      "id": "aerial-fit-low-root-template-3-fresh-00",
+      "profile": "aerial-fit-low-root-template-3",
+      "context": "aerial-fit-low-root",
+      "template": 3,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "bd4607c69f67ea367a5238a02fc2731cd6ecd0d90d8330cbdc84e9f77b2cdf00"
+    },
+    {
+      "id": "aerial-fit-low-root-template-3-fresh-01",
+      "profile": "aerial-fit-low-root-template-3",
+      "context": "aerial-fit-low-root",
+      "template": 3,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "ec3fa56019a2bbaf6caf0af5d1669062dc357a9932ef621cafc9c5c32c24d123"
+    },
+    {
+      "id": "aerial-fit-low-root-template-3-fresh-02",
+      "profile": "aerial-fit-low-root-template-3",
+      "context": "aerial-fit-low-root",
+      "template": 3,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "f08d47c43b3de40b9f9c6eaf52d6ebb111602ff27134694da53450affcf26b85"
+    },
+    {
+      "id": "aerial-fit-low-root-template-3-fresh-03",
+      "profile": "aerial-fit-low-root-template-3",
+      "context": "aerial-fit-low-root",
+      "template": 3,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "bb9e582efae9af72b099183350a0d7ed0d6f2e7dac2bfed699a9b2cf419edf26"
+    },
+    {
+      "id": "aerial-fit-low-root-template-3-fresh-04",
+      "profile": "aerial-fit-low-root-template-3",
+      "context": "aerial-fit-low-root",
+      "template": 3,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "7e705cca6ac5cb8e79a11900188be34837cb85a6aa701b802ae339746c1b5eb6"
+    },
+    {
+      "id": "aerial-fit-low-root-template-3-fresh-05",
+      "profile": "aerial-fit-low-root-template-3",
+      "context": "aerial-fit-low-root",
+      "template": 3,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "45bbac9f34bbf4b4a0cdb469d4d1e943b8d67b7f7cfd2a4a43d172131d90b6c8"
+    },
+    {
+      "id": "aerial-fit-low-root-template-3-fresh-06",
+      "profile": "aerial-fit-low-root-template-3",
+      "context": "aerial-fit-low-root",
+      "template": 3,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "8a4a2ab72da4709df14425442446d530d78d342e778f29afab62bd19747a8de8"
+    },
+    {
+      "id": "aerial-fit-low-root-template-3-fresh-07",
+      "profile": "aerial-fit-low-root-template-3",
+      "context": "aerial-fit-low-root",
+      "template": 3,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "ce4a093cff3ba7f17cffe062391b26cf9c1ae27ddbb200243f8f0f0cc52e3890"
+    },
+    {
+      "id": "aerial-fit-low-root-template-4-fresh-00",
+      "profile": "aerial-fit-low-root-template-4",
+      "context": "aerial-fit-low-root",
+      "template": 4,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "91bb8c2a61ab0aa58987ebb6d30f7fd227b5ce4dcc95028cb218b03a0a40d677"
+    },
+    {
+      "id": "aerial-fit-low-root-template-4-fresh-01",
+      "profile": "aerial-fit-low-root-template-4",
+      "context": "aerial-fit-low-root",
+      "template": 4,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "3046502c66500fa2d74b76323ae5304de4383f5653309018c717141d0bdb12f5"
+    },
+    {
+      "id": "aerial-fit-low-root-template-4-fresh-02",
+      "profile": "aerial-fit-low-root-template-4",
+      "context": "aerial-fit-low-root",
+      "template": 4,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "a6749fe7972198479d6d3087c1dd12c69e45f2c6de5afc089f4d67711554bc10"
+    },
+    {
+      "id": "aerial-fit-low-root-template-4-fresh-03",
+      "profile": "aerial-fit-low-root-template-4",
+      "context": "aerial-fit-low-root",
+      "template": 4,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "8ef217bfb81aec37340e1b40bba6ba6a6d0f01407e2e96c276df6723cbf31715"
+    },
+    {
+      "id": "aerial-fit-low-root-template-4-fresh-04",
+      "profile": "aerial-fit-low-root-template-4",
+      "context": "aerial-fit-low-root",
+      "template": 4,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "6622cec08a010837b9750aa71f64a47d8cd6fe7b9df80a5843fd9e790a816b30"
+    },
+    {
+      "id": "aerial-fit-low-root-template-4-fresh-05",
+      "profile": "aerial-fit-low-root-template-4",
+      "context": "aerial-fit-low-root",
+      "template": 4,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "96305ac946829f343da6b434967295b421c9022bd568d8cb413afc04915f683a"
+    },
+    {
+      "id": "aerial-fit-low-root-template-4-fresh-06",
+      "profile": "aerial-fit-low-root-template-4",
+      "context": "aerial-fit-low-root",
+      "template": 4,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "a85d7669aefefa76c50649b84767637122298d622551ad8a733f4adb2e1abbe3"
+    },
+    {
+      "id": "aerial-fit-low-root-template-4-fresh-07",
+      "profile": "aerial-fit-low-root-template-4",
+      "context": "aerial-fit-low-root",
+      "template": 4,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "705c726b64692d0eb32abb2da63889afc0460d0f5b7aed09e3ebaf1b70c0e7ad"
+    },
+    {
+      "id": "ground-fit-high-root-template-1-fresh-00",
+      "profile": "ground-fit-high-root-template-1",
+      "context": "ground-fit-high-root",
+      "template": 1,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "da804cb1a21170930ccd20f7a6a139233b07b72503fbc27e60605c75de50d451"
+    },
+    {
+      "id": "ground-fit-high-root-template-1-fresh-01",
+      "profile": "ground-fit-high-root-template-1",
+      "context": "ground-fit-high-root",
+      "template": 1,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "77231b6d95cc87ed9d31a317e8008cd50a730fc207ac3f0aaaf84d03d140c786"
+    },
+    {
+      "id": "ground-fit-high-root-template-1-fresh-02",
+      "profile": "ground-fit-high-root-template-1",
+      "context": "ground-fit-high-root",
+      "template": 1,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "e36817ed1b7f01a97f141e6c3e834c677e3bfb92255aac309b209857f5555aab"
+    },
+    {
+      "id": "ground-fit-high-root-template-1-fresh-03",
+      "profile": "ground-fit-high-root-template-1",
+      "context": "ground-fit-high-root",
+      "template": 1,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "32deae2518f29d5d5deb535cb9b60b862c0a14ee9871ebe4d213c480cf5f7080"
+    },
+    {
+      "id": "ground-fit-high-root-template-1-fresh-04",
+      "profile": "ground-fit-high-root-template-1",
+      "context": "ground-fit-high-root",
+      "template": 1,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "7523bab212d386afc6726deda34939738d215811baa516ee4da15f7836f1f52e"
+    },
+    {
+      "id": "ground-fit-high-root-template-1-fresh-05",
+      "profile": "ground-fit-high-root-template-1",
+      "context": "ground-fit-high-root",
+      "template": 1,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "88fc96ddc287a9baba13279dbec361a2ec8c9e56f3debf8b4fb9280e3e9dda88"
+    },
+    {
+      "id": "ground-fit-high-root-template-1-fresh-06",
+      "profile": "ground-fit-high-root-template-1",
+      "context": "ground-fit-high-root",
+      "template": 1,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "a48df01f0fe364736d8852f4992964f1753a1d2da0e2855b9a05e5cca678f245"
+    },
+    {
+      "id": "ground-fit-high-root-template-1-fresh-07",
+      "profile": "ground-fit-high-root-template-1",
+      "context": "ground-fit-high-root",
+      "template": 1,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "a5a8738680880f4defc1a3c1fb2fd3ab15da2a8f23ff5a8ba749df95e7f5967e"
+    },
+    {
+      "id": "ground-fit-high-root-template-2-fresh-00",
+      "profile": "ground-fit-high-root-template-2",
+      "context": "ground-fit-high-root",
+      "template": 2,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "b9a786916a53aa8e09cfcfa6d7ab7574b9acc9bc1d3cff0b21c949706057136d"
+    },
+    {
+      "id": "ground-fit-high-root-template-2-fresh-01",
+      "profile": "ground-fit-high-root-template-2",
+      "context": "ground-fit-high-root",
+      "template": 2,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "a4b11f3fb67dc8a8cc8d8c859ea5ed53327b6b2d44b0ed07b751735ee2e053c7"
+    },
+    {
+      "id": "ground-fit-high-root-template-2-fresh-02",
+      "profile": "ground-fit-high-root-template-2",
+      "context": "ground-fit-high-root",
+      "template": 2,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "8573e7c50f04546d308f2bc77fd2ad9ca66650f59a987fb81cee2d883181d1be"
+    },
+    {
+      "id": "ground-fit-high-root-template-2-fresh-03",
+      "profile": "ground-fit-high-root-template-2",
+      "context": "ground-fit-high-root",
+      "template": 2,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "f6b632240739c59fe469434a3502be965bc1b25b8bf630cd8f74443521ac05dd"
+    },
+    {
+      "id": "ground-fit-high-root-template-2-fresh-04",
+      "profile": "ground-fit-high-root-template-2",
+      "context": "ground-fit-high-root",
+      "template": 2,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "6797ca9570d5be5d5b0f78f7374cb7e914f9b2c3acb85848f9529e5d5c0bc883"
+    },
+    {
+      "id": "ground-fit-high-root-template-2-fresh-05",
+      "profile": "ground-fit-high-root-template-2",
+      "context": "ground-fit-high-root",
+      "template": 2,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "34bb4d5cf789ab3953287937650e23774a2a36f50c77564700622be68804aecc"
+    },
+    {
+      "id": "ground-fit-high-root-template-2-fresh-06",
+      "profile": "ground-fit-high-root-template-2",
+      "context": "ground-fit-high-root",
+      "template": 2,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "253ba34947284333760248d8a2846756281edf21f9d7ebfd169a051211b8fcf8"
+    },
+    {
+      "id": "ground-fit-high-root-template-2-fresh-07",
+      "profile": "ground-fit-high-root-template-2",
+      "context": "ground-fit-high-root",
+      "template": 2,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "02a2283c2417c2940f2e2fa0a0e6a40543dfc29e6dc7a96efbd6447121312c7b"
+    },
+    {
+      "id": "ground-fit-high-root-template-3-fresh-00",
+      "profile": "ground-fit-high-root-template-3",
+      "context": "ground-fit-high-root",
+      "template": 3,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "0afa02b802ced7c6409b90d733eee5c977581596c81f20df8dd91b2d695523af"
+    },
+    {
+      "id": "ground-fit-high-root-template-3-fresh-01",
+      "profile": "ground-fit-high-root-template-3",
+      "context": "ground-fit-high-root",
+      "template": 3,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "86f0647d5919d0278c09a63f72ce648e8a96d0d6e694ddc9d1d67e93f0ce13aa"
+    },
+    {
+      "id": "ground-fit-high-root-template-3-fresh-02",
+      "profile": "ground-fit-high-root-template-3",
+      "context": "ground-fit-high-root",
+      "template": 3,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "18ce49c0e58a34343ce0a46dc5d9a79acd611ca702f6404c6488c54477d2638f"
+    },
+    {
+      "id": "ground-fit-high-root-template-3-fresh-03",
+      "profile": "ground-fit-high-root-template-3",
+      "context": "ground-fit-high-root",
+      "template": 3,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "b851a94b62227db9c28d7d587b03b8eec216a140291be3765a3ff6d2ae5198f5"
+    },
+    {
+      "id": "ground-fit-high-root-template-3-fresh-04",
+      "profile": "ground-fit-high-root-template-3",
+      "context": "ground-fit-high-root",
+      "template": 3,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "ab43a2296dd1da2249b60f12766fd249206496d9a1ec994048c7fa01a40568d0"
+    },
+    {
+      "id": "ground-fit-high-root-template-3-fresh-05",
+      "profile": "ground-fit-high-root-template-3",
+      "context": "ground-fit-high-root",
+      "template": 3,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "174142ec438be308313a3328703fe53ffff11512af00ff1f374fb1854e25d593"
+    },
+    {
+      "id": "ground-fit-high-root-template-3-fresh-06",
+      "profile": "ground-fit-high-root-template-3",
+      "context": "ground-fit-high-root",
+      "template": 3,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "32e479da70a679fdd6a44b56192befd460ab906ae6a315a66e53fe86084cd80b"
+    },
+    {
+      "id": "ground-fit-high-root-template-3-fresh-07",
+      "profile": "ground-fit-high-root-template-3",
+      "context": "ground-fit-high-root",
+      "template": 3,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "b59a0af0c6c6170b7105947626ad374262e2d563b506a7ed652226367836a470"
+    },
+    {
+      "id": "ground-fit-high-root-template-4-fresh-00",
+      "profile": "ground-fit-high-root-template-4",
+      "context": "ground-fit-high-root",
+      "template": 4,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "bf00f2a065a293413921000a1113089729fa93e751f3a7043e4ea0cd86be0be4"
+    },
+    {
+      "id": "ground-fit-high-root-template-4-fresh-01",
+      "profile": "ground-fit-high-root-template-4",
+      "context": "ground-fit-high-root",
+      "template": 4,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "f0dfb02de8280708d5db82d78c1c3e8848d95cc9cd4f34409b908c17dcddd69a"
+    },
+    {
+      "id": "ground-fit-high-root-template-4-fresh-02",
+      "profile": "ground-fit-high-root-template-4",
+      "context": "ground-fit-high-root",
+      "template": 4,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "2c77a8bf1739e494c9133c9173cba79fbb318ffa69a2c8c222d10d0ef627a291"
+    },
+    {
+      "id": "ground-fit-high-root-template-4-fresh-03",
+      "profile": "ground-fit-high-root-template-4",
+      "context": "ground-fit-high-root",
+      "template": 4,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "b792730fed77ddfce275d93faf1ec1c3817f7351b4c679eb0e639f822d9fc762"
+    },
+    {
+      "id": "ground-fit-high-root-template-4-fresh-04",
+      "profile": "ground-fit-high-root-template-4",
+      "context": "ground-fit-high-root",
+      "template": 4,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "2bfec1b908699c8c753d227826a2421e2d65859f5d48e7b3a84906c99d5b3620"
+    },
+    {
+      "id": "ground-fit-high-root-template-4-fresh-05",
+      "profile": "ground-fit-high-root-template-4",
+      "context": "ground-fit-high-root",
+      "template": 4,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "cd1325ebcc8e869a6a21eee039d717e961b957c27043cfc184bf5a2fe979d77d"
+    },
+    {
+      "id": "ground-fit-high-root-template-4-fresh-06",
+      "profile": "ground-fit-high-root-template-4",
+      "context": "ground-fit-high-root",
+      "template": 4,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "e78634267046ac495942894011a25b8e1fcc7a43d8b962aa819215cd66dc164c"
+    },
+    {
+      "id": "ground-fit-high-root-template-4-fresh-07",
+      "profile": "ground-fit-high-root-template-4",
+      "context": "ground-fit-high-root",
+      "template": 4,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "39b64e51000dc5b6dce5f807ffd238a05ae0bdf18e2b7c0aebbf3a3cdb93c9eb"
+    },
+    {
+      "id": "aerial-fit-high-root-template-1-fresh-00",
+      "profile": "aerial-fit-high-root-template-1",
+      "context": "aerial-fit-high-root",
+      "template": 1,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "42c52cc337eb5e252293378b6bcdf3186c73e31bfbd4e97d4bbf7a80ee2fb953"
+    },
+    {
+      "id": "aerial-fit-high-root-template-1-fresh-01",
+      "profile": "aerial-fit-high-root-template-1",
+      "context": "aerial-fit-high-root",
+      "template": 1,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "abe46ae75414ea71f346a0d1b3d9ae92e21bad27c701484e4f8d7460de05f093"
+    },
+    {
+      "id": "aerial-fit-high-root-template-1-fresh-02",
+      "profile": "aerial-fit-high-root-template-1",
+      "context": "aerial-fit-high-root",
+      "template": 1,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "0cf3b2a17783b297770929c20f777da14e1f081bb4b44e4e766cdd17103b63bd"
+    },
+    {
+      "id": "aerial-fit-high-root-template-1-fresh-03",
+      "profile": "aerial-fit-high-root-template-1",
+      "context": "aerial-fit-high-root",
+      "template": 1,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "2b3436b85b409a24aa8a3e621ffcd121194cb7751cb9c08c0776320b943724f2"
+    },
+    {
+      "id": "aerial-fit-high-root-template-1-fresh-04",
+      "profile": "aerial-fit-high-root-template-1",
+      "context": "aerial-fit-high-root",
+      "template": 1,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "63c71123562e2e4a90b5985bde1a848ec4d1b37b6848d7f551cdede053e3995d"
+    },
+    {
+      "id": "aerial-fit-high-root-template-1-fresh-05",
+      "profile": "aerial-fit-high-root-template-1",
+      "context": "aerial-fit-high-root",
+      "template": 1,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "b99e261b0ae8b5db2f601e870c8c34d347c818e1413ab04eaa3d58c246f124f0"
+    },
+    {
+      "id": "aerial-fit-high-root-template-1-fresh-06",
+      "profile": "aerial-fit-high-root-template-1",
+      "context": "aerial-fit-high-root",
+      "template": 1,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "74fcce7e4dc19c077b2b7d31a46d809d22b2c4be82a42446ea40344daadd1364"
+    },
+    {
+      "id": "aerial-fit-high-root-template-1-fresh-07",
+      "profile": "aerial-fit-high-root-template-1",
+      "context": "aerial-fit-high-root",
+      "template": 1,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "9d292fc7eed7209d139483e6d2f2214e47fec8cdf525e066f8930d0935e20763"
+    },
+    {
+      "id": "aerial-fit-high-root-template-2-fresh-00",
+      "profile": "aerial-fit-high-root-template-2",
+      "context": "aerial-fit-high-root",
+      "template": 2,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "8819e5c787a8d539afb15d237fc2eb8be1c87e86c4fdf4dca1a9e754591829ea"
+    },
+    {
+      "id": "aerial-fit-high-root-template-2-fresh-01",
+      "profile": "aerial-fit-high-root-template-2",
+      "context": "aerial-fit-high-root",
+      "template": 2,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "9b924657c9df9e666feb9a1d4633d86d95437444ea2227fc647878803253e391"
+    },
+    {
+      "id": "aerial-fit-high-root-template-2-fresh-02",
+      "profile": "aerial-fit-high-root-template-2",
+      "context": "aerial-fit-high-root",
+      "template": 2,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "1dd19638e42f75609086d27761d6798d9adf8c730f486cd039f284bd1158e0eb"
+    },
+    {
+      "id": "aerial-fit-high-root-template-2-fresh-03",
+      "profile": "aerial-fit-high-root-template-2",
+      "context": "aerial-fit-high-root",
+      "template": 2,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "a72524b950fa0630e76bde8ed739fdceb494b1fbb13fe45b50b2a69dd30e3f98"
+    },
+    {
+      "id": "aerial-fit-high-root-template-2-fresh-04",
+      "profile": "aerial-fit-high-root-template-2",
+      "context": "aerial-fit-high-root",
+      "template": 2,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "402a29c2386e904589231453b10cee2c2b7cfe9d39635c46dbf398e0e0d8ad58"
+    },
+    {
+      "id": "aerial-fit-high-root-template-2-fresh-05",
+      "profile": "aerial-fit-high-root-template-2",
+      "context": "aerial-fit-high-root",
+      "template": 2,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "b2214dad1047a5d83413b8501dd7731ac39632fb45929aba6956ea9bc1135562"
+    },
+    {
+      "id": "aerial-fit-high-root-template-2-fresh-06",
+      "profile": "aerial-fit-high-root-template-2",
+      "context": "aerial-fit-high-root",
+      "template": 2,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "c7ca55b71caab15a9388822407f02414f0f9f0df3a3b127192df5a399683e817"
+    },
+    {
+      "id": "aerial-fit-high-root-template-2-fresh-07",
+      "profile": "aerial-fit-high-root-template-2",
+      "context": "aerial-fit-high-root",
+      "template": 2,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "12f74d7959f9af8391a8810898beef515e02db20ba5b7301d49e2a866f40da80"
+    },
+    {
+      "id": "aerial-fit-high-root-template-3-fresh-00",
+      "profile": "aerial-fit-high-root-template-3",
+      "context": "aerial-fit-high-root",
+      "template": 3,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "99223087b9d7e40f6ef603303d1c9a1e1868066856c731ea5da4430e955a8cc4"
+    },
+    {
+      "id": "aerial-fit-high-root-template-3-fresh-01",
+      "profile": "aerial-fit-high-root-template-3",
+      "context": "aerial-fit-high-root",
+      "template": 3,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "4728ddb36df7ad06da3cb50d731cd0ab3b74d601912c3735ac0d9979ceae3b8d"
+    },
+    {
+      "id": "aerial-fit-high-root-template-3-fresh-02",
+      "profile": "aerial-fit-high-root-template-3",
+      "context": "aerial-fit-high-root",
+      "template": 3,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "730cd155a2b72fb9c95eff6f6834058d2c51b83e2273d477a5e6c4a68cd549ed"
+    },
+    {
+      "id": "aerial-fit-high-root-template-3-fresh-03",
+      "profile": "aerial-fit-high-root-template-3",
+      "context": "aerial-fit-high-root",
+      "template": 3,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "f205d47bdeb74e0f4ddb4783c92dc7ba4a71572325778a0443663b404f50202d"
+    },
+    {
+      "id": "aerial-fit-high-root-template-3-fresh-04",
+      "profile": "aerial-fit-high-root-template-3",
+      "context": "aerial-fit-high-root",
+      "template": 3,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "4b2e29daa46a75d5b19b7e930c413b097e4cdc9041ecd1a73cd7a716ef72c121"
+    },
+    {
+      "id": "aerial-fit-high-root-template-3-fresh-05",
+      "profile": "aerial-fit-high-root-template-3",
+      "context": "aerial-fit-high-root",
+      "template": 3,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "ede7d516e43db583c4c536203eadb37e998c5cc44baa380159b062b32ba0aba2"
+    },
+    {
+      "id": "aerial-fit-high-root-template-3-fresh-06",
+      "profile": "aerial-fit-high-root-template-3",
+      "context": "aerial-fit-high-root",
+      "template": 3,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "72141a54dfcfd2a1a394227cd3d0df82ea6d89bc3050e20dbb1e6c11d3f0384b"
+    },
+    {
+      "id": "aerial-fit-high-root-template-3-fresh-07",
+      "profile": "aerial-fit-high-root-template-3",
+      "context": "aerial-fit-high-root",
+      "template": 3,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "88a0075a149212bc6a4be3319f0b36c686899c515562330b8ec2d9da1f20e20c"
+    },
+    {
+      "id": "aerial-fit-high-root-template-4-fresh-00",
+      "profile": "aerial-fit-high-root-template-4",
+      "context": "aerial-fit-high-root",
+      "template": 4,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "4823bfb7de2c58bb0a5de7cf400c0ec185d7827286aa3341585040be4c93f486"
+    },
+    {
+      "id": "aerial-fit-high-root-template-4-fresh-01",
+      "profile": "aerial-fit-high-root-template-4",
+      "context": "aerial-fit-high-root",
+      "template": 4,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "4f428a6a3724df5b68bcf59be77950e1136a22b8b0834be127262ec1e8ddafa8"
+    },
+    {
+      "id": "aerial-fit-high-root-template-4-fresh-02",
+      "profile": "aerial-fit-high-root-template-4",
+      "context": "aerial-fit-high-root",
+      "template": 4,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "eda7a4b204b0104dd9474e36689ffbd6a73d153e26832d68ef3d87a02264630a"
+    },
+    {
+      "id": "aerial-fit-high-root-template-4-fresh-03",
+      "profile": "aerial-fit-high-root-template-4",
+      "context": "aerial-fit-high-root",
+      "template": 4,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "6d733c3cd4f8f4a5d8bbbd98d7308d36bdc6b0afc544db54d3c776d587a26ca7"
+    },
+    {
+      "id": "aerial-fit-high-root-template-4-fresh-04",
+      "profile": "aerial-fit-high-root-template-4",
+      "context": "aerial-fit-high-root",
+      "template": 4,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "2853b71648b12e2f8564aeb4ec8c767934842cc4474df2c6525eed7885a593d8"
+    },
+    {
+      "id": "aerial-fit-high-root-template-4-fresh-05",
+      "profile": "aerial-fit-high-root-template-4",
+      "context": "aerial-fit-high-root",
+      "template": 4,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "f8c32b64fb448eb5322caffe0249d3f61216c39e51458986cfe115e636337fdc"
+    },
+    {
+      "id": "aerial-fit-high-root-template-4-fresh-06",
+      "profile": "aerial-fit-high-root-template-4",
+      "context": "aerial-fit-high-root",
+      "template": 4,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "61d471549a698f349c71f80a9ed495fbbfbaf7bd9126dd4741a166bfc992fb4e"
+    },
+    {
+      "id": "aerial-fit-high-root-template-4-fresh-07",
+      "profile": "aerial-fit-high-root-template-4",
+      "context": "aerial-fit-high-root",
+      "template": 4,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "455ea6d2a66d977324a7999fc6bd765a5b4661c39be6aa32dd55d618eafa99c2"
+    },
+    {
+      "id": "ground-fit-low-root-template-1-fresh-00",
+      "profile": "ground-fit-low-root-template-1",
+      "context": "ground-fit-low-root",
+      "template": 1,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "d7aeed8d7cfe3fa0cb2060385aeb8548e7259f3ad442bc4beefd8ddb3a2664cb"
+    },
+    {
+      "id": "ground-fit-low-root-template-1-fresh-01",
+      "profile": "ground-fit-low-root-template-1",
+      "context": "ground-fit-low-root",
+      "template": 1,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "5594090c207f708c1fefded70a9223a8618d39907a644e1a0388fa9bd49dea4f"
+    },
+    {
+      "id": "ground-fit-low-root-template-1-fresh-02",
+      "profile": "ground-fit-low-root-template-1",
+      "context": "ground-fit-low-root",
+      "template": 1,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "2229f6d05f5c89cf6f74fbaae90d282c4ac6dde2fe7e5541bc3f3965af09833f"
+    },
+    {
+      "id": "ground-fit-low-root-template-1-fresh-03",
+      "profile": "ground-fit-low-root-template-1",
+      "context": "ground-fit-low-root",
+      "template": 1,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "19f79b03309e02729056eb26861c7d6ddfb94bdb9b5c6f3bc65ee1b8dce45a3a"
+    },
+    {
+      "id": "ground-fit-low-root-template-1-fresh-04",
+      "profile": "ground-fit-low-root-template-1",
+      "context": "ground-fit-low-root",
+      "template": 1,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "a858a6aea0b9a946aa7fb84ec9c151b9be460e7c79c3a6c50bb9a019172c1db4"
+    },
+    {
+      "id": "ground-fit-low-root-template-1-fresh-05",
+      "profile": "ground-fit-low-root-template-1",
+      "context": "ground-fit-low-root",
+      "template": 1,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "9bc8402282642334954a530c737f78645f65da4bc3ec89c4d99fc6ba0efa1b4b"
+    },
+    {
+      "id": "ground-fit-low-root-template-1-fresh-06",
+      "profile": "ground-fit-low-root-template-1",
+      "context": "ground-fit-low-root",
+      "template": 1,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "9393d9407adbbb4ce9e7e12aa8f711108aa0bda15769e5e3de582eabec460a71"
+    },
+    {
+      "id": "ground-fit-low-root-template-1-fresh-07",
+      "profile": "ground-fit-low-root-template-1",
+      "context": "ground-fit-low-root",
+      "template": 1,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "e4a147b73e5a74f639743a77a6a63e98271f9dcc3f015e47dc778405b3fe5f54"
+    },
+    {
+      "id": "ground-fit-low-root-template-2-fresh-00",
+      "profile": "ground-fit-low-root-template-2",
+      "context": "ground-fit-low-root",
+      "template": 2,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "7ad92914095b28460a018de31a565fc3e1d7bcc7914a31997237b7c88043ef04"
+    },
+    {
+      "id": "ground-fit-low-root-template-2-fresh-01",
+      "profile": "ground-fit-low-root-template-2",
+      "context": "ground-fit-low-root",
+      "template": 2,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "ef3afba9268025e29fd601e76d2fd5d966ab1d1711c7f9bfea2c3c61c7c5cad4"
+    },
+    {
+      "id": "ground-fit-low-root-template-2-fresh-02",
+      "profile": "ground-fit-low-root-template-2",
+      "context": "ground-fit-low-root",
+      "template": 2,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "d311d3b6301ea7c17b19d6e608d7bd2fceffcfd86a47a4f7e1afa66ac74b81e0"
+    },
+    {
+      "id": "ground-fit-low-root-template-2-fresh-03",
+      "profile": "ground-fit-low-root-template-2",
+      "context": "ground-fit-low-root",
+      "template": 2,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "e5b2f6a537e40f9d7a204504039009ff59abdef04e71e9baccd4c1cb7d4c3a86"
+    },
+    {
+      "id": "ground-fit-low-root-template-2-fresh-04",
+      "profile": "ground-fit-low-root-template-2",
+      "context": "ground-fit-low-root",
+      "template": 2,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "a72f412fcbd46ea6ba7bb120dd4174cd462dc41304e0dffe1df702bd90654737"
+    },
+    {
+      "id": "ground-fit-low-root-template-2-fresh-05",
+      "profile": "ground-fit-low-root-template-2",
+      "context": "ground-fit-low-root",
+      "template": 2,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "57283ab0ec9bf18fedce273a2b0a6414a88df38ca38fb23d0c144a5ddddbdbed"
+    },
+    {
+      "id": "ground-fit-low-root-template-2-fresh-06",
+      "profile": "ground-fit-low-root-template-2",
+      "context": "ground-fit-low-root",
+      "template": 2,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "dffb15e144de16830334e28987a312d853706af088fcc9d3a027b5775be27365"
+    },
+    {
+      "id": "ground-fit-low-root-template-2-fresh-07",
+      "profile": "ground-fit-low-root-template-2",
+      "context": "ground-fit-low-root",
+      "template": 2,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "9693f5fbb4f22b8a313c8cbe300294a07ab4354d7ad03110f128f3f361d67857"
+    },
+    {
+      "id": "ground-fit-low-root-template-3-fresh-00",
+      "profile": "ground-fit-low-root-template-3",
+      "context": "ground-fit-low-root",
+      "template": 3,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "1fb16208ce1e0ad2fd1ddf092fcd6bbb5025e517286be980c31040197a2908d3"
+    },
+    {
+      "id": "ground-fit-low-root-template-3-fresh-01",
+      "profile": "ground-fit-low-root-template-3",
+      "context": "ground-fit-low-root",
+      "template": 3,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "64778bba51b780cc19840de48d525c78ce05b51b864b417cc02be9cb255415d2"
+    },
+    {
+      "id": "ground-fit-low-root-template-3-fresh-02",
+      "profile": "ground-fit-low-root-template-3",
+      "context": "ground-fit-low-root",
+      "template": 3,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "66c4be4f73f6677b94026f1e9afc7be45bb51e2b2fd0ed322225cc8d94f7a793"
+    },
+    {
+      "id": "ground-fit-low-root-template-3-fresh-03",
+      "profile": "ground-fit-low-root-template-3",
+      "context": "ground-fit-low-root",
+      "template": 3,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "a0506d17b7b063f9bfdc58dde7b56c04286a6a4ecc57b5a45f80d62c7570d70c"
+    },
+    {
+      "id": "ground-fit-low-root-template-3-fresh-04",
+      "profile": "ground-fit-low-root-template-3",
+      "context": "ground-fit-low-root",
+      "template": 3,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "d5ae8689b65805d55a7a56f647dacee76002d43292a24472df1efde769612279"
+    },
+    {
+      "id": "ground-fit-low-root-template-3-fresh-05",
+      "profile": "ground-fit-low-root-template-3",
+      "context": "ground-fit-low-root",
+      "template": 3,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "15a790491f52b6b9fb891d417be6f5e1b5ff4489d8116bbab1f800805be147c8"
+    },
+    {
+      "id": "ground-fit-low-root-template-3-fresh-06",
+      "profile": "ground-fit-low-root-template-3",
+      "context": "ground-fit-low-root",
+      "template": 3,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "4202e8cf67c24e0a781cecad6a05d96220715537b04df94b309c77f3609641b8"
+    },
+    {
+      "id": "ground-fit-low-root-template-3-fresh-07",
+      "profile": "ground-fit-low-root-template-3",
+      "context": "ground-fit-low-root",
+      "template": 3,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "9e9c7277e1520f047a5f855943dc43b21877feb98a9cf120a1f24a96af74c31d"
+    },
+    {
+      "id": "ground-fit-low-root-template-4-fresh-00",
+      "profile": "ground-fit-low-root-template-4",
+      "context": "ground-fit-low-root",
+      "template": 4,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "c348eab8240492a55e2b982884449fa14174900829f58647f4859c8b4d6fe2f7"
+    },
+    {
+      "id": "ground-fit-low-root-template-4-fresh-01",
+      "profile": "ground-fit-low-root-template-4",
+      "context": "ground-fit-low-root",
+      "template": 4,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "cd359899a40b63f0be8f000822d5594fe55af9167e9b958048ce348020bcc7c3"
+    },
+    {
+      "id": "ground-fit-low-root-template-4-fresh-02",
+      "profile": "ground-fit-low-root-template-4",
+      "context": "ground-fit-low-root",
+      "template": 4,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "ff3be5039e854ff7043dd2af2548ef8aec3ae1a38d0881559c9ad8c219b73b89"
+    },
+    {
+      "id": "ground-fit-low-root-template-4-fresh-03",
+      "profile": "ground-fit-low-root-template-4",
+      "context": "ground-fit-low-root",
+      "template": 4,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "68152e9c1e09dcfb8d3408cce4d60c6ada48af7c16b5a090983b3b2f0dca229f"
+    },
+    {
+      "id": "ground-fit-low-root-template-4-fresh-04",
+      "profile": "ground-fit-low-root-template-4",
+      "context": "ground-fit-low-root",
+      "template": 4,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "bf6f6e004a2f44f7e29521f9d2a26f62b72b222c93279bd264e274d697705ea2"
+    },
+    {
+      "id": "ground-fit-low-root-template-4-fresh-05",
+      "profile": "ground-fit-low-root-template-4",
+      "context": "ground-fit-low-root",
+      "template": 4,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "9915b943de34f3aa47898e309cc2f17d877f67335e11ff9cbd31d67723414ded"
+    },
+    {
+      "id": "ground-fit-low-root-template-4-fresh-06",
+      "profile": "ground-fit-low-root-template-4",
+      "context": "ground-fit-low-root",
+      "template": 4,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "f11e6b69645cf99b0964ac2704a582aa5d00dc3fc755bb250e650e04988307c8"
+    },
+    {
+      "id": "ground-fit-low-root-template-4-fresh-07",
+      "profile": "ground-fit-low-root-template-4",
+      "context": "ground-fit-low-root",
+      "template": 4,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "27a8fa0dff0e1430065e4623b2657ac3962bc5370c7760a1794bc83baf4935f7"
+    },
+    {
+      "id": "high-press-versus-counter-template-1-fresh-00",
+      "profile": "high-press-versus-counter-template-1",
+      "context": "high-press-versus-counter",
+      "template": 1,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "346761be875787c7db712a7a7683147c681ad1fa488dcc182e8b955e9c277f2a"
+    },
+    {
+      "id": "high-press-versus-counter-template-1-fresh-01",
+      "profile": "high-press-versus-counter-template-1",
+      "context": "high-press-versus-counter",
+      "template": 1,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "b9ad0ce992c22ec81fb449ae596d2f081e8dca43c145e4108a06d0448c2076d3"
+    },
+    {
+      "id": "high-press-versus-counter-template-1-fresh-02",
+      "profile": "high-press-versus-counter-template-1",
+      "context": "high-press-versus-counter",
+      "template": 1,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "83f1613746d992d6419f7ee76f1536d4021fc308aeff0589df9eb09d0c19e4a8"
+    },
+    {
+      "id": "high-press-versus-counter-template-1-fresh-03",
+      "profile": "high-press-versus-counter-template-1",
+      "context": "high-press-versus-counter",
+      "template": 1,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "6297cf56c17dbdab28d6840ab02fbd12a0af7f4020fddc83a7c81438dc41030e"
+    },
+    {
+      "id": "high-press-versus-counter-template-1-fresh-04",
+      "profile": "high-press-versus-counter-template-1",
+      "context": "high-press-versus-counter",
+      "template": 1,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "2f8fe6fa3f71fdbbcb57a47ee576f26501dbfa5f341aff65534454ef45ce7ded"
+    },
+    {
+      "id": "high-press-versus-counter-template-1-fresh-05",
+      "profile": "high-press-versus-counter-template-1",
+      "context": "high-press-versus-counter",
+      "template": 1,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "5d21e1739e0b593755a141c938163bdd780c08e67bf99ca8d2a80fac08f48f13"
+    },
+    {
+      "id": "high-press-versus-counter-template-1-fresh-06",
+      "profile": "high-press-versus-counter-template-1",
+      "context": "high-press-versus-counter",
+      "template": 1,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "4580bf0ca4f08b35e63a58478c0350149042c34975e108cd27c1f5021e0e46bd"
+    },
+    {
+      "id": "high-press-versus-counter-template-1-fresh-07",
+      "profile": "high-press-versus-counter-template-1",
+      "context": "high-press-versus-counter",
+      "template": 1,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "098e8e3ca60d6e962ac264a2b5e59e90187ce85d58803fca4aab80cd15e4e3ff"
+    },
+    {
+      "id": "high-press-versus-counter-template-2-fresh-00",
+      "profile": "high-press-versus-counter-template-2",
+      "context": "high-press-versus-counter",
+      "template": 2,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "e25fa4c08151da83dc2ec634cdf21cf4233003811d4763d0f3d82558a772f1ae"
+    },
+    {
+      "id": "high-press-versus-counter-template-2-fresh-01",
+      "profile": "high-press-versus-counter-template-2",
+      "context": "high-press-versus-counter",
+      "template": 2,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "b24c04582f491b79f0dbab8fd50409770174773a64e4778fd41f21d7523f57a1"
+    },
+    {
+      "id": "high-press-versus-counter-template-2-fresh-02",
+      "profile": "high-press-versus-counter-template-2",
+      "context": "high-press-versus-counter",
+      "template": 2,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "96bf5e7a63416217c1dfa27322542d8de0cf22716bc3da6f6de1eafece29820e"
+    },
+    {
+      "id": "high-press-versus-counter-template-2-fresh-03",
+      "profile": "high-press-versus-counter-template-2",
+      "context": "high-press-versus-counter",
+      "template": 2,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "6fd5ec1f0a2ea049647e79054b0afe00dcf5a08fe79c7dfb8e82ddea8f7fc9be"
+    },
+    {
+      "id": "high-press-versus-counter-template-2-fresh-04",
+      "profile": "high-press-versus-counter-template-2",
+      "context": "high-press-versus-counter",
+      "template": 2,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "34421648b94726e02c5298c1818ac4b5ed68ca3283e559f1733c213c5cb83bd7"
+    },
+    {
+      "id": "high-press-versus-counter-template-2-fresh-05",
+      "profile": "high-press-versus-counter-template-2",
+      "context": "high-press-versus-counter",
+      "template": 2,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "c1fe39db5bfd3801512c0871c3ad75de9bb65a4e6ef9fd223ee7edcc15a69833"
+    },
+    {
+      "id": "high-press-versus-counter-template-2-fresh-06",
+      "profile": "high-press-versus-counter-template-2",
+      "context": "high-press-versus-counter",
+      "template": 2,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "838f602eee7199a72b89031cc8a0df9af97993a114053a317308cc0b1ea01172"
+    },
+    {
+      "id": "high-press-versus-counter-template-2-fresh-07",
+      "profile": "high-press-versus-counter-template-2",
+      "context": "high-press-versus-counter",
+      "template": 2,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "7bd9fc81d305c40d36ab880810b3dd973de555b771215d052df084e99479771f"
+    },
+    {
+      "id": "high-press-versus-counter-template-3-fresh-00",
+      "profile": "high-press-versus-counter-template-3",
+      "context": "high-press-versus-counter",
+      "template": 3,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "e1be5c2d49403dee18abd29fa0f1b697ff000c27600fd4998056be0b5955d1b2"
+    },
+    {
+      "id": "high-press-versus-counter-template-3-fresh-01",
+      "profile": "high-press-versus-counter-template-3",
+      "context": "high-press-versus-counter",
+      "template": 3,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "d7e688bdd00cc74f7856f1c62368018d8cff55d56601c58a51d482896ff0cc80"
+    },
+    {
+      "id": "high-press-versus-counter-template-3-fresh-02",
+      "profile": "high-press-versus-counter-template-3",
+      "context": "high-press-versus-counter",
+      "template": 3,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "9bf402e28f8413f73cee0f9c90b93a96fe55b4f88ac525e5ee4765e8333dc60a"
+    },
+    {
+      "id": "high-press-versus-counter-template-3-fresh-03",
+      "profile": "high-press-versus-counter-template-3",
+      "context": "high-press-versus-counter",
+      "template": 3,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "d6795175878a84f896616b4987a1495c331cff6e6d6f4ba47900f4430bc99e98"
+    },
+    {
+      "id": "high-press-versus-counter-template-3-fresh-04",
+      "profile": "high-press-versus-counter-template-3",
+      "context": "high-press-versus-counter",
+      "template": 3,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "fd99fd5987ff6dd642384db161f72af13bb81929af9dcc49f337aeda050f83e1"
+    },
+    {
+      "id": "high-press-versus-counter-template-3-fresh-05",
+      "profile": "high-press-versus-counter-template-3",
+      "context": "high-press-versus-counter",
+      "template": 3,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "ade5c06e05aa49560224e8da02c62a30fc4803bc5d5167caef5dbffea20a9bc9"
+    },
+    {
+      "id": "high-press-versus-counter-template-3-fresh-06",
+      "profile": "high-press-versus-counter-template-3",
+      "context": "high-press-versus-counter",
+      "template": 3,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "d88aec32605c69a17c9022c269dcac700b7b056c1bea1ba928c2af727d890b2f"
+    },
+    {
+      "id": "high-press-versus-counter-template-3-fresh-07",
+      "profile": "high-press-versus-counter-template-3",
+      "context": "high-press-versus-counter",
+      "template": 3,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "e6aac217cfd2cc02ef7f06101a7221020b21e3ba1f43b49da22abdebd648a9c2"
+    },
+    {
+      "id": "high-press-versus-counter-template-4-fresh-00",
+      "profile": "high-press-versus-counter-template-4",
+      "context": "high-press-versus-counter",
+      "template": 4,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "c1b0a272b5e777a31bdccc61a451bb8984acd88d7789fd1596c738ecdc783c6c"
+    },
+    {
+      "id": "high-press-versus-counter-template-4-fresh-01",
+      "profile": "high-press-versus-counter-template-4",
+      "context": "high-press-versus-counter",
+      "template": 4,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "ed2032136cd7f41051f1f5077ccc097d5866dbc3f31bffc807c1883d514b13b4"
+    },
+    {
+      "id": "high-press-versus-counter-template-4-fresh-02",
+      "profile": "high-press-versus-counter-template-4",
+      "context": "high-press-versus-counter",
+      "template": 4,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "7a565bffe50c0a5608c67c27bc44ebe3bf7d3846adfa2d44d6cf7b67d8b56e95"
+    },
+    {
+      "id": "high-press-versus-counter-template-4-fresh-03",
+      "profile": "high-press-versus-counter-template-4",
+      "context": "high-press-versus-counter",
+      "template": 4,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "629fd5dc1c1db8666629bec1f11d7d3e6df32706d096a0e13ae32ff800b5fe0c"
+    },
+    {
+      "id": "high-press-versus-counter-template-4-fresh-04",
+      "profile": "high-press-versus-counter-template-4",
+      "context": "high-press-versus-counter",
+      "template": 4,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "f2818f02f4f020f703d82b9c3004c8a24ef5bd4609bbf31e3c090e1e0ec143d2"
+    },
+    {
+      "id": "high-press-versus-counter-template-4-fresh-05",
+      "profile": "high-press-versus-counter-template-4",
+      "context": "high-press-versus-counter",
+      "template": 4,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "d09a47f4ab1b0d83a7b9d050375209ae7ead92c86976d3ba559437a098b43d8a"
+    },
+    {
+      "id": "high-press-versus-counter-template-4-fresh-06",
+      "profile": "high-press-versus-counter-template-4",
+      "context": "high-press-versus-counter",
+      "template": 4,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "9a5b3902da50e6a28640a933044209f8711d642177b0aa3028f6f5cbc6d3c218"
+    },
+    {
+      "id": "high-press-versus-counter-template-4-fresh-07",
+      "profile": "high-press-versus-counter-template-4",
+      "context": "high-press-versus-counter",
+      "template": 4,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "f7fe3b09748bf4b3ad5a1378d6023452e26fa74050c6a4fc380af0417cfba71f"
+    },
+    {
+      "id": "low-press-versus-flow-template-1-fresh-00",
+      "profile": "low-press-versus-flow-template-1",
+      "context": "low-press-versus-flow",
+      "template": 1,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "626811580d083e383ab777a468ab926bae0bfddf6e0d07e632a2aa58e804d918"
+    },
+    {
+      "id": "low-press-versus-flow-template-1-fresh-01",
+      "profile": "low-press-versus-flow-template-1",
+      "context": "low-press-versus-flow",
+      "template": 1,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "6a3ddfecfa7cfb7e7e866e503ec53bbd58f30dfc270c97e46fca742bb0c8ffa4"
+    },
+    {
+      "id": "low-press-versus-flow-template-1-fresh-02",
+      "profile": "low-press-versus-flow-template-1",
+      "context": "low-press-versus-flow",
+      "template": 1,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "efd8b8143d397df41887401deef710904a72d0d6f0ac28bbb46c624303fe7358"
+    },
+    {
+      "id": "low-press-versus-flow-template-1-fresh-03",
+      "profile": "low-press-versus-flow-template-1",
+      "context": "low-press-versus-flow",
+      "template": 1,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "b0c8489ae109294ff7aa91f9752cd45ddbdbc38f916c1a9b6eb5a505ff25adc7"
+    },
+    {
+      "id": "low-press-versus-flow-template-1-fresh-04",
+      "profile": "low-press-versus-flow-template-1",
+      "context": "low-press-versus-flow",
+      "template": 1,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "0672cfc5a01872df0aa603e5e5ce032194582044f6ec339b8f9098aa77f71e98"
+    },
+    {
+      "id": "low-press-versus-flow-template-1-fresh-05",
+      "profile": "low-press-versus-flow-template-1",
+      "context": "low-press-versus-flow",
+      "template": 1,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "080cc29b65bb5d014a4ee1cad1bd00988a54b62f1458d70b9d265cee9a4f58d0"
+    },
+    {
+      "id": "low-press-versus-flow-template-1-fresh-06",
+      "profile": "low-press-versus-flow-template-1",
+      "context": "low-press-versus-flow",
+      "template": 1,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "e5fff22d905964487118b3ecc3da2a8b2b3e51bd563114c8aae1c499efcf4ff0"
+    },
+    {
+      "id": "low-press-versus-flow-template-1-fresh-07",
+      "profile": "low-press-versus-flow-template-1",
+      "context": "low-press-versus-flow",
+      "template": 1,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "66eee03bfc6feb62137e65361015446c6aedf035887d4be310fd0397e490a987"
+    },
+    {
+      "id": "low-press-versus-flow-template-2-fresh-00",
+      "profile": "low-press-versus-flow-template-2",
+      "context": "low-press-versus-flow",
+      "template": 2,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "2f0f4702685e82e486a90a21f96f49a92797fe64e66ec592840ad8c0c05eb94c"
+    },
+    {
+      "id": "low-press-versus-flow-template-2-fresh-01",
+      "profile": "low-press-versus-flow-template-2",
+      "context": "low-press-versus-flow",
+      "template": 2,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "7d321ba8fdaee5b5a7263d28fd39d8bcb9f65221571bcb0e57d7565a91a5c929"
+    },
+    {
+      "id": "low-press-versus-flow-template-2-fresh-02",
+      "profile": "low-press-versus-flow-template-2",
+      "context": "low-press-versus-flow",
+      "template": 2,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "275917aa4dbe0a7b18fbab8e34667909fc39f4e22871bd32a8ee2e5723681f61"
+    },
+    {
+      "id": "low-press-versus-flow-template-2-fresh-03",
+      "profile": "low-press-versus-flow-template-2",
+      "context": "low-press-versus-flow",
+      "template": 2,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "b3d63ad207d7ddbd5bb3d02279fd95ca396a9be0c8b745c80b72f83e17f79ec7"
+    },
+    {
+      "id": "low-press-versus-flow-template-2-fresh-04",
+      "profile": "low-press-versus-flow-template-2",
+      "context": "low-press-versus-flow",
+      "template": 2,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "9a934285730119431cbe28d4d2e8dca2de65491c093ed6ea27250dd86307a95e"
+    },
+    {
+      "id": "low-press-versus-flow-template-2-fresh-05",
+      "profile": "low-press-versus-flow-template-2",
+      "context": "low-press-versus-flow",
+      "template": 2,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "db603f88036a88e466e8a098732f3c1334dbcc194bf1774dc049f31abfddaf73"
+    },
+    {
+      "id": "low-press-versus-flow-template-2-fresh-06",
+      "profile": "low-press-versus-flow-template-2",
+      "context": "low-press-versus-flow",
+      "template": 2,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "3b07d6cbb121eaa4bcaeadd16ffbae9f2ec9e8b4ebadc75dbb242c16b3b60441"
+    },
+    {
+      "id": "low-press-versus-flow-template-2-fresh-07",
+      "profile": "low-press-versus-flow-template-2",
+      "context": "low-press-versus-flow",
+      "template": 2,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "b2298377a49afbcddf277469a90cb569528b0606ec58394b8ea3873693bd909a"
+    },
+    {
+      "id": "low-press-versus-flow-template-3-fresh-00",
+      "profile": "low-press-versus-flow-template-3",
+      "context": "low-press-versus-flow",
+      "template": 3,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "f1116e87aa6b5e1a607db6308b5dce165259256543960ef05f9beb3f5060c8c6"
+    },
+    {
+      "id": "low-press-versus-flow-template-3-fresh-01",
+      "profile": "low-press-versus-flow-template-3",
+      "context": "low-press-versus-flow",
+      "template": 3,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "8bc4c88e08364da8d05501411c83680a1b5fe48e35c4caa7621a96285c9dc375"
+    },
+    {
+      "id": "low-press-versus-flow-template-3-fresh-02",
+      "profile": "low-press-versus-flow-template-3",
+      "context": "low-press-versus-flow",
+      "template": 3,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "b51a5bcd929a66a327a87ad464343003e3b6b630336cf98f16af539497472e10"
+    },
+    {
+      "id": "low-press-versus-flow-template-3-fresh-03",
+      "profile": "low-press-versus-flow-template-3",
+      "context": "low-press-versus-flow",
+      "template": 3,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "2a3920b243abd381108dbf698cb1be19cbe5912a56c793fb0075b62e01ab1094"
+    },
+    {
+      "id": "low-press-versus-flow-template-3-fresh-04",
+      "profile": "low-press-versus-flow-template-3",
+      "context": "low-press-versus-flow",
+      "template": 3,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "4ebb1923153286f27fcb8b14895a1aeed99d146250c2879e2e2f8a1d6b02ec4f"
+    },
+    {
+      "id": "low-press-versus-flow-template-3-fresh-05",
+      "profile": "low-press-versus-flow-template-3",
+      "context": "low-press-versus-flow",
+      "template": 3,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "dc93af51f4e0e44465026a495283dcd0603904138d3779651b11461f4a7d8513"
+    },
+    {
+      "id": "low-press-versus-flow-template-3-fresh-06",
+      "profile": "low-press-versus-flow-template-3",
+      "context": "low-press-versus-flow",
+      "template": 3,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "3dc07188620da3cc9c47b0bb15511bf2d904a6f485d9681a0343d335915dbc04"
+    },
+    {
+      "id": "low-press-versus-flow-template-3-fresh-07",
+      "profile": "low-press-versus-flow-template-3",
+      "context": "low-press-versus-flow",
+      "template": 3,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "78ed7089ecab7ad75488730ca77c6aa8e593f39254344d0fa59c2ae1a27bea89"
+    },
+    {
+      "id": "low-press-versus-flow-template-4-fresh-00",
+      "profile": "low-press-versus-flow-template-4",
+      "context": "low-press-versus-flow",
+      "template": 4,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "d5f5419a363d1df9a3e9737bda804432fe6f88bb6f92ae5f29b2902663b67616"
+    },
+    {
+      "id": "low-press-versus-flow-template-4-fresh-01",
+      "profile": "low-press-versus-flow-template-4",
+      "context": "low-press-versus-flow",
+      "template": 4,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "deccdecb7010306c4647614611a224464ab18f3ad9303078abe0bb49febe1707"
+    },
+    {
+      "id": "low-press-versus-flow-template-4-fresh-02",
+      "profile": "low-press-versus-flow-template-4",
+      "context": "low-press-versus-flow",
+      "template": 4,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "f933908a5dc7edaa9fb7bcd89b676c473fc0e988d09f32cfc72e5a7c495fc874"
+    },
+    {
+      "id": "low-press-versus-flow-template-4-fresh-03",
+      "profile": "low-press-versus-flow-template-4",
+      "context": "low-press-versus-flow",
+      "template": 4,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "8015e9901d681fce82ad9482150a260cc2685a6c710a55adec8a56830c9b4adb"
+    },
+    {
+      "id": "low-press-versus-flow-template-4-fresh-04",
+      "profile": "low-press-versus-flow-template-4",
+      "context": "low-press-versus-flow",
+      "template": 4,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "e4150a23e7a8e923bb967b4a4f792fd334666e10814ad71eeba79b47143d4387"
+    },
+    {
+      "id": "low-press-versus-flow-template-4-fresh-05",
+      "profile": "low-press-versus-flow-template-4",
+      "context": "low-press-versus-flow",
+      "template": 4,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "5593a59dc0bf190110393c1a87b44696d2c589059426a11fc4e704dbc28c2f2e"
+    },
+    {
+      "id": "low-press-versus-flow-template-4-fresh-06",
+      "profile": "low-press-versus-flow-template-4",
+      "context": "low-press-versus-flow",
+      "template": 4,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "afad5cd34140691601fb0d34b22371c1f314dd7947dc7e887ff463224a9117a5"
+    },
+    {
+      "id": "low-press-versus-flow-template-4-fresh-07",
+      "profile": "low-press-versus-flow-template-4",
+      "context": "low-press-versus-flow",
+      "template": 4,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "7e4ebe8469d544dd76f8ba5fe82b00b952a7a256bf910eb8aba44f1ba780ebb9"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-1-fresh-00",
+      "profile": "fatigue-high-load-short-bench-template-1",
+      "context": "fatigue-high-load-short-bench",
+      "template": 1,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "a887df9913a8517125293655e0cddb80d634a75f9ef59cf7b0c4c04a53402f19"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-1-fresh-01",
+      "profile": "fatigue-high-load-short-bench-template-1",
+      "context": "fatigue-high-load-short-bench",
+      "template": 1,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "5a7a1f2231835fcb472d6840c5ddd681836528fab07a710d805adf292318af87"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-1-fresh-02",
+      "profile": "fatigue-high-load-short-bench-template-1",
+      "context": "fatigue-high-load-short-bench",
+      "template": 1,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "a178b38d0b68236f789959c60fb70ef0adaa4315f02dd6dafa7932c6bf621ed6"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-1-fresh-03",
+      "profile": "fatigue-high-load-short-bench-template-1",
+      "context": "fatigue-high-load-short-bench",
+      "template": 1,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "8394301efb61cb0326406f1b7e02c6a5651018038496b22a8116b4375a753ec3"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-1-fresh-04",
+      "profile": "fatigue-high-load-short-bench-template-1",
+      "context": "fatigue-high-load-short-bench",
+      "template": 1,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "ba0c64a741a4311caa78c616a648a98550c7c47ad93cc2acc80e122481c5c9c6"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-1-fresh-05",
+      "profile": "fatigue-high-load-short-bench-template-1",
+      "context": "fatigue-high-load-short-bench",
+      "template": 1,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "654105f9a1daa082867bc3914907a1583777b7aa1851fef38526ad040878dcd7"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-1-fresh-06",
+      "profile": "fatigue-high-load-short-bench-template-1",
+      "context": "fatigue-high-load-short-bench",
+      "template": 1,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "f5e2a07a171ba33b88280dc046e3d493f15e6ac5454286352c69267cacb73243"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-1-fresh-07",
+      "profile": "fatigue-high-load-short-bench-template-1",
+      "context": "fatigue-high-load-short-bench",
+      "template": 1,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "9148e74ffe9d0a9f737367cee8a83bda894e35e03141e479b3691c41e59fad26"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-2-fresh-00",
+      "profile": "fatigue-high-load-short-bench-template-2",
+      "context": "fatigue-high-load-short-bench",
+      "template": 2,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "b3ded25309f346c45ce038ae7ceb9e280915f1844224cf33c401fee574246bb9"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-2-fresh-01",
+      "profile": "fatigue-high-load-short-bench-template-2",
+      "context": "fatigue-high-load-short-bench",
+      "template": 2,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "35d8507fb1537ce8987399b59fbd3909e4bc57daba20f9582c613c968898793a"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-2-fresh-02",
+      "profile": "fatigue-high-load-short-bench-template-2",
+      "context": "fatigue-high-load-short-bench",
+      "template": 2,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "6b86db327c72278f6d5c5318704dcd6c7d30d3d96023d679681587be57e676f2"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-2-fresh-03",
+      "profile": "fatigue-high-load-short-bench-template-2",
+      "context": "fatigue-high-load-short-bench",
+      "template": 2,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "8b03fd6a743e524381fac27e4c67ea2e43896f9b607979105e0d265a24768864"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-2-fresh-04",
+      "profile": "fatigue-high-load-short-bench-template-2",
+      "context": "fatigue-high-load-short-bench",
+      "template": 2,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "f5f9f321afab0b81e01063a218f5612fa9d5922dce81ef5201622cf1c9f8b786"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-2-fresh-05",
+      "profile": "fatigue-high-load-short-bench-template-2",
+      "context": "fatigue-high-load-short-bench",
+      "template": 2,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "41a1dd6e93a04d879ee606762ddb0687657a2287ca52b08f2958025bbfa983b4"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-2-fresh-06",
+      "profile": "fatigue-high-load-short-bench-template-2",
+      "context": "fatigue-high-load-short-bench",
+      "template": 2,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "824e25aba361a9aced86958b77f32c754f147f6ac2ec357355eb95ecce96c292"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-2-fresh-07",
+      "profile": "fatigue-high-load-short-bench-template-2",
+      "context": "fatigue-high-load-short-bench",
+      "template": 2,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "d2e3cef7866466dcd77d64b2dcdb4fa77c4f197e0c2ef6d43d02a3ac59a5c0c7"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-3-fresh-00",
+      "profile": "fatigue-high-load-short-bench-template-3",
+      "context": "fatigue-high-load-short-bench",
+      "template": 3,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "c9e42437230af98671c821f9310d455b05748fb65cc3bc5169c4dc03879d3d95"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-3-fresh-01",
+      "profile": "fatigue-high-load-short-bench-template-3",
+      "context": "fatigue-high-load-short-bench",
+      "template": 3,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "cb4275af6978a4696e8d3f410577fe9ce86770f61183b68e7fe71017625c4a65"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-3-fresh-02",
+      "profile": "fatigue-high-load-short-bench-template-3",
+      "context": "fatigue-high-load-short-bench",
+      "template": 3,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "9a9a51c1cd79ed61ba5d0869d160bebcb100686c7eadd63a3a53ce27de0ea9ff"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-3-fresh-03",
+      "profile": "fatigue-high-load-short-bench-template-3",
+      "context": "fatigue-high-load-short-bench",
+      "template": 3,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "197a7cfc59653bcf95af4bf3ad339d204a3d89caf06b4de164be5f7af15e2f11"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-3-fresh-04",
+      "profile": "fatigue-high-load-short-bench-template-3",
+      "context": "fatigue-high-load-short-bench",
+      "template": 3,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "9b153858451af171fdf50058f723e8cd83d9403c54e71d1da2b5a34cb756acd0"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-3-fresh-05",
+      "profile": "fatigue-high-load-short-bench-template-3",
+      "context": "fatigue-high-load-short-bench",
+      "template": 3,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "8d4624b53edeb057db4a38b6b48ff68a80034eb735ba9999191f67094d4afdef"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-3-fresh-06",
+      "profile": "fatigue-high-load-short-bench-template-3",
+      "context": "fatigue-high-load-short-bench",
+      "template": 3,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "a9ae8ca2fb9625a0c4ada466ee719079813832418beaf6422d7931b42704e8ce"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-3-fresh-07",
+      "profile": "fatigue-high-load-short-bench-template-3",
+      "context": "fatigue-high-load-short-bench",
+      "template": 3,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "8c043ca4c241aab2296cc953487bd3f9cb0a164fdb3e4d40c80bd5531984fdcf"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-4-fresh-00",
+      "profile": "fatigue-high-load-short-bench-template-4",
+      "context": "fatigue-high-load-short-bench",
+      "template": 4,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "967e02e73bcf94b69fba32154e5931bd4246fc9214a2dc1ab8a3a6ef8b11663f"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-4-fresh-01",
+      "profile": "fatigue-high-load-short-bench-template-4",
+      "context": "fatigue-high-load-short-bench",
+      "template": 4,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "bf18c261d84123b14c6e4ce6d1b98cdb42a8ed2efe5468654c431defc41f2336"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-4-fresh-02",
+      "profile": "fatigue-high-load-short-bench-template-4",
+      "context": "fatigue-high-load-short-bench",
+      "template": 4,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "5f48aa0d5994597b08d4e0b192941a8ea41065c71ff7132e388347c1baa41267"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-4-fresh-03",
+      "profile": "fatigue-high-load-short-bench-template-4",
+      "context": "fatigue-high-load-short-bench",
+      "template": 4,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "c25f1f27691df9b33838effdd4fdb8ef753b229ad37cc6a09866dec9840427c9"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-4-fresh-04",
+      "profile": "fatigue-high-load-short-bench-template-4",
+      "context": "fatigue-high-load-short-bench",
+      "template": 4,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "a23f9febbae56631c9b5a1c8525e96eb2154ec8f4f075b44c4e0e9f3d290bab0"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-4-fresh-05",
+      "profile": "fatigue-high-load-short-bench-template-4",
+      "context": "fatigue-high-load-short-bench",
+      "template": 4,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "ef625d727fdd63c8c9be3600d43e07129e1ebb8234da0a591bb634c26abd0d28"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-4-fresh-06",
+      "profile": "fatigue-high-load-short-bench-template-4",
+      "context": "fatigue-high-load-short-bench",
+      "template": 4,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "6b2633301d03d6caf7888086c414d4c2a9d94fe83b8dd2d79881469ad01c1a12"
+    },
+    {
+      "id": "fatigue-high-load-short-bench-template-4-fresh-07",
+      "profile": "fatigue-high-load-short-bench-template-4",
+      "context": "fatigue-high-load-short-bench",
+      "template": 4,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "70799b9416671d526d095c9d656634585b84caef2e16bd812dad4fec07b34f8a"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-1-fresh-00",
+      "profile": "fatigue-managed-short-bench-template-1",
+      "context": "fatigue-managed-short-bench",
+      "template": 1,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "58dd44fc356c9ba5e4f2e44d7fb23169c88267f1ccdb5f4d917661a032f3f5b5"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-1-fresh-01",
+      "profile": "fatigue-managed-short-bench-template-1",
+      "context": "fatigue-managed-short-bench",
+      "template": 1,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "0cd36981c0c0196236fdfe0abb182301377e203a01fbdc6ba62f6008c53fb590"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-1-fresh-02",
+      "profile": "fatigue-managed-short-bench-template-1",
+      "context": "fatigue-managed-short-bench",
+      "template": 1,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "d2931d9ea1b776d912a5f2975c72dd483ed546b9388ae1e09e8d5c324558fe29"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-1-fresh-03",
+      "profile": "fatigue-managed-short-bench-template-1",
+      "context": "fatigue-managed-short-bench",
+      "template": 1,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "1155d8f2960747100cb62cb655f99efbe70b4bdd55ead858602154f7e4fc2000"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-1-fresh-04",
+      "profile": "fatigue-managed-short-bench-template-1",
+      "context": "fatigue-managed-short-bench",
+      "template": 1,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "67a6e04bc9f6ad859c49dbbb0125f69fca26a36a4bd0b2afcabab0bd94c1468f"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-1-fresh-05",
+      "profile": "fatigue-managed-short-bench-template-1",
+      "context": "fatigue-managed-short-bench",
+      "template": 1,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "56a17c8cf38a84da46c2e15ad6faf96a10bd7e3021864c6ab4b50feea9389f41"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-1-fresh-06",
+      "profile": "fatigue-managed-short-bench-template-1",
+      "context": "fatigue-managed-short-bench",
+      "template": 1,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "bb4ad87dcd325368797426059e9975f5448a1d981dda05a996a0926bf82d696e"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-1-fresh-07",
+      "profile": "fatigue-managed-short-bench-template-1",
+      "context": "fatigue-managed-short-bench",
+      "template": 1,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "ee23c5eb618204c9acf43508e67d974ebc750bf1b52ddf4ed44d533c5b2bccc2"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-2-fresh-00",
+      "profile": "fatigue-managed-short-bench-template-2",
+      "context": "fatigue-managed-short-bench",
+      "template": 2,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "7078cc278d4c7f408dc74803ed55c42a1fd88c96c02aadec8886c6a508160be2"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-2-fresh-01",
+      "profile": "fatigue-managed-short-bench-template-2",
+      "context": "fatigue-managed-short-bench",
+      "template": 2,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "ed66bd1ef56bb292cb58989f6c499bfaa0225415d30bf7ed30993374b7427b90"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-2-fresh-02",
+      "profile": "fatigue-managed-short-bench-template-2",
+      "context": "fatigue-managed-short-bench",
+      "template": 2,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "f2b1ca36ac81ddb18b75d8c6f108cf751dcf77ed850d53793c3c6791280a7e35"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-2-fresh-03",
+      "profile": "fatigue-managed-short-bench-template-2",
+      "context": "fatigue-managed-short-bench",
+      "template": 2,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "f76cd51a87411b5103208328d4ad32a5b0b4a08a984827ad3d99bfe4538c4253"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-2-fresh-04",
+      "profile": "fatigue-managed-short-bench-template-2",
+      "context": "fatigue-managed-short-bench",
+      "template": 2,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "e59a147312ace172feb205d58478ce92219317064caf095334e1adaf1668cd48"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-2-fresh-05",
+      "profile": "fatigue-managed-short-bench-template-2",
+      "context": "fatigue-managed-short-bench",
+      "template": 2,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "e3701097403b91cfc754346a6439bd719b86f7efc4b97b37e7915d312892bba3"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-2-fresh-06",
+      "profile": "fatigue-managed-short-bench-template-2",
+      "context": "fatigue-managed-short-bench",
+      "template": 2,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "e4330028cc13ec4bb8151ecb559959bd12455e3a82f37a272d6da3642f8e1a89"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-2-fresh-07",
+      "profile": "fatigue-managed-short-bench-template-2",
+      "context": "fatigue-managed-short-bench",
+      "template": 2,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "45f08d796376354e5b7d802bff855b707c350574a4014cb1f5b3c2c401645867"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-3-fresh-00",
+      "profile": "fatigue-managed-short-bench-template-3",
+      "context": "fatigue-managed-short-bench",
+      "template": 3,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "89841e5f217ba7fefde35e09e8188628ea845fd7820bbab3bfe6254e707ef72e"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-3-fresh-01",
+      "profile": "fatigue-managed-short-bench-template-3",
+      "context": "fatigue-managed-short-bench",
+      "template": 3,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "cbba1fb3540b355293823205c5040afcdf703dd29e8af7cdd2b725b5a836f0b6"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-3-fresh-02",
+      "profile": "fatigue-managed-short-bench-template-3",
+      "context": "fatigue-managed-short-bench",
+      "template": 3,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "95094f691a2f33f7f179d4105ccd2a9f12f7d03d3cec7b6f5847822f23b924e4"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-3-fresh-03",
+      "profile": "fatigue-managed-short-bench-template-3",
+      "context": "fatigue-managed-short-bench",
+      "template": 3,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "a9405893315a9396ec3cb06534634c2b5428f0b213a7104f67d6c7a368561c06"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-3-fresh-04",
+      "profile": "fatigue-managed-short-bench-template-3",
+      "context": "fatigue-managed-short-bench",
+      "template": 3,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "a7369598cf68d797e7b48b9694a62dd568fdd8fd981fd1630c29a0e66ef24f5f"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-3-fresh-05",
+      "profile": "fatigue-managed-short-bench-template-3",
+      "context": "fatigue-managed-short-bench",
+      "template": 3,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "31708033b0ccd0de59f8ac2975fd0e59b05563dd6525fb36c1b8003b33d8da34"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-3-fresh-06",
+      "profile": "fatigue-managed-short-bench-template-3",
+      "context": "fatigue-managed-short-bench",
+      "template": 3,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "094b9bf1dbfef987190560fa721ccab3bf8fa2127134c2083ed4f88f056678ca"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-3-fresh-07",
+      "profile": "fatigue-managed-short-bench-template-3",
+      "context": "fatigue-managed-short-bench",
+      "template": 3,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "9fe379ab92f244809510845e26592a94d9b77ce21eff41a0aa34bbe449081402"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-4-fresh-00",
+      "profile": "fatigue-managed-short-bench-template-4",
+      "context": "fatigue-managed-short-bench",
+      "template": 4,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "b8172dc2fb867dbf3aad3f631e007da8b4460c250aebdc928ab02690f646c130"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-4-fresh-01",
+      "profile": "fatigue-managed-short-bench-template-4",
+      "context": "fatigue-managed-short-bench",
+      "template": 4,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "6a7ea6ba485f716ecfeae4663a4da98ae64ef3a9ceb57fa20ab2137f3b3e54ba"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-4-fresh-02",
+      "profile": "fatigue-managed-short-bench-template-4",
+      "context": "fatigue-managed-short-bench",
+      "template": 4,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "041718e53765216d1e0b3219304c2916397a3098a9b25a3a708cff0cb87b5ffc"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-4-fresh-03",
+      "profile": "fatigue-managed-short-bench-template-4",
+      "context": "fatigue-managed-short-bench",
+      "template": 4,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "c500f93e9b729c90ea84258cbd6ae51ddeba1d2ae864a9f9e489bef9ba78f661"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-4-fresh-04",
+      "profile": "fatigue-managed-short-bench-template-4",
+      "context": "fatigue-managed-short-bench",
+      "template": 4,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "38a1f55e8dd9f9009b9a5aab0dd667a342ff971777e38821bfd6cb975f1cb27c"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-4-fresh-05",
+      "profile": "fatigue-managed-short-bench-template-4",
+      "context": "fatigue-managed-short-bench",
+      "template": 4,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "b8b10fcf0cee4703ac6fabddcc95cb1991a1dcdd05e03a895e38a7051b1be9a0"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-4-fresh-06",
+      "profile": "fatigue-managed-short-bench-template-4",
+      "context": "fatigue-managed-short-bench",
+      "template": 4,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "5ae64ae775deac8164ffafb5d22475de7cb8171284cd66de638ff9a8734ce0fd"
+    },
+    {
+      "id": "fatigue-managed-short-bench-template-4-fresh-07",
+      "profile": "fatigue-managed-short-bench-template-4",
+      "context": "fatigue-managed-short-bench",
+      "template": 4,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "4205ae869b08957627dd66ca3d0c76c009410802bd641d53c148ebf99647785f"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-1-fresh-00",
+      "profile": "fatigue-high-load-deep-bench-template-1",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 1,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "6474f8bfec5225d74d9a60c9e7be99e232e38cbe32fd82edf48800badb480e24"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-1-fresh-01",
+      "profile": "fatigue-high-load-deep-bench-template-1",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 1,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "d250f69cc670021e15c86a00616dd246c38a105b75de056bbc840cbfd82dcb2a"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-1-fresh-02",
+      "profile": "fatigue-high-load-deep-bench-template-1",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 1,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "3118637cc985871ed9c4ad105b0ed75655d47957787e258da6884ab337ec3e51"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-1-fresh-03",
+      "profile": "fatigue-high-load-deep-bench-template-1",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 1,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "8af472aa25b496badea336316d5ea3b2844429ea408467a986dfdb216f446e4e"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-1-fresh-04",
+      "profile": "fatigue-high-load-deep-bench-template-1",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 1,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "cd77c9698f626dc11001f28c6b5a82275592cb2f81c972a8abffb624281ca310"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-1-fresh-05",
+      "profile": "fatigue-high-load-deep-bench-template-1",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 1,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "3650125dad5f2437b12169ec09a646a5206e1c59b04f3cb762a5290a18ada583"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-1-fresh-06",
+      "profile": "fatigue-high-load-deep-bench-template-1",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 1,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "16fddbddbc0bf7434cbadff8138b48edd38e5b1ba7bb2f73cf3e194514e1fffd"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-1-fresh-07",
+      "profile": "fatigue-high-load-deep-bench-template-1",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 1,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "1bed507993f3a41c28706f21674e9c61a09703573fe178931745c5cd183e8a4e"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-2-fresh-00",
+      "profile": "fatigue-high-load-deep-bench-template-2",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 2,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "a12713449840bc934803671830a45208b012c097fa9226a54adc93861fc8e81d"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-2-fresh-01",
+      "profile": "fatigue-high-load-deep-bench-template-2",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 2,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "76484e32853e5e8e159ccd22e624b6e229d43d1266da2acd5d188b9840e61112"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-2-fresh-02",
+      "profile": "fatigue-high-load-deep-bench-template-2",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 2,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "4345e0d42ec75bbb99e45064fafe187b51dc70336205d842c914b4668bc4de68"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-2-fresh-03",
+      "profile": "fatigue-high-load-deep-bench-template-2",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 2,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "25a5e7aa5bba605589b0582b5df06266aad257389510a8aec627448058c6b24e"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-2-fresh-04",
+      "profile": "fatigue-high-load-deep-bench-template-2",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 2,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "2f44c1a81c01a6cfb199755e1a33354adbd4ef1dddda3f914bff87ff104c20df"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-2-fresh-05",
+      "profile": "fatigue-high-load-deep-bench-template-2",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 2,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "03b1a22a9840573faac3ef69f6087c64fd558a4e4433c474b2065c41ca891891"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-2-fresh-06",
+      "profile": "fatigue-high-load-deep-bench-template-2",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 2,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "582d63bb4e0521dcb3e82c9e9e3a5d0178d39ffba8ed0b59b5d698d26e6c585d"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-2-fresh-07",
+      "profile": "fatigue-high-load-deep-bench-template-2",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 2,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "2c1054ee665b8bab42b440fe057c187a7c6b6ec8a237b3e772f575a6309eaa36"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-3-fresh-00",
+      "profile": "fatigue-high-load-deep-bench-template-3",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 3,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "2cf32126f8b9700dd4b2df5eacb85ca63b764f04293035aafc4f9809e156b1c7"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-3-fresh-01",
+      "profile": "fatigue-high-load-deep-bench-template-3",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 3,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "9fc8e371fbd44e4fba470927f0eb488c9d6361a8f5661533f824759b662c0943"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-3-fresh-02",
+      "profile": "fatigue-high-load-deep-bench-template-3",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 3,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "f6fc2e2032a64a1fd8aa0ec67fcb6f47c4cf847815380d69d6b5058a778bd4b1"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-3-fresh-03",
+      "profile": "fatigue-high-load-deep-bench-template-3",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 3,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "236d475c486e84863520f19c62ee24842320656091ff730a17794abfdaa73a99"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-3-fresh-04",
+      "profile": "fatigue-high-load-deep-bench-template-3",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 3,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "d750369b8f739606cfb53f3cc9c2c3c3626dccfdd492bdebc7c24ea300686f9c"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-3-fresh-05",
+      "profile": "fatigue-high-load-deep-bench-template-3",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 3,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "d4816e3c8a1cee1840100ab8f69a970ad9930612ac289fd8e5dbb2b791a346e5"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-3-fresh-06",
+      "profile": "fatigue-high-load-deep-bench-template-3",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 3,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "506a44407b2ad582441efe0cdfcdcef1913f2956e8074779da8ae8ed79df3a81"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-3-fresh-07",
+      "profile": "fatigue-high-load-deep-bench-template-3",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 3,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "a2f3c412ec234112b516c25d6e26ae35547d9e01cc12a9458a6c022be5e208fd"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-4-fresh-00",
+      "profile": "fatigue-high-load-deep-bench-template-4",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 4,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "fe37ec0664d17f824b6a06ee789b786b4723ae58807a4f5d75c9fe134f0ef75d"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-4-fresh-01",
+      "profile": "fatigue-high-load-deep-bench-template-4",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 4,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "cd183cc6c77aaf7211648135554c3aa7ac0d85504a1e1343242115453863b054"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-4-fresh-02",
+      "profile": "fatigue-high-load-deep-bench-template-4",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 4,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "b3e7342d299227e01a1894d1d4b295a2ad5499b9d428743d03860108a49f69f5"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-4-fresh-03",
+      "profile": "fatigue-high-load-deep-bench-template-4",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 4,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "cbe6245824dd1a413350e7e2c9dd2e5a3d62e7e55380d712a05c2e3974dc242b"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-4-fresh-04",
+      "profile": "fatigue-high-load-deep-bench-template-4",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 4,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "ae76acb47ab16561fb62d4f25ab9f9119386ed88201b333689de3df8f7e5f6e8"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-4-fresh-05",
+      "profile": "fatigue-high-load-deep-bench-template-4",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 4,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "94c698e68f38a67417391e6b7e2b6c060115bc327ff9e274aced91ab897a835a"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-4-fresh-06",
+      "profile": "fatigue-high-load-deep-bench-template-4",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 4,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "0593080f457bd491affb43673ad196a5797c3d7da3f2b83abb243777dc149a61"
+    },
+    {
+      "id": "fatigue-high-load-deep-bench-template-4-fresh-07",
+      "profile": "fatigue-high-load-deep-bench-template-4",
+      "context": "fatigue-high-load-deep-bench",
+      "template": 4,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "e32c0d0e55c9b19e4fa11fdabcd7e6f539036499b639b4a520cb8a1295176d10"
+    },
+    {
+      "id": "neutral-matched-template-1-fresh-00",
+      "profile": "neutral-matched-template-1",
+      "context": "neutral-matched",
+      "template": 1,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "818832a1c50e23a32bccca078a83aff171a5fcb0aeed55e2385134f0412dc7cd"
+    },
+    {
+      "id": "neutral-matched-template-1-fresh-01",
+      "profile": "neutral-matched-template-1",
+      "context": "neutral-matched",
+      "template": 1,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "43454529aa7ddd35150e1777bf42ff63d80e580b5e900539fae24d318b3620b6"
+    },
+    {
+      "id": "neutral-matched-template-1-fresh-02",
+      "profile": "neutral-matched-template-1",
+      "context": "neutral-matched",
+      "template": 1,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "78aca4c037f10a778aa2484f40743203649c9c22508e795d9151b32bf6490f20"
+    },
+    {
+      "id": "neutral-matched-template-1-fresh-03",
+      "profile": "neutral-matched-template-1",
+      "context": "neutral-matched",
+      "template": 1,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "11afd2c980217d2301b2af2e46646c812955c739f3a3386e775240c569dc07d0"
+    },
+    {
+      "id": "neutral-matched-template-1-fresh-04",
+      "profile": "neutral-matched-template-1",
+      "context": "neutral-matched",
+      "template": 1,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "5eb034119cda2d2264edfe2a0922d350eb51c3452932860917bd6b8f52af3699"
+    },
+    {
+      "id": "neutral-matched-template-1-fresh-05",
+      "profile": "neutral-matched-template-1",
+      "context": "neutral-matched",
+      "template": 1,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "b51dd081ad074e97b040c29c2b52a16b6025c700cb553d1edcc5eb6e8e7a6d38"
+    },
+    {
+      "id": "neutral-matched-template-1-fresh-06",
+      "profile": "neutral-matched-template-1",
+      "context": "neutral-matched",
+      "template": 1,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "594368569c0ad3e1d44c66f190bbeeebf6e362c2367c73db40b8c69cf1e78fec"
+    },
+    {
+      "id": "neutral-matched-template-1-fresh-07",
+      "profile": "neutral-matched-template-1",
+      "context": "neutral-matched",
+      "template": 1,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "c4e1efded50b2ea011908b57f7ffe9b915e66da30dda06fda2193e8f3fe0da18"
+    },
+    {
+      "id": "neutral-matched-template-2-fresh-00",
+      "profile": "neutral-matched-template-2",
+      "context": "neutral-matched",
+      "template": 2,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "767ce891b5fc27cf9b96491c2fb325cc5735770361d75486e72dc15c47a831fa"
+    },
+    {
+      "id": "neutral-matched-template-2-fresh-01",
+      "profile": "neutral-matched-template-2",
+      "context": "neutral-matched",
+      "template": 2,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "7e1a3b79a64635ab8b21fb46ffac21fcf2438669b9ad66e490a0988b331d1e85"
+    },
+    {
+      "id": "neutral-matched-template-2-fresh-02",
+      "profile": "neutral-matched-template-2",
+      "context": "neutral-matched",
+      "template": 2,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "d103915650694a895883c10af733e6ff677fd9e6d155d0e086190bf5dc04c460"
+    },
+    {
+      "id": "neutral-matched-template-2-fresh-03",
+      "profile": "neutral-matched-template-2",
+      "context": "neutral-matched",
+      "template": 2,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "ff46556b0b05f2793c6eaecda0f8cbdc0869cc51191819e3f899934d21df330a"
+    },
+    {
+      "id": "neutral-matched-template-2-fresh-04",
+      "profile": "neutral-matched-template-2",
+      "context": "neutral-matched",
+      "template": 2,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "2055df6b5ac90366793f86c2b50039317fbcd4dbf30506d7dc0790c3b44884cb"
+    },
+    {
+      "id": "neutral-matched-template-2-fresh-05",
+      "profile": "neutral-matched-template-2",
+      "context": "neutral-matched",
+      "template": 2,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "f0ab0e93472b853028523e85fea55e478830446553033d9e65773c499a3aa895"
+    },
+    {
+      "id": "neutral-matched-template-2-fresh-06",
+      "profile": "neutral-matched-template-2",
+      "context": "neutral-matched",
+      "template": 2,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "5ae4a07eb27ad36972e0d0844dc28d2008a8b1ce82e4b7eebc5fc3dfd884530a"
+    },
+    {
+      "id": "neutral-matched-template-2-fresh-07",
+      "profile": "neutral-matched-template-2",
+      "context": "neutral-matched",
+      "template": 2,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "35a1c891eda0fba5662380f6e78813a9b0fe82f4001a7e42a97240889ac13ada"
+    },
+    {
+      "id": "neutral-matched-template-3-fresh-00",
+      "profile": "neutral-matched-template-3",
+      "context": "neutral-matched",
+      "template": 3,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "3b18fa1f59e05dc86084222c213de6ee4abae1496c792f974298eac8dd9629a8"
+    },
+    {
+      "id": "neutral-matched-template-3-fresh-01",
+      "profile": "neutral-matched-template-3",
+      "context": "neutral-matched",
+      "template": 3,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "5fa70b6469cd1ea8287994739d19cf74448cd9f09a32f628f4a469f1de2f0c71"
+    },
+    {
+      "id": "neutral-matched-template-3-fresh-02",
+      "profile": "neutral-matched-template-3",
+      "context": "neutral-matched",
+      "template": 3,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "0406139fcd1fddeefc5d5889f35519596087361a9164c221e6be21abf1d2b008"
+    },
+    {
+      "id": "neutral-matched-template-3-fresh-03",
+      "profile": "neutral-matched-template-3",
+      "context": "neutral-matched",
+      "template": 3,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "702fb7df37c29d589381adfde6a193cf1882b20a537a19944d27e3641f994b95"
+    },
+    {
+      "id": "neutral-matched-template-3-fresh-04",
+      "profile": "neutral-matched-template-3",
+      "context": "neutral-matched",
+      "template": 3,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "186336614676f1f2f1f79d4bab2256b63924f4a47cd0b7441d8fbc985dc90b3c"
+    },
+    {
+      "id": "neutral-matched-template-3-fresh-05",
+      "profile": "neutral-matched-template-3",
+      "context": "neutral-matched",
+      "template": 3,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "70b76fff254bb77c09d9be2c3b835a1382e57856a32d1a2427fc2977cd19a67f"
+    },
+    {
+      "id": "neutral-matched-template-3-fresh-06",
+      "profile": "neutral-matched-template-3",
+      "context": "neutral-matched",
+      "template": 3,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "122b677bbb3c6ec6495600279388d4109dff1fccb89ca1e440f5e21dcd1d46aa"
+    },
+    {
+      "id": "neutral-matched-template-3-fresh-07",
+      "profile": "neutral-matched-template-3",
+      "context": "neutral-matched",
+      "template": 3,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "bb5f89960da5dae5b6d4190ac0977f0b839fc4a7411ec9dc5a2dff72fa896ad7"
+    },
+    {
+      "id": "neutral-matched-template-4-fresh-00",
+      "profile": "neutral-matched-template-4",
+      "context": "neutral-matched",
+      "template": 4,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "21dd2a671d6889e39d885e04fab026db19f305e6db9f728f1c3bf3308d2e4448"
+    },
+    {
+      "id": "neutral-matched-template-4-fresh-01",
+      "profile": "neutral-matched-template-4",
+      "context": "neutral-matched",
+      "template": 4,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "c920197cd59f492d3f54934299a634171664618fb6c24cdb0906e77e8ac72472"
+    },
+    {
+      "id": "neutral-matched-template-4-fresh-02",
+      "profile": "neutral-matched-template-4",
+      "context": "neutral-matched",
+      "template": 4,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "e7e50e583bd9d33fa2a41d89bb1737225ac8c5a88a338604446c0ebcf76762e6"
+    },
+    {
+      "id": "neutral-matched-template-4-fresh-03",
+      "profile": "neutral-matched-template-4",
+      "context": "neutral-matched",
+      "template": 4,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "6a8d9c64ae63fc072ef087b4a9d555b24d4e60ad4c8c6d00d3bf8fcd6406a05d"
+    },
+    {
+      "id": "neutral-matched-template-4-fresh-04",
+      "profile": "neutral-matched-template-4",
+      "context": "neutral-matched",
+      "template": 4,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "9192a58752ec0b08e81879b6bce68162507b5cb48ba68d2190b4c5a5265270ee"
+    },
+    {
+      "id": "neutral-matched-template-4-fresh-05",
+      "profile": "neutral-matched-template-4",
+      "context": "neutral-matched",
+      "template": 4,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "36a73e398a4b4c765c9230612edf01edd4f4d95c09c9da03417f392fe56b23a2"
+    },
+    {
+      "id": "neutral-matched-template-4-fresh-06",
+      "profile": "neutral-matched-template-4",
+      "context": "neutral-matched",
+      "template": 4,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "562275141887d2bb104221a3a00716a84bd305549c29a7b9f83aaebbad9cac13"
+    },
+    {
+      "id": "neutral-matched-template-4-fresh-07",
+      "profile": "neutral-matched-template-4",
+      "context": "neutral-matched",
+      "template": 4,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "f08c21c9c5eb6e863315d7c0a5486427dfe5e93ea7baa42aa3ca7a302ec75506"
+    },
+    {
+      "id": "neutral-weaker-template-1-fresh-00",
+      "profile": "neutral-weaker-template-1",
+      "context": "neutral-weaker",
+      "template": 1,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "cf5dbbcc6721c61ecce766dd3fe4d4f486177c8731c59b68e7fde95802e9815f"
+    },
+    {
+      "id": "neutral-weaker-template-1-fresh-01",
+      "profile": "neutral-weaker-template-1",
+      "context": "neutral-weaker",
+      "template": 1,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "d6fdf16c7c634b1731e1dc34e9e36de12cbe2aa825a079b6d47b409cfc4ea743"
+    },
+    {
+      "id": "neutral-weaker-template-1-fresh-02",
+      "profile": "neutral-weaker-template-1",
+      "context": "neutral-weaker",
+      "template": 1,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "5c389c46b76da138b661f88703521d648c4f9d737e67a66eb13399ae3f629c56"
+    },
+    {
+      "id": "neutral-weaker-template-1-fresh-03",
+      "profile": "neutral-weaker-template-1",
+      "context": "neutral-weaker",
+      "template": 1,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "c8835653840777abb39f32f5b5249cfae98233b1ca89c0b12c75253846bd9bdb"
+    },
+    {
+      "id": "neutral-weaker-template-1-fresh-04",
+      "profile": "neutral-weaker-template-1",
+      "context": "neutral-weaker",
+      "template": 1,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "00273b0ea6dbaa9f217be3b341720816306d8a2d728a8f310b69dd03f785bebe"
+    },
+    {
+      "id": "neutral-weaker-template-1-fresh-05",
+      "profile": "neutral-weaker-template-1",
+      "context": "neutral-weaker",
+      "template": 1,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "4f93333e123672c8276b076dba5f5b6191a6a88b3ce58684a19f49484adfbf72"
+    },
+    {
+      "id": "neutral-weaker-template-1-fresh-06",
+      "profile": "neutral-weaker-template-1",
+      "context": "neutral-weaker",
+      "template": 1,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "c6cceb099e54fd9288c0acc83e00d5741c8bcd7a11fed3feedd25ab4b338a815"
+    },
+    {
+      "id": "neutral-weaker-template-1-fresh-07",
+      "profile": "neutral-weaker-template-1",
+      "context": "neutral-weaker",
+      "template": 1,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "bdcd1f77b401f2bd4b50d8f53819d3d82f1ef3ff2b7ed692cb72a304a2da3967"
+    },
+    {
+      "id": "neutral-weaker-template-2-fresh-00",
+      "profile": "neutral-weaker-template-2",
+      "context": "neutral-weaker",
+      "template": 2,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "05883c51bf18b331a6b3906cb05d1ebeaeaff7f62c5bd2894f721b01b38d4bfb"
+    },
+    {
+      "id": "neutral-weaker-template-2-fresh-01",
+      "profile": "neutral-weaker-template-2",
+      "context": "neutral-weaker",
+      "template": 2,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "a13060582ae3727c2b1358aeebe0e8316bfa55e20c8d6257c9002f165f0ed5b7"
+    },
+    {
+      "id": "neutral-weaker-template-2-fresh-02",
+      "profile": "neutral-weaker-template-2",
+      "context": "neutral-weaker",
+      "template": 2,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "bf03e6c1bb2ebff8cacd4df8d106239ed4469ecb281c8973b04820d042b29084"
+    },
+    {
+      "id": "neutral-weaker-template-2-fresh-03",
+      "profile": "neutral-weaker-template-2",
+      "context": "neutral-weaker",
+      "template": 2,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "fbffae838c2e74f473cc718654322cf6caa89e7c2d92d0e01c35fcaacda6570a"
+    },
+    {
+      "id": "neutral-weaker-template-2-fresh-04",
+      "profile": "neutral-weaker-template-2",
+      "context": "neutral-weaker",
+      "template": 2,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "d7feb30725f4cad8f33e62dc83a0d255d80852c64e0720a72c32f0113063a928"
+    },
+    {
+      "id": "neutral-weaker-template-2-fresh-05",
+      "profile": "neutral-weaker-template-2",
+      "context": "neutral-weaker",
+      "template": 2,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "16f958717aa84361e621beaa80cbc3cd21fca3f775cabf14114f3d8384020793"
+    },
+    {
+      "id": "neutral-weaker-template-2-fresh-06",
+      "profile": "neutral-weaker-template-2",
+      "context": "neutral-weaker",
+      "template": 2,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "def2885f2f074d503f42f486ea33b3dd23f65378dd1b0ef0f83b598866611580"
+    },
+    {
+      "id": "neutral-weaker-template-2-fresh-07",
+      "profile": "neutral-weaker-template-2",
+      "context": "neutral-weaker",
+      "template": 2,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "3dd854adaa2d5a612eda603b421422855fe6e16b1f9affa3ac68d71b7f85fbcd"
+    },
+    {
+      "id": "neutral-weaker-template-3-fresh-00",
+      "profile": "neutral-weaker-template-3",
+      "context": "neutral-weaker",
+      "template": 3,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "b0a940a40041525b5138263fc4ad13c1a8fd300007fdf9366a2316a77cf68e13"
+    },
+    {
+      "id": "neutral-weaker-template-3-fresh-01",
+      "profile": "neutral-weaker-template-3",
+      "context": "neutral-weaker",
+      "template": 3,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "04ce7c89dd014491efdb1f3f8aee5510eec24edc5dcb1ff0b29f72cb59779931"
+    },
+    {
+      "id": "neutral-weaker-template-3-fresh-02",
+      "profile": "neutral-weaker-template-3",
+      "context": "neutral-weaker",
+      "template": 3,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "dccb7a6d2c461ad4d650ae097d0f3a81bac2cc18e12d194d9605bd90ac18722f"
+    },
+    {
+      "id": "neutral-weaker-template-3-fresh-03",
+      "profile": "neutral-weaker-template-3",
+      "context": "neutral-weaker",
+      "template": 3,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "f92b3d0fc0ba78431553e39dc99aff119ee1db636132637849d51e30b57ea625"
+    },
+    {
+      "id": "neutral-weaker-template-3-fresh-04",
+      "profile": "neutral-weaker-template-3",
+      "context": "neutral-weaker",
+      "template": 3,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "fe0fed0923d16382f877937157c33f9b41ace82b405ba45847d6cfda00939791"
+    },
+    {
+      "id": "neutral-weaker-template-3-fresh-05",
+      "profile": "neutral-weaker-template-3",
+      "context": "neutral-weaker",
+      "template": 3,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "81b4f5108d6058a562cf0e7e4536863bf4c72fd1c55437199d2f775ca12e78f8"
+    },
+    {
+      "id": "neutral-weaker-template-3-fresh-06",
+      "profile": "neutral-weaker-template-3",
+      "context": "neutral-weaker",
+      "template": 3,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "4f03e4e25cb2b411770727245271f0038064811d63a562ed557c24da9cba5b37"
+    },
+    {
+      "id": "neutral-weaker-template-3-fresh-07",
+      "profile": "neutral-weaker-template-3",
+      "context": "neutral-weaker",
+      "template": 3,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "4e53084d7812c91abb8d376275ba2fd03ffa6a94b8293056fbe76576488e6e1a"
+    },
+    {
+      "id": "neutral-weaker-template-4-fresh-00",
+      "profile": "neutral-weaker-template-4",
+      "context": "neutral-weaker",
+      "template": 4,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "73aa223323bacbf29856117f1641884697f13794ccda30f0f65d02707cb8a835"
+    },
+    {
+      "id": "neutral-weaker-template-4-fresh-01",
+      "profile": "neutral-weaker-template-4",
+      "context": "neutral-weaker",
+      "template": 4,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "718f160d444b894cda6e0e1c53f8c102e4188ae9cd0feb48da361357e5b94ba5"
+    },
+    {
+      "id": "neutral-weaker-template-4-fresh-02",
+      "profile": "neutral-weaker-template-4",
+      "context": "neutral-weaker",
+      "template": 4,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "d9d14c9b0d9281022af401d71c6a0712c8a24bfb509957dcab2201ea4f74c369"
+    },
+    {
+      "id": "neutral-weaker-template-4-fresh-03",
+      "profile": "neutral-weaker-template-4",
+      "context": "neutral-weaker",
+      "template": 4,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "c82c76e70f3a63b3c4b633c41517af4e7e83a87d58648a914f93215538b413b6"
+    },
+    {
+      "id": "neutral-weaker-template-4-fresh-04",
+      "profile": "neutral-weaker-template-4",
+      "context": "neutral-weaker",
+      "template": 4,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "96977eb20b1c05fd67192de5fd4ca6b036bde678dfff892d0f8dcb2936ee574e"
+    },
+    {
+      "id": "neutral-weaker-template-4-fresh-05",
+      "profile": "neutral-weaker-template-4",
+      "context": "neutral-weaker",
+      "template": 4,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "ae94f26f2bcb37d1c7d6d23ed8d010f36edb81b3857bf74d518331d172053b09"
+    },
+    {
+      "id": "neutral-weaker-template-4-fresh-06",
+      "profile": "neutral-weaker-template-4",
+      "context": "neutral-weaker",
+      "template": 4,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "05b9062f69cd2fba8a1a8512dd934235ff02b7f823b1f9c402ab514340efcb5b"
+    },
+    {
+      "id": "neutral-weaker-template-4-fresh-07",
+      "profile": "neutral-weaker-template-4",
+      "context": "neutral-weaker",
+      "template": 4,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "30d0fa8ba36bafef93680931887bb986a4c07128f792d10e9b8e25e44c35edca"
+    },
+    {
+      "id": "neutral-stronger-template-1-fresh-00",
+      "profile": "neutral-stronger-template-1",
+      "context": "neutral-stronger",
+      "template": 1,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "359a03eb479a679deb320d4e6b15293d4664ff9212f13d7b26fadb06916cc97b"
+    },
+    {
+      "id": "neutral-stronger-template-1-fresh-01",
+      "profile": "neutral-stronger-template-1",
+      "context": "neutral-stronger",
+      "template": 1,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "34e84c8cd7640f75d344daf7d4a2cd038da8585fd39046d9c2c7628eb19d0732"
+    },
+    {
+      "id": "neutral-stronger-template-1-fresh-02",
+      "profile": "neutral-stronger-template-1",
+      "context": "neutral-stronger",
+      "template": 1,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "1d6ca6475b8f827a9bee3e02aafe1b9db8e5b7dfdac89ac460820dc2eab7d988"
+    },
+    {
+      "id": "neutral-stronger-template-1-fresh-03",
+      "profile": "neutral-stronger-template-1",
+      "context": "neutral-stronger",
+      "template": 1,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "1995f657209dd6431949a23848f8e2262a5a514dfbff429dca988ac777b54ff4"
+    },
+    {
+      "id": "neutral-stronger-template-1-fresh-04",
+      "profile": "neutral-stronger-template-1",
+      "context": "neutral-stronger",
+      "template": 1,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "c3bc83520aaeb70b30179e5df4ec4b74904ea7db22ba653e24cdfd05d42eee4b"
+    },
+    {
+      "id": "neutral-stronger-template-1-fresh-05",
+      "profile": "neutral-stronger-template-1",
+      "context": "neutral-stronger",
+      "template": 1,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "f40e32f10596cde2ba60a6f50f473dd7c45a9ba9ff674ec97dc3ed57558858d9"
+    },
+    {
+      "id": "neutral-stronger-template-1-fresh-06",
+      "profile": "neutral-stronger-template-1",
+      "context": "neutral-stronger",
+      "template": 1,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "ca97998c52c9ecf8efe9d483b91540382e7b5ef9bedaff5e8348c9a6b05d9f48"
+    },
+    {
+      "id": "neutral-stronger-template-1-fresh-07",
+      "profile": "neutral-stronger-template-1",
+      "context": "neutral-stronger",
+      "template": 1,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "72b1776ef12193a786755add8de2258d7f6108ef784b24c8d227bd6d40823670"
+    },
+    {
+      "id": "neutral-stronger-template-2-fresh-00",
+      "profile": "neutral-stronger-template-2",
+      "context": "neutral-stronger",
+      "template": 2,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "d3a72b33946d49f20a3ebc54f924335e77f8487d153f1c79e4e2118ae3bd130e"
+    },
+    {
+      "id": "neutral-stronger-template-2-fresh-01",
+      "profile": "neutral-stronger-template-2",
+      "context": "neutral-stronger",
+      "template": 2,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "53ce3bcedee8644342257e63959da58353cafaa3210bb8165808663bd0e7eca5"
+    },
+    {
+      "id": "neutral-stronger-template-2-fresh-02",
+      "profile": "neutral-stronger-template-2",
+      "context": "neutral-stronger",
+      "template": 2,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "43edc4f07961c8db6580a005985d2403ec6a4f8b909ab0f9675d676109275545"
+    },
+    {
+      "id": "neutral-stronger-template-2-fresh-03",
+      "profile": "neutral-stronger-template-2",
+      "context": "neutral-stronger",
+      "template": 2,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "5eab3e2d3529da0eb6a614c1b61394b989fcc3c625088b69e111c36944a5c599"
+    },
+    {
+      "id": "neutral-stronger-template-2-fresh-04",
+      "profile": "neutral-stronger-template-2",
+      "context": "neutral-stronger",
+      "template": 2,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "70d9174b712b3b3ef341d1be3fe3934e17f51d0d47ec5ec5500c57b8d5f32161"
+    },
+    {
+      "id": "neutral-stronger-template-2-fresh-05",
+      "profile": "neutral-stronger-template-2",
+      "context": "neutral-stronger",
+      "template": 2,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "959f399753af7ac7b76d358b8fc433c7c1067d9797c4196c173bd7c1d709835a"
+    },
+    {
+      "id": "neutral-stronger-template-2-fresh-06",
+      "profile": "neutral-stronger-template-2",
+      "context": "neutral-stronger",
+      "template": 2,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "00caad9ece25a0738db2017c095e19b457887f654fd60aafed79f03467b7ccbe"
+    },
+    {
+      "id": "neutral-stronger-template-2-fresh-07",
+      "profile": "neutral-stronger-template-2",
+      "context": "neutral-stronger",
+      "template": 2,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "918b8e31b3d7d69ad474786e605a8f43f06286f3a3761807784383e672536b6a"
+    },
+    {
+      "id": "neutral-stronger-template-3-fresh-00",
+      "profile": "neutral-stronger-template-3",
+      "context": "neutral-stronger",
+      "template": 3,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "77a3f20a24b413b125ac02de82307da7742a6794977017ed58bf24363cd95b14"
+    },
+    {
+      "id": "neutral-stronger-template-3-fresh-01",
+      "profile": "neutral-stronger-template-3",
+      "context": "neutral-stronger",
+      "template": 3,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "d3da2b7e2ca09a0a45e57259ae3498302a222e80b41d6d589674d351cf7ff03a"
+    },
+    {
+      "id": "neutral-stronger-template-3-fresh-02",
+      "profile": "neutral-stronger-template-3",
+      "context": "neutral-stronger",
+      "template": 3,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "5ad4537701e82cec751e51f472c3c1156271d83a831aa316ffa145570b3d0e77"
+    },
+    {
+      "id": "neutral-stronger-template-3-fresh-03",
+      "profile": "neutral-stronger-template-3",
+      "context": "neutral-stronger",
+      "template": 3,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "b14a5415c1476e2bac4817ba47f83cd69d54bfaa1c83028090c6180fe1c56d09"
+    },
+    {
+      "id": "neutral-stronger-template-3-fresh-04",
+      "profile": "neutral-stronger-template-3",
+      "context": "neutral-stronger",
+      "template": 3,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "412cba5a629ca69afdd97a78aba64ad77fafbf43de878a1302055e1104a43eeb"
+    },
+    {
+      "id": "neutral-stronger-template-3-fresh-05",
+      "profile": "neutral-stronger-template-3",
+      "context": "neutral-stronger",
+      "template": 3,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "3dae6d8e4be12127c883cdf40320825eac752735b4ff04bb2a1d419f124af7ab"
+    },
+    {
+      "id": "neutral-stronger-template-3-fresh-06",
+      "profile": "neutral-stronger-template-3",
+      "context": "neutral-stronger",
+      "template": 3,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "46e5688af03644c9f61755f6d36729f21cb5c1513972939abf985e411dce30eb"
+    },
+    {
+      "id": "neutral-stronger-template-3-fresh-07",
+      "profile": "neutral-stronger-template-3",
+      "context": "neutral-stronger",
+      "template": 3,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "24364107f775c863ed19dddcd1e93f271d72565bb973eb795a4ef1ecda87ffc0"
+    },
+    {
+      "id": "neutral-stronger-template-4-fresh-00",
+      "profile": "neutral-stronger-template-4",
+      "context": "neutral-stronger",
+      "template": 4,
+      "trial": 0,
+      "focalSide": 0,
+      "seed": "82bcf47c378b395e8f48c3e31aa0fc816536ab3d1d315454cef8e42693bc5e0a"
+    },
+    {
+      "id": "neutral-stronger-template-4-fresh-01",
+      "profile": "neutral-stronger-template-4",
+      "context": "neutral-stronger",
+      "template": 4,
+      "trial": 1,
+      "focalSide": 1,
+      "seed": "70d7f20eca75f165f8d85b4801d4f0c60f379e2b70cf903093699ff23dfa3274"
+    },
+    {
+      "id": "neutral-stronger-template-4-fresh-02",
+      "profile": "neutral-stronger-template-4",
+      "context": "neutral-stronger",
+      "template": 4,
+      "trial": 2,
+      "focalSide": 0,
+      "seed": "5482f4d53543b4edbf882b9298c3e95cb4242c4c8b4c2ccd0192e0226cb5ab13"
+    },
+    {
+      "id": "neutral-stronger-template-4-fresh-03",
+      "profile": "neutral-stronger-template-4",
+      "context": "neutral-stronger",
+      "template": 4,
+      "trial": 3,
+      "focalSide": 1,
+      "seed": "b83380a06ee521aa5b2e525b2784ff32d93cc38626bf96f3e9621d2573f73964"
+    },
+    {
+      "id": "neutral-stronger-template-4-fresh-04",
+      "profile": "neutral-stronger-template-4",
+      "context": "neutral-stronger",
+      "template": 4,
+      "trial": 4,
+      "focalSide": 0,
+      "seed": "b03a1433fb5b453cf4bf84443c476a06cb28f7430d1c1c887f6e785837b31b4c"
+    },
+    {
+      "id": "neutral-stronger-template-4-fresh-05",
+      "profile": "neutral-stronger-template-4",
+      "context": "neutral-stronger",
+      "template": 4,
+      "trial": 5,
+      "focalSide": 1,
+      "seed": "e7c68b0f64fa84ee8e2ff5e6d8d9a9e146b1745d1cc6f4d0f86ee5123ab6c388"
+    },
+    {
+      "id": "neutral-stronger-template-4-fresh-06",
+      "profile": "neutral-stronger-template-4",
+      "context": "neutral-stronger",
+      "template": 4,
+      "trial": 6,
+      "focalSide": 0,
+      "seed": "15d83651f99adfa07f3c5fe99420b96ce21de9ec399ca4e16be47c8df539f8a5"
+    },
+    {
+      "id": "neutral-stronger-template-4-fresh-07",
+      "profile": "neutral-stronger-template-4",
+      "context": "neutral-stronger",
+      "template": 4,
+      "trial": 7,
+      "focalSide": 1,
+      "seed": "3b6cbbb37fb9ed6511c07a871aeb7e9053018fedadfad8a0f3a38a00537fd757"
+    }
+  ],
+  "primary": {
+    "estimand": "Pre-match focal policy minus Hold win probability averaged over this fixed targeted matrix, including no-op decisions.",
+    "interval": "Two-sided conservative 95% Hoeffding bound for independent heterogeneous bounded paired differences; half-width 100*sqrt(2*log(2/.05)/384)."
+  },
+  "interpretation": "384 paired cases/768 outcomes. Descriptive contexts, deficit bands, recipes and side splits; do not pool historical natural-history studies. No target adoption rate, no winner-based tuning. Assumed tactical fit is a scenario label, not an oracle of the best action. Correlated common-seed post-change trajectories may diverge; a single changed winner does not identify expected action harm.",
+  "fatigue": "Native within-match fatigue and native intervals; no artificial energy injection or changed physical coefficients. Low stamina=2/recovery=1, 20 eligible via declared synthetic fixture absences or full35; remaining ratings preserved. Does not model cross-match fatigue carry-over.",
+  "operations": {
+    "workers": 2,
+    "chunk": 8,
+    "chunkDeadlineSeconds": 900,
+    "automaticRetries": 0,
+    "seedReplacements": 0,
+    "sampleExtensions": 0,
+    "preflightOutcomesExcluded": 4,
+    "replayTrial": 0,
+    "officialWrites": false
+  },
+  "gates": [
+    "All physical/observation/first-half/no-op/replay checks pass.",
+    "Inspect fit/public-evidence conflict and missing context coverage without treating losses as proof of bad choices.",
+    "Do not declare policy settled solely from this finite matrix or move to holistic if a material decision-quality issue remains."
+  ]
+}

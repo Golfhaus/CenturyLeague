@@ -1,0 +1,12 @@
+{
+  "status": "frozen-before-scientific-outcomes",
+  "sourceSHA256": "69bf27bd608886512b21f078531feb348e8b033b20322081d177f8595ad06e77",
+  "harnessSHA256": "4bbb2eb2fd2561edc72db92b7d0036df4893d1557396f36e07b3b43dc8ffc49b",
+  "planSHA256": "5227103ed501f04d265cca1198e6a0c9cc8e9d3a91b30821d45ee8032f5217d5",
+  "profilesSHA256": "833cdf9ffbf5068bc86314e948f40bed7805fd72d662053614c72766d8b87ea1",
+  "plannedCases": 384,
+  "plannedOutcomes": 768,
+  "scientificOutcomesAtFreeze": 0,
+  "policyChanged": false,
+  "officialGameplayChanged": false
+}

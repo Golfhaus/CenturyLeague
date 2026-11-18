@@ -1,0 +1,12 @@
+import fs from'node:fs';import path from'node:path';import assert from'node:assert/strict';import zlib from'node:zlib';
+import{load,hash,atomicJSON}from'./tools.mjs';
+const e=await load({build:false}),pm=JSON.parse(fs.readFileSync(path.join(process.argv[2],'prefix-manifest.json'))),p=pm.records[0],s=JSON.parse(zlib.gunzipSync(fs.readFileSync(path.join(process.argv[2],p.file)))).payload.state;
+const root=Object.fromEntries(['tempo','physicality','defensive_posture','pressure','transition_emphasis','width','aerial_emphasis','ball_risk','running_movement_emphasis','defensive_aggression'].map(k=>[k,3]));
+const base={side:0,scores:[35,50],root,ownOnField:s.players.filter(p=>p.side===0&&p.on).map(p=>({id:p.id,energy:.3,ratings:p.ratings})),ownBeforeInterval:s.beforeInterval[0],publicTotals:[{shots:20,kicks:40,hands:20,completedKicks:20,completedHands:20},{shots:20,kicks:40,hands:20,completedKicks:20,completedHands:20}],personnelReview:[]};
+const before=hash(JSON.stringify(base));assert.equal(e.decideHalftime(base,'policy').choice,'conserve-0.5');assert.equal(hash(JSON.stringify(base)),before);
+const close={...base,scores:[48,50]};assert.equal(e.decideHalftime(close,'policy').choice,'hold');
+assert.ok(e.decideHalftime(base,'policy').candidates.filter(c=>c.recipe==='press').every(c=>c.veto==='energy-below-veto'));
+const leading={...base,scores:[50,35],ownOnField:base.ownOnField.map(p=>({...p,energy:.15}))};const lead=e.decideHalftime(leading,'policy');assert.equal(lead.choice,'conserve-0.5');assert.ok(lead.candidates.filter(c=>c.recipe==='press').every(c=>c.veto==='not-trailing'));
+const noData={...base,ownOnField:base.ownOnField.map(p=>({...p,energy:1})),ownBeforeInterval:base.ownBeforeInterval.map(p=>({...p,energy:1})),publicTotals:[0,1].map(()=>({shots:0,kicks:0,hands:0,completedKicks:0,completedHands:0}))};assert.equal(e.decideHalftime(noData,'policy').choice,'hold');
+assert.equal(e.adoptionThreshold(4),.12);assert.equal(e.adoptionThreshold(5),.06);assert.equal(e.adoptionThreshold(20),.06);assert.equal(e.adoptionThreshold(21),.02);
+const proof={status:'passed',behaviorChecks:['fatigue conservation','close-game threshold','fatigued press veto','leading-team press veto','leading conservation','no-evidence Hold','threshold boundaries','observation immutability'],sourceSHA256:e.identity.sourceSHA256};atomicJSON(process.argv[3],proof);console.log(JSON.stringify(proof));

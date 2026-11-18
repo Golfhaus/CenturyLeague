@@ -1,6 +1,6 @@
 # Holistic v2 research design
 
-Status: reviewable design draft, not an executed or accepted holistic study. It becomes the next research step only after the matched-availability halftime review permits continuation. It does not approve a release or change a live runner.
+Status: design provenance for the executed 18 November research round. The exact prospective plans are holistic-factorial-plan-2026-11-18.json and holistic-selected-confirmation-plan-2026-11-18.json. Results and limits are in HOLISTIC_MODIFIER_RESULTS_2026_11_18.md. The sample completed with all mechanical audits passed; the total-stack envelope and release gates remain open. This document does not approve a release or change a live runner.
 
 ## Candidate and scope
 

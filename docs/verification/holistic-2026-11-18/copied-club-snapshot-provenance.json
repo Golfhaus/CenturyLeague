@@ -1,0 +1,18 @@
+{
+  "status": "captured-read-only",
+  "date": "2026-11-18",
+  "project": "CenturyLeague",
+  "projectRef": "iarwopfebmjrtsypxeye",
+  "sourceTables": [
+    "public.team_season_rosters",
+    "public.teams"
+  ],
+  "queryType": "SELECT only",
+  "officialWrites": false,
+  "clubs": 18,
+  "rosteredPlayers": 630,
+  "snapshotSHA256": "45e5a866341cf688fa2de454a457fd0890f9840156f1026a8949addaae7f744c",
+  "usedInHolisticSyntheticScreen": false,
+  "usedInHolisticSelectedConfirmation": false,
+  "purpose": "Provenanced input copy for later real-club/history validation; not an official database or competition update."
+}

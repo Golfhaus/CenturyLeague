@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "sourceSHA256": "951e810a900b39807bd7b4ed9b018d43b5934efeb70a4cf7367f1604b31b4cc7",
+  "nativeSourceSHA256": "ad8492b0fccbf45e730dffe941d9476e39c5e1d386aedbc31ac524237bbb7329",
+  "harnessSHA256": "3cdd87646e806711a1747f318e8a89f0647f92cfd73135cc6e67702d629905fa",
+  "protectedBaselineFilesVerified": 64,
+  "profilesSHA256": "6d78e4a3fedd1376e2441e6920640acf325a1c417992c000bdc28a39faa8dee8",
+  "screenPlanSHA256": "86f916d5e98a4b875b697e1efe92295450446da8fdc88c89dd442efdf355c2a9",
+  "confirmationPlanSHA256": "bf0894840e9762d2f7c88503cd1035113f722a2761b2289eb0d7f8c03e8e91e9",
+  "officialWrites": false,
+  "gameplaySourceChanged": false
+}

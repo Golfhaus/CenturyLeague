@@ -1,0 +1,54 @@
+{
+  "status": "completed",
+  "scientificOutcomes": 5376,
+  "screenOutcomes": 3840,
+  "confirmationOutcomes": 1536,
+  "fullScientificReplays": 336,
+  "confirmationContrasts": [
+    {
+      "scene": "cold-adverse",
+      "reference": "000",
+      "pointPP": -4.296875,
+      "intervalPP": [
+        -26.964455215568723,
+        18.798661851810543
+      ],
+      "intervalWithinOuter15": false
+    },
+    {
+      "scene": "cold-adverse",
+      "reference": "110",
+      "pointPP": -0.390625,
+      "intervalPP": [
+        -8.69608673401481,
+        7.966067057334099
+      ],
+      "intervalWithinOuter15": true
+    },
+    {
+      "scene": "hot-favored",
+      "reference": "000",
+      "pointPP": -2.734375,
+      "intervalPP": [
+        -25.470294403346482,
+        20.274077931061296
+      ],
+      "intervalWithinOuter15": false
+    },
+    {
+      "scene": "hot-favored",
+      "reference": "110",
+      "pointPP": -1.171875,
+      "intervalPP": [
+        -8.617884570295642,
+        6.307670307395114
+      ],
+      "intervalWithinOuter15": true
+    }
+  ],
+  "adoptionApproved": false,
+  "holisticReleaseGate": "open: total-stack bounds exceed provisional15-point reference; real-club/history and rehearsal gates remain",
+  "officialWrites": false,
+  "sourceOrCoefficientChanges": false,
+  "limits": "Synthetic profile-mixture confirmation at two selected matched corners; no established policy optimality, general safety or production acceptance. No earlier study pooled. Copied club snapshot available for later validation, unused here."
+}

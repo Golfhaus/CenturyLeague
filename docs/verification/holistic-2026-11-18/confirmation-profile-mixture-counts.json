@@ -1,0 +1,18 @@
+{
+  "hot-favored / quality-2-zero-pressure": 33,
+  "hot-favored / quality-4-zero-neutral": 33,
+  "hot-favored / quality-2-zero-neutral": 34,
+  "hot-favored / quality-3-zero-neutral": 42,
+  "hot-favored / quality-3-zero-pressure": 34,
+  "hot-favored / quality-4-zero-pressure": 23,
+  "hot-favored / quality-1-zero-neutral": 22,
+  "hot-favored / quality-1-zero-pressure": 35,
+  "cold-adverse / quality-3-zero-pressure": 29,
+  "cold-adverse / quality-1-zero-neutral": 37,
+  "cold-adverse / quality-3-zero-neutral": 31,
+  "cold-adverse / quality-4-zero-neutral": 27,
+  "cold-adverse / quality-2-zero-pressure": 39,
+  "cold-adverse / quality-1-zero-pressure": 34,
+  "cold-adverse / quality-2-zero-neutral": 27,
+  "cold-adverse / quality-4-zero-pressure": 32
+}

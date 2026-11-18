@@ -1,0 +1,206 @@
+{
+  "status": "completed",
+  "method": "Prespecified independent uniform-profile mixture within each fixed orientation; Clopper-Pearson bounds plus a32-tail union bound, then signed difference and equal-orientation averaging. Exact coverage is unconditional over profile and gameplay draws. Beta PPF endpoints independently verified by binomial-CDF bisection.",
+  "familyAlpha": 0.05,
+  "oneSidedTailAlpha": 0.0015625,
+  "primaryContrasts": [
+    {
+      "scene": "cold-adverse",
+      "arm": "111",
+      "reference": "000",
+      "n": 256,
+      "winChangePP": -4.296875,
+      "familyWise95IntervalPP": [
+        -26.964455215568723,
+        18.798661851810543
+      ],
+      "strata": [
+        {
+          "side": 0,
+          "n": 128,
+          "toward": 26,
+          "against": 32,
+          "towardProbabilityBounds": [
+            0.1103846051545769,
+            0.3251212131416046
+          ],
+          "againstProbabilityBounds": [
+            0.1472293087116805,
+            0.3773402206545265
+          ],
+          "differenceBounds": [
+            -0.2669556154999496,
+            0.17789190442992409
+          ]
+        },
+        {
+          "side": 1,
+          "n": 128,
+          "toward": 32,
+          "against": 37,
+          "towardProbabilityBounds": [
+            0.1472293087116805,
+            0.3773402206545265
+          ],
+          "againstProbabilityBounds": [
+            0.17925888804823972,
+            0.4195627975231053
+          ],
+          "differenceBounds": [
+            -0.27233348881142483,
+            0.19808133260628677
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "cold-adverse",
+      "arm": "111",
+      "reference": "110",
+      "n": 256,
+      "winChangePP": -0.390625,
+      "familyWise95IntervalPP": [
+        -8.69608673401481,
+        7.966067057334099
+      ],
+      "strata": [
+        {
+          "side": 0,
+          "n": 128,
+          "toward": 2,
+          "against": 3,
+          "towardProbabilityBounds": [
+            0.0004467339448584016,
+            0.08076072840619657
+          ],
+          "againstProbabilityBounds": [
+            0.0017533817208527473,
+            0.09405447416381642
+          ],
+          "differenceBounds": [
+            -0.09360774021895801,
+            0.07900734668534382
+          ]
+        },
+        {
+          "side": 1,
+          "n": 128,
+          "toward": 2,
+          "against": 2,
+          "towardProbabilityBounds": [
+            0.0004467339448584016,
+            0.08076072840619657
+          ],
+          "againstProbabilityBounds": [
+            0.0004467339448584016,
+            0.08076072840619657
+          ],
+          "differenceBounds": [
+            -0.08031399446133816,
+            0.08031399446133816
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "hot-favored",
+      "arm": "111",
+      "reference": "000",
+      "n": 256,
+      "winChangePP": -2.734375,
+      "familyWise95IntervalPP": [
+        -25.470294403346482,
+        20.274077931061296
+      ],
+      "strata": [
+        {
+          "side": 0,
+          "n": 128,
+          "toward": 34,
+          "against": 30,
+          "towardProbabilityBounds": [
+            0.1599082016694792,
+            0.3943593537586778
+          ],
+          "againstProbabilityBounds": [
+            0.13474012023081675,
+            0.36013589736788043
+          ],
+          "differenceBounds": [
+            -0.20022769569840124,
+            0.2596192335278611
+          ]
+        },
+        {
+          "side": 1,
+          "n": 128,
+          "toward": 26,
+          "against": 37,
+          "towardProbabilityBounds": [
+            0.1103846051545769,
+            0.3251212131416046
+          ],
+          "againstProbabilityBounds": [
+            0.17925888804823972,
+            0.4195627975231053
+          ],
+          "differenceBounds": [
+            -0.3091781923685284,
+            0.14586232509336486
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "hot-favored",
+      "arm": "111",
+      "reference": "110",
+      "n": 256,
+      "winChangePP": -1.171875,
+      "familyWise95IntervalPP": [
+        -8.617884570295642,
+        6.307670307395114
+      ],
+      "strata": [
+        {
+          "side": 0,
+          "n": 128,
+          "toward": 0,
+          "against": 1,
+          "towardProbabilityBounds": [
+            0.0,
+            0.049227265350446116
+          ],
+          "againstProbabilityBounds": [
+            1.2216503316843235e-05,
+            0.06623554214629619
+          ],
+          "differenceBounds": [
+            -0.06623554214629619,
+            0.049215048847129274
+          ]
+        },
+        {
+          "side": 1,
+          "n": 128,
+          "toward": 2,
+          "against": 4,
+          "towardProbabilityBounds": [
+            0.0004467339448584016,
+            0.08076072840619657
+          ],
+          "againstProbabilityBounds": [
+            0.003822371105423579,
+            0.10656888320447505
+          ],
+          "differenceBounds": [
+            -0.10612214925961665,
+            0.07693835730077299
+          ]
+        }
+      ]
+    }
+  ],
+  "profileDrawVerification": true,
+  "inverseCDFVerification": true
+}

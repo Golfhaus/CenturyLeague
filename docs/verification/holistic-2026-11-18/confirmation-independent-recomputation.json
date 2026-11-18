@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "mode": "confirmation",
+  "pairedClusters": 512,
+  "outcomes": 1536,
+  "contrastGroups": 8,
+  "armCells": 6,
+  "factorialCells": 0,
+  "outcomesCSVSHA256": "266e2bc74bd1f847fac27589d4cbfbf8328af15b5e2e7fea817ad19b6dfb1e45",
+  "confirmationInferenceVerified": true
+}

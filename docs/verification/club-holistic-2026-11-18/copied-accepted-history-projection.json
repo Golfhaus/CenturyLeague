@@ -1,0 +1,648 @@
+{
+  "classification": "read-only accepted, nonvoided official competitive result projection; no official writes",
+  "projectRef": "iarwopfebmjrtsypxeye",
+  "captureDate": "2026-11-18",
+  "excludedUnregisteredResults": 5,
+  "rows": [
+    {
+      "fixture_id": "57ab4aaa-d090-3498-c791-a6ad6ded6ca0",
+      "proposal_id": "3b17ccd9-30cc-4c1b-ab2a-ed626cf5b574",
+      "accepted_at": "2026-11-04 05:11:27.61331+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-03",
+      "team0": "e74bf48c-bf51-478c-820b-d37504e6e5c0",
+      "team1": "9a9085d1-6608-4e63-a27c-b5ba37336d6b",
+      "winner": 0,
+      "scores": [
+        100,
+        84
+      ],
+      "result_sha256": "0d4eb6d50543ca834c1cd5bbcde63772a73fa0e2fc932ab5090e0d88c47b42a2",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "dc7c4151-a6d3-0704-6b05-3cd642009200"
+    },
+    {
+      "fixture_id": "2a59b730-c00c-a0b8-470f-6b04ade913b9",
+      "proposal_id": "bd25ba00-1b54-4074-bab8-fa21bb132a90",
+      "accepted_at": "2026-11-04 05:11:31.396301+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-03",
+      "team0": "e27bef74-7578-446d-935c-edecc014de96",
+      "team1": "de595326-5b13-4942-9b06-af34899f7c1c",
+      "winner": 0,
+      "scores": [
+        100,
+        82
+      ],
+      "result_sha256": "68fd4e342d577b4ef7db9bb5dae3a8fd5daaf479f9a882d4ddc2505b44b7ca98",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "cec89ea9-3179-302c-409d-1c71ef8be4a7"
+    },
+    {
+      "fixture_id": "9e6be617-5e36-120b-1405-5950f4eb17be",
+      "proposal_id": "797fd925-5ab0-4cc7-b706-38e0f733d52f",
+      "accepted_at": "2026-11-04 05:11:35.732441+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-03",
+      "team0": "848ac37a-b0e2-4df1-ab87-6f1571fcdffa",
+      "team1": "600a1e2e-a358-46b8-a407-e90e9f25be62",
+      "winner": 0,
+      "scores": [
+        100,
+        89
+      ],
+      "result_sha256": "416bd3a3503dce006f03fb80e544c448d755879602a9a98ecd264d60f8a6f176",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "b1aba1e6-ac62-0a4e-373a-b0810e80d90f"
+    },
+    {
+      "fixture_id": "87693e97-5e07-78ff-e25f-72143d5ef66a",
+      "proposal_id": "ca7f0900-65cf-4536-805b-d84c72a9fb9d",
+      "accepted_at": "2026-11-04 05:11:40.535617+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-03",
+      "team0": "aa54d454-1c67-404d-b973-41e3f2041c45",
+      "team1": "aa930b5e-3e45-4b39-b827-fb32740548a1",
+      "winner": 0,
+      "scores": [
+        100,
+        83
+      ],
+      "result_sha256": "209206e16aafc0439dac43cc3f34d1f6742e61ec6dc362ab52c7805b236c8c17",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "2ad6b302-4648-2ab0-d746-bd44b76f6d99"
+    },
+    {
+      "fixture_id": "a17da3ce-3313-13eb-ce41-5bd859791918",
+      "proposal_id": "ec7947f2-f3eb-46f7-867f-2231dd3a3f42",
+      "accepted_at": "2026-11-04 05:11:48.215769+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-03",
+      "team0": "346d43bf-55c7-4448-b6dc-c76ecd5cab03",
+      "team1": "f48d401e-a651-4331-b899-356b6151b12e",
+      "winner": 0,
+      "scores": [
+        100,
+        79
+      ],
+      "result_sha256": "3d8fb7873626cd7534b98b86c8354f98aa1742b3d40f31d04a423b9c36a5a117",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "c3a5c304-32b8-2682-55d7-c7527d08e36e"
+    },
+    {
+      "fixture_id": "1a1de1b0-82bc-8cd3-a29e-12df79db50ea",
+      "proposal_id": "6bf09c46-347c-4ec4-990e-14a627ba1848",
+      "accepted_at": "2026-11-04 05:11:56.733754+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-03",
+      "team0": "3dced224-98e3-445b-9315-1e0bde76aafa",
+      "team1": "549a4e60-e534-4e1d-a9c5-8d9266dee62c",
+      "winner": 0,
+      "scores": [
+        100,
+        83
+      ],
+      "result_sha256": "12f17c69724c6552a0bec0548224989cf86851fd162f51f2926444661c3ef623",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "b9733ed5-181b-6c45-d986-3d6f56ff8b00"
+    },
+    {
+      "fixture_id": "028bfc75-0729-8d92-ede4-451cdd04f3d8",
+      "proposal_id": "d1021ec5-ca26-422b-a141-3a119e877042",
+      "accepted_at": "2026-11-04 05:12:03.641713+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-03",
+      "team0": "88a84a80-9b6b-48f4-84a7-d066ddc0c53e",
+      "team1": "2a89573a-68d2-49c8-aee9-d654a602e4b8",
+      "winner": 0,
+      "scores": [
+        100,
+        58
+      ],
+      "result_sha256": "9b6e4771193be1060fadfe5f7f6a68e70e6da29514717011a3671609ae7fc342",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "97e5169e-fa46-818b-5166-49a0d0772a7d"
+    },
+    {
+      "fixture_id": "4418c40d-6e86-0f36-0676-af496c8ead8e",
+      "proposal_id": "9c3c798a-83cf-497e-9c59-e122dbc4fa97",
+      "accepted_at": "2026-11-04 05:12:10.204735+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-03",
+      "team0": "1379b09d-2b4d-488f-aa5d-d8bfd8a5610b",
+      "team1": "c54f488c-4b46-45a1-8a65-2d8f2006a5d4",
+      "winner": 1,
+      "scores": [
+        85,
+        100
+      ],
+      "result_sha256": "0802ac215b5b5f25f61780d6e3d30d18157ca1f7ec06aefbca2c0ff40498ea2c",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "198862c0-6bb2-bd2f-ac89-9c4e3a3e7bde"
+    },
+    {
+      "fixture_id": "859b5def-110b-c61c-f111-8d2533b311fc",
+      "proposal_id": "d3062c0b-cd6f-4459-8074-169de03711ec",
+      "accepted_at": "2026-11-07 00:04:06.023107+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-06",
+      "team0": "f765f392-75bf-4c73-a767-de926e3a6283",
+      "team1": "e27bef74-7578-446d-935c-edecc014de96",
+      "winner": 0,
+      "scores": [
+        100,
+        81
+      ],
+      "result_sha256": "95d4ed03ea34d4cf6296eefceaee504659da821b222b6c4d22480e0049c00513",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "dd7116ac-cca8-02d1-06cf-20c1e9305938"
+    },
+    {
+      "fixture_id": "92375840-7668-e180-6427-28b905194c96",
+      "proposal_id": "c7a2b153-e1f7-4e8b-b2b4-36d86a766632",
+      "accepted_at": "2026-11-07 00:04:11.222326+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-06",
+      "team0": "c847186d-fe03-4746-9656-dc345baecdce",
+      "team1": "e74bf48c-bf51-478c-820b-d37504e6e5c0",
+      "winner": 0,
+      "scores": [
+        100,
+        32
+      ],
+      "result_sha256": "3c3060c5f67df92a3d183273b7396620805432832acb46ae70ac6a34a0f94133",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "0ba526de-8dad-0af3-e391-b378c198a402"
+    },
+    {
+      "fixture_id": "868475ae-c9a5-5963-fb91-3d791d86b3a0",
+      "proposal_id": "9cf49127-6059-4832-800c-21f608e8b46d",
+      "accepted_at": "2026-11-07 00:04:16.480597+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-06",
+      "team0": "9a9085d1-6608-4e63-a27c-b5ba37336d6b",
+      "team1": "600a1e2e-a358-46b8-a407-e90e9f25be62",
+      "winner": 1,
+      "scores": [
+        57,
+        100
+      ],
+      "result_sha256": "5535a31b3c1401b0560868ca34c84edd3bbd19112433257feea212c3b90530ab",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "64ba24df-fab0-0df7-d86e-576df13fde3b"
+    },
+    {
+      "fixture_id": "591abf48-5e9c-e7cf-be9c-bff32aad594a",
+      "proposal_id": "30c03350-a935-4ac6-a00b-931bbe32c9e0",
+      "accepted_at": "2026-11-07 00:04:20.974966+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-06",
+      "team0": "de595326-5b13-4942-9b06-af34899f7c1c",
+      "team1": "1379b09d-2b4d-488f-aa5d-d8bfd8a5610b",
+      "winner": 1,
+      "scores": [
+        60,
+        100
+      ],
+      "result_sha256": "e03e8416088766c1dea5ee6953d1587192f18814537b8107010ab21eaf1edee0",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "a28cf11a-8cd7-8a97-0bb1-59e4cb17b444"
+    },
+    {
+      "fixture_id": "6eb19daa-ba1b-4c65-dd8f-10a5cab566ba",
+      "proposal_id": "51db530d-9671-4e2e-ad30-8f4ac3f26cc7",
+      "accepted_at": "2026-11-07 00:04:27.182109+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-06",
+      "team0": "aa930b5e-3e45-4b39-b827-fb32740548a1",
+      "team1": "f48d401e-a651-4331-b899-356b6151b12e",
+      "winner": 1,
+      "scores": [
+        98,
+        100
+      ],
+      "result_sha256": "882fc7b452343338bfffe85f251ddf8ad87ad4384e9f695b04e8606c4d057b30",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "d2783f0a-f399-f16f-ddcf-d8e00d8ddf5e"
+    },
+    {
+      "fixture_id": "cca72460-9566-4b97-a56c-1a4583f7cb6b",
+      "proposal_id": "65e82062-2a58-4015-b78a-bda7a4aceeb4",
+      "accepted_at": "2026-11-07 00:04:33.249599+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-06",
+      "team0": "549a4e60-e534-4e1d-a9c5-8d9266dee62c",
+      "team1": "2a89573a-68d2-49c8-aee9-d654a602e4b8",
+      "winner": 1,
+      "scores": [
+        99,
+        100
+      ],
+      "result_sha256": "c0aa841dd86db6328f0fb10804c4ec0f39cb2f69ba586b6ba4fb1ebdb4a3e357",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "180e67c9-b4c2-0f24-abd2-8faee33f1739"
+    },
+    {
+      "fixture_id": "1d35eacf-a446-918a-718e-eb5a7f46d52d",
+      "proposal_id": "a44be2f7-d88e-40f4-92c9-d214dbbd7897",
+      "accepted_at": "2026-11-11 00:00:09.313696+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-10",
+      "team0": "f765f392-75bf-4c73-a767-de926e3a6283",
+      "team1": "848ac37a-b0e2-4df1-ab87-6f1571fcdffa",
+      "winner": 0,
+      "scores": [
+        100,
+        44
+      ],
+      "result_sha256": "e8a9eb61a1b04fca131b0211d16d98fcd351e9a24ac045f2458c9c59fe255908",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "4d5b598e-8072-ce08-3926-c32792ebdf93"
+    },
+    {
+      "fixture_id": "3d8accf2-3f34-8b7b-5f22-9a77211fda4c",
+      "proposal_id": "81ff2986-497d-435c-883b-4b485b4b24f4",
+      "accepted_at": "2026-11-11 00:00:14.668093+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-10",
+      "team0": "aa54d454-1c67-404d-b973-41e3f2041c45",
+      "team1": "346d43bf-55c7-4448-b6dc-c76ecd5cab03",
+      "winner": 1,
+      "scores": [
+        86,
+        100
+      ],
+      "result_sha256": "667c50611bcc83de487f1f18c7cc152b0a9187f110dde9dbeb6115155ccbb9d0",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "321a32f4-0060-b1b7-c460-127d7efc2276"
+    },
+    {
+      "fixture_id": "b3a2811c-1c88-6d73-8ca9-1a3da7ccac54",
+      "proposal_id": "faa85a06-ac5f-4b92-b7a5-629d08d6720a",
+      "accepted_at": "2026-11-11 00:00:20.273036+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-10",
+      "team0": "3dced224-98e3-445b-9315-1e0bde76aafa",
+      "team1": "88a84a80-9b6b-48f4-84a7-d066ddc0c53e",
+      "winner": 0,
+      "scores": [
+        100,
+        62
+      ],
+      "result_sha256": "163a5ebfef2c5d7c79f0cf019734595944d48ad66d9cfae7a8f759d6a1d7d9ad",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "baebd648-9439-ca55-5b96-c8b554b87acf"
+    },
+    {
+      "fixture_id": "0cee49e3-7e3c-5cc4-c7a0-cd2fa3ecd473",
+      "proposal_id": "3739530c-4f89-4b82-9770-ea56c9e7ff94",
+      "accepted_at": "2026-11-11 00:00:25.503177+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-10",
+      "team0": "c54f488c-4b46-45a1-8a65-2d8f2006a5d4",
+      "team1": "c847186d-fe03-4746-9656-dc345baecdce",
+      "winner": 1,
+      "scores": [
+        48,
+        100
+      ],
+      "result_sha256": "450afd1fbfbfc651c92777466dc8e8d081312692508d60f423a776fe70e9738c",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "3ae84d2a-4d3b-c751-3fce-62d42878000f"
+    },
+    {
+      "fixture_id": "cb76abd4-a605-d7a6-0b5c-07055694c3e3",
+      "proposal_id": "cc33712e-19a2-485a-9737-c375d6f8477c",
+      "accepted_at": "2026-11-11 00:00:32.64335+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-10",
+      "team0": "e27bef74-7578-446d-935c-edecc014de96",
+      "team1": "600a1e2e-a358-46b8-a407-e90e9f25be62",
+      "winner": 1,
+      "scores": [
+        91,
+        100
+      ],
+      "result_sha256": "b87d5932324f8ad61c665777f7ab6df3af9e40e90600c83670c222bab8f7eeca",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "5dcdf756-c360-454e-0728-3e7ccb9c6b45"
+    },
+    {
+      "fixture_id": "e2be6793-3787-9f74-998d-2689732ae87e",
+      "proposal_id": "942e65f4-607a-4208-83d8-e49e4b0e5561",
+      "accepted_at": "2026-11-11 00:00:38.476965+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-10",
+      "team0": "e74bf48c-bf51-478c-820b-d37504e6e5c0",
+      "team1": "1379b09d-2b4d-488f-aa5d-d8bfd8a5610b",
+      "winner": 1,
+      "scores": [
+        65,
+        100
+      ],
+      "result_sha256": "4ebd1bf656af07d0d8e8caaba85a94c3a8e9f4f9db4be99b6d956e3bc764232a",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "30c42b98-251c-9cb5-d25a-4a6f5e40d28a"
+    },
+    {
+      "fixture_id": "0ea145f1-691d-c877-93ab-c1d2e34afdec",
+      "proposal_id": "d9e1825b-d638-4521-8276-171279dcd424",
+      "accepted_at": "2026-11-14 00:00:10.264754+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-13",
+      "team0": "600a1e2e-a358-46b8-a407-e90e9f25be62",
+      "team1": "c54f488c-4b46-45a1-8a65-2d8f2006a5d4",
+      "winner": 1,
+      "scores": [
+        65,
+        100
+      ],
+      "result_sha256": "905b473573d83dceef318012ba141a397f2796ed9bebe901fa85a3dd427dde40",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "a4b6b08d-71cc-adc5-9a1d-f3b5f50440f1"
+    },
+    {
+      "fixture_id": "a9cdb1c1-0cdd-8ba0-95e8-b7993d95c807",
+      "proposal_id": "a0d59b9e-2611-452a-bbf3-82431f5c78c2",
+      "accepted_at": "2026-11-14 00:00:15.446394+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-13",
+      "team0": "f48d401e-a651-4331-b899-356b6151b12e",
+      "team1": "88a84a80-9b6b-48f4-84a7-d066ddc0c53e",
+      "winner": 1,
+      "scores": [
+        76,
+        100
+      ],
+      "result_sha256": "dd5b073745afbe5babd744b32c7d9080e691bce963adcc8cde7b0f049c5bd919",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "2e1b5224-1b52-e657-6533-6a8fa7c5dc5d"
+    },
+    {
+      "fixture_id": "b79a30b3-a251-2a79-7293-e3c11daa44ac",
+      "proposal_id": "ba7abf33-0b90-4c86-bb80-ee9d865a9d8c",
+      "accepted_at": "2026-11-14 00:04:06.109062+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-13",
+      "team0": "2a89573a-68d2-49c8-aee9-d654a602e4b8",
+      "team1": "aa54d454-1c67-404d-b973-41e3f2041c45",
+      "winner": 1,
+      "scores": [
+        96,
+        100
+      ],
+      "result_sha256": "09ec7fe81f7e659bbac4f263a7b12d3d5f923d70758c72b776cb92fb0a0b3363",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "a5f9192d-dce7-cc32-4b66-c54fc0e97cf6"
+    },
+    {
+      "fixture_id": "b6c6faf3-a194-b440-f3a0-548b615b3426",
+      "proposal_id": "3c18a499-0ade-407b-a1f6-857b9037802d",
+      "accepted_at": "2026-11-14 00:04:11.829709+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-13",
+      "team0": "1379b09d-2b4d-488f-aa5d-d8bfd8a5610b",
+      "team1": "848ac37a-b0e2-4df1-ab87-6f1571fcdffa",
+      "winner": 1,
+      "scores": [
+        93,
+        100
+      ],
+      "result_sha256": "3ec4ac92d1597de61dc9810afda1e78cbf8ed260f80797ac07bd931f911bc486",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "d059e54d-281e-4c93-51a4-fb97dce76d80"
+    },
+    {
+      "fixture_id": "9682020c-82bf-01b1-6dc1-abcd1c7b8d55",
+      "proposal_id": "bd1ae334-9265-4283-aff1-2af9b4ec887c",
+      "accepted_at": "2026-11-14 00:04:18.839197+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-13",
+      "team0": "aa930b5e-3e45-4b39-b827-fb32740548a1",
+      "team1": "e27bef74-7578-446d-935c-edecc014de96",
+      "winner": 1,
+      "scores": [
+        89,
+        100
+      ],
+      "result_sha256": "342d2ddde46ed69eb3b7083508d78cb616717692235bcc83156dbd802115ebf8",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "5acb11fb-677e-464c-4d58-a23bcccf12d2"
+    },
+    {
+      "fixture_id": "2f7c5460-e8e9-958a-4548-a9cf006a1734",
+      "proposal_id": "85a64990-1cf6-4930-949e-a484fbbabb00",
+      "accepted_at": "2026-11-14 00:04:24.49956+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-13",
+      "team0": "549a4e60-e534-4e1d-a9c5-8d9266dee62c",
+      "team1": "e74bf48c-bf51-478c-820b-d37504e6e5c0",
+      "winner": 1,
+      "scores": [
+        67,
+        100
+      ],
+      "result_sha256": "881dc53e2d0d7b29e6cccaeeb15035c69bb54336e3149e91fc2bb502c6fd5564",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "a7bda0ac-3089-6e27-8c10-d6eed310d4ca"
+    },
+    {
+      "fixture_id": "da6f3a2c-2b48-8edf-6259-830352586655",
+      "proposal_id": "08602f0c-1c18-4416-a870-d821b798937a",
+      "accepted_at": "2026-11-18 00:00:12.175589+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-17",
+      "team0": "f765f392-75bf-4c73-a767-de926e3a6283",
+      "team1": "346d43bf-55c7-4448-b6dc-c76ecd5cab03",
+      "winner": 1,
+      "scores": [
+        91,
+        100
+      ],
+      "result_sha256": "6188e94278a7500d987a2ca302380833333f5653350cf5036b5295976e702cea",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "d18d3b58-c996-2279-736a-55852cb70867"
+    },
+    {
+      "fixture_id": "d60b4bc6-1547-7c80-250b-e77e901aae57",
+      "proposal_id": "8c615393-11c2-4055-b2f9-58740838ea76",
+      "accepted_at": "2026-11-18 00:00:18.876763+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-17",
+      "team0": "3dced224-98e3-445b-9315-1e0bde76aafa",
+      "team1": "c847186d-fe03-4746-9656-dc345baecdce",
+      "winner": 0,
+      "scores": [
+        100,
+        74
+      ],
+      "result_sha256": "c86bf2ad599d2c25b4b7b991adf0c5944320f113ebced8dc934bbc5f6d6353c5",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "34c5c8b2-37e6-5ce4-fa77-aa0e1917f39e"
+    },
+    {
+      "fixture_id": "dcd14340-e810-f304-2273-d49a43074328",
+      "proposal_id": "fb705844-a4c6-4937-a557-06a02fce4d41",
+      "accepted_at": "2026-11-18 00:00:25.431446+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-17",
+      "team0": "c54f488c-4b46-45a1-8a65-2d8f2006a5d4",
+      "team1": "88a84a80-9b6b-48f4-84a7-d066ddc0c53e",
+      "winner": 1,
+      "scores": [
+        48,
+        100
+      ],
+      "result_sha256": "72a95c79ae18c873ca337f9ee6deb7303cd0851d935b563d206606d3691ec2b3",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "4df51a1a-51fd-3c96-0a8a-4bd9bf7bca99"
+    },
+    {
+      "fixture_id": "72818d75-72bf-eacd-73ec-4d60889bd718",
+      "proposal_id": "20b49b4a-4f4b-4e50-9a0f-b227825addf6",
+      "accepted_at": "2026-11-18 00:04:06.96403+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-17",
+      "team0": "aa54d454-1c67-404d-b973-41e3f2041c45",
+      "team1": "848ac37a-b0e2-4df1-ab87-6f1571fcdffa",
+      "winner": 0,
+      "scores": [
+        100,
+        98
+      ],
+      "result_sha256": "4a81e77c8498ca55a992478d30bf05e975a2782b474faccc0cc83e9fe720388a",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "fa1e980b-06d7-4838-e57b-d8405093db21"
+    },
+    {
+      "fixture_id": "0ddf4e7f-c635-d8e3-3ace-99eb07cd43f4",
+      "proposal_id": "7e91596e-9f18-4434-b424-6fbf16721357",
+      "accepted_at": "2026-11-18 00:04:14.125832+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-17",
+      "team0": "1379b09d-2b4d-488f-aa5d-d8bfd8a5610b",
+      "team1": "f48d401e-a651-4331-b899-356b6151b12e",
+      "winner": 1,
+      "scores": [
+        77,
+        100
+      ],
+      "result_sha256": "283a9971de3f066b908826e475da33b8c52a7586a4f550c6f17378460897653f",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "260ad647-4d11-9a08-2ba3-0cc305e2a612"
+    },
+    {
+      "fixture_id": "6b5d8eb5-84ef-698a-549b-d5bc5fe61328",
+      "proposal_id": "2e8920ec-7ee2-430a-bd6b-306e381c9bda",
+      "accepted_at": "2026-11-18 00:04:21.81693+00",
+      "competition_id": "5eab411e-d2fe-4bc8-8fdd-2b9cbc8c7fd9",
+      "competition_name": "Century League Inaugural Tournament 2026",
+      "classification": "competitive",
+      "status": "active",
+      "match_date": "2026-11-17",
+      "team0": "600a1e2e-a358-46b8-a407-e90e9f25be62",
+      "team1": "2a89573a-68d2-49c8-aee9-d654a602e4b8",
+      "winner": 0,
+      "scores": [
+        100,
+        74
+      ],
+      "result_sha256": "4b4da102150144356b9bf4b3905a6795a4fb65013f88d0e0e3a2782ce71e7012",
+      "stream_id": "54bbc031-0d37-4289-88fc-25ee1d9608f8",
+      "accepted_event_id": "2da151cf-291d-3819-1c5b-edce8fab5b7b"
+    }
+  ]
+}

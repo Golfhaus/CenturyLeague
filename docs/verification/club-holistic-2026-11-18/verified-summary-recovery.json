@@ -1,0 +1,136 @@
+{
+  "status": "verified-summary-preserved-after-execution-environment-disconnect",
+  "classification": "Summary reconstructed from successful emitted verification receipts and rendered report; not the original CSV or byte-identical full proof files.",
+  "scientificOutcomes": 18432,
+  "pairedCases": 6144,
+  "exactScientificReplays": 72,
+  "fullLedgerAuditsPassed": true,
+  "independentPrimaryRecomputationPassed": true,
+  "eventExposureRecomputationPassed": true,
+  "eventExposureGroups": 2745,
+  "protectedBaselineFilesVerified": 64,
+  "sourceSHA256": "951e810a900b39807bd7b4ed9b018d43b5934efeb70a4cf7367f1604b31b4cc7",
+  "harnessSHA256": "8deb90f69ae7e04886d2b29e4332a922b81fa89dd7990b0758fff9506a8701c9",
+  "profilesSHA256": "da5482f10c7ec5b054d6d1375110f043e8623a23aab381a57fbddcf71d109622",
+  "expandedPlanSHA256": "0cb7fe7b7acc82483d1cc8f9e28fe0d829fbc872a8bf62aeab42f0d885f68bc8",
+  "outcomesCSVSHA256": "dc53c400c14e38d5508c8e276973a226af4189ed62045a5ef1ff970e97b23c7a",
+  "eventExposuresCSVSHA256": "0cfccf24ffec965b418e0c3fd12e200b491e4d76054d17a7b408e33882f768ba",
+  "pairedFirstHalfChecks": 6144,
+  "crossArmOwnObservationChecks": 12288,
+  "ownObservationReconstructions": 36864,
+  "noOpGameplayComparisons": 3717,
+  "weatherEnergyAndTelemetryAudits": 12288,
+  "psychologyAndFoulTelemetryAudits": 12288,
+  "primaryContrasts": [
+    {
+      "scene": "ordinary",
+      "reference": "000",
+      "n": 2048,
+      "wins": 996,
+      "referenceWins": 1006,
+      "winChangePP": -0.48828125,
+      "familyWise95IntervalPP": [
+        -4.928613186561017,
+        3.9549021980450183
+      ]
+    },
+    {
+      "scene": "ordinary",
+      "reference": "110",
+      "n": 2048,
+      "wins": 996,
+      "referenceWins": 992,
+      "winChangePP": 0.1953125,
+      "familyWise95IntervalPP": [
+        -1.8534716986645856,
+        2.242652329518069
+      ]
+    },
+    {
+      "scene": "hot-favored",
+      "reference": "000",
+      "n": 2048,
+      "wins": 1122,
+      "referenceWins": 991,
+      "winChangePP": 6.396484375,
+      "familyWise95IntervalPP": [
+        1.8258291688507233,
+        10.929864567512846
+      ]
+    },
+    {
+      "scene": "hot-favored",
+      "reference": "110",
+      "n": 2048,
+      "wins": 1122,
+      "referenceWins": 1108,
+      "winChangePP": 0.68359375,
+      "familyWise95IntervalPP": [
+        -1.6389786672875144,
+        3.0014721499796537
+      ]
+    },
+    {
+      "scene": "cold-adverse",
+      "reference": "000",
+      "n": 2048,
+      "wins": 916,
+      "referenceWins": 1018,
+      "winChangePP": -4.98046875,
+      "familyWise95IntervalPP": [
+        -9.522868383761207,
+        -0.40904823042972605
+      ]
+    },
+    {
+      "scene": "cold-adverse",
+      "reference": "110",
+      "n": 2048,
+      "wins": 916,
+      "referenceWins": 918,
+      "winChangePP": -0.09765625,
+      "familyWise95IntervalPP": [
+        -2.2182667499082798,
+        2.0236599507099196
+      ]
+    }
+  ],
+  "unconfirmedDescriptiveClubFlags": [
+    {
+      "club": "Hampden Works CC",
+      "scene": "hot-favored",
+      "n": 103,
+      "wins": 87,
+      "referenceWins": 71,
+      "winChangePP": 15.53398058252427
+    },
+    {
+      "club": "Dover Town CC",
+      "scene": "hot-favored",
+      "n": 113,
+      "wins": 56,
+      "referenceWins": 39,
+      "winChangePP": 15.04424778761062
+    },
+    {
+      "club": "Dover Town CC",
+      "scene": "cold-adverse",
+      "n": 124,
+      "wins": 29,
+      "referenceWins": 52,
+      "winChangePP": -18.548387096774192
+    }
+  ],
+  "familyAlpha": 0.05,
+  "oneSidedTailAlpha": 0.0020833333333333333,
+  "method": "Six co-primary paired differences under independently sampled uniform actual-club ordered pair, chronological history prefix and original-side mixture;24 one-sided Clopper-Pearson tails and signed subtraction. Inverse endpoints independently verified by log-space binomial-CDF bisection.",
+  "sourceOrCoefficientChanges": false,
+  "scientificAutomaticRetries": 0,
+  "seedReplacements": 0,
+  "sampleExtensions": 0,
+  "priorStudiesPooled": false,
+  "officialWrites": false,
+  "seasonRehearsalPassed": false,
+  "adoptionApproved": false,
+  "artifactStatus": "PDF generated and first2of4pages visually inspected; execution environment became unavailable before remaining visual review and compact ZIP creation/upload. Original new CSVs/ledgers are currently inaccessible. This commit preserves verified summaries and observed digests only, not unavailable raw files. No simulation restart attempted."
+}

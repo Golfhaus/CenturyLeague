@@ -7,3 +7,6 @@ dist/
 coverage/
 supabase/.temp/
 *.log
+
+# Expanded immutable study data is delivered in the compact research package.
+/docs/copied-club-holistic-precision-plan-2026-11-18.json

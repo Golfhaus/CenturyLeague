@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "clubsUnchanged": 18,
+  "orderedPairs": 306,
+  "acceptedNonvoidedResults": 32,
+  "chronologicalPrefixesVerified": 6,
+  "futureResultLeakage": false,
+  "profilesSHA256": "da5482f10c7ec5b054d6d1375110f043e8623a23aab381a57fbddcf71d109622",
+  "officialWrites": false
+}

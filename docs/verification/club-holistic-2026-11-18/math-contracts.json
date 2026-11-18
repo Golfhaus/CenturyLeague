@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "classification": "excluded artificial interval contracts; no scientific outcomes",
+  "n": 2048,
+  "sixContrasts": 6,
+  "oneSidedTails": 24,
+  "tailAlpha": 0.0020833333333333333,
+  "closedFormBoundaryAndComplementChecks": true,
+  "logBinomialCDFBisection": true
+}

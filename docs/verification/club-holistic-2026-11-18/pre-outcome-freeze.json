@@ -1,0 +1,12 @@
+{
+  "status": "frozen-before-scientific-outcomes",
+  "sourceSHA256": "951e810a900b39807bd7b4ed9b018d43b5934efeb70a4cf7367f1604b31b4cc7",
+  "harnessSHA256": "8deb90f69ae7e04886d2b29e4332a922b81fa89dd7990b0758fff9506a8701c9",
+  "profilesSHA256": "da5482f10c7ec5b054d6d1375110f043e8623a23aab381a57fbddcf71d109622",
+  "expandedPlanSHA256": "0cb7fe7b7acc82483d1cc8f9e28fe0d829fbc872a8bf62aeab42f0d885f68bc8",
+  "pairedClusters": 6144,
+  "outcomes": 18432,
+  "scientificOutcomesAtFreeze": 0,
+  "sourceOrCoefficientChanges": false,
+  "officialWrites": false
+}

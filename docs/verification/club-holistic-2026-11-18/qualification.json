@@ -1,0 +1,388 @@
+{
+  "status": "passed",
+  "sourceSHA256": "951e810a900b39807bd7b4ed9b018d43b5934efeb70a4cf7367f1604b31b4cc7",
+  "harnessSHA256": "8deb90f69ae7e04886d2b29e4332a922b81fa89dd7990b0758fff9506a8701c9",
+  "profilesSHA256": "da5482f10c7ec5b054d6d1375110f043e8623a23aab381a57fbddcf71d109622",
+  "runtime": {
+    "node": "v24.22.1",
+    "v8": "13.6.233.17-node.58",
+    "platform": "linux",
+    "arch": "x64",
+    "workerExecArgv": [
+      "--no-maglev"
+    ],
+    "numericIsolationProbe": "passed",
+    "publicResultBoundary": "detached-json-snapshot-frozen-root-v1"
+  },
+  "constructionChecks": 5508,
+  "fullOutcomesAudited": 72,
+  "enabledExactReplays": 72,
+  "defaultOffAndHoldParity": 24,
+  "pairedFirstHalves": 24,
+  "actualCoachingChanges": 10,
+  "corruptionRejections": 4,
+  "records": [
+    {
+      "fixture": "club-excluded-qualification-0-ordinary-0",
+      "arm": "000",
+      "resultSHA256": "1943857108ac145be72198f5060fcc0f0b8fa5bcc636e40a9a132087e2b84412"
+    },
+    {
+      "fixture": "club-excluded-qualification-0-ordinary-0",
+      "arm": "110",
+      "resultSHA256": "74d4e15e8a059f1c6589a250f616ec9e8fc9a2a2fb57e6f782167600b7f52ccb"
+    },
+    {
+      "fixture": "club-excluded-qualification-0-ordinary-0",
+      "arm": "111",
+      "resultSHA256": "dee6bda863861abfacee6d250bfef09602e57484ae9e2c20e71ddae6c8652304"
+    },
+    {
+      "fixture": "club-excluded-qualification-0-ordinary-1",
+      "arm": "000",
+      "resultSHA256": "235c8ad33c17cc4e7233ce2945d445b08bdea9d93f92cb8f47920cae5a9da0ca"
+    },
+    {
+      "fixture": "club-excluded-qualification-0-ordinary-1",
+      "arm": "110",
+      "resultSHA256": "c2e429d5e42c17ff5b625693e178769f76c056e5c2dbd4a1c17ff28fbd4e8a68"
+    },
+    {
+      "fixture": "club-excluded-qualification-0-ordinary-1",
+      "arm": "111",
+      "resultSHA256": "f36af9f39a5a8842dab41772829a362f5f9cfe584e8f45dc568554862cd797d8"
+    },
+    {
+      "fixture": "club-excluded-qualification-0-hot-favored-0",
+      "arm": "000",
+      "resultSHA256": "7b43f3b82067f4201e4219f2f595c00a5c724645ff1c5509922190a3b4f479ca"
+    },
+    {
+      "fixture": "club-excluded-qualification-0-hot-favored-0",
+      "arm": "110",
+      "resultSHA256": "a0564792030c3a0aeba37a19410f2224f3b83aa0bddce845a7647e16360df08b"
+    },
+    {
+      "fixture": "club-excluded-qualification-0-hot-favored-0",
+      "arm": "111",
+      "resultSHA256": "cbac72f25879339ea37aa3640ee2fda1c171e62ce34c0e273a43771a3e14cf96"
+    },
+    {
+      "fixture": "club-excluded-qualification-0-hot-favored-1",
+      "arm": "000",
+      "resultSHA256": "269cb8d0965001138b495d38ecaec3b79b4f979626135bbbcca1c3ac4f2602c3"
+    },
+    {
+      "fixture": "club-excluded-qualification-0-hot-favored-1",
+      "arm": "110",
+      "resultSHA256": "56518ac7a9fd2fe105b4a39650a270f07c31257b5523245d3ae87f10ff162b8b"
+    },
+    {
+      "fixture": "club-excluded-qualification-0-hot-favored-1",
+      "arm": "111",
+      "resultSHA256": "3925065bf9ce6ab97ee7081ad52deb2954016beef12a62009763d65faec7af89"
+    },
+    {
+      "fixture": "club-excluded-qualification-0-cold-adverse-0",
+      "arm": "000",
+      "resultSHA256": "8ef3bb2c0afa79cba518340c018ba454a33da89e11fa9bf9ec88c0ad24b17771"
+    },
+    {
+      "fixture": "club-excluded-qualification-0-cold-adverse-0",
+      "arm": "110",
+      "resultSHA256": "dbc4964eb53648e97b6a690797551a22ebe2fbf47f8af6e9b3d2b99a774e8d38"
+    },
+    {
+      "fixture": "club-excluded-qualification-0-cold-adverse-0",
+      "arm": "111",
+      "resultSHA256": "60b0317407d949982d814454e321217216ea3bcabcf30e561b6c64f01f8829c7"
+    },
+    {
+      "fixture": "club-excluded-qualification-0-cold-adverse-1",
+      "arm": "000",
+      "resultSHA256": "8c2cec39eb2b56021c7a982ea509d05045112d1d95b34ece3855b113eb05485a"
+    },
+    {
+      "fixture": "club-excluded-qualification-0-cold-adverse-1",
+      "arm": "110",
+      "resultSHA256": "58222f5ca50fdee18735cbb82529df0d2dfe9f0e6588c4f7f1f786ac9d92a35b"
+    },
+    {
+      "fixture": "club-excluded-qualification-0-cold-adverse-1",
+      "arm": "111",
+      "resultSHA256": "c01b7e793d24eb0a108f0bccb8785d9cc5bfbb01bfd3547a1fded0e00f16ec02"
+    },
+    {
+      "fixture": "club-excluded-qualification-73-ordinary-0",
+      "arm": "000",
+      "resultSHA256": "dc16e504fc35834bf200ab4c20ba80a18013cf76b69e39bd776e9816c740333f"
+    },
+    {
+      "fixture": "club-excluded-qualification-73-ordinary-0",
+      "arm": "110",
+      "resultSHA256": "f530ff2be6c56d14a90f52e68aa2de5e0f5e9db620f52f34b82403373721b39e"
+    },
+    {
+      "fixture": "club-excluded-qualification-73-ordinary-0",
+      "arm": "111",
+      "resultSHA256": "2e66aea137caae0189e8bbe4bbc712806555bfbe0d70b2f02dad8c5f50e4d1b4"
+    },
+    {
+      "fixture": "club-excluded-qualification-73-ordinary-1",
+      "arm": "000",
+      "resultSHA256": "6f0ab6bde414b3905a34f6c28b75111477370d43b5332e5caf837c24c2ef97ec"
+    },
+    {
+      "fixture": "club-excluded-qualification-73-ordinary-1",
+      "arm": "110",
+      "resultSHA256": "cc44f0317f8e0da14c0862c4dd6fd29d82f076c4e3d7423160192d5c703984a8"
+    },
+    {
+      "fixture": "club-excluded-qualification-73-ordinary-1",
+      "arm": "111",
+      "resultSHA256": "e4762a0553cf9aac3eff2fcd85c21e60fe9b1e50f054272acb993f3832e1d12c"
+    },
+    {
+      "fixture": "club-excluded-qualification-73-hot-favored-0",
+      "arm": "000",
+      "resultSHA256": "3e9e0b0bb1a8b46ad7df52d670bf470c04a5bb6c7b90b1f5d5bd7ed171aae58d"
+    },
+    {
+      "fixture": "club-excluded-qualification-73-hot-favored-0",
+      "arm": "110",
+      "resultSHA256": "65a21051d47bd45d9009bcced946354547eac34d14de8f74ca79609dfc93199b"
+    },
+    {
+      "fixture": "club-excluded-qualification-73-hot-favored-0",
+      "arm": "111",
+      "resultSHA256": "95e9a445bffd93374650261ac5bd43bef1bb08829181edd23ff49f4a63f85afd"
+    },
+    {
+      "fixture": "club-excluded-qualification-73-hot-favored-1",
+      "arm": "000",
+      "resultSHA256": "1907479fa479befc7c84a8b45f290cb7e4786f9c0a3dcded84af0e08db82dbc7"
+    },
+    {
+      "fixture": "club-excluded-qualification-73-hot-favored-1",
+      "arm": "110",
+      "resultSHA256": "cbac4e16322bb4cd707189dbacc72134d6f1ade973f87b2a2cc9d67569ec6213"
+    },
+    {
+      "fixture": "club-excluded-qualification-73-hot-favored-1",
+      "arm": "111",
+      "resultSHA256": "a2db5f4724722d4316ecb5e49139eb2c948a44541e68983cd5bd7d564ea9cf8c"
+    },
+    {
+      "fixture": "club-excluded-qualification-73-cold-adverse-0",
+      "arm": "000",
+      "resultSHA256": "3c1cfdfa1d0aaa93c573b85a8534e25c4b3fe219d6356ce52027302fe05eecfc"
+    },
+    {
+      "fixture": "club-excluded-qualification-73-cold-adverse-0",
+      "arm": "110",
+      "resultSHA256": "f93cd9b18685052b290cedee67dd5900d00a79b1e35d686bc515469b071127d3"
+    },
+    {
+      "fixture": "club-excluded-qualification-73-cold-adverse-0",
+      "arm": "111",
+      "resultSHA256": "22cb57bf74aabd9f814b2305093c86fc5a8e8744be4cab337f3e6e3c5a45d2b0"
+    },
+    {
+      "fixture": "club-excluded-qualification-73-cold-adverse-1",
+      "arm": "000",
+      "resultSHA256": "4c507694169be30947f2291bd8bf91c9a1cf9a759306b66d1878b16222e98974"
+    },
+    {
+      "fixture": "club-excluded-qualification-73-cold-adverse-1",
+      "arm": "110",
+      "resultSHA256": "a848f3aef95aebf24cef5127247e34b211e9665e0deb534b480804e88442d92b"
+    },
+    {
+      "fixture": "club-excluded-qualification-73-cold-adverse-1",
+      "arm": "111",
+      "resultSHA256": "ff3ba988d4a52d165d90537be383f725aca63748c1b9599506b52530db83549b"
+    },
+    {
+      "fixture": "club-excluded-qualification-152-ordinary-0",
+      "arm": "000",
+      "resultSHA256": "5925f4c53bf9f01b5eaf7c1b875b010cc10953ce05c9f3c5797830cac6693f33"
+    },
+    {
+      "fixture": "club-excluded-qualification-152-ordinary-0",
+      "arm": "110",
+      "resultSHA256": "5aa55d4d1cf96e47efb43735b570c236a8b33d63d9e0bfac46dbae9a89fa5f7d"
+    },
+    {
+      "fixture": "club-excluded-qualification-152-ordinary-0",
+      "arm": "111",
+      "resultSHA256": "8a9791c908804950af2ab881b346588060100531d56e1f71f6709fbaaae9066a"
+    },
+    {
+      "fixture": "club-excluded-qualification-152-ordinary-1",
+      "arm": "000",
+      "resultSHA256": "120b243b207a68a30ce17f8ef5ebc7a18086879e5b7e9f08d2176afb88e6c922"
+    },
+    {
+      "fixture": "club-excluded-qualification-152-ordinary-1",
+      "arm": "110",
+      "resultSHA256": "f50dfc1e497e934abd786c576fa1fe4ee3d189296367acb945310a386b075269"
+    },
+    {
+      "fixture": "club-excluded-qualification-152-ordinary-1",
+      "arm": "111",
+      "resultSHA256": "8027d75c0f5bd88233c7f8ed151fcbbe8a191ebe7b0446f3f53546f1c3a88497"
+    },
+    {
+      "fixture": "club-excluded-qualification-152-hot-favored-0",
+      "arm": "000",
+      "resultSHA256": "3688f71b8f2075b04f9f5ca444fdaf72a9236dcc9f621b17c76388a600b0480f"
+    },
+    {
+      "fixture": "club-excluded-qualification-152-hot-favored-0",
+      "arm": "110",
+      "resultSHA256": "15577084ee13a315037e1e79e399653ff441a26a079505c3ed9d9fac3338a91b"
+    },
+    {
+      "fixture": "club-excluded-qualification-152-hot-favored-0",
+      "arm": "111",
+      "resultSHA256": "ecc7e22b28f03cdc4896d09281e017e0a4d683e689036aa9cc894e4d08ae3404"
+    },
+    {
+      "fixture": "club-excluded-qualification-152-hot-favored-1",
+      "arm": "000",
+      "resultSHA256": "d9f6fa9085e71482fc1ba04b3d76fb260053ad9de2fdfe55c53a566fbbf314d4"
+    },
+    {
+      "fixture": "club-excluded-qualification-152-hot-favored-1",
+      "arm": "110",
+      "resultSHA256": "42b38e243e66e7d57d046fca7db104097e491778e22e96e37e89c51f5ddd0b53"
+    },
+    {
+      "fixture": "club-excluded-qualification-152-hot-favored-1",
+      "arm": "111",
+      "resultSHA256": "63b5e5d437a1f86ea77d1a587ba0fd776e53b8e7143c8f118a805b72114bf66f"
+    },
+    {
+      "fixture": "club-excluded-qualification-152-cold-adverse-0",
+      "arm": "000",
+      "resultSHA256": "b0ee26b21ce921465020b0eed6a8173779599903bc8ee2d0b377c9e507dfe7a4"
+    },
+    {
+      "fixture": "club-excluded-qualification-152-cold-adverse-0",
+      "arm": "110",
+      "resultSHA256": "3e4887a297a5610ac73541018463a1879d366f083389b23a5f8f57f49b65678b"
+    },
+    {
+      "fixture": "club-excluded-qualification-152-cold-adverse-0",
+      "arm": "111",
+      "resultSHA256": "710c7ac355cd2396a137c82d57f138830e69e38e03b066ff5443cb98773dc00d"
+    },
+    {
+      "fixture": "club-excluded-qualification-152-cold-adverse-1",
+      "arm": "000",
+      "resultSHA256": "af98bea040872e0ed2c83d54ae01501904fbcc9ef954f162fb296392ede8d586"
+    },
+    {
+      "fixture": "club-excluded-qualification-152-cold-adverse-1",
+      "arm": "110",
+      "resultSHA256": "50ec37b626d41d53c23a3f78d31151c1f669f3c8b0db975cf3b4674ecab9bc47"
+    },
+    {
+      "fixture": "club-excluded-qualification-152-cold-adverse-1",
+      "arm": "111",
+      "resultSHA256": "6bde8315b8dbaa4f69eb92e181ccb0fec043a26a839c5cfed7e87fb98af350ac"
+    },
+    {
+      "fixture": "club-excluded-qualification-305-ordinary-0",
+      "arm": "000",
+      "resultSHA256": "e28c995d4b8d28c9cdd4ca5b91fd7e1d4fc449ae590ec8c918d86810d0f661b9"
+    },
+    {
+      "fixture": "club-excluded-qualification-305-ordinary-0",
+      "arm": "110",
+      "resultSHA256": "b85ee3fecb09a824468b8b86623086a1ed3c0094fdbbb8a016ea67b2d6a4274c"
+    },
+    {
+      "fixture": "club-excluded-qualification-305-ordinary-0",
+      "arm": "111",
+      "resultSHA256": "77aec4cf9def47e130d678e0a9d3eb4703eb780d376c5004a8c2c1a558b6cc36"
+    },
+    {
+      "fixture": "club-excluded-qualification-305-ordinary-1",
+      "arm": "000",
+      "resultSHA256": "79f6f9bf0675f2879e65d331bc5358f0964e45c65af893106c7ed368caad0dd6"
+    },
+    {
+      "fixture": "club-excluded-qualification-305-ordinary-1",
+      "arm": "110",
+      "resultSHA256": "dc5a2fd73aff5d343d6a4fb94cd9eb04285458cfa4f69024b9d083936bf58f50"
+    },
+    {
+      "fixture": "club-excluded-qualification-305-ordinary-1",
+      "arm": "111",
+      "resultSHA256": "f395871346866eaff483b7ddcd959af033aeb4deafd3faae33bb31b57a1aa932"
+    },
+    {
+      "fixture": "club-excluded-qualification-305-hot-favored-0",
+      "arm": "000",
+      "resultSHA256": "59c94705028348345c7f309e73772806ae7be3575e1a192316d4f8541e420410"
+    },
+    {
+      "fixture": "club-excluded-qualification-305-hot-favored-0",
+      "arm": "110",
+      "resultSHA256": "2170a5d7417b5fc5658fefd1829ea0eb1f889e24740e8bdc97096c9ffa61970a"
+    },
+    {
+      "fixture": "club-excluded-qualification-305-hot-favored-0",
+      "arm": "111",
+      "resultSHA256": "518fda4376457698636525e3bf62b5975ada004302f25ff1cf5aa44f34d94efb"
+    },
+    {
+      "fixture": "club-excluded-qualification-305-hot-favored-1",
+      "arm": "000",
+      "resultSHA256": "8d8a37c290242d48ce647e2e96d5a1d298d3045e6f48141a37ea748e7427c48d"
+    },
+    {
+      "fixture": "club-excluded-qualification-305-hot-favored-1",
+      "arm": "110",
+      "resultSHA256": "9b7e750d10b861760d5be5fe6cc4c7e659335edecc9e6c794e46ad2b6bdb7c0f"
+    },
+    {
+      "fixture": "club-excluded-qualification-305-hot-favored-1",
+      "arm": "111",
+      "resultSHA256": "9224102f62bb2657867ee990bb351d5e9a76990961a61954ec33127d7d550b62"
+    },
+    {
+      "fixture": "club-excluded-qualification-305-cold-adverse-0",
+      "arm": "000",
+      "resultSHA256": "ad1a3385c980ed6fe381cd15baa16d5609bc87bb2650bf53c70bf3c75a0674d8"
+    },
+    {
+      "fixture": "club-excluded-qualification-305-cold-adverse-0",
+      "arm": "110",
+      "resultSHA256": "9dee59007da9095a4d196d74e4db2a24469778b3c10bf7df2897bd00e8ecf537"
+    },
+    {
+      "fixture": "club-excluded-qualification-305-cold-adverse-0",
+      "arm": "111",
+      "resultSHA256": "9719c088e4bcf41233c78fd88cb61d4a0abbbf7a4905dcca3efccd7dca3b620c"
+    },
+    {
+      "fixture": "club-excluded-qualification-305-cold-adverse-1",
+      "arm": "000",
+      "resultSHA256": "31f363f31c41765ea15fff68ca4608fc671b7c81e2518f2e1d36751d42f6244e"
+    },
+    {
+      "fixture": "club-excluded-qualification-305-cold-adverse-1",
+      "arm": "110",
+      "resultSHA256": "804989356578d3d864f705bee116cb128375a1344d2f1e92e18697f2f997f96a"
+    },
+    {
+      "fixture": "club-excluded-qualification-305-cold-adverse-1",
+      "arm": "111",
+      "resultSHA256": "a02ed20e3f87710d9b77a68985159c7f2b19dfd93283cf2bfdf5deca60e45388"
+    }
+  ],
+  "scientificOutcomesGenerated": 0,
+  "officialWrites": false
+}

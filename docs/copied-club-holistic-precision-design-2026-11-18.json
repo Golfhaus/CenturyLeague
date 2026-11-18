@@ -1,0 +1,92 @@
+{
+  "schema": "copied-club-holistic-precision-plan-v1",
+  "studyId": "copied-club-holistic-precision-v1",
+  "sourceSHA256": "951e810a900b39807bd7b4ed9b018d43b5934efeb70a4cf7367f1604b31b4cc7",
+  "harnessSHA256": "8deb90f69ae7e04886d2b29e4332a922b81fa89dd7990b0758fff9506a8701c9",
+  "profilesSHA256": "da5482f10c7ec5b054d6d1375110f043e8623a23aab381a57fbddcf71d109622",
+  "arms": [
+    "000",
+    "110",
+    "111"
+  ],
+  "method": {
+    "sampling": "2048 independent cases per each of ordinary, hot-favored, cold-adverse;6144 paired clusters and18432 outcomes. Uniform ordered pair among306 actual club pairs, uniform six accepted-history prefixes and uniform original orientation sampled independently WITH replacement using separate SHA256 domains and unbiased256-bit integer rejection. Realized pair/history/role counts random; target includes these draws. No balancing after outcomes.",
+    "ordinary": "Actual coach tactics and ratings unchanged. Streaks reconstructed chronologically from32 copied accepted nonvoided tournament results, at empty and five date-complete prefix states. Focal home, temperate18C/55%humidity/wind5/gust10/rain0, neutral traits .5.",
+    "stress": "The two independently selected prior corners remain hot-favored35C/80%humidity and cold-adverse-5C/90%, wind35/gust50/rain5/direction45. Deliberate+/-5 streaks, focal/opponent home and all-squad1vs0 thermal traits as frozen upstream. Stress labels are inputs, not observed winners. No club physiology claim.",
+    "inference": "Six co-primary contrasts: full111 minuscontrol000 and full111 minusHold110 in each of three scenes. IID mixture target, unconditional on pair/history/orientation draws.24 one-sided Clopper-Pearson probability bounds at alpha=.05/24, covering toward/against probabilities and both tails; signed subtraction gives family-wise95% coverage for all six paired differences. Beta PPF endpoints independently checked using a log-space binomial-CDF bisection. Do not condition on random realized counts or pool prior studies.",
+    "secondary": "Every club, history prefix, orientation and rating-gap category retained descriptively; no inferential subgroup ceiling claims or outcome-selected subgroups. Event-derived exposure denominators in every arm.",
+    "qualification": "Excluded72 initial audited outcomes plus72 exactreplays and24 additional native/default-off/Hold parity comparisons,24 first-half pairs,4 deliberate corruption rejections; separate8-worker48-outcome preflight with12 exact replays. Qualification counts verified against receipts."
+  },
+  "reviewReferences": {
+    "confidence": {
+      "typicalLiftPoints": [
+        0.5,
+        1.5
+      ],
+      "peakLiftReviewPoints": 3,
+      "nextCandidateScale": 0.2,
+      "candidateStatus": "tested reduced-020; 6400-seed confirmation confidence +1.89 points and shared stack +1.91; provisional, broader validation and adoption pending",
+      "historicalScale": 1
+    },
+    "homeSupport": {
+      "typicalLiftPoints": [
+        1,
+        2
+      ],
+      "peakLiftReviewPoints": 3,
+      "losingStreakNeutralizesAt": 5
+    },
+    "combinedPsychological": {
+      "peakLiftReviewPoints": 4,
+      "note": "Measure confidence, crowd support and frustration together; no duplicate motivation bonuses."
+    },
+    "frustration": {
+      "peakAbsoluteWinChangeReviewPoints": 1,
+      "mechanism": "Existing foul-severity risk only; preserve Discipline and use incident denominators."
+    },
+    "weather": {
+      "extremeDifferentialReviewPoints": 8,
+      "note": "Shared physical conditions; relative advantage emerges from roster/tactics/rotation, not a team-strength scalar."
+    },
+    "wholeStack": {
+      "ordinaryLiftPoints": [
+        3,
+        5
+      ],
+      "preferredExtremeLiftPoints": 10,
+      "outerExtremeLiftReviewPoints": 15,
+      "balancedBaselineRange": [
+        0.45,
+        0.55
+      ],
+      "preferredFavoredWinRate": 0.6,
+      "outerFavoredWinRateReview": 0.65
+    },
+    "personalMechanisms": {
+      "includedInWholeStackBudget": true,
+      "automaticAbilityBonusAllowed": false,
+      "note": "Halftime decisions and heat/cold traits must be measured, not assumed small; useful tactical changes may have large conditional effects."
+    }
+  },
+  "criteriaStatus": "Existing proposed review references, not newly adopted pass margins. Ordinary5pp, preferredextreme10pp, outerextreme15pp reviewed against signed simultaneous ranges. An interval lying inside a reference supports only this mixture/scenario; it is not universal safety or release approval. No guaranteed positive coaching benefit required.",
+  "operations": {
+    "workers": 8,
+    "chunk": 16,
+    "chunkDeadlineSeconds": 900,
+    "automaticRetries": 0,
+    "seedReplacements": 0,
+    "sampleExtensions": 0,
+    "scientificReplayOutcomes": 72,
+    "officialWrites": false
+  },
+  "limits": [
+    "Healthy availability resets; no cross-match energy, injuries, bans or evolving future-season trajectory. History prefixes accumulate actual past wins/losses only.",
+    "Authentic unequal club strength; raw60/65% matched-team references cannot be treated as per-club guarantees.",
+    "Counterfactual extremes and fixed weather, not estimated climate or population physiology.",
+    "Release still requires isolated season rehearsal, verified competition-scoped pins and explicit approval."
+  ],
+  "scientificOutcomesAtFreeze": 0,
+  "fullPlanSHA256": "0cb7fe7b7acc82483d1cc8f9e28fe0d829fbc872a8bf62aeab42f0d885f68bc8",
+  "fixtureCount": 6144,
+  "fullPlanDisposition": "Immutable expanded plan is supplied in the research data package. Exact draw algorithm and namespace are pinned in Git; this pre-outcome digest fixes all expanded bytes."
+}

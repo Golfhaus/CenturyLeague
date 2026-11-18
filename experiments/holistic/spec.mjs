@@ -1,0 +1,22 @@
+import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import {fileURLToPath} from 'node:url';
+import {hash,inputFor,identity} from '../halftime-boundary/tools.mjs';
+export const root=fileURLToPath(new URL('.',import.meta.url)),repo=path.resolve(root,'../..'),planFile=path.join(repo,'docs/holistic-factorial-plan-2026-11-18.json');
+export const ARMS=['000','001','010','011','100','101','110','111'];
+export const SCENES={ordinary:{direction:0,temperatureC:18,relativeHumidity:55,windKmh:5,gustKmh:10,rainMmPerHour:0,windDirectionDegrees:45},'hot-favored':{direction:1,temperatureC:35,relativeHumidity:80,windKmh:35,gustKmh:50,rainMmPerHour:5,windDirectionDegrees:45},'hot-adverse':{direction:-1,temperatureC:35,relativeHumidity:80,windKmh:35,gustKmh:50,rainMmPerHour:5,windDirectionDegrees:45},'cold-favored':{direction:1,temperatureC:-5,relativeHumidity:90,windKmh:35,gustKmh:50,rainMmPerHour:5,windDirectionDegrees:45},'cold-adverse':{direction:-1,temperatureC:-5,relativeHumidity:90,windKmh:35,gustKmh:50,rainMmPerHour:5,windDirectionDegrees:45}};
+const files=['spec.mjs','make-profiles.mjs','make-plan.mjs','audit-result.mjs','physical.mjs','telemetry.mjs','qualify.mjs','run.mjs','worker.mjs','audit.mjs','analyze.mjs','recompute.py','../halftime-boundary/tools.mjs','../drop-counter/storage.mjs','../v2/runtime.mjs'];
+export const fingerprint=()=>hash(JSON.stringify(files.map(f=>[f,hash(fs.readFileSync(path.join(root,f)))])));
+export const loadPlan=()=>JSON.parse(fs.readFileSync(planFile));
+export function assertIdentity(m){assert.equal(identity().sourceSHA256,m.sourceSHA256);assert.equal(fingerprint(),m.harnessSHA256);}
+export function inputForCase(e,p,f,arm){
+ assert.ok(ARMS.includes(arm));const teams=structuredClone(p.teams);if(f.focalSide===1)teams.reverse();const base=inputFor(e,teams,f.id,f.seed,'2026-11-18'),scene=SCENES[f.scene];assert.ok(scene);const side=f.focalSide;
+ if(arm[0]==='1'){const streaks=[0,0];streaks[side]=scene.direction===0?2:5*scene.direction;streaks[1-side]=scene.direction===0?0:-5*scene.direction;
+  base.lab={enabled:['confidence','frustration','home-support'],streaks,confidenceScale:.2,frustrationScale:1,psychology:{version:'shared-psych-v1',homeOddsBonus:.004,maximumOddsBonus:.006,homeSide:scene.direction===-1?1-side:side}};}
+ if(arm[1]==='1'){const {direction,...conditions}=scene;const traits=Object.fromEntries(teams.flatMap((t,s)=>t.players.map(p=>{const fit=direction===0?.5:Number(direction===1?s===side:s!==side);return[p.id,{heat:f.scene.startsWith('hot')?fit:.5,cold:f.scene.startsWith('cold')?fit:.5}];})));
+  base.weather={version:'fixed-weather-v1',enabled:['weather','temperature-tolerance'],endPolicy:'alternate-quarters',thermalCandidate:'reduced-035',conditions,traits};}
+ base.halftime={sides:arm[2]==='1'?['policy','policy']:['hold','hold']};return base;
+}
+export function rowFor(result,f,arm){
+ const ds=result.halftimeTelemetry.decisions,side=f.focalSide,end=result.events.findIndex(x=>x.type==='quarter_end'&&x.quarter===2)+1,byId=new Map(result.input.teams.flatMap((t,s)=>t.players.map(p=>[p.id,s]))),final=result.events.at(-1).data.finalCondition,mean=s=>{const xs=final.filter(p=>byId.get(p.playerId)===s);return xs.reduce((n,p)=>n+p.energy,0)/xs.length;};
+ return{fixture:f.id,profile:f.profile,scene:f.scene,template:f.template,gap:f.gap,tactics:f.tactics,trial:f.trial,focalSide:side,arm,focalWin:Number(result.winner===side),margin:result.scores[side]-result.scores[1-side],focalScore:result.scores[side],opponentScore:result.scores[1-side],playingSeconds:result.playingSeconds,elapsedSeconds:result.elapsedSeconds,focalFinalEnergy:mean(side),opponentFinalEnergy:mean(1-side),halfDeficit:ds[side].deficit,focalChoice:ds[side].choice,opponentChoice:ds[1-side].choice,focalRootDistance:ds[side].rootDistance,opponentRootDistance:ds[1-side].rootDistance,focalContacts:result.labTelemetry?.contacts[side]??0,opponentContacts:result.labTelemetry?.contacts[1-side]??0,focalSeverityIncidents:result.labTelemetry?.severity[side].opportunities??0,opponentSeverityIncidents:result.labTelemetry?.severity[1-side].opportunities??0,focalSeriousFouls:result.labTelemetry?.severity[side].successes??0,opponentSeriousFouls:result.labTelemetry?.severity[1-side].successes??0,firstHalfSHA256:hash(JSON.stringify(result.events.slice(0,end))),resultSHA256:hash(JSON.stringify(result))};
+}
+export const prefixGroup=arm=>arm.slice(0,2);

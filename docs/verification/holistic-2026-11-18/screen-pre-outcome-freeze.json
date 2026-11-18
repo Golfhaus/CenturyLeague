@@ -1,0 +1,14 @@
+{
+  "status": "frozen-before-scientific-outcomes",
+  "sourceSHA256": "951e810a900b39807bd7b4ed9b018d43b5934efeb70a4cf7367f1604b31b4cc7",
+  "harnessSHA256": "3cdd87646e806711a1747f318e8a89f0647f92cfd73135cc6e67702d629905fa",
+  "planSHA256": "86f916d5e98a4b875b697e1efe92295450446da8fdc88c89dd442efdf355c2a9",
+  "profilesSHA256": "6d78e4a3fedd1376e2441e6920640acf325a1c417992c000bdc28a39faa8dee8",
+  "plannedScreenClusters": 480,
+  "plannedScreenOutcomes": 3840,
+  "plannedConfirmationClusters": 512,
+  "plannedConfirmationOutcomes": 1536,
+  "scientificOutcomesAtFreeze": 0,
+  "sourceOrCoefficientsChanged": false,
+  "officialWrites": false
+}

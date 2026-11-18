@@ -1,0 +1,509 @@
+{
+  "status": "passed",
+  "sourceSHA256": "951e810a900b39807bd7b4ed9b018d43b5934efeb70a4cf7367f1604b31b4cc7",
+  "harnessSHA256": "3cdd87646e806711a1747f318e8a89f0647f92cfd73135cc6e67702d629905fa",
+  "profilesSHA256": "6d78e4a3fedd1376e2441e6920640acf325a1c417992c000bdc28a39faa8dee8",
+  "runtime": {
+    "node": "v24.22.1",
+    "v8": "13.6.233.17-node.58",
+    "platform": "linux",
+    "arch": "x64",
+    "workerExecArgv": [
+      "--no-maglev"
+    ],
+    "numericIsolationProbe": "passed",
+    "publicResultBoundary": "detached-json-snapshot-frozen-root-v1"
+  },
+  "constructionChecks": 1920,
+  "fullOutcomesAudited": 96,
+  "enabledExactReplays": 96,
+  "defaultOffComparisons": 12,
+  "holdSportingParity": 12,
+  "pairedFirstHalves": 48,
+  "actualCoachingChanges": 11,
+  "corruptionRejections": 8,
+  "records": [
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-ordinary-0",
+      "arm": "000",
+      "resultSHA256": "1f905bf99e1160efd92a458cccabddd53fa52a0467a1945113bf4bce713c4e67"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-ordinary-0",
+      "arm": "001",
+      "resultSHA256": "9af1b0758c03f14e60fe390426734ea65a09541533654c21bce5fbf4c1e6ccdc"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-ordinary-0",
+      "arm": "010",
+      "resultSHA256": "af999acf63dac472d6f6f37c2d5fe854bea0e204f560147e612044ce625ba6bb"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-ordinary-0",
+      "arm": "011",
+      "resultSHA256": "bbc9cf4484afbc9caf42b2ffc849fa074c1e78bf7d557a865cc53cf52c7e8286"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-ordinary-0",
+      "arm": "100",
+      "resultSHA256": "d388ecf17b4a74436f2331db51763f67ddfaee3e69f5c2d9417f4b652efd736a"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-ordinary-0",
+      "arm": "101",
+      "resultSHA256": "0cbfbbae6dcf8af8758584e767cf48e5ba0ff51cbb72ce734cba388c064bf6bd"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-ordinary-0",
+      "arm": "110",
+      "resultSHA256": "747fb5d3393828b00bc7440c72c7620bfa8c6bf8b34a9fbfcb3b5e62bd221308"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-ordinary-0",
+      "arm": "111",
+      "resultSHA256": "2a2b3e7ba4da60dbd8579c09c1510c171c97d1c28f3ac8c77b5a1dfc4476fd45"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-ordinary-1",
+      "arm": "000",
+      "resultSHA256": "2e46bc29fef911f254944263ac5df11953cc56837d6d7a9160c713b85dbf9f5a"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-ordinary-1",
+      "arm": "001",
+      "resultSHA256": "61b2afde7ba791c570ca73c1cace762db6b50c767f0d721c9c3b9cb7da53567a"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-ordinary-1",
+      "arm": "010",
+      "resultSHA256": "c4842634e75a332f940456bbb7be017bd996888d0a5f9fac72a0225973e2678f"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-ordinary-1",
+      "arm": "011",
+      "resultSHA256": "548103e325b155287a8b1bdb39b4b23213826886e74579803cb93843f3a8a2ce"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-ordinary-1",
+      "arm": "100",
+      "resultSHA256": "2977d88304111363961116756ae9c2692da2bd9f2f1fd6bec382127873d0b901"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-ordinary-1",
+      "arm": "101",
+      "resultSHA256": "869e5b0deb502c11063c5e64c8f2879d0acedf3eae93434d906baad39c885ab2"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-ordinary-1",
+      "arm": "110",
+      "resultSHA256": "b1301dc2829657d116d049f224abfb0714a60dc980d7135c5d6a7e6df48e5887"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-ordinary-1",
+      "arm": "111",
+      "resultSHA256": "b6c4076f4d1ab1c18f53d5dd39b45206448658175400dafa29ec1882018a7113"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-hot-favored-0",
+      "arm": "000",
+      "resultSHA256": "719db3b6ec4719679a461890f6154a117c926ddb52a9c63c964c9b3994539e8e"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-hot-favored-0",
+      "arm": "001",
+      "resultSHA256": "b6870769fd504b4ab174e6f70783f70f9032122d734a751606de58debaf66ea5"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-hot-favored-0",
+      "arm": "010",
+      "resultSHA256": "5934475c7b49842e9b0ff07843c960c59b20f0261b24c0bc4b067cd0d0982db1"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-hot-favored-0",
+      "arm": "011",
+      "resultSHA256": "77b8ea1ad71ad38e20e8aab2dadc810ff441bad7ee52051fdb9db8538366a9a2"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-hot-favored-0",
+      "arm": "100",
+      "resultSHA256": "8952d1f5dfc2213a2cea464a8e1084215e8786c66574153d9fda92e972d1c9f1"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-hot-favored-0",
+      "arm": "101",
+      "resultSHA256": "6da243b37bd7ca977f7fe0eb5705f901ab231f411129226c7dff78864522b273"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-hot-favored-0",
+      "arm": "110",
+      "resultSHA256": "d45af41571047561e321ed85d15c149c517a42a8afdbc7cf9d44e9077a497ff8"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-hot-favored-0",
+      "arm": "111",
+      "resultSHA256": "92fa352a087d442d17e29e49990fa8d2a8e1845efb01ccdf340d7a3d56652506"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-hot-favored-1",
+      "arm": "000",
+      "resultSHA256": "9b2db8fe7438a52bcf679765ffdcb99420844f2e452ea1ab0c7cf73eebd4bdce"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-hot-favored-1",
+      "arm": "001",
+      "resultSHA256": "3b74348c2eb3585ccc2290ff5d26a7989cff66e5c261f80360960ee4217dc429"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-hot-favored-1",
+      "arm": "010",
+      "resultSHA256": "ebbf50de90036c727035363e4683ace5fc5ff46d19fbd4b24fb847a8e9d4031b"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-hot-favored-1",
+      "arm": "011",
+      "resultSHA256": "81dc9737fe0656f9d8bc736e6fdc0bc1477c664a3716beaa0e0373667bfe5a56"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-hot-favored-1",
+      "arm": "100",
+      "resultSHA256": "4e0dd8e8ea2c1da65a9e78c7d4afcc69cb08e2a675369d3f38e9c5357a267100"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-hot-favored-1",
+      "arm": "101",
+      "resultSHA256": "53ee329e608bb143ff10d57acb682fa2d9e1e5b93b4a0df051583697f792d96b"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-hot-favored-1",
+      "arm": "110",
+      "resultSHA256": "4db40975c907c1e60065d3185e2d42af82fffd3e2d14c0ddfa1afe103a4edfd3"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-hot-favored-1",
+      "arm": "111",
+      "resultSHA256": "981014e0334b100d456987c00a4f4926c1507db455e7e2660898512a8330638f"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-cold-adverse-0",
+      "arm": "000",
+      "resultSHA256": "d12dd8b84555de93fac3d6ea9c0996c356f7cfbf9f3a31181e314915ff6af18b"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-cold-adverse-0",
+      "arm": "001",
+      "resultSHA256": "e744f90a0c4d95b393a22e66df64f15d2d5b1784efa293f4c7f08f8bd93b5dfc"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-cold-adverse-0",
+      "arm": "010",
+      "resultSHA256": "30d5524bb72825120df23dfe13c156c730d02aab8d41c57d2e1a4cd5037f667d"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-cold-adverse-0",
+      "arm": "011",
+      "resultSHA256": "61336cec37fe84c0e007904304588334766d84ff60b4185052cd66b0f0a21b9b"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-cold-adverse-0",
+      "arm": "100",
+      "resultSHA256": "9dacec173043dc3e4e943d801445d778aad740eaaef5b9ca7541562a56e449cf"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-cold-adverse-0",
+      "arm": "101",
+      "resultSHA256": "8f463a1be1808a2d6ef6912eb8e2589f5bebdfffe2b1b80a785385c1804363ec"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-cold-adverse-0",
+      "arm": "110",
+      "resultSHA256": "8f71b753a290c515e9609f9965363081f5b7d3fc9da83aba95d5f5c2b2cecbad"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-cold-adverse-0",
+      "arm": "111",
+      "resultSHA256": "f375ab55c968bdb92ce9762a42d419294d55d6284c41d44c85dd199ced7da0ff"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-cold-adverse-1",
+      "arm": "000",
+      "resultSHA256": "a7826e00cc99d799d5252b0676a14231ce9f5b7abf838c1a930db8863de33e4d"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-cold-adverse-1",
+      "arm": "001",
+      "resultSHA256": "ab3c408fd56eaeb45ad3def014177f030274ce8648a9c47376dd13d62efe11b2"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-cold-adverse-1",
+      "arm": "010",
+      "resultSHA256": "85ff192acad6206f246eefe083c244c722d3091ac1ea42b7c713cf776c298d68"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-cold-adverse-1",
+      "arm": "011",
+      "resultSHA256": "13fbdff984771d98d2e2304372a65c9f7168babd0f9499f4b105a90019666bba"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-cold-adverse-1",
+      "arm": "100",
+      "resultSHA256": "70da242bad68187fe59766583ce6a1e381819cd07b97f70280ed0f469115df64"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-cold-adverse-1",
+      "arm": "101",
+      "resultSHA256": "c3bac5df0c39b3d8c67a172991dbd727f5443f861009a541678e8ca621b81733"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-cold-adverse-1",
+      "arm": "110",
+      "resultSHA256": "5a0b6c095e8c8906d829b88b80a34f2aad15eb1269b72eb66d3d716148d6fe1f"
+    },
+    {
+      "fixture": "holistic-qualification-quality-1-plus0p35-pressure-cold-adverse-1",
+      "arm": "111",
+      "resultSHA256": "c6269fd1a8736d0b581992e55a12f54701867979f3f2645f073ec911f96bb300"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-ordinary-0",
+      "arm": "000",
+      "resultSHA256": "3c16d4f57734b3c3ec7c7ac7920b0a44e6d5eb3e22d1aad8355c20e5693540de"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-ordinary-0",
+      "arm": "001",
+      "resultSHA256": "f44a85058adfd77b9eea29973ef580754a82ab0c8593bc44c3c4803e3c0f0ab7"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-ordinary-0",
+      "arm": "010",
+      "resultSHA256": "d29a2ad6a2113abe390766f478c56a463b891f5857dd8036a8147b4adf942564"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-ordinary-0",
+      "arm": "011",
+      "resultSHA256": "2ff510c795c8ca94a3dc343fff50e3916e1a0dfcaaa66f377c21abae4201d129"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-ordinary-0",
+      "arm": "100",
+      "resultSHA256": "2a17a3d8382cbc22e41aa843ed058322b34d72bb44984eee754f5424a4e42be8"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-ordinary-0",
+      "arm": "101",
+      "resultSHA256": "46b74457fe04bfda7506d051cca60b17ca00b78fa75acc080a9998ccf818fec7"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-ordinary-0",
+      "arm": "110",
+      "resultSHA256": "8e0225c4e870d29a3af01b63ff146772650b18972646be6d42c1352d3b708736"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-ordinary-0",
+      "arm": "111",
+      "resultSHA256": "02ef66e8954d1785ab4d43aca18f7ad1a13d3be1895e7298a3e82d35ea86ba4b"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-ordinary-1",
+      "arm": "000",
+      "resultSHA256": "552ad5fa9a5340526e8b92dd5fa8b680b240a4fe1e677c585c84a628b84a4405"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-ordinary-1",
+      "arm": "001",
+      "resultSHA256": "17aca14e93da51561db664c03851220c7cb1ddde40215129fbcfbaf8ee35cb94"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-ordinary-1",
+      "arm": "010",
+      "resultSHA256": "d942b1707b13c2fc7565049983b0ccdaa9f700a4efa50a8284ee65d1e21fc1dc"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-ordinary-1",
+      "arm": "011",
+      "resultSHA256": "c792a080c763f3add2238312544b6e00d982a4d85b14645c82b58f415f72c89d"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-ordinary-1",
+      "arm": "100",
+      "resultSHA256": "b77768e591386fc3a1debb7284032c2bcfe80e34914a9fb3d8d0958329b3cc72"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-ordinary-1",
+      "arm": "101",
+      "resultSHA256": "7935680b892ce3b314f1abcd29c4dbba2b2289d51e8e43274c5fc31701f8bc91"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-ordinary-1",
+      "arm": "110",
+      "resultSHA256": "24ca485400c702865d8fe707f5c3bd73d90764fe0836f79954fc45d720bcea59"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-ordinary-1",
+      "arm": "111",
+      "resultSHA256": "3f4c5d2d538fc3f746fd6e77149c875e8c930e575678fe172371ebeb3b792404"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-hot-favored-0",
+      "arm": "000",
+      "resultSHA256": "97005e21aad283fe04e29073dd8e79b949433beb62ce29dd3bbaf7c97df10ae0"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-hot-favored-0",
+      "arm": "001",
+      "resultSHA256": "7bf9a51b0ae276cc8a5a34f011c7e73540715a59c716fd8ee3af98121ee00401"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-hot-favored-0",
+      "arm": "010",
+      "resultSHA256": "8e94595d4f1a8ad701c86a233c152187e4e966c9087d377314c341e8f60e0fc9"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-hot-favored-0",
+      "arm": "011",
+      "resultSHA256": "74c2058ba829f3d0b23d53dbc9c540bacbdcf04089d717df897abff67ace384e"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-hot-favored-0",
+      "arm": "100",
+      "resultSHA256": "4b713c5549b10cd88b93055cfa06d6c4dd27c574f0c73e51023c5c196559004c"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-hot-favored-0",
+      "arm": "101",
+      "resultSHA256": "dc363f38253306c53a0b030d0ddba8f8e9f91f28fa8b362a9dc6297b98e30a45"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-hot-favored-0",
+      "arm": "110",
+      "resultSHA256": "366fc6f1f82569169935af22a397ff4dcaa47b91bea202920c36b9c21fad6957"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-hot-favored-0",
+      "arm": "111",
+      "resultSHA256": "8ef93f91c3f36f92c5819761c32e346366c45a05c7ab9910bd215b26a9f6d3ed"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-hot-favored-1",
+      "arm": "000",
+      "resultSHA256": "ded1eee3148428a079d860bbec8569274cb94e3c5b2980b9a4f2ad50ab5bf33a"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-hot-favored-1",
+      "arm": "001",
+      "resultSHA256": "da05deb3dc57dddd55dcf33335e13193c63d9efb23473f2166963f5076af1bbe"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-hot-favored-1",
+      "arm": "010",
+      "resultSHA256": "5b5151f8769bfcfb3c87c81fe1fbd73bbaf2f31e89ae09d9f04f3a3e68391845"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-hot-favored-1",
+      "arm": "011",
+      "resultSHA256": "d74151194ad148b696cc241b218e33358a4c9321bdcfc9d598e5a6c9b7a64b99"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-hot-favored-1",
+      "arm": "100",
+      "resultSHA256": "913233c15bc9a08341530fa855ca58541b5314c63590c2c6a232665cfe107256"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-hot-favored-1",
+      "arm": "101",
+      "resultSHA256": "7f5a61a98fb2e245ecde4f6521ed926a80fddeb2cddffb34123ae5ceafb474b3"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-hot-favored-1",
+      "arm": "110",
+      "resultSHA256": "9991b9dea1369f8143d8e36fd72a374fa8fe3b4246c19ecca0cbc2a0082a2280"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-hot-favored-1",
+      "arm": "111",
+      "resultSHA256": "ae65309c23459293db1f460d16bb713fa0d9c800007fc91848e73eadf7b06f01"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-cold-adverse-0",
+      "arm": "000",
+      "resultSHA256": "1ff49b117dd3b81f6b3e83e3c1f46e6b08799eeafd7c11a829493e54f9f73ca3"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-cold-adverse-0",
+      "arm": "001",
+      "resultSHA256": "f54cf75f34a4b3c4808dee6afc71ee1128fd4f906bb75c8cdc2c3bed697a6f0f"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-cold-adverse-0",
+      "arm": "010",
+      "resultSHA256": "db5692a48719ad9a906152cd38e6cf091318961e508c375991cacb5f3583fd9b"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-cold-adverse-0",
+      "arm": "011",
+      "resultSHA256": "5bfbed182fc0c541474dbc63cf31f9f8ff5c9ef153fc4c03687781bddad7e8c5"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-cold-adverse-0",
+      "arm": "100",
+      "resultSHA256": "499baa9c88f46fa4829addb8f23c7aff95c65eaf1430050a02d02eb9e4edf324"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-cold-adverse-0",
+      "arm": "101",
+      "resultSHA256": "be81ccee9e9ef6741fef7bc2f5fe4075e2baa5660dcc061e318001d9255adeff"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-cold-adverse-0",
+      "arm": "110",
+      "resultSHA256": "1ee73bcde70c7537c9abb335dc1a86df8c2f03be78f67c03eb92f943dfcc6a60"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-cold-adverse-0",
+      "arm": "111",
+      "resultSHA256": "d990185761d89eab1dfd8068a13346bf4fa0d02c3d8d02c56f4c87356189502f"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-cold-adverse-1",
+      "arm": "000",
+      "resultSHA256": "6b43d7ec17e9aa2afa2579dd237d8ef0ccb2e8b547445799c947383be6152dc9"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-cold-adverse-1",
+      "arm": "001",
+      "resultSHA256": "9cd804c9ed9e918475d047fbde9d71bc26cece15c09df8488a7ad23143bd5d35"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-cold-adverse-1",
+      "arm": "010",
+      "resultSHA256": "f1d9b9018f6b0fd911ba6d890efde00d768d56b353ccfda1e6863298cf6cc050"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-cold-adverse-1",
+      "arm": "011",
+      "resultSHA256": "3f28debd42bf9628e0c28fc3dffe8028ccb053ba5a47960e7f826424a11ddc0e"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-cold-adverse-1",
+      "arm": "100",
+      "resultSHA256": "85e42000a61c67596451c3bcd80bb10742015119dcd1751f7fe1e087fbe7d995"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-cold-adverse-1",
+      "arm": "101",
+      "resultSHA256": "b8be5c243e90b63fa31cf60199013aa098ddd24d86355389fb51e6f84af5574b"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-cold-adverse-1",
+      "arm": "110",
+      "resultSHA256": "e575646628cfaaacdee874029f63a021af0085725467a9ee4887025045a3c5f2"
+    },
+    {
+      "fixture": "holistic-qualification-quality-2-zero-neutral-cold-adverse-1",
+      "arm": "111",
+      "resultSHA256": "386230d26ee3a82591f435d145f981f9287198cd6b174543b6ea3929ed476782"
+    }
+  ],
+  "officialWrites": false,
+  "scientificOutcomesGenerated": 0
+}

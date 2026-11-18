@@ -1,0 +1,8 @@
+{
+  "scientificOutcomesAtCorrection": 0,
+  "scope": "New audit checker only; gameplay source and coefficients unchanged.",
+  "issue": "Signed zero produced by multiplying a negative directional sign by zero changed outcomes in a strict count comparison.",
+  "resolution": "Canonicalize the expected zero count in the checker, then rerun full qualification under the corrected harness identity.",
+  "retainedFailureLog": "experiments/holistic/runs/qualification-supervision/analysis.log",
+  "qualificationFinalStatus": "passed"
+}

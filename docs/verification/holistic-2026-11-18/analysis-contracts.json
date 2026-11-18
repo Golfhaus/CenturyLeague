@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "testOnly": true,
+  "scientificOutcomesGenerated": 0,
+  "checks": [
+    "Psychology-only artificial potential outcomes give100pp psychology, zero other main effects and all interactions.",
+    "No-discordance artificial confirmation reproduces the closed-form zero-count exact interval and equal-orientation averaging."
+  ],
+  "methodCodeSHA256": "dccf306358f2047d82fae85726a864ece3b88b00277f1a975d7b5ff138f781be"
+}

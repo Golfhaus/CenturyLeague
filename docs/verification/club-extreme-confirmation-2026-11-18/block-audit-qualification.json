@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "preflightCSVBytesAndAllCountersIdentical": true,
+  "excludedOutcomes": 48,
+  "driverSHA256": "f9ee93c8569ae1beb51e369aa379d106ac72266225b1a1ef8c29889abbcc52b2",
+  "shardSHA256": "ee0d0c1d20c1ee00432109e59f51c93bc2e8fc86000a71f89b40e1a59f566d14",
+  "pinnedAuditSHA256": "cc2c16c37987e18fcf3a51ba5967439c31bbe0687b671c2e84171ceffa0af8e0"
+}

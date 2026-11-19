@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "classification": "excluded artificial interval contracts",
+  "n": 1536,
+  "oneSidedTails": 24,
+  "familyAlpha": 0.05,
+  "inverseCDFAndClosedFormVerified": true
+}

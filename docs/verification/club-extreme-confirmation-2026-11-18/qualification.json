@@ -1,0 +1,300 @@
+{
+  "status": "passed",
+  "sourceSHA256": "951e810a900b39807bd7b4ed9b018d43b5934efeb70a4cf7367f1604b31b4cc7",
+  "harnessSHA256": "09b96bde25922b044b566e2fa3717ed0e42dea2aa6e890a53a395185f12764cb",
+  "profilesSHA256": "da5482f10c7ec5b054d6d1375110f043e8623a23aab381a57fbddcf71d109622",
+  "runtime": {
+    "node": "v24.22.3",
+    "v8": "13.6.233.17-node.63",
+    "platform": "linux",
+    "arch": "x64",
+    "workerExecArgv": [
+      "--no-maglev"
+    ],
+    "numericIsolationProbe": "passed",
+    "publicResultBoundary": "detached-json-snapshot-frozen-root-v1"
+  },
+  "constructionChecks": 1836,
+  "fullOutcomesAudited": 54,
+  "enabledExactReplays": 54,
+  "defaultOffAndHoldParity": 18,
+  "pairedFirstHalves": 18,
+  "actualCoachingChanges": 4,
+  "corruptionRejections": 4,
+  "checkpointFaultRejections": 5,
+  "checkpointContractClassification": "Artificial records excluded; tests missing/duplicate cases, wrong hash/identity acknowledgement and duplicate publication",
+  "records": [
+    {
+      "fixture": "club-confirmation-excluded-hampden-hot-0-0",
+      "arm": "000",
+      "resultSHA256": "b9feca64ea08c9ac487b03373d807fc8562b915f9274cc29650bb53417f2adbc"
+    },
+    {
+      "fixture": "club-confirmation-excluded-hampden-hot-0-0",
+      "arm": "110",
+      "resultSHA256": "10f5b09932ea3efa6ab7cda7a1106cbfb0eac058595498f9e576a4fb7ccc115d"
+    },
+    {
+      "fixture": "club-confirmation-excluded-hampden-hot-0-0",
+      "arm": "111",
+      "resultSHA256": "67f4a909ccdfd66e0c554eba3543e861e860fba0e594dcea363df4a5f589de3c"
+    },
+    {
+      "fixture": "club-confirmation-excluded-hampden-hot-0-1",
+      "arm": "000",
+      "resultSHA256": "16220021d1f1df28f62ca4e85d32c5ac91f7d475e16063167b134a7092ee7c76"
+    },
+    {
+      "fixture": "club-confirmation-excluded-hampden-hot-0-1",
+      "arm": "110",
+      "resultSHA256": "f21386a6d640df8f2f82127eccee3f9c62ac4dc049cfecd9431945f7af87d95b"
+    },
+    {
+      "fixture": "club-confirmation-excluded-hampden-hot-0-1",
+      "arm": "111",
+      "resultSHA256": "8d9e310aed61b415eb7ba6650ffcebfb071226823b3af13af595d1f7c50689f1"
+    },
+    {
+      "fixture": "club-confirmation-excluded-hampden-hot-8-0",
+      "arm": "000",
+      "resultSHA256": "5d5f40b557c84e350f25ef8aa71c22bb974ea964ed66e8ffacfd3ac0e2744a9d"
+    },
+    {
+      "fixture": "club-confirmation-excluded-hampden-hot-8-0",
+      "arm": "110",
+      "resultSHA256": "4308505baf2de8290929b448dbed8e32186adbbebde503bddcf05478c421e135"
+    },
+    {
+      "fixture": "club-confirmation-excluded-hampden-hot-8-0",
+      "arm": "111",
+      "resultSHA256": "e971d41fd2a4a72c14f59b0228a615f889b4a56095b19945bb57bdee1115361d"
+    },
+    {
+      "fixture": "club-confirmation-excluded-hampden-hot-8-1",
+      "arm": "000",
+      "resultSHA256": "2efb6ccdef39d7dd5f09cd0949c77630f90a5500cb28f15f409dad582d053b68"
+    },
+    {
+      "fixture": "club-confirmation-excluded-hampden-hot-8-1",
+      "arm": "110",
+      "resultSHA256": "513a7ce69d3d35adb482b853a630cbf3cb09d69537ac29399e806ebbcaec67e6"
+    },
+    {
+      "fixture": "club-confirmation-excluded-hampden-hot-8-1",
+      "arm": "111",
+      "resultSHA256": "7c5d537d9425ed666e3e14c48bb1e538c0cd4cb71ee5bc07738e59f4496214e1"
+    },
+    {
+      "fixture": "club-confirmation-excluded-hampden-hot-16-0",
+      "arm": "000",
+      "resultSHA256": "22e67e11657a3089b58c91a7a7ffb4ca177065294a86a1c8780530d9c0e7b45b"
+    },
+    {
+      "fixture": "club-confirmation-excluded-hampden-hot-16-0",
+      "arm": "110",
+      "resultSHA256": "9c64f2ace8b8d7c1c46bafa539fa4c549edc8c7e3dca9e71719f55510c6680a7"
+    },
+    {
+      "fixture": "club-confirmation-excluded-hampden-hot-16-0",
+      "arm": "111",
+      "resultSHA256": "604a469784fe3eb93b0fa17740fcc4f25e9dcef5af89f8c9a608a1122f3e1088"
+    },
+    {
+      "fixture": "club-confirmation-excluded-hampden-hot-16-1",
+      "arm": "000",
+      "resultSHA256": "1cb46fb75e14aa405f2391a7a2cddbb4f570de66349394611c6b0cddb245600d"
+    },
+    {
+      "fixture": "club-confirmation-excluded-hampden-hot-16-1",
+      "arm": "110",
+      "resultSHA256": "a7ac97212aa6edbdedb070c2a3f8107ae8029a0a3746a771f676644b856529b4"
+    },
+    {
+      "fixture": "club-confirmation-excluded-hampden-hot-16-1",
+      "arm": "111",
+      "resultSHA256": "2f16897975b65e56f1ce21879f7e22b40d611306b70b420aece02f4032d32a65"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-hot-0-0",
+      "arm": "000",
+      "resultSHA256": "4b743b2c4278fa89ffba55bf6edfca7cea7bfc946c91835c2656840dd49ddfe3"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-hot-0-0",
+      "arm": "110",
+      "resultSHA256": "35014b62dec265c3a911f6155cb551d155db0ec6dd9e84fcea4c53983be73aae"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-hot-0-0",
+      "arm": "111",
+      "resultSHA256": "d62b880b1160a3e0362ed328ffd7585b5f2900f224a29141701e570b9ef4777f"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-hot-0-1",
+      "arm": "000",
+      "resultSHA256": "01dc28cd5348269a7c7b80751630e51eb1967aa0c9ef1f7ba2f27fa1f280da5b"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-hot-0-1",
+      "arm": "110",
+      "resultSHA256": "3bbbed8d5e706cfe937590eb1ae2f979ee610fe04b8e8b34bcd937ded42933ae"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-hot-0-1",
+      "arm": "111",
+      "resultSHA256": "02aa03ceca86e846b6aff8a9e7230ba2fd2b0e3187632eaad1afa13f8e3749f4"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-hot-8-0",
+      "arm": "000",
+      "resultSHA256": "396129c9ab7e1d87d6fe47f81d4ccadd4e379f09165e9fa3cb5964d5d20e5d53"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-hot-8-0",
+      "arm": "110",
+      "resultSHA256": "71720e7e1b0b59220ea83a3e84b6a25eefa95639af6f36bfd84458b7c156c5d3"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-hot-8-0",
+      "arm": "111",
+      "resultSHA256": "4442e8ab3122153dc59e4f2e4ad81f74d2bcd4ef2a31364d2486a8b410357eeb"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-hot-8-1",
+      "arm": "000",
+      "resultSHA256": "f3a95dd7614e6813f23d506cf23c9ff0029932f7dc12f07d0d2d12d0b9987d50"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-hot-8-1",
+      "arm": "110",
+      "resultSHA256": "da55d7f412547997c1ba68fabf8eb990ec993b9fbca6878374dc02c808a1dff5"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-hot-8-1",
+      "arm": "111",
+      "resultSHA256": "58de2828711fb7eb79ea81091040c50ce2b0e86a6cb73b523ef071aee7cd63b5"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-hot-16-0",
+      "arm": "000",
+      "resultSHA256": "e8d747234b16872d9bb6fcdf62f467a6c7cd67030b8f1745b19fac72697a8e64"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-hot-16-0",
+      "arm": "110",
+      "resultSHA256": "91fe0e302401e446068c3a0d27f86f2bc4eac69aa80c352b1cd412a01621f832"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-hot-16-0",
+      "arm": "111",
+      "resultSHA256": "91822f8748f22bfac367444a9e662434f5d9a6a480fbb5734bf39c4d0869fb8d"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-hot-16-1",
+      "arm": "000",
+      "resultSHA256": "485bd7912ea86813c1923370008996414dbfb39a95c51a509b096be4f8422953"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-hot-16-1",
+      "arm": "110",
+      "resultSHA256": "387c9ebbca16909c0fea2415614c9a0e169a3304388769f4f8ed38cb1d272371"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-hot-16-1",
+      "arm": "111",
+      "resultSHA256": "b107b0358afc55496053636fc3f46d4a509d199635f11f76a8710533b05a9a94"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-cold-0-0",
+      "arm": "000",
+      "resultSHA256": "ae4a31ed6892e4dac9acc55a3073bab5749f3d6aed679e23de774868d10e0077"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-cold-0-0",
+      "arm": "110",
+      "resultSHA256": "f3a58c1a971d9047d3295f5cbdf9b1169c06de136c952d50bc0c284278baf3fc"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-cold-0-0",
+      "arm": "111",
+      "resultSHA256": "27246ed9ae39bd3bd1b16cc3ea1ed0cbb74e764841128b7861f0fdefba3cd44f"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-cold-0-1",
+      "arm": "000",
+      "resultSHA256": "4d19594fa07d357c1c6d923ac97e2f4730827326fe63bba342f571a950152727"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-cold-0-1",
+      "arm": "110",
+      "resultSHA256": "a8587b84dab564454ac832eb6ef28fb828459b0f4f9aaceaf763d6fa085f90be"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-cold-0-1",
+      "arm": "111",
+      "resultSHA256": "da461e8d5ed855ce124139f56606b70d33e35f6bb3e8220abe6b56310a09377c"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-cold-8-0",
+      "arm": "000",
+      "resultSHA256": "d2851a35ab0209c4a8fc2e43274a2a2463684abb9f1acec411e77b3db8b65f2d"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-cold-8-0",
+      "arm": "110",
+      "resultSHA256": "4bae570cb0dab35548319f69d5619f8b2bc7c8b17988307e07fb9509c6a9c52a"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-cold-8-0",
+      "arm": "111",
+      "resultSHA256": "dfd8f42edbf40fac5642be2bc7336691470029ce11d2d4a38d7a1a61e63571f8"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-cold-8-1",
+      "arm": "000",
+      "resultSHA256": "31950cb7f34545aa30d41f609e31a5553a27e9d6fb0cb617536003ad1c1a84a0"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-cold-8-1",
+      "arm": "110",
+      "resultSHA256": "02255223acbcfa852c65e73f39d8294651d901f5b50ebcd2358bc769df18752c"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-cold-8-1",
+      "arm": "111",
+      "resultSHA256": "cf8c1c6a3b926f7e654fee666507eb23149922c24352a194a3e3a71895b09018"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-cold-16-0",
+      "arm": "000",
+      "resultSHA256": "9f886a5807cc0309ced18fb89c7822bf0f2b4377090bddc1a7003ea65bd9289a"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-cold-16-0",
+      "arm": "110",
+      "resultSHA256": "46e7963bed001ce0b2d4fe5a1c682c72f6343f1b75171763f337503b56e12698"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-cold-16-0",
+      "arm": "111",
+      "resultSHA256": "e7ae7124db804542365ac7881279f8b65c7203493bd1536e9530fae5c73b4a8d"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-cold-16-1",
+      "arm": "000",
+      "resultSHA256": "f6f39198e0df56bc0993877410cd242050b5d75ae73cb42980e4f0280af266e7"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-cold-16-1",
+      "arm": "110",
+      "resultSHA256": "82abba9d9e7ad6bf7711b79790138f2a43f9d6ee435c531d3ed6db29d55286de"
+    },
+    {
+      "fixture": "club-confirmation-excluded-dover-cold-16-1",
+      "arm": "111",
+      "resultSHA256": "bdc3be4601ef7bb8444f8e93e77b50ee9e71a671da803a2ddc875202503f0eb2"
+    }
+  ],
+  "scientificOutcomesGenerated": 0,
+  "officialWrites": false
+}

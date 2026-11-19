@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "oldRuntime": {
+    "node": "v24.22.1",
+    "v8": "13.6.233.17-node.58",
+    "platform": "linux",
+    "arch": "x64",
+    "workerExecArgv": [
+      "--no-maglev"
+    ],
+    "numericIsolationProbe": "passed",
+    "publicResultBoundary": "detached-json-snapshot-frozen-root-v1"
+  },
+  "newRuntime": {
+    "node": "v24.22.3",
+    "v8": "13.6.233.17-node.63",
+    "platform": "linux",
+    "arch": "x64",
+    "workerExecArgv": [
+      "--no-maglev",
+      "--input-type=module"
+    ],
+    "numericIsolationProbe": "passed",
+    "publicResultBoundary": "detached-json-snapshot-frozen-root-v1"
+  },
+  "historicalFullResultMatches": [
+    {
+      "fixture": "quality-1-minus0p35-neutral-ordinary-screen-0",
+      "arm": "000",
+      "exactResultSHA256": "49ddb18a0d3569a73b0191ff1f432d21d846183a1526084d98ac41fb13119e27"
+    },
+    {
+      "fixture": "quality-1-minus0p35-neutral-ordinary-screen-0",
+      "arm": "111",
+      "exactResultSHA256": "2e1e1181c9340cfe9d334c7b35b192af967a05e5c700f58a5fa0e1991e18adbc"
+    },
+    {
+      "fixture": "quality-1-minus0p35-neutral-hot-favored-screen-0",
+      "arm": "000",
+      "exactResultSHA256": "f7cb502f041b96ef89594f7b4622a82ae58470c0a92e5ee3866b2b1161509f7a"
+    },
+    {
+      "fixture": "quality-1-minus0p35-neutral-hot-favored-screen-0",
+      "arm": "111",
+      "exactResultSHA256": "07bb83f56f3936ba3f2ba64feae1037b133d7ebf96f86d95d345eea6c858223b"
+    },
+    {
+      "fixture": "quality-1-minus0p35-neutral-cold-adverse-screen-0",
+      "arm": "000",
+      "exactResultSHA256": "feb3575596602f9e293139c0aafb86d1bb3d603b7c3ba2cd32cd9468033284bd"
+    },
+    {
+      "fixture": "quality-1-minus0p35-neutral-cold-adverse-screen-0",
+      "arm": "111",
+      "exactResultSHA256": "bb5868ce4579b217c87f71addd3b14865b0303df9c500269b18d72a95813ce4b"
+    }
+  ],
+  "sourceSHA256": "951e810a900b39807bd7b4ed9b018d43b5934efeb70a4cf7367f1604b31b4cc7",
+  "classification": "Retained exact-hash engineering replay only; excluded from fresh scientific sample"
+}

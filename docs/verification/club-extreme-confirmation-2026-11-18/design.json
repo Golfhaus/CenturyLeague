@@ -1,0 +1,68 @@
+{
+  "studyId": "club-extreme-fresh-confirmation-v1",
+  "sourceSHA256": "951e810a900b39807bd7b4ed9b018d43b5934efeb70a4cf7367f1604b31b4cc7",
+  "harnessSHA256": "09b96bde25922b044b566e2fa3717ed0e42dea2aa6e890a53a395185f12764cb",
+  "profilesSHA256": "da5482f10c7ec5b054d6d1375110f043e8623a23aab381a57fbddcf71d109622",
+  "arms": [
+    "000",
+    "110",
+    "111"
+  ],
+  "targets": [
+    {
+      "id": "hampden-hot",
+      "name": "Hampden Works CC",
+      "focalTeamId": "346d43bf-55c7-4448-b6dc-c76ecd5cab03",
+      "scene": "hot-favored",
+      "priorN": 103,
+      "priorWins": 87,
+      "priorControlWins": 71
+    },
+    {
+      "id": "dover-hot",
+      "name": "Dover Town CC",
+      "focalTeamId": "e74bf48c-bf51-478c-820b-d37504e6e5c0",
+      "scene": "hot-favored",
+      "priorN": 113,
+      "priorWins": 56,
+      "priorControlWins": 39
+    },
+    {
+      "id": "dover-cold",
+      "name": "Dover Town CC",
+      "focalTeamId": "e74bf48c-bf51-478c-820b-d37504e6e5c0",
+      "scene": "cold-adverse",
+      "priorN": 124,
+      "priorWins": 29,
+      "priorControlWins": 52
+    }
+  ],
+  "method": {
+    "purpose": "Fresh confirmation of three descriptive flags selected by the completed copied-club screen; no old outcomes pooled and no coefficient/source changes.",
+    "sampling": "1536 independent cases for each fixed Hampden-hot, Dover-hot and Dover-cold cell. Uniform17other-club opponents, uniform6frozen chronological history prefixes and uniform original orientation, WITH replacement and separate unbiased256-bit SHA domains. Target conditional on focal club/scene and unconditional over opponent/history/orientation draws. Actual histories do not override the fixed +/-5stress streaks.",
+    "inference": "Six co-primary paired differences:111-000 and111-110 in three cells.24one-sided Clopper-Pearson tails alpha=.05/24 bound toward/against probabilities; signed subtraction yields simultaneous family-wise95% bounds. Beta PPF verified by independent log-space binomial-CDF bisection. Subgroups and margins descriptive. Random realized counts are not conditioned on or rebalanced.",
+    "review": "Existing proposed outer15pp reference, preferred10pp. For each full-control signed range: wholly inside[-15,+15] supports this cell mixture within reference; wholly beyond either boundary confirms an excess relative to that reference; overlap is unresolved. Positive both-coach benefit not required. These remain proposed review references, not adopted production pass margins or winner clamps.",
+    "scope": "Same copied18clubs/35players, unchanged ratings and authentic coach tactics; fixed severe heat/cold, all-squad thermal fit extremes and +/-5streaks. Healthy availability resets. Native per-match energy resets and all deferredv3 limits preserved. Not a season rehearsal or universal per-club ceiling."
+  },
+  "operations": {
+    "workers": 8,
+    "chunk": 16,
+    "chunkDeadlineSeconds": 900,
+    "durableBlockCases": 512,
+    "blocks": 9,
+    "checkpointAcknowledgementDeadlineSeconds": 240,
+    "checkpointPolicy": "Write-once qualified-worker-audited compact rows, source/plan/hash identities; publish to authorized lab branch and verify remote bytes before local acknowledgement. Pause before next block until durable receipt. No automatic retry after uncertain publication or failed acknowledgement.",
+    "automaticRetries": 0,
+    "seedReplacements": 0,
+    "sampleExtensions": 0,
+    "scientificReplayOutcomes": 72,
+    "officialWrites": false
+  },
+  "scientificOutcomesAtFreeze": 0,
+  "expandedPlanSHA256": "18cd17b27237cb965c45bd38308633f041f256066bcdaf40ec50b78c5129a759",
+  "fixtureCount": 4608,
+  "reproductionFiles": [
+    "reproduction/input-snapshot.json.gz",
+    "reproduction/expanded-plan.json.gz"
+  ]
+}

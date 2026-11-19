@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "outcomes": 13824,
+  "groups": 153,
+  "csvSHA256": "3df05eba36a3e61ec2d5828b33dff8bcbc27f39ef093fe72e6c34035c4e6f135",
+  "telemetryOffZerosTreatedAsUnavailable": true
+}

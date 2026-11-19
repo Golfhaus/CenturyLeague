@@ -1,0 +1,171 @@
+{
+  "status": "completed",
+  "familyAlpha": 0.05,
+  "oneSidedTailAlpha": 0.0020833333333333333,
+  "method": "Six predeclared paired differences;24one-sided Clopper-Pearson tails and signed subtraction; inverse endpoints checked by independent log-binomial-CDF bisection. Conditional on fixed focal club/scene, unconditional over uniform opponents/history/orientation.",
+  "primaryContrasts": [
+    {
+      "targetCellId": "hampden-hot",
+      "scene": "hot-favored",
+      "focalClub": "Hampden Works CC",
+      "reference": "000",
+      "arm": "111",
+      "n": 1536,
+      "wins": 1255,
+      "referenceWins": 1146,
+      "toward": 252,
+      "against": 143,
+      "winChangePP": 7.096354166666667,
+      "meanMarginChange": 5.78125,
+      "towardProbabilityBounds": [
+        0.13797654811585144,
+        0.19272586753612342
+      ],
+      "againstProbabilityBounds": [
+        0.07310010169613963,
+        0.11623299162440957
+      ],
+      "familyWise95IntervalPP": [
+        2.174355649144187,
+        11.962576583998379
+      ],
+      "outerReferenceReview": "inside-outer15"
+    },
+    {
+      "targetCellId": "hampden-hot",
+      "scene": "hot-favored",
+      "focalClub": "Hampden Works CC",
+      "reference": "110",
+      "arm": "111",
+      "n": 1536,
+      "wins": 1255,
+      "referenceWins": 1242,
+      "toward": 53,
+      "against": 40,
+      "winChangePP": 0.8463541666666666,
+      "meanMarginChange": 0.8098958333333334,
+      "towardProbabilityBounds": [
+        0.02260636697625241,
+        0.05003094010635627
+      ],
+      "againstProbabilityBounds": [
+        0.01586969827496986,
+        0.03992188790765528
+      ],
+      "familyWise95IntervalPP": [
+        -1.7315520931402868,
+        3.4161241831386406
+      ],
+      "outerReferenceReview": "not-a-separate-adopted-halftime-margin"
+    },
+    {
+      "targetCellId": "dover-hot",
+      "scene": "hot-favored",
+      "focalClub": "Dover Town CC",
+      "reference": "000",
+      "arm": "111",
+      "n": 1536,
+      "wins": 573,
+      "referenceWins": 484,
+      "toward": 304,
+      "against": 215,
+      "winChangePP": 5.794270833333334,
+      "meanMarginChange": 3.9720052083333335,
+      "towardProbabilityBounds": [
+        0.1696526048100995,
+        0.22849583550969
+      ],
+      "againstProbabilityBounds": [
+        0.11568431398856843,
+        0.16702874380915256
+      ],
+      "familyWise95IntervalPP": [
+        0.2623861000946942,
+        11.281152152112156
+      ],
+      "outerReferenceReview": "inside-outer15"
+    },
+    {
+      "targetCellId": "dover-hot",
+      "scene": "hot-favored",
+      "focalClub": "Dover Town CC",
+      "reference": "110",
+      "arm": "111",
+      "n": 1536,
+      "wins": 573,
+      "referenceWins": 585,
+      "toward": 35,
+      "against": 47,
+      "winChangePP": -0.78125,
+      "meanMarginChange": -0.2682291666666667,
+      "towardProbabilityBounds": [
+        0.013357709432761336,
+        0.03595696052911054
+      ],
+      "againstProbabilityBounds": [
+        0.019464995468463173,
+        0.04539654274311333
+      ],
+      "familyWise95IntervalPP": [
+        -3.2038833310351995,
+        1.649196506064737
+      ],
+      "outerReferenceReview": "not-a-separate-adopted-halftime-margin"
+    },
+    {
+      "targetCellId": "dover-cold",
+      "scene": "cold-adverse",
+      "focalClub": "Dover Town CC",
+      "reference": "000",
+      "arm": "111",
+      "n": 1536,
+      "wins": 404,
+      "referenceWins": 501,
+      "toward": 198,
+      "against": 295,
+      "winChangePP": -6.315104166666667,
+      "meanMarginChange": -3.6484375,
+      "towardProbabilityBounds": [
+        0.10552398374248143,
+        0.15514033857405324
+      ],
+      "againstProbabilityBounds": [
+        0.16414455782690973,
+        0.22233043371887395
+      ],
+      "familyWise95IntervalPP": [
+        -11.680644997639252,
+        -0.9004219252856493
+      ],
+      "outerReferenceReview": "inside-outer15"
+    },
+    {
+      "targetCellId": "dover-cold",
+      "scene": "cold-adverse",
+      "focalClub": "Dover Town CC",
+      "reference": "110",
+      "arm": "111",
+      "n": 1536,
+      "wins": 404,
+      "referenceWins": 414,
+      "toward": 29,
+      "against": 39,
+      "winChangePP": -0.6510416666666667,
+      "meanMarginChange": -0.4186197916666667,
+      "towardProbabilityBounds": [
+        0.010421200632437415,
+        0.031123761476927688
+      ],
+      "againstProbabilityBounds": [
+        0.01536319582566226,
+        0.03913288188453823
+      ],
+      "familyWise95IntervalPP": [
+        -2.8711681252100814,
+        1.5760565651265428
+      ],
+      "outerReferenceReview": "not-a-separate-adopted-halftime-margin"
+    }
+  ],
+  "priorSamplesPooled": false
+}

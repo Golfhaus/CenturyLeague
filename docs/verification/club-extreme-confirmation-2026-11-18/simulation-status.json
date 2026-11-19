@@ -1,0 +1,24 @@
+{
+  "stage": "simulation",
+  "state": "completed",
+  "updatedAt": "2026-11-19T02:13:25.583000+00:00",
+  "elapsedSeconds": 1845.14,
+  "secondsWithoutProgress": 0.52,
+  "lastOutputAt": "2026-11-19T02:13:25.582463+00:00",
+  "completedFixtures": 4608,
+  "expectedFixtures": 4608,
+  "outcomesRetained": 13824,
+  "recordedStudyComplete": true,
+  "command": [
+    "node",
+    "--no-maglev",
+    "experiments/club-confirmation/run.mjs",
+    "experiments/club-confirmation/expanded-plan.json",
+    "experiments/club-confirmation/runs/confirmation",
+    "confirmation"
+  ],
+  "logFile": "/workspace/scratch/7923deb43444/CenturyLeague/experiments/club-confirmation/runs/confirmation/simulation.log",
+  "message": "Recorded study complete.",
+  "processId": 3,
+  "exitCode": 0
+}

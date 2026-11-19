@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "members": 77,
+  "pdf": {
+    "path": "/workspace/scratch/7923deb43444/output/pdf/Century_Club_Extreme_Confirmation_2026_11_18.pdf",
+    "bytes": 35042,
+    "sha256": "e0767a32466748fc9906d4fa0add9fb85ab34f1830fdffde2e93c1ccd75b0584"
+  },
+  "data": {
+    "path": "/workspace/scratch/7923deb43444/output/Century_Club_Extreme_Confirmation_Data_2026_11_18.zip",
+    "bytes": 12733421,
+    "sha256": "f852c3ef5637d140e1dfd6476056f568288dc4ba3e750d83384131a41d2b5873"
+  },
+  "crcAndEveryMemberSHA256Verified": true
+}

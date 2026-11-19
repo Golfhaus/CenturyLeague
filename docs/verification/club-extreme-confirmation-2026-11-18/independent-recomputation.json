@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "pairedClusters": 4608,
+  "outcomes": 13824,
+  "primaryContrasts": 6,
+  "secondaryGroups": 75,
+  "allDesignDrawsVerified": true,
+  "inverseCDFVerified": true,
+  "durableBlocksVerified": 9,
+  "durableRowsMatchFinalCSV": true,
+  "outcomesCSVSHA256": "a3af7cf51f5c64fe0b09c9a20abb98346780d457f4eac74eafd21c8001f31541"
+}

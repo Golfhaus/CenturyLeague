@@ -12,4 +12,12 @@ Use the same candidate source `951e810a900b39807bd7b4ed9b018d43b5934efeb70a4cf73
 6. Separately exercise competition-scoped selection and future-match rollback in an isolated configuration. A November-entry tournament keeps its old engine even when its fixtures fall in December. Already completed results retain their original engine/configuration identities. Confirm the actual live runner's existing pins read-only before proposing integration.
 7. Publish the compact rehearsal report, exact reproduction material and any failures on the authorized lab branch. Prepare a concrete immutable v2 release/configuration artifact and the intended December identifier for a separate explicit release decision. No merge, deployment or official writes are implied by branch publication.
 
+## Wind decision · November 19, 2026
+
+Retain the current v2 wind coefficients. Carry the existing candidate source and configuration forward to the December rehearsal.
+
+The paired mild-wind trial tested 192 fresh seeds across four matchup setups (960 completed simulations), with mirrored wind directions. Cutting both sustained wind and gust inputs by 25% changed the average absolute score-margin swing versus calm from 24.9 to 24.2 points. The paired change was −0.7 points (95% interval −2.7 to +1.3). Swings of at least 30 points went from 34.6% to 33.3%. The Roanoke–Norfolk average increased from 21.5 to 23.0 points, and the contrasting-style tests did not show a consistent gain for the kick-heavy side. These results support retaining the current setting for this candidate. The trial covers only mild, dry conditions. [Trial report and compact results](https://chatgpt.com/library?file_id=libfile_fde3_f-67303fa55a688191bb3e108ebf8e5c38_4890e12d00c88191a3c2b48c19f945a4&account_id=personal).
+
+The November 19 read-only registry check found no registered December season or dated fixtures. The inaugural tournament had 32 accepted results and remained pinned to `0.2.0-availability-candidate`, source `c221b03cd89fb52ea13294a6686e47f9ded99a08f77b0c520fe5498657f58bc5`. The next rehearsal input is the official December fixture program and its opening roster and availability snapshot, following the division assignments.
+
 The proposed +/-10 and +/-15 mean-effect references remain disclosed review references; this preparation does not adopt new release margins. The previous completed real-club study is available only as its recovered verified summary, and that evidence limitation must remain in release review.

@@ -1,6 +1,6 @@
 # Next gate: isolated season rehearsal
 
-Status: preparation scope after the fresh club-stress confirmation. No season rehearsal has run or passed, and no release is approved.
+Status: the provisional 12-club rehearsal passed. The full official-input December rehearsal and release decision are pending.
 
 Use the same candidate source `951e810a900b39807bd7b4ed9b018d43b5934efeb70a4cf7367f1604b31b4cc7`. Changes to integration plumbing must preserve the candidate's qualified full-match input/output behavior; changed gameplay requires a new candidate and evaluation.
 
@@ -19,5 +19,11 @@ Retain the current v2 wind coefficients. Carry the existing candidate source and
 The paired mild-wind trial tested 192 fresh seeds across four matchup setups (960 completed simulations), with mirrored wind directions. Cutting both sustained wind and gust inputs by 25% changed the average absolute score-margin swing versus calm from 24.9 to 24.2 points. The paired change was −0.7 points (95% interval −2.7 to +1.3). Swings of at least 30 points went from 34.6% to 33.3%. The Roanoke–Norfolk average increased from 21.5 to 23.0 points, and the contrasting-style tests did not show a consistent gain for the kick-heavy side. These results support retaining the current setting for this candidate. The trial covers only mild, dry conditions. [Trial report and compact results](https://chatgpt.com/library?file_id=libfile_fde3_f-67303fa55a688191bb3e108ebf8e5c38_4890e12d00c88191a3c2b48c19f945a4&account_id=personal).
 
 The November 19 read-only registry check found no registered December season or dated fixtures. The inaugural tournament had 32 accepted results and remained pinned to `0.2.0-availability-candidate`, source `c221b03cd89fb52ea13294a6686e47f9ded99a08f77b0c520fe5498657f58bc5`. The next rehearsal input is the official December fixture program and its opening roster and availability snapshot, following the division assignments.
+
+## Provisional rehearsal and recovery archive
+
+The 12-club rehearsal in Divisions Two through Four completed 36 fixtures on each engine. The isolated restart recovered the saved round-four proposals. Independent checks reconciled standings, streaks, player eligibility, injury recovery, and suspension service. The full December rehearsal awaits the official 18-club inputs listed above.
+
+The recovery archive contains the pinned source tree, the frozen opening inputs, all 36 paired proposal files with full match events, 36 acceptance checkpoints, the compact results and scripts, and the wind trial bundle. A restore test built the extracted source and reproduced both results for the first rehearsal fixture exactly. [Century_December_Rollout_Recovery.zip](https://chatgpt.com/library?file_id=libfile_fde3_f-371b259ac11c8191b910c36ca0880dea_4890e12d00c88191a3c2b48c19f945a4&account_id=personal). Archive SHA-256 `5911ca076ded0261c100355f1a7afafabfa61f0338174e292b37f458f806379d`.
 
 The proposed +/-10 and +/-15 mean-effect references remain disclosed review references; this preparation does not adopt new release margins. The previous completed real-club study is available only as its recovered verified summary, and that evidence limitation must remain in release review.
